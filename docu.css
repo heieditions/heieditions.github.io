@@ -1,0 +1,256 @@
+a.biblref {
+  color: #990000; /* Heidelberg Red */
+}
+
+a.endnote_number {
+    text-decoration: none;
+    color: #990000; /* Heidelberg Red */
+}
+
+a.endnote_number::after {
+    content: ' '
+}
+
+a.gi {
+    text-decoration: none;
+    font-family: 'Ubuntu Mono', monospace;
+    color: #000096;
+}
+
+a.loddoc {
+    text-decoration:underline;
+    text-decoration-style: dotted;
+    color: #9F0001; /* Heidelberg Red */
+}
+
+a.inlink {
+    color: DimGray; 
+}
+
+a.outlink {
+    color: DimGray; 
+}
+
+a.note_mark {
+  color: #9F0001; /* Heidelberg Red */
+}
+
+body {
+    /*max-width: 800px;*/
+    font-family: 'Spectral', serif;
+}
+
+div.endnote {
+    margin-bottom: 10px;
+}
+
+dl.inline {
+                    text-indent: -2em;
+                    margin-left: 4em;
+                   }
+                   
+dl.inline dt { 
+  font-weight: bold; 
+  color: #9F0001; /* Heidelberg Red */
+  display: inline-block; 
+}
+dl.inline dt:after { content:': '; }
+dl.inline dd { display: inline; margin: 0; }
+dl.inline dd:after { display:block; content:''; }
+
+
+footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 50px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: LightGray;
+    font-family: 'Arial', sans-serif;
+}
+
+h1 {
+    font-family: 'Open Sans', sans-serif;
+    color: #9F0001; /* Heidelberg Red */
+    margin-bottom: 50px;
+}
+
+h2 {
+    font-family: 'Open Sans', sans-serif;
+    color: #9F0001; /* Heidelberg Red */
+}
+
+h3 {
+    font-family: 'Open Sans', sans-serif;
+    color: #9F0001; /* Heidelberg Red */
+}
+
+header {
+    display:flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    background-color: LightGray;
+}
+
+img.illustration {
+    width: 80%; 
+    border:1px solid black;
+}
+
+#impressum {
+  margin-right: 30px;
+  margin-left: 20px;
+  margin-top: 20px;
+  font-size: small;
+  /*margin: 3% 3% 3% 3%;*/
+  /*background-color: LightGray;*/
+}
+
+#logoverbund {
+  width: 25vw;
+  margin-left: 30px;
+  min-width: 200px;
+  /*margin: 3% 3% 3% 3%;*/
+  /*background-color: LightGray;*/
+}
+
+nav {
+    font-family: sans-serif;
+    color: Gray;
+    margin-bottom: 70px;
+}
+
+p.bildunterschrift {
+  width: 80%; 
+  font-weight: bold;
+}
+
+span.att {
+    font-family: 'Ubuntu Mono', monospace;
+    font-style: italic;
+    color: #F5844C;
+}
+
+span.biblrefprefix {
+  color: #9F0001; /* Heidelberg Red */
+}
+
+span.val {
+    font-family: 'Ubuntu Mono', monospace;
+    color: #993300;
+}
+
+span.loddocborder {
+    color: #9F0001; /* Heidelberg Red */
+}
+
+span.outlinkprefix {
+  color: DimGray; 
+}
+
+.egxml {
+    font-family: 'Ubuntu Mono', monospace;
+}
+
+/* xmlverbatim */
+.xmlverb-default {
+    color: #333;
+    font-family: monospace;
+    font-size: medium;
+    padding-left: 1em;
+    border-left: 2px solid #D5D5D5;
+}
+.xmlverb-element-name {
+    color: #000096
+}
+.xmlverb-element-nsprefix {
+    color: #660
+}
+.xmlverb-attr-name {
+    color: #F5844C
+}
+.xmlverb-attr-content {
+    color: #993300
+}
+.xmlverb-ns-name {
+    color: #660
+}
+.xmlverb-ns-uri {
+    color: #309
+}
+.xmlverb-text {
+    color: #000;
+}
+.xmlverb-comment {
+    color: #060;
+    font-style: italic
+}
+.xmlverb-pi-name {
+    color: #060;
+    font-style: italic
+}
+.xmlverb-pi-content {
+    color: #066;
+    font-style: italic
+}
+
+/* The following styling for "main" and "aside" has been adopted 
+ * from https://kennethfriedman.org/thoughts/2019/marginal-notes/ */
+
+main {
+    max-width: 700px; /*provides maximum, in case screen is huge*/
+    /*margin-right: 20%;*/
+    width: 80%; /*keeps body text width resonable*/
+    margin: 0 auto; /*centers main on page*/
+}
+
+/*Marginal Notes on Desktop*/
+aside,
+.aside {
+    display: inline;
+    float: right;
+    position: relative;
+    width: 15vw; 
+    /*margin-right: -24vw;*/
+    margin-right: -20vw;
+    font-size: 16px;
+    color: Gray;
+}
+
+/*Marginal Notes on mobile*/
+@media (max-width : 768px) {
+    aside,
+    .aside {
+        display: block;
+        float: none;
+        margin: 5% 10% 5% 10%;
+        width: 80%;
+        font-size: 15px;
+        
+    }
+    
+    .aside::before {
+        content: '☞ ' /*“*/
+    }  
+    
+    /*.aside::after {
+        content: '”'
+    }  */
+}
+
+#logo_heieditions {
+    width: 60vw;
+    margin: 3% 3% 3% 3%;
+}
+
+#header_docu {
+    width: 15vw;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    color: #9F0001; /* Heidelberg Red, #990000? */ 
+    font-size: 20px;
+    margin-top: 15px;
+    
+}
