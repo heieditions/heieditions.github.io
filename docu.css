@@ -35,6 +35,14 @@ a.note_mark {
   color: #9F0001; /* Heidelberg Red */
 }
 
+a.tocref {
+  color: #9F0001; /* Heidelberg Red */
+}
+
+a.navref {
+  color: Gray;
+}
+
 body {
     /*max-width: 800px;*/
     font-family: 'Spectral', serif;
@@ -54,7 +62,7 @@ dl.inline dt {
   color: #9F0001; /* Heidelberg Red */
   display: inline-block; 
 }
-dl.inline dt:after { content:': '; }
+dl.inline dt:after { content:': '; }
 dl.inline dd { display: inline; margin: 0; }
 dl.inline dd:after { display:block; content:''; }
 
@@ -125,6 +133,15 @@ nav {
 p.bildunterschrift {
   width: 80%; 
   font-weight: bold;
+}
+
+p.resdef {
+  background-color: #f5f2f0;
+  padding: 10px;
+  border: 1px;
+  border-radius: 5px;
+  border-style: dotted;
+  border-color: Gray;
 }
 
 span.att {
