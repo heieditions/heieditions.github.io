@@ -207,18 +207,38 @@
                   
                </div>
                
-               <div id="FAC-DEC-ZONE">
+               <div id="FAC-DEC-CONTENTZONE">
                   
-                  <h3>Angaben zu Inhaltsbereichen und Layoutdeklaration</h3>
+                  <h3>Angaben zu Inhaltsbereichen</h3>
                   
                   <p>
-                     Auf einer nicht leeren Inhaltsfläche sind einzelne Inhalte in Inhaltsbereichen untergebracht.
-                     Die TEI-Entsprechung zu einem Inhaltsbereich ist das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>:
+                     Auf einer nicht leeren Inhaltsfläche (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentSurface.html" target="_blank">Inhaltsfläche</a><span class="loddocborder"> ‹</span>) sind einzelne Inhalte in Inhaltsbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">Inhaltsbereich</a><span class="loddocborder"> ‹</span>) untergebracht.
+                     Inhaltsbereiche werden durch das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> repräsentiert, das in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> innerhalb von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>
+                     gesetzt wird:
                      <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a></span> »beschreibt eine beliebige zweidimensionale Fläche innerhalb eines
-    <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements« <ul><li><span class="att">@ana</span></li><li><span class="att">@xml:id</span></li><li><span class="att">@n</span></li><li><span class="att">@rotation</span></li><li><span class="att">@hei:width</span></li><li><span class="att">@hei:placeRef</span></li><li><span class="att">@hei:alignedWith</span></li><li><span class="att">@hei:alignedByFirstLineWith</span></li><li><span class="att">@hei:alignedByLastLineWith</span></li></ul></li></ul>
-                     
-                     
+    <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements« <ul><li><span class="att">@ana</span></li><li><span class="att">@xml:id</span></li><li><span class="att">@n</span></li></ul></li></ul>
                   </p> 
+                  
+                  
+                  
+                  <p>
+                     <span class="aside"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>/<span class="att">@ana</span></span>
+                     Je nach Inhaltstyp werden in ›heiEDITIONS‹ folgende Kategorien von Inhaltsbereichen 
+                     unterschieden, die jeweils an <span class="att">@ana</span> anzugeben sind:  
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:TextZone</span> (›Textbereich‹): Inhaltsbereich, der aus mindestens einer Zeile besteht.
+                  </p>
+                  <p>
+                     Ein Textbereich besteht aus mindestens einer Zeile (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/Line.html" target="_blank">Zeile</a><span class="loddocborder"> ‹</span>), also einer linear angeordneten Sequenz von Buchstaben, Zahlen oder anderen Symbolen. Zusätzlich können in einem Textbereich andere Bereiche eingebettet sein, inzeilig (z.B. mathematische Formen und Graphiken innerhalb einer Zeile) oder schwebend (Initialen).</p>
+                  
+                  
+               </div>
+               
+               <div id="FAC-DEC-LAYOUT">
+                  
+                  <h3>Layoutdeklaration</h3>
+                  
                   
                </div>
                
@@ -261,7 +281,7 @@
                         In den beiden Beispielen fungiert als Identifier wahlweise die sog. DWork-Projektnummer oder 
                         ein editionseigenes Sigel für den Textzeugen.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 20.11.2020
+                        Letzte Aktualisierung: 23.11.2020
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

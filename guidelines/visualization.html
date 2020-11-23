@@ -1,0 +1,222 @@
+<!DOCTYPE HTML>
+<html><head><title>heiEDITIONS Dokumentation | Visualisierung</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"><link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Spectral&amp;family=Ubuntu+Mono&amp;&amp;display=swap" rel="stylesheet"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Visualisierung</nav><main>
+         <div id="VIS">
+            
+            <h1>Visualisierung</h1>
+            
+            <div id="VIS-READING">
+               
+               <h2>Leseansicht</h2>
+               
+            </div>
+            
+            <div id="VIS-SOURCE">
+               
+               <h2>Quellenansicht</h2>
+               
+               <p>
+                  Die Quellenansicht ist ein Visualisierungsmodus, der auf der physisch-visuellen Struktur eines Inhaltsträgers basiert.
+                  Eine solche Struktur wird durch Inhaltsflächen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentSurface.html" target="_blank">Inhaltsfläche</a><span class="loddocborder"> ‹</span>), Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">Inhaltsbereich</a><span class="loddocborder"> ‹</span>) 
+                  sowie (bei Textbereichen) Zeilen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/Line.html" target="_blank">Zeile</a><span class="loddocborder"> ‹</span>) konstituiert. Den genannten drei Ebenen entsprechen
+                  in der TEI die Elemente <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>, <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> und <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a>. Für die Quellenansicht wird
+                  in ›heiEDITIONS‹ die primäre semantisch-logisch strukturierte TEI-Kodierung aus
+                  <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> in <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> umgewandelt, wo <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>, <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> und <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a> die 
+                  maßgeblichen strukturellen Elemente sind.                  
+               </p>
+               <p>
+                  Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> wird in ›heiEDITIONS‹ nicht nur für Inhaltsbereiche 
+                  eingesetzt, die den jeweiligen konkreten Inhalt tragen, sondern auch für die Gruppierung von 
+                  Inhaltsbereichen zwecks Layouterfassung. Die deklarative Dokumentation der groben Anordnung von
+                  Inhaltsbereichen auf einer Inhaltsfläche wird in der Quellenansicht-Visualisierung in CSS-Flexbox-Strukturen
+                  umgesetzt, wodurch eine der Anordnung in der Quelle grob nachempfundene HTML-Anzeige möglich wird.
+               </p>
+               <p>
+                  Neben geschachtelten Gruppen von <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> innerhalb eines <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> stellt ›heiEDITIONS‹
+                  mit <a class="gi" href="../specifications/ref-hei:box.html">&lt;hei:box&gt;</a>eine Erweiterung zur Verfügung, mit der innerhalb von <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> ein <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> jeweils in eine 
+                  vorkonfigurierte übergeordnete Struktur eingebettet werden kann, die typischerweise mit editorischen Inhalten 
+                  und Übersetzungen befüllt werden kann. Pro <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> (das in der Regel einer Seite der Quelle entspricht) 
+                  kann sich auf diese Weise jeweils eine Struktur von Inhaltscontainern ergeben, in die ein <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> eingebettet ist. 
+                  Solche Strukturen stellen eine technische Visualisierungsschnittstelle dar und sollten – wie im Übrigen aber auch
+                  <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> als solches – nie direkt von Herausgebern angelegt werden.
+               </p>
+               
+               <div id="VIS-LAYOUT">
+                  
+                  <h3>Mapping zwischen Layoutdeklaration und Visualisierungstechnologie</h3>
+                  
+                  <p>
+                     Wenn <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> in <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> das oberste einer Seite zugeordnete Containerelement ist 
+                     (also wenn es in keine <a class="gi" href="../specifications/ref-hei:box.html">&lt;hei:box&gt;</a>-Struktur eingebettet ist), entspricht es einem obersten
+                     <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> für die jeweilige Seite in HTML. Die <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>-Elemente auf Kindebene von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>
+                     werden dann in der Dokumentreihenfolge nacheinander ausgelesen und ihrerseits jeweils zu
+                     <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> umgewandelt. Dabei gilt es zu unterscheiden:
+                  </p>
+                  <ul>
+                     <li>
+                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Gruppierungsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/GroupingZone.html" target="_blank">Gruppierungsbereich</a><span class="loddocborder"> ‹</span>) dar, 
+                        d. h. einen Container, dessen Komponenten 
+                        in einem bestimmten Layout angeordnet werden sollen. Solche Gruppierungsbereiche werden mit CSS
+                        als <em>flex container</em> ausgewiesen.
+                     </li>
+                     <li>
+                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Inhaltsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">Inhaltsbereich</a><span class="loddocborder"> ‹</span>) dar, 
+                        das unmittelbar einen Inhalt enthält, z. B. Zeilen (wenn es sich um einen Textbereich handeln würde).
+                        Inhaltsbereiche werden bei der Umwandlung in HTML zu <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Elementen, die entweder
+                        Kindelemente des Seitencontainers (HTML-Entsprechung von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>)  
+                        oder Kindelemente eines Layout-Containers (Entsprechung von <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/GroupingZone.html" target="_blank">Gruppierungsbereich</a><span class="loddocborder"> ‹</span>) sind.
+                        Im letzteren Fall funktionieren sie in einem <em>flex container</em> als dessen <em>flex items</em>.
+                        Jedenfalls beinhalten Inhaltsbereiche ihrerseits keine Gruppierungsbereiche, sondern unmittelbar den 
+                        jeweiligen Inhalt.                       
+                     </li>
+                  </ul>
+                  <p>
+                     Um die Unterscheidung zwischen Gruppierungsbereichen und Inhaltsbereichen für die Visualisierung
+                     zu vereinfachen, wird an das jeweilige <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>/<span class="att">@ana</span> beim Durchlaufen der TEI-Verarbeitungspipeline
+                     eindeutig entweder <span class="val">hc:GroupingZone</span> oder <span class="val">hc:ContentZone</span> gesetzt.
+                  </p>
+                  <p>
+                     Die in <a class="inlink" href="layout.html#FAC-DEC-LAYOUT"></a> beschriebenen layout-relevanten Typen der 
+                     Gruppierungsbereiche werden in HTML wie folgt umgesetzt:              
+                  </p>
+                  <ul>
+                     <li>
+                        <span class="item_label"><span class="val">hc:HorizontalLayout</span></span>
+                        entspricht der CSS-Angabe <span class="code">flex-direction: row;</span>.
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="val">hc:VerticalLayout</span></span>
+                        entspricht der CSS-Angabe <span class="code">flex-direction: column;</span>.
+                     </li>
+                  </ul>
+                  <p>
+                     <span class="aside">horizontale Container</span>
+                     Für ein <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> mit der Angabe <span class="val">hc:HorizontalLayout</span> sind ferner 
+                     folgende Attributangaben möglich:
+                  </p>
+                  <ul>
+                     <li>
+                        <span class="item_label"><span class="att">@hei:width</span></span>
+                        Breitenangaben in Prozent in der Form <span class="val">30%</span> sind in CSS entsprechend mit 
+                        <span class="code">width</span> umzusetzen. Diese Angabe an einem horizontalen Container
+                        ist nur dann sinnvoll, wenn dieser Container selbst ein <em>flex item</em>
+                        eines übergeordneten horizontalen Containers wäre, was zwar möglich, aber untypisch ist.
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentLeft</span></span>
+                        entspricht der CSS-Angabe <span class="code">justify-content: flex-start;</span>. Das sollte auch die
+                        Voreinstellung sein, falls weder <span class="val">hc:AlignmentLeft</span> noch <span class="val">hc:AlignmentRight</span> noch 
+                        <span class="val">hc:AlignmentCentered</span> explizit gesetzt ist. Die <span class="att">@rendition</span>-Angaben 
+                        <span class="val">hc:AlignmentLeft</span>, <span class="val">hc:AlignmentRight</span> und <span class="val">hc:AlignmentCentered</span>   
+                        schließen einander aus, eine Schematron-Prüfung sollte vorher gewährleisten, dass
+                        sie nicht miteinander kombiniert werden. 
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentRight</span></span>
+                        entspricht der CSS-Angabe <span class="code">justify-content: flex-end;</span>. 
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentCentered</span></span>
+                        entspricht der CSS-Angabe <span class="code">justify-content: center;</span>. 
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentLeft</span></span>
+                        entspricht der CSS-Angabe <span class="code">align-self: flex-start;</span>. Die Angabe ist
+                        an einem horizontalen Container nur dann sinnvoll, wenn er selbst ein
+                        <em>flex item</em> eines übergeordneten vertikalen Containers wäre.
+                        Die <span class="att">@rendition</span>-Angaben <span class="val">hc:SelfAlignmentLeft</span>, <span class="val">hc:SelfAlignmentRight</span> 
+                        und <span class="val">hc:SelfAlignmentCentered</span> schließen einander aus, 
+                        eine Schematron-Prüfung sollte vorher gewährleisten, dass
+                        sie nicht miteinander kombiniert werden. 
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentRight</span></span>
+                        entspricht der CSS-Angabe <span class="code">align-self: flex-end;</span>. Die Angabe ist
+                        an einem horizontalen Container nur dann sinnvoll, wenn er selbst ein
+                        <em>flex item</em> eines übergeordneten vertikalen Containers wäre.
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentCentered</span></span>
+                        entspricht der CSS-Angabe <span class="code">align-self: center;</span>. Die Angabe ist
+                        an einem horizontalen Container nur dann sinnvoll, wenn er selbst ein
+                        <em>flex item</em> eines übergeordneten vertikalen Containers wäre.
+                     </li>
+                  </ul>
+                  <p>
+                     Um für schmalere Bildschirme eine flexiblen Umbruch eines horizontalen Layoutcontainers in mehrere Zeilen
+                     zu erreichen, muss der <em>flex container</em> die CSS-Angabe <span class="code">flex-wrap: wrap</span>
+                     erhalten. Alternativ können die Angabe <span class="code">flex-direction: row;</span> und 
+                     <span class="code">flex-wrap: wrap</span> durch die einzige Angabe <span class="code">flex-flow: column wrap;</span>
+                     ersetzt werden.
+                  </p>
+                  <p>
+                     <span class="aside">vertikale Container</span>
+                     Um auf oberster Ebene der Elemente einer Inhaltsfläche eine vertikale Anordnung festzulegen, ist
+                     keine explizite Angabe eines vertikalen Containers notwendig. Deswegen werden vertikale Container 
+                     nur für ggf. tiefer geschachtelte Bereiche verwendet. Für ein <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> mit der Angabe <span class="val">hc:VerticalLayout</span> sind  
+                     folgende Attributangaben möglich:
+                  </p>
+                  <ul>
+                     <li>
+                        <span class="item_label"><span class="att">@hei:width</span></span>
+                        Breitenangaben in Prozent in der Form <span class="val">30%</span> sind in CSS entsprechend mit 
+                        <span class="code">width</span> umzusetzen. Diese Angabe ist an einem vertikalen Container nur
+                        dann sinnvoll, wenn dieser Container ein <em>flex item</em> eines übergeordneten
+                        horizontalen Containers wäre.
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentTop</span></span>
+                        entspricht der CSS-Angabe <span class="code">justify-content: flex-start;</span>. Das sollte auch die
+                        Voreinstellung sein, falls weder <span class="val">hc:AlignmentTop</span> noch <span class="val">hc:AlignmentBottom</span> noch 
+                        <span class="val">hc:AlignmentCentered</span> explizit gesetzt ist. Die <span class="att">@rendition</span>-Angaben 
+                        <span class="val">hc:AlignmentTop</span>, <span class="val">hc:AlignmentBottom</span> und <span class="val">hc:AlignmentCentered</span>   
+                        schließen einander aus, eine Schematron-Prüfung sollte vorher gewährleisten, dass
+                        sie nicht miteinander kombiniert werden. 
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentBottom</span></span>
+                        entspricht der CSS-Angabe <span class="code">justify-content: flex-end;</span>. 
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentCentered</span></span>
+                        entspricht der CSS-Angabe <span class="code">justify-content: center;</span>. 
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentTop</span></span>
+                        entspricht der CSS-Angabe <span class="code">align-self: flex-start;</span>. Die Angabe ist
+                        an einem vertikalen Container nur dann sinnvoll, wenn er selbst ein
+                        <em>flex item</em> eines übergeordneten horizontalen Containers wäre.
+                        Die <span class="att">@rendition</span>-Angaben <span class="val">hc:SelfAlignmentTop</span>, <span class="val">hc:SelfAlignmentBottom</span> 
+                        und <span class="val">hc:SelfAlignmentCentered</span> schließen einander aus, 
+                        eine Schematron-Prüfung sollte vorher gewährleisten, dass
+                        sie nicht miteinander kombiniert werden. 
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentBottom</span></span>
+                        entspricht der CSS-Angabe <span class="code">align-self: flex-end;</span>. 
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentCentered</span></span>
+                        entspricht der CSS-Angabe <span class="code">align-self: center;</span>. 
+                     </li>                    
+                  </ul>
+                  
+               </div>
+               
+            </div>
+            
+            
+            
+            
+            
+            
+         </div>
+      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 23.11.2020
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><script src="../prism.js"></script></body></html>

@@ -154,6 +154,15 @@ span.biblrefprefix {
   color: #9F0001; /* Heidelberg Red */
 }
 
+span.code {
+  font-family: 'Ubuntu Mono', monospace;
+  background-color: PaleTurquoise;
+}
+
+span.item_label::after {
+    content: ' '
+}
+
 span.val {
     font-family: 'Ubuntu Mono', monospace;
     color: #993300;
