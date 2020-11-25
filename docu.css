@@ -176,6 +176,21 @@ span.outlinkprefix {
   color: DimGray; 
 }
 
+table {
+  border: 0.5px dotted gray;
+  font-size: 90%;
+}
+
+th {
+  text-align: left;
+  
+}
+
+td {
+  text-align: left;
+  border: 0.5px dotted gray;
+}
+
 .egxml {
     font-family: 'Ubuntu Mono', monospace;
 }

@@ -8,6 +8,16 @@
             
             <h1>Visualisierung</h1>
             
+            <p>
+               Die Visualisierungsinfrastruktur von ›heiEDITIONS‹ setzt zwei grundsätzlich
+               voneinander verschiedene Anzeigemodi ein: die sog. ›Leseansicht‹ und die 
+               sog. ›Quellenansicht‹. Während die Leseansicht im Wesentlichen aus der
+               üblichen semantisch-logischen TEI-Kodierung generiert wird, die in der Regel auch der Arbeitskodierung
+               der Editionsprojekte entspricht, basiert die Quellenansicht auf einer sekundär abgeleiteten 
+               TEI-Code-Struktur, die wir als ›sourceDoc-Kodierung‹ bezeichnen, weil das 
+               oberste Containerelement für alle eigentlichen Inhalte <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> ist (anstatt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>). 
+            </p>
+            
             <div id="VIS-READING">
                
                <h2>Leseansicht</h2>
@@ -20,12 +30,12 @@
                
                <p>
                   Die Quellenansicht ist ein Visualisierungsmodus, der auf der physisch-visuellen Struktur eines Inhaltsträgers basiert.
-                  Eine solche Struktur wird durch Inhaltsflächen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentSurface.html" target="_blank">Inhaltsfläche</a><span class="loddocborder"> ‹</span>), Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">Inhaltsbereich</a><span class="loddocborder"> ‹</span>) 
-                  sowie (bei Textbereichen) Zeilen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/Line.html" target="_blank">Zeile</a><span class="loddocborder"> ‹</span>) konstituiert. Den genannten drei Ebenen entsprechen
+                  Eine solche Struktur wird durch Inhaltsflächen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentSurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>), Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) 
+                  sowie (bei Textbereichen) Zeilen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/Line.html" target="_blank">hc:Line</a><span class="loddocborder"> ‹</span>) konstituiert. Den genannten drei Ebenen entsprechen
                   in der TEI die Elemente <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>, <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> und <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a>. Für die Quellenansicht wird
                   in ›heiEDITIONS‹ die primäre semantisch-logisch strukturierte TEI-Kodierung aus
                   <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> in <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> umgewandelt, wo <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>, <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> und <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a> die 
-                  maßgeblichen strukturellen Elemente sind.                  
+                  maßgeblichen strukturellen Containerelemente sind.                  
                </p>
                <p>
                   Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> wird in ›heiEDITIONS‹ nicht nur für Inhaltsbereiche 
@@ -57,17 +67,17 @@
                   </p>
                   <ul>
                      <li>
-                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Gruppierungsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/GroupingZone.html" target="_blank">Gruppierungsbereich</a><span class="loddocborder"> ‹</span>) dar, 
+                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Gruppierungsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/GroupingZone.html" target="_blank">hc:GroupingZone</a><span class="loddocborder"> ‹</span>) dar, 
                         d. h. einen Container, dessen Komponenten 
                         in einem bestimmten Layout angeordnet werden sollen. Solche Gruppierungsbereiche werden mit CSS
                         als <em>flex container</em> ausgewiesen.
                      </li>
                      <li>
-                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Inhaltsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">Inhaltsbereich</a><span class="loddocborder"> ‹</span>) dar, 
+                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Inhaltsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) dar, 
                         das unmittelbar einen Inhalt enthält, z. B. Zeilen (wenn es sich um einen Textbereich handeln würde).
                         Inhaltsbereiche werden bei der Umwandlung in HTML zu <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Elementen, die entweder
                         Kindelemente des Seitencontainers (HTML-Entsprechung von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>)  
-                        oder Kindelemente eines Layout-Containers (Entsprechung von <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/GroupingZone.html" target="_blank">Gruppierungsbereich</a><span class="loddocborder"> ‹</span>) sind.
+                        oder Kindelemente eines Layout-Containers (Entsprechung von <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/GroupingZone.html" target="_blank">hc:GroupingZone</a><span class="loddocborder"> ‹</span>) sind.
                         Im letzteren Fall funktionieren sie in einem <em>flex container</em> als dessen <em>flex items</em>.
                         Jedenfalls beinhalten Inhaltsbereiche ihrerseits keine Gruppierungsbereiche, sondern unmittelbar den 
                         jeweiligen Inhalt.                       
@@ -203,6 +213,151 @@
                         entspricht der CSS-Angabe <span class="code">align-self: center;</span>. 
                      </li>                    
                   </ul>
+                  <p>
+                     <span class="aside">Container-›Kinder‹</span>
+                     Die Kindelemente (<em>flex items) </em>eines als <em>flex container</em>
+                     fungierenden horizontalen oder vertikalen Containers werden je nach festgelegter 
+                     <span class="code">flex-direction</span> des Elternelements horizontal oder
+                     vertikal ausgegeben und je nach der Angabe in <span class="code">justify-content</span>
+                     entlang der entsprechenden Hauptachse des Elternelements ausgerichtet.
+                  </p>
+                  <p>
+                     Darüber hinaus ist es möglich, an einzelnen Kindelementen ihre jeweiligen Ausrichtung
+                     entlang der Querachse des Elternelements anzugeben (z. B. am unteren Rand 
+                     eines horizontalen Containers). Solche Angaben erfolgen in <span class="att">@rendition</span> durch
+                     Referenzen auf Resourcen, deren Namen jeweils mit ›Self‹ anfangen. Mit Ausnahme
+                     von <span class="val">hc:SelfAlignmentCentered</span> sind einzelne Werte jeweils nur für horizontale bzw.
+                     vertikale Elterncontainer sinnvoll und erlaubt:
+                  </p>
+                  <ul>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentTop</span></span>
+                        entspricht der CSS-Angabe <span class="code">align-self: flex-start;</span>. Die Angabe ist
+                        nur an einem <em>flex item</em> eines übergeordneten horizontalen Containers möglich.
+                        Die <span class="att">@rendition</span>-Angaben <span class="val">hc:SelfAlignmentTop</span>, <span class="val">hc:SelfAlignmentBottom</span> 
+                        und <span class="val">hc:SelfAlignmentCentered</span> schließen einander aus, 
+                        eine Schematron-Prüfung sollte vorher gewährleisten, dass
+                        sie nicht miteinander kombiniert werden.  Die Ausrichtung am oberen Rand eines horizontalen
+                        Containers sollte die Voreinstellung sein, wenn keine explizite Angabe zur Selbstausrichtung des 
+                        <em>flex item</em> entlang der Querachse gemacht wird.
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentBottom</span></span>
+                        entspricht der CSS-Angabe <span class="code">align-self: flex-end;</span>. Die Angabe ist
+                        nur an einem <em>flex item</em> eines übergeordneten horizontalen Containers möglich.
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentLeft</span></span>
+                        entspricht der CSS-Angabe <span class="code">align-self: flex-start;</span>. Die Angabe ist
+                        nur an einem <em>flex item</em> eines übergeordneten vertikalen Containers möglich.
+                        Die <span class="att">@rendition</span>-Angaben <span class="val">hc:SelfAlignmentLeft</span>, <span class="val">hc:SelfAlignmentRight</span> 
+                        und <span class="val">hc:SelfAlignmentCentered</span> schließen einander aus, 
+                        eine Schematron-Prüfung sollte vorher gewährleisten, dass
+                        sie nicht miteinander kombiniert werden.  Die Ausrichtung am linken Rand eines vertikalen
+                        Containers sollte die Voreinstellung sein, wenn keine explizite Angabe zur Selbstausrichtung des 
+                        <em>flex item</em> entlang der Querachse gemacht wird.
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentRight</span></span>
+                        entspricht der CSS-Angabe <span class="code">align-self: flex-end;</span>. Die Angabe ist
+                        nur an einem <em>flex item</em> eines übergeordneten vertikalen Containers möglich.
+                     </li>
+                     <li>
+                        <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentCentered</span></span>
+                        entspricht der CSS-Angabe <span class="code">align-self: flex-center;</span>. Die Angabe ist
+                        an <em>flex items</em> sowohl in horizontalen als auch in vertikalen Containern möglich; 
+                        sie bezeichnet die mittige Ausrichtung entlang der jeweils gültigen Querachse.
+                     </li>
+                  </ul>
+                  <p>
+                     Zusammengefasst kommen an <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> folgende Kombinationen von Attributen und Attributwerten vor,
+                     die für die Ausrichtung in einem <em>flex container</em> auszuwerten sind:
+                  </p>
+                  <div style="overflow-x:auto;"><table>
+                     <tr>
+                        <th rowspan="2"></th>
+                        <th colspan="2"><span class="val">hc:HorizontalLayout</span></th>
+                        <th colspan="2"><span class="val">hc:VerticalLayout</span></th>
+                     </tr>
+                     <tr>
+                        <td>TEI</td>
+                        <td>CSS</td>
+                        <td>TEI</td>
+                        <td>CSS</td>
+                     </tr>
+                     <tr>
+                        <td rowspan="3">Ausrichtung Hauptachse <span class="att">@rendition</span></td>
+                        <td><span class="val">hc:AlignmentLeft</span></td>
+                        <td><span class="code">justify-content: flex-start;</span> (Voreinstellung)</td>
+                        <td><span class="val">hc:AlignmentTop</span></td>
+                        <td><span class="code">justify-content: flex-start;</span> (Voreinstellung)</td>
+                     </tr>
+                     <tr>
+                        <td><span class="val">hc:AlignmentRight</span></td>
+                        <td><span class="code">justify-content: flex-end;</span></td>
+                        <td><span class="val">hc:AlignmentBottom</span></td>
+                        <td><span class="code">justify-content: flex-end;</span></td>
+                     </tr>
+                     <tr>
+                        <td><span class="val">hc:AlignmentCentered</span></td>
+                        <td><span class="code">justify-content: center;</span></td>
+                        <td><span class="val">hc:AlignmentCentered</span></td>
+                        <td><span class="code">justify-content: center;</span></td>
+                     </tr>
+                     <tr>
+                        <td rowspan="3"><span class="att">@rendition</span> an einem enthaltenen <em>flex item</em>: Selbstausrichtung Querachse</td>
+                        <td><span class="val">hc:SelfAlignmentTop</span></td>
+                        <td><span class="code">align-self: flex-start;</span> (Voreinstellung)</td>
+                        <td><span class="val">hc:SelfAlignmentLeft</span></td>
+                        <td><span class="code">align-self: flex-start;</span> (Voreinstellung)</td>
+                     </tr>
+                     <tr>
+                        <td><span class="val">hc:SelfAlignmentBottom</span></td>
+                        <td><span class="code">align-self: flex-end;</span></td>
+                        <td><span class="val">hc:SelfAlignmentRight</span></td>
+                        <td><span class="code">align-self: flex-end;</span></td>
+                     </tr>
+                     <tr>
+                        <td><span class="val">hc:SelfAlignmentCentered</span></td>
+                        <td><span class="code">align-self: center;</span></td>
+                        <td><span class="val">hc:SelfAlignmentCentered</span></td>
+                        <td><span class="code">align-self: center;</span></td>
+                     </tr>
+                  </table></div>
+                  <p>
+                     <span class="aside"><span class="att">@hei:width</span></span>
+                     Mit dem Attribut <span class="att">@hei:width</span> kann die relative Breite eines <em>flex item</em> in einem
+                     horizontalen oder vertikalen Elterncontainer festgelegt werden. Der Wert des Attributs muss dem regulären 
+                     Ausdruck <span class="code">\d{1,2}%</span> entsprechen (d. h. eine bis zwei Ganzzahlen und das Prozentzeichen).
+                     Das Attribut kann direkt in die entsprechende CSS-Angabe <span class="code">width</span> überführt werden.
+                  </p>
+                  <p>
+                     <span class="aside"><span class="att">@rotate</span></span>
+                     An jedem Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> kann mit dem Attribut <span class="att">@rotate</span> die Drehung des Bereichs 
+                     angegeben werden. Sie wird in der Visualisierung voraussichtlich nur verbal angezeigt und nicht nachgeahmt.
+                  </p>                 
+                  <p>
+                     <span class="aside">ergänzende Werte an <span class="att">@ana</span></span>
+                     Neben den Werten <span class="val">hc:HorizontalLayout</span> und <span class="val">hc:VertikalLayout</span> (bzw.
+                     <span class="val">hc:GroupingZone</span>) können an <span class="att">@ana</span> ergänzend weitere URIs angegeben werden,
+                     die das Layout näher beschreiben, aber für technische Aspekte der Visualisierung irrelevant sind. 
+                     Diese Angaben werden jeweils in ihre deutschen oder englischen natursprachlichen <em>label</em> 
+                     übersetzt und am betroffenen HTML-Element optional als Information ausgegeben. 
+                     Die hier einschlägigen URIs sind den Abschnitten <a class="inlink" href="layout.html#FAC-DEC-CONTENTZONE"></a> sowie 
+                     <a class="inlink" href="layout.html#FAC-DEC-SEMISTRUC"></a> zu entnehmen.
+                  </p>
+                  <p>
+                     <span class="aside"><span class="att">@hei:placeRef</span></span>
+                     An Randbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/MarginalZone.html" target="_blank">hc:MarginalZone</a><span class="loddocborder"> ‹</span> bzw. <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/MarginalColumn.html" target="_blank">hc:MarginalColumn</a><span class="loddocborder"> ‹</span>)
+                     kann mit dem Attribut <span class="att">@hei:placeRef</span> als ergänzende Information
+                     zur strukturellen Layoutbeschreibung die Platzierung an einem der im Layoutsystem der jeweiligen 
+                     Inhaltsfläche vorhandenen Ränder angegeben werden. Diese Angaben werden für die Visualisierung
+                     jeweils in ihre deutschen oder englischen natursprachlichen <em>label</em> 
+                     übersetzt und am betroffenen HTML-Element optional als Information ausgegeben.
+                     Die hierfür einschlägigen URIs sind dem Abschnitt 
+                     <a class="inlink" href="layout.html#FAC-DEC-PLACEMENT"></a> zu entnehmen.                     
+                  </p>
+                  
                   
                </div>
                
@@ -215,7 +370,7 @@
             
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 23.11.2020
+                        Letzte Aktualisierung: 25.11.2020
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

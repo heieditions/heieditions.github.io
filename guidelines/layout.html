@@ -17,15 +17,15 @@
                <span class="aside"><a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a></span> enthalten (s. weiter unten <a class="inlink" href="#FAC-DEC"></a>. 
                Ist kein Element <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> vorhanden, wird davon ausgegangen, dass das TEI-Dokument 
                keinen physischen Textträger dokumentiert; der Inhalt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> wird dann als 
-               eine Instanz der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionWithoutExemplar.html" target="_blank">Expression ohne (physische) Vorlage</a><span class="loddocborder"> ‹</span> betrachtet.
+               eine Instanz der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionWithoutExemplar.html" target="_blank">hc:ExpressionWithoutExemplar</a><span class="loddocborder"> ‹</span> betrachtet.
                <sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
             </p>
             <p class="resdef">
-               <span class="val">hc:ExpressionWithoutExemplar</span> (›Expression ohne (physische) Vorlage‹): Expression, die auf keinem physischen Träger als Vorlage basiert.
+               <span class="val">hc:ExpressionWithoutExemplar</span> ( ›Expression ohne (physische) Vorlage‹ ): Expression, die auf keinem physischen Träger als Vorlage basiert.
             </p>
             <p>
                Selbst dann, wenn ein TEI-Dokument mehrere Expressionen wiedergibt 
-               (wenn das Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionContainer.html" target="_blank">Expressionscontainer</a><span class="loddocborder"> ‹</span> fungiert, 
+               (wenn das Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionContainer.html" target="_blank">hc:ExpressionContainer</a><span class="loddocborder"> ‹</span> fungiert, 
                vgl. <a class="inlink" href="document_structure.html#STRU">Dokumentstruktur</a>), müssen diese Expressionen einem einzigen 
                physischen Träger entstammen. Eine Ausnahme bilden nur solche Fälle, 
                in denen das ursprüngliche Trägerartefakt aufgeteilt wurde und heute disloziert, 
@@ -36,7 +36,7 @@
             <p>
                Wenn ein TEI-Dokument nur einen Teil einer Expression enthält, weil die Expression 
                wegen ihrer Länge auf mehrere TEI-Dokumente aufgeteilt wurde (dann fungiert das 
-               Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionPartContainer.html" target="_blank">Expressionsteilcontainer</a><span class="loddocborder"> ‹</span>, 
+               Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionPartContainer.html" target="_blank">hc:ExpressionPartContainer</a><span class="loddocborder"> ‹</span>, 
                vgl. <a class="inlink" href="document_structure.html#STRU">Dokumentstruktur</a>), wird ein Element <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> 
                im übergeordneten TEI-Dokument erwartet, in dem die in mehrere Teildokumente aufgeteilte 
                Expression zusammengeführt wird.
@@ -141,7 +141,7 @@
                      in der Regel handelt es sich dabei um eine Seite (<span class="val">hc:Page</span>).</p>
                   
                   <p class="resdef">
-                     <span class="val">hc:Page</span> (›Seite‹): Eine der beiden Seiten eines Blattes.
+                     <span class="val">hc:Page</span> ( ›Seite‹ ): Eine der beiden Seiten eines Blattes.
                   </p>
                   
                   <p>
@@ -149,29 +149,35 @@
                   </p>
                   
                   <p class="resdef">
-                     <span class="val">hc:FrontCover</span> (›Vorderdeckel‹): 
+                     <span class="val">hc:FrontCover</span> ( ›Vorderdeckel‹ ): 
                   </p>
                   
                   <p class="resdef">
-                     <span class="val">hc:BackCover</span> (›Hinterdeckel‹): 
-                  </p>
-                  
-                  
-                  
-                  <p class="resdef">
-                     <span class="val">hc:BookBack</span> (›Buchrücken‹): 
+                     <span class="val">hc:BackCover</span> ( ›Hinterdeckel‹ ): 
                   </p>
                   
                   <p class="resdef">
-                     <span class="val">hc:ForeEdge</span> (›Vorderschnitt‹): 
+                     <span class="val">hc:FrontPasteDown</span> ( ›Vorderspiegel; Rückseite des Vorderdeckels; Innenseite des Vorderdeckels‹ ): 
                   </p>
                   
                   <p class="resdef">
-                     <span class="val">hc:TopEdge</span> (›Kopfschnitt; Oberschnitt; Oberkante‹): 
+                     <span class="val">hc:BackPasteDown</span> ( ›Hinterspiegel; Rückseite des Hinterdeckels; Innenseite des Hinterdeckels‹ ): 
                   </p>
                   
                   <p class="resdef">
-                     <span class="val">hc:BottomEdge</span> (›Fußschnitt; Unterschnitt; unterer Buchschnitt‹): 
+                     <span class="val">hc:BookBack</span> ( ›Buchrücken‹ ): 
+                  </p>
+                  
+                  <p class="resdef">
+                     <span class="val">hc:ForeEdge</span> ( ›Vorderschnitt‹ ): 
+                  </p>
+                  
+                  <p class="resdef">
+                     <span class="val">hc:TopEdge</span> ( ›Kopfschnitt; Oberschnitt; Oberkante‹ ): 
+                  </p>
+                  
+                  <p class="resdef">
+                     <span class="val">hc:BottomEdge</span> ( ›Fußschnitt; Unterschnitt; unterer Buchschnitt‹ ): 
                   </p>
                   
                   <p>
@@ -209,28 +215,30 @@
                
                <div id="FAC-DEC-CONTENTZONE">
                   
-                  <h3>Angaben zu Inhaltsbereichen</h3>
+                  <h3>Angaben zu Typen von Inhaltsbereichen</h3>
                   
                   <p>
-                     Auf einer nicht leeren Inhaltsfläche (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentSurface.html" target="_blank">Inhaltsfläche</a><span class="loddocborder"> ‹</span>) sind einzelne Inhalte in Inhaltsbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">Inhaltsbereich</a><span class="loddocborder"> ‹</span>) untergebracht.
-                     Inhaltsbereiche werden durch das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> repräsentiert, das in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> innerhalb von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>
+                     Auf einer nicht leeren Inhaltsfläche (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentSurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>) sind einzelne Inhalte 
+                     in Inhaltsbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) untergebracht.
+                     Inhaltsbereiche werden durch das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> repräsentiert, das in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> 
+                     innerhalb von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>
                      gesetzt wird:
                      <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a></span> »beschreibt eine beliebige zweidimensionale Fläche innerhalb eines
     <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements« <ul><li><span class="att">@ana</span></li><li><span class="att">@xml:id</span></li><li><span class="att">@n</span></li></ul></li></ul>
-                  </p> 
-                  
-                  
-                  
+                  </p>                  
                   <p>
                      <span class="aside"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>/<span class="att">@ana</span></span>
                      Je nach Inhaltstyp werden in ›heiEDITIONS‹ folgende Kategorien von Inhaltsbereichen 
                      unterschieden, die jeweils an <span class="att">@ana</span> anzugeben sind:  
                   </p>
                   <p class="resdef">
-                     <span class="val">hc:TextZone</span> (›Textbereich‹): Inhaltsbereich, der aus mindestens einer Zeile besteht.
+                     <span class="val">hc:TextZone</span> ( ›Textbereich‹ ): Inhaltsbereich, der aus mindestens einer Zeile besteht.
                   </p>
-                  <p>
-                     Ein Textbereich besteht aus mindestens einer Zeile (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/Line.html" target="_blank">Zeile</a><span class="loddocborder"> ‹</span>), also einer linear angeordneten Sequenz von Buchstaben, Zahlen oder anderen Symbolen. Zusätzlich können in einem Textbereich andere Bereiche eingebettet sein, inzeilig (z.B. mathematische Formen und Graphiken innerhalb einer Zeile) oder schwebend (Initialen).</p>
+                  <p class="resdef">
+                     <span class="val">hc:TableZone</span> ( ›‹ ): 
+                  </p>
+                  
+                  
                   
                   
                </div>
@@ -239,6 +247,32 @@
                   
                   <h3>Layoutdeklaration</h3>
                   
+                  
+               </div>
+               
+               <div id="FAC-DEC-SEMISTRUC">
+                  
+                  <h3>Semistrukturelle Angaben zu Layout- und Inhaltsbereichen</h3>
+                  
+                  <p>
+                     Ergänzend zur Angabe des jeweiligen Inhaltstyps eines Inhaltsbereichs und zur strukturellen
+                     Beschreibung des Layouts mithilfe von Angaben zu einem Containertyp und dessen Ausrichtung
+                     an <span class="att">@ana</span> und <span class="att">@rendition</span> können <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>-Elemente am Attribut
+                     <span class="att">@ana</span> weitere ergänzende Angaben tragen, die ihre Stellung im Layoutsystem einer
+                     Inhaltsfläche beschreiben. Die Bereitstellung solcher Angaben und deren Präzision ist dem
+                     Ermessen des Herausgebers überlassen; wenn verwendet, sollten diese Angaben aber 
+                     semantisch mit ›heiEDITIONS Concepts‹ konform sein.
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:Column</span> ( ›Spalte‹ ): Regelmäßig gestalteter, meist rechteckiger Bereich einer Inhaltsfläche.
+                  </p>
+                  
+                  
+               </div>
+               
+               <div id="FAC-DEC-PLACEMENT">
+                  
+                  <h3>Ergänzende Angaben zur Platzierung von Randbereichen</h3>
                   
                </div>
                
@@ -258,11 +292,11 @@
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                   Die entsprechende Zuweisung zu dieser Klasse erfolgt während der Verarbeitung 
                   automatisch, wenn kein <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> vorhanden ist. Andernfalls wird – ebenfalls 
-                  während der Verarbeitung – der Text der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionBasedOnExemplar.html" target="_blank">vorlagenbasierte Expression</a><span class="loddocborder"> ‹</span> 
+                  während der Verarbeitung – der Text der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionBasedOnExemplar.html" target="_blank">hc:ExpressionBasedOnExemplar</a><span class="loddocborder"> ‹</span> 
                   zugewiesen. 
                </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
                   Mit <a class="gi" href="../specifications/ref-listWit.html">&lt;listWit&gt;</a> kann außerdem auch dann gearbeitet werden, wenn der Text des 
-                  TEI-Dokuments kein <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/TextBasedOnExemplar.html" target="_blank"></a><span class="loddocborder"> ‹</span> ist. Lesartenangaben 
+                  TEI-Dokuments kein <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/TextBasedOnExemplar.html" target="_blank">hc:TextBasedOnExemplar</a><span class="loddocborder"> ‹</span> ist. Lesartenangaben 
                   im textkritischen Apparat sind dann genauso gut möglich, solche Lesarten sind dann 
                   aber nicht dem Text eines im Dokument direkt als Vorlage herangezogenen Textträgers 
                   gegenübergestellt.
@@ -281,7 +315,7 @@
                         In den beiden Beispielen fungiert als Identifier wahlweise die sog. DWork-Projektnummer oder 
                         ein editionseigenes Sigel für den Textzeugen.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 23.11.2020
+                        Letzte Aktualisierung: 25.11.2020
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
