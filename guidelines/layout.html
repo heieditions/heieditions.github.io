@@ -98,8 +98,12 @@
                
                <p>
                   Die beiden wichtigsten Elemente für die Deklaration physischer Strukturen des Inhaltsträgers in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> sind: 
-                  <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a></span> (›Inhaltsfläche‹)  <ul><li><span class="att">@ana</span></li><li><span class="att">@n</span></li><li><span class="att">@xml:id</span></li></ul></li><li><span class="item_label"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a></span> »beschreibt eine beliebige zweidimensionale Fläche innerhalb eines
-    <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements« </li></ul>
+                  <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a></span> ( ›Inhaltsfläche‹ )  <ul><li><span class="item_label"><span class="att">@ana</span></span></li><li><span class="item_label"><span class="att">@n</span></span></li><li><span class="item_label"><span class="att">@xml:id</span></span></li></ul></li><li><span class="item_label"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a></span> »beschreibt eine beliebige zweidimensionale Fläche innerhalb eines
+    <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements« (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>)<ul><li><span class="item_label"><span class="att">@ana</span></span></li><li><span class="item_label"><span class="att">@n</span></span></li><li><span class="item_label"><span class="att">@xml:id</span></span></li><li><span class="item_label"><span class="att">@hei:width</span></span>( ›Breite‹ ) gibt die relative Breite des Bereichs in Prozentanteilen an</li><li><span class="item_label"><span class="att">@rotate</span></span>»gibt das Ausmaß der Drehung (im Uhrzeigersinn) dieser <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> an.
+        Als Bezugspunkt gilt dabei die natürliche Ausrichtung des <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elternelements, die entweder
+        im <a class="gi" href="../specifications/ref-msDesc.html">&lt;msDesc&gt;</a>-Element beschrieben ist oder durch die Koordinaten des <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements selbst.
+        Die Drehung wird in Bogengrad angegeben. 
+      « (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>)</li></ul></li></ul>
                </p>
                
                <p>
@@ -224,7 +228,7 @@
                      innerhalb von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>
                      gesetzt wird:
                      <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a></span> »beschreibt eine beliebige zweidimensionale Fläche innerhalb eines
-    <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements« <ul><li><span class="att">@ana</span></li><li><span class="att">@xml:id</span></li><li><span class="att">@n</span></li></ul></li></ul>
+    <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements« (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>)<ul><li><span class="item_label"><span class="att">@ana</span></span></li><li><span class="item_label"><span class="att">@xml:id</span></span></li><li><span class="item_label"><span class="att">@n</span></span></li></ul></li></ul>
                   </p>                  
                   <p>
                      <span class="aside"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>/<span class="att">@ana</span></span>
@@ -235,12 +239,41 @@
                      <span class="val">hc:TextZone</span> ( ›Textbereich‹ ): Inhaltsbereich, der aus mindestens einer Zeile besteht.
                   </p>
                   <p class="resdef">
-                     <span class="val">hc:TableZone</span> ( ›‹ ): 
+                     <span class="val">hc:InitialZone</span> ( ›Bereich mit einer Initiale‹ ): Bereich, der eine Initiale enthält. Solche Bereiche haben einen hybriden Charakter, weil sie textuellen und bildlichen Inhalt gleichzeitig tragen. Sie enthalten eine Textzeile mit meist einem einzigen Zeichen und verweisen gleichzeitig auf einen Bildausschnitt.
                   </p>
-                  
-                  
-                  
-                  
+                  <p class="resdef">
+                     <span class="val">hc:TableZone</span> ( ›Tabellarischer Bereich‹ ): Inhaltsbereich, der aus einer Tabelle oder einem Teil einer Tabelle besteht.
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:MathematicalFormulaZone</span> ( ›Bereich mit einer mathematischen Formel‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:ChemicalFormulaZone</span> ( ›Bereich mit einer chemischen Formel‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:MusicalNotationZone</span> ( ›Bereich mit musikalischer Notation‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:ImageZone</span> ( ›Bildbereich‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:LineDrawingZone</span> ( ›Bereich mit Strichzeichnung‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:GraphicZone</span> ( ›Graphikbereich‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:ChartZone</span> ( ›Diagrammbereich‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:MapZone</span> ( ›Kartenbereich‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:SeparatorZone</span> ( ›Trennbereich‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:SpaceZone</span> ( ›Leerraumbereich‹ ): 
+                  </p>
                </div>
                
                <div id="FAC-DEC-LAYOUT">
@@ -315,7 +348,7 @@
                         In den beiden Beispielen fungiert als Identifier wahlweise die sog. DWork-Projektnummer oder 
                         ein editionseigenes Sigel für den Textzeugen.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 25.11.2020
+                        Letzte Aktualisierung: 27.11.2020
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

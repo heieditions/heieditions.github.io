@@ -160,7 +160,7 @@ span.code {
 }
 
 span.item_label::after {
-    content: ' '
+    content: ' '
 }
 
 span.val {
