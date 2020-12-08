@@ -99,7 +99,7 @@
                <p>
                   Die beiden wichtigsten Elemente für die Deklaration physischer Strukturen des Inhaltsträgers in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> sind: 
                   <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a></span> ( ›Inhaltsfläche‹ )  <ul><li><span class="item_label"><span class="att">@ana</span></span></li><li><span class="item_label"><span class="att">@n</span></span></li><li><span class="item_label"><span class="att">@xml:id</span></span></li></ul></li><li><span class="item_label"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a></span> »beschreibt eine beliebige zweidimensionale Fläche innerhalb eines
-    <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements« (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>)<ul><li><span class="item_label"><span class="att">@ana</span></span></li><li><span class="item_label"><span class="att">@n</span></span></li><li><span class="item_label"><span class="att">@xml:id</span></span></li><li><span class="item_label"><span class="att">@hei:width</span></span>( ›Breite‹ ) gibt die relative Breite des Bereichs in Prozentanteilen an</li><li><span class="item_label"><span class="att">@rotate</span></span>»gibt das Ausmaß der Drehung (im Uhrzeigersinn) dieser <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> an.
+    <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements« (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>)<ul><li><span class="item_label"><span class="att">@ana</span></span></li><li><span class="item_label"><span class="att">@n</span></span></li><li><span class="item_label"><span class="att">@xml:id</span></span></li><li><span class="item_label"><span class="att">@hei:width</span></span>( ›Breite‹ ) gibt die relative Breite des Bereichs in Prozentanteilen an.</li><li><span class="item_label"><span class="att">@rotate</span></span>»gibt das Ausmaß der Drehung (im Uhrzeigersinn) dieser <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> an.
         Als Bezugspunkt gilt dabei die natürliche Ausrichtung des <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elternelements, die entweder
         im <a class="gi" href="../specifications/ref-msDesc.html">&lt;msDesc&gt;</a>-Element beschrieben ist oder durch die Koordinaten des <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements selbst.
         Die Drehung wird in Bogengrad angegeben. 
@@ -214,6 +214,28 @@
             </pre>
         </div>
     
+                  <p>
+                     <span class="aside">Verknüpfung zum Digitalisat</span>
+                     Das Element <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> trägt als erstes Kindelement das Element <a class="gi" href="../specifications/ref-graphic.html">&lt;graphic&gt;</a>,
+                     das die Verknüpfung zu einer digitalen Abbildung der Inhaltsfläche herstellt:
+                     <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-graphic.html">&lt;graphic&gt;</a></span> ( ›Abbildung‹ )  Strukturierte Angabe der Verknüpfung zu einer digitalen Abbildung des visuellen Objekts, dessen Inhalt durch das Elternelement repräsentiert, dokumentiert und erschlossen wird. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-graphic.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@url</span></span>( ›URL‹ ) gibt die URL einer digitalen Abbildung an.</li><li><span class="item_label"><span class="att">@mimeType</span></span>gibt den Medientyp des verknüpften Bildes als <em>MIME media type</em>an.</li></ul></li></ul>
+                     Bei Angaben von Bildressourcen, die Seiten im Heidelberger Digitalisierungssystem 
+                     ›DWork‹ entsprechen, wird für <span class="att">@url</span> der in der HTML-Präsentation der Seite
+                     empfohlene Zitierlink verwendet. <span class="att">@mimeType</span> trägt dabei den Wert <span class="val">image/*</span>, 
+                     z. B.:                 
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<facsimile>
+   <surface ana="hc:Page" xml:id="wm001_1" n="1">
+      <graphic url="https://digi.ub.uni-heidelberg.de/diglit/wm001/0001" mimeType="image/*"/>
+      [...]
+   </surface>
+</facsimile>--></code>
+            </pre>
+        </div>
+    
                   
                </div>
                
@@ -281,6 +303,8 @@
                   <h3>Layoutdeklaration</h3>
                   
                   
+                  
+                  
                </div>
                
                <div id="FAC-DEC-SEMISTRUC">
@@ -297,7 +321,19 @@
                      semantisch mit ›heiEDITIONS Concepts‹ konform sein.
                   </p>
                   <p class="resdef">
-                     <span class="val">hc:Column</span> ( ›Spalte‹ ): Regelmäßig gestalteter, meist rechteckiger Bereich einer Inhaltsfläche.
+                     <span class="val">hc:MainZone</span> ( ›Hauptbereich‹ ): Bereich einer Inhaltsfläche, der sich innerhalb des Satz- oder Schriftspiegels befindet.
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:MarginalZone</span> ( ›Randbereich‹ ): Bereich einer Inhaltsfläche, der sich außerhalb des Satz- oder Schriftspiegels befindet.
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:Column</span> ( ›Spalte‹ ): Planvoll angelegter und für regelmäßig zu platzierenden Inhalt geschaffener Bereich einer Inhaltsfläche, der entweder direkt einen homogenen Inhalt enthält oder als Container für andere untergeordnete Inhaltsbereiche fungiert.
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:MainColumn</span> ( ›Hauptspalte‹ ): Spalte innerhalb des Satz- oder Schriftspiegels.
+                  </p>
+                  <p class="resdef">
+                     <span class="val">hc:MarginalColumn</span> ( ›Randspalte‹ ): Spalte außerhalb des Satz- oder Schriftspiegels.
                   </p>
                   
                   
@@ -348,7 +384,7 @@
                         In den beiden Beispielen fungiert als Identifier wahlweise die sog. DWork-Projektnummer oder 
                         ein editionseigenes Sigel für den Textzeugen.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 27.11.2020
+                        Letzte Aktualisierung: 08.12.2020
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

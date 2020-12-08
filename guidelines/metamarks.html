@@ -36,20 +36,58 @@
                
             </p>
             
-            <div id="MET-DITTO">
+            <div id="MET-REFERENCE">
                
-               <h2>Unterführungszeichen</h2>
+               <h2>Verweiszeichen</h2>
                
-               <p>
-                  Unterführungszeichen sind verweisende Platzhalterzeichen, die 
-               </p>
+               <div id="MET-DITTO">
+                  
+                  <h3>Unterführungszeichen</h3>
+                  
+                  <p>
+                     <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/DittoMark.html" target="_blank">hc:DittoMark</a><span class="loddocborder"> ‹</span> 
+                  </p>
+                  <p>
+                     Dass Unterführungszeichen als Metazeichen verstanden werden, ist eine von möglicherweise 
+                     mehreren sinnvollen Perspektiven auf dieses Phänomen.<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup> 
+                     Wenn ein Herausgeber sie einnnimmt, bekundet er damit seine Auffassung, 
+                     dass die Unterführungszeichen nach mutmaßlicher 
+                     Intention ihres Produzenten nicht als Teil des eigentlichen Inhalts verstanden werden sollen. 
+                  </p>
+                  <p>
+                     Die Konsequenz dieser Auffassung ist, dass mit <a class="gi" href="../specifications/ref-metamark.html">&lt;metamark&gt;</a> getaggte Unterführungszeichen
+                     in bestimmten Visualisierungsmodi nicht angezeigt werden. Dem Herausgeber steht es übrigens frei, 
+                     Unterführungszeichen grundsätzlich gar nicht als solche wiederzugeben, sondern sie stillschweigend 
+                     durch den mutmaßlich zu wiederholenden Inhalt zu ersetzen. Wenn sie jedoch transkribiert und
+                     mit <a class="gi" href="../specifications/ref-metamark.html">&lt;metamark&gt;</a> ausgezeichnet werden, ist es naheliegend, sie mit <a class="gi" href="../specifications/ref-surplus.html">&lt;surplus&gt;</a> zu umschließen
+                     und zusammen mit einem Duplikat des zu wiederholenden Inhalts 
+                     in ein <a class="gi" href="../specifications/ref-choice.html">&lt;choice&gt;</a>-<a class="gi" href="../specifications/ref-surplus.html">&lt;surplus&gt;</a>-<a class="gi" href="../specifications/ref-supplied.html">&lt;supplied&gt;</a>-Konstrukt einzubetten.<sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup> 
+                  </p>
+                  <p>
+                     
+                  </p>
+                  
+               </div>
                
             </div>
             
             
+            
+            
          </div>
-      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 27.11.2020
+      <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
+                        Eine andere mögliche Perspektive wäre, sie als ein vollwertiges Textsegment mit Verweischarakter
+                        aufzufassen, das in TEI mit <a class="gi" href="../specifications/ref-ref.html">&lt;ref&gt;</a> getaggt werden könnte. Diese Sicht würde
+                        davon ausgehen, dass in der Edition die Unterführungszeichen nicht durch ein Duplikat
+                        eines zu wiederholenden Textsegments ersetzt würden, sondern ›gleichberechtigt‹ 
+                        Teil des eigentlichen Inhalts blieben.                      
+                     </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
+                        Allerdings ist es nicht empfehlenswert, das Duplikat als eine identische Kopie des zu wiederholenden
+                        Inhalts mit technischen Mitteln wie <span class="att">@copyOf</span> zu erzeugen, weil dadurch 
+                        unerwünschterweise auch etwa Zeilenumbrüche, Auszeichnungen visueller Befunde u. Ä.
+                        kopiert würden, die nur einmalig an ihrer ursprünglichen Stelle sinnvoll sind.
+                     </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 08.12.2020
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

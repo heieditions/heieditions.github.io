@@ -1,0 +1,123 @@
+<!DOCTYPE HTML>
+<html><head><title>heiEDITIONS Dokumentation | Visuelle Auszeichnungen und Verzierungen</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"><link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Spectral&amp;family=Ubuntu+Mono&amp;&amp;display=swap" rel="stylesheet"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Visuelle Auszeichnungen und Verzierungen</nav><main>
+         <div id="HIGHLIGHTINGS">
+            
+            <h1>Visuelle Auszeichnungen und Verzierungen</h1>
+            
+            <p>
+               Visuelle Auszeichnungen der Vorlage werden mit dem Element <a class="gi" href="../specifications/ref-hi.html">&lt;hi&gt;</a> markiert:  
+               <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-hi.html">&lt;hi&gt;</a></span> ( ›hervorgehoben‹ )  »markiert ein Wort oder eine Textpassage, das/die sich grafisch vom umgebenden Text abhebt, ohne dass ein inhaltlicher Grund dafür angegeben wird.« (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html" target="_blank">TEI</a>)<ul><li><span class="item_label"><span class="att">@rendition</span></span>( ›Wiedergabe‹ ) gibt die Art der Auszeichnung mit einem Verweis auf eine Ressource von ›heiEDITIONS Concepts‹ an </li><li><span class="item_label"><span class="att">@hei:color</span></span></li></ul></li></ul>
+            </p>
+            
+            <p>
+               Es können mehrere <a class="gi" href="../specifications/ref-hi.html">&lt;hi&gt;</a>-Elemente ineinander geschachtelt sein, wenn ein größeres 
+               visuell hervorgehobenes Textsegment ein kleineres Textsegment enthält, 
+               das seinerseits auf eine andere Weise visuell ausgezeichnet ist (z. B. 
+               ein vergrößerter Buchstabe in einem größeren unterstrichenen Textsegment). Liegen mehrere
+               Typen visueller Hervorhebung auf einem einzigen Textsegment vor, 
+               können mehrere Angaben im Attribut <span class="att">@rendition</span> an einem einzigen 
+               <a class="gi" href="../specifications/ref-hi.html">&lt;hi&gt;</a> kombiniert werden.              
+            </p>
+            
+            <div id="HIGHLIGHTINGS-REDSTROKE">
+               
+               <h2>Rote Strichelung</h2>
+               
+               <p class="resdef">
+                  <span class="val">hc:RedStroke</span> ( ›rote Strichelung‹ ): 
+               </p>
+               
+            </div>
+            
+            
+            
+            <div id="HIGHLIGHTINGS-VERSAL">
+               
+               <h2>Versal</h2>
+               
+               <p class="resdef">
+                  <span class="val">hc:Versal</span> ( ›Versal‹ ): 
+               </p>
+               
+            </div>
+            
+            
+            
+            <div id="HIGHLIGHTINGS-CADEL">
+               
+               <h2>Kadelle</h2>
+               
+               <p class="resdef">
+                  <span class="val">hc:Cadel</span> ( ›Kadelle‹ ): »Großbuchstaben des 14. und 15. Jh., deren Schäfte und Bögen aus parallel laufenden, sich zum Teil durchkreuzenden breiten Strichen in Schrifttinte mit der Schreibfeder gebildet sind« (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 60). Allgemeiner auch eine sonstige vergrößerte <em>littera notabilior</em>, eine Satzmajuskel bzw. ein Versal, wenn der Buchstabe mit Schrifttinte ausgeführt (und ggf. rot gestrichelt) und ebenfalls in Schrifttinte verziert ist, ggf. mit feinem Fleuronné oder figuralen Motiven. Eine Cadelle kann als Initiale eine strukturell-gliedernde Funktion übernehmen, dient aber häufig auch ›nur‹ als visuelle Marke jeweils in der ersten Zeile einer Seite oder Spalte.
+               </p>
+               
+               <img class="illustration" src="../images/wlb_hb_v_95_0019_Kadelle.jpg" alt="Kadelle als Versal ohne sonstige strukturell-gliedernde Funktion in der ersten Zeile einer Spalte"><p class="bildunterschrift">Abb. 1: 
+                     Kadelle als Versal ohne sonstige strukturell-gliedernde Funktion in der ersten Zeile einer Spalte
+                     (Stuttgart, Württembergische Landesbibliotek, HB V 95, fol. 8r, <a class="inlink" href="https://digi.ub.uni-heidelberg.de/diglit/wlb_hb_v_95/0019">https://digi.ub.uni-heidelberg.de/diglit/wlb_hb_v_95/0019</a> 
+                     bzw. <span class="outlinkprefix">↪ </span><a class="outlink" href="http://digital.wlb-stuttgart.de/purl/bsz343181304/page/19" target="_blank">http://digital.wlb-stuttgart.de/purl/bsz343181304/page/19</a>, Abbildung gemeinfrei).
+                  </p>
+               
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<l>
+   <lb n="1"/>
+   <hi rendition="hc:Cadel">D</hi>ı wıle er wılt d&zig; meıſtírſchaft 
+</l>--></code>
+            </pre>
+        </div>
+    
+               
+               
+            </div>
+            
+            
+            <div id="HIGHLIGHTINGS-COLOR">
+               
+               <h2>Farbe</h2>
+               
+               <p>
+                  Textsegmente, die sich durch ihre Farbe abheben, können am Element <a class="gi" href="../specifications/ref-hi.html">&lt;hi&gt;</a>
+                  mit dem Attribut <span class="att">@hei:color</span> markiert werden. Mögliche Attributwerte sind dabei bislang 
+                  z. B. <span class="val">Red</span>, <span class="val">Blue</span> und <span class="val">Green</span>. 
+                  Bei diesen Werten handelt es sich um keine Konzepte von ›heiEDITIONS‹,
+                  den Attributwerten wird also kein <span class="val">hc:</span> vorangestelt.
+               </p>
+               
+               <img class="illustration" src="../images/hab_mss37-19-aug-2f_0044_red.jpg" alt="Mit roter Farbe geschriebener Text"><p class="bildunterschrift">Abb. 3: 
+                     Mit roter Farbe geschriebener Text
+                     (Wolfenbüttel, Herzog August Bibliothek, Cod. Guelf. 37.19 Aug. 2°, fol. 21v, <span class="outlinkprefix">↪ </span><a class="outlink" href="https://doi.org/10.11588/diglit.24512#0044" target="_blank">https://doi.org/10.11588/diglit.24512#0044</a>).
+                  </p>
+               
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<lg ana="hc:Couplet">
+   <l>
+      <lb/>
+      <hi hei:color="Red"><hi rendition="hc:Versal">H</hi>ıe endet ſıch das eꝛſte tayl</hi>
+   </l>
+   <l>
+      <lb/>
+      <hi hei:color="Red"><hi rendition="hc:Versal">G</hi>ot geb vns zu&osup; dem andeꝛn hayl</hi>
+   </l>                       
+</lg>--></code>
+            </pre>
+        </div>
+    
+               
+               
+            </div>
+
+         </div>
+      <br><br><hr><div class="bibliography"><h3>Zitierte Literatur</h3><dl class="inline"><dt id="jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</dt><dd>Jakobi-Mirwald, Christine: <em>Buchmalerei : Terminologie in der Kunstgeschichte</em>. 4., überarb. Aufl. unter Mitarbeit von Martin Roland. Berlin : Reimer, 2015. – ISBN 978-3-496-01499-7
+           </dd></dl></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 08.12.2020
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><script src="../prism.js"></script></body></html>
