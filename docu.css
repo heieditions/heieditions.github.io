@@ -43,6 +43,11 @@ a.navref {
   color: Gray;
 }
 
+a.resdef_box {
+  text-decoration: none;
+  color: Black;
+}
+
 body {
     /*max-width: 800px;*/
     font-family: 'Spectral', serif;
@@ -52,19 +57,30 @@ div.endnote {
     margin-bottom: 10px;
 }
 
-dl.inline {
+div.exemplum {
+  /*background-color: #f0f3f5;*/
+  padding: 10px;
+  border: 1px;
+  border-radius: 5px;
+  border-style: dotted;
+  border-color: Gray;
+  margin-top: 40px;
+}
+
+/*dl {
                     text-indent: -2em;
                     margin-left: 4em;
-                   }
+                   }*/
                    
-dl.inline dt { 
-  font-weight: bold; 
+dt { 
+  /*font-weight: bold; */
   color: #9F0001; /* Heidelberg Red */
-  display: inline-block; 
+  /*display: inline-block; */
+  /*font-family: 'Open Sans', sans-serif;*/
 }
-dl.inline dt:after { content:': '; }
-dl.inline dd { display: inline; margin: 0; }
-dl.inline dd:after { display:block; content:''; }
+dt:after { content:': '; }
+/*dd { display: inline; margin: 0; }
+dd:after { display:block; content:''; }*/
 
 
 footer {
@@ -107,6 +123,10 @@ img.illustration {
     border:1px solid black;
 }
 
+img.smaller_graphic {
+  width: 40%;
+}
+
 #impressum {
   margin-right: 30px;
   margin-left: 20px;
@@ -135,6 +155,16 @@ p.bildunterschrift {
   font-weight: bold;
 }
 
+p.bildunterschrift_ref {
+  width: 80%; 
+  font-size: smaller;
+}
+
+p.exemplum_heading {
+  width: 80%;
+  font-weight: bold;
+}
+
 p.resdef {
   background-color: #f5f2f0;
   padding: 10px;
@@ -157,6 +187,20 @@ span.biblrefprefix {
 span.code {
   font-family: 'Ubuntu Mono', monospace;
   background-color: PaleTurquoise;
+}
+
+span.exemplum_label {
+  position:relative; 
+  top:-20px; 
+  margin-left: 40px; 
+  background-color:#fff;
+  /*padding:0 10px;*/  
+  /*background-color: #f0f3f5;*/
+  padding: 5px 15px 5px 15px;
+  border: 1px;
+  border-radius: 3px;
+  border-style: dotted;
+  border-color: Gray;
 }
 
 span.item_label::after {
@@ -193,6 +237,7 @@ td {
 
 .egxml {
     font-family: 'Ubuntu Mono', monospace;
+    margin-bottom: 40px;
 }
 
 /* xmlverbatim */
@@ -293,5 +338,12 @@ aside,
     color: #9F0001; /* Heidelberg Red, #990000? */ 
     font-size: 20px;
     margin-top: 15px;
-    
+}
+
+#deco {
+  width: 30vw;
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  opacity: 0.5;
 }

@@ -9,24 +9,42 @@
             <h1>Erfassung visueller Strukturen des Textträgers</h1>
             
             <p>
+               Die ›Quellenansicht‹ (<em>source view</em>) ist
+               ein Visualisierungsmodus von ›heiEDITIONS‹, der strukturierte
+               Erschließungsinformationen der Edition über die visuelle Beschaffenheit und Anordnung 
+               des materiell realisierten Inhalts einer Expression in einem physischen Träger
+               für eine originalnahe Anzeige nutzt, die sich an Inhaltsflächen (in der Regel Seiten),
+               Inhaltsbereichen (häufig Spalten) und Zeilen als primären strukturellen Einheiten orientiert. 
+               Die Quellenansicht kann nur erstellt werden, wenn in einem TEI-Dokument
+               hinreichende Informationen über visuelle Strukturen einer physischen Vorlage
+               erfasst werden; ist das nicht der Fall, kann ›heiEDITIONS‹ 
+               aus einem TEI-Dokument immer noch eine ›Leseansicht‹ (<em>reading view)</em>
+               erstellen, die sich an semantisch-logischen Strukturen des TEI-Dokuments orientiert
+               (Inhalt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>). Eine Leseansicht kann aber sinnvollerweise auch 
+               parallel zu einer Quellenansicht angeboten werden.
+            </p>
+            <p>
                Ein TEI-Dokument, das die Expression eines Werkes abbildet, <em>kann</em> 
-               gleichzeitig auch bestimmte Strukturen eines physischen Trägers erfassen, 
+               also gleichzeitig auch bestimmte Strukturen eines physischen Trägers erfassen, 
+               in dem sich die Expression manifestiert und verkörpert und
                der als Vorlage für die im TEI-Dokument erarbeitete Edition fungiert. 
                Wenn das der Fall ist, muss das TEI-Dokument unterhalb des Wurzelelements <a class="gi" href="../specifications/ref-TEI.html">&lt;TEI&gt;</a> 
                neben <a class="gi" href="../specifications/ref-teiHeader.html">&lt;teiHeader&gt;</a> und <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> zusätzlich das Element <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> 
                <span class="aside"><a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a></span> enthalten (s. weiter unten <a class="inlink" href="#FAC-DEC">Faksimile-Deklaration</a>. 
                Ist kein Element <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> vorhanden, wird davon ausgegangen, dass das TEI-Dokument 
                keinen physischen Textträger dokumentiert; der Inhalt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> wird dann als 
-               eine Instanz der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionWithoutExemplar.html" target="_blank">hc:ExpressionWithoutExemplar</a><span class="loddocborder"> ‹</span> betrachtet.
+               eine Instanz der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionwithoutexemplar.html" target="_blank">hc:ExpressionWithoutExemplar</a><span class="loddocborder"> ‹</span> betrachtet.
                <sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
             </p>
-            <p class="resdef">
+            <a class="resdef_box" href="../concepts/ExpressionWithoutExemplar.html"><p class="resdef">
                <span class="val">hc:ExpressionWithoutExemplar</span> ( ›Expression ohne (physische) Vorlage‹ ): Expression, die auf keinem physischen Träger als Vorlage basiert.
-            </p>
+            </p></a>
             <p>
                Selbst dann, wenn ein TEI-Dokument mehrere Expressionen wiedergibt 
-               (wenn das Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionContainer.html" target="_blank">hc:ExpressionContainer</a><span class="loddocborder"> ‹</span> fungiert, 
-               vgl. <a class="inlink" href="document_structure.html#STRU">Dokumentstruktur</a>), müssen diese Expressionen einem einzigen 
+               (wenn das Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressioncontainer.html" target="_blank">hc:ExpressionContainer</a><span class="loddocborder"> ‹</span> fungiert, 
+               vgl. <a class="inlink" href="document_structure.html#STRU">Dokumentstruktur</a>) und wenn gleichzeitig
+               die Erfassung der Strukturen des physischen Trägers angestrebt wird, 
+               müssen diese Expressionen einem einzigen 
                physischen Träger entstammen. Eine Ausnahme bilden nur solche Fälle, 
                in denen das ursprüngliche Trägerartefakt aufgeteilt wurde und heute disloziert, 
                unter unterschiedlichen Signaturen und ggf. an verschiedenen Orten, 
@@ -36,7 +54,7 @@
             <p>
                Wenn ein TEI-Dokument nur einen Teil einer Expression enthält, weil die Expression 
                wegen ihrer Länge auf mehrere TEI-Dokumente aufgeteilt wurde (dann fungiert das 
-               Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionPartContainer.html" target="_blank">hc:ExpressionPartContainer</a><span class="loddocborder"> ‹</span>, 
+               Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionpartcontainer.html" target="_blank">hc:ExpressionPartContainer</a><span class="loddocborder"> ‹</span>, 
                vgl. <a class="inlink" href="document_structure.html#STRU">Dokumentstruktur</a>), wird ein Element <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> 
                im übergeordneten TEI-Dokument erwartet, in dem die in mehrere Teildokumente aufgeteilte 
                Expression zusammengeführt wird.
@@ -98,8 +116,7 @@
                
                <p>
                   Die beiden wichtigsten Elemente für die Deklaration physischer Strukturen des Inhaltsträgers in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> sind: 
-                  <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a></span> ( ›Inhaltsfläche‹ )  <ul><li><span class="item_label"><span class="att">@ana</span></span></li><li><span class="item_label"><span class="att">@n</span></span></li><li><span class="item_label"><span class="att">@xml:id</span></span></li></ul></li><li><span class="item_label"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a></span> »beschreibt eine beliebige zweidimensionale Fläche innerhalb eines
-    <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements« (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>)<ul><li><span class="item_label"><span class="att">@ana</span></span></li><li><span class="item_label"><span class="att">@n</span></span></li><li><span class="item_label"><span class="att">@xml:id</span></span></li><li><span class="item_label"><span class="att">@hei:width</span></span>( ›Breite‹ ) gibt die relative Breite des Bereichs in Prozentanteilen an.</li><li><span class="item_label"><span class="att">@rotate</span></span>»gibt das Ausmaß der Drehung (im Uhrzeigersinn) dieser <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> an.
+                  <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a></span> ( ›Inhaltsfläche‹ )  Zweidimensionale Fläche mit einem Inhalt, der in einem oder mehreren Inhaltsbereichen auf der Inhaltsfläche platziert ist. Die strukturelle Beschreibung einer solchen Fläche ist durch Koordinaten oder mit einem Layoutsystem möglich. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-surface.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@ana</span></span>gibt die Art der Inhaltsfläche an.</li><li><span class="item_label"><span class="att">@n</span></span>( ›Bezeichner‹ ) gibt einen eindeutigen Bezeichner für die Inhaltsfläche an.</li><li><span class="item_label"><span class="att">@xml:id</span></span>( ›ID‹ ) gibt einen eindeutigen technischen Identifier für die Inhaltsfläche an.</li></ul></li><li><span class="item_label"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a></span> ( ›Bereich‹; ›Zone‹ )  Ein beliebiger zweidimensionaler Bereich innerhalb einer Inhaltsfläche. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@ana</span></span>gibt die Art des Bereichs an.</li><li><span class="item_label"><span class="att">@n</span></span>( ›Bezeichner‹ ) gibt einen eindeutigen Bezeichner für den Bereich an.</li><li><span class="item_label"><span class="att">@xml:id</span></span>( ›ID‹ ) gibt einen eindeutigen technischen Identifier für den Bereich an.</li><li><span class="item_label"><span class="att">@rendition</span></span>( ›Wiedergabe‹ ) gibt die Art des Bereichs hinsichtlich seiner visuellen Umsetzung an.</li><li><span class="item_label"><span class="att">@hei:width</span></span>( ›Breite‹ ) gibt die relative Breite des Bereichs in Prozentanteilen an.</li><li><span class="item_label"><span class="att">@rotate</span></span>»gibt das Ausmaß der Drehung (im Uhrzeigersinn) dieser <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> an.
         Als Bezugspunkt gilt dabei die natürliche Ausrichtung des <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elternelements, die entweder
         im <a class="gi" href="../specifications/ref-msDesc.html">&lt;msDesc&gt;</a>-Element beschrieben ist oder durch die Koordinaten des <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements selbst.
         Die Drehung wird in Bogengrad angegeben. 
@@ -107,7 +124,7 @@
                </p>
                
                <p>
-                  Im Element <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> wird zunächst für jede Seite, zu der im TEI-Code ein Inhalt erfasst wird, 
+                  Im Element <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> wird zunächst für jede Seite, zu der innerhalb von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> ein Inhalt erfasst wird, 
                   ein Element <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> angelegt. Die Reihenfolge der <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elemente kann 
                   sich an der Reihenfolge in der Präsentation des Digitalisats (an der UB Heidelberg die Reihenfolge in DWork) 
                   orientieren, muss es aber nicht notwendigerweise. 
@@ -130,9 +147,8 @@
                <p>
                   Seiten, die keinen Inhalt tragen, der mit TEI-Mitteln erfasst würde (Texte oder Bilder), 
                   erhalten in der Regel kein eigenes <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>. Falls doch, bleibt der TEI-Inhalt solcher Seiten 
-                  später ohnehin leer.
+                  ohnehin leer.
                </p>
-               
                
                
                <div id="FAC-DEC-SURFACE">
@@ -144,45 +160,45 @@
                      Die Art der von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> repräsentierten Inhaltsfläche wird an <span class="att">@ana</span> angegeben, 
                      in der Regel handelt es sich dabei um eine Seite (<span class="val">hc:Page</span>).</p>
                   
-                  <p class="resdef">
+                  <a class="resdef_box" href="../concepts/Page.html"><p class="resdef">
                      <span class="val">hc:Page</span> ( ›Seite‹ ): Eine der beiden Seiten eines Blattes.
-                  </p>
+                  </p></a>
                   
                   <p>
                      Andere vorgesehenen Typen von Inhaltsflächen sind:
                   </p>
                   
-                  <p class="resdef">
+                  <a class="resdef_box" href="../concepts/FrontCover.html"><p class="resdef">
                      <span class="val">hc:FrontCover</span> ( ›Vorderdeckel‹ ): 
-                  </p>
+                  </p></a>
                   
-                  <p class="resdef">
+                  <a class="resdef_box" href="../concepts/BackCover.html"><p class="resdef">
                      <span class="val">hc:BackCover</span> ( ›Hinterdeckel‹ ): 
-                  </p>
+                  </p></a>
                   
-                  <p class="resdef">
+                  <a class="resdef_box" href="../concepts/FrontPasteDown.html"><p class="resdef">
                      <span class="val">hc:FrontPasteDown</span> ( ›Vorderspiegel; Rückseite des Vorderdeckels; Innenseite des Vorderdeckels‹ ): 
-                  </p>
+                  </p></a>
                   
-                  <p class="resdef">
+                  <a class="resdef_box" href="../concepts/BackPasteDown.html"><p class="resdef">
                      <span class="val">hc:BackPasteDown</span> ( ›Hinterspiegel; Rückseite des Hinterdeckels; Innenseite des Hinterdeckels‹ ): 
-                  </p>
+                  </p></a>
                   
-                  <p class="resdef">
+                  <a class="resdef_box" href="../concepts/BookBack.html"><p class="resdef">
                      <span class="val">hc:BookBack</span> ( ›Buchrücken‹ ): 
-                  </p>
+                  </p></a>
                   
-                  <p class="resdef">
+                  <a class="resdef_box" href="../concepts/ForeEdge.html"><p class="resdef">
                      <span class="val">hc:ForeEdge</span> ( ›Vorderschnitt‹ ): 
-                  </p>
+                  </p></a>
                   
-                  <p class="resdef">
+                  <a class="resdef_box" href="../concepts/TopEdge.html"><p class="resdef">
                      <span class="val">hc:TopEdge</span> ( ›Kopfschnitt; Oberschnitt; Oberkante‹ ): 
-                  </p>
+                  </p></a>
                   
-                  <p class="resdef">
+                  <a class="resdef_box" href="../concepts/BottomEdge.html"><p class="resdef">
                      <span class="val">hc:BottomEdge</span> ( ›Fußschnitt; Unterschnitt; unterer Buchschnitt‹ ): 
-                  </p>
+                  </p></a>
                   
                   <p>
                      <span class="aside"><a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>/<span class="att">@n</span></span>
@@ -218,7 +234,7 @@
                      <span class="aside">Verknüpfung zum Digitalisat</span>
                      Das Element <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> trägt als erstes Kindelement das Element <a class="gi" href="../specifications/ref-graphic.html">&lt;graphic&gt;</a>,
                      das die Verknüpfung zu einer digitalen Abbildung der Inhaltsfläche herstellt:
-                     <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-graphic.html">&lt;graphic&gt;</a></span> ( ›Abbildung‹ )  Strukturierte Angabe der Verknüpfung zu einer digitalen Abbildung des visuellen Objekts, dessen Inhalt durch das Elternelement repräsentiert, dokumentiert und erschlossen wird. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-graphic.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@url</span></span>( ›URL‹ ) gibt die URL einer digitalen Abbildung an.</li><li><span class="item_label"><span class="att">@mimeType</span></span>gibt den Medientyp des verknüpften Bildes als <em>MIME media type</em>an.</li></ul></li></ul>
+                     <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-graphic.html">&lt;graphic&gt;</a></span> ( ›Abbildung‹ )  Strukturierte Angabe der Verknüpfung zu einer digitalen Abbildung des visuellen Objekts, dessen Inhalt durch das Elternelement repräsentiert, dokumentiert und erschlossen wird. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-graphic.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@url</span></span>( ›URL‹ ) gibt die URL einer digitalen Abbildung an.</li><li><span class="item_label"><span class="att">@mimeType</span></span>gibt den Medientyp des verknüpften Bildes als <em>MIME media type</em> an.</li></ul></li></ul>
                      Bei Angaben von Bildressourcen, die Seiten im Heidelberger Digitalisierungssystem 
                      ›DWork‹ entsprechen, wird für <span class="att">@url</span> der in der HTML-Präsentation der Seite
                      empfohlene Zitierlink verwendet. <span class="att">@mimeType</span> trägt dabei den Wert <span class="val">image/*</span>, 
@@ -244,65 +260,191 @@
                   <h3>Angaben zu Typen von Inhaltsbereichen</h3>
                   
                   <p>
-                     Auf einer nicht leeren Inhaltsfläche (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentSurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>) sind einzelne Inhalte 
-                     in Inhaltsbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) untergebracht.
-                     Inhaltsbereiche werden durch das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> repräsentiert, das in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> 
-                     innerhalb von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>
-                     gesetzt wird:
-                     <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a></span> »beschreibt eine beliebige zweidimensionale Fläche innerhalb eines
-    <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements« (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>)<ul><li><span class="item_label"><span class="att">@ana</span></span></li><li><span class="item_label"><span class="att">@xml:id</span></span></li><li><span class="item_label"><span class="att">@n</span></span></li></ul></li></ul>
+                     Auf einer Inhaltsfläche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentsurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>) sind einzelne Inhalte 
+                     in Inhaltsbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) untergebracht.
+                     Inhaltsbereiche werden <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>-Elemente repräsentiert, die in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> 
+                     entweder direkt als Kindelemente innerhalb von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> oder innerhalb eines übergeordneten
+                     <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stehen. Ein Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>, das seinerseits kein Kindelement <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>
+                     enthält, ist ein Inhaltsbereich (von Ausnahmen bei Hilfsbereichen – <span class="loddocborder">› </span><a class="loddoc" href="../concepts/auxiliaryzone.html" target="_blank">hc:AuxiliaryZone</a><span class="loddocborder"> ‹</span> – abgesehen).
                   </p>                  
                   <p>
                      <span class="aside"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>/<span class="att">@ana</span></span>
                      Je nach Inhaltstyp werden in ›heiEDITIONS‹ folgende Kategorien von Inhaltsbereichen 
                      unterschieden, die jeweils an <span class="att">@ana</span> anzugeben sind:  
                   </p>
-                  <p class="resdef">
+                  <a class="resdef_box" href="../concepts/TextZone.html"><p class="resdef">
                      <span class="val">hc:TextZone</span> ( ›Textbereich‹ ): Inhaltsbereich, der aus mindestens einer Zeile besteht.
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/InitialZone.html"><p class="resdef">
                      <span class="val">hc:InitialZone</span> ( ›Bereich mit einer Initiale‹ ): Bereich, der eine Initiale enthält. Solche Bereiche haben einen hybriden Charakter, weil sie textuellen und bildlichen Inhalt gleichzeitig tragen. Sie enthalten eine Textzeile mit meist einem einzigen Zeichen und verweisen gleichzeitig auf einen Bildausschnitt.
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/TableZone.html"><p class="resdef">
                      <span class="val">hc:TableZone</span> ( ›Tabellarischer Bereich‹ ): Inhaltsbereich, der aus einer Tabelle oder einem Teil einer Tabelle besteht.
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/MathematicalFormulaZone.html"><p class="resdef">
                      <span class="val">hc:MathematicalFormulaZone</span> ( ›Bereich mit einer mathematischen Formel‹ ): 
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/ChemicalFormulaZone.html"><p class="resdef">
                      <span class="val">hc:ChemicalFormulaZone</span> ( ›Bereich mit einer chemischen Formel‹ ): 
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/MusicalNotationZone.html"><p class="resdef">
                      <span class="val">hc:MusicalNotationZone</span> ( ›Bereich mit musikalischer Notation‹ ): 
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/ImageZone.html"><p class="resdef">
                      <span class="val">hc:ImageZone</span> ( ›Bildbereich‹ ): 
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/LineDrawingZone.html"><p class="resdef">
                      <span class="val">hc:LineDrawingZone</span> ( ›Bereich mit Strichzeichnung‹ ): 
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/GraphicZone.html"><p class="resdef">
                      <span class="val">hc:GraphicZone</span> ( ›Graphikbereich‹ ): 
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/ChartZone.html"><p class="resdef">
                      <span class="val">hc:ChartZone</span> ( ›Diagrammbereich‹ ): 
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/MapZone.html"><p class="resdef">
                      <span class="val">hc:MapZone</span> ( ›Kartenbereich‹ ): 
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/SeparatorZone.html"><p class="resdef">
                      <span class="val">hc:SeparatorZone</span> ( ›Trennbereich‹ ): 
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/SpaceZone.html"><p class="resdef">
                      <span class="val">hc:SpaceZone</span> ( ›Leerraumbereich‹ ): 
+                  </p></a>
+                  
+                  <p>
+                     In einem einfachen Fall, wenn sich auf einer Seite ein einziger Textbereich befindet,
+                     könnte dies innerhalb von <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> auf folgende Weise deklariert werden:
                   </p>
+                  <img class="smaller_graphic" src="../images/page_with_1_text_zone.svg" alt="Eine Seite mit einem einzigen, nicht näher beschriebenen Textbereich."><p class="bildunterschrift">Abb. 1: Eine Seite mit einem einzigen, nicht näher beschriebenen Textbereich.</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<surface ana="hc:Page" xml:id="Ex_1r" n="1r">
+   <graphic url="https://digi.ub.uni-heidelberg.de/diglit/ex001/0001" mimeType="image/*"/>
+   <zone ana="hc:TextZone" xml:id="Ex_1r-a"/>
+</surface>--></code>
+            </pre>
+        </div>
+    
                </div>
                
                <div id="FAC-DEC-LAYOUT">
                   
-                  <h3>Layoutdeklaration</h3>
+                  <h3>Layouterfassung</h3>
                   
+                  <p>
+                     Wenn auf einer Inhaltsfläche mehrere Inhaltsbereiche vorkommen, die
+                     in einer bestimmten Anordnung zueinander stehen, bietet ›heiEDITIONS‹
+                     die Möglichkeit, ohne Rückgriff auf explizite Koordinatenangaben 
+                     das Layout mithilfe rechteckiger horizontaler und vertikaler
+                     Container grob zu beschreiben. Dazu dienen <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>-Elemente innerhalb von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>, die 
+                     als übergeordnete Container einzelne Inhaltsbereiche gruppieren.
+                     Eine solche Deklaration des Layouts kann
+                     direkt für die Visualisierung in der Quellenansicht nachgenutzt werden.<sup><a href="#note_6" id="note_reference_6" class="note_mark">6)</a></sup>
+                  </p>
+                  <p>
+                     Ohne eine Deklaration des Layouts mithilfe übergeordneter <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>-Elemente
+                     werden die ggf. direkt auf Kindebene von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> platzierten und
+                     einzelne Inhaltsbereiche repräsentierenden <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>-Elemente als vertikal
+                     übereinander stehend verstanden und entsprechend verarbeitet. Diese einfache Struktur
+                     kann (und soll) verwendet werden, wenn sich tatsächlich innerhalb einer Inhaltsfläche 
+                     mehrere Inhaltsbereiche vertikal übereinander befinden und keine weiteren Informationen
+                     zu ihrer Anordnung (etwa zur Ausrichtung) angegeben werden sollen. So könnte eine
+                     Seite mit einem Textbereich und einem darunter befindlichen Bildbereich 
+                     wie folgt beschrieben werden:
+                  </p>
+                  <img class="smaller_graphic" src="../images/page_with_text_and_image_zone.svg" alt="Eine Seite mit einem Textbereich und einem Bildbereich darunter."><p class="bildunterschrift">Abb. 2: Eine Seite mit einem Textbereich und einem Bildbereich darunter.</p>
                   
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<surface ana="hc:Page" xml:id="Ex_1v" n="1v">
+   <graphic url="https://digi.ub.uni-heidelberg.de/diglit/ex001/0002" mimeType="image/*"/>
+   <zone ana="hc:TextZone" xml:id="Ex_1v-1"/>
+   <zone ana="hc:ImageZone" xml:id="Ex_1v-2"/>
+</surface>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Komplexere Anordnungen lassen sich mit horizontalen und vertikalen Containern
+                     beschreiben, die mit <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/horizontallayout.html" target="_blank">hc:HorizontalLayout</a><span class="loddocborder"> ‹</span>
+                     bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/verticallayout.html" target="_blank">hc:VerticalLayout</a><span class="loddocborder"> ‹</span> kodiert werden.
+                  </p>
+                  <a class="resdef_box" href="../concepts/HorizontalLayout.html"><p class="resdef">
+                     <span class="val">hc:HorizontalLayout</span> ( ›horizontales Layout‹ ): Gruppierungsbereich, dessen Elemente nebeneinander horizontal fest angeordnet sind, vergleichbar mit einer Zeile.
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/VerticalLayout.html"><p class="resdef">
+                     <span class="val">hc:VerticalLayout</span> ( ›vertikales Layout‹ ): Gruppierungsbereich, dessen Elemente übereinander vertikal fest angeordnet sind, vergleichbar mit einer Spalte.
+                  </p></a>
+                  <p>
+                     Die Beschreibung einer Seite mit zwei Textbereichen nebeneinander demonstriert das folgende Beispiel.
+                     Hier dient das übergeordnete <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> als Container für die Gruppierung
+                     und richtige Anordnung der beiden Textbereiche. Erst die beiden Textbereiche sind 
+                     jeweils Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>). Auf eine mögliche Bezeichnung
+                     der beiden Textbereiche als ›Spalten‹ wird hier übrigens noch verzichtet,
+                     vgl. dazu unten den Abschnitt <a class="inlink" href="#FAC-DEC-SEMISTRUC">Semistrukturelle Angaben zu Layout- und Inhaltsbereichen</a>.
+                  </p>
+                  <img class="smaller_graphic" src="../images/2_text_zones.svg" alt="Eine Seite mit zwei Textbereichen nebeneinander."><p class="bildunterschrift">Abb. 3: Eine Seite mit zwei Textbereichen nebeneinander.</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<surface ana="hc:Page" xml:id="Ex_2r" n="2r">
+   <graphic url="https://digi.ub.uni-heidelberg.de/diglit/ex001/0003" mimeType="image/*"/>
+   <zone ana="hc:HorizontalLayout">
+      <zone ana="hc:TextZone" xml:id="Ex_2r-1"/>
+      <zone ana="hc:TextZone" xml:id="Ex_2r-2"/>
+   </zone>
+</surface>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Das Attribut <span class="att">@hei:width</span> am Kindelement eines Containers macht es möglich,
+                     mit Prozentangaben die relative Breite eines Bereichs in Bezug zur Breite seines übergeordneten
+                     Containers anzugeben. Die Summer aller Breitenangaben an Kindelementen eines 
+                     horizontalen Containers darf nicht 100 überschreiten (bei einem vertikalen Container ist das denkbar,
+                     da sich die Breitenangabe dann auf die Ausdehnung entlang der Querachse bezieht).<sup><a href="#note_7" id="note_reference_7" class="note_mark">7)</a></sup>
+                     
+                  </p>
+                  <img class="smaller_graphic" src="../images/2_text_zones_width.svg" alt="Eine Seite mit zwei unterschiedlich breiten Textbereichen nebeneinander."><p class="bildunterschrift">Abb. 4: Eine Seite mit zwei unterschiedlich breiten Textbereichen nebeneinander.</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<surface ana="hc:Page" xml:id="Ex_2v" n="2v">
+   <graphic url="https://digi.ub.uni-heidelberg.de/diglit/ex001/0004" mimeType="image/*"/>
+   <zone ana="hc:HorizontalLayout">
+      <zone ana="hc:TextZone" xml:id="Ex_2v-1" hei:width="33%"/>
+      <zone ana="hc:TextZone" xml:id="Ex_2v-2" hei:width="66%"/>
+   </zone>
+</surface>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Eine explizite Angabe der relativen Höhe eines Bereichs ist nicht vorgesehen.<sup><a href="#note_8" id="note_reference_8" class="note_mark">8)</a></sup>                     
+                  </p>
+                  <p>
+                     Durch die Kombination eines horizontalen Containers mit einem nachfolgenden direkten
+                     Kindelement von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> ist es beispielsweise möglich, ein Layout 
+                     zu beschreiben, bei dem zwei Textbereiche nebeneinander stehen und unter ihnen beiden
+                     sich ein dritter Textbereich befindet, wie das folgende Beispiel vorführt.
+                  </p>
+                  <img class="smaller_graphic" src="../images/3_zones.svg" alt="Eine Seite mit zwei Textbereichen nebeneinander und einem dritten Textbereich unter ihnen."><p class="bildunterschrift">Abb. 5: Eine Seite mit zwei Textbereichen nebeneinander und einem dritten Textbereich unter ihnen.</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<surface ana="hc:Page" xml:id="Ex_3r" n="3r">
+   <graphic url="https://digi.ub.uni-heidelberg.de/diglit/ex001/0005" mimeType="image/*"/>
+   <zone ana="hc:HorizontalLayout">
+      <zone ana="hc:TextZone" xml:id="Ex_3r-1"/>
+      <zone ana="hc:TextZone" xml:id="Ex_3r-2"/>
+   </zone>
+   <zone ana="hc:TextZone" xml:id="Ex_3r-3"/>
+</surface>--></code>
+            </pre>
+        </div>
+     
                   
                   
                </div>
@@ -320,21 +462,21 @@
                      Ermessen des Herausgebers überlassen; wenn verwendet, sollten diese Angaben aber 
                      semantisch mit ›heiEDITIONS Concepts‹ konform sein.
                   </p>
-                  <p class="resdef">
+                  <a class="resdef_box" href="../concepts/MainZone.html"><p class="resdef">
                      <span class="val">hc:MainZone</span> ( ›Hauptbereich‹ ): Bereich einer Inhaltsfläche, der sich innerhalb des Satz- oder Schriftspiegels befindet.
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/MarginalZone.html"><p class="resdef">
                      <span class="val">hc:MarginalZone</span> ( ›Randbereich‹ ): Bereich einer Inhaltsfläche, der sich außerhalb des Satz- oder Schriftspiegels befindet.
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/Column.html"><p class="resdef">
                      <span class="val">hc:Column</span> ( ›Spalte‹ ): Planvoll angelegter und für regelmäßig zu platzierenden Inhalt geschaffener Bereich einer Inhaltsfläche, der entweder direkt einen homogenen Inhalt enthält oder als Container für andere untergeordnete Inhaltsbereiche fungiert.
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/MainColumn.html"><p class="resdef">
                      <span class="val">hc:MainColumn</span> ( ›Hauptspalte‹ ): Spalte innerhalb des Satz- oder Schriftspiegels.
-                  </p>
-                  <p class="resdef">
+                  </p></a>
+                  <a class="resdef_box" href="../concepts/MarginalColumn.html"><p class="resdef">
                      <span class="val">hc:MarginalColumn</span> ( ›Randspalte‹ ): Spalte außerhalb des Satz- oder Schriftspiegels.
-                  </p>
+                  </p></a>
                   
                   
                </div>
@@ -361,11 +503,11 @@
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                   Die entsprechende Zuweisung zu dieser Klasse erfolgt während der Verarbeitung 
                   automatisch, wenn kein <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> vorhanden ist. Andernfalls wird – ebenfalls 
-                  während der Verarbeitung – der Text der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ExpressionBasedOnExemplar.html" target="_blank">hc:ExpressionBasedOnExemplar</a><span class="loddocborder"> ‹</span> 
+                  während der Verarbeitung – der Text der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionbasedonexemplar.html" target="_blank">hc:ExpressionBasedOnExemplar</a><span class="loddocborder"> ‹</span> 
                   zugewiesen. 
                </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
                   Mit <a class="gi" href="../specifications/ref-listWit.html">&lt;listWit&gt;</a> kann außerdem auch dann gearbeitet werden, wenn der Text des 
-                  TEI-Dokuments kein <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/TextBasedOnExemplar.html" target="_blank">hc:TextBasedOnExemplar</a><span class="loddocborder"> ‹</span> ist. Lesartenangaben 
+                  TEI-Dokuments kein <span class="loddocborder">› </span><a class="loddoc" href="../concepts/textbasedonexemplar.html" target="_blank">hc:TextBasedOnExemplar</a><span class="loddocborder"> ‹</span> ist. Lesartenangaben 
                   im textkritischen Apparat sind dann genauso gut möglich, solche Lesarten sind dann 
                   aber nicht dem Text eines im Dokument direkt als Vorlage herangezogenen Textträgers 
                   gegenübergestellt.
@@ -383,9 +525,21 @@
                      </div><div class="endnote" id="note_5"><a class="endnote_number" href="#note_reference_5">5</a>
                         In den beiden Beispielen fungiert als Identifier wahlweise die sog. DWork-Projektnummer oder 
                         ein editionseigenes Sigel für den Textzeugen.
+                     </div><div class="endnote" id="note_6"><a class="endnote_number" href="#note_reference_6">6</a>
+                        Für eine Darstellung der Umwandlung der hier geschilderten TEI-Kodierung 
+                        für Visualisierungszwecke s. <a class="inlink" href="visualization.html#VIS-SOURCE">Quellenansicht</a>.
+                     </div><div class="endnote" id="note_7"><a class="endnote_number" href="#note_reference_7">7</a>
+                        Wenn die Breitenangabe nur an einigen Kindelementen eines Containers gesetzt wird,
+                        füllen die Elemente ohne eine eigene Angabe den restlichen verfügbaren Raum aus.
+                        Wenn alle Kindelemente eines horizontalen Containers eine Breitenangabe erhalten
+                        und die Summe ihrer Breitenangaben weniger als 100 ist, bleibt in der Visualisierung
+                        der restliche Raum frei.
+                     </div><div class="endnote" id="note_8"><a class="endnote_number" href="#note_reference_8">8</a>
+                        In der Visualisierung der Quellenansicht nimmt jeder Bereich mindestens die 
+                        Höhe ein, die zur Einblendung seines gesamten Inhalts benötigt wird.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 08.12.2020
+                        Letzte Aktualisierung: 22.12.2020
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
-                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><script src="../prism.js"></script></body></html>
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script></body></html>

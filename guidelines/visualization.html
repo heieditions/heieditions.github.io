@@ -30,8 +30,8 @@
                
                <p>
                   Die Quellenansicht ist ein Visualisierungsmodus, der auf der physisch-visuellen Struktur eines Inhaltsträgers basiert.
-                  Eine solche Struktur wird durch Inhaltsflächen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentSurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>), Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) 
-                  sowie (bei Textbereichen) Zeilen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/Line.html" target="_blank">hc:Line</a><span class="loddocborder"> ‹</span>) konstituiert. Den genannten drei Ebenen entsprechen
+                  Eine solche Struktur wird durch Inhaltsflächen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentsurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>), Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) 
+                  sowie (bei Textbereichen) Zeilen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/line.html" target="_blank">hc:Line</a><span class="loddocborder"> ‹</span>) konstituiert. Den genannten drei Ebenen entsprechen
                   in der TEI die Elemente <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>, <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> und <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a>. Für die Quellenansicht wird
                   in ›heiEDITIONS‹ die primäre semantisch-logisch strukturierte TEI-Kodierung aus
                   <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> in <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> umgewandelt, wo <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>, <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> und <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a> die 
@@ -67,17 +67,17 @@
                   </p>
                   <ul>
                      <li>
-                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Gruppierungsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/GroupingZone.html" target="_blank">hc:GroupingZone</a><span class="loddocborder"> ‹</span>) dar, 
+                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Gruppierungsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/groupingzone.html" target="_blank">hc:GroupingZone</a><span class="loddocborder"> ‹</span>) dar, 
                         d. h. einen Container, dessen Komponenten 
                         in einem bestimmten Layout angeordnet werden sollen. Solche Gruppierungsbereiche werden mit CSS
                         als <em>flex container</em> ausgewiesen.
                      </li>
                      <li>
-                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Inhaltsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/ContentZone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) dar, 
+                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Inhaltsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) dar, 
                         das unmittelbar einen Inhalt enthält, z. B. Zeilen (wenn es sich um einen Textbereich handeln würde).
                         Inhaltsbereiche werden bei der Umwandlung in HTML zu <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Elementen, die entweder
                         Kindelemente des Seitencontainers (HTML-Entsprechung von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>)  
-                        oder Kindelemente eines Layout-Containers (Entsprechung von <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/GroupingZone.html" target="_blank">hc:GroupingZone</a><span class="loddocborder"> ‹</span>) sind.
+                        oder Kindelemente eines Layout-Containers (Entsprechung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/groupingzone.html" target="_blank">hc:GroupingZone</a><span class="loddocborder"> ‹</span>) sind.
                         Im letzteren Fall funktionieren sie in einem <em>flex container</em> als dessen <em>flex items</em>.
                         Jedenfalls beinhalten Inhaltsbereiche ihrerseits keine Gruppierungsbereiche, sondern unmittelbar den 
                         jeweiligen Inhalt.                       
@@ -89,7 +89,7 @@
                      eindeutig entweder <span class="val">hc:GroupingZone</span> oder <span class="val">hc:ContentZone</span> gesetzt.
                   </p>
                   <p>
-                     Die in <a class="inlink" href="layout.html#FAC-DEC-LAYOUT">Layoutdeklaration</a> beschriebenen layout-relevanten Typen der 
+                     Die in <a class="inlink" href="layout.html#FAC-DEC-LAYOUT">Layouterfassung</a> beschriebenen layout-relevanten Typen der 
                      Gruppierungsbereiche werden in HTML wie folgt umgesetzt:              
                   </p>
                   <ul>
@@ -348,7 +348,7 @@
                   </p>
                   <p>
                      <span class="aside"><span class="att">@hei:placeRef</span></span>
-                     An Randbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/MarginalZone.html" target="_blank">hc:MarginalZone</a><span class="loddocborder"> ‹</span> bzw. <span class="loddocborder">› </span><a class="loddoc" href="../specifications/heiEDITIONS_LOD/MarginalColumn.html" target="_blank">hc:MarginalColumn</a><span class="loddocborder"> ‹</span>)
+                     An Randbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/marginalzone.html" target="_blank">hc:MarginalZone</a><span class="loddocborder"> ‹</span> bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/marginalcolumn.html" target="_blank">hc:MarginalColumn</a><span class="loddocborder"> ‹</span>)
                      kann mit dem Attribut <span class="att">@hei:placeRef</span> als ergänzende Information
                      zur strukturellen Layoutbeschreibung die Platzierung an einem der im Layoutsystem der jeweiligen 
                      Inhaltsfläche vorhandenen Ränder angegeben werden. Diese Angaben werden für die Visualisierung
@@ -370,8 +370,8 @@
             
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 08.12.2020
+                        Letzte Aktualisierung: 22.12.2020
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
-                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><script src="../prism.js"></script></body></html>
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script></body></html>
