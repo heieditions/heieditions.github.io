@@ -23,6 +23,10 @@ a.loddoc {
     color: #9F0001; /* Heidelberg Red */
 }
 
+a.conceptstoc {
+    color: #9F0001; /* Heidelberg Red */
+}
+
 a.inlink {
     color: DimGray; 
 }
@@ -88,7 +92,7 @@ footer {
     flex-wrap: wrap;
     align-items: center;
     justify-content: space-between;
-    margin-top: 50px;
+    margin-top: 50px;  
     padding-top: 20px;
     padding-bottom: 20px;
     background-color: LightGray;
@@ -189,6 +193,10 @@ span.code {
   background-color: PaleTurquoise;
 }
 
+span.simple_code {
+  font-family: 'Ubuntu Mono', monospace;
+}
+
 span.exemplum_label {
   position:relative; 
   top:-20px; 
@@ -217,6 +225,10 @@ span.loddocborder {
 }
 
 span.outlinkprefix {
+  color: DimGray; 
+}
+
+span.gray_petit {
   color: DimGray; 
 }
 
