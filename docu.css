@@ -47,10 +47,14 @@ a.navref {
   color: Gray;
 }
 
-a.resdef_box {
+a.refboxlink {
   text-decoration: none;
-  color: Black;
 }
+
+    .refboxlink::before {
+        content: '☞ ' ;
+        color: #993300;
+    }  
 
 body {
     /*max-width: 800px;*/
