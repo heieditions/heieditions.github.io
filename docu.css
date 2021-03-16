@@ -7,6 +7,17 @@ a.endnote_number {
     color: #990000; /* Heidelberg Red */
 }
 
+a.name {
+    text-decoration: none;
+    color: #990000; /* Heidelberg Red */
+}
+
+a.index {
+    text-decoration: none;
+    color: #990000; /* Heidelberg Red */
+    font-weight: bold;
+}
+
 a.endnote_number::after {
     content: ' '
 }
