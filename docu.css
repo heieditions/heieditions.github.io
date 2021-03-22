@@ -18,6 +18,13 @@ a.index {
     font-weight: bold;
 }
 
+a.start {
+    text-decoration: none;
+    color: #990000; /* Heidelberg Red */
+    font-weight: bold;
+    font-size: large;
+}
+
 a.endnote_number::after {
     content: ' '
 }
