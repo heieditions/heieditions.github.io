@@ -1,0 +1,65 @@
+<!DOCTYPE HTML>
+<html><head><title>heiEDITIONS Dokumentation | Verarbeitung</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"><link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Spectral&amp;family=Ubuntu+Mono&amp;&amp;display=swap" rel="stylesheet"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Verarbeitung</nav><main>
+         <div id="PROCESSING">
+            
+            <h1>Verarbeitung</h1>
+            
+            <p>
+               Die TEI-Arbeitsdaten der von der UB Heidelberg betreuten Editionsprojekte
+               werden für die Publikation und Archivierung durch eine sog. Pipeline aufbereitet,
+               die in der Regel aus einer Verkettung von diversen Skripten besteht (vorzugsweise XSLT).
+               Diese Skripte werden im GitLab-Projekt 
+               <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline" target="_blank">heiEDITIONS Pipeline</a> im Ordner <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/tree/master/transformations" target="_blank"><span class="code">transformations</span></a>
+               gepflegt. Aus diesen Bausteinen kann mit der XProc-Technologie für jedes Projekt eine individuelle Pipeline 
+               konfiguriert werden.                
+            </p>
+            <p>
+               Häufig verwendete XSLT-Skripte deklarieren wir als sog. XProc-Schritte 
+               in einer XProc-Bibliothek (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank"><span class="code">transformations/steplibrary.xpl</span></a>).
+               Diese Schritte unterstützen einen Debugging-Modus, der für Zwecke der Fehlersuche
+               beim Pipeline-Aufruf aktiviert werden kann und dafür sorgt, dass der Stand der Verarbeitung nach 
+               dem Durchlaufen eines Schritts zu einer Datei serialisiert wird.
+            </p>
+            
+            <div id="PROCESSING-JOBS">
+               
+               <h2>Erläuterung einzelner Verarbeitungsaufgaben</h2>
+               
+               <div id="PROCESSING-JOBS-COPYOF">
+                  
+                  <h3>Auflösung der Kopieranweisung (Attribut <span class="att">@copyOf</span>)</h3>
+                  
+                  <p>
+                     Das Attribut <span class="att">@copyOf</span>, das an einem Element auf eine <span class="att">@xml:id</span> eines anderen Elements
+                     verweist, wird so interpretiert, dass in das Element, das <span class="att">@copyOf</span> trägt, alle Kindknoten und Attribute
+                     des Elements, auf das mit <span class="att">@copyOf</span> verwiesen wird, eingesetzt werden 
+                     und der sämtliche bisherige Inhalt (Kindknoten und Attribute) des Elements, das <span class="att">@copyOf</span> trägt, verworfen wird.
+                     Ausgenommen davon ist das Attribut <span class="att">@xml:id</span>, das weder verworfen noch kopiert wird.<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
+                  </p>
+                  <p>
+                     Die Verarbeitungsaufgabe ist implementiert im XSLT-Skript 
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_resolveCopyOf.xsl" target="_blank"><span class="code">text_resolveCopyOf.xsl</span></a> 
+                     sowie gekapselt im XProc-Schritt <span class="code">text_resolveCopyOf</span> in <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank"><span class="code">transformations/steplibrary.xpl</span></a>.
+                  </p>
+                  
+               </div>
+               
+            </div>
+            
+
+         </div>
+      <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
+                        Diese Sonderbehandlung des Attributs <span class="att">@xml:id</span> ist allerdings bis auf Weiteres 
+                        nur für das Element selbst, das <span class="att">@copyOf</span> trägt, implementiert, und nicht rekursiv für mögliche 
+                        Elemente mit <span class="att">@xml:id</span> in dessen neuem (kopiertem) Inhalt. Es gibt ebenfalls keine Behandlung von sonstigen 
+                        möglichen Verweisen auf solche Elemente mit <span class="att">@xml:id</span>. 
+                     </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 07.09.2021
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script></body></html>
