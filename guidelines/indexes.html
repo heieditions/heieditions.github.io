@@ -1,0 +1,308 @@
+<!DOCTYPE HTML><html><head><title>heiEDITIONS Dokumentation | Register</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"><link href="https://fonts.googleapis.com/css2?family=Open+Sans&amp;family=Spectral&amp;family=Ubuntu+Mono&amp;&amp;display=swap" rel="stylesheet"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Register</nav><main>
+         <div id="INDEXES">
+            
+            <h1>Register</h1>
+            
+            <p>
+               Die Registerfunktionalität in ›heiEDITIONS‹ dient besonders zweierlei Zwecken:
+            </p>
+            <p>
+               Zum Einen wird dadurch eine Annotation von Texten ermöglicht, durch die namentliche oder nicht-namentliche 
+               Erwähnungen von Personen, Orten, Körperschaften, Ereignissen Werken und Sachbegriffen mit einer
+               Verknüpfung zu einem Referenzeintrag versehen werden. Ein solcher Referenzeintrag kann an einer zentralen Stelle
+               Namensformen, Links zu Normdateien und anderen externen Ressourcen, strukturierte Erschließungsinformationen,
+               bibliographische Angaben,
+               aber auch kurze beschreibende Texte (wenn sinnvoll, auch mit Bildern) beinhalten. Derartige Textannotationen jönnen 
+               immer dann Stellenanmerkungen ersetzen, wenn die erschließende Information zu einer Entität 
+               unabhängig von einer Einzelstelle im Text Gültigkeit besitzt und dadurch potenziell viele Textstellen,
+               an denen die betroffene Entität erwähnt wird, erläutern kann. So können etwa wiederholte Erwähnungen eines Ortes
+               in einem Text jeweils durch eine Verknüpfung zu ein und demselben Registereintrag im Ortsregister
+               annotiert werden. In einer Visualisierung des Textes können dann an allen derart annotierten Textstellen
+               die Angaben aus dem Registereintrag angezeigt werden, die dort nur einmal abgelegt wurden.
+            </p>
+            <p>
+               Zum Anderen können – ähnlich wie bei herkömmlichen Buchregistern – aus annotierten Texten Listen erstellt
+               werden, die jeweils für einen Textabschnitt oder einen ganzen Text die Entitäten auflisten, die im gegebenen Text 
+               erwähnt werden, und auch mehr oder weniger genau die Textstellen gesammelt aufzählen, an denen einzelne Entitäten
+               eine Rolle spielen. In einer digitalen Visualisierung können solche Textstellenauflistungen selbstverständlich
+               auch direkte Links zu den jeweiligen Textstellen in der digitalen Edition enthalten. 
+            </p>
+            <p>
+               Der erstgenannte Aspekt macht Register in ›heiEDITIONS‹ potenziell zu einem wissenschaftlichen Produkt
+               an sich, das editionsbegleitend auch Formen eines Personenlexikons, eines geographischen Gazetteers
+               oder eines Sachglossars annehmen kann.
+            </p>
+            <p>
+               Hinsichtlich der TEI-Kodierung sind zwei verschiedene Bereiche der Anwendung von TEI-Konstrukten zu unterscheiden: 
+               Die Anreicherung von Textstellen mit Verknüpfungen zu kanonischen Repräsentationen von Entitäten einerseits 
+               und entsprechende kanonische Referenzeinträge, typischerweise in dedizierten eigenständigen Registerdateien, andererseits.
+               Beim Ersteren geht es darum, mit welchen Konstrukten einzelne Textstellen markiert werden können, wenn sie z. B. eine Person
+               oder einen besonderen Begriff nennen; beim Letzteren geht es um die Struktur der Referenzeinträge,
+               auf die von konkreten Textstellen verwiesen werden kann.
+            </p>
+            
+            <div id="INDEXES-LISTS">
+               
+               <h2>Registerlisten</h2>
+               
+               <p>
+                  Registerlisten sind das Mittel, um Referenzeinträge für Entitäten eines bestimmten Typs zu verwalten, 
+                  auf die aus einem Text heraus verwiesen werden kann. Die Einträge solcher Listen können unterschiedlichen
+                  Umfangs sein. In einer Minimalform kann ein Registereintrag allein aus einem Identifikator und einer Ansetzungsform
+                  bestehen, wobei selbst die Ansetzungsform noch aus einer externen Quelle, etwa einer Normdatei wie der GND,
+                  automatisiert übernommen werden könnte.<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
+                  Im Gegensatz dazu können Registereinträge auch zu umfassenden wissenschaftlichen Produkten werden und
+                  neben einer Reihe datentechnisch strukturierter Informationen auch einen Prosaabschnitt enthalten, der
+                  auch die Form einer kleinen eigenständigen Abhandlung annehmen kann. Links zu externen
+                  Internetquellen sowie Bibliographielisten können ebenfalls Teil eines Registereintrags sein.
+               </p>
+               <p>
+                  In Anlehnung an einige von der TEI (allerdings nicht nur für Registerzwecke) bereits vorgesehene
+                  Listentypen und ausgehend vom bisherigen Bedarf hauseigener Projekte definiert ›heiEDITIONS‹ 
+                  folgende Typen von Registerlisten:
+               </p>
+               <ul>
+                  <li>Personenregister</li>
+                  <li>Ortsregister</li>
+                  <li>Körperschaftsregister</li>
+                  <li>Ereignisregister</li>
+                  <li>Werkregister</li>
+                  <li>Sachregister</li>
+               </ul>
+               <p>
+                  Als Sonderart, die als Liste von Referenzeinträgen viele Gemeinsamkeiten mit Registern im eigentlichen
+                  Sinne hat, ist die Bibliographie zu betrachten.
+               </p>
+               <p>
+                  Register zu führen und entsprechende Auszeichnungen in Texten vorzunehmen,
+                  ist in ›heiEDITIONS‹ keine Pflicht. Von den vorgesehenen Registertypen können 
+                  auch nur einige wenige geführt werden. Es steht einem Herausgeber aber andererseits auch frei, für sein Projekt bei Bedarf 
+                  mehrere unterschiedlichen Register desselben Typs anzulegen,
+                  wenn es als sinnvoll erscheint, die darin zu verwaltenden Entitäten als separate Kategorien zu betrachten.
+               </p>
+               <p>
+                  Jedes Register ist in einer eigenen, nur dafür vorgesehenen TEI-Datei zu führen. 
+                  Eine solche TEI-Datei richtet sich formal nach dem ›heiEDITIONS Index Schema‹, einer 
+                  besonderen Schemaspezifikation für Registerdateien. Die grobe Struktur des XML-Baumes einer solchen Datei
+                  ist wie folgt:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<teiHeader>[…]</teiHeader><text ana="[…]">
+   <body>
+      […]
+   </body>
+</text>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Das Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> trägt am Attribut <span class="att">@ana</span> die Angabe, um welchen Registertyp es sich handelt.
+                  Entsprechend der obigen Liste von Registertypen ist genau eine dieser Angaben erforderlich:
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/indexofpersons.html"><span class="val">hc:IndexOfPersons</span></a> ( ›Personenregister; Personenverzeichnis‹ ): Eine Form des Namensregisters, in dem nur Personen erfasst sind. Einträge in einem Personenregister gruppieren jeweils Informationen über eine Person. Dieser Registertyp darf nicht mit einem Autor-Werk-Register verwechselt werden, das Einträge über Werke enthält.
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/indexofplaces.html"><span class="val">hc:IndexOfPlaces</span></a> ( ›Ortsregister; Ortsverzeichnis‹ ): Register, dessen Einträge Informationen über Orte enthalten.
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/indexoforganizations.html"><span class="val">hc:IndexOfOrganizations</span></a> ( ›Körperschaftsregister‹ ): Register, dessen Einträge Informationen über Körperschaften, also identifizierbare Personengruppen mit einer eigenen Identität, enthalten.
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/indexofevents.html"><span class="val">hc:IndexOfEvents</span></a> ( ›Ereignisregister‹ ): Register, dessen Einträge Informationen über Ereignisse enthalten.
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/indexofworks.html"><span class="val">hc:IndexOfWorks</span></a> ( ›Werkregister; Autoren- und Werkregister‹ ): Register, dessen Einträge Informationen über Werke und ggf. deren Urheber enthalten. Unter Werken sind in erster Linie geistige, immaterielle Schöpfungen zu verstehen, nicht konkrete materielle Gegenstände; dennoch können Einträge dieses Registertyps auch Informationen über entsprechende physische Objekte enthalten.
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/indexofsubjects.html"><span class="val">hc:IndexOfSubjects</span></a> ( ›Sachregister; Sachverzeichnis; Schlagwortregister; Schlagwortverzeichnis; Begriffsregister; Glossar‹ ): Register, dessen Einträge Informationen zu Sachverhalten enthalten, die keiner namentlich identifizierbaren individuellen Entität entsprechen.
+               </p>
+               
+               <p>
+                  Als einziges Kindelement von <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> kommt dann in Abhängigkeit 
+                  vom festgelegten Registertyp eines dieser listenartigen Elemente vor:
+               </p>
+               <ul>
+                  <li><a class="gi" href="../specifications/ref-listPerson.html">&lt;listPerson&gt;</a> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofpersons.html" target="_blank">hc:IndexOfPersons</a><span class="loddocborder"> ‹</span>)</li>
+                  <li><a class="gi" href="../specifications/ref-listPlace.html">&lt;listPlace&gt;</a> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofplaces.html" target="_blank">hc:IndexOfPlaces</a><span class="loddocborder"> ‹</span>)</li>
+                  <li><a class="gi" href="../specifications/ref-listOrg.html">&lt;listOrg&gt;</a> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexoforganizations.html" target="_blank">hc:IndexOfOrganizations</a><span class="loddocborder"> ‹</span>)</li>
+                  <li><a class="gi" href="../specifications/ref-listEvent.html">&lt;listEvent&gt;</a> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofevents.html" target="_blank">hc:IndexOfEvents</a><span class="loddocborder"> ‹</span>)</li>
+                  <li><a class="gi" href="../specifications/ref-list.html">&lt;list&gt;</a> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofworks.html" target="_blank">hc:IndexOfWorks</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofsubjects.html" target="_blank">hc:IndexOfSubjects</a><span class="loddocborder"> ‹</span>)</li>
+               </ul>
+               <p>
+                  Jedes der genannten Listenelemente kann zunächst mit <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a> eine oder mehrere Überschriften  
+                  enthalten. Sind mehrere <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a>-Elemente gesetzt, müssen sie das Attribut <span class="att">@xml:lang</span> mit jeweils 
+                  unterschiedlichen Sprachcodes tragen. Ein einziges <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a> muss keine Sprachangabe tragen. 
+                  Die explizite Verwendung von <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a> ist besonders dann sinnvoll (und dann auch praktisch unentbehrlich),
+                  wenn eine Edition mehrere Register deselben Typs führt. Dann erfolgt die Unterscheidung der Register 
+                  auch nach dieser Überschrift. Wenn das Element <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a> nicht belegt wird, kann für Visualisierungszwecke
+                  auf eine in ›heiEDITIONS‹ voreingestellte Überschrift (die Klassenbezeichnung des Registertyps)
+                  zurückgegriffen werden.
+               </p>
+               <p>
+                  Nach der optionalen Überschrift enthält die Registerliste eine beliebige Anzahl von Einträgen des jeweiligen Registers.
+                  Das Element für die einzelnen Einträge ist innerhalb eines Registers immer gleich und hängt vom jeweiligen
+                  Registertyp ab:
+               </p>
+               <ul>
+                  <li><a class="gi" href="../specifications/ref-person.html">&lt;person&gt;</a> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofpersons.html" target="_blank">hc:IndexOfPersons</a><span class="loddocborder"> ‹</span>)</li>
+                  <li><a class="gi" href="../specifications/ref-place.html">&lt;place&gt;</a> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofplaces.html" target="_blank">hc:IndexOfPlaces</a><span class="loddocborder"> ‹</span>)</li>
+                  <li><a class="gi" href="../specifications/ref-org.html">&lt;org&gt;</a> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexoforganizations.html" target="_blank">hc:IndexOfOrganizations</a><span class="loddocborder"> ‹</span>)</li>
+                  <li><a class="gi" href="../specifications/ref-event.html">&lt;event&gt;</a> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofevents.html" target="_blank">hc:IndexOfEvents</a><span class="loddocborder"> ‹</span>)</li>
+                  <li><a class="gi" href="../specifications/ref-item.html">&lt;item&gt;</a> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofworks.html" target="_blank">hc:IndexOfWorks</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofsubjects.html" target="_blank">hc:IndexOfSubjects</a><span class="loddocborder"> ‹</span>)</li>
+               </ul>
+               <p>
+                  Beispiel für die grobe Struktur eines Personenregisters ab dem Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<text ana="hc:IndexOfPersons">
+   <body>
+      <listPerson>
+         <person>[…]</person>
+         <person>[…]</person>
+         <person>[…]</person>
+         […]
+      </listPerson>
+   </body>
+</text>--></code>
+            </pre>
+        </div>
+    
+               
+               <p>
+                  Beispiel für die grobe Struktur eines Werkregisters mit einer spezifischen Überschrift:
+               </p>
+               
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<text ana="hc:IndexOfWorks">
+   <body>
+      <list>
+         <head>Register der Kunstwerke</head>
+         <item>[…]</item>
+         <item>[…]</item>
+         <item>[…]</item>
+         […]
+      </list>
+   </body>
+</text>--></code>
+            </pre>
+        </div>
+    
+               
+               <p>
+                  Die genannten Elemente müssen in einem Register immer mit dem Attribut <span class="att">@xml:id</span> versehen werden,
+                  dessen Wert als eindeutiger Identifikator innerhalb des Registers dient. Für den Aufbau des Identifikatorwertes 
+                  gelten diese Regeln:
+               </p>
+               <ul>
+                  <li>
+                     Wenn es für die erfasste Entität eine Entsprechung in der ›Gemeinsamen Normdatei‹ 
+                     (GND) der Deutschen Nationalbibliothek gibt und diese Verknüpfung zu einem Normdatensatz der
+                     GND innerhalb des Registereintrags auch hergestellt wird, setzt sich die <span class="att">@xml:id</span> aus der
+                     Zeichenkette <span class="code">gnd-</span> und der GND-Nummer<sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup> des entsprechenden Normdatensatzes zusammen.
+                  </li>
+                  <li>
+                     Andernfalls gilt es, statt der Zeichenkette <span class="code">gnd</span> ein für das konkrete Register festgelegte Präfix
+                     (s. weiter unten XXX)
+                     und statt der GND-Nummer eine innerhalb des Registers (für nicht mit der GND verknüpfte Einträge) laufende Nummer zu verwenden, Letzteres ggf. in einheitlicher 
+                     Zifferanzahl mit vorangestellten Nullen.
+                  </li>
+               </ul>
+               
+               <p>
+                  Beispiele für das Attribut <span class="att">@xml:id</span> an Registereinträgen in einem Personenregister
+               </p>
+               <p>
+                  Identifikator einer Ressource mit GND-Verknüpfung:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<person xml:id="gnd-118540238">[…]</person>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Identifikator einer Ressource ohne GND-Verknüpfung in einem Personenregister mit dem Präfix <span class="code">pers</span>
+und laufender Nummer:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<person xml:id="pers-1">[…]</person>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Identifikator einer Ressource ohne GND-Verknüpfung in einem Personenregister mit dem Präfix <span class="code">pers</span>
+und laufender Nummer, mit vereinheitlichter Zifferanzahl:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<person xml:id="pers-001">[…]</person>--></code>
+            </pre>
+        </div>
+    
+               
+               <div id="INDEXES-LISTS-PERSONS">
+                  
+                  <h3>Informationen zu Personen</h3>
+                  
+                  
+                  
+               </div>
+               
+               
+               
+               
+               
+               
+            </div>
+            
+            
+            <div id="INDEXES-MARKUP">
+               
+               <h2>Auszeichnung für Register im Text</h2>
+               
+               <p>
+                  Die Kennzeichnung relevanter Textsegmente mit Verweisen zu Registereinträgen
+                  kann sowohl in Primärtexten als auch in Sekundärtexten (editorische Anmerkungen,
+                  laufende Kommentare, begleitende oder eigenständige Sekundärtexte) erfolgen.
+               </p>
+               
+               
+               
+               
+               
+               
+            </div>
+
+         </div>
+      <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
+                     In bestimmten Fällen kann in ›heiEDITIONS‹ zumindest während
+                     der manuellen TEI-Redaktion eine Registerliste in statischer Form
+                     sogar ganz fehlen. Dies kann dann der Fall sein, wenn allein auf Normdatensätze der GND Bezug genommen
+                     wird, ohne dass vom Herausgeber eigene Inhalte für die Referenzeinträge des Registers erstellt
+                     würden. Selbst die Ansetzungsformen der einzelnen Einträge würden dann aus der GND übernommen.
+                  </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
+                        Die GND-Nummer gewinnt man, wenn man von der URI einer GND-Ressource vorn den Teil
+                        <span class="code">http://d-nb.info/gnd/</span> abtrennt. Die GND-Nummer der GND-Ressource 
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="http://d-nb.info/gnd/118540238" target="_blank">http://d-nb.info/gnd/118540238</a> 
+                        (Johann Wolfgang von Goethe) ist beispielsweise <span class="code">118540238</span>.
+                     </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 21.10.2021
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script></body></html>
