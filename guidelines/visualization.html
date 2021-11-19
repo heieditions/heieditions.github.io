@@ -94,11 +94,11 @@
                   <ul>
                      <li>
                         <span class="item_label"><span class="val">hc:HorizontalLayout</span></span>
-                        entspricht der CSS-Angabe <span class="code">flex-direction: row;</span>.
+                        entspricht der CSS-Angabe <span class="csscode">flex-direction: row;</span>.
                      </li>
                      <li>
                         <span class="item_label"><span class="val">hc:VerticalLayout</span></span>
-                        entspricht der CSS-Angabe <span class="code">flex-direction: column;</span>.
+                        entspricht der CSS-Angabe <span class="csscode">flex-direction: column;</span>.
                      </li>
                   </ul>
                   <p>
@@ -110,13 +110,13 @@
                      <li>
                         <span class="item_label"><span class="att">@hei:width</span></span>
                         Breitenangaben in Prozent in der Form <span class="val">30%</span> sind in CSS entsprechend mit 
-                        <span class="code">width</span> umzusetzen. Diese Angabe an einem horizontalen Container
+                        <span class="csscode">width</span> umzusetzen. Diese Angabe an einem horizontalen Container
                         ist nur dann sinnvoll, wenn dieser Container selbst ein <em>flex item</em>
                         eines übergeordneten horizontalen Containers wäre, was zwar möglich, aber untypisch ist.
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentLeft</span></span>
-                        entspricht der CSS-Angabe <span class="code">justify-content: flex-start;</span>. Das sollte auch die
+                        entspricht der CSS-Angabe <span class="csscode">justify-content: flex-start;</span>. Das sollte auch die
                         Voreinstellung sein, falls weder <span class="val">hc:AlignmentLeft</span> noch <span class="val">hc:AlignmentRight</span> noch 
                         <span class="val">hc:AlignmentCentered</span> explizit gesetzt ist. Die <span class="att">@rendition</span>-Angaben 
                         <span class="val">hc:AlignmentLeft</span>, <span class="val">hc:AlignmentRight</span> und <span class="val">hc:AlignmentCentered</span>   
@@ -125,15 +125,15 @@
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentRight</span></span>
-                        entspricht der CSS-Angabe <span class="code">justify-content: flex-end;</span>. 
+                        entspricht der CSS-Angabe <span class="csscode">justify-content: flex-end;</span>. 
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentCentered</span></span>
-                        entspricht der CSS-Angabe <span class="code">justify-content: center;</span>. 
+                        entspricht der CSS-Angabe <span class="csscode">justify-content: center;</span>. 
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentLeft</span></span>
-                        entspricht der CSS-Angabe <span class="code">align-self: flex-start;</span>. Die Angabe ist
+                        entspricht der CSS-Angabe <span class="csscode">align-self: flex-start;</span>. Die Angabe ist
                         an einem horizontalen Container nur dann sinnvoll, wenn er selbst ein
                         <em>flex item</em> eines übergeordneten vertikalen Containers wäre.
                         Die <span class="att">@rendition</span>-Angaben <span class="val">hc:SelfAlignmentLeft</span>, <span class="val">hc:SelfAlignmentRight</span> 
@@ -143,22 +143,22 @@
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentRight</span></span>
-                        entspricht der CSS-Angabe <span class="code">align-self: flex-end;</span>. Die Angabe ist
+                        entspricht der CSS-Angabe <span class="csscode">align-self: flex-end;</span>. Die Angabe ist
                         an einem horizontalen Container nur dann sinnvoll, wenn er selbst ein
                         <em>flex item</em> eines übergeordneten vertikalen Containers wäre.
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentCentered</span></span>
-                        entspricht der CSS-Angabe <span class="code">align-self: center;</span>. Die Angabe ist
+                        entspricht der CSS-Angabe <span class="csscode">align-self: center;</span>. Die Angabe ist
                         an einem horizontalen Container nur dann sinnvoll, wenn er selbst ein
                         <em>flex item</em> eines übergeordneten vertikalen Containers wäre.
                      </li>
                   </ul>
                   <p>
                      Um für schmalere Bildschirme eine flexiblen Umbruch eines horizontalen Layoutcontainers in mehrere Zeilen
-                     zu erreichen, muss der <em>flex container</em> die CSS-Angabe <span class="code">flex-wrap: wrap</span>
-                     erhalten. Alternativ können die Angabe <span class="code">flex-direction: row;</span> und 
-                     <span class="code">flex-wrap: wrap</span> durch die einzige Angabe <span class="code">flex-flow: column wrap;</span>
+                     zu erreichen, muss der <em>flex container</em> die CSS-Angabe <span class="csscode">flex-wrap: wrap</span>
+                     erhalten. Alternativ können die Angabe <span class="csscode">flex-direction: row;</span> und 
+                     <span class="csscode">flex-wrap: wrap</span> durch die einzige Angabe <span class="csscode">flex-flow: column wrap;</span>
                      ersetzt werden.
                   </p>
                   <p>
@@ -172,13 +172,13 @@
                      <li>
                         <span class="item_label"><span class="att">@hei:width</span></span>
                         Breitenangaben in Prozent in der Form <span class="val">30%</span> sind in CSS entsprechend mit 
-                        <span class="code">width</span> umzusetzen. Diese Angabe ist an einem vertikalen Container nur
+                        <span class="csscode">width</span> umzusetzen. Diese Angabe ist an einem vertikalen Container nur
                         dann sinnvoll, wenn dieser Container ein <em>flex item</em> eines übergeordneten
                         horizontalen Containers wäre.
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentTop</span></span>
-                        entspricht der CSS-Angabe <span class="code">justify-content: flex-start;</span>. Das sollte auch die
+                        entspricht der CSS-Angabe <span class="csscode">justify-content: flex-start;</span>. Das sollte auch die
                         Voreinstellung sein, falls weder <span class="val">hc:AlignmentTop</span> noch <span class="val">hc:AlignmentBottom</span> noch 
                         <span class="val">hc:AlignmentCentered</span> explizit gesetzt ist. Die <span class="att">@rendition</span>-Angaben 
                         <span class="val">hc:AlignmentTop</span>, <span class="val">hc:AlignmentBottom</span> und <span class="val">hc:AlignmentCentered</span>   
@@ -187,15 +187,15 @@
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentBottom</span></span>
-                        entspricht der CSS-Angabe <span class="code">justify-content: flex-end;</span>. 
+                        entspricht der CSS-Angabe <span class="csscode">justify-content: flex-end;</span>. 
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:AlignmentCentered</span></span>
-                        entspricht der CSS-Angabe <span class="code">justify-content: center;</span>. 
+                        entspricht der CSS-Angabe <span class="csscode">justify-content: center;</span>. 
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentTop</span></span>
-                        entspricht der CSS-Angabe <span class="code">align-self: flex-start;</span>. Die Angabe ist
+                        entspricht der CSS-Angabe <span class="csscode">align-self: flex-start;</span>. Die Angabe ist
                         an einem vertikalen Container nur dann sinnvoll, wenn er selbst ein
                         <em>flex item</em> eines übergeordneten horizontalen Containers wäre.
                         Die <span class="att">@rendition</span>-Angaben <span class="val">hc:SelfAlignmentTop</span>, <span class="val">hc:SelfAlignmentBottom</span> 
@@ -205,19 +205,19 @@
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentBottom</span></span>
-                        entspricht der CSS-Angabe <span class="code">align-self: flex-end;</span>. 
+                        entspricht der CSS-Angabe <span class="csscode">align-self: flex-end;</span>. 
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentCentered</span></span>
-                        entspricht der CSS-Angabe <span class="code">align-self: center;</span>. 
+                        entspricht der CSS-Angabe <span class="csscode">align-self: center;</span>. 
                      </li>                    
                   </ul>
                   <p>
                      <span class="aside">Container-›Kinder‹</span>
                      Die Kindelemente (<em>flex items) </em>eines als <em>flex container</em>
                      fungierenden horizontalen oder vertikalen Containers werden je nach festgelegter 
-                     <span class="code">flex-direction</span> des Elternelements horizontal oder
-                     vertikal ausgegeben und je nach der Angabe in <span class="code">justify-content</span>
+                     <span class="csscode">flex-direction</span> des Elternelements horizontal oder
+                     vertikal ausgegeben und je nach der Angabe in <span class="csscode">justify-content</span>
                      entlang der entsprechenden Hauptachse des Elternelements ausgerichtet.
                   </p>
                   <p>
@@ -231,7 +231,7 @@
                   <ul>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentTop</span></span>
-                        entspricht der CSS-Angabe <span class="code">align-self: flex-start;</span>. Die Angabe ist
+                        entspricht der CSS-Angabe <span class="csscode">align-self: flex-start;</span>. Die Angabe ist
                         nur an einem <em>flex item</em> eines übergeordneten horizontalen Containers möglich.
                         Die <span class="att">@rendition</span>-Angaben <span class="val">hc:SelfAlignmentTop</span>, <span class="val">hc:SelfAlignmentBottom</span> 
                         und <span class="val">hc:SelfAlignmentCentered</span> schließen einander aus, 
@@ -242,12 +242,12 @@
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentBottom</span></span>
-                        entspricht der CSS-Angabe <span class="code">align-self: flex-end;</span>. Die Angabe ist
+                        entspricht der CSS-Angabe <span class="csscode">align-self: flex-end;</span>. Die Angabe ist
                         nur an einem <em>flex item</em> eines übergeordneten horizontalen Containers möglich.
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentLeft</span></span>
-                        entspricht der CSS-Angabe <span class="code">align-self: flex-start;</span>. Die Angabe ist
+                        entspricht der CSS-Angabe <span class="csscode">align-self: flex-start;</span>. Die Angabe ist
                         nur an einem <em>flex item</em> eines übergeordneten vertikalen Containers möglich.
                         Die <span class="att">@rendition</span>-Angaben <span class="val">hc:SelfAlignmentLeft</span>, <span class="val">hc:SelfAlignmentRight</span> 
                         und <span class="val">hc:SelfAlignmentCentered</span> schließen einander aus, 
@@ -258,12 +258,12 @@
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentRight</span></span>
-                        entspricht der CSS-Angabe <span class="code">align-self: flex-end;</span>. Die Angabe ist
+                        entspricht der CSS-Angabe <span class="csscode">align-self: flex-end;</span>. Die Angabe ist
                         nur an einem <em>flex item</em> eines übergeordneten vertikalen Containers möglich.
                      </li>
                      <li>
                         <span class="item_label"><span class="att">@rendition</span> und Wert <span class="val">hc:SelfAlignmentCentered</span></span>
-                        entspricht der CSS-Angabe <span class="code">align-self: flex-center;</span>. Die Angabe ist
+                        entspricht der CSS-Angabe <span class="csscode">align-self: flex-center;</span>. Die Angabe ist
                         an <em>flex items</em> sowohl in horizontalen als auch in vertikalen Containern möglich; 
                         sie bezeichnet die mittige Ausrichtung entlang der jeweils gültigen Querachse.
                      </li>
@@ -287,40 +287,40 @@
                      <tr>
                         <td rowspan="3">Ausrichtung Hauptachse <span class="att">@rendition</span></td>
                         <td><span class="val">hc:AlignmentLeft</span></td>
-                        <td><span class="code">justify-content: flex-start;</span> (Voreinstellung)</td>
+                        <td><span class="csscode">justify-content: flex-start;</span> (Voreinstellung)</td>
                         <td><span class="val">hc:AlignmentTop</span></td>
-                        <td><span class="code">justify-content: flex-start;</span> (Voreinstellung)</td>
+                        <td><span class="csscode">justify-content: flex-start;</span> (Voreinstellung)</td>
                      </tr>
                      <tr>
                         <td><span class="val">hc:AlignmentRight</span></td>
-                        <td><span class="code">justify-content: flex-end;</span></td>
+                        <td><span class="csscode">justify-content: flex-end;</span></td>
                         <td><span class="val">hc:AlignmentBottom</span></td>
-                        <td><span class="code">justify-content: flex-end;</span></td>
+                        <td><span class="csscode">justify-content: flex-end;</span></td>
                      </tr>
                      <tr>
                         <td><span class="val">hc:AlignmentCentered</span></td>
-                        <td><span class="code">justify-content: center;</span></td>
+                        <td><span class="csscode">justify-content: center;</span></td>
                         <td><span class="val">hc:AlignmentCentered</span></td>
-                        <td><span class="code">justify-content: center;</span></td>
+                        <td><span class="csscode">justify-content: center;</span></td>
                      </tr>
                      <tr>
                         <td rowspan="3"><span class="att">@rendition</span> an einem enthaltenen <em>flex item</em>: Selbstausrichtung Querachse</td>
                         <td><span class="val">hc:SelfAlignmentTop</span></td>
-                        <td><span class="code">align-self: flex-start;</span> (Voreinstellung)</td>
+                        <td><span class="csscode">align-self: flex-start;</span> (Voreinstellung)</td>
                         <td><span class="val">hc:SelfAlignmentLeft</span></td>
-                        <td><span class="code">align-self: flex-start;</span> (Voreinstellung)</td>
+                        <td><span class="csscode">align-self: flex-start;</span> (Voreinstellung)</td>
                      </tr>
                      <tr>
                         <td><span class="val">hc:SelfAlignmentBottom</span></td>
-                        <td><span class="code">align-self: flex-end;</span></td>
+                        <td><span class="csscode">align-self: flex-end;</span></td>
                         <td><span class="val">hc:SelfAlignmentRight</span></td>
-                        <td><span class="code">align-self: flex-end;</span></td>
+                        <td><span class="csscode">align-self: flex-end;</span></td>
                      </tr>
                      <tr>
                         <td><span class="val">hc:SelfAlignmentCentered</span></td>
-                        <td><span class="code">align-self: center;</span></td>
+                        <td><span class="csscode">align-self: center;</span></td>
                         <td><span class="val">hc:SelfAlignmentCentered</span></td>
-                        <td><span class="code">align-self: center;</span></td>
+                        <td><span class="csscode">align-self: center;</span></td>
                      </tr>
                   </table></div>
                   <p>
@@ -328,7 +328,7 @@
                      Mit dem Attribut <span class="att">@hei:width</span> kann die relative Breite eines <em>flex item</em> in einem
                      horizontalen oder vertikalen Elterncontainer festgelegt werden. Der Wert des Attributs muss dem regulären 
                      Ausdruck <span class="code">\d{1,2}%</span> entsprechen (d. h. eine bis zwei Ganzzahlen und das Prozentzeichen).
-                     Das Attribut kann direkt in die entsprechende CSS-Angabe <span class="code">width</span> überführt werden.
+                     Das Attribut kann direkt in die entsprechende CSS-Angabe <span class="csscode">width</span> überführt werden.
                   </p>
                   <p>
                      <span class="aside"><span class="att">@rotate</span></span>
@@ -369,7 +369,7 @@
             
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 21.10.2021
+                        Letzte Aktualisierung: 19.11.2021
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
