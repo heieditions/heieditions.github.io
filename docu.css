@@ -210,12 +210,12 @@ span.biblrefprefix {
   color: #9F0001; /* Heidelberg Red */
 }
 
-span.code {
+span.csscode {
   font-family: 'Ubuntu Mono', monospace;
   background-color: PaleTurquoise;
 }
 
-span.simple_code {
+span.code {
   font-family: 'Ubuntu Mono', monospace;
 }
 
