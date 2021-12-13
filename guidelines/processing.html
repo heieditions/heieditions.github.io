@@ -47,6 +47,70 @@
                   
                </div>
                
+               <div id="PROCESSING-JOBS-WRAPWORDSATPHYSICALBEGINNINGS">
+                  
+                  <h3>Kennzeichnung von Wortteilen an physischen Umbrüchen</h3>
+                  
+                  <p>
+                     Um eine einheitliche Darstellung von ggf. automatisch erzeugten Trennstrichen am Zeilenende 
+                     und ggf. auch eine sinnvolle Indexierung zu gewährleisten, werden in nicht tokenisierten Texten
+                     die Wortteile, die sich im Zeilenumbruch (und ggf. Spalten- und Seitenumbruch u. Ä.) befinden,
+                     mit <a class="gi" href="../specifications/ref-w.html">&lt;w&gt;</a>-Elementen umschlossen, die das Attribut <span class="att">@part</span> tragen.
+                  </p>
+                  <p>
+                     Die Verarbeitung ist implementiert im XProc-Schritt <span class="code">text_wrapWordPartsAtLineBreaks</span> in <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank"><span class="code">transformations/steplibrary.xpl</span></a>,
+                     der die folgenden XSLT-Skripte nacheinander ausführt:
+                  </p>
+                  <ul>
+                     <li>
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_1wrapElements.xsl" target="_blank"><span class="code">text_wrapWordPartsAtLineBreaks_1wrapElements.xsl</span></a>
+                     </li>
+                     <li>
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_2resolveSegments.xsl" target="_blank"><span class="code">text_wrapWordPartsAtLineBreaks_2resolveSegments.xsl</span></a>
+                     </li>
+                     <li>
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_3splitTextNodes.xsl" target="_blank"><span class="code">text_wrapWordPartsAtLineBreaks_3splitTextNodes.xsl</span></a>
+                     </li>
+                     <li>
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_4mergeWordParts.xsl" target="_blank"><span class="code">text_wrapWordPartsAtLineBreaks_4mergeWordParts.xsl</span></a>
+                     </li>
+                     <li>
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_splitWordAtPhysicalBeginnings.xsl" target="_blank"><span class="code">text_splitWordAtPhysicalBeginnings.xsl</span></a>
+                     </li>
+                  </ul>
+                  <p>
+                     Diese Verarbeitung ist nur für nicht tokenisierte Texte sinnvoll. Es muss sichergestellt werden, dass zuvor Leeraum in Nachbarschaft von Elementen, die physische
+                     Umbrüche dokumentieren, entfernt worden ist (mit dem XProc-Schritt <span class="code">text_trimWhitespaceAdjacentToPhysicalBeginnings</span>).
+                  </p>
+               </div>
+               
+               <div id="PROCESSING-JOBS-EXTRAPOLATEEDITORIALCONTENT">
+                  
+                  <h3>Extraktion editorischer Inhalte aus Zeilen</h3>
+                  
+                  <p>
+                     In bestimmten Fällen ist es erforderlich, Elemente mit editorischem Inhalt (wie Überschriften oder Anmerkungen)
+                     für die Quellenansicht aus <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a>-Elementen, in denen sie während der Erzeugung der sourceDoc-Kodierung
+                     zunächst platziert wurden, zu extrahieren und sie außerhalb von <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a> zu stellen. Für editorische Inhalte innerhalb von 
+                     <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> und außerhalb von <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a> sieht das ›heiEDITIONS Schema‹ das eigene
+                     Element <a class="gi" href="../specifications/ref-hei:editorialContent.html">&lt;hei:editorialContent&gt;</a> vor, in dem beliebige editorische Inhalte untergebracht werden können,
+                     die in der Quellenansicht zwischen Zeilen des Primärtextes angezeigt werden sollen.
+                  </p>
+                  <p>
+                     Die aktuelle Implementierung erwartet im Parameter <span class="code">elements</span> eine durch Leerzeichen getrennte Liste von Elementnamen.
+                     Nur für die so aufgelisteten Elemente wird die Extraktion vorgenommen. Außerdem müssen die betreffenden Elemente
+                     an <span class="att">@ana</span> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/editorialcontent.html" target="_blank">hc:EditorialContent</a><span class="loddocborder"> ‹</span> gekennzeichnet sein. Elemente, auf die beide Bedingungen zutreffen 
+                     und die sich innerhalb von <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a> befinden, werden <em>vor</em> die jeweilige Zeile verschoben.
+                  </p>
+                  <p>
+                     Die Verarbeitungsaufgabe ist implementiert im XSLT-Skript 
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/sourceDoc_extrapolateEditorialContent.xsl" target="_blank"><span class="code">sourceDoc_extrapolateEditorialContent.xsl</span></a> 
+                     sowie gekapselt im XProc-Schritt <span class="code">sourceDoc_extrapolateEditorialContent</span> in <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank"><span class="code">transformations/steplibrary.xpl</span></a>.
+                  </p>
+                  
+                  
+               </div>
+               
             </div>
             
 
@@ -57,7 +121,7 @@
                         Elemente mit <span class="att">@xml:id</span> in dessen neuem (kopiertem) Inhalt. Es gibt ebenfalls keine Behandlung von sonstigen 
                         möglichen Verweisen auf solche Elemente mit <span class="att">@xml:id</span>. 
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 19.11.2021
+                        Letzte Aktualisierung: 13.12.2021
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

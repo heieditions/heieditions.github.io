@@ -484,6 +484,8 @@
                   
                   <h3>Ergänzende Angaben zur Platzierung von Randbereichen</h3>
                   
+                  <p>TODO</p>
+                  
                </div>
                
                
@@ -495,8 +497,1003 @@
                
                <h2>Verknüpfung zwischen Text und Faksimiledeklaration</h2>
                
+               <p>
+                  TODO
+               </p>
                
             </div>
+            
+            <div id="FAC-LINES">
+               
+               <h2>Erfassung des Zeilenfalls</h2>
+               
+               <p>
+                  Die in ›heiEDITIONS‹ bereitgestellten Mittel machen es nicht nur möglich,
+                  visuelle Zeilenanfänge zu kennzeichnen und somit den groben Zeilenumbruch einer Quelle zu dokumentieren,
+                  sondern ermöglichen auch die präzise Erfassung von Zeilenüberläufen und auf Zeilensegmente verteilten parallelen Textströmen
+                  sowie Angaben zur Ausrichtung von Zeileninhalten und zur Positionierung von Zeilensegmenten.
+               </p>
+               <p>
+                  Sofern in einem Editionsprojekt die ›Quellenansicht‹ erwünscht ist, ist eine Erfassung des
+                  Zeilenfalls nach den hier beschriebenen Grundsätzen erforderlich. Für die ›Leseansicht‹ allein
+                  ist sie hingegen verzichtbar. 
+               </p>
+               <p>
+                  Das hier vorgestellte Datenmodell für die Zeilenerfassung ist – zusammen mit den oben beschriebenen Grundsätzen 
+                  zur Dokumentation von Layoutbereichen – u. a. auch unter Berücksichtigung der Kompatibilität mit OCR/HTR-Systemen
+                  entwickelt. 
+               </p>
+               
+               <div id="FAC-LINES-TRIVIA">
+                  
+                  <h3>Grundsätzliches zur Zeilenerfassung</h3>
+                  
+                  <p>
+                     Die Zeile ist in der visuellen Strukturhierarchie einer inhaltstragenden Fläche unterhalb der Ebene von Inhaltsbereichen 
+                     angesiedelt und ist in dieser Hierarchie ›von oben kommend‹ die erste Einheit, die direkt Textzeichen 
+                     enthalten kann.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/line.html"><span class="val">hc:Line</span></a> ( ›Zeile‹ ): Eine geordnete, gerichtete und visuell kohärente Sequenz von Glyphen und ggf. anderen Elementen, die in der Regel, jedoch nicht zwingend einer geometrischen Geraden folgt, immer aber auf einem intentional geschaffenen visuellen Zusammenhang gründet.
+                  </p>
+                  <p>
+                     Zeilen sind die konstituierenden Komponenten von Textbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/textzone.html" target="_blank">hc:TextZone</a><span class="loddocborder"> ‹</span>), die in der Regel
+                     als unmittelbare Container für jeweils eine geordnete Sequenz von Zeilen fungieren.<sup><a href="#note_9" id="note_reference_9" class="note_mark">9)</a></sup>
+                  </p>                  
+                  <p>
+                     Wenn das Digitalisat der Quelle (das inhaltstragende Artefakt) einer Expression nicht mithilfe von Koordinatenangaben
+                     segmentiert wird (typischerweise anhand eines OCR/HTR-Systems), sodass Koordinatenangaben in das TEI-Dokument
+                     integriert würden, sind innerhalb der Layoutdeklaration in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> keine Angaben zu Zeilen erforderlich. 
+                     In der Arbeitskodierung werden lediglich im laufenden Text (innerhalb von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>) punktuell
+                     die Zeilenanfänge mit <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> markiert. Dabei ist für die Anordnung der Zeilen innerhalb eines Inhaltsbereichs
+                     die Nummerierung der <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>-Elemente mit <span class="att">@n</span> signifikant. Die so markierten Zeilen werden
+                     implizit auf den nächsten vorausgehenden, im Text mit <a class="gi" href="../specifications/ref-cb.html">&lt;cb&gt;</a>, <span class="code">&lt;milestone ana="hc:ZoneBeginning"&gt;</span> 
+                     oder <span class="code">&lt;milestone ana="hc:ZoneShift"&gt;</span> (s. oben <a class="inlink" href="#FAC-CON">Verknüpfung zwischen Text und Faksimiledeklaration</a>) angegebenen Inhaltsbereich bezogen 
+                     und diesem zugewiesen.
+                  </p>
+                  <p>
+                     Nachdem also, wie oben unter <a class="inlink" href="#FAC-CON">Verknüpfung zwischen Text und Faksimiledeklaration</a> beschrieben, jeweils der Anfang eines Inhaltsbereichs mit 
+                     <a class="gi" href="../specifications/ref-cb.html">&lt;cb&gt;</a> (bei Spaltenanfängen) oder <span class="code">&lt;milestone ana="hc:ZoneBeginning"&gt;</span> (bei Anfängen sonstiger Inhaltsbereiche)
+                     gekennzeichnet worden ist (bzw. ggf. der Wechsel zurück in einen zuvor bereits einmal begonnenen Inhaltsbereich 
+                     mittels <span class="code">&lt;milestone ana="hc:ZoneShift"&gt;</span> deklariert worden ist), wird <em>vor</em> den Text jeder Zeile das Element
+                     <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> (<em>line beginning</em>) gesetzt. Dieses Element ist immer leer, es muss jedoch das Attribut <span class="att">@n</span>
+                     tragen.
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<p>
+   <cb facs="#A_5-a"/>
+   <lb n="1"/>Text von Zeile 1
+   <lb n="2"/>Text von Zeile 2
+   <lb n="3"/>Text von Zeile 3
+   <lb n="4"/>Text von Zeile 4
+   <lb n="5"/>Text von Zeile 5
+</p>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Im vorangehenden Beispiel befindet sich der Text mit jeweils markierten Zeilenanfängen in einem <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a>,
+                     der Text der fünf Zeilen bildet also semantich-logisch einen Absatz als Sinneinheit. Die Verwendung semantisch-logischer
+                     Elemente (wie <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a> oder <a class="gi" href="../specifications/ref-l.html">&lt;l&gt;</a>) bringt keine implizite Aussage über die Zeilenaufteilung mit sich, sie ersetzt nicht
+                     die Kennzeichnung eines Zeilenanfangs mit <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>. 
+                  </p>
+                  <p>
+                     Es spielt jedoch keine Rolle, ob beim Zusammentreffen visueller Anfänge 
+                     und der Anfänge von Sinneinheiten  das eine oder andere zuerst gesetzt wird. Im vorliegenden Beispiel wird zunächst <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a>
+                     als Sinneinheit geöffnet und innerhalb des <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a> werden der Spaltenanfang under Zeilenanfang gesetzt. Genauso könnte 
+                     aber auch das <a class="gi" href="../specifications/ref-cb.html">&lt;cb&gt;</a> direkt vor dem <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a> stehen; das <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> für Zeile 1 könnte dann entweder am Anfang des <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a>
+                     bleiben oder ebenfalls dem <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a> vorangehen.<sup><a href="#note_10" id="note_reference_10" class="note_mark">10)</a></sup>
+                  </p>
+                  <p>
+                     In einer Gedichtstrophe (<a class="gi" href="../specifications/ref-lg.html">&lt;lg&gt;</a>) könnten – bei einer regelmäßigen Absetzung jedes Verses in der Quelle – die Zeilenanfänge einzelner Verse (<a class="gi" href="../specifications/ref-l.html">&lt;l&gt;</a>) so
+                     erfasst werden:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<lg>
+   <l>
+      <lb n="1"/>Text von Vers 1.                              
+   </l>
+   <l>
+      <lb n="2"/>Text von Vers 2.                              
+   </l>
+   <l>
+      <lb n="3"/>Text von Vers 3.                              
+   </l>
+   <l>
+      <lb n="4"/>Text von Vers 4.                              
+   </l>
+   <l>
+      <lb n="5"/>Text von Vers 5.                              
+   </l>
+</lg>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Genauso möglich wäre aber stattdessen auch:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<lg>
+   <lb n="1"/>
+   <l>
+      Text von Vers 1.                              
+   </l>
+   <lb n="2"/>
+   <l>
+      Text von Vers 2.                              
+   </l>
+   <lb n="3"/>
+   <l>
+      Text von Vers 3.                              
+   </l>
+   <lb n="4"/>
+   <l>
+      Text von Vers 4.                              
+   </l>
+   <lb n="5"/>
+   <l>
+      Text von Vers 5.                              
+   </l>
+</lg>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Die Insignifikanz der Position von Markern visueller Anfänge beim Zusammentreffen mit Anfängen von Sinneinheiten
+                     ergibt sich daraus, dass sie konzeptionell unterschiedliche ›Textdimensionen‹ eingrenzen,
+                     die zumindest technisch voneinander unabhänig sind. Da auf die Frage, ob zuerst ein Vers anfängt oder die Zeile, in der der Vers
+                     steht, keine eindeutige Antwort möglich ist, ist die Position der entsprechenden Elemente in ›heiEDITIONS‹
+                     irrelevant. Von der Sache her verhält es sich am ehesten so, dass beides gleichzeitig anfängt, dies lässt jedoch mit XML/TEI nicht
+                     unmittelbar abbilden, da zwei XML-Elemente nicht dieselbe Position in einem XML-Dokument einnehmen können.<sup><a href="#note_11" id="note_reference_11" class="note_mark">11)</a></sup> 
+                     Auch wenn die technische Abfolge der beiden Typen von Anfängen in einem TEI-Dokument also letztlich
+                     beliebig ist, empfiehlt sich jeweils projektspezifisch eine einheitliche Regelung.                    
+                  </p>                 
+                  <p>
+                     Wie bei <a class="gi" href="../specifications/ref-pb.html">&lt;pb&gt;</a>, <a class="gi" href="../specifications/ref-cb.html">&lt;cb&gt;</a>, <span class="code">&lt;milestone ana="hc:ZoneBeginning"&gt;</span> 
+                     oder <span class="code">&lt;milestone ana="hc:ZoneShift"&gt;</span> gilt auch für die Markierungen von Zeilenanfängen mit <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>,
+                     dass Leeraum (Leerzeichen oder Zeilenumbruchzeichen im TEI-Code) davor und danach grundsätzlich insignifikant ist.
+                     Zur besseren Lesbarkeit kann also <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> z. B. jeweils auf eine eigene Zeile gesetzt werden.
+                  </p>
+                  <p>
+                     In tokenisierten Texten, in denen Leerzeichen explizit mit <a class="gi" href="../specifications/ref-c.html">&lt;c&gt;</a> erfasst werden, sollen am Zeilenende und am Zeilenanfang
+                     keine Leerzeichen angegeben werden. Es gilt das Prinzip: Eine Zeile fängt nie mit einem Leerzeichen an und 
+                     endet auch nie mit einem Leerzeichen.
+                  </p>
+                  <p>
+                     Die Nummer im Wert des Attributs <span class="att">@n</span> bezeichnet die Zeilennummer in der natürlichen Zeilenabfolge des jeweiligen
+                     Textbereichs. Die Nummer ist als solche signifikant und bestimmt die Position jeder Zeile in einem Textbereich (also in der
+                     Zeilensequenz innerhalb eines Textbereichs). Sofern Zeilen nicht in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> explizit deklariert sind,
+                     werden sie in der Verarbeitung des TEI-Dokuments für die ›Quellenansicht‹jeweils 
+                     pro Textbereich nach dem nummerischen Wert von <span class="att">@n</span> geordnet. Die Zeilennummerierung sollte also
+                     der tatsächlichen Abfolge der Zeilen innerhalb eines Textbereichs in der Quelle entsprechen und diese wiedergeben. 
+                     Allerdings kommt es dabei nicht auf den absolten Zahlenwert an, sondern allein auf die nummeriche Abfolge. Das bedeutet praktisch, 
+                     dass die Zeilenzählung nicht zwingend in jedem Inhaltsbereich neu bei Eins anfangen muss. Eine größere Zahl bedeutet
+                     eine spätere Position in einer Zeilensequenz. Die nummerischen Werte in <span class="att">@n</span> sind nicht auf Ganzzahlen beschränkt.
+                     Unter Umständen, etwa bei Interlinearzeilen, kann es sinnvoll sein, mit einer sekundären Nummerierung zwischen als primär
+                     geltenden Zeilen zu arbeiten. In solchen Fällen können Dezimalzahlen mit Punkt als Dezimaltrennzeichen verwendet werden.
+                     Eine Zeile mit der Nummer <span class="val">1.1</span> würde sich zwischen den Zeilen 1 und 2 befinden. 
+                     Der relative Abstand einer Dezimalzahl von benachbarten Ganzzahlen (1,1 ist nummerisch näher an 1 als an 2) spielt dabei keine Rolle –
+                     allein die Position in der Zeilensequenz ist von Bedeutung.<sup><a href="#note_12" id="note_reference_12" class="note_mark">12)</a></sup>
+                  </p>
+                  <p>
+                     Ein grundlegendes Prinzip ist, dass die Abfolge der <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>-Elemente mit ihren den Quellenbefund wiedergebenden Zeilennummern
+                     in einem semantisch-logisch strukturierten TEI-Dokument nicht der Zeilenabfolge in der Quelle entsprechen muss. 
+                     Die ›semantisch-logische Kodierung‹, die in ›heiEDITIONS‹ und auch sonst in der TEI-Community meist
+                     die primäre Kodierung ist und im Wesentlichen ebenfalls der Arbeitskodierung entspricht, gibt eine Expression in der Anordnung wieder,
+                     in der diese sinnvoll gelesen werden soll. Diese sinngemäße Leseanordnung weicht gelegentlich von der visuellen Anordnung 
+                     in der Quelle ab. Meist sind Abweichungen in der Anordung am Wechsel zwischen Textbereichen festzumachen, etwa wenn der Textlauf
+                     von einer Spalte in eine Marginalie wechselt und danach wieder in der Spalte fortgesetzt wird. Gelegentlich kann aber auch innerhalb 
+                     eines Textbereichs die visuelle Abfolge von der sinnvoll zu lesenden Abfolge abweichen. Zeilenüberläufe und quer zur Zeilenanordnung
+                     verlaufende parallele Textströme (s. u. <a class="inlink" href="#FAC-LINES-RUNOVER">Zeilenüberläufe und quer zu Zeilen verlaufende Textströme</a>) sind die typischsten Phänomene dieser Art. 
+                  </p>
+                  <p>
+                     Grundsätzlich hindert einen Herausgeber nichts daran, die sinngemäße Leseabfolge des Textes völlig frei festzulegen
+                     und dabei Abweichungen von der visuellen Abfolge der Zeilen in der Quelle in Kauf zu nehmen. Das folgende Code-Beispiel
+                     führt einen solchen Vorgang vor: 
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<lg>
+   <l n="1">
+      <lb n="1"/>Text von Vers 1.                              
+   </l>
+   <l n="2">
+      <lb n="3"/>Text von Vers 2.                              
+   </l>
+   <l n="3">
+      <lb n="2"/>Text von Vers 3.                              
+   </l>
+   <l n="4">
+      <lb n="4"/>Text von Vers 4.                              
+   </l>
+   <l n="5">
+      <lb n="5"/>Text von Vers 5.                              
+   </l>
+</lg>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Im vorangehenden Beispiel legt der Herausgeber fest (ohne hier auf mögliche Gründe für diese Entscheidung einzugehen),
+                     dass der Text auf Zeile 3 der Quelle als Vers 2 zu lesen ist. Die ›Leseansicht‹ von ›heiEDITIONS‹
+                     wird diese vom Herausgeber festgelegte Reihenfolge, die in der Dokumentreihenfolge der semantisch-logischen Kodierung
+                     ihren Ausdruck findet, respektieren. Die ›Quellenansicht‹ hingegen, die den visuellen Befund der Quelle
+                     reproduziert, wird den Text entsprechend der Nummerierung an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> Zeile für Zeile so ausgeben, wie es dem Befund in der
+                     Quelle entspricht.
+                  </p>
+                  <p>
+                     Entscheidend für diese vom Herausgeber festzulegende Leseabfolge ist die Dokumentreihenfolge der Arbeitskodierung,
+                     also die Reihenfolge im geordneten Baum des XML-Dokuments bzw. die Zeichenreihenfolge der Datei. Keine wesentliche Rolle spielt 
+                     dabei hingegen eine etwaige Nummerierung der Sinneinheiten, z. B. der Verse (<a class="gi" href="../specifications/ref-l.html">&lt;l&gt;</a>) im letzten Code-Beispiel. Die
+                     explizite Nummerierung von Sinneinheiten mit <span class="att">@n</span> kann ganz anderen Zwecken dienen als der Festlegung der Leseanordnung 
+                     (etwa projektspezifisch der Korrelation mit einer älteren Ausgabe). Wenn der Herausgeber die Versnummerierung mit <span class="att">@n</span>
+                     mit einer anderen Bedeutung als der Leseanordnung belegt, könnte das letzte Beispiel auch wie folgt aussehen, ohne dass sich
+                     an der  Lesereihenfolge etwas ändern würde:                  
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<lg>
+   <l n="1">
+      <lb n="1"/>Text von Vers 1.                              
+   </l>
+   <l n="2">
+      <lb n="3"/>Text von Vers 2.                              
+   </l>
+   <l n="5">
+      <lb n="2"/>Text von Vers 5.                              
+   </l>
+   <l n="4">
+      <lb n="4"/>Text von Vers 4.                              
+   </l>
+   <l n="3">
+      <lb n="5"/>Text von Vers 3.                              
+   </l>
+</lg>--></code>
+            </pre>
+        </div>
+    
+                  
+                  
+               </div>
+               
+               <div id="FAC-LINES-BREAKS">
+                  
+                  <h3>Worttrennung</h3>
+                  
+                  <p>
+                     Die Zeilengrenzen entsprechen bekanntlich nicht immer den Wortgrenzen. Mit <span class="att">@break</span> stellt die TEI
+                     ein einfaches Mittel zur Verfügung, mit dem ausgedrückt werden kann, ob ein Zeilenanfang gleichzeitig auch
+                     mit dem Anfang eines Tokens zusammenfällt, also ob die Zeilengrenze gleichzeitig auch eine Tokengrenze ist.
+                     Mit <span class="code">&lt;lb break="no"&gt;</span> kann ausgedrückt werden, 
+                     dass es sich um keine Tokengrenze handelt, dass der betroffene Zeilenanfang also mitten in einem Wort liegt.
+                  </p>
+                  
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<p>
+   <lb n="2"/> […] hell und festlich, ganz frevelhaft unkirchlich scheint eine
+   <lb n="3"/>warme Frühlingssonne am Karfreitag, wo sie eigentlich von den Sonnenschie
+   <lb n="4" break="no"/>bern mit schwarzem Flore verbrämt werden müsste, und auch ich Heide sehe
+   <lb n="5"/>nicht ein, wozu sie scheint. Sie kann doch nur üble Dünste aus den Feldern,
+   <lb n="6"/>die nicht die Frucht des Friedens tragen können, brüten, und was bescheint
+   <lb n="7"/>sie anders, als eine Fülle Menschen in nichts weniger als festlicher
+   <lb n="8"/>Stimmung, nichts weniger als festlicher Beschäftigung. Ich habe zwar fei
+   <lb n="9" break="no"/>erlich genug eine Stunde in meinem Sophokles gelesen […]
+</p>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Im vorangehenden Beispiel steht jede Zeilenanfang-Markierung auf einer eigenen Zeile, auch
+                     Zeilenanfänge, die sich mitten im Wort befinden und mit <span class="code">&lt;lb break="no"&gt;</span> gekennzeichnet sind. 
+                     Wie bereits mehrfach erwähnt, gelten Leerzeichen vor und nach einem Zeilenanfang als insignifikant –
+                     das gilt auch mitten im Wort. Die in der Quelle vorhandenen Trennstriche sind in diesem Beispiel nicht explizit
+                     erfasst (zur expliziten Erfassung von Trennstrichen und ähnlichen Trennzeichen s. TODO).
+                  </p>
+                  <p>
+                     Selbstverständlich besteht in nicht explizit und vollständig tokenisierten Texten wie beim vorangehenden 
+                     Beispiel keine Sicherheit, dass Leerzeichen mitten in der Zeile immer zuverlässig die linguistisch korrekte
+                     Wortgrenze markieren. Der Aussagewert von <span class="att">@break</span> beschränkt sich nur auf Wortgrenzen
+                     am Zeilenende bzw. Zeilenanfang.
+                  </p>
+                  <p>
+                     In tokenisierten Texten, in denen jedes Wort mit <a class="gi" href="../specifications/ref-w.html">&lt;w&gt;</a> markiert ist (zur Tokenisierung s. TODO), 
+                     muss an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>-Elementen innerhalb eines Wortes <span class="att">@break</span> nicht händisch gesetzt werden.
+                     Wenn es fehlt, wird es während der Verarbeitung ergänzt. 
+                  </p>
+                  
+               </div>
+               
+               <div id="FAC-LINES-SEGMENTS">
+                  
+                  <h3>Zeilensegmente</h3>
+                  
+                  <p>
+                     Zwischen den visuellen Gliederungsebenen der Zeilen und der Zeichen bzw. Glyphen kann bei Bedarf zusätzlich
+                     die Ebene der Zeilensegmente angesetzt werden.<sup><a href="#note_13" id="note_reference_13" class="note_mark">13)</a></sup>                  
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/linesegment.html"><span class="val">hc:LineSegment</span></a> ( ›Zeilensegment‹ ): Eine geordnete, gerichtete und visuell kohärente Sequenz von Glyphen und ggf. anderen Elementen innerhalb einer Zeile.
+                  </p>
+                  <p>
+                     Grundsätzlich kann jede Zeile beliebig in Zeilensegmente unterteilt werden. Ähnlich wie bei Zeilenanfängen 
+                     wird in der Arbeitskodierung und in der semantisch-logischen Kodierung nur der Anfang eines Zeilensegments
+                     punktuell gekennzeichnet, und zwar mit <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span>.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/linesegmentbeginning.html"><span class="val">hc:LineSegmentBeginning</span></a> ( ›Zeilensegmentanfang‹ ): Punktuell gedachter Anfang eines Zeilensegments.
+                  </p>
+                  <img class="illustration" src="../images/line_with_segments.svg" alt="Eine Zeile mit drei Zeilensegmenten."><p class="bildunterschrift">Abb. 15: Eine Zeile mit drei Zeilensegmenten.</p>
+                  <p>
+                     Der Text einer Zeile mit der in der vorangehenden Abbildung skizzierten Struktur würde (etwa innerhalb eines Absatzes) wie folgt kodiert:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<p>
+   […]
+   <lb n="3"/>
+   <milestone ana="hc:LineSegmentBeginning" n="1"/>
+   Text von Zeilensegment 1
+   <milestone ana="hc:LineSegmentBeginning" n="2"/>
+   Text von Zeilensegment 2
+   <milestone ana="hc:LineSegmentBeginning" n="3"/>
+   Text von Zeilensegment 3
+   […]
+</p>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Wenn dem jeweils ersten Zeilensegment in einer Zeile keine weiteren Informationen beigegeben werden sollen,
+                     kann auf die explizite Deklaration des entsprechenden Zeilensegmentanfangs verzichtet werden:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<p>
+   […]
+   <lb n="3"/>
+   Text von Zeilensegment 1
+   <milestone ana="hc:LineSegmentBeginning" n="2"/>
+   Text von Zeilensegment 2
+   <milestone ana="hc:LineSegmentBeginning" n="3"/>
+   Text von Zeilensegment 3
+   […]
+</p>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Zeilensegmente können verwendet werden, um Zeilenteile mit Informationen über ihre Ausrichtung und Abstände
+                     innerhalb der Zeile zu versehen (vergleichbar mit Tabulatoren im Desktop-Publishing); zu dieser Verwendung vgl. 
+                     weiter unten <a class="inlink" href="#FAC-LINES-ALIGNMENT">Ausrichtung und Abstände</a>. Sie dienen außerdem dazu, die Rückkehr eines Textstroms
+                     in eine Zeile zu erfassen, wenn der Textstrom zuvor die Zeile verlassen hat, typischerweise um vorübergehend in einer Marginalie
+                     fortgesetzt zu werden. In solchen Fällen findet ein zweifacher Wechsel des Textbereichs statt (zwischen einer Hauptspalte 
+                     und einem Randbereich und danach zwischen dem Randbereich und der ursprünglichen Hauptspalte). Ein weiterer
+                     Einsatzbereich von Zeilensegmenten ist die Erfassung von Zeilenüberläufen.
+                  </p>
+                  <p>
+                     Bei der Verwendung von Zeilensegmenten für die beiden zuletzt genannten Zwecke kann es erforderlich sein,
+                     bei Zeilensegmenten (mit Ausnahme des jeweils ersten Zeilensegments, dessen Anfang praktisch mit dem Zeilenbeginn
+                     zusammenfällt) ihre jeweilige Zugehörigkeit zu einer Zeile explizit anzugeben, und zwar immer dann, wenn
+                     das Zeilensegment einer anderen Zeile als derjenigen angehört, deren Anfang mit dem nächsten vorausgehenden <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>
+                     markiert ist. Diese Aufgabe übernimmt das Attribut <span class="att">@hei:belongsToLine</span>. Dieses Attribut mit dem Datentyp
+                     <span class="code">teidata.text</span> erwartet Werte, die mit der Zeilennummerangabe in <span class="att">@n</span> am zugehörigen <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>
+                     übereinstimmen müssen, normalerweise also einfach die Nummer der zugehörigen Zeile.<sup><a href="#note_14" id="note_reference_14" class="note_mark">14)</a></sup> Näheres und Beispiele sind den folgenden Abschnitten zu entnehmen.
+                  </p>
+                  
+               </div>
+               
+               <div id="FAC-LINES-ALIGNMENT">
+                  
+                  <h3>Ausrichtung und Abstände</h3>
+                  
+                  <p>
+                     Eine Zeile ist ein visueller Gegenstand, der normalerweise in einen größeren visuellen Kontext (einer Inhaltsfläche und eines Inhaltsbereichs)
+                     eingebettet ist und zu anderen visuellen Objekten in einer Beziehung steht. In ›heiEDITIONS‹ wird angenommen,
+                     dass Zeilen in der Regel in einem Textbereich eine geordnete und gerichtete Sequenz bilden (wobei es natürlich auch Textbereiche mit einer
+                     einzigen Zeile geben kann) und dass diese Zeilensequenz den Textbereich konstituiert. 
+                  </p>
+                  <p>
+                     ›heiEDITIONS‹ unterstützt bei Zeilen und Zeilensegmenten grundsätzlich die Erfassung
+                     zweier Arten visueller Bezüge:
+                  </p>
+                  <ul>
+                     <li>visuelle Bezüge von Zeilen oder Zeilensegmenten untereinander, jeweils zum nächsten vorausgehenden oder nachfolgenden Geschwistergegenstand</li>
+                     <li>visuelle Bezüge von Zeilen oder Zeilensegmenten zu ihrem Elterngegenstand (Inhaltsbereich oder Zeile), also zu den Rändern ihres direkt übergeordneten Containers</li>
+                  </ul>
+                  <p>
+                     Die im folgenden beschriebenen Mechanismen sind unterschiedlich mächtig und dementsprechend auch unterschiedlich komplex. 
+                     Sie dienen in erster Linie der Beschreibung der visuellen Strukturen der Quelle, nicht etwa als Formatierungsanweisungen
+                     für editorische Sekundärtexte. Die Visualisierung der ›Quellenansicht‹ von ›heiEDITIONS‹
+                     unterstützt die hier beschriebenen Konstrukte nur eingeschränkt durch direkte visuelle Nachbildung.
+                  </p>
+                  <p>
+                     Häufig zu erfassende Phänomene bei der visuellen Erscheinung von Zeilen sind auf horizontaler Achse
+                     Einrückungen und Ausrückungen sowie auf vertikaler Achse Abstände nach oben und unten.<sup><a href="#note_15" id="note_reference_15" class="note_mark">15)</a></sup> Zur einfachen Dokumentation
+                     von Einrückungen und Ausrückungen können an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> bzw. <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> jeweils 
+                     mit dem Attribut <span class="att">@rendition</span> diese Angaben gemacht werden:
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/leftindent.html"><span class="val">hc:LeftIndent</span></a> ( ›links eingerückt‹ ): Links eingerückter textueller visueller Gegenstand, in der Regel eine Zeile, ggf. auch bezogen auf die zu einem Absatz u. Ä. gehörenden Zeilen oder ein sonstige Zeilengruppe als Block. Die Einrückung oder der Einzug besteht in der Belassung eines Freiraums auf der linken Seite einer Zeile, sodass der Zeileninhalt entsprechend verschoben wird.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/rightindent.html"><span class="val">hc:RightIndent</span></a> ( ›rechts eingerückt‹ ): Rechts eingerückter textueller visueller Gegenstand, in der Regel eine Zeile, ggf. auch bezogen auf die zu einem Absatz u. Ä. gehörenden Zeilen oder eine sonstige Zeilengruppe als Block. Die Einrückung oder der Einzug besteht in der Belassung eines Freiraums auf der rechten Seite einer Zeile, sodass der Zeileninhalt entsprechend verschoben wird.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/leftoutdent.html"><span class="val">hc:LeftOutdent</span></a> ( ›links ausgerückt‹ ): Textueller visueller Gegenstand, der über den regulären linken Rand eines Inhaltsbereichs hinausragt, in der Regel eine Zeile in einem Textbereich.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/rightoutdent.html"><span class="val">hc:RightOutdent</span></a> ( ›rechts ausgerückt‹ ): Textueller visueller Gegenstand, der über den regulären rechten Rand eines Inhaltsbereichs hinausragt, in der Regel eine Zeile in einem Textbereich oder ein Zeilensegment in einer Zeile.
+                  </p>
+                  <p>
+                     Die Zuweisung der aufgeführten Typen zu einer Zeile oder einem Zeilensegment drückt nur aus, dass eine Einrückung oder Ausrückung
+                     vorliegt, nicht etwa wie groß diese ist. Für die genauere Erfassung der Ausdehnung einer Einrückung oder Ausrückung s. weiter unten (TODO). 
+                  </p>
+                  <p>
+                     Zur Erfassung der vertikalen Absetzung bzw. von vertikalen Freiräumen oberhalb oder unterhalb einer Zeile können 
+                     an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> mit dem Attribut <span class="att">@rendition</span> diese Angaben gemacht werden:
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/offsetabove.html"><span class="val">hc:OffsetAbove</span></a> ( ›mit Abstand nach oben; von oben abgesetzt‹ ): Visueller Gegenstand, in der Regel eine Zeile oder seltener ein Layoutbereich, der mit einem Abstand nach oben erscheint bzw. von oben abgesetzt ist, sodass über dem Gegenstand ein gewisser vertikaler Freiraum erkennbar ist.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/offsetbelow.html"><span class="val">hc:OffsetBelow</span></a> ( ›mit Abstand nach unten‹ ): Visueller Gegenstand, in der Regel eine Zeile oder seltener ein Layoutbereich, der mit einem Abstand nach unten erscheint, sodass unter dem Gegenstand ein gewisser vertikaler Freiraum erkennbar ist.
+                  </p>
+                  <p>
+                     Wie bei den zuvor beschriebenen einfachen Angaben für Einrückungen und Ausrückungen sind auch diese
+                     Mittel zur Angabe vertikaler Absetzung nur für einfache ›Pauschalangaben‹ bestimmt, also für Projekte und Fälle,
+                     in denen die Erfassung der Größe der Absetzung irrelevant ist. Für die genauere Erfassung der Ausdehnung 
+                     vertikaler Absetzungen s. weiter unten (TODO). 
+                  </p>
+                  <p>
+                     Des weiteren besteht häufig der Bedarf, bei Zeilen die Gesamtausrichtung ihrer Inhalte zu erfassen, also die Information, ob die Inhalte
+                     – normalerweise der textuelle Inhalt – der Zeile linksbündig, rechtsbündig oder zentriert erscheinen. Dafür kann 
+                     an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> mit dem Attribut <span class="att">@rendition</span> eine der folgenden drei Angaben gemacht werden:
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/flushleft.html"><span class="val">hc:FlushLeft</span></a> ( ›linksbündig‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt am linken Rand des Gegenstands ausgerichtet ist. Die Linksausrichtung wird normalerweise implizit angenommen.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/flushright.html"><span class="val">hc:FlushRight</span></a> ( ›rechtsbündig‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt am rechten Rand des Gegenstands ausgerichtet ist.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/centered.html"><span class="val">hc:Centered</span></a> ( ›zentriert‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt horizontal mittig ausgerichtet ist.
+                  </p>
+                  <p>
+                     Die Angaben <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushleft.html" target="_blank">hc:FlushLeft</a><span class="loddocborder"> ‹</span>, <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/centered.html" target="_blank">hc:Centered</a><span class="loddocborder"> ‹</span> beziehen sich
+                     jeweils ›global‹ auf sämtliche Inhalte einer Zeile (bzw. anders betrachtet auf die ganze Zeile als Einheit).                   
+                  </p>
+                  <p>
+                     Wenn es erforderlich ist, die Ausrichtung zu Segmenten innerhalb einer Zeile anzugeben, etwa bei
+                     tabulatorbedingten Strukturen innerhalb einer Zeile oder bei Zeilenüberhängen (s. u.), können an
+                     <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> mit <span class="att">@rendition</span> die folgenden
+                     Angaben gemacht werden:
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/selfalignmentleft.html"><span class="val">hc:SelfAlignmentLeft</span></a> ( ›links ausgerichtet‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mit seinem linken Rand bündig mit dem linken Rand des Containers erscheint.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/selfalignmentright.html"><span class="val">hc:SelfAlignmentRight</span></a> ( ›rechts ausgerichtet‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mit seinem rechten Rand bündig mit dem rechten Rand des Containers erscheint.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/selfalignmentcentered.html"><span class="val">hc:SelfAlignmentCentered</span></a> ( ›mittig ausgerichtet‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mittig erscheint.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/selfalignmentregularleftmargin.html"><span class="val">hc:SelfAlignmentRegularLeftMargin</span></a> ( ›ausgerichtet am regulären linken Rand‹ ): Visueller Gegenstand – typischerweise ein Zeilensegment –, der links bündig mit dem regulären linken Rand des Inhaltsbereiches erscheint.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/selfalignmentregularrightmargin.html"><span class="val">hc:SelfAlignmentRegularRightMargin</span></a> ( ›ausgerichtet am regulären rechten Rand‹ ): Visueller Gegenstand – typischerweise ein Zeilensegment –, der rechts bündig mit dem regulären rechten Rand des Inhaltsbereiches erscheint.
+                  </p>
+                  <p>
+                     TODOs: Beispiele für tabulatorähnliche Strukturen; Offset-Attribute für präzise Erfassung von Abständen;
+                     Verwendung des Elements <a class="gi" href="../specifications/ref-rendition.html">&lt;rendition&gt;</a> für die Bündelung von Layoutangaben an Zeilen und Zeilensegmenten.           
+                  </p>
+                  
+                  
+               </div>
+               
+               <div id="FAC-LINES-SWITCH">
+                  
+                  <h3>Zeilensegmente beim Wechsel des Textstroms zwischen Textbereichen</h3>
+                  
+                  <p>TODO</p>
+                  
+               </div>
+               
+               <div id="FAC-LINES-RUNOVER">
+                  
+                  <h3>Zeilenüberläufe und quer zu Zeilen verlaufende Textströme</h3>
+                  
+                  <p>
+                     Ein Zeilenüberlauf liegt vor, wenn der textuelle Inhalt, der ursprünglich für eine Zeile vorgesehen worden wäre,
+                     nicht vollständig auf diese Zeile passt, sodass der ›überschüssige‹ Text andernorts auf eine Weise untergebracht wird,
+                     die sich von einer regulären Fortsetzung des Textes auf der nächsten Zeile unterscheidet. Die Abweichung von einer
+                     regulären Fortsetzung lässt sich in der Regel mindestens daran erkennen, dass der fortgesetzte Text nicht 
+                     am normalen visuellen Anfang der nächsten Zeile begonnen wird, wie es im Vergleich mit dem visuellen Kontext erwartbar wäre.
+                     Zeilenüberlauf kommt insbesondere dann vor, wenn Sinneinheiten wie Verse oder Listeneinträge normalerweise
+                     regelmäßig jeweils auf eigene Zeilen gesetzt werden, also wenn der Zeilenumbruch im Wesentlichen die Grenzen der Sinneinheiten 
+                     nachbilden soll.  
+                  </p>
+                  <p>
+                     Die außerordentliche Unterbringung des überschüssigen Textes kann oberhalb und unterhalb einer regulären
+                     Zeile erfolgen, und zwar grundsätzlich (mindestens) auf viererlei Weise: 
+                  </p>
+                  <ul>
+                     <li>
+                        Fortsetzung in einer regulär im Layout vorgesehenen nächsten freien Zeile, 
+                        aber ausgerichtet am regulären Ende der Zeile 
+                        (in diesem Fall handelt es sich immer um eine Zeile darunter)
+                     </li>
+                     <li>
+                        Fortsetzung in einer regulär im Layout vorgesehenen nächsten freien Zeile, 
+                        in einem freigelassenen Abstand vom sonstigen regulären Zeilenbeginn 
+                        (auch in diesem Fall handelt es sich immer um eine Zeile darunter)
+                     </li>
+                     <li>
+                        Fortsetzung in einer zwischen die regulär im Layout vorgesehenen Zeilen 
+                        nachträglich eingeschobenen Zwischenzeile (oberhalb oder unterhalb)
+                     </li>
+                     <li>
+                        Fortsetzung in einem Segment einer regulär im Layout vorgesehenen Zeile (oberhalb oder unterhalb), 
+                        die gleichzeitig weiterhin für ihren regulär vorgesehenen Inhalt in Anspruch genommen wird
+                     </li>
+                  </ul>
+                  <p>
+                     Die nachfolgende Abbildung veranschaulicht zunächst einen Fall, bei dem <em>nicht</em> von
+                     einem Zeilenüberlauf die Rede sein kann, da die Fortsetzung des überschüssigen Textes 
+                     trotz der etwaigen ursprünglichen Absicht, den Text in einer einzigen Zeile unterzubringen, 
+                     dennoch regulär in der nächsten Zeile erfolgt:
+                  </p>
+                  <img class="illustration" src="../images/no-run-over.svg" alt="Kein Zeilenüberlauf."><p class="bildunterschrift">Abb. 16: Kein Zeilenüberlauf.</p>
+                  <p>
+                     Die folgende Abbildung verdeutlicht die Situation, in der überschüssiger Text in der nächsten regulären Zeile 
+                     darunter fortgesetzt wird, aber rechtsbündig:
+                  </p>
+                  <img class="illustration" src="../images/run-over-type1.svg" alt="Zeilenüberlauf rechtsbündig in der nächsten regulären Zeile."><p class="bildunterschrift">Abb. 17: Zeilenüberlauf rechtsbündig in der nächsten regulären Zeile.</p>
+                  <p>
+                     Um den Zeilenüberlauf als solchen zu markieren, wird das <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> der Zeile, die den
+                     überschüssigen Text aufnimmt, an <span class="att">@ana</span> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span>
+                     gekennzeichnet. Die rechtsbündige Ausrichtung des Zeileninhalts wird an <span class="att">@rendition</span>
+                     mit <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> angegeben:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<p>
+   […]
+   <lb n="1"/>Text, der eigentlich für eine Zeile vorgesehen wäre, aber
+   <lb n="2" ana="hc:RunOverBelow" rendition="hc:FlushRight"/>zufällig etwas länger ist.
+   […]
+</p>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Grundsätzlich sind für die Kennzeichnung von Zeilenüberläufen diese beiden Typen vorgesehen,
+                     die mit dem Attribut <span class="att">@ana</span> an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> und <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span>
+                     angegeben werden können:
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/runoverabove.html"><span class="val">hc:RunOverAbove</span></a> ( ›Zeilenüberlauf oben‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/runoverbelow.html"><span class="val">hc:RunOverBelow</span></a> ( ›Zeilenüberlauf unten‹ ): 
+                  </p>
+                  <p>
+                     Wenn in der nächsten regulären Zeile, die den überschüssigen Text als Zeilenüberlauf aufnimmt, der
+                     Zeilenüberlauf als solcher visuell durch eine Absetzung oder Einrückung kenntlich gemacht wird, verfährt man
+                     ähnlich wie im vorausgehenden Fall, nur wird am entsprechenden <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> statt der rechtbündigen Ausrichtung 
+                     die Einrückung angegeben:
+                  </p>
+                  <img class="illustration" src="../images/run-over-type2.svg" alt="Zeilenüberlauf, markiert durch Einrückung in der nächsten regulären Zeile."><p class="bildunterschrift">Abb. 18: Zeilenüberlauf, markiert durch Einrückung in der nächsten regulären Zeile.</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<p>
+   […]
+   <lb n="1"/>Text, der eigentlich für eine Zeile vorgesehen wäre, aber
+   <lb n="2" ana="hc:RunOverBelow" rendition="hc:LeftIndent"/>zufällig etwas länger ist.
+   […]
+</p>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Wenn der Text des Zeilenüberlaufs zwischen den regulären Zeilen platziert wird, damit der folgende Textabschnitt
+                     auf der nächsten regulären Zeile fortgesetzt werden kann, gilt die zusätzliche Zeile zwischen den Zeilen
+                     ebenfalls als eine eigenständige Zeile, und zwar als Zeile des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/interlinearline.html" target="_blank">hc:InterlinearLine</a><span class="loddocborder"> ‹</span>. Bei dieser Zeile
+                     sollte durch das Attribut <span class="att">@n</span> sichergestellt werden, dass sie richtig eingeordnet werden kann (vgl. oben <a class="inlink" href="#FAC-LINES-TRIVIA">Grundsätzliches zur Zeilenerfassung</a>). Im Übrigen
+                     folgt die Kodierung aber den bereits erläuterten Prinzipien:
+                  </p>
+                  <img class="illustration" src="../images/run-over-type3.svg" alt="Zeilenüberlauf in einer rechtsbündig ausgerichteten Interlinearzeile."><p class="bildunterschrift">Abb. 19: Zeilenüberlauf in einer rechtsbündig ausgerichteten Interlinearzeile.</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<p>
+   […]
+   <lb n="1"/>Text, der eigentlich für eine Zeile vorgesehen wäre, aber
+   <lb n="2" ana="hc:RunOverBelow" rendition="hc:LeftIndent"/>zufällig etwas länger ist.
+   […]
+</p>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Schließlich kommt der Fall vor, dass der Zeilenüberlauf in einem Segment einer anderen, 
+                     häufig der nächsten vorausgehenden oder nachfolgenden regulären Zeile untergebracht wird, ohne dass
+                     eine solche Zeile für den Zeilenüberlauf ganz freigegeben würde – vielmehr wird eine solche Zeile 
+                     gemäß der regulär vorgesehenen Verteilung des Inhalts genutzt, bei bereits zuvor geschriebenen Zeilen 
+                     darüber natürlich ohne Rücksicht auf das Zeilensegment mit dem Zeilenüberlauf, bei Zeilen darunter mit mehr 
+                     oder weniger Rücksicht. 
+                  </p>
+                  <p>
+                     Grundsätzlich muss hierbei strikt das Prinzip beherzigt werden, dass die Textabfolge in der Arbeitskodierung
+                     (und der semantisch-logischen Kodierung) immer die sinnvoll zu lesende Textabfolge sein muss.
+                     Der Text wird also so erfasst, wie er zu lesen ist. Der visuelle Wechsel des Textstroms in Teile
+                     anderer Zeilen als der direkt zuvor mit einem <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> begonnenen erfolgt mithilfe des oben unter
+                     <a class="inlink" href="#FAC-LINES-SEGMENTS">Zeilensegmente</a> eingeführten Zeilensegment-Konstrukts. Hierbei muss zwingend das
+                     Attribut <span class="att">@hei:belongsToLine</span> benutzt werden, denn das Zeilensegment mit dem Zeilenüberlauf
+                     befindet sich in diesem Fällen immer in einer anderen Zeile als der, die mit dem nächsten vorausgehenden <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>
+                     deklariert wurde.
+                  </p>
+                  <img class="illustration" src="../images/run-over-type4.svg" alt="Zeilenüberlauf in einem Segment der folgenden regulären Zeile."><p class="bildunterschrift">Abb. 20: Zeilenüberlauf in einem Segment der folgenden regulären Zeile.</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<p>
+   […]
+   <lb n="1"/>Text, der eigentlich für eine Zeile vorgesehen wäre, aber
+   <milestone ana="hc:LineSegmentBeginning hc:RunOverBelow" n="2" hei:belongsToLine="2"/>zufällig etwas länger ist.
+   <lb n="2"/>Der ursprünglich vorgesehene
+   <lb n="3"/>Zeilenumbruch wird regulär fortgesetzt.
+   […]
+</p>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Wie aus dem vorausgehenden Code-Beispiel ersichtlich ist, wird in diesem Fall nicht ein <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>,
+                     sondern das <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> an <span class="att">@ana</span> mit der Typangabe
+                     <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span> gekennzeichnet. Der Grund dafür ist, dass in diesem Fall nicht eine Zeile
+                     als Ganzes, sondern ein Zeilensegment den Zeilenüberlauf darstellt. 
+                  </p>
+                  <p>
+                     Das Attribut <span class="att">@n</span> an <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> gibt die Nummer
+                     des Zeilensegments in der Zeile an, die den Zeilenüberlauf aufnimmt. Implizit versteht es sich, dass davor 
+                     in der betroffenen Zeile ein Zeilensegment mit der Nummer 1 steht, dessen Anfang nicht explizit deklariert werden
+                     muss bzw. bereits durch das <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> hinreichend markiert ist.<sup><a href="#note_16" id="note_reference_16" class="note_mark">16)</a></sup>
+                  </p>
+                  <p>
+                     In der folgenden Abbildung sind die beiden Segmente von Zeile 2 des letzten Beispiels zur Verdeutlichung 
+                     unterschiedlich eingefärbt und beschriftet:
+                  </p>
+                  <img class="illustration" src="../images/run-over-type4-2.svg" alt="Zeilenüberlauf in einem Segment der folgenden regulären Zeile, mit eingefärbten Zeilensegmenten."><p class="bildunterschrift">Abb. 21: Zeilenüberlauf in einem Segment der folgenden regulären Zeile, mit eingefärbten Zeilensegmenten.</p>
+                  <p>
+                     Im folgenden realen Beispiel befindet sich der Zeilenüberlauf in einem Zeilensegment zwei Zeilen höher.
+                     Das Beispiel veranschaulicht gleichzeitig den Umgang mit einem Zeilenüberlauf, dessen Anfang mitten in einem Wort liegt.
+                     Hierbei wird – wie auch sonst bei <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> – das Attribut <span class="att">@break</span> verwendet.
+                  </p>
+                  <img class="illustration" src="../images/cpg367_3v-a.jpg" alt="Zeilenüberlauf in einem Zeilensegment zwei Zeilen höher (Heidelberg, Universitätsbibliothek, Cod. Pal. germ. 367, fol. 3v)."><p class="bildunterschrift">Abb. 22: Zeilenüberlauf in einem Zeilensegment zwei Zeilen höher (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/cpg367/0018" target="_blank">Heidelberg, Universitätsbibliothek, Cod. Pal. germ. 367, fol. 3v</a>).</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<lg ana="hc:Couplet">
+   <l n="417">
+      <lb n="24"/>
+      <hi rendition="hc:Versal">S</hi>under d<ex>er</ex> alleyne ot
+   </l>
+   <l n="418">
+      <lb n="25"/>
+      <hi rendition="hc:Versal">D</hi>er daz wachſin gebit got 
+   </l>
+</lg><lg ana="hc:Couplet">
+   <l n="419">
+      <lb n="26"/>
+      <hi rendition="hc:Versal">D</hi>och ſal menſlich flis ſich we<milestone ana="hc:LineSegmentBeginning hc:RunOverAbove" n="2" hei:belongsToLine="24" break="no"/>gin 
+   </l>
+   <l n="420">
+      <lb n="27"/>
+      <hi rendition="hc:Versal">D</hi>ar vf daz her ruche pflege<ex>n</ex> 
+   </l>
+</lg>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     In tokenisierter Variante und mit Erfassung von Metamarken ergibt sich beim selben Beispiel der folgende Code,
+                     in dem <span class="att">@break</span> weggelassen wurde kann, da sich aus der expliziten Tokenisierung die Information ergibt,
+                     dass der Anfang des Zeilenüberlaufs mitten im Wort liegt:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<lg ana="hc:Couplet">
+<l n="417">
+   <lb n="24"/>
+   <w><hi rendition="hc:Versal">S</hi>under</w>
+   <c> </c>
+   <w>d<ex>er</ex></w>
+   <c> </c>                            
+   <w>alleyne</w>
+   <c> </c>
+   <w>ot</w> 
+</l>
+<l n="418">
+   <lb n="25"/>
+   <w><hi rendition="hc:Versal">D</hi>er</w>
+   <c> </c>
+   <w>daz</w>
+   <c> </c>
+   <w>wachſin</w>
+   <c> </c>
+   <w>gebit</w>
+   <c> </c>
+   <w>got</w> 
+</l>
+</lg><lg ana="hc:Couplet">
+<l n="419">
+   <lb n="26"/>
+   <w><hi rendition="hc:Versal">D</hi>och</w>
+   <c> </c>
+   <w>ſal</w>
+   <c> </c>
+   <w>menſlich</w>
+   <c> </c>
+   <w>flis</w>
+   <c> </c>
+   <w>ſich</w>
+   <c> </c>
+   <w>
+      we<metamark ana="hc:Hyphen">⸗</metamark><milestone ana="hc:LineSegmentBeginning hc:RunOverAbove" n="2" hei:belongsToLine="24"/><metamark ana="hc:RunOverMark">‖</metamark>gin
+   </w> 
+</l>
+<l n="420">
+   <lb n="27"/>
+   <w><hi rendition="hc:Versal">D</hi>ar</w>
+   <c> </c>
+   <w>vf</w>
+   <c> </c>
+   <w>daz</w>
+   <c> </c>
+   <w>her</w>
+   <c> </c>
+   <w>ruche</w>
+   <c> </c>
+   <w>pflege<ex>n</ex></w> 
+</l>
+</lg>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Manchmal ist ein Zeilenüberlauf für die Unterbringung des überschüssigen Textes nicht ausreichend.
+                     Bei dem folgenden Beispiel liegt ein zweifacher Zeilenüberlauf in jeweils einem Segment von zwei
+                     Zeilen oberhalb der Zeile vor, in welcher der Text des ›überlaufenden‹ Verses anfängt. Übrigens setzt diese Handschrift
+                     Verse nicht regulär auf eigene Zeilen ab. Das Code-Beispiel ist tokenisiert.
+                  </p>
+                  <img class="illustration" src="../images/ubk-lmb_2_ms_philol_28_3_1r-a.jpg" alt="Doppelter Zeilenüberlauf (Kassel, Universitätsbibliothek, Landesbibliothek und Murhardsche Bibliothek der Stadt Kassel, 2° Ms. philol. 28[3, fol. 1r)."><p class="bildunterschrift">Abb. 23: Doppelter Zeilenüberlauf (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/ubk-lmb_2_ms_philol_28_3/0001" target="_blank">Kassel, Universitätsbibliothek, Landesbibliothek und Murhardsche Bibliothek der Stadt Kassel, 2° Ms. philol. 28[3, fol. 1r</a>).</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<lg ana="hc:Couplet">
+   <l n="339">
+      <lb n="6"/>
+      <w xml:id="w_339_1"><hi rendition="hc:RedStroke">D</hi>a</w>
+      <c> </c>
+      <w xml:id="w_339_2">uand</w>
+      <w xml:id="w_339_3">ich</w>
+      <c> </c>
+      <w xml:id="w_339_4">wiſheit</w>
+      <c> </c>
+      <w xml:id="w_339_5">bi</w>
+      <w xml:id="w_339_6">der</w>
+      <c> </c>
+      <w xml:id="w_339_7">iuͦgend</w>
+      <pc>··</pc>
+   </l>
+   <l n="340">
+      <lb n="7"/>
+      <w xml:id="w_340_1"><hi rendition="hc:RedStroke">G</hi>roze</w>
+      <c> </c>
+      <w xml:id="w_340_2">ſchone</w>
+      <c> </c>
+      <w xml:id="w_340_3">vn<ex>d</ex></w>
+      <c> </c>
+      <w xml:id="w_340_4">ganze</w>
+      <c> </c>
+      <w xml:id="w_340_5">tuͦgend</w>
+      <pc>··</pc>
+   </l>
+</lg><lg ana="hc:Couplet">
+   <l n="341">
+      <lb n="8"/>
+      <w xml:id="w_341_1"><hi rendition="hc:RedStroke">S</hi>ie</w>
+      <c> </c>
+      <w xml:id="w_341_2">ſat</w>
+      <c> </c>
+      <w xml:id="w_341_3">mir</w>
+      <c> </c>
+      <w xml:id="w_341_4">gotlichen</w>
+      <c> </c>
+      <w xml:id="w_341_5">bi</w>
+      <pc>··</pc>
+      <c> </c>
+   </l>
+   <l n="342">
+      <w xml:id="w_342_1"><hi rendition="hc:RedStroke">v</hi>nde</w>
+      <c> </c>
+      <w xml:id="w_342_2">ſwaz</w>
+      <c> </c>
+      <w xml:id="w_342_3">ich</w>
+      <metamark ana="hc:RunOverMark">⸗</metamark>
+      <milestone ana="hc:LineSegmentBeginning hc:RunOverAbove" n="2" hei:belongsToLine="7"/>
+      <w xml:id="w_342_4">ſprach</w>
+      <c> </c>
+      <w xml:id="w_342_5">daz</w>
+      <milestone ana="hc:LineSegmentBeginning hc:RunOverAbove" n="2" hei:belongsToLine="6"/>
+      <w xml:id="w_342_6">horte</w>
+      <gap extent="unknown" unit="character" rendition="hc:TornOff"/>
+   </l>
+</lg>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Bezüglich der Leerzeichensetzung ist übrigens anzumerken, dass vor und nach einem <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span>
+                     ähnlich wie bei <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> grundsätzlich keine Leerzeichen als signifikant gelten. Wo sinnvoll (an Wortgrenzen),
+                     werden für die Visualisierung in der Leseansicht visuelle Abstände maschinell erzeugt, sofern das gesetzte Attribut <span class="att">@break</span>
+                     keine Zusammenschreibung nahelegt. Jeweils am Ende von V. 339 und 340 ist daher kein Leerzeichen (explizit mit <a class="gi" href="../specifications/ref-c.html">&lt;c&gt;</a>) zu setzen,
+                     da auf das Versende jeweils (aus Sicht der visuellen Anordnung, in diesem Fall nicht der Dokumentabfolge entsprechend) 
+                     der Anfang eines Zeilensegments folgt (und nicht das Zeilenende). Am Ende von V. 341 ist hingegen ein explizit gesetztes Leerzeichen
+                     erforderlich, weil mitten in der Zeile zwei Verse aufeinandertreffen (s. dazu unten <a class="inlink" href="#FAC-LINES-MULTIPLEBLOCKS">Mehrere semantisch-logische Blöcke in einer Zeile</a>).
+                  </p>
+                  <p>
+                     Oben wurde bereits an einem künstlichen Beispiel das Szenario veranschaulicht, in dem ein Zeilenüberlauf
+                     in eine eigene rechtsbündig ausgerichtete Zeile gesetzt wird. Das folgende Beispiel zeigt einen realen Fall:
+                  </p>
+                  <img class="illustration" src="../images/gnm_hs86035_17r-a.png" alt="Zeilenüberlauf in der folgenden Zeile, die rechtsbündig ausgerichtet ist (Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r)."><p class="bildunterschrift">Abb. 24: Zeilenüberlauf in der folgenden Zeile, die rechtsbündig ausgerichtet ist (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/gnm_hs86035/0038" target="_blank">Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r</a>).</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<lg>
+   <l n="911">
+      <lb n="21"/><hi rendition="hc:RedStroke">E</hi>s ſei vbel oder es ſei gute
+   </l>
+   <l n="912">
+      <lb n="22" rendition="hc:LeftIndent"/>der leip ſıch wandelt nach dem
+      <metamark ana="hc:RunOverMark"><hi rendition="hc:RetracedInRed">⸗</hi></metamark>
+      <lb n="23" ana="hc:RunOverBelow" rendition="hc:FlushRight"/>
+      <metamark ana="hc:RunOverMark"><hi rendition="hc:RetracedInRed">⸗</hi></metamark>
+      mute
+      <metamark ana="hc:RunOverMark"><hi rendition="hc:RetracedInRed">⸗</hi></metamark>
+   </l>
+</lg>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Im vorangehenden Beispiel wird <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> angegeben, weil 
+                     damit die Ausrichtung des gesamten Zeileninhalts bzw. der ganzen Zeile beschrieben werden soll.
+                     Wenn hingegen bei einem Zeilensegment dessen Ausrichtung angegeben werden soll, kommt
+                     (bei einer Ausrichtung am rechten Zeilenrand) <span class="loddocborder">› </span><a class="loddoc" href="../concepts/selfalignmentright.html" target="_blank">hc:SelfAlignmentRight</a><span class="loddocborder"> ‹</span> zum Einsatz,                    
+                     wie oben unter <a class="inlink" href="#FAC-LINES-ALIGNMENT">Ausrichtung und Abstände</a> beschrieben:
+                  </p>
+                  <img class="illustration" src="../images/gnm_hs86035_17r-a2.png" alt="Zeilenüberlauf in einem rechts ausgerichteten Segment der folgenden regulären Zeile (Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r)."><p class="bildunterschrift">Abb. 25: Zeilenüberlauf in einem rechts ausgerichteten Segment der folgenden regulären Zeile (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/gnm_hs86035/0038" target="_blank">Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r</a>).</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<lg>
+   <l n="905">
+      <lb n="15"/><hi rendition="hc:RedStroke">I</hi>n wes műte ſıcheit leit
+   </l>
+   <l n="906">
+      <lb n="16" rendition="hc:LeftIndent"/>man wirt es inne vor maniger
+      <metamark ana="hc:RunOverMark"><hi rendition="hc:RetracedInRed">⸗</hi></metamark>
+      <milestone ana="hc:LineSegmentBeginning hc:RunOverAbove" n="2" hei:belongsToLine="15" rendition="hc:SelfAlignmentRight"/>
+      <metamark ana="hc:RunOverMark"><hi rendition="hc:RetracedInRed">⸗</hi></metamark>
+      czeit
+      <metamark ana="hc:RunOverMark"><hi rendition="hc:RetracedInRed">⸗</hi></metamark>
+   </l>
+</lg>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Besonders in gotischen Handschriften gibt es zuweilen, typischerweise in Verbindung mit Überschriften, Fälle,
+                     in denen zwei Textströme quer zur eigentlichen Zeilenstruktur jeweils Teile derselben Zeilen für sich in Anspruch nehmen.
+                     Diese Phänomene scheinen etwas planmäßiger zu sein als spontane Zeilenüberläufe, die Abgrenzung mag
+                     aber im Einzelfall schwierig sein. Die Erfassung anhand des Zeilensegmentmechanismus ist identisch wie
+                     bei ›echten‹ Zeilenüberläufen, nach Ermessen des Herausgebers kann aber auf die Angabe von 
+                     <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverabove.html" target="_blank">hc:RunOverAbove</a><span class="loddocborder"> ‹</span> bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span> (und damit auf eine
+                     Bewertung als Zeilenüberlauf) verzichtet werden. Das folgende reale
+                     Beispiel veranschaulicht einen solchen Fall. Die Stelle befindet sich an der Grenze zweier Kapitel, wobei die Überschrift des 
+                     neuen Kapitels neben dem letzten Verspaar des vorangegangenen Kapitels ›mitläuft‹:
+                  </p>
+                  <img class="illustration" src="../images/tub_rps_54_iii_8r.jpg" alt="Textströme des Verstextes und der Überschrift quer zur Zeilenstruktur jeweils auf Zeilenteile verteilt (Toruń, Universitätsbibliothek, Rps 54/III, fol. 8r)."><p class="bildunterschrift">Abb. 26: Textströme des Verstextes und der Überschrift quer zur Zeilenstruktur jeweils auf Zeilenteile verteilt (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/tub_rps_54_iii/0020" target="_blank">Toruń, Universitätsbibliothek, Rps 54/III, fol. 8r</a>).</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<div>
+   […]
+   <lg ana="hc:Couplet">
+      <l n="899">
+         <lb n="3"/>
+         <w><hi rendition="hc:Versal">Y</hi>n</w>
+         <c> </c>
+         <w>beſtetigit</w>
+         <c> </c>
+         <w>habin</w> 
+      </l>
+      <l n="900">
+         <lb n="4"/>
+         <w><hi rendition="hc:Versal">J</hi>rluchtit</w>
+         <c> </c>
+         <w>vnd</w>
+         <c> </c>
+         <w>irhabin</w> 
+      </l>
+   </lg>
+</div><div ana="hc:Chapter">
+   <milestone ana="hc:LineSegmentBeginning" n="2" hei:belongsToLine="3"/>
+   <head> 
+      <hi hei:color="Red">                           
+         <w>Von</w>
+         <c> </c>
+         <w>brudre</w>
+         <milestone ana="hc:LineSegmentBeginning" n="2" hei:belongsToLine="4"/>
+         <w>heinriche</w>
+         <c> </c>
+         <w>walbote</w>
+         <lb n="5"/>
+         <w>gena<ex>n</ex>t</w>
+         <c> </c>
+         <w>dem</w>
+         <c> </c>
+         <w>erſtin</w>
+         <c> </c>
+         <w>Homeiſtre</w>
+         <c> </c>
+         <w>De<seg rendition="hc:Superscript">s</seg></w>
+         <c> </c>
+         <w>dutſchin</w>
+         <c> </c>
+         <w>ordi<ex>ns</ex></w> 
+      </hi> 
+   </head>
+   […]
+</div>--></code>
+            </pre>
+        </div>
+    
+                  
+                  
+                  
+                  
+               </div>
+               
+               <div id="FAC-LINES-MULTIPLEBLOCKS">
+                  
+                  <h3>Mehrere semantisch-logische Blöcke in einer Zeile</h3>
+                  
+                  <p>TODO</p>
+                  
+               </div>
+               
+               
+            </div>
+            
+            
 
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
@@ -536,8 +1533,42 @@
                      </div><div class="endnote" id="note_8"><a class="endnote_number" href="#note_reference_8">8</a>
                         In der Visualisierung der Quellenansicht nimmt jeder Bereich mindestens die 
                         Höhe ein, die zur Einblendung seines gesamten Inhalts benötigt wird.
+                     </div><div class="endnote" id="note_9"><a class="endnote_number" href="#note_reference_9">9</a>
+                        Neben Textbereichen kommen Zeilen auch in Tabellenzellen vor (also in Inhaltsbereichen des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/tablezone.html" target="_blank">hc:TableZone</a><span class="loddocborder"> ‹</span>).
+                        In diesem Abschnitt werden jedoch primär Zeilen in Textbereichen behandelt.                        
+                     </div><div class="endnote" id="note_10"><a class="endnote_number" href="#note_reference_10">10</a>
+                        Das gilt auch für Seitenanfänge (<a class="gi" href="../specifications/ref-pb.html">&lt;pb&gt;</a>), die mit Spaltenanfängen und Zeilenanfängen zusammenfallen können.
+                        Relevant ist jedoch die Reihenfolge, in der die Anfänge visueller Einheiten gesetzt werden. Diese Reihenfolge muss immer sein: 
+                        Seitenanfang, Spaltenanfang (oder der Anfang eines sonstigen Inhaltsbereichs), Zeilenanfang, typischerweise also etwa: <a class="gi" href="../specifications/ref-pb.html">&lt;pb&gt;</a>, 
+                        <a class="gi" href="../specifications/ref-cb.html">&lt;cb&gt;</a>, <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>.
+                     </div><div class="endnote" id="note_11"><a class="endnote_number" href="#note_reference_11">11</a>
+                        Technisch wird die Position der Marker visueller Anfänge beim Zusammentreffen mit Anfängen von Sinneinheiten
+                        in ›heiEDITIONS‹ während der Verarbeitung in die eine oder andere Richtung automatisiert vereinheitlicht.
+                     </div><div class="endnote" id="note_12"><a class="endnote_number" href="#note_reference_12">12</a>
+                        Rein technisch ist es auch irrelevant, wenn in einer Zeilensequenz einzelne Ganzzahlen übersprungen würden. Dies würde aber auch 
+                        keine Lücke in der Quelle ausdrücken. Es empfiehlt sich daher eine lückenlose laufende Nummerierung 
+                        der tatsächlich in der Quelle vorhandenen Zeilen. Zum Umgang mit Lücken in Fragmenten und mit bewusst ausgesparten Zeilen 
+                        vgl. TODO.                         
+                     </div><div class="endnote" id="note_13"><a class="endnote_number" href="#note_reference_13">13</a>
+                        Die uns bekannten OCR/HTR-Systeme verfügen (noch) über keine Unterstützung von Zeilensegmenten. Deshalb bleibt 
+                        die Verwendung von Zeilensegmenten in ›heiEDITIONS‹ auf TEI-Daten beschränkt.
+                     </div><div class="endnote" id="note_14"><a class="endnote_number" href="#note_reference_14">14</a>
+                        Das Attribut <span class="att">@hei:belongsToLine</span> ist technisch also kein ›Pointer‹, der auf die <span class="att">@xml:id</span>
+                        einer Zeile verweisen würde, sondern die Verknüpfung mit dem zugehörigen <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> wird über die bloße Angabe
+                        der Zeilennummer hergestellt. Dies erleichert die händische Eingabe, zumal in der Arbeitskodierung die <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>-Elemente häufig
+                        keine <span class="att">@xml:id</span>, sondern nur <span class="att">@n</span> tragen. Da etwaige Wechsel zwischen Textbereichen ungeachtet
+                        spezieller Phänomene bei Zeilensegmenten immer mit <a class="gi" href="../specifications/ref-cb.html">&lt;cb&gt;</a>, <span class="code">&lt;milestone ana="hc:ZoneBeginning"&gt;</span> 
+                        oder <span class="code">&lt;milestone ana="hc:ZoneShift"&gt;</span> markiert werden müssen, ist jederzeit klar, welchem Textbereich eine
+                        Zeile angehört, deren Nummer an einem Zeilensegmentanfang mittels <span class="att">@hei:belongsToLine</span> angegeben worden ist.
+                     </div><div class="endnote" id="note_15"><a class="endnote_number" href="#note_reference_15">15</a>
+                        Die hier beschriebenen einfachen Angaben zur Erfassung von Einrückung, Ausrückung und vertikalem Abstand von Zeilen
+                        sind mit Hinblick auf rechtsläufige oder linksläufige Schriftsysteme konzipiert, bei denen die Schriftrichtung als die Horizontale verstanden wird.
+                     </div><div class="endnote" id="note_16"><a class="endnote_number" href="#note_reference_16">16</a>
+                        Auf das Attribut <span class="att">@n</span> mit dem Wert <span class="val">2</span> kann in der Arbeitskodierung in solchen Fällen auch verzichtet werden.
+                        Die Verarbeitung geht an <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> von der Nummer <span class="val">2</span> aus,
+                        wenn kein <span class="att">@n</span> explizit gesetzt ist.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 19.11.2021
+                        Letzte Aktualisierung: 13.12.2021
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
