@@ -552,7 +552,7 @@
                      und diesem zugewiesen.
                   </p>
                   <p>
-                     Nachdem also, wie oben unter <a class="inlink" href="#FAC-CON">Verknüpfung zwischen Text und Faksimiledeklaration</a> beschrieben, jeweils der Anfang eines Inhaltsbereichs mit 
+                     <span class="aside">Zeilenanfänge</span> Nachdem also, wie oben unter <a class="inlink" href="#FAC-CON">Verknüpfung zwischen Text und Faksimiledeklaration</a> beschrieben, jeweils der Anfang eines Inhaltsbereichs mit 
                      <a class="gi" href="../specifications/ref-cb.html">&lt;cb&gt;</a> (bei Spaltenanfängen) oder <span class="code">&lt;milestone ana="hc:ZoneBeginning"&gt;</span> (bei Anfängen sonstiger Inhaltsbereiche)
                      gekennzeichnet worden ist (bzw. ggf. der Wechsel zurück in einen zuvor bereits einmal begonnenen Inhaltsbereich 
                      mittels <span class="code">&lt;milestone ana="hc:ZoneShift"&gt;</span> deklariert worden ist), wird <em>vor</em> den Text jeder Zeile das Element
@@ -666,7 +666,7 @@
                      endet auch nie mit einem Leerzeichen.
                   </p>
                   <p>
-                     Die Nummer im Wert des Attributs <span class="att">@n</span> bezeichnet die Zeilennummer in der natürlichen Zeilenabfolge des jeweiligen
+                     <span class="aside">Zeilennummerierung</span> Die Nummer im Wert des Attributs <span class="att">@n</span> bezeichnet die Zeilennummer in der natürlichen Zeilenabfolge des jeweiligen
                      Textbereichs. Die Nummer ist als solche signifikant und bestimmt die Position jeder Zeile in einem Textbereich (also in der
                      Zeilensequenz innerhalb eines Textbereichs). Sofern Zeilen nicht in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> explizit deklariert sind,
                      werden sie in der Verarbeitung des TEI-Dokuments für die ›Quellenansicht‹jeweils 
@@ -769,7 +769,7 @@
                   <h3>Worttrennung</h3>
                   
                   <p>
-                     Die Zeilengrenzen entsprechen bekanntlich nicht immer den Wortgrenzen. Mit <span class="att">@break</span> stellt die TEI
+                     <span class="aside"><span class="att">@break</span></span>Die Zeilengrenzen entsprechen bekanntlich nicht immer den Wortgrenzen. Mit <span class="att">@break</span> stellt die TEI
                      ein einfaches Mittel zur Verfügung, mit dem ausgedrückt werden kann, ob ein Zeilenanfang gleichzeitig auch
                      mit dem Anfang eines Tokens zusammenfällt, also ob die Zeilengrenze gleichzeitig auch eine Tokengrenze ist.
                      Mit <span class="code">&lt;lb break="no"&gt;</span> kann ausgedrückt werden, 
@@ -883,6 +883,7 @@
                      Einsatzbereich von Zeilensegmenten ist die Erfassung von Zeilenüberläufen.
                   </p>
                   <p>
+                     <span class="aside"><span class="att">@hei:belongsToLine</span></span>
                      Bei der Verwendung von Zeilensegmenten für die beiden zuletzt genannten Zwecke kann es erforderlich sein,
                      bei Zeilensegmenten (mit Ausnahme des jeweils ersten Zeilensegments, dessen Anfang praktisch mit dem Zeilenbeginn
                      zusammenfällt) ihre jeweilige Zugehörigkeit zu einer Zeile explizit anzugeben, und zwar immer dann, wenn
@@ -919,7 +920,7 @@
                      unterstützt die hier beschriebenen Konstrukte nur eingeschränkt durch direkte visuelle Nachbildung.
                   </p>
                   <p>
-                     Häufig zu erfassende Phänomene bei der visuellen Erscheinung von Zeilen sind auf horizontaler Achse
+                     <span class="aside">Einrückungen &amp; Ausrückungen</span> Häufig zu erfassende Phänomene bei der visuellen Erscheinung von Zeilen sind auf horizontaler Achse
                      Einrückungen und Ausrückungen sowie auf vertikaler Achse Abstände nach oben und unten.<sup><a href="#note_15" id="note_reference_15" class="note_mark">15)</a></sup> Zur einfachen Dokumentation
                      von Einrückungen und Ausrückungen können an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> bzw. <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> jeweils 
                      mit dem Attribut <span class="att">@rendition</span> diese Angaben gemacht werden:
@@ -941,6 +942,7 @@
                      vorliegt, nicht etwa wie groß diese ist. Für die genauere Erfassung der Ausdehnung einer Einrückung oder Ausrückung s. weiter unten (TODO). 
                   </p>
                   <p>
+                     <span class="aside">vertikale Absetzung</span>
                      Zur Erfassung der vertikalen Absetzung bzw. von vertikalen Freiräumen oberhalb oder unterhalb einer Zeile können 
                      an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> mit dem Attribut <span class="att">@rendition</span> diese Angaben gemacht werden:
                   </p>
@@ -957,6 +959,7 @@
                      vertikaler Absetzungen s. weiter unten (TODO). 
                   </p>
                   <p>
+                     <span class="aside">Ausrichtung</span>
                      Des weiteren besteht häufig der Bedarf, bei Zeilen die Gesamtausrichtung ihrer Inhalte zu erfassen, also die Information, ob die Inhalte
                      – normalerweise der textuelle Inhalt – der Zeile linksbündig, rechtsbündig oder zentriert erscheinen. Dafür kann 
                      an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> mit dem Attribut <span class="att">@rendition</span> eine der folgenden drei Angaben gemacht werden:
@@ -975,6 +978,7 @@
                      jeweils ›global‹ auf sämtliche Inhalte einer Zeile (bzw. anders betrachtet auf die ganze Zeile als Einheit).                   
                   </p>
                   <p>
+                     <span class="aside">Selbstausrichtung</span>
                      Wenn es erforderlich ist, die Ausrichtung zu Segmenten innerhalb einer Zeile anzugeben, etwa bei
                      tabulatorbedingten Strukturen innerhalb einer Zeile oder bei Zeilenüberhängen (s. u.), können an
                      <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> mit <span class="att">@rendition</span> die folgenden
@@ -1568,7 +1572,7 @@
                         Die Verarbeitung geht an <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> von der Nummer <span class="val">2</span> aus,
                         wenn kein <span class="att">@n</span> explizit gesetzt ist.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 13.12.2021
+                        Letzte Aktualisierung: 14.12.2021
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
