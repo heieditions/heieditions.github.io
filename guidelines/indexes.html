@@ -529,6 +529,159 @@
                   
                </div>
                
+               <div id="INDEXES-LISTS-PLACES">
+                  
+                  <h3>Informationen zu Orten</h3>
+                  
+                  <p>
+                     Einträge zu Orten in einem Ortsregister haben die folgende Struktur in festgelegter Reihenfolge:
+                  </p>
+                  <ul>
+                     <li><a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
+                     <li><a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> (optional, nur einmal pro Typ)</li>
+                     <li><a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> (optional, ggf. mehrfach)</li>
+                     <li><a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> (optional, nur einmal pro Sprache)</li>
+                     <li><a class="gi" href="../specifications/ref-listBibl.html">&lt;listBibl&gt;</a> (optional, nur einmal)</li>
+                     <li><a class="gi" href="../specifications/ref-listRef.html">&lt;listRef&gt;</a> (optional, nur einmal)</li>
+                     <li><a class="gi" href="../specifications/ref-figure.html">&lt;figure&gt;</a> (optional, ggf. mehrfach)</li>
+                  </ul>
+                  <p>
+                     Für eine nähere Verortung der Lage des Ortes ist das Element <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> vorgesehen. Grundsätzlich kann
+                     es auf dreierlei Weise verwendet werden: Für eine Beschreibung der Ortslage über die Angabe größerer
+                     geopolitischer Verwaltungseinheiten; für eine geographische Lokalisierung mittels geographischer Koordinaten; 
+                     für eine Ortsangabe anhand einer Adresse. Von den genannten drei Verwendungsarten unterstützt 
+                     ›heiEDITIONS‹ zur Zeit nur die erste.
+                  </p>
+                  <p>
+                     Das Element <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> kann mehrfach vorkommen. Bei einer Lokalisierung anhand größerer
+                     geopolitischer Verwaltungseinheiten kann es etwa sinnvoll sein, mehrere historische Phasen zu unterscheiden. 
+                     Für jede historische Phase sollte dann ein eigenes Element <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> angelegt werden. Anhand
+                     der Attribute <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>, <span class="att">@from</span> und <span class="att">@to</span>
+                     können an <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> einschränkende Zeitangaben gemacht werden. (Für die Verwendung dieser Attribute gelten die oben unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>
+                     beschriebenen Regeln.)
+                  </p>
+                  <p>
+                     Für die Beschreibung einer Ortslage mithilfe der Angabe größerer geopolitischer Verwaltungseinheiten
+                     kommen die folgenden Kindelemente von <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> in Frage, angeordnet von der größten
+                     zur kleinsten Ebene:
+                  </p>
+                  <ul>
+                     <li><a class="gi" href="../specifications/ref-bloc.html">&lt;bloc&gt;</a></li>
+                     <li><a class="gi" href="../specifications/ref-country.html">&lt;country&gt;</a></li>
+                     <li><a class="gi" href="../specifications/ref-region.html">&lt;region&gt;</a></li>
+                     <li><a class="gi" href="../specifications/ref-district.html">&lt;district&gt;</a></li>
+                     <li><a class="gi" href="../specifications/ref-settlement.html">&lt;settlement&gt;</a></li>
+                  </ul>
+                  <p>
+                     ›heiEDITIONS‹ gibt nicht vor, welche der genannten Ebenen benutzt werden sollen
+                     und in welcher Reihenfolge sie ggf. erfasst werden müssten. Innerhalb eines Registers sollte jedoch Einheitlichkeit
+                     angestrebt werden. Die Elemente können sich innerhalb eines <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> auch wiederholen (z. B. 
+                     für Angabe mehrerer, ineinander enthaltener Regionen oder für gleiche Angaben in unterschiedlichen Sprachen). 
+                  </p>                   
+                  <p>
+                     Beispiel für die Angabe der Lage eines Ortes mithilfe zweier Ebenen geopolitischer Verwaltungseinheiten: 
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<location>
+   <region>Baden-Württemberg</region>
+   <region>Rhein-Neckar-Kreis</region>
+</location>--></code>
+            </pre>
+        </div>
+    
+               </div>
+               
+               <div id="INDEXES-LISTS-ORGANIZATIONS">
+                  
+                  <h3>Informationen zu Körperschaften</h3>
+                  
+                  <p>
+                     Einträge zu Körperschaften in einem Körperschaftsregister haben die folgende Struktur in festgelegter Reihenfolge:
+                  </p>
+                  <ul>
+                     <li><a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
+                     <li><a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> (optional, nur einmal pro Typ)</li>
+                     <li><a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> (optional, ggf. mehrfach)</li>
+                     <li><a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> (optional, nur einmal pro Sprache)</li>
+                     <li><a class="gi" href="../specifications/ref-listBibl.html">&lt;listBibl&gt;</a> (optional, nur einmal)</li>
+                     <li><a class="gi" href="../specifications/ref-listRef.html">&lt;listRef&gt;</a> (optional, nur einmal)</li>
+                     <li><a class="gi" href="../specifications/ref-figure.html">&lt;figure&gt;</a> (optional, ggf. mehrfach)</li>
+                  </ul>
+                  <p>
+                     Die Verortung einer Körperschaft mithilfe von <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> folgt denselben Regeln wie bei Orten, s. oben 
+                     <a class="inlink" href="#INDEXES-LISTS-PLACES">Informationen zu Orten</a>.
+                  </p>
+                  
+               </div>
+               
+               <div id="INDEXES-LISTS-WORKS">
+                  
+                  <h3>Informationen zu Werken</h3>
+                  
+                  <p>
+                     Einträge zu Werken in einem Werkregister haben die folgende Struktur in festgelegter Reihenfolge:
+                  </p>
+                  <ul>
+                     <li><a class="gi" href="../specifications/ref-title.html">&lt;title&gt;</a> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
+                     <li><a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a> (optional, ggf. mehrfach)</li>
+                     <li><a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> (optional, nur einmal pro Typ)</li>
+                     <li><a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a> (optional, nur einmal pro Typ)</li>
+                     <li><a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> (optional, nur einmal pro Sprache)</li>
+                     <li><a class="gi" href="../specifications/ref-listBibl.html">&lt;listBibl&gt;</a> (optional, nur einmal)</li>
+                     <li><a class="gi" href="../specifications/ref-listRef.html">&lt;listRef&gt;</a> (optional, nur einmal)</li>
+                     <li><a class="gi" href="../specifications/ref-figure.html">&lt;figure&gt;</a> (optional, ggf. mehrfach)</li>
+                  </ul>
+                  <p>
+                     Die Angabe des Werkurhebers im Element <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a> erfolgt alternativ mit <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> oder <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a>, 
+                     je nach dem, ob der Urheber eine Person oder eine Körperschaft ist. <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> oder <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> können
+                     mehrfach angegeben werden, wenn die Erfassung unterschiedlicher Namensformen erwünscht ist. Es darf jedoch nicht
+                     gleichzeitig <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> <em>und</em> <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> vorkommen.
+                     Nach <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> oder <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> kann
+                     mit <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> ein Identifikator angegeben werden. Bei mehreren Urhebern ist <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a> entsprechend zu wiederholen.
+                     Falls bei mehreren Urhebern eine Zeitangabe für die jeweilige Urheberschaft notwendig wäre, kann dies an <a class="gi" href="../specifications/ref-author .html">&lt;author &gt;</a>
+                     mit den Attributen <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>, <span class="att">@from</span> und <span class="att">@to</span>
+                     erfolgen. Für die Verwendung dieser Attribute gelten die oben unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>
+                     beschriebenen Regeln.
+                  </p>
+                  <p>
+                     Beispiel für eine einfache Angabe eines Urhebers mit einer Namensform und einem GND-Identifikator:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<author>
+   <persName>Franz Huth</persName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/118708414</idno>
+</author>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Für die Angabe von Datierungs- bzw. Zeitangaben zu einem Werk kann <a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a> verwendet werden. 
+                     Es trägt obligatorisch das Attribut <span class="att">@ana</span>, das zur Unterscheidung verschiedener Typen von Zeitangaben 
+                     dient. Vorerst ist allerdings nur die Angabe des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/dateofcreation.html" target="_blank">hc:DateOfCreation</a><span class="loddocborder"> ‹</span> vorgesehen. 
+                     Die maschinell lesbare Erfassung der Zeitangabe erfolgt an <a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a> mithilfe der Attribute
+                     <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>, <span class="att">@from</span> und <span class="att">@to</span>. 
+                     Für die Verwendung dieser Attribute gelten die oben unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>
+                     beschriebenen Regeln. Innerhalb von <a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a> kann mit <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> eine freie Textangabe vorgenommen
+                     werden, ggf. nur einmal pro Sprache.
+                  </p>
+                  <p>
+                     Beispiel für eine einfache Angabe des Entstehungszeitpunkts eines Werkes:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<date ana="hc:DateOfCreation" when="1911">
+   <note>um 1911</note>
+</date>--></code>
+            </pre>
+        </div>
+    
+               </div>
+               
                
                
                
@@ -543,6 +696,15 @@
                <ul>
                   <li>
                      <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/mockups/IndexOfPersonsMockup.xml" target="_blank">Personenregister</a>
+                  </li>
+                  <li>
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/mockups/IndexOfPlacesMockup.xml" target="_blank">Ortsregister</a>
+                  </li>
+                  <li>
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/mockups/IndexOfOrganizationsMockup.xml" target="_blank">Körperschaftsregister</a>
+                  </li>
+                  <li>
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/mockups/IndexOfWorksMockup.xml" target="_blank">Werkregister</a>
                   </li>
                </ul>
             </div>
@@ -578,7 +740,7 @@
                         Person erforderlich werden, wäre dies u. a. durch Markup innerhalb der verbalen Angabe innerhalb von <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a>
                         vorstellbar.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 13.12.2021
+                        Letzte Aktualisierung: 02.03.2022
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
