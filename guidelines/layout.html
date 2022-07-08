@@ -32,15 +32,15 @@
                <span class="aside"><a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a></span> enthalten (s. weiter unten <a class="inlink" href="#FAC-DEC">Faksimile-Deklaration</a>. 
                Ist kein Element <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> vorhanden, wird davon ausgegangen, dass das TEI-Dokument 
                keinen physischen Textträger dokumentiert; der Inhalt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> wird dann als 
-               eine Instanz der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionwithoutexemplar.html" target="_blank">hc:ExpressionWithoutExemplar</a><span class="loddocborder"> ‹</span> betrachtet.
+               eine Instanz der Klasse <a class="tocref" href=".html">hc:ExpressionWithoutExemplar</a> betrachtet.
                <sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
             </p>
             <p class="resdef">
-               <a class="refboxlink" href="../concepts/expressionwithoutexemplar.html"><span class="val">hc:ExpressionWithoutExemplar</span></a> ( ›Expression ohne (physische) Vorlage‹ ): Expression, die auf keinem physischen Träger als Vorlage basiert.
+               <a class="refboxlink" href="../concepts/expressionwithoutexemplar.html"><span class="val">hc:ExpressionWithoutExemplar</span></a> ( ›‹ ): Expression, die auf keinem physischen Träger als Vorlage basiert.
             </p>
             <p>
                Selbst dann, wenn ein TEI-Dokument mehrere Expressionen wiedergibt 
-               (wenn das Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressioncontainer.html" target="_blank">hc:ExpressionContainer</a><span class="loddocborder"> ‹</span> fungiert, 
+               (wenn das Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <a class="tocref" href=".html">hc:ExpressionContainer</a> fungiert, 
                vgl. <a class="inlink" href="document_structure.html#STRU">Dokumentstruktur</a>) und wenn gleichzeitig
                die Erfassung der Strukturen des physischen Trägers angestrebt wird, 
                müssen diese Expressionen einem einzigen 
@@ -53,7 +53,7 @@
             <p>
                Wenn ein TEI-Dokument nur einen Teil einer Expression enthält, weil die Expression 
                wegen ihrer Länge auf mehrere TEI-Dokumente aufgeteilt wurde (dann fungiert das 
-               Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionpartcontainer.html" target="_blank">hc:ExpressionPartContainer</a><span class="loddocborder"> ‹</span>, 
+               Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <a class="tocref" href=".html">hc:ExpressionPartContainer</a>, 
                vgl. <a class="inlink" href="document_structure.html#STRU">Dokumentstruktur</a>), wird ein Element <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> 
                im übergeordneten TEI-Dokument erwartet, in dem die in mehrere Teildokumente aufgeteilte 
                Expression zusammengeführt wird.
@@ -115,7 +115,7 @@
                
                <p>
                   Die beiden wichtigsten Elemente für die Deklaration physischer Strukturen des Inhaltsträgers in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> sind: 
-                  <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a></span> ( ›Inhaltsfläche‹ )  Zweidimensionale Fläche mit einem Inhalt, der in einem oder mehreren Inhaltsbereichen auf der Inhaltsfläche platziert ist. Die strukturelle Beschreibung einer solchen Fläche ist durch Koordinaten oder mit einem Layoutsystem möglich. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-surface.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@ana</span></span>gibt die Art der Inhaltsfläche an.</li><li><span class="item_label"><span class="att">@n</span></span>( ›Bezeichner‹ ) gibt einen eindeutigen Bezeichner für die Inhaltsfläche an.</li><li><span class="item_label"><span class="att">@xml:id</span></span>( ›ID‹ ) gibt einen eindeutigen technischen Identifier für die Inhaltsfläche an.</li></ul></li><li><span class="item_label"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a></span> ( ›Bereich‹; ›Zone‹ )  Ein beliebiger zweidimensionaler Bereich innerhalb einer Inhaltsfläche. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@ana</span></span>gibt die Art des Bereichs an.</li><li><span class="item_label"><span class="att">@n</span></span>( ›Bezeichner‹ ) gibt einen eindeutigen Bezeichner für den Bereich an.</li><li><span class="item_label"><span class="att">@xml:id</span></span>( ›ID‹ ) gibt einen eindeutigen technischen Identifier für den Bereich an.</li><li><span class="item_label"><span class="att">@rendition</span></span>( ›Wiedergabe‹ ) gibt die Art des Bereichs hinsichtlich seiner visuellen Umsetzung an.</li><li><span class="item_label"><span class="att">@hei:width</span></span>( ›Breite‹ ) gibt die relative Breite des Bereichs in Prozentanteilen an.</li><li><span class="item_label"><span class="att">@rotate</span></span>»gibt das Ausmaß der Drehung (im Uhrzeigersinn) dieser <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> an.
+                  <ul><li><span class="item_label"><a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a></span> Zweidimensionale Fläche mit einem Inhalt, der in einem oder mehreren Inhaltsbereichen auf der Inhaltsfläche platziert ist. Die strukturelle Beschreibung einer solchen Fläche ist durch Koordinaten oder mit einem Layoutsystem möglich. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-surface.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@ana</span></span>gibt die Art der Inhaltsfläche an.</li><li><span class="item_label"><span class="att">@n</span></span>( ›Bezeichner‹ ) gibt einen eindeutigen Bezeichner für die Inhaltsfläche an.</li><li><span class="item_label"><span class="att">@xml:id</span></span>( ›ID‹ ) gibt einen eindeutigen technischen Identifier für die Inhaltsfläche an.</li></ul></li><li><span class="item_label"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a></span> Ein beliebiger zweidimensionaler Bereich innerhalb einer Inhaltsfläche. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@ana</span></span>gibt die Art des Bereichs an.</li><li><span class="item_label"><span class="att">@n</span></span>( ›Bezeichner‹ ) gibt einen eindeutigen Bezeichner für den Bereich an.</li><li><span class="item_label"><span class="att">@xml:id</span></span>( ›ID‹ ) gibt einen eindeutigen technischen Identifier für den Bereich an.</li><li><span class="item_label"><span class="att">@rendition</span></span>( ›Wiedergabe‹ ) gibt die Art des Bereichs hinsichtlich seiner visuellen Umsetzung an.</li><li><span class="item_label"><span class="att">@hei:width</span></span>( ›Breite‹ ) gibt die relative Breite des Bereichs in Prozentanteilen an.</li><li><span class="item_label"><span class="att">@rotate</span></span>»gibt das Ausmaß der Drehung (im Uhrzeigersinn) dieser <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> an.
         Als Bezugspunkt gilt dabei die natürliche Ausrichtung des <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elternelements, die entweder
         im <a class="gi" href="../specifications/ref-msDesc.html">&lt;msDesc&gt;</a>-Element beschrieben ist oder durch die Koordinaten des <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>-Elements selbst.
         Die Drehung wird in Bogengrad angegeben. 
@@ -160,7 +160,7 @@
                      in der Regel handelt es sich dabei um eine Seite (<span class="val">hc:Page</span>).</p>
                   
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/page.html"><span class="val">hc:Page</span></a> ( ›Seite‹ ): Eine der beiden Seiten eines Blattes.
+                     <a class="refboxlink" href="../concepts/page.html"><span class="val">hc:Page</span></a> ( ›‹ ): Eine der beiden Seiten eines Blattes.
                   </p>
                   
                   <p>
@@ -168,35 +168,35 @@
                   </p>
                   
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/frontcover.html"><span class="val">hc:FrontCover</span></a> ( ›Vorderdeckel‹ ): 
+                     <a class="refboxlink" href="../concepts/frontcover.html"><span class="val">hc:FrontCover</span></a> ( ›‹ ): 
                   </p>
                   
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/backcover.html"><span class="val">hc:BackCover</span></a> ( ›Hinterdeckel‹ ): 
+                     <a class="refboxlink" href="../concepts/backcover.html"><span class="val">hc:BackCover</span></a> ( ›‹ ): 
                   </p>
                   
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/frontpastedown.html"><span class="val">hc:FrontPasteDown</span></a> ( ›Vorderspiegel; Rückseite des Vorderdeckels; Innenseite des Vorderdeckels‹ ): 
+                     <a class="refboxlink" href="../concepts/frontpastedown.html"><span class="val">hc:FrontPasteDown</span></a> ( ›‹ ): 
                   </p>
                   
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/backpastedown.html"><span class="val">hc:BackPasteDown</span></a> ( ›Hinterspiegel; Rückseite des Hinterdeckels; Innenseite des Hinterdeckels‹ ): 
+                     <a class="refboxlink" href="../concepts/backpastedown.html"><span class="val">hc:BackPasteDown</span></a> ( ›‹ ): 
                   </p>
                   
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/bookback.html"><span class="val">hc:BookBack</span></a> ( ›Buchrücken‹ ): 
+                     <a class="refboxlink" href="../concepts/bookback.html"><span class="val">hc:BookBack</span></a> ( ›‹ ): 
                   </p>
                   
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/foreedge.html"><span class="val">hc:ForeEdge</span></a> ( ›Vorderschnitt‹ ): 
+                     <a class="refboxlink" href="../concepts/foreedge.html"><span class="val">hc:ForeEdge</span></a> ( ›‹ ): 
                   </p>
                   
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/topedge.html"><span class="val">hc:TopEdge</span></a> ( ›Kopfschnitt; Oberschnitt; Oberkante‹ ): 
+                     <a class="refboxlink" href="../concepts/topedge.html"><span class="val">hc:TopEdge</span></a> ( ›‹ ): 
                   </p>
                   
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/bottomedge.html"><span class="val">hc:BottomEdge</span></a> ( ›Fußschnitt; Unterschnitt; unterer Buchschnitt‹ ): 
+                     <a class="refboxlink" href="../concepts/bottomedge.html"><span class="val">hc:BottomEdge</span></a> ( ›‹ ): 
                   </p>
                   
                   <p>
@@ -259,12 +259,12 @@
                   <h3>Angaben zu Typen von Inhaltsbereichen</h3>
                   
                   <p>
-                     Auf einer Inhaltsfläche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentsurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>) sind einzelne Inhalte 
-                     in Inhaltsbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) untergebracht.
+                     Auf einer Inhaltsfläche (<a class="tocref" href=".html">hc:ContentSurface</a>) sind einzelne Inhalte 
+                     in Inhaltsbereichen (<a class="tocref" href=".html">hc:ContentZone</a>) untergebracht.
                      Inhaltsbereiche werden <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>-Elemente repräsentiert, die in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> 
                      entweder direkt als Kindelemente innerhalb von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> oder innerhalb eines übergeordneten
                      <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stehen. Ein Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>, das seinerseits kein Kindelement <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>
-                     enthält, ist ein Inhaltsbereich (von Ausnahmen bei Hilfsbereichen – <span class="loddocborder">› </span><a class="loddoc" href="../concepts/auxiliaryzone.html" target="_blank">hc:AuxiliaryZone</a><span class="loddocborder"> ‹</span> – abgesehen).
+                     enthält, ist ein Inhaltsbereich (von Ausnahmen bei Hilfsbereichen – <a class="tocref" href=".html">hc:AuxiliaryZone</a> – abgesehen).
                   </p>                  
                   <p>
                      <span class="aside"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>/<span class="att">@ana</span></span>
@@ -272,43 +272,43 @@
                      unterschieden, die jeweils an <span class="att">@ana</span> anzugeben sind:  
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/textzone.html"><span class="val">hc:TextZone</span></a> ( ›Textbereich‹ ): Inhaltsbereich, der aus mindestens einer Zeile besteht.
+                     <a class="refboxlink" href="../concepts/textzone.html"><span class="val">hc:TextZone</span></a> ( ›‹ ): Inhaltsbereich, der aus mindestens einer Zeile besteht.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/initialzone.html"><span class="val">hc:InitialZone</span></a> ( ›Bereich mit einer Initiale‹ ): Bereich, der eine Initiale enthält. Solche Bereiche haben einen hybriden Charakter, weil sie textuellen und bildlichen Inhalt gleichzeitig tragen. Sie enthalten eine Textzeile mit meist einem einzigen Zeichen und verweisen gleichzeitig auf einen Bildausschnitt.
+                     <a class="refboxlink" href="../concepts/initialzone.html"><span class="val">hc:InitialZone</span></a> ( ›‹ ): Bereich, der eine Initiale enthält. Solche Bereiche haben einen hybriden Charakter, weil sie textuellen und bildlichen Inhalt gleichzeitig tragen. Sie enthalten eine Textzeile mit meist einem einzigen Zeichen und verweisen gleichzeitig auf einen Bildausschnitt.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/tablezone.html"><span class="val">hc:TableZone</span></a> ( ›Tabellarischer Bereich‹ ): Inhaltsbereich, der aus einer Tabelle oder einem Teil einer Tabelle besteht.
+                     <a class="refboxlink" href="../concepts/tablezone.html"><span class="val">hc:TableZone</span></a> ( ›‹ ): Inhaltsbereich, der aus einer Tabelle oder einem Teil einer Tabelle besteht.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/mathematicalformulazone.html"><span class="val">hc:MathematicalFormulaZone</span></a> ( ›Bereich mit einer mathematischen Formel‹ ): 
+                     <a class="refboxlink" href="../concepts/mathematicalformulazone.html"><span class="val">hc:MathematicalFormulaZone</span></a> ( ›‹ ): 
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/chemicalformulazone.html"><span class="val">hc:ChemicalFormulaZone</span></a> ( ›Bereich mit einer chemischen Formel‹ ): 
+                     <a class="refboxlink" href="../concepts/chemicalformulazone.html"><span class="val">hc:ChemicalFormulaZone</span></a> ( ›‹ ): 
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/musicalnotationzone.html"><span class="val">hc:MusicalNotationZone</span></a> ( ›Bereich mit musikalischer Notation‹ ): 
+                     <a class="refboxlink" href="../concepts/musicalnotationzone.html"><span class="val">hc:MusicalNotationZone</span></a> ( ›‹ ): 
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/imagezone.html"><span class="val">hc:ImageZone</span></a> ( ›Bildbereich‹ ): 
+                     <a class="refboxlink" href="../concepts/imagezone.html"><span class="val">hc:ImageZone</span></a> ( ›‹ ): 
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/linedrawingzone.html"><span class="val">hc:LineDrawingZone</span></a> ( ›Bereich mit Strichzeichnung‹ ): 
+                     <a class="refboxlink" href="../concepts/linedrawingzone.html"><span class="val">hc:LineDrawingZone</span></a> ( ›‹ ): 
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/graphiczone.html"><span class="val">hc:GraphicZone</span></a> ( ›Graphikbereich‹ ): 
+                     <a class="refboxlink" href="../concepts/graphiczone.html"><span class="val">hc:GraphicZone</span></a> ( ›‹ ): 
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/chartzone.html"><span class="val">hc:ChartZone</span></a> ( ›Diagrammbereich‹ ): 
+                     <a class="refboxlink" href="../concepts/chartzone.html"><span class="val">hc:ChartZone</span></a> ( ›‹ ): 
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/mapzone.html"><span class="val">hc:MapZone</span></a> ( ›Kartenbereich‹ ): 
+                     <a class="refboxlink" href="../concepts/mapzone.html"><span class="val">hc:MapZone</span></a> ( ›‹ ): 
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/separatorzone.html"><span class="val">hc:SeparatorZone</span></a> ( ›Trennbereich‹ ): 
+                     <a class="refboxlink" href="../concepts/separatorzone.html"><span class="val">hc:SeparatorZone</span></a> ( ›‹ ): 
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/spacezone.html"><span class="val">hc:SpaceZone</span></a> ( ›Freiraumbereich‹ ): 
+                     <a class="refboxlink" href="../concepts/spacezone.html"><span class="val">hc:SpaceZone</span></a> ( ›‹ ): 
                   </p>
                   
                   <p>
@@ -367,20 +367,20 @@
     
                   <p>
                      Komplexere Anordnungen lassen sich mit horizontalen und vertikalen Containern
-                     beschreiben, die mit <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/horizontallayout.html" target="_blank">hc:HorizontalLayout</a><span class="loddocborder"> ‹</span>
-                     bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/verticallayout.html" target="_blank">hc:VerticalLayout</a><span class="loddocborder"> ‹</span> kodiert werden.
+                     beschreiben, die mit <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> des Typs <a class="tocref" href=".html">hc:HorizontalLayout</a>
+                     bzw. <a class="tocref" href=".html">hc:VerticalLayout</a> kodiert werden.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/horizontallayout.html"><span class="val">hc:HorizontalLayout</span></a> ( ›horizontales Layout‹ ): Gruppierungsbereich, dessen Elemente nebeneinander horizontal fest angeordnet sind, vergleichbar mit einer Zeile.
+                     <a class="refboxlink" href="../concepts/horizontallayout.html"><span class="val">hc:HorizontalLayout</span></a> ( ›‹ ): Gruppierungsbereich, dessen Elemente nebeneinander horizontal fest angeordnet sind, vergleichbar mit einer Zeile.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/verticallayout.html"><span class="val">hc:VerticalLayout</span></a> ( ›vertikales Layout‹ ): Gruppierungsbereich, dessen Elemente übereinander vertikal fest angeordnet sind, vergleichbar mit einer Spalte.
+                     <a class="refboxlink" href="../concepts/verticallayout.html"><span class="val">hc:VerticalLayout</span></a> ( ›‹ ): Gruppierungsbereich, dessen Elemente übereinander vertikal fest angeordnet sind, vergleichbar mit einer Spalte.
                   </p>
                   <p>
                      Die Beschreibung einer Seite mit zwei Textbereichen nebeneinander demonstriert das folgende Beispiel.
                      Hier dient das übergeordnete <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> als Container für die Gruppierung
                      und richtige Anordnung der beiden Textbereiche. Erst die beiden Textbereiche sind 
-                     jeweils Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>). Auf eine mögliche Bezeichnung
+                     jeweils Inhaltsbereiche (<a class="tocref" href=".html">hc:ContentZone</a>). Auf eine mögliche Bezeichnung
                      der beiden Textbereiche als ›Spalten‹ wird hier übrigens noch verzichtet,
                      vgl. dazu unten den Abschnitt <a class="inlink" href="#FAC-DEC-SEMISTRUC">Semistrukturelle Angaben zu Layout- und Inhaltsbereichen</a>.
                   </p>
@@ -462,19 +462,19 @@
                      semantisch mit ›heiEDITIONS Concepts‹ konform sein.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/mainzone.html"><span class="val">hc:MainZone</span></a> ( ›Hauptbereich‹ ): Bereich einer Inhaltsfläche, der sich innerhalb des Satz- oder Schriftspiegels befindet.
+                     <a class="refboxlink" href="../concepts/mainzone.html"><span class="val">hc:MainZone</span></a> ( ›‹ ): Bereich einer Inhaltsfläche, der sich innerhalb des Satz- oder Schriftspiegels befindet.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/marginalzone.html"><span class="val">hc:MarginalZone</span></a> ( ›Randbereich‹ ): Bereich einer Inhaltsfläche, der sich außerhalb des Satz- oder Schriftspiegels befindet, in mehrspaltigem Layout ggf. auch zwischen Spalten.
+                     <a class="refboxlink" href="../concepts/marginalzone.html"><span class="val">hc:MarginalZone</span></a> ( ›‹ ): Bereich einer Inhaltsfläche, der sich außerhalb des Satz- oder Schriftspiegels befindet, in mehrspaltigem Layout ggf. auch zwischen Spalten.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/column.html"><span class="val">hc:Column</span></a> ( ›Spalte‹ ): Planvoll angelegter und für regelmäßig zu platzierenden Inhalt geschaffener Bereich einer Inhaltsfläche, der entweder direkt einen homogenen Inhalt enthält oder als Container für andere untergeordnete Inhaltsbereiche fungiert.
+                     <a class="refboxlink" href="../concepts/column.html"><span class="val">hc:Column</span></a> ( ›‹ ): Planvoll angelegter und für regelmäßig zu platzierenden Inhalt geschaffener Bereich einer Inhaltsfläche, der entweder direkt einen homogenen Inhalt enthält oder als Container für andere untergeordnete Inhaltsbereiche fungiert.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/maincolumn.html"><span class="val">hc:MainColumn</span></a> ( ›Hauptspalte‹ ): Spalte innerhalb des Satz- oder Schriftspiegels.
+                     <a class="refboxlink" href="../concepts/maincolumn.html"><span class="val">hc:MainColumn</span></a> ( ›‹ ): Spalte innerhalb des Satz- oder Schriftspiegels.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/marginalcolumn.html"><span class="val">hc:MarginalColumn</span></a> ( ›Randspalte‹ ): Spalte außerhalb des Satz- oder Schriftspiegels.
+                     <a class="refboxlink" href="../concepts/marginalcolumn.html"><span class="val">hc:MarginalColumn</span></a> ( ›‹ ): Spalte außerhalb des Satz- oder Schriftspiegels.
                   </p>
                   
                   
@@ -534,10 +534,10 @@
                      enthalten kann.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/line.html"><span class="val">hc:Line</span></a> ( ›Zeile‹ ): Eine geordnete, gerichtete und visuell kohärente Sequenz von Glyphen und ggf. anderen Elementen, die in der Regel, jedoch nicht zwingend einer geometrischen Geraden folgt, immer aber auf einem intentional geschaffenen visuellen Zusammenhang gründet.
+                     <a class="refboxlink" href="../concepts/line.html"><span class="val">hc:Line</span></a> ( ›‹ ): Eine geordnete, gerichtete und visuell kohärente Sequenz von Glyphen und ggf. anderen Elementen, die in der Regel, jedoch nicht zwingend einer geometrischen Geraden folgt, immer aber auf einem intentional geschaffenen visuellen Zusammenhang gründet.
                   </p>
                   <p>
-                     Zeilen sind die konstituierenden Komponenten von Textbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/textzone.html" target="_blank">hc:TextZone</a><span class="loddocborder"> ‹</span>), die in der Regel
+                     Zeilen sind die konstituierenden Komponenten von Textbereichen (<a class="tocref" href=".html">hc:TextZone</a>), die in der Regel
                      als unmittelbare Container für jeweils eine geordnete Sequenz von Zeilen fungieren.<sup><a href="#note_9" id="note_reference_9" class="note_mark">9)</a></sup>
                   </p>                  
                   <p>
@@ -822,7 +822,7 @@
                      die Ebene der Zeilensegmente angesetzt werden.<sup><a href="#note_13" id="note_reference_13" class="note_mark">13)</a></sup>                  
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/linesegment.html"><span class="val">hc:LineSegment</span></a> ( ›Zeilensegment‹ ): Eine geordnete, gerichtete und visuell kohärente Sequenz von Glyphen und ggf. anderen Elementen innerhalb einer Zeile.
+                     <a class="refboxlink" href="../concepts/linesegment.html"><span class="val">hc:LineSegment</span></a> ( ›‹ ): Eine geordnete, gerichtete und visuell kohärente Sequenz von Glyphen und ggf. anderen Elementen innerhalb einer Zeile.
                   </p>
                   <p>
                      Grundsätzlich kann jede Zeile beliebig in Zeilensegmente unterteilt werden. Ähnlich wie bei Zeilenanfängen 
@@ -830,7 +830,7 @@
                      punktuell gekennzeichnet, und zwar mit <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span>.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/linesegmentbeginning.html"><span class="val">hc:LineSegmentBeginning</span></a> ( ›Zeilensegmentanfang‹ ): Punktuell gedachter Anfang eines Zeilensegments.
+                     <a class="refboxlink" href="../concepts/linesegmentbeginning.html"><span class="val">hc:LineSegmentBeginning</span></a> ( ›‹ ): Punktuell gedachter Anfang eines Zeilensegments.
                   </p>
                   <img class="illustration" src="../images/line_with_segments.svg" alt="Eine Zeile mit drei Zeilensegmenten."><p class="bildunterschrift">Abb. 15: Eine Zeile mit drei Zeilensegmenten.</p>
                   <p>
@@ -926,16 +926,16 @@
                      mit dem Attribut <span class="att">@rendition</span> diese Angaben gemacht werden:
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/leftindent.html"><span class="val">hc:LeftIndent</span></a> ( ›links eingerückt‹ ): Links eingerückter textueller visueller Gegenstand, in der Regel eine Zeile, ggf. auch bezogen auf die zu einem Absatz u. Ä. gehörenden Zeilen oder ein sonstige Zeilengruppe als Block. Die Einrückung oder der Einzug besteht in der Belassung eines Freiraums auf der linken Seite einer Zeile, sodass der Zeileninhalt entsprechend verschoben wird.
+                     <a class="refboxlink" href="../concepts/leftindent.html"><span class="val">hc:LeftIndent</span></a> ( ›‹ ): Links eingerückter textueller visueller Gegenstand, in der Regel eine Zeile, ggf. auch bezogen auf die zu einem Absatz u. Ä. gehörenden Zeilen oder ein sonstige Zeilengruppe als Block. Die Einrückung oder der Einzug besteht in der Belassung eines Freiraums auf der linken Seite einer Zeile, sodass der Zeileninhalt entsprechend verschoben wird.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/rightindent.html"><span class="val">hc:RightIndent</span></a> ( ›rechts eingerückt‹ ): Rechts eingerückter textueller visueller Gegenstand, in der Regel eine Zeile, ggf. auch bezogen auf die zu einem Absatz u. Ä. gehörenden Zeilen oder eine sonstige Zeilengruppe als Block. Die Einrückung oder der Einzug besteht in der Belassung eines Freiraums auf der rechten Seite einer Zeile, sodass der Zeileninhalt entsprechend verschoben wird.
+                     <a class="refboxlink" href="../concepts/rightindent.html"><span class="val">hc:RightIndent</span></a> ( ›‹ ): Rechts eingerückter textueller visueller Gegenstand, in der Regel eine Zeile, ggf. auch bezogen auf die zu einem Absatz u. Ä. gehörenden Zeilen oder eine sonstige Zeilengruppe als Block. Die Einrückung oder der Einzug besteht in der Belassung eines Freiraums auf der rechten Seite einer Zeile, sodass der Zeileninhalt entsprechend verschoben wird.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/leftoutdent.html"><span class="val">hc:LeftOutdent</span></a> ( ›links ausgerückt‹ ): Textueller visueller Gegenstand, der über den regulären linken Rand eines Inhaltsbereichs hinausragt, in der Regel eine Zeile in einem Textbereich.
+                     <a class="refboxlink" href="../concepts/leftoutdent.html"><span class="val">hc:LeftOutdent</span></a> ( ›‹ ): Textueller visueller Gegenstand, der über den regulären linken Rand eines Inhaltsbereichs hinausragt, in der Regel eine Zeile in einem Textbereich.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/rightoutdent.html"><span class="val">hc:RightOutdent</span></a> ( ›rechts ausgerückt‹ ): Textueller visueller Gegenstand, der über den regulären rechten Rand eines Inhaltsbereichs hinausragt, in der Regel eine Zeile in einem Textbereich oder ein Zeilensegment in einer Zeile.
+                     <a class="refboxlink" href="../concepts/rightoutdent.html"><span class="val">hc:RightOutdent</span></a> ( ›‹ ): Textueller visueller Gegenstand, der über den regulären rechten Rand eines Inhaltsbereichs hinausragt, in der Regel eine Zeile in einem Textbereich oder ein Zeilensegment in einer Zeile.
                   </p>
                   <p>
                      Die Zuweisung der aufgeführten Typen zu einer Zeile oder einem Zeilensegment drückt nur aus, dass eine Einrückung oder Ausrückung
@@ -947,10 +947,10 @@
                      an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> mit dem Attribut <span class="att">@rendition</span> diese Angaben gemacht werden:
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/offsetabove.html"><span class="val">hc:OffsetAbove</span></a> ( ›mit Abstand nach oben; von oben abgesetzt‹ ): Visueller Gegenstand, in der Regel eine Zeile oder seltener ein Layoutbereich, der mit einem Abstand nach oben erscheint bzw. von oben abgesetzt ist, sodass über dem Gegenstand ein gewisser vertikaler Freiraum erkennbar ist.
+                     <a class="refboxlink" href="../concepts/offsetabove.html"><span class="val">hc:OffsetAbove</span></a> ( ›‹ ): Visueller Gegenstand, in der Regel eine Zeile oder seltener ein Layoutbereich, der mit einem Abstand nach oben erscheint bzw. von oben abgesetzt ist, sodass über dem Gegenstand ein gewisser vertikaler Freiraum erkennbar ist.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/offsetbelow.html"><span class="val">hc:OffsetBelow</span></a> ( ›mit Abstand nach unten‹ ): Visueller Gegenstand, in der Regel eine Zeile oder seltener ein Layoutbereich, der mit einem Abstand nach unten erscheint, sodass unter dem Gegenstand ein gewisser vertikaler Freiraum erkennbar ist.
+                     <a class="refboxlink" href="../concepts/offsetbelow.html"><span class="val">hc:OffsetBelow</span></a> ( ›‹ ): Visueller Gegenstand, in der Regel eine Zeile oder seltener ein Layoutbereich, der mit einem Abstand nach unten erscheint, sodass unter dem Gegenstand ein gewisser vertikaler Freiraum erkennbar ist.
                   </p>
                   <p>
                      Wie bei den zuvor beschriebenen einfachen Angaben für Einrückungen und Ausrückungen sind auch diese
@@ -965,16 +965,16 @@
                      an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> mit dem Attribut <span class="att">@rendition</span> eine der folgenden drei Angaben gemacht werden:
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/flushleft.html"><span class="val">hc:FlushLeft</span></a> ( ›linksbündig‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt am linken Rand des Gegenstands ausgerichtet ist. Die Linksausrichtung wird normalerweise implizit angenommen.
+                     <a class="refboxlink" href="../concepts/flushleft.html"><span class="val">hc:FlushLeft</span></a> ( ›‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt am linken Rand des Gegenstands ausgerichtet ist. Die Linksausrichtung wird normalerweise implizit angenommen.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/flushright.html"><span class="val">hc:FlushRight</span></a> ( ›rechtsbündig‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt am rechten Rand des Gegenstands ausgerichtet ist.
+                     <a class="refboxlink" href="../concepts/flushright.html"><span class="val">hc:FlushRight</span></a> ( ›‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt am rechten Rand des Gegenstands ausgerichtet ist.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/centered.html"><span class="val">hc:Centered</span></a> ( ›zentriert‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt horizontal mittig ausgerichtet ist.
+                     <a class="refboxlink" href="../concepts/centered.html"><span class="val">hc:Centered</span></a> ( ›‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt horizontal mittig ausgerichtet ist.
                   </p>
                   <p>
-                     Die Angaben <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushleft.html" target="_blank">hc:FlushLeft</a><span class="loddocborder"> ‹</span>, <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/centered.html" target="_blank">hc:Centered</a><span class="loddocborder"> ‹</span> beziehen sich
+                     Die Angaben <a class="tocref" href=".html">hc:FlushLeft</a>, <a class="tocref" href=".html">hc:FlushRight</a> und <a class="tocref" href=".html">hc:Centered</a> beziehen sich
                      jeweils ›global‹ auf sämtliche Inhalte einer Zeile (bzw. anders betrachtet auf die ganze Zeile als Einheit).                   
                   </p>
                   <p>
@@ -985,19 +985,19 @@
                      Angaben gemacht werden:
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/selfalignmentleft.html"><span class="val">hc:SelfAlignmentLeft</span></a> ( ›links ausgerichtet‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mit seinem linken Rand bündig mit dem linken Rand des Containers erscheint.
+                     <a class="refboxlink" href="../concepts/selfalignmentleft.html"><span class="val">hc:SelfAlignmentLeft</span></a> ( ›‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mit seinem linken Rand bündig mit dem linken Rand des Containers erscheint.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/selfalignmentright.html"><span class="val">hc:SelfAlignmentRight</span></a> ( ›rechts ausgerichtet‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mit seinem rechten Rand bündig mit dem rechten Rand des Containers erscheint.
+                     <a class="refboxlink" href="../concepts/selfalignmentright.html"><span class="val">hc:SelfAlignmentRight</span></a> ( ›‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mit seinem rechten Rand bündig mit dem rechten Rand des Containers erscheint.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/selfalignmentcentered.html"><span class="val">hc:SelfAlignmentCentered</span></a> ( ›mittig ausgerichtet‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mittig erscheint.
+                     <a class="refboxlink" href="../concepts/selfalignmentcentered.html"><span class="val">hc:SelfAlignmentCentered</span></a> ( ›‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mittig erscheint.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/selfalignmentregularleftmargin.html"><span class="val">hc:SelfAlignmentRegularLeftMargin</span></a> ( ›ausgerichtet am regulären linken Rand‹ ): Visueller Gegenstand – typischerweise ein Zeilensegment –, der links bündig mit dem regulären linken Rand des Inhaltsbereiches erscheint.
+                     <a class="refboxlink" href="../concepts/selfalignmentregularleftmargin.html"><span class="val">hc:SelfAlignmentRegularLeftMargin</span></a> ( ›‹ ): Visueller Gegenstand – typischerweise ein Zeilensegment –, der links bündig mit dem regulären linken Rand des Inhaltsbereiches erscheint.
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/selfalignmentregularrightmargin.html"><span class="val">hc:SelfAlignmentRegularRightMargin</span></a> ( ›ausgerichtet am regulären rechten Rand‹ ): Visueller Gegenstand – typischerweise ein Zeilensegment –, der rechts bündig mit dem regulären rechten Rand des Inhaltsbereiches erscheint.
+                     <a class="refboxlink" href="../concepts/selfalignmentregularrightmargin.html"><span class="val">hc:SelfAlignmentRegularRightMargin</span></a> ( ›‹ ): Visueller Gegenstand – typischerweise ein Zeilensegment –, der rechts bündig mit dem regulären rechten Rand des Inhaltsbereiches erscheint.
                   </p>
                   <p>
                      TODOs: Beispiele für tabulatorähnliche Strukturen; Offset-Attribute für präzise Erfassung von Abständen;
@@ -1067,9 +1067,9 @@
                   <img class="illustration" src="../images/run-over-type1.svg" alt="Zeilenüberlauf rechtsbündig in der nächsten regulären Zeile."><p class="bildunterschrift">Abb. 17: Zeilenüberlauf rechtsbündig in der nächsten regulären Zeile.</p>
                   <p>
                      Um den Zeilenüberlauf als solchen zu markieren, wird das <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> der Zeile, die den
-                     überschüssigen Text aufnimmt, an <span class="att">@ana</span> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span>
+                     überschüssigen Text aufnimmt, an <span class="att">@ana</span> als <a class="tocref" href=".html">hc:RunOverBelow</a>
                      gekennzeichnet. Die rechtsbündige Ausrichtung des Zeileninhalts wird an <span class="att">@rendition</span>
-                     mit <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> angegeben:
+                     mit <a class="tocref" href=".html">hc:FlushRight</a> angegeben:
                   </p>
                   
         <div class="egxml">
@@ -1089,10 +1089,10 @@
                      angegeben werden können:
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/runoverabove.html"><span class="val">hc:RunOverAbove</span></a> ( ›Zeilenüberlauf oben‹ ): 
+                     <a class="refboxlink" href="../concepts/runoverabove.html"><span class="val">hc:RunOverAbove</span></a> ( ›‹ ): 
                   </p>
                   <p class="resdef">
-                     <a class="refboxlink" href="../concepts/runoverbelow.html"><span class="val">hc:RunOverBelow</span></a> ( ›Zeilenüberlauf unten‹ ): 
+                     <a class="refboxlink" href="../concepts/runoverbelow.html"><span class="val">hc:RunOverBelow</span></a> ( ›‹ ): 
                   </p>
                   <p>
                      Wenn in der nächsten regulären Zeile, die den überschüssigen Text als Zeilenüberlauf aufnimmt, der
@@ -1116,7 +1116,7 @@
                   <p>
                      Wenn der Text des Zeilenüberlaufs zwischen den regulären Zeilen platziert wird, damit der folgende Textabschnitt
                      auf der nächsten regulären Zeile fortgesetzt werden kann, gilt die zusätzliche Zeile zwischen den Zeilen
-                     ebenfalls als eine eigenständige Zeile, und zwar als Zeile des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/interlinearline.html" target="_blank">hc:InterlinearLine</a><span class="loddocborder"> ‹</span>. Bei dieser Zeile
+                     ebenfalls als eine eigenständige Zeile, und zwar als Zeile des Typs <a class="tocref" href=".html">hc:InterlinearLine</a>. Bei dieser Zeile
                      sollte durch das Attribut <span class="att">@n</span> sichergestellt werden, dass sie richtig eingeordnet werden kann (vgl. oben <a class="inlink" href="#FAC-LINES-TRIVIA">Grundsätzliches zur Zeilenerfassung</a>). Im Übrigen
                      folgt die Kodierung aber den bereits erläuterten Prinzipien:
                   </p>
@@ -1171,7 +1171,7 @@
                   <p>
                      Wie aus dem vorausgehenden Code-Beispiel ersichtlich ist, wird in diesem Fall nicht ein <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>,
                      sondern das <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> an <span class="att">@ana</span> mit der Typangabe
-                     <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span> gekennzeichnet. Der Grund dafür ist, dass in diesem Fall nicht eine Zeile
+                     <a class="tocref" href=".html">hc:RunOverBelow</a> gekennzeichnet. Der Grund dafür ist, dass in diesem Fall nicht eine Zeile
                      als Ganzes, sondern ein Zeilensegment den Zeilenüberlauf darstellt. 
                   </p>
                   <p>
@@ -1389,10 +1389,10 @@
         </div>
     
                   <p>
-                     Im vorangehenden Beispiel wird <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> angegeben, weil 
+                     Im vorangehenden Beispiel wird <a class="tocref" href=".html">hc:FlushRight</a> an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> angegeben, weil 
                      damit die Ausrichtung des gesamten Zeileninhalts bzw. der ganzen Zeile beschrieben werden soll.
                      Wenn hingegen bei einem Zeilensegment dessen Ausrichtung angegeben werden soll, kommt
-                     (bei einer Ausrichtung am rechten Zeilenrand) <span class="loddocborder">› </span><a class="loddoc" href="../concepts/selfalignmentright.html" target="_blank">hc:SelfAlignmentRight</a><span class="loddocborder"> ‹</span> zum Einsatz,                    
+                     (bei einer Ausrichtung am rechten Zeilenrand) <a class="tocref" href=".html">hc:SelfAlignmentRight</a> zum Einsatz,                    
                      wie oben unter <a class="inlink" href="#FAC-LINES-ALIGNMENT">Ausrichtung und Abstände</a> beschrieben:
                   </p>
                   <img class="illustration" src="../images/gnm_hs86035_17r-a2.png" alt="Zeilenüberlauf in einem rechts ausgerichteten Segment der folgenden regulären Zeile (Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r)."><p class="bildunterschrift">Abb. 25: Zeilenüberlauf in einem rechts ausgerichteten Segment der folgenden regulären Zeile (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/gnm_hs86035/0038" target="_blank">Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r</a>).</p>
@@ -1421,7 +1421,7 @@
                      Diese Phänomene scheinen etwas planmäßiger zu sein als spontane Zeilenüberläufe, die Abgrenzung mag
                      aber im Einzelfall schwierig sein. Die Erfassung anhand des Zeilensegmentmechanismus ist identisch wie
                      bei ›echten‹ Zeilenüberläufen, nach Ermessen des Herausgebers kann aber auf die Angabe von 
-                     <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverabove.html" target="_blank">hc:RunOverAbove</a><span class="loddocborder"> ‹</span> bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span> (und damit auf eine
+                     <a class="tocref" href=".html">hc:RunOverAbove</a> bzw. <a class="tocref" href=".html">hc:RunOverBelow</a> (und damit auf eine
                      Bewertung als Zeilenüberlauf) verzichtet werden. Das folgende reale
                      Beispiel veranschaulicht einen solchen Fall. Die Stelle befindet sich an der Grenze zweier Kapitel, wobei die Überschrift des 
                      neuen Kapitels neben dem letzten Verspaar des vorangegangenen Kapitels ›mitläuft‹:
@@ -1505,11 +1505,11 @@
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                   Die entsprechende Zuweisung zu dieser Klasse erfolgt während der Verarbeitung 
                   automatisch, wenn kein <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> vorhanden ist. Andernfalls wird – ebenfalls 
-                  während der Verarbeitung – der Text der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionbasedonexemplar.html" target="_blank">hc:ExpressionBasedOnExemplar</a><span class="loddocborder"> ‹</span> 
+                  während der Verarbeitung – der Text der Klasse <a class="tocref" href=".html">hc:ExpressionBasedOnExemplar</a> 
                   zugewiesen. 
                </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
                   Mit <a class="gi" href="../specifications/ref-listWit.html">&lt;listWit&gt;</a> kann außerdem auch dann gearbeitet werden, wenn der Text des 
-                  TEI-Dokuments kein <span class="loddocborder">› </span><a class="loddoc" href="../concepts/textbasedonexemplar.html" target="_blank">hc:TextBasedOnExemplar</a><span class="loddocborder"> ‹</span> ist. Lesartenangaben 
+                  TEI-Dokuments kein <a class="tocref" href=".html">hc:TextBasedOnExemplar</a> ist. Lesartenangaben 
                   im textkritischen Apparat sind dann genauso gut möglich, solche Lesarten sind dann 
                   aber nicht dem Text eines im Dokument direkt als Vorlage herangezogenen Textträgers 
                   gegenübergestellt.
@@ -1540,7 +1540,7 @@
                         In der Visualisierung der Quellenansicht nimmt jeder Bereich mindestens die 
                         Höhe ein, die zur Einblendung seines gesamten Inhalts benötigt wird.
                      </div><div class="endnote" id="note_9"><a class="endnote_number" href="#note_reference_9">9</a>
-                        Neben Textbereichen kommen Zeilen auch in Tabellenzellen vor (also in Inhaltsbereichen des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/tablezone.html" target="_blank">hc:TableZone</a><span class="loddocborder"> ‹</span>).
+                        Neben Textbereichen kommen Zeilen auch in Tabellenzellen vor (also in Inhaltsbereichen des Typs <a class="tocref" href=".html">hc:TableZone</a>).
                         In diesem Abschnitt werden jedoch primär Zeilen in Textbereichen behandelt.                        
                      </div><div class="endnote" id="note_10"><a class="endnote_number" href="#note_reference_10">10</a>
                         Das gilt auch für Seitenanfänge (<a class="gi" href="../specifications/ref-pb.html">&lt;pb&gt;</a>), die mit Spaltenanfängen und Zeilenanfängen zusammenfallen können.
@@ -1574,7 +1574,7 @@
                         Die Verarbeitung geht an <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> von der Nummer <span class="val">2</span> aus,
                         wenn kein <span class="att">@n</span> explizit gesetzt ist.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 02.03.2022
+                        Letzte Aktualisierung: 08.07.2022
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
