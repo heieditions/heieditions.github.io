@@ -382,6 +382,8 @@ aside,
   opacity: 0.5;
 }
 
+/* font files and CSS for font embedding generated using https://google-webfonts-helper.herokuapp.com/fonts */
+
 /* spectral-regular - latin-ext_latin */
 @font-face {
   font-family: 'Spectral';
