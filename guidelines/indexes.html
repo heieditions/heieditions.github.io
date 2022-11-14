@@ -98,6 +98,7 @@
                   auch nur einige wenige geführt werden. Es steht einem Herausgeber aber andererseits auch frei, für sein Projekt bei Bedarf 
                   mehrere unterschiedlichen Register desselben Typs anzulegen,
                   wenn es als sinnvoll erscheint, die darin zu verwaltenden Entitäten als separate Kategorien zu betrachten.
+                  Beispielsweise ist es möglich, für verschiedene thematische Kategorien mehrere Sachregister zu führen.
                </p>
                <p>
                   Jedes Register ist in einer eigenen, nur dafür vorgesehenen TEI-Datei zu führen. 
@@ -447,6 +448,11 @@
                         befindet sich in einem Element <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a>. Wird ein Register mehrsprachig geführt, ist pro Sprache ein 
                         Element <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> möglich, das dann mit dem Attribut <span class="att">@xml:lang</span> gekennzeichnet sein muss.
                      </p>
+                     <p>
+                        Für nicht weiter strukturierte, kürzere Texte kann das Element <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> direkt den beschreibenden Text 
+                        enthalten. Alternativ kann der Inhalt von <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> mit de Element <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a> in mehrere
+                        Absätze strukturiert werden. 
+                     </p>
                      
                      
                   </div>
@@ -736,6 +742,24 @@
     
                </div>
                
+               <div id="INDEXES-LISTS-SUBJECTS">
+                  
+                  <h3>Informationen zu Einträgen in Sachregistern</h3>
+                  
+                  <p>
+                     Einträge in einem Sachregister haben die folgende Struktur in festgelegter Reihenfolge:
+                  </p>
+                  <ul>
+                     <li><a class="gi" href="../specifications/ref-label.html">&lt;label&gt;</a> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
+                     <li><a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> (optional, nur einmal pro Typ)</li>
+                     <li><a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> (optional, nur einmal pro Sprache)</li>
+                     <li><a class="gi" href="../specifications/ref-listBibl.html">&lt;listBibl&gt;</a> (optional, nur einmal)</li>
+                     <li><a class="gi" href="../specifications/ref-listRef.html">&lt;listRef&gt;</a> (optional, nur einmal)</li>
+                     <li><a class="gi" href="../specifications/ref-figure.html">&lt;figure&gt;</a> (optional, ggf. mehrfach)</li>
+                  </ul>
+                  
+               </div>
+               
                
                
                
@@ -758,7 +782,13 @@
                      <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/mockups/IndexOfOrganizationsMockup.xml" target="_blank">Körperschaftsregister</a>
                   </li>
                   <li>
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/mockups/IndexOfEventsMockup.xml" target="_blank">Ereignisregister</a>
+                  </li>
+                  <li>
                      <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/mockups/IndexOfWorksMockup.xml" target="_blank">Werkregister</a>
+                  </li>
+                  <li>
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/mockups/IndexOfSubjectsMockup.xml" target="_blank">Sachregister</a>
                   </li>
                </ul>
             </div>
