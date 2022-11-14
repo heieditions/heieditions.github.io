@@ -597,6 +597,8 @@
                      <li><a class="gi" href="../specifications/ref-settlement.html">&lt;settlement&gt;</a></li>
                   </ul>
                   <p>
+                     Unterhalb der Ebene der Siedlung (<a class="gi" href="../specifications/ref-settlement.html">&lt;settlement&gt;</a>, etwa Stadt, Gemeinde, Ort) können weitere präzisierende
+                     Angaben mithilfe von <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> gemacht werden.
                      ›heiEDITIONS‹ gibt nicht vor, welche der genannten Ebenen benutzt werden sollen
                      und in welcher Reihenfolge sie ggf. erfasst werden müssten. Innerhalb eines Registers sollte jedoch Einheitlichkeit
                      angestrebt werden. Die Elemente können sich innerhalb eines <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> auch wiederholen (z. B. 
@@ -636,6 +638,34 @@
                   <p>
                      Die Verortung einer Körperschaft mithilfe von <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> folgt denselben Regeln wie bei Orten, s. oben 
                      <a class="inlink" href="#INDEXES-LISTS-PLACES">Informationen zu Orten</a>.
+                  </p>
+                  
+               </div>
+               
+               <div id="INDEXES-LISTS-EVENTS">
+                  
+                  <h3>Informationen zu Ereignissen</h3>
+                  
+                  <p>
+                     Einträge zu Ereignissen in einem Ereignisregister haben die folgende Struktur in festgelegter Reihenfolge:
+                  </p>
+                  <ul>
+                     <li><a class="gi" href="../specifications/ref-label.html">&lt;label&gt;</a> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
+                     <li><a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> (optional, nur einmal pro Typ)</li>
+                     <li><a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a> (obligatorisch, nur einmal)</li>
+                     <li><a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> (optional, ggf. mehrfach)</li>
+                     <li><a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> (optional, nur einmal pro Sprache)</li>
+                     <li><a class="gi" href="../specifications/ref-listBibl.html">&lt;listBibl&gt;</a> (optional, nur einmal)</li>
+                     <li><a class="gi" href="../specifications/ref-listRef.html">&lt;listRef&gt;</a> (optional, nur einmal)</li>
+                     <li><a class="gi" href="../specifications/ref-figure.html">&lt;figure&gt;</a> (optional, ggf. mehrfach)</li>
+                  </ul>
+                  <p>
+                     Die Ortsangabe eines Ereignisses mithilfe von <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> folgt denselben Regeln wie bei Orten, s. oben 
+                     <a class="inlink" href="#INDEXES-LISTS-PLACES">Informationen zu Orten</a>. Für den Fall, dass ein Ereignis an mehreren Orten stattfand (z. B. bei einer Konferenz),
+                     kann <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> wiederholt und ggf. auch mit Datierungsangaben anhand der Attribute 
+                     <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>, <span class="att">@from</span> und <span class="att">@to</span>
+                     präzisiert werden. (Für die Verwendung dieser Attribute gelten die oben unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>
+                     beschriebenen Regeln.)
                   </p>
                   
                </div>
