@@ -55,7 +55,43 @@
                   laufende Kommentare, begleitende oder eigenständige Sekundärtexte) erfolgen.
                </p>
                <p>
-                  <em>Fortsetzung folgt.</em>
+                  Die Markierung eines Textsegments (Personenname, Erwähnung eines Ortes, Sachbegriff u. Ä.) als registerrelevant
+                  setzt normalerweise voraus, dass eine entsprechende Registerliste mit einem zu verknüpfenden
+                  Eintrag existiert oder zeitgleich angelegt wird. Bei einem Verweis von einer Textstelle aus zu einem 
+                  Normeintrag in einer Registerliste handelt es sich technisch um den Verweis auf die <span class="att">@xml:id</span> 
+                  eines XML-Elements und damit um den Verweis auf einen URI. In einer
+                  Standardsituation in ›heiEDITIONS‹ befinden sich TEI-Dokumente mit edierten Primärtexten 
+                  (bzw. ›Expressionen‹) in einem Verzeichnis <span class="code">texts</span>, Registerdateien in einem
+                  Verzeichnis <span class="code">indexes</span>, wobei die Verzeichnisse <span class="code">texts</span> und <span class="code">indexes</span>
+                  auf derselben strukturellen Ebene stehen. Ein Verweis von einer Textstelle aus auf einen Registereintrag müsste
+                  also einen Pfad beschreiben, der natursprachlich etwa wie folgt ausgedrückt werden könnte: 
+                  ›Gehe vom Verzeichnis <span class="code">texts</span> eine Ebene höher, dann ins Verzeichnis <span class="code">indexes</span>
+                     und in die Registerdatei AB.xml zum Eintrag mit der <span class="att">@xml:id</span> XY.‹ Technisch würde  eine solche
+                  Pfadbeschreibung so aussehen: <span class="code">../indexes/AB.xml#XY</span>.
+               </p>
+               <p>
+                  Da wir in Editionsdateien bei Registerverweisen solche umständlichen und bei manueller Eingabe auch
+                  fehleranfälligen Pfadangaben vermeiden wollen, verwenden wir eine abgekürzte Syntax, bei der der Pfad zu einer
+                  Registerdatei durch ein frei festlegbares Präfix repräsentiert wird. Ein solches Präfix muss in jedem TEI-Dokument
+                  für jedes zu verknüpfende Register in <a class="gi" href="../specifications/ref-teiHeader.html">&lt;teiHeader&gt;</a> &gt; <a class="gi" href="../specifications/ref-encodingDesc.html">&lt;encodingDesc&gt;</a> &gt; <a class="gi" href="../specifications/ref-listPrefixDef.html">&lt;listPrefixDef&gt;</a>
+                  deklariert werden, ähnlich wie an derselben Stelle in jeder TEI-Datei von ›heiEDITIONS‹
+                  auch das Präfix <span class="code">hc</span> deklariert wird.
+               </p>
+               <p>
+                  Eine typische Deklaration eines Präfixes <span class="code">pers</span> als Repräsentation des Pfades zur Registerdatei mit einer
+                  Personenliste würde wie folgt aussehen:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<prefixDef ident="pers" matchPattern="(.+)" replacementPattern="../indexes/Personenregister.xml#$1"/>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Wenn die namentliche Erwähnung einer Person an einer edierten Textstelle als Registerverknüpfung 
+                  ausgezeichnet wird, kommt am Element <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> im Attribut <span class="att">@ref</span> dann die abgekürzte
+                  Syntax für den URI-Verweis in der Form <span class="code">[Präfix]:[xml:id]</span> zum Einsatz, konkret z. B.: 
                </p>
                
             </div>
@@ -824,7 +860,7 @@
                         Person erforderlich werden, wäre dies u. a. durch Markup innerhalb der verbalen Angabe innerhalb von <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a>
                         vorstellbar.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 22.11.2022
+                        Letzte Aktualisierung: 29.11.2022
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
