@@ -66,12 +66,12 @@
                   auf derselben strukturellen Ebene stehen. Ein Verweis von einer Textstelle aus auf einen Registereintrag müsste
                   also einen Pfad beschreiben, der natursprachlich etwa wie folgt ausgedrückt werden könnte: 
                   ›Gehe vom Verzeichnis <span class="code">texts</span> eine Ebene höher, dann ins Verzeichnis <span class="code">indexes</span>
-                     und in die Registerdatei AB.xml zum Eintrag mit der <span class="att">@xml:id</span> XY.‹ Technisch würde  eine solche
+                     und in die Registerdatei <span class="code">AB.xml</span> zum Eintrag mit der <span class="att">@xml:id</span> <span class="code">XY</span>.‹ Technisch würde  eine solche
                   Pfadbeschreibung so aussehen: <span class="code">../indexes/AB.xml#XY</span>.
                </p>
                <p>
                   Da wir in Editionsdateien bei Registerverweisen solche umständlichen und bei manueller Eingabe auch
-                  fehleranfälligen Pfadangaben vermeiden wollen, verwenden wir eine abgekürzte Syntax, bei der der Pfad zu einer
+                  fehleranfälligen Pfadangaben vermeiden wollen, verwenden wir eine abgekürzte Syntax, bei welcher der Pfad zu einer
                   Registerdatei durch ein frei festlegbares Präfix repräsentiert wird. Ein solches Präfix muss in jedem TEI-Dokument
                   für jedes zu verknüpfende Register in <a class="gi" href="../specifications/ref-teiHeader.html">&lt;teiHeader&gt;</a> &gt; <a class="gi" href="../specifications/ref-encodingDesc.html">&lt;encodingDesc&gt;</a> &gt; <a class="gi" href="../specifications/ref-listPrefixDef.html">&lt;listPrefixDef&gt;</a>
                   deklariert werden, ähnlich wie an derselben Stelle in jeder TEI-Datei von ›heiEDITIONS‹
@@ -94,6 +94,108 @@
                   Syntax für den URI-Verweis in der Form <span class="code">[Präfix]:[xml:id]</span> zum Einsatz, konkret z. B.: 
                </p>
                
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<persName ref="pers:gnd-118540238">Goethe</persName>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Bei einigen Entitätentypen stehen für die Auszeichung eines Textsegments und dessen Verknüpfung mit einem 
+                  Registereintrag mehrere Elemente zur Auswahl. Grundsätzlich lässt sich so unterscheiden, ob in einem 
+                  so auszuzeichnenden Textsegment eine Entität namentlich genannt oder ggf. nur anderweitig erwähnt wird. 
+                  Für die ggf. nur anderweitige, jedenfalls aber nicht näher spezifizierte Erwähnung steht für alle Registertypen 
+                  das generische Element <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a> (<em>referencing string</em>) zur Verfügung. Wenn in einem Projekt 
+                  keine Unterscheidung zwischen namentlichen und sonstigen Erwähnungen von Entitäten für die Registerverknüpfung 
+                  erwünscht ist, kann auch immer nur das Element <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a> (mit einer Typangabe der betroffenen Entität)
+                  verwendet werden, so etwa statt des obigen Beispiels mit <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a>:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<rs ana="hc:PersonReference" ref="pers:gnd-118540238">Goethe</rs>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Die Typangabe des Verweises an <span class="att">@ana</span> ist bei <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a> obligatorisch, es sei denn, sie würde gemäß 
+                  einer projektspezifischen Regelung anhand des verwendeten Präfixes erst während der Verarbeitung maschinell 
+                  ergänzt.
+               </p>
+               <p>
+                  Wenn Projekte zwischen namentlichen und sonstigen Erwähnungen unterscheiden wollen, sollte <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a>
+                  Textstellen vorbehalten bleiben, die eine Entität nicht namentlich nennen, sondern in irgendeiner Weise umschreiben,
+                  z. B. ›der große Dichter‹, ›die Tante‹, ›die ewige Stadt‹ u. Ä.
+               </p>
+               <p>
+                  Gerade bei nicht namentlichen Erwähnungen können manchmal an einer Textstelle kollektiv mehr als nur eine Entität
+                  referenziert werden. In solchen Fällen können in <span class="att">@ref</span> mehrere URIs angegeben werden, z. B.:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<rs ana="hc:PersonReference" ref="pers:pers-1 pers:pers-2">die Eltern</rs>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Gelegentlich können sich aber auch namentliche Nennungen auf mehrere Individuen beziehen,<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup> 
+                  die im Register einzelne Einträge haben. Dann können auch an spezifischen Elementen wie <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> mehrere URIs
+                  gesetzt werden, z. B.:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<persName ref="pers:gnd-118542257 pers:gnd-118542265">Gebrüder Grimm</persName>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Ob in solchen Fällen Wörter wie ›Gebrüder‹ als Teil des Namens markiert werden oder nicht, obliegt
+                  dem Ermessen des Herausgebers. Alternativ ist bei solchen Phrasen immer auch die Verwendung von <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a>
+                  statt eines spezifischeren Elements möglich.
+               </p>
+               <p>
+                  Für die Auszeichung von Entitätenerwähnungen stehen je nach einschlägigem Registertyp diese Elemente 
+                  zur Verfügung:
+               </p>
+               <ul>
+                  <li>Auszeichnungen fürs Personenregister: <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> oder <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a> mit Wert <span class="val">hc:PersonReference</span> in <span class="att">@ana</span></li>
+                  <li>Auszeichnungen fürs Ortsregister: <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> oder <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a> mit Wert <span class="val">hc:PlaceReference</span> in <span class="att">@ana</span></li>
+                  <li>Auszeichnungen fürs Körperschaftsregister: <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> oder <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a> mit Wert <span class="val">hc:OrganizationReference</span> in <span class="att">@ana</span></li>
+                  <li>Auszeichnungen fürs Ereignisregister: <a class="gi" href="../specifications/ref-name.html">&lt;name&gt;</a> mit Wert <span class="val">hc:EventName</span> in <span class="att">@ana</span> oder <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a> mit Wert <span class="val">hc:EventReference</span> in <span class="att">@ana</span></li>
+                  <li>Auszeichnungen fürs Werkregister: <a class="gi" href="../specifications/ref-title.html">&lt;title&gt;</a> oder <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a> mit Wert <span class="val">hc:WorkReference</span> in <span class="att">@ana</span></li>
+                  <li>Auszeichnungen fürs Sachregister: <a class="gi" href="../specifications/ref-term.html">&lt;term&gt;</a> oder <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a> mit Wert <span class="val">hc:SubjectReference</span> in <span class="att">@ana</span></li>
+               </ul>
+               <p>
+                  Für die Angabe der URI eines Registereintrags (d. h. des Pfades zum Normeintrag einer Entität in einer Registerdatei mittels der <span class="att">@xml:id</span> des Normeintrags)
+                  wird in allen genannten Fällen das Attribut <span class="att">@ref</span> verwendet.
+               </p>
+               <p>
+                  Übersicht der genannten Klassen:
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/personreference.html"><span class="val">hc:PersonReference</span></a> ( ›Verweis auf Person‹ ): Namentlicher oder sonstiger verbaler Verweis auf eine oder mehrere Personen.
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/placereference.html"><span class="val">hc:PlaceReference</span></a> ( ›Verweis auf Ort‹ ): 
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/organizationreference.html"><span class="val">hc:OrganizationReference</span></a> ( ›Verweis auf Organisation‹ ): 
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/eventname.html"><span class="val">hc:EventName</span></a> ( ›Ereignisname‹ ): Benennung eines Ereignisses, die als Eigenname fungiert.
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/eventreference.html"><span class="val">hc:EventReference</span></a> ( ›Verweis auf Ereignis‹ ): Namentlicher oder sonstiger verbaler Verweis auf ein Ereignis (oder ggf. mehrere Ereignisse).
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/workreference.html"><span class="val">hc:WorkReference</span></a> ( ›Verweis auf Werk‹ ): Verweis auf ein Werk (unter Nennung des Werktitels oder nicht), mit einer möglichen Verwendung für die Aufnahme ins Werkregister.
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/subjectreference.html"><span class="val">hc:SubjectReference</span></a> ( ›Verweis auf Sache‹ ): Verweis auf eine Sache, typischerweise ein Konzept, ein Thema oder einen Begriff, mit einer möglichen Verwendung für die Aufnahme ins Sachregister.
+               </p>
+               
             </div>
             
             <div id="INDEXES-LISTS">
@@ -105,7 +207,7 @@
                   auf die aus einem Text heraus verwiesen werden kann. Die Einträge solcher Listen können unterschiedlichen
                   Umfangs sein. In einer Minimalform kann ein Registereintrag allein aus einem Identifikator und einer Ansetzungsform
                   bestehen, wobei selbst die Ansetzungsform noch aus einer externen Quelle, etwa einer Normdatei wie der GND,
-                  automatisiert übernommen werden könnte.<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
+                  automatisiert übernommen werden könnte.<sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup>
                   Im Gegensatz dazu können Registereinträge auch zu umfassenden wissenschaftlichen Produkten werden und
                   neben einer Reihe datenbankartig strukturierter Informationen auch einen Prosaabschnitt enthalten, der
                   auch die Form einer kleinen eigenständigen Abhandlung annehmen kann. Links zu externen
@@ -168,22 +270,22 @@
                   Entsprechend der obigen Liste von Registertypen ist genau eine dieser Angaben erforderlich:
                </p>
                <p class="resdef">
-                  <a class="refboxlink" href="../concepts/indexofpersons.html"><span class="val">hc:IndexOfPersons</span></a> ( ›‹ ): Eine Form des Namensregisters, in dem nur Personen erfasst sind. Einträge in einem Personenregister gruppieren jeweils Informationen über eine Person. Dieser Registertyp darf nicht mit einem Autor-Werk-Register verwechselt werden, das Einträge über Werke enthält.
+                  <a class="refboxlink" href="../concepts/indexofpersons.html"><span class="val">hc:IndexOfPersons</span></a> ( ›Personenregister; Personenverzeichnis‹ ): Eine Form des Namensregisters, in dem nur Personen erfasst sind. Einträge in einem Personenregister gruppieren jeweils Informationen über eine Person. Dieser Registertyp darf nicht mit einem Autor-Werk-Register verwechselt werden, das Einträge über Werke enthält.
                </p>
                <p class="resdef">
-                  <a class="refboxlink" href="../concepts/indexofplaces.html"><span class="val">hc:IndexOfPlaces</span></a> ( ›‹ ): Register, dessen Einträge Informationen über Orte enthalten.
+                  <a class="refboxlink" href="../concepts/indexofplaces.html"><span class="val">hc:IndexOfPlaces</span></a> ( ›Ortsregister; Ortsverzeichnis‹ ): Register, dessen Einträge Informationen über Orte enthalten.
                </p>
                <p class="resdef">
-                  <a class="refboxlink" href="../concepts/indexoforganizations.html"><span class="val">hc:IndexOfOrganizations</span></a> ( ›‹ ): Register, dessen Einträge Informationen über Körperschaften, also identifizierbare Personengruppen mit einer eigenen Identität, enthalten.
+                  <a class="refboxlink" href="../concepts/indexoforganizations.html"><span class="val">hc:IndexOfOrganizations</span></a> ( ›Körperschaftsregister‹ ): Register, dessen Einträge Informationen über Körperschaften, also identifizierbare Personengruppen mit einer eigenen Identität, enthalten.
                </p>
                <p class="resdef">
-                  <a class="refboxlink" href="../concepts/indexofevents.html"><span class="val">hc:IndexOfEvents</span></a> ( ›‹ ): Register, dessen Einträge Informationen über Ereignisse enthalten.
+                  <a class="refboxlink" href="../concepts/indexofevents.html"><span class="val">hc:IndexOfEvents</span></a> ( ›Ereignisregister‹ ): Register, dessen Einträge Informationen über Ereignisse enthalten.
                </p>
                <p class="resdef">
-                  <a class="refboxlink" href="../concepts/indexofworks.html"><span class="val">hc:IndexOfWorks</span></a> ( ›‹ ): Register, dessen Einträge Informationen über Werke und ggf. deren Urheber enthalten. Unter Werken sind in erster Linie geistige, immaterielle Schöpfungen zu verstehen, nicht konkrete materielle Gegenstände; dennoch können Einträge dieses Registertyps auch Informationen über entsprechende physische Objekte enthalten.
+                  <a class="refboxlink" href="../concepts/indexofworks.html"><span class="val">hc:IndexOfWorks</span></a> ( ›Werkregister; Autoren- und Werkregister‹ ): Register, dessen Einträge Informationen über Werke und ggf. deren Urheber enthalten. Unter Werken sind in erster Linie geistige, immaterielle Schöpfungen zu verstehen, nicht konkrete materielle Gegenstände; dennoch können Einträge dieses Registertyps auch Informationen über entsprechende physische Objekte enthalten.
                </p>
                <p class="resdef">
-                  <a class="refboxlink" href="../concepts/indexofsubjects.html"><span class="val">hc:IndexOfSubjects</span></a> ( ›‹ ): Register, dessen Einträge Informationen zu Sachverhalten enthalten, die keiner namentlich identifizierbaren individuellen Entität entsprechen.
+                  <a class="refboxlink" href="../concepts/indexofsubjects.html"><span class="val">hc:IndexOfSubjects</span></a> ( ›Sachregister; Sachverzeichnis; Schlagwortregister; Schlagwortverzeichnis; Begriffsregister; Glossar‹ ): Register, dessen Einträge Informationen zu Sachverhalten enthalten, die keiner namentlich identifizierbaren individuellen Entität entsprechen.
                </p>
                
                <p>
@@ -285,7 +387,7 @@
                            Wenn es für die erfasste Entität eine Entsprechung in der ›Gemeinsamen Normdatei‹ 
                            (GND) der Deutschen Nationalbibliothek gibt und diese Verknüpfung zu einem Normdatensatz der
                            GND innerhalb des Registereintrags auch hergestellt wird, setzt sich die <span class="att">@xml:id</span> aus der
-                           Zeichenkette <span class="code">gnd-</span> und der GND-Nummer<sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup> des entsprechenden Normdatensatzes zusammen.
+                           Zeichenkette <span class="code">gnd-</span> und der GND-Nummer<sup><a href="#note_3" id="note_reference_3" class="note_mark">3)</a></sup> des entsprechenden Normdatensatzes zusammen.
                         </li>
                         <li>
                            Andernfalls gilt es, statt der Zeichenkette <span class="code">gnd</span> ein für das konkrete Register festgelegte Präfix
@@ -339,8 +441,9 @@
                         als identisch gleichgesetzt werden sollen. 
                      </p>
                      <p>
-                        Vorerst ist in ›heiEDITIONS‹ die Verwendung von <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> nur für die Gleichsetzung 
+                        Primär ist in ›heiEDITIONS‹ die Verwendung von <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> für die Gleichsetzung 
                         mit Normdatensätzen der GND vorgesehen. Die Liste der unterstützten Normdateien ist aber grundsätzlich erweiterbar.
+                        In Ortsregistern ist etwa auch die Angabe eines Normdatensatzes von Geonames möglich. 
                         In einem Registereintrag darf nur ein <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> eines Typs vorkommen, d. h. Gleichsetzungen mit
                         mehreren Normdatensätzen derselben Normdatei sind nicht möglich.
                      </p>
@@ -354,6 +457,28 @@
             </pre>
         </div>
     
+                     <p>
+                        Beispiel eines vollständigen Eintrags des Ortsregisters mit der Angabe einer GND-URI und einer Geonames-URI:
+                     </p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<place xml:id="gnd-4023996-2">
+   <placeName ana="hc:PreferredAppellation">Heidelberg</placeName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/4023996-2</idno>
+   <idno ana="hc:GeonamesURI">https://sws.geonames.org/2907911</idno>
+   <location>
+      <country>Deutschland</country>
+      <region>Baden-Württemberg</region>
+      <region>Rhein-Neckar-Kreis</region>
+   </location>
+   <location>
+      <geo>49.41032 8.69707</geo>
+   </location>
+</place>--></code>
+            </pre>
+        </div>
+    
                   </div>
                   
                   <div id="INDEXES-LISTS-GENERAL-NAMES">
@@ -361,7 +486,7 @@
                      <h4>Namen und Bezeichnungen</h4>
                      
                      <p>
-                        Jeder Eintrag in jedem Register trägt eines oder mehrere Elemente, die den Namen, die Bezeichnung oder den Titel<sup><a href="#note_3" id="note_reference_3" class="note_mark">3)</a></sup> 
+                        Jeder Eintrag in jedem Register trägt eines oder mehrere Elemente, die den Namen, die Bezeichnung oder den Titel<sup><a href="#note_4" id="note_reference_4" class="note_mark">4)</a></sup> 
                         (dies je nach Registerart) der repräsentierten Entität wiedergeben. Dabei muss es mindestens einen Namen, eine Bezeichnung 
                         oder einen Titel geben, der als bevorzugt gilt und für die Anzeige herangezogen wird. Je nach Registerart
                         stellen folgende Elemente jeweils die Benennung (wir verwenden hier und im Folgenden den Begriff ›Benennung‹
@@ -425,7 +550,7 @@
                         Alle Benennungen, die weder als <a class="tocref" href=".html">hc:PreferredAppellation</a> noch als <a class="tocref" href=".html">hc:AppellationForDisplayInIndex</a>
                         oder <a class="tocref" href=".html">hc:AppellationForDisplayInEdition</a> gekennzeichnet sind, gelten als alternative 
                         Benennungenen und können als <a class="tocref" href=".html">hc:AlternativeAppellation</a> an <span class="att">@ana</span> markiert werden.
-                        Wenn diese Markierung nicht vorgenommen wird, gilt sie implizit.<sup><a href="#note_4" id="note_reference_4" class="note_mark">4)</a></sup> 
+                        Wenn diese Markierung nicht vorgenommen wird, gilt sie implizit.<sup><a href="#note_5" id="note_reference_5" class="note_mark">5)</a></sup> 
                      </p>
                      <p>
                         Das Attribut <span class="att">@ana</span> kann auch genutzt werden, um bestimmte Benennungen nach Bedarf weiter zu klassifizieren,
@@ -436,7 +561,7 @@
                         die <a class="tocref" href=".html">hc:PreferredAppellation</a> vertretenen Eintrag replizieren sollen, wenn also in einer
                         Registerliste derselbe Registereintrag unter mehreren ›Lemmata‹ mit ansonsten 
                         identischem Inhalt angezeigt werden soll (<em>double posting</em>), wird die Benennung, die als ein solches Synonym-Lemma 
-                        fungieren soll, an <span class="att">@ana</span> als <a class="tocref" href=".html">hc:AppellationForDoublePosting</a> gekennzeichnet.<sup><a href="#note_5" id="note_reference_5" class="note_mark">5)</a></sup>
+                        fungieren soll, an <span class="att">@ana</span> als <a class="tocref" href=".html">hc:AppellationForDoublePosting</a> gekennzeichnet.<sup><a href="#note_6" id="note_reference_6" class="note_mark">6)</a></sup>
                      </p>
                      <p>
                         Benennungen von Entitäten, die in Registern verwaltet werden, können möglicherweise nur in bestimmten Zeiträumen 
@@ -541,7 +666,7 @@
                      Die personenspezifischen Elemente <a class="gi" href="../specifications/ref-birth.html">&lt;birth&gt;</a> und <a class="gi" href="../specifications/ref-death.html">&lt;death&gt;</a> können für strukturierte und maschinenlesbare
                      Datumsangaben die Attribute <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>, <span class="att">@from</span> und <span class="att">@to</span>
                      tragen. Für die Verwendung dieser Attribute gelten die oben unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>
-                     beschriebenen Regeln. Außerdem ist in <a class="gi" href="../specifications/ref-birth.html">&lt;birth&gt;</a> und <a class="gi" href="../specifications/ref-death.html">&lt;death&gt;</a> das Element <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> für verbale Angaben möglich.<sup><a href="#note_6" id="note_reference_6" class="note_mark">6)</a></sup>
+                     beschriebenen Regeln. Außerdem ist in <a class="gi" href="../specifications/ref-birth.html">&lt;birth&gt;</a> und <a class="gi" href="../specifications/ref-death.html">&lt;death&gt;</a> das Element <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> für verbale Angaben möglich.<sup><a href="#note_7" id="note_reference_7" class="note_mark">7)</a></sup>
                   </p>
                   <p>
                      Beispiel für <a class="gi" href="../specifications/ref-birth.html">&lt;birth&gt;</a> mit maschinenlesbaren Datumsangaben in Attributen und verbalen Angaben
@@ -616,7 +741,7 @@
                      es auf dreierlei Weise verwendet werden: Für eine Beschreibung der Ortslage über die Angabe größerer
                      geopolitischer Verwaltungseinheiten; für eine geographische Lokalisierung mittels geographischer Koordinaten; 
                      für eine Ortsangabe anhand einer Adresse. Von den genannten drei Verwendungsarten unterstützt 
-                     ›heiEDITIONS‹ zur Zeit nur die erste.
+                     ›heiEDITIONS‹ zur Zeit die ersten beiden.
                   </p>
                   <p>
                      Das Element <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> kann mehrfach vorkommen. Bei einer Lokalisierung anhand größerer
@@ -655,6 +780,20 @@
                 <code><!--<location>
    <region>Baden-Württemberg</region>
    <region>Rhein-Neckar-Kreis</region>
+</location>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Bei der Verwendung von <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> zur Angabe geographischer Koordinaten erhält <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a>
+                     genau ein Kindelement <a class="gi" href="../specifications/ref-geo.html">&lt;geo&gt;</a>. <a class="gi" href="../specifications/ref-geo.html">&lt;geo&gt;</a> enthält dann zwei Dezimalzahlen (mit Punkt als Dezimaltrennzeichen 
+                     und einem Leerzeichen zwischen den beiden Dezimalzahlen) für die geographische Breite und Länge, z. B.:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<location>
+   <geo>49.41032 8.69707</geo>
 </location>--></code>
             </pre>
         </div>
@@ -834,28 +973,34 @@
 
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
+                     In besonderen Fällen kann <a class="gi" href="../specifications/ref-rs.html">&lt;rs&gt;</a> auch mit mehr als einer Typangabe in <span class="att">@ana</span> versehen werden,
+                     um gleichzeitig Entitäten in mehreren Registern zu verknüpfen, z. B. im Orts- und Körperschaftsregister,
+                     wenn sich eine Textstelle nach Meinung des Herausgebers gleichzeitig auf einen Ort und eine Körperschaft
+                     bezieht. Die in den URIs in <span class="att">@ref</span> verwendeten Präfixe müssen sich dann selbstredend auf unterschiedliche
+                     Registerdateien beziehen. Ob eine solche Mehrfachverknüpfung sinnvoll ist, obliegt dem Ermessen des Herausgebers.
+                  </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
                      In bestimmten Fällen kann in ›heiEDITIONS‹ zumindest während
                      der manuellen TEI-Redaktion eine Registerliste in statischer Form
                      sogar ganz fehlen. Dies kann dann der Fall sein, wenn allein auf Normdatensätze der GND Bezug genommen
                      wird, ohne dass vom Herausgeber eigene Inhalte für die Referenzeinträge des Registers erstellt
                      würden. Selbst die Ansetzungsformen der einzelnen Einträge würden dann aus der GND übernommen.
-                  </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
+                  </div><div class="endnote" id="note_3"><a class="endnote_number" href="#note_reference_3">3</a>
                               Die GND-Nummer gewinnt man, wenn man von der URI einer GND-Ressource vorn den Teil
                               <span class="code">http://d-nb.info/gnd/</span> abtrennt. Die GND-Nummer der GND-Ressource 
                               <span class="outlinkprefix">↪ </span><a class="outlink" href="http://d-nb.info/gnd/118540238" target="_blank">http://d-nb.info/gnd/118540238</a> 
                               (Johann Wolfgang von Goethe) ist beispielsweise <span class="code">118540238</span>.
-                           </div><div class="endnote" id="note_3"><a class="endnote_number" href="#note_reference_3">3</a>
+                           </div><div class="endnote" id="note_4"><a class="endnote_number" href="#note_reference_4">4</a>
                            Diese Sprachunterscheidung ist dadurch bedingt, dass wir nur für Eigennamen den Begriff ›Name‹
                            verwenden wollen. Bezeichnungen für Ereignisse, Werke und andere Dinge sind meist keine Eigennamen, 
                            bei Werken hat sich allerdings die spezielle Bezeichnung ›Titel‹ eingebürgert. Diesem Sprachgebrauch
                            trägt auch die Elementverwendung Rechnung.
-                        </div><div class="endnote" id="note_4"><a class="endnote_number" href="#note_reference_4">4</a>
+                        </div><div class="endnote" id="note_5"><a class="endnote_number" href="#note_reference_5">5</a>
                            Wie oben ausgeführt, gilt aber eine Benennung dann implizit als bevorzugt (und nicht als alternativ), wenn 
                            es sich um die einzige angegebene Benennung (ggf. pro Sprache) handelt.
-                        </div><div class="endnote" id="note_5"><a class="endnote_number" href="#note_reference_5">5</a>
+                        </div><div class="endnote" id="note_6"><a class="endnote_number" href="#note_reference_6">6</a>
                            <a class="tocref" href=".html">hc:AppellationForDoublePosting</a> ist als Unterklasse von <a class="tocref" href=".html">hc:AlternativeAppellation</a> definiert,
                            eine zusätzliche Kennzeichnung der Benennung als <a class="tocref" href=".html">hc:AlternativeAppellation</a> wäre daher redundant. 
-                        </div><div class="endnote" id="note_6"><a class="endnote_number" href="#note_reference_6">6</a>
+                        </div><div class="endnote" id="note_7"><a class="endnote_number" href="#note_reference_7">7</a>
                         Sollten zu einem späteren Zeitpunkt maschinenlesbare Angaben weiterer Informationen zur Geburt und zum Tod einer
                         Person erforderlich werden, wäre dies u. a. durch Markup innerhalb der verbalen Angabe innerhalb von <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a>
                         vorstellbar.
