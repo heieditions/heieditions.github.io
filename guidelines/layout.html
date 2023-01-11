@@ -32,7 +32,7 @@
                <span class="aside"><a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a></span> enthalten (s. weiter unten <a class="inlink" href="#FAC-DEC">Faksimile-Deklaration</a>. 
                Ist kein Element <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> vorhanden, wird davon ausgegangen, dass das TEI-Dokument 
                keinen physischen Textträger dokumentiert; der Inhalt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> wird dann als 
-               eine Instanz der Klasse <a class="tocref" href=".html">hc:ExpressionWithoutExemplar</a> betrachtet.
+               eine Instanz der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionwithoutexemplar.html" target="_blank">hc:ExpressionWithoutExemplar</a><span class="loddocborder"> ‹</span> betrachtet.
                <sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
             </p>
             <p class="resdef">
@@ -40,7 +40,7 @@
             </p>
             <p>
                Selbst dann, wenn ein TEI-Dokument mehrere Expressionen wiedergibt 
-               (wenn das Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <a class="tocref" href=".html">hc:ExpressionContainer</a> fungiert, 
+               (wenn das Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressioncontainer.html" target="_blank">hc:ExpressionContainer</a><span class="loddocborder"> ‹</span> fungiert, 
                vgl. <a class="inlink" href="document_structure.html#STRU">Dokumentstruktur</a>) und wenn gleichzeitig
                die Erfassung der Strukturen des physischen Trägers angestrebt wird, 
                müssen diese Expressionen einem einzigen 
@@ -53,7 +53,7 @@
             <p>
                Wenn ein TEI-Dokument nur einen Teil einer Expression enthält, weil die Expression 
                wegen ihrer Länge auf mehrere TEI-Dokumente aufgeteilt wurde (dann fungiert das 
-               Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <a class="tocref" href=".html">hc:ExpressionPartContainer</a>, 
+               Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionpartcontainer.html" target="_blank">hc:ExpressionPartContainer</a><span class="loddocborder"> ‹</span>, 
                vgl. <a class="inlink" href="document_structure.html#STRU">Dokumentstruktur</a>), wird ein Element <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> 
                im übergeordneten TEI-Dokument erwartet, in dem die in mehrere Teildokumente aufgeteilte 
                Expression zusammengeführt wird.
@@ -259,12 +259,12 @@
                   <h3>Angaben zu Typen von Inhaltsbereichen</h3>
                   
                   <p>
-                     Auf einer Inhaltsfläche (<a class="tocref" href=".html">hc:ContentSurface</a>) sind einzelne Inhalte 
-                     in Inhaltsbereichen (<a class="tocref" href=".html">hc:ContentZone</a>) untergebracht.
+                     Auf einer Inhaltsfläche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentsurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>) sind einzelne Inhalte 
+                     in Inhaltsbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) untergebracht.
                      Inhaltsbereiche werden <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>-Elemente repräsentiert, die in <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> 
                      entweder direkt als Kindelemente innerhalb von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> oder innerhalb eines übergeordneten
                      <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stehen. Ein Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>, das seinerseits kein Kindelement <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>
-                     enthält, ist ein Inhaltsbereich (von Ausnahmen bei Hilfsbereichen – <a class="tocref" href=".html">hc:AuxiliaryZone</a> – abgesehen).
+                     enthält, ist ein Inhaltsbereich (von Ausnahmen bei Hilfsbereichen – <span class="loddocborder">› </span><a class="loddoc" href="../concepts/auxiliaryzone.html" target="_blank">hc:AuxiliaryZone</a><span class="loddocborder"> ‹</span> – abgesehen).
                   </p>                  
                   <p>
                      <span class="aside"><a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>/<span class="att">@ana</span></span>
@@ -367,8 +367,8 @@
     
                   <p>
                      Komplexere Anordnungen lassen sich mit horizontalen und vertikalen Containern
-                     beschreiben, die mit <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> des Typs <a class="tocref" href=".html">hc:HorizontalLayout</a>
-                     bzw. <a class="tocref" href=".html">hc:VerticalLayout</a> kodiert werden.
+                     beschreiben, die mit <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/horizontallayout.html" target="_blank">hc:HorizontalLayout</a><span class="loddocborder"> ‹</span>
+                     bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/verticallayout.html" target="_blank">hc:VerticalLayout</a><span class="loddocborder"> ‹</span> kodiert werden.
                   </p>
                   <p class="resdef">
                      <a class="refboxlink" href="../concepts/horizontallayout.html"><span class="val">hc:HorizontalLayout</span></a> ( ›horizontales Layout‹ ): Gruppierungsbereich, dessen Elemente nebeneinander horizontal fest angeordnet sind, vergleichbar mit einer Zeile.
@@ -380,7 +380,7 @@
                      Die Beschreibung einer Seite mit zwei Textbereichen nebeneinander demonstriert das folgende Beispiel.
                      Hier dient das übergeordnete <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> als Container für die Gruppierung
                      und richtige Anordnung der beiden Textbereiche. Erst die beiden Textbereiche sind 
-                     jeweils Inhaltsbereiche (<a class="tocref" href=".html">hc:ContentZone</a>). Auf eine mögliche Bezeichnung
+                     jeweils Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>). Auf eine mögliche Bezeichnung
                      der beiden Textbereiche als ›Spalten‹ wird hier übrigens noch verzichtet,
                      vgl. dazu unten den Abschnitt <a class="inlink" href="#FAC-DEC-SEMISTRUC">Semistrukturelle Angaben zu Layout- und Inhaltsbereichen</a>.
                   </p>
@@ -538,7 +538,7 @@
                      <a class="refboxlink" href="../concepts/line.html"><span class="val">hc:Line</span></a> ( ›Zeile‹ ): Eine geordnete, gerichtete und visuell kohärente Sequenz von Glyphen und ggf. anderen Elementen, die in der Regel, jedoch nicht zwingend einer geometrischen Geraden folgt, immer aber auf einem intentional geschaffenen visuellen Zusammenhang gründet.
                   </p>
                   <p>
-                     Zeilen sind die konstituierenden Komponenten von Textbereichen (<a class="tocref" href=".html">hc:TextZone</a>), die in der Regel
+                     Zeilen sind die konstituierenden Komponenten von Textbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/textzone.html" target="_blank">hc:TextZone</a><span class="loddocborder"> ‹</span>), die in der Regel
                      als unmittelbare Container für jeweils eine geordnete Sequenz von Zeilen fungieren.<sup><a href="#note_9" id="note_reference_9" class="note_mark">9)</a></sup>
                   </p>                  
                   <p>
@@ -975,7 +975,7 @@
                      <a class="refboxlink" href="../concepts/centered.html"><span class="val">hc:Centered</span></a> ( ›zentriert‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt horizontal mittig ausgerichtet ist.
                   </p>
                   <p>
-                     Die Angaben <a class="tocref" href=".html">hc:FlushLeft</a>, <a class="tocref" href=".html">hc:FlushRight</a> und <a class="tocref" href=".html">hc:Centered</a> beziehen sich
+                     Die Angaben <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushleft.html" target="_blank">hc:FlushLeft</a><span class="loddocborder"> ‹</span>, <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/centered.html" target="_blank">hc:Centered</a><span class="loddocborder"> ‹</span> beziehen sich
                      jeweils ›global‹ auf sämtliche Inhalte einer Zeile (bzw. anders betrachtet auf die ganze Zeile als Einheit).                   
                   </p>
                   <p>
@@ -1068,9 +1068,9 @@
                   <img class="illustration" src="../images/run-over-type1.svg" alt="Zeilenüberlauf rechtsbündig in der nächsten regulären Zeile."><p class="bildunterschrift">Abb. 17: Zeilenüberlauf rechtsbündig in der nächsten regulären Zeile.</p>
                   <p>
                      Um den Zeilenüberlauf als solchen zu markieren, wird das <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> der Zeile, die den
-                     überschüssigen Text aufnimmt, an <span class="att">@ana</span> als <a class="tocref" href=".html">hc:RunOverBelow</a>
+                     überschüssigen Text aufnimmt, an <span class="att">@ana</span> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span>
                      gekennzeichnet. Die rechtsbündige Ausrichtung des Zeileninhalts wird an <span class="att">@rendition</span>
-                     mit <a class="tocref" href=".html">hc:FlushRight</a> angegeben:
+                     mit <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> angegeben:
                   </p>
                   
         <div class="egxml">
@@ -1117,7 +1117,7 @@
                   <p>
                      Wenn der Text des Zeilenüberlaufs zwischen den regulären Zeilen platziert wird, damit der folgende Textabschnitt
                      auf der nächsten regulären Zeile fortgesetzt werden kann, gilt die zusätzliche Zeile zwischen den Zeilen
-                     ebenfalls als eine eigenständige Zeile, und zwar als Zeile des Typs <a class="tocref" href=".html">hc:InterlinearLine</a>. Bei dieser Zeile
+                     ebenfalls als eine eigenständige Zeile, und zwar als Zeile des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/interlinearline.html" target="_blank">hc:InterlinearLine</a><span class="loddocborder"> ‹</span>. Bei dieser Zeile
                      sollte durch das Attribut <span class="att">@n</span> sichergestellt werden, dass sie richtig eingeordnet werden kann (vgl. oben <a class="inlink" href="#FAC-LINES-TRIVIA">Grundsätzliches zur Zeilenerfassung</a>). Im Übrigen
                      folgt die Kodierung aber den bereits erläuterten Prinzipien:
                   </p>
@@ -1172,7 +1172,7 @@
                   <p>
                      Wie aus dem vorausgehenden Code-Beispiel ersichtlich ist, wird in diesem Fall nicht ein <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a>,
                      sondern das <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> an <span class="att">@ana</span> mit der Typangabe
-                     <a class="tocref" href=".html">hc:RunOverBelow</a> gekennzeichnet. Der Grund dafür ist, dass in diesem Fall nicht eine Zeile
+                     <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span> gekennzeichnet. Der Grund dafür ist, dass in diesem Fall nicht eine Zeile
                      als Ganzes, sondern ein Zeilensegment den Zeilenüberlauf darstellt. 
                   </p>
                   <p>
@@ -1390,10 +1390,10 @@
         </div>
     
                   <p>
-                     Im vorangehenden Beispiel wird <a class="tocref" href=".html">hc:FlushRight</a> an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> angegeben, weil 
+                     Im vorangehenden Beispiel wird <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> an <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> angegeben, weil 
                      damit die Ausrichtung des gesamten Zeileninhalts bzw. der ganzen Zeile beschrieben werden soll.
                      Wenn hingegen bei einem Zeilensegment dessen Ausrichtung angegeben werden soll, kommt
-                     (bei einer Ausrichtung am rechten Zeilenrand) <a class="tocref" href=".html">hc:SelfAlignmentRight</a> zum Einsatz,                    
+                     (bei einer Ausrichtung am rechten Zeilenrand) <span class="loddocborder">› </span><a class="loddoc" href="../concepts/selfalignmentright.html" target="_blank">hc:SelfAlignmentRight</a><span class="loddocborder"> ‹</span> zum Einsatz,                    
                      wie oben unter <a class="inlink" href="#FAC-LINES-ALIGNMENT">Ausrichtung und Abstände</a> beschrieben:
                   </p>
                   <img class="illustration" src="../images/gnm_hs86035_17r-a2.png" alt="Zeilenüberlauf in einem rechts ausgerichteten Segment der folgenden regulären Zeile (Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r)."><p class="bildunterschrift">Abb. 25: Zeilenüberlauf in einem rechts ausgerichteten Segment der folgenden regulären Zeile (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/gnm_hs86035/0038" target="_blank">Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r</a>).</p>
@@ -1422,7 +1422,7 @@
                      Diese Phänomene scheinen etwas planmäßiger zu sein als spontane Zeilenüberläufe, die Abgrenzung mag
                      aber im Einzelfall schwierig sein. Die Erfassung anhand des Zeilensegmentmechanismus ist identisch wie
                      bei ›echten‹ Zeilenüberläufen, nach Ermessen des Herausgebers kann aber auf die Angabe von 
-                     <a class="tocref" href=".html">hc:RunOverAbove</a> bzw. <a class="tocref" href=".html">hc:RunOverBelow</a> (und damit auf eine
+                     <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverabove.html" target="_blank">hc:RunOverAbove</a><span class="loddocborder"> ‹</span> bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span> (und damit auf eine
                      Bewertung als Zeilenüberlauf) verzichtet werden. Das folgende reale
                      Beispiel veranschaulicht einen solchen Fall. Die Stelle befindet sich an der Grenze zweier Kapitel, wobei die Überschrift des 
                      neuen Kapitels neben dem letzten Verspaar des vorangegangenen Kapitels ›mitläuft‹:
@@ -1506,11 +1506,11 @@
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                   Die entsprechende Zuweisung zu dieser Klasse erfolgt während der Verarbeitung 
                   automatisch, wenn kein <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> vorhanden ist. Andernfalls wird – ebenfalls 
-                  während der Verarbeitung – der Text der Klasse <a class="tocref" href=".html">hc:ExpressionBasedOnExemplar</a> 
+                  während der Verarbeitung – der Text der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionbasedonexemplar.html" target="_blank">hc:ExpressionBasedOnExemplar</a><span class="loddocborder"> ‹</span> 
                   zugewiesen. 
                </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
                   Mit <a class="gi" href="../specifications/ref-listWit.html">&lt;listWit&gt;</a> kann außerdem auch dann gearbeitet werden, wenn der Text des 
-                  TEI-Dokuments kein <a class="tocref" href=".html">hc:TextBasedOnExemplar</a> ist. Lesartenangaben 
+                  TEI-Dokuments kein <span class="loddocborder">› </span><a class="loddoc" href="../concepts/textbasedonexemplar.html" target="_blank">hc:TextBasedOnExemplar</a><span class="loddocborder"> ‹</span> ist. Lesartenangaben 
                   im textkritischen Apparat sind dann genauso gut möglich, solche Lesarten sind dann 
                   aber nicht dem Text eines im Dokument direkt als Vorlage herangezogenen Textträgers 
                   gegenübergestellt.
@@ -1541,7 +1541,7 @@
                         In der Visualisierung der Quellenansicht nimmt jeder Bereich mindestens die 
                         Höhe ein, die zur Einblendung seines gesamten Inhalts benötigt wird.
                      </div><div class="endnote" id="note_9"><a class="endnote_number" href="#note_reference_9">9</a>
-                        Neben Textbereichen kommen Zeilen auch in Tabellenzellen vor (also in Inhaltsbereichen des Typs <a class="tocref" href=".html">hc:TableZone</a>).
+                        Neben Textbereichen kommen Zeilen auch in Tabellenzellen vor (also in Inhaltsbereichen des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/tablezone.html" target="_blank">hc:TableZone</a><span class="loddocborder"> ‹</span>).
                         In diesem Abschnitt werden jedoch primär Zeilen in Textbereichen behandelt.                        
                      </div><div class="endnote" id="note_10"><a class="endnote_number" href="#note_reference_10">10</a>
                         Das gilt auch für Seitenanfänge (<a class="gi" href="../specifications/ref-pb.html">&lt;pb&gt;</a>), die mit Spaltenanfängen und Zeilenanfängen zusammenfallen können.
