@@ -1,0 +1,70 @@
+<!DOCTYPE HTML><html><head><title>heiEDITIONS Dokumentation | Genuin digital entstandene Texte</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Genuin digital entstandene Texte</nav><main>
+         <div id="BORN-DIGITAL">
+            
+            <h1>Genuin digital entstandene Texte</h1>
+            
+            <div id="BORN-DIGITAL-FIGURES">
+               
+               <h2>Anzeige von Bildern und Tabellen</h2>
+               
+               <p>[... Kontext fehlt ...]</p>
+               
+               <p>
+                  Bilder und Tabellen können entweder fest im Kontext des sie umgebenden Inhalts verortet sein, 
+                  sodass sie in einem fixierten Zusammenhang mit dem vorangehenden und nachfolgenden Inhalt stehen,
+                  oder sie können unabhängig von konkreten Textstellen sein und zu einem Text in einer freieren,
+                  begleitenden Rolle in Beziehung stehen. Im ersteren Fall sind sie eindeutig Teil des Textes,
+                  im letzteren begleiten sie den Text eher ›von außen‹. Diese Unterscheidung kann durch
+                  die Verwendung der folgenden Klassen am Attribut <span class="att">@ana</span> eines <a class="gi" href="../specifications/ref-figure.html">&lt;figure&gt;</a> bzw. 
+                  <a class="gi" href="../specifications/ref-table.html">&lt;table&gt;</a> zum Ausdruck gebracht werden:
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/connectedfigure.html"><span class="val">hc:ConnectedFigure</span></a> ( ›verbundene Abbildung‹ ): Abbildung, die in einem bestimmten fixierten Zusammenhang mit vorangehendem und nachfolgendem Inhalt Teil einer Expression ist.
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/connectedtable.html"><span class="val">hc:ConnectedTable</span></a> ( ›verbundene Tabelle‹ ): Tabelle, die in einem bestimmten fixierten Zusammenhang mit vorangehendem und nachfolgendem Inhalt Teil einer Expression ist.
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/detachedfigure.html"><span class="val">hc:DetachedFigure</span></a> ( ›unverbundene Abbildung‹ ): Abbildung, die in keinem bestimmten fixierten Zusammenhang mit vorangehendem und nachfolgendem Inhalt Teil einer Expression ist.
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/detachedtable.html"><span class="val">hc:DetachedTable</span></a> ( ›unverbundene Tabelle‹ ): Tabelle, die in keinem bestimmten fixierten Zusammenhang mit vorangehendem und nachfolgendem Inhalt Teil einer Expression ist.
+               </p>
+               <p>
+                  Wenn ein <a class="gi" href="../specifications/ref-figure.html">&lt;figure&gt;</a> oder <a class="gi" href="../specifications/ref-table.html">&lt;table&gt;</a> keine dieser Angaben trägt, wird implizit davon ausgegangen,
+                  dass die Position des Elements im umgebenden Kontext relevant ist, also dass es sich um eine Instanz 
+                  von <a class="tocref" href=".html">hc:ConnectedFigure</a> bzw. <a class="tocref" href=".html">hc:ConnectedTable</a> handelt.
+               </p>
+               <p>
+                  Bei der Visualisierung im Rahmen von ›heiEDITIONS‹ werden in genuin digital entstandenen Texten
+                  Bilder und Tabellen normalerweise aus dem Fließtext ausgelagert und in einem dedizierten Medienbereich gesondert 
+                  eingeblendet. Bei Instanzen von <a class="tocref" href=".html">hc:DetachedFigure</a> und <a class="tocref" href=".html">hc:DetachedTable</a> muss
+                  es auch zwingend so sein, weil die Präsentation an einer konkreten Textstelle irreführend sein könnte. 
+                  Ist hingegen der Kontext eines <a class="gi" href="../specifications/ref-figure.html">&lt;figure&gt;</a> oder <a class="gi" href="../specifications/ref-table.html">&lt;table&gt;</a> relevant 
+                  (also bei <a class="tocref" href=".html">hc:ConnectedFigure</a> bzw. <a class="tocref" href=".html">hc:ConnectedTable</a>),
+                  ist es einem Autor freigestellt, die direkte Visualisierung eines Bildes oder einer Tabelle an der Stelle des
+                  entsprechenden Elements im TEI-Dokument vorzugeben oder die Auslagerung des direkten Inhalts und dessen Ersetzung
+                  durch einen verweisenden Platzhalter zu wählen. Das Letztere ist voreingestellt. Nur wenn also ein Bild 
+                  oder eine Tabelle direkt als solche mitten im Text eingeblendet werden sollen, ist eine explizite Angabe am
+                  Attribut <span class="att">@rendition</span> notwendig:
+               </p>
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/embedded.html"><span class="val">hc:Embedded</span></a> ( ›eingebettet‹ ): Präsentation eines visuellen Gegenstands, typischerweise einer Abbildung oder einer Tabelle, an einer spezifischen Textstelle durch direkte Einbettung des Inhalts (z. B. des Bildes oder der Tabelle) in den umliegenden Text (im Unterschied zu einer etwaigen Auslagerung außerhalb des Textes und der Ersetzung des Inhalts durch einen verweisenden Platzhalter).
+               </p>
+
+               <p>[... Fortsetzung folgt ...]</p>
+               
+               
+            </div>
+
+         </div>
+      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 11.01.2023
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script></body></html>
