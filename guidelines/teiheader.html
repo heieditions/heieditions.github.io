@@ -33,7 +33,7 @@
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBLISHER">
                      
-                     <h4>Angaben zum Verlag oder Verleger (<a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a>)</h4>
+                     <h4>Verlag oder Verleger (<a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a>)</h4>
                      
                      <p>
                         Der Verlag oder Verleger ist ein Akteur, der die Veröffentlichung als solche tätigt, der also
@@ -96,6 +96,75 @@
     
                   </div>
                   
+                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBPLACE">
+                     
+                     <h4>Veröffentlichungsort (<a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a>)</h4>
+                     
+                     <p>
+                        Der Veröffentlichungsort bezieht sich auf den Sitz des Verlags oder des Verlegers und
+                        wird mit <a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a> angegeben. Der Ortsname selbst muss innerhalb von 
+                        <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> stehen, optional können mit <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> auch Normdaten 
+                        angegeben werden (GND). Pro Ort sollen nicht mehrere (alternative) Namen aufgelistet werden. 
+                        Wenn mehrere Orte verzeichnet werden sollen, muss das Element
+                        <a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a> wiederholt werden.
+                     </p>
+                     <p>
+                        Bei einer typischen von der Universitätsbibliothek Heidelberg herausgegebenen Publikation
+                        sieht sieht <a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a> wie folgt aus:
+                     </p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<pubPlace>
+   <placeName>Heidelberg</placeName>
+   <idno ana="hc:GND-URI">http://d-nb.info/gnd/4023996-2</idno>
+</pubPlace>--></code>
+            </pre>
+        </div>
+                         
+                  </div>
+                  
+                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-DATE">
+                     
+                     <h4>Veröffentlichungsdatum (<a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a>)</h4>
+                     
+                     <p>
+                        Es handelt sich um das Datum der Veröffentlichung der durch das TEI-Dokument repräsentierten Ressource
+                        in ihrer Eigenschaft als heutige Publikation (nicht etwa um das Enstehungs- oder Publikationsdatum 
+                        eines darin edierten historischen Textes). Das Datum wird mit <a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a> und der <span class="att">@ana</span>-Typzuweisung
+                        von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/dateofpublication.html" target="_blank">hc:DateOfPublication</a><span class="loddocborder"> ‹</span> angegeben. Mit dem Attribut <span class="att">@when</span> soll
+                        eine maschinenlesbare Datumsangabe in der Form <span class="val">JJJJ-MM-TT</span>, <span class="val">JJJJ-MM</span> oder <span class="val">JJJJ</span> 
+                        bereitgestellt werden, z. B.:
+                     </p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<date ana="hc:DateOfPublication" when="2022">2022</date>--></code>
+            </pre>
+        </div>
+    
+                     <p>
+                        Ergänzend kann auch noch das Datum der letzten Änderung oder Aktualisierung (nach der eigentlichen Veröffentlichung)
+                        angegeben werden, z. B.:
+                     </p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<date ana="hc:DateOfLastModification" when="2023-11">November 2023</date>--></code>
+            </pre>
+        </div>
+    
+                     
+                  </div>
+                  
+                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-AVAILABILITY">
+                     
+                     <h4>Lizenz</h4>
+                     
+                  </div>
+                  
+                  
+                  
                </div>
                
                <div id="TEIHEADER-FILEDESC-SERIESSTMT">
@@ -111,7 +180,7 @@
 
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 12.01.2023
+                        Letzte Aktualisierung: 17.01.2023
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
