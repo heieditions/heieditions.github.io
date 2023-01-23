@@ -1,0 +1,54 @@
+<!DOCTYPE HTML><html><head><title>heiEDITIONS Dokumentation | Visualisierung der Metadaten im teiHeader</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Visualisierung der Metadaten im teiHeader</nav><main>
+         <div id="VISUALIZATION-TEIHEADER">
+            
+            <h1>Visualisierung der Metadaten im <a class="gi" href="../specifications/ref-teiHeader.html">&lt;teiHeader&gt;</a></h1>
+            
+            <p>
+               In der Leseansicht von ›heiEDITIONS‹ werden die im <a class="gi" href="../specifications/ref-teiHeader.html">&lt;teiHeader&gt;</a> verzeichneten
+               Metadaten im Impressum-Reiter des ›heiVIEWER‹ angezeigt.
+            </p>
+            <p>
+               Die in den nachfolgenden Abschnitten jeweils angegebenen XML-Pfade beziehen sich (wenn nicht anders vermerkt)
+               auf den <a class="gi" href="../specifications/ref-teiHeader.html">&lt;teiHeader&gt;</a> der TEI-Datei, deren <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> gerade visualisiert wird.
+            </p>
+            
+            <div id="VISUALIZATION-TEIHEADER-BIBLIOGRAPHIC">
+               
+               <h2>Visualisierung bibliographischer Metadaten</h2>
+               
+               <h3>Block 1 (Titel, Angaben zur Veröffentlichung und zur Textentstehung)</h3><ul>
+                  
+                  <li>
+                     <span class="code">fileDesc/titleStmt/title</span> (ggf. doppelt und an <span class="att">@ana</span> mit <span class="val">hc:MainTitle</span> und <span class="val">hc:Subtitle</span> markiert): Visualisierung als Überschrift, zusätzlich Einblendung oben im Hauptfenster über dem Textinhalt; zwischen Haupttitel und Untertitel (wenn vorhanden): <span class="code">[.⎵]</span>. Wenn <span class="att">@xml:lang</span> vorhanden, gefiltert nur für die gerade im Viewer aktive Sprache.
+                  </li>
+                  <li>
+                     <span class="code">fileDesc/editionStmt/edition</span> (Angabe zur Auflage, Freitext)
+                  </li>
+                  <li>
+                     <span class="code">fileDesc/publicationStmt/pubPlace/placeName</span> (Veröffentlichungsort) + <span class="code">[:⎵]</span> + <span class="code">fileDesc/publicationStmt/publisher/orgName</span> (Verlag oder Verleger) + <span class="code">,⎵</span> + <span class="code">fileDesc/publicationStmt/date[1]</span> (Veröffentlichungsdatum)
+                  </li>
+                  
+               </ul>
+               
+               <h3>Beteiligte Personen (und Körperschaften</h3><ul>
+                  
+                  <li>
+                     <span class="code">fileDesc/titleStmt/author</span>
+                  </li>
+               </ul>
+               
+            </div>
+            
+            
+
+         </div>
+      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 23.01.2023
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script></body></html>
