@@ -7,13 +7,35 @@
             
             <h1>Metadaten</h1>
             
+            <p>
+               Das Element <a class="gi" href="../specifications/ref-teiHeader.html">&lt;teiHeader&gt;</a> ist der obligatorische Metadatenbereich eines jeden TEI-Dokuments 
+               und steht als erstes Kindelement innerhalb des Wurzelelements <a class="gi" href="../specifications/ref-TEI.html">&lt;TEI&gt;</a>. 
+               Es besteht in ›heiEDITIONS‹ standardmäßig aus vier Kindelementen:
+            </p>
+            <ul>
+               <li>
+                  <a class="gi" href="../specifications/ref-fileDesc.html">&lt;fileDesc&gt;</a> mit der bibliographischen Beschreibung des TEI-Dokuments selbst und des darin enthaltenen Textes
+                  (obligatorisch)
+               </li>
+               <li>
+                  <a class="gi" href="../specifications/ref-encodingDesc.html">&lt;encodingDesc&gt;</a> mit einer Beschreibung der Kodierung, also der konzeptuellen und technischen ›Übersetzung‹
+                  des Textes ins vorliegende TEI-Format (obligatorisch)
+               </li>
+               <li>
+                  <a class="gi" href="../specifications/ref-profileDesc.html">&lt;profileDesc&gt;</a> mit weiteren Informationen zum Text, die über bibliographische Metadaten hinausgehen (fakultativ)
+               </li>
+               <li>
+                  <a class="gi" href="../specifications/ref-revisionDesc.html">&lt;revisionDesc&gt;</a> mit Informationen zur Revisionsgeschichte der Datei
+               </li>
+            </ul>
+            
             <div id="TEIHEADER-FILEDESC">
                
                <h2>Bibliographische Metadaten</h2>
                
                <p>
                   Bei den im Element <a class="gi" href="../specifications/ref-fileDesc.html">&lt;fileDesc&gt;</a> zu erfassenden Metadaten handelt es sich um bibliographische Metadaten
-                  im breiten Sinne, d. h. um Angaben, die für die bibliothearische Katalogisierung relevant sind. Editionsdokumente
+                  im breiten Sinne, d. h. um Angaben, die für die bibliothekarische Katalogisierung relevant sind. Editionsdokumente
                   mit Primärtext(en) enthalten hier sowohl Angaben zum edierten (historischen) Text als auch zum (digitalen)
                   editorischen Dokument.
                </p>
@@ -171,16 +193,31 @@
                   
                   <h3>Angaben zur Publikationsreihe</h3>
               
-               </div>
+               </div>            
                
-                  
+            </div>
+            
+            <div id="TEIHEADER-ENCODINGDESC">
                
+               <h2>Beschreibung der Kodierung</h2>
+               
+            </div>
+            
+            <div id="TEIHEADER-PROFILEDESC">
+               
+               <h2>Informationen über den Hintergrund des Textes</h2>
+               
+            </div>
+            
+            <div id="TEIHEADER-REVISIONDESC">
+               
+               <h2>Revisionsgeschichte</h2>
                
             </div>
 
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 23.01.2023
+                        Letzte Aktualisierung: 24.01.2023
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
