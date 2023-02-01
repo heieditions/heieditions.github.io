@@ -146,10 +146,191 @@
         </div>
                                 
                   <p>
-                     <span class="aside"><a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a></span>
-                     Das Element <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a> gibt bei Editionen den Urheber des edierten historischen Textes an, bei genuin digital entstandenen
-                     Texten ebenfalls den Verfasser.
+                     Für die Verantwortlichkeitsangaben gilt, dass jeder Akteur (Person oder Körperschaft), dessen Beteiligung am Inhalt oder an der Form
+                     des TEI-Dokuments festgehalten werden soll, mit einem eigenen Element anzugeben ist – also nicht
+                     etwa zwei Autoren in einem einzigen Element <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a>, sondern jeder Autor in einem eigenen <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a>.
+                     Für eine Übersicht der möglichen Beteiligungsarten
+                     empfiehlt sich eine Liste der Library of Congress: <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators" target="_blank">http://id.loc.gov/vocabulary/relators</a>. Nicht alle Rollen in dieser Liste
+                     werden für TEI-Dokumente relevant sein; aus der Liste wird aber ersichtlich, dass die angegebene Beteiligung durchaus
+                     auch eine passive sein kann, etwa beim Empfänger eines Briefes (<em>addresse</em> bzw. <em>recipient</em>, s.
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/rcp" target="_blank">http://id.loc.gov/vocabulary/relators/rcp</a>.
+                     Für einige Rollen bzw. Arten der Verantwortlichkeit gibt es in der TEI eigene dedizierte Elemente, die
+                     vorzugsweise zu verwenden sind:
                   </p>
+                  <ul>
+                     <li><a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a>: Autor, Verfasser (vgl. <em>author</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/aut" target="_blank">http://id.loc.gov/vocabulary/relators/aut</a>) – 
+                        gibt bei Editionen den Urheber des edierten historischen Textes an, bei genuin digital entstandenen
+                        Texten ebenfalls den modernen Verfasser</li>
+                     <li><a class="gi" href="../specifications/ref-editor.html">&lt;editor&gt;</a>: Editor, Herausgeber (vgl. <em>editor</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/edt" target="_blank">http://id.loc.gov/vocabulary/relators/edt</a>)</li>
+                     <li><a class="gi" href="../specifications/ref-principal.html">&lt;principal&gt;</a>: <em>principal researcher</em>, <em>principal investigator</em>, Projektleiter (vgl. <em>research team head</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/rth" target="_blank">http://id.loc.gov/vocabulary/relators/rth</a>)</li>
+                     <li><a class="gi" href="../specifications/ref-funder.html">&lt;funder&gt;</a>: Geldgeber (vgl. <em>funder</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/fnd" target="_blank">http://id.loc.gov/vocabulary/relators/fnd</a>)</li>
+                     <li><a class="gi" href="../specifications/ref-sponsor.html">&lt;sponsor&gt;</a>: Förderer, Schirmherr, Schirmherrin (vgl. <em>sponsor</em>, 
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/spn" target="_blank">http://id.loc.gov/vocabulary/relators/spn</a>) – 
+                        die Förderung kann in finanzieller, gesellschaftlicher oder ideeller Unterstützung bestehen; die wesentliche Kernfinanzierung 
+                        ist aber der Rolle des <a class="gi" href="../specifications/ref-funder.html">&lt;funder&gt;</a> vorbehalten
+                     </li>
+                  </ul>
+                  <p>
+                     Für alle anderen Rollen ist das generische Element <a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a> zu verwenden und im Attribut 
+                     <span class="att">@ref</span> nach Möglichkeit mit dem passenden URI von <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators" target="_blank">http://id.loc.gov/vocabulary/relators</a> zu verknüpfen. Einige Beziehungen allerdings,
+                      die in der genannten Liste der Library of Congress erscheinen, sind zwar für den <a class="gi" href="../specifications/ref-teiHeader.html">&lt;teiHeader&gt;</a> relevant,
+                     jedoch nicht im <a class="gi" href="../specifications/ref-titleStmt.html">&lt;titleStmt&gt;</a> anzugeben, etwa <em>publisher</em> (<span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/pbl" target="_blank">http://id.loc.gov/vocabulary/relators/pbl</a>) oder 
+                     <em>publication place</em> (<span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/pup" target="_blank">http://id.loc.gov/vocabulary/relators/pup</a>),
+                     dazu s. hier <a class="inlink" href="#TEIHEADER-FILEDESC-PUBLICATIONSTMT">Angaben zur Veröffentlichung (publicationStmt)</a>.
+                  </p>
+                  <p>
+                     Die vorgesehene Struktur der Elemente <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a>, <a class="gi" href="../specifications/ref-editor.html">&lt;editor&gt;</a>, <a class="gi" href="../specifications/ref-principal.html">&lt;principal&gt;</a>, <a class="gi" href="../specifications/ref-funder.html">&lt;funder&gt;</a> und <a class="gi" href="../specifications/ref-sponsor.html">&lt;sponsor&gt;</a>
+                     und <a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a>
+                     ist immer gleich, lediglich bei <a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a> kommen noch das (optionale) Attribut <span class="att">@ref</span> und das
+                    (obligatorische) Element <a class="gi" href="../specifications/ref-resp.html">&lt;resp&gt;</a> hinzu, um die Art der Beteiligung anzugeben.                   
+                  </p>
+                  <p>
+                     Unverzichtbar ist immer die Nennung eines Namens der beteiligten Person oder Körperschaft mit 
+                     <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> oder <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a>. Des Weiteren können mit <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a>
+                     ein URI der Gemeinsamen Normdatei (GND) und ein ORCID-URI als Identifikatoren angegeben
+                     werden, z. B.:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<titleStmt>
+   […]
+   <author>
+      <persName>Marcus Tullius Cicero</persName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/118520814</idno>
+   </author>
+   […]
+</titleStmt>--></code>
+            </pre>
+        </div>
+    
+                  <p>oder:</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<titleStmt>
+   […]
+   <editor>
+      <persName>Carmen Cardelle de Hartmann</persName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/113694237</idno>
+      <idno ana="hc:ORCIDURI">https://orcid.org/0000-0002-5251-050X</idno>
+   </editor>
+   […]
+</titleStmt>--></code>
+            </pre>
+        </div>
+    
+                  <p>oder:</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<funder>
+   <orgName>Deutsche Forschungsgemeinschaft</orgName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/2007744-0</idno>
+</funder>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Die Reihenfolge der (optionalen) Identifikatoren ist irrelevant.
+                  </p>
+                  <p>
+                     Bei Personennamen kann der Wunsch aufkommen, Namensbestandteile mit speziellen Elementen gesondert
+                     auszuzeichnen. Für die aktuelle Verarbeitung in ›heiEDITIONS‹ ist das nicht nötig; es wird
+                     empfohlen, Namen innerhalb von <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> bereits als Zeichenkette genau so anzugeben, wie 
+                     sie auch angezeigt werden könnten und sollten. Die Anordnung des Namens sollte natürlich sein,
+                     also typischerweise <span class="code">[Vorname] + [Nachname]</span>. Wenn für gewisse Zwecke (Sortierung, spezielle Formatierung)
+                     eine Untergliederung von Personennamen sinnvoll ist, kann sie mit diesen Elementen vorgenommen werden:
+                  </p>
+                  <ul>
+                     <li><a class="gi" href="../specifications/ref-forname.html">&lt;forname&gt;</a>: Vorname</li>
+                     <li><a class="gi" href="../specifications/ref-surname.html">&lt;surname&gt;</a>: Nachname bzw. Familienname</li>
+                     <li><a class="gi" href="../specifications/ref-nameLink.html">&lt;nameLink&gt;</a>: Namensverknüpfung bzw. Verbindungswort (Präposition; Artikel; Verschmelzung von Präposition und Artikel u. Ä.), z. B. ›von‹, ›van‹, ›zu‹, ›le‹, ›vom‹</li>
+                     <li><a class="gi" href="../specifications/ref-roleName.html">&lt;roleName&gt;</a>: Titel, Rangbezeichnung u. Ä., z. B. ›Dr.‹, ›Graf‹</li>
+                     <li><a class="gi" href="../specifications/ref-addName.html">&lt;addName&gt;</a>: Namenszusatz (Nickname, Beiname u. Ä.), z. B. ›der Große‹, ›Barbarossa‹, ›der Stammler‹</li>
+                     <li><a class="gi" href="../specifications/ref-genName.html">&lt;genName&gt;</a>: Zählung oder Generationsangabe, z. B. ›III.‹, ›jun.‹</li>
+                  </ul>
+                  <p>
+                     Bei historischen Namen kann die genaue Auszeichnung bzw. Klassifizierung der Namensbestandteile problematisch sein;
+                     es ist besser, darauf ganz zu verzichten und den Namen nicht zu unterteilen. 
+                  </p>
+                  <p>
+                     Von der Angabe akademischer Titel bei heutigen Namen (etwa bei Herausgebern) raten wir ab.
+                  </p>
+                  <p>
+                     Wenn eine Unterteilung eines Personanamens mit <a class="gi" href="../specifications/ref-forename.html">&lt;forename&gt;</a> usw. vorgenommen wird, ist
+                     zu beachten, dass dessen ungeachtet standardmäßig der gesamte Inhalt von <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> verarbeitet
+                     und dabei lediglich eine Normalisierung von Leerräumen (Leerzeichen und Zeilenumbrüche) vorgenommen wird.
+                     Die Anordung und etwaige Interpunktion müssen also innerhalb von <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> bereits so
+                     vorliegen, wie sie beim ganzen Namen ausgegeben werden sollen. Ausgezeichnete Segmente können
+                     sich in <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> mit unausgezeichneten mischen.
+                  </p>
+                  <p>
+                     Beispiele für <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> mit Auszeichnungen der Namensbestandteile:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<persName>
+   <forename>Karl-Theodor</forename>
+   <nameLink>zu</nameLink>
+   <surname>Guttenberg</surname>
+</persName>--></code>
+            </pre>
+        </div>
+    
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<persName>
+   <forename>Ekkehard</forename>
+   <genName>IV.</genName>
+</persName>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Sowohl bei Personen als auch bei Körperschaften können, wenn sinnvoll, auch mehrere Namen
+                     (einer Person oder einer Körperschaft) angegeben werden, jeweils mit einem eigenen
+                     <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> oder <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a>. Ebenfalls ist die Angabe mehrsprachiger Versionen von 
+                     Namen möglich – dann sollte jedes <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> oder <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> mit <span class="att">@xml:lang</span>
+                     gekennzeichnet werden. Beispiele:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<author>
+   <persName>Kate Middleton</persName>
+   <persName>Catherine, Princess of Wales</persName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/140486755</idno>
+</author>--></code>
+            </pre>
+        </div>
+    
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<funder>
+   <orgName xml:lang="de">Fritz-Thyssen-Stiftung</orgName>
+   <orgName xml:lang="en">Fritz Thyssen Foundation</orgName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/2010888-6</idno>
+</funder>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Bei der Verwendung des generischen Elements <a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a> für die Angabe der Beteiligung
+                     einer Person oder Körperschaft am TEI-Dokument gilt für die Verwendung von <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> bzw.
+                     <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> sowie <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> das bereits Gesagte. Zusätzlich muss jedoch die Art der
+                     Beteiligung verbal formuliert werden, und zwar mit <a class="gi" href="../specifications/ref-resp.html">&lt;resp&gt;</a> als erstem Kindelement von <a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a>.
+                     Wir empfehlen, die Beteiligung mit einer Nominalphrase zu beschreiben, indem ein Substantiv zum Einsatz kommt, das
+                     die betreffende Aufgabe beschreibt, z.‭ B. ›Transkription‹, ›Datenmodellierung‹, ›TEI-Redaktion‹ oder 
+                     ›philologische Beratung‹. Wenn möglich, sollte am Attribut <span class="att">@ref</span> auf einen passenden URI
+                     für die angegebene Rolle aus der oben genannten Liste der Library of Congress verwiesen werden (Mehrfachangaben sind
+                     möglich, getrennt durch ein Leerzeichen).
+                  </p>
+                  
+                  
                   
                </div>
                
