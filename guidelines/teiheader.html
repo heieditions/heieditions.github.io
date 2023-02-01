@@ -153,6 +153,177 @@
                   
                </div>
                
+               <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT">
+                  
+                  <h3>Angaben zur Veröffentlichung (<a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a>)</h3>
+                  
+                  <p>
+                     Dieser Bereich enthält Angaben zur Veröffentlichung der Ressource (des Gehalts des einschlägigen TEI-Dokuments),
+                     vergleichbar mit Impressumsangaben in Druckpublikationen. Hier handelt es sich im Normalfall
+                     um die digitale Veröffentlichung der Ressource im Internet (in der Regel als HTML oder PDF),
+                     die aus dem einschlägigen TEI-Dokument erzeugt wird oder erzeugt werden soll. Die hier
+                     erfassten Metadaten beziehen sich auch auf die TEI-Datei selbst, aber gleichzeitig auf alle
+                     Publikationsmodi, denen die vorliegende TEI-Datei als Grundlage dient.
+                  </p>
+                  
+                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBLISHER">
+                     
+                     <h4>Verlag oder Verleger (<a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a>)</h4>
+                     
+                     <p>
+                        Der Verlag oder Verleger ist ein Akteur, der die Veröffentlichung als solche tätigt, der also
+                        nicht primär den Inhalt der Veröffentlichung verantwortet, sondern den Akt der
+                        Veröffentlichung. Bei digitalen Publikationen bezieht sich diese Verantwortung auf die 
+                        rechtlichen und technischen Modalitäten der Onlinestellung der Publikation und
+                        kann auch die technische Erzeugung der konkreten Präsentationsformen sowie ggf. deren
+                        Hosting umfassen.
+                     </p>
+                     <p>
+                        Wenn am Akt der Veröffentlichung mehrere Akteure beteiligt sind, sollte jeder Akteur mit einem
+                        eigenen <a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a>-Element angegeben werden (das Element ist also wiederholbar). 
+                        Der veröffentlichende Akteur kann eine Person oder eine Körperschaft sein.
+                     </p>
+                     <p>
+                        Die Angaben in <a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a> umfassen obligatorisch den Namen der Körperschaft oder der Person
+                        sowie optional Identifikatoren und Internetadressen. Von der Angabe postalischer Adressen 
+                        sehen wir in ›heiEDITIONS‹ ab.
+                     </p>
+                     <p>
+                        Somit ergeben sich für <a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a> die folgenden Kindelemente:
+                     </p>
+                     <ul>
+                        <li><a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> oder <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> (ggf. mehrfach, aber nicht <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> und <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> gleichzeitig)</li>
+                        <li><a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> (optional, aber nur einmal pro Typ)</li>
+                        <li><a class="gi" href="../specifications/ref-listRef.html">&lt;listRef&gt;</a> mit beliebig vielen Elementen <a class="gi" href="../specifications/ref-ptr.html">&lt;ptr&gt;</a> oder <a class="gi" href="../specifications/ref-ref.html">&lt;ref&gt;</a> für Internetlinks</li>
+                     </ul>
+                     <p>
+                        Die entsprechende Standardangabe für Publikationen, die durch die Universitätsbibliothek Heidelberg 
+                        veröffentlicht werden, ist wie folgt:
+                     </p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<publisher>
+                           <orgName>Universitätsbibliothek Heidelberg</orgName>
+                           <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
+                           <listRef>
+                              <ptr ana="hc:URLReference" target="https://www.ub.uni-heidelberg.de"/>
+                           </listRef>                          
+                        </publisher>--></code>
+            </pre>
+        </div>
+    
+                     <p>
+                        Für eine beim FID Propylaeum erschienene Publikation kann die folgende Angabe verwendet werden:
+                     </p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<publisher>
+                           <orgName>Propylaeum</orgName>
+                           <idno ana="hc:GNDURI">https://d-nb.info/gnd/1257896830</idno>
+                           <listRef>
+                              <ptr ana="hc:URLReference" target="https://www.propylaeum.de/"/>
+                           </listRef>     
+                        </publisher>--></code>
+            </pre>
+        </div>
+    
+                  </div>
+                  
+                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBPLACE">
+                     
+                     <h4>Veröffentlichungsort (<a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a>)</h4>
+                     
+                     <p>
+                        Der Veröffentlichungsort bezieht sich auf den Sitz des Verlags oder des Verlegers und
+                        wird mit <a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a> angegeben. Der Ortsname selbst muss innerhalb von 
+                        <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> stehen, optional können mit <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> auch Normdaten 
+                        angegeben werden (GND). Pro Ort sollen nicht mehrere (alternative) Namen aufgelistet werden. 
+                        Wenn mehrere Orte verzeichnet werden sollen, muss das Element
+                        <a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a> wiederholt werden.
+                     </p>
+                     <p>
+                        Bei einer typischen von der Universitätsbibliothek Heidelberg herausgegebenen Publikation
+                        sieht sieht <a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a> wie folgt aus:
+                     </p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<pubPlace>
+                           <placeName>Heidelberg</placeName>
+                           <idno ana="hc:GNDURI">https://d-nb.info/gnd/4023996-2</idno>
+                        </pubPlace>--></code>
+            </pre>
+        </div>
+                         
+                  </div>
+                  
+                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-DATE">
+                     
+                     <h4>Veröffentlichungsdatum (<a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a>)</h4>
+                     
+                     <p>
+                        Es handelt sich um das Datum der Veröffentlichung der durch das TEI-Dokument repräsentierten Ressource
+                        in ihrer Eigenschaft als heutige Publikation (nicht etwa um das Enstehungs- oder Publikationsdatum 
+                        eines darin edierten historischen Textes). Das Datum wird mit <a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a> und der <span class="att">@ana</span>-Typzuweisung
+                        von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/dateofpublication.html" target="_blank">hc:DateOfPublication</a><span class="loddocborder"> ‹</span> angegeben. Mit dem Attribut <span class="att">@when</span> soll
+                        eine maschinenlesbare Datumsangabe in der Form <span class="val">JJJJ-MM-TT</span>, <span class="val">JJJJ-MM</span> oder <span class="val">JJJJ</span> 
+                        bereitgestellt werden, z. B.:
+                     </p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<date ana="hc:DateOfPublication" when="2022">2022</date>--></code>
+            </pre>
+        </div>
+    
+                     <p>
+                        Ergänzend kann auch noch das Datum der letzten Änderung oder Aktualisierung (nach der eigentlichen Veröffentlichung)
+                        angegeben werden, z. B.:
+                     </p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<date ana="hc:DateOfLastModification" when="2023-11">November 2023</date>--></code>
+            </pre>
+        </div>
+    
+                     
+                  </div>
+                  
+                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-AVAILABILITY">
+                     
+                     <h4>Lizenz</h4>
+                     
+                  </div>
+               
+               </div>
+               
+               <div id="TEIHEADER-FILEDESC-SERIESSTMT">
+                  
+                  <h3>Angaben zur Publikationsreihe</h3>
+                  
+               </div>          
+               
+            </div>
+            
+            <div id="TEIHEADER-ENCODINGDESC">
+               
+               <h2>Beschreibung der Kodierung</h2>
+               
+            </div>
+            
+            <div id="TEIHEADER-PROFILEDESC">
+               
+               <h2>Informationen über den Hintergrund des Textes</h2>
+               
+            </div>
+            
+            <div id="TEIHEADER-REVISIONDESC">
+               
+               <h2>Revisionsgeschichte</h2>
+               
             </div>
 
          </div>
