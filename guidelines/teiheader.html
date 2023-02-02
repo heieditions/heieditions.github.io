@@ -187,7 +187,10 @@
                       die in der genannten Liste der Library of Congress erscheinen, sind zwar für den <a class="gi" href="../specifications/ref-teiHeader.html">&lt;teiHeader&gt;</a> relevant,
                      jedoch nicht im <a class="gi" href="../specifications/ref-titleStmt.html">&lt;titleStmt&gt;</a> anzugeben, etwa <em>publisher</em> (<span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/pbl" target="_blank">http://id.loc.gov/vocabulary/relators/pbl</a>) oder 
                      <em>publication place</em> (<span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/pup" target="_blank">http://id.loc.gov/vocabulary/relators/pup</a>),
-                     dazu s. hier <a class="inlink" href="#TEIHEADER-FILEDESC-PUBLICATIONSTMT">Angaben zur Veröffentlichung (publicationStmt)</a>.
+                     dazu s. hier <a class="inlink" href="#TEIHEADER-FILEDESC-PUBLICATIONSTMT">
+                     publicationStmt
+                     Angaben zur Veröffentlichung
+                  </a>.
                   </p>
                   <p>
                      Die vorgesehene Struktur der Elemente <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a>, <a class="gi" href="../specifications/ref-editor.html">&lt;editor&gt;</a>, <a class="gi" href="../specifications/ref-principal.html">&lt;principal&gt;</a>, <a class="gi" href="../specifications/ref-funder.html">&lt;funder&gt;</a> und <a class="gi" href="../specifications/ref-sponsor.html">&lt;sponsor&gt;</a>
@@ -475,14 +478,19 @@
                   
         <div class="egxml">
             <pre class="language-xml">
-                <code><!--<edition xml:lang="de">2., wesentlich verbesserte Ausgabe</edition><edition xml:lang="de">2nd edition, substantially revised</edition>--></code>
+                <code><!--<editionStmt>
+   <edition xml:lang="de">2., wesentlich verbesserte Ausgabe</edition>
+   <edition xml:lang="de">2nd edition, substantially revised</edition>
+</editionStmt>--></code>
             </pre>
         </div>
     
                   
         <div class="egxml">
             <pre class="language-xml">
-                <code><!--<edition>Revidierte Fassung der Ausgabe von 2018</edition>--></code>
+                <code><!--<editionStmt>
+   <edition>Revidierte Fassung der Ausgabe von 2018</edition>
+</editionStmt>--></code>
             </pre>
         </div>
     
@@ -490,10 +498,13 @@
                
                <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT">
                   
-                  <h3>Angaben zur Veröffentlichung (<a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a>)</h3>
+                  <h3>
+                     <span class="aside"><a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a></span>
+                     Angaben zur Veröffentlichung
+                  </h3>
                   
                   <p>
-                     Dieser Bereich enthält Angaben zur Veröffentlichung der Ressource (des Gehalts des einschlägigen TEI-Dokuments),
+                     Das Element <a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a> enthält Angaben zur Veröffentlichung der Ressource (des Gehalts des einschlägigen TEI-Dokuments),
                      vergleichbar mit Impressumsangaben in Druckpublikationen. Hier handelt es sich im Normalfall
                      um die digitale Veröffentlichung der Ressource im Internet (in der Regel als HTML oder PDF),
                      die aus dem einschlägigen TEI-Dokument erzeugt wird oder erzeugt werden soll. Die hier
@@ -503,7 +514,10 @@
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBLISHER">
                      
-                     <h4>Verlag oder Verleger (<a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a>)</h4>
+                     <h4>
+                        <span class="aside"><a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a></span>
+                        Verlag oder Verleger
+                     </h4>
                      
                      <p>
                         Der Verlag oder Verleger ist ein Akteur, der die Veröffentlichung als solche tätigt, der also
