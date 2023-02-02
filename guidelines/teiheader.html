@@ -59,6 +59,17 @@
                   Angaben beziehen sich gleichermaßen auf den textuellen Gehalt des Dokuments, dessen intellektuelle Aufbereitung und
                   die Urheberschaft solcher Inhalte.
                </p>
+               <p>
+                  Für diese Angaben sind in <a class="gi" href="../specifications/ref-fileDesc.html">&lt;fileDesc&gt;</a> die folgenden Kindelemente in der angegebenen Reihenfolge vorgesehen:
+               </p>
+               <ul>
+                  <li><a class="gi" href="../specifications/ref-titleStmt.html">&lt;titleStmt&gt;</a>: Titel und Verantwortlichkeitsangaben (obligatorisch)</li>
+                  <li><a class="gi" href="../specifications/ref-editionStmt.html">&lt;editionStmt&gt;</a>: Angaben zur Auflage (optional, aber bei vorläufigen Veröffentlichungen, wesentlichen Veränderungen bzw. Neuauflagen dringend empfohlen)</li>
+                  <li><a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a>: Angaben zur Veröffentlichung (obligatorisch)</li> 
+                  <li><a class="gi" href="../specifications/ref-seriesStmt.html">&lt;seriesStmt&gt;</a>: Angaben zur Publikationsreihe (optional)</li>
+                  <li><a class="gi" href="../specifications/ref-notesStmt.html">&lt;notesStmt&gt;</a>: Weitere Vermerke, z. B. mit Inhaltsangabe, Nennung weiterer Beteiligter oder Danksagung (optional)</li>
+                  <li><a class="gi" href="../specifications/ref-sourceDesc.html">&lt;sourceDesc&gt;</a>: Angaben zur Quelle (obligatorisch)</li>
+               </ul>
                
                <div id="TEIHEADER-FILEDESC-TITLESTMT">
                   
@@ -320,18 +331,161 @@
     
                   <p>
                      Bei der Verwendung des generischen Elements <a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a> für die Angabe der Beteiligung
-                     einer Person oder Körperschaft am TEI-Dokument gilt für die Verwendung von <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> bzw.
+                     einer Person oder Körperschaft am TEI-Dokument gilt bezüglich <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> bzw.
                      <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> sowie <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> das bereits Gesagte. Zusätzlich muss jedoch die Art der
                      Beteiligung verbal formuliert werden, und zwar mit <a class="gi" href="../specifications/ref-resp.html">&lt;resp&gt;</a> als erstem Kindelement von <a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a>.
                      Wir empfehlen, die Beteiligung mit einer Nominalphrase zu beschreiben, indem ein Substantiv zum Einsatz kommt, das
                      die betreffende Aufgabe beschreibt, z.‭ B. ›Transkription‹, ›Datenmodellierung‹, ›TEI-Redaktion‹ oder 
                      ›philologische Beratung‹. Wenn möglich, sollte am Attribut <span class="att">@ref</span> auf einen passenden URI
                      für die angegebene Rolle aus der oben genannten Liste der Library of Congress verwiesen werden (Mehrfachangaben sind
-                     möglich, getrennt durch ein Leerzeichen).
+                     möglich, getrennt durch ein Leerzeichen). Der Verweis auf eine allgemeiner definierte Rolle als die
+                     in <a class="gi" href="../specifications/ref-resp.html">&lt;resp&gt;</a> verbal formulierte ist möglich, wenn in der Liste der Library of Congress eine 
+                     bestimmte spezifische Art der Beteiligung nicht enthalten ist.
+                  </p>
+                  <p>
+                     <a class="gi" href="../specifications/ref-resp.html">&lt;resp&gt;</a> darf ohne Sprachangabe nur einmal gesetzt werden, mit <span class="att">@xml:lang</span> für unterschiedliche
+                     Sprachen jeweils einmal pro Sprache. Es empfiehlt sich, mindestens eine deutsche und eine englische Version
+                     anzugeben. Beispiele:
                   </p>
                   
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<respStmt ref="http://id.loc.gov/vocabulary/relators/trc">
+   <resp xml:lang="de">Transkription</resp>
+   <resp xml:lang="en">transcription</resp>
+   <persName>Karl Lachmann</persName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/118568558</idno>
+</respStmt>--></code>
+            </pre>
+        </div>
+    
                   
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<respStmt ref="http://id.loc.gov/vocabulary/relators/red">
+   <resp xml:lang="de">TEI-Redaktion</resp>
+   <resp xml:lang="de">TEI redaction</resp>
+   <orgName xml:lang="de">Universitätsbibliothek Heidelberg</orgName>
+   <orgName xml:lang="en">Heidelberg University Library</orgName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
+</respStmt>--></code>
+            </pre>
+        </div>
+    
                   
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<respStmt ref="http://id.loc.gov/vocabulary/relators/csl http://id.loc.gov/vocabulary/relators/pfr">
+   <resp xml:lang="de">Beratung und Korrekturlesen</resp>
+   <resp xml:lang="de">consulting and proofreading</resp>
+   <persName>Charlotte von Stein</persName>                    
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/118617222</idno>
+</respStmt>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Die Elemente <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a>, <a class="gi" href="../specifications/ref-editor.html">&lt;editor&gt;</a>, <a class="gi" href="../specifications/ref-principal.html">&lt;principal&gt;</a>, <a class="gi" href="../specifications/ref-funder.html">&lt;funder&gt;</a> und <a class="gi" href="../specifications/ref-sponsor.html">&lt;sponsor&gt;</a>
+                     und <a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a> können mit einer <span class="att">@xml:id</span> versehen werden. Dadurch sind sie
+                     bei Bedarf von anderen Stellen des TEI-Dokuments referenzierbar.<sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup> 
+                  </p>                                  
+               </div>
+               
+               <div id="TEIHEADER-FILEDESC-EDITIONSTMT">
+                  
+                  <h3>Angaben zur Auflage</h3>
+                  
+                  <p>
+                     Das Wort <em>edition</em> und das gleichnamige Element <a class="gi" href="../specifications/ref-edition.html">&lt;edition&gt;</a> 
+                     beziehen sich in <a class="gi" href="../specifications/ref-editionStmt.html">&lt;editionStmt&gt;</a> nicht auf editionswissenschaftliche (philologisch-editorische)
+                     Aspekte der Edition einer historischen Quelle, sondern auf die ›Version‹
+                     des TEI-Dokuments bzw. des darin enthaltenen Textes. Damit kann also ein bestimmter
+                     Arbeitsstand oder ein erreichter Meilenstein in einer mehrstufigen Veröffentlichungshistorie
+                     eines Dokuments beschrieben werden. Geringfügige Anpassungen oder Ergänzungen ohne echten
+                     intellektuellen Mehrwert
+                     konstituieren jedoch eher keine neue Version, Auflage oder Ausgabe; die Entscheidung, wann eine
+                     neue Version des TEI-Dokuments tatsächlich vorliegt, obliegt freilich allein dem Ermessen 
+                     der für das TEI-Dokument Verantwortlichen. Keine neue Version, Auflage oder Ausgabe
+                     im Sinne des <a class="gi" href="../specifications/ref-editionStmt.html">&lt;editionStmt&gt;</a> liegt vor, wenn eine erneute
+                     Veröffentlichung allein durch die Publikation auf einer anderen Plattform, etwa einem
+                     Forschungsdatenrepositorium, neu wäre.
+                  </p>
+                  <p>
+                     Das Element <a class="gi" href="../specifications/ref-editionStmt.html">&lt;editionStmt&gt;</a> sollte auf jeden Fall bei Neuveröffentlichung nach einer
+                     bereits früher erfolgten Veröffentlichung einer TEI-Datei belegt werden, um den Unterschied
+                     oder den Charakter der vorliegenden neuen Version anzugeben. Aber auch bei vorläufigen 
+                     Veröffentlichungen von Arbeitsversionen, die sich ausdrücklich als <em>work in progress</em>
+                     begreifen, ist die Verwendung von <a class="gi" href="../specifications/ref-editionStmt.html">&lt;editionStmt&gt;</a> sinnvoll, um etwaige Rezipienten
+                     auf die Unfertigkeit des TEI-Dokuments hinzuweisen.
+                  </p>
+                  <p>
+                     Ein <a class="gi" href="../specifications/ref-editionStmt.html">&lt;editionStmt&gt;</a> besteht in ›heiEDITIONS‹ immer aus mindestens einem Kindelement
+                     <a class="gi" href="../specifications/ref-edition.html">&lt;edition&gt;</a> und kann zusätzlich eines oder mehrere Elemente <a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a> enthalten,
+                     wenn die Beteiligung an der vorliegenden Version des TEI-Dokuments ausdrücklich auf die
+                     vorliegende Version bezogen werden soll und diese Beteiligung bewusst nicht in <a class="gi" href="../specifications/ref-titleStmt.html">&lt;titleStmt&gt;</a>
+                     angegeben wird. Damit kann eine gewisse Abgrenzung der Verantwortlichkeiten zum Ausdruck gebracht werden.
+                     Für mehrsprachige Angaben soll <a class="gi" href="../specifications/ref-edition.html">&lt;edition&gt;</a> mit <span class="att">@xml:lang</span> versehen und wiederholt werden. 
+                     Eine logisch strukturelle Unterteilung des Textes in <a class="gi" href="../specifications/ref-edition.html">&lt;edition&gt;</a> etwa in mehrere Absätze ist nicht vorgesehen,
+                     die Formulierung sollte knapp gehalten werden, keine Satzform annehmen und eher formell sein, um passend
+                     als Teil einer bibliographischen Angabe fungieren zu können. Geringfügige Auszeichnungen von Textsegmenten
+                     innerhalb von <a class="gi" href="../specifications/ref-edition.html">&lt;edition&gt;</a> sind jedoch möglich (etwa mit <a class="gi" href="../specifications/ref-foreign.html">&lt;foreign&gt;</a> für Fremdsprachiges).
+                  </p>
+                  <p>
+                     Das Veröffentlichungsdatum der Auflage wird nicht hier, sondern in <a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a>/<a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a> angegeben
+                     (und ist somit mit dem Veröffentlichungsdatum des TEI-Dokuments als solchen identisch).
+                     Allenfalls kann in der Formulierung innerhalb von <a class="gi" href="../specifications/ref-edition.html">&lt;edition&gt;</a> auf eine frühere Version
+                     verbal Bezug genommen werden, dann aber ohne gesondertes Markup.
+                  </p>
+                  <p>Beispiele:</p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<editionStmt>
+   <edition>Vorläufige Arbeitsversion</edition>
+</editionStmt>--></code>
+            </pre>
+        </div>
+    
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<editionStmt>
+   <edition xml:lang="de">Grobe Transkription ohne weitergehende Qualitätssicherung und editorische Aufbereitung</edition>
+   <edition xml:lang="en">Raw transcription without further quality control and editorial processing</edition>
+</editionStmt>--></code>
+            </pre>
+        </div>
+    
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<editionStmt>
+   <edition xml:lang="de">3., um Literaturhinweise ergänzte Ausgabe</edition>
+   <edition xml:lang="en">3rd edition with additional bibliographic references</edition>
+   <respStmt ref="http://id.loc.gov/vocabulary/relators/ctb">
+      <resp xml:lang="de">Ergänzung von Literaturhinweisen</resp>
+      <resp xml:lang="en">addition of bibliographic references</resp>
+      <persName>Max Mustermann</persName>
+      <idno ana="hc:ORCIDURI">https://orcid.org/1234-1234-1234-1234</idno>
+   </respStmt>
+</editionStmt>--></code>
+            </pre>
+        </div>
+    
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<edition xml:lang="de">2., wesentlich verbesserte Ausgabe</edition><edition xml:lang="de">2nd edition, substantially revised</edition>--></code>
+            </pre>
+        </div>
+    
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<edition>Revidierte Fassung der Ausgabe von 2018</edition>--></code>
+            </pre>
+        </div>
+    
                </div>
                
                <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT">
@@ -343,8 +497,8 @@
                      vergleichbar mit Impressumsangaben in Druckpublikationen. Hier handelt es sich im Normalfall
                      um die digitale Veröffentlichung der Ressource im Internet (in der Regel als HTML oder PDF),
                      die aus dem einschlägigen TEI-Dokument erzeugt wird oder erzeugt werden soll. Die hier
-                     erfassten Metadaten beziehen sich auch auf die TEI-Datei selbst, aber gleichzeitig auf alle
-                     Publikationsmodi, denen die vorliegende TEI-Datei als Grundlage dient.
+                     erfassten Metadaten beziehen sich auch auf das TEI-Dokument selbst, aber gleichzeitig auf alle
+                     Publikationsmodi, denen das vorliegende TEI-Dokument als Grundlage und Quelle dient.
                   </p>
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBLISHER">
@@ -510,8 +664,12 @@
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                         S. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry" target="_blank">Sprachcodes der Internet Assigned Numbers Authority (IANA)</a>.
+                     </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
+                        Das kann nützlich sein,
+                        wenn etwa bestimmte editorische Eingriffe einem konkreten Bearbeiter persönlich zugewiesen werden sollen 
+                        (z. B. mit <span class="att">@resp</span> an <a class="gi" href="../specifications/ref-corr.html">&lt;corr&gt;</a>).
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 01.02.2023
+                        Letzte Aktualisierung: 02.02.2023
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
