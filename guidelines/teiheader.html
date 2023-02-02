@@ -157,8 +157,10 @@
 </titleStmt>--></code>
             </pre>
         </div>
-                                
+    
+                  
                   <p>
+                     <span class="aside">Beteiligungsrollen</span>
                      Für die Verantwortlichkeitsangaben gilt, dass jeder Akteur (Person oder Körperschaft), dessen Beteiligung am Inhalt oder an der Form
                      des TEI-Dokuments festgehalten werden soll, mit einem eigenen Element anzugeben ist – also nicht
                      etwa zwei Autoren in einem einzigen Element <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a>, sondern jeder Autor in einem eigenen <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a>.
@@ -189,10 +191,7 @@
                       die in der genannten Liste der Library of Congress erscheinen, sind zwar für den <a class="gi" href="../specifications/ref-teiHeader.html">&lt;teiHeader&gt;</a> relevant,
                      jedoch nicht im <a class="gi" href="../specifications/ref-titleStmt.html">&lt;titleStmt&gt;</a> anzugeben, etwa <em>publisher</em> (<span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/pbl" target="_blank">http://id.loc.gov/vocabulary/relators/pbl</a>) oder 
                      <em>publication place</em> (<span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/pup" target="_blank">http://id.loc.gov/vocabulary/relators/pup</a>),
-                     dazu s. hier <a class="inlink" href="#TEIHEADER-FILEDESC-PUBLICATIONSTMT">
-                     publicationStmt
-                     Angaben zur Veröffentlichung
-                  </a>.
+                     dazu s. hier <a class="inlink" href="#TEIHEADER-FILEDESC-PUBLICATIONSTMT">Angaben zur Veröffentlichung</a>.
                   </p>
                   <p>
                      Die vorgesehene Struktur der Elemente <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a>, <a class="gi" href="../specifications/ref-editor.html">&lt;editor&gt;</a>, <a class="gi" href="../specifications/ref-principal.html">&lt;principal&gt;</a>, <a class="gi" href="../specifications/ref-funder.html">&lt;funder&gt;</a> und <a class="gi" href="../specifications/ref-sponsor.html">&lt;sponsor&gt;</a>
@@ -251,6 +250,7 @@
                      Die Reihenfolge der (optionalen) Identifikatoren ist irrelevant.
                   </p>
                   <p>
+                     <span class="aside">Untergliederung von Personennamen</span>
                      Bei Personennamen kann der Wunsch aufkommen, Namensbestandteile mit speziellen Elementen gesondert
                      auszuzeichnen. Für die aktuelle Verarbeitung in ›heiEDITIONS‹ ist das nicht nötig; es wird
                      empfohlen, Namen innerhalb von <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> bereits als Zeichenkette genau so anzugeben, wie 
@@ -335,6 +335,7 @@
         </div>
     
                   <p>
+                     <span class="aside"><a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a></span>
                      Bei der Verwendung des generischen Elements <a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a> für die Angabe der Beteiligung
                      einer Person oder Körperschaft am TEI-Dokument gilt bezüglich <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a> bzw.
                      <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> sowie <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> das bereits Gesagte. Zusätzlich muss jedoch die Art der
@@ -401,6 +402,7 @@
                   <h3>Angaben zur Auflage</h3>
                   
                   <p>
+                     <span class="aside"><a class="gi" href="../specifications/ref-editionStmt.html">&lt;editionStmt&gt;</a></span>
                      Das Wort <em>edition</em> und das gleichnamige Element <a class="gi" href="../specifications/ref-edition.html">&lt;edition&gt;</a> 
                      beziehen sich in <a class="gi" href="../specifications/ref-editionStmt.html">&lt;editionStmt&gt;</a> nicht auf editionswissenschaftliche (philologisch-editorische)
                      Aspekte der Edition einer historischen Quelle, sondern auf die ›Version‹
@@ -500,41 +502,39 @@
                
                <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT">
                   
-                  <h3>
-                     <span class="aside"><a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a></span>
-                     Angaben zur Veröffentlichung
-                  </h3>
+                  <h3>Angaben zur Veröffentlichung</h3>
                   
                   <p>
-                     Das Element <a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a> enthält Angaben zur Veröffentlichung der Ressource (des Gehalts des einschlägigen TEI-Dokuments),
+                     <span class="aside"><a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a></span>
+                     Das Element <a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a> enthält Angaben zur Veröffentlichung der Ressource (des Gehalts des TEI-Dokuments),
                      vergleichbar mit Impressumsangaben in Druckpublikationen. Hier handelt es sich im Normalfall
                      um die digitale Veröffentlichung der Ressource im Internet (in der Regel als HTML oder PDF),
                      die aus dem einschlägigen TEI-Dokument erzeugt wird oder erzeugt werden soll. Die hier
-                     erfassten Metadaten beziehen sich auch auf das TEI-Dokument selbst, aber gleichzeitig auf alle
+                     erfassten Metadaten beziehen sich (wie auch schon bei den zuvor besprochenen Metadaten erörtert)
+                     auch auf das TEI-Dokument selbst, aber gleichzeitig auf alle
                      Publikationsmodi, denen das vorliegende TEI-Dokument als Grundlage und Quelle dient.
                   </p>
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBLISHER">
                      
-                     <h4>
-                        <span class="aside"><a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a></span>
-                        Verlag oder Verleger
-                     </h4>
+                     <h4>Verlag oder Verleger</h4>
                      
                      <p>
+                        <span class="aside"><a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a></span>
                         Der Verlag oder Verleger ist ein Akteur, der die Veröffentlichung als solche tätigt, der also
-                        nicht primär den Inhalt der Veröffentlichung verantwortet, sondern den Akt der
+                        nicht primär den Inhalt der veröffentlichten Ressource verantwortet, sondern den Akt der
                         Veröffentlichung. Bei digitalen Publikationen bezieht sich diese Verantwortung auf die 
                         rechtlichen und technischen Modalitäten der Onlinestellung der Publikation und
                         kann auch die technische Erzeugung der konkreten Präsentationsformen sowie ggf. deren
                         Hosting umfassen.
                      </p>
                      <p>
-                        Wenn am Akt der Veröffentlichung mehrere Akteure beteiligt sind, sollte jeder Akteur mit einem
-                        eigenen <a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a>-Element angegeben werden (das Element ist also wiederholbar). 
-                        Der veröffentlichende Akteur kann eine Person oder eine Körperschaft sein.
+                        Wenn an einer Veröffentlichung mehrere Akteure beteiligt sind, ist jedes Element <a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a>
+                        (und weitere zugehörige Angaben) 
+                        in einem eigenen <a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a> anzugeben.
                      </p>
                      <p>
+                        Der veröffentlichende Akteur kann eine Person oder eine Körperschaft sein.
                         Die Angaben in <a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a> umfassen obligatorisch den Namen der Körperschaft oder der Person
                         sowie optional Identifikatoren und Internetadressen. Von der Angabe postalischer Adressen 
                         sehen wir in ›heiEDITIONS‹ ab.
@@ -555,12 +555,12 @@
         <div class="egxml">
             <pre class="language-xml">
                 <code><!--<publisher>
-                           <orgName>Universitätsbibliothek Heidelberg</orgName>
-                           <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
-                           <listRef>
-                              <ptr ana="hc:URLReference" target="https://www.ub.uni-heidelberg.de"/>
-                           </listRef>                          
-                        </publisher>--></code>
+   <orgName>Universitätsbibliothek Heidelberg</orgName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
+   <listRef>
+      <ptr ana="hc:URLReference" target="https://www.ub.uni-heidelberg.de"/>
+   </listRef>                          
+</publisher>--></code>
             </pre>
         </div>
     
@@ -571,12 +571,12 @@
         <div class="egxml">
             <pre class="language-xml">
                 <code><!--<publisher>
-                           <orgName>Propylaeum</orgName>
-                           <idno ana="hc:GNDURI">https://d-nb.info/gnd/1257896830</idno>
-                           <listRef>
-                              <ptr ana="hc:URLReference" target="https://www.propylaeum.de/"/>
-                           </listRef>     
-                        </publisher>--></code>
+   <orgName>Propylaeum</orgName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/1257896830</idno>
+   <listRef>
+      <ptr ana="hc:URLReference" target="https://www.propylaeum.de/"/>
+   </listRef>     
+</publisher>--></code>
             </pre>
         </div>
     
@@ -584,9 +584,10 @@
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBPLACE">
                      
-                     <h4>Veröffentlichungsort (<a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a>)</h4>
+                     <h4>Veröffentlichungsort</h4>
                      
                      <p>
+                        <span class="aside"><a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a></span>
                         Der Veröffentlichungsort bezieht sich auf den Sitz des Verlags oder des Verlegers und
                         wird mit <a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a> angegeben. Der Ortsname selbst muss innerhalb von 
                         <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> stehen, optional können mit <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> auch Normdaten 
@@ -596,15 +597,15 @@
                      </p>
                      <p>
                         Bei einer typischen von der Universitätsbibliothek Heidelberg herausgegebenen Publikation
-                        sieht sieht <a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a> wie folgt aus:
+                        sieht <a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a> wie folgt aus:
                      </p>
                      
         <div class="egxml">
             <pre class="language-xml">
                 <code><!--<pubPlace>
-                           <placeName>Heidelberg</placeName>
-                           <idno ana="hc:GNDURI">https://d-nb.info/gnd/4023996-2</idno>
-                        </pubPlace>--></code>
+   <placeName>Heidelberg</placeName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/4023996-2</idno>
+</pubPlace>--></code>
             </pre>
         </div>
                          
@@ -612,42 +613,121 @@
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-DATE">
                      
-                     <h4>Veröffentlichungsdatum (<a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a>)</h4>
+                     <h4>Veröffentlichungsdatum</h4>
                      
                      <p>
+                        <span class="aside"><a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a></span>
                         Es handelt sich um das Datum der Veröffentlichung der durch das TEI-Dokument repräsentierten Ressource
-                        in ihrer Eigenschaft als heutige Publikation (nicht etwa um das Enstehungs- oder Publikationsdatum 
-                        eines darin edierten historischen Textes). Das Datum wird mit <a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a> und der <span class="att">@ana</span>-Typzuweisung
-                        von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/dateofpublication.html" target="_blank">hc:DateOfPublication</a><span class="loddocborder"> ‹</span> angegeben. Mit dem Attribut <span class="att">@when</span> soll
+                        in ihrer Eigenschaft als moderne Publikation (nicht etwa um das Enstehungs- oder Publikationsdatum 
+                        eines darin edierten historischen Textes). Das Datum wird mit <a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a> angegeben, mit dem Attribut <span class="att">@when</span> soll
                         eine maschinenlesbare Datumsangabe in der Form <span class="val">JJJJ-MM-TT</span>, <span class="val">JJJJ-MM</span> oder <span class="val">JJJJ</span> 
                         bereitgestellt werden, z. B.:
                      </p>
                      
         <div class="egxml">
             <pre class="language-xml">
-                <code><!--<date ana="hc:DateOfPublication" when="2022">2022</date>--></code>
+                <code><!--<date when="2022">2022</date>--></code>
             </pre>
         </div>
     
                      <p>
-                        Ergänzend kann auch noch das Datum der letzten Änderung oder Aktualisierung (nach der eigentlichen Veröffentlichung)
-                        angegeben werden, z. B.:
-                     </p>
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<date ana="hc:DateOfLastModification" when="2023-11">November 2023</date>--></code>
-            </pre>
-        </div>
-    
-                     
+                        Wenn es sich bei der veröffentlichten Ressource um eine spezifische Auflage, Ausgabe oder Version 
+                        (von mehreren vorliegenden oder zu erwartenden) handelt (s. <a class="inlink" href="#TEIHEADER-FILEDESC-EDITIONSTMT">Angaben zur Auflage</a>), 
+                        entspricht das hier angegebene Datum dem Veröffentlichungsdatum der spezifischen Version.
+                     </p>                    
                   </div>
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-AVAILABILITY">
                      
-                     <h4>Lizenz</h4>
+                     <h4>Informationen zu Nutzungsmöglichkeiten</h4>
+                     
+                     <p>
+                        <span class="aside"><a class="gi" href="../specifications/ref-availability.html">&lt;availability&gt;</a></span>
+                        Dass ein TEI-Dokument über das Internet einsehbar ist, bedeutet nicht, dass dessen Inhalte 
+                        uneingeschränkt von anderen genutzt werden können, insbesondere was die weitere Verbreitung und
+                        Nutzung in anderen Publikationen angeht. Angaben zu Nutzungsmöglichkeiten und zu den Verantwortlichen
+                        für die Nutzungsbestimmungen können
+                        im Element <a class="gi" href="../specifications/ref-availability.html">&lt;availability&gt;</a> in einem oder mehreren Freitext-Absätzen (<a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a>) gemacht werden. 
+                        Wenn solche Angaben mehrsprachig formuliert werden sollen, sind die <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a>-Elemente
+                        mit <span class="att">@xml:lang</span> zu versehen.
+                     </p>
+                     <p>
+                        Wenn die Nutzung des TEI-Dokuments durch eine formale Lizenz wie eine der Creative-Commons-Lizenzen
+                        geregelt werden soll, kann alternativ oder zusätzlich (in diesem Fall nach <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a>) das Element <a class="gi" href="../specifications/ref-licence.html">&lt;licence&gt;</a>
+                        werden. Die Bezeichnung dieser Lizenz und ggf. weitere Formulierungen dazu werden innerhalb
+                        von <a class="gi" href="../specifications/ref-licence.html">&lt;licence&gt;</a> in einem oder mehreren <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a>-Elementen ausgeführt, bei Mehrsprachigkeit
+                        jeweils mit <span class="att">@xml:lang</span> gekennzeichnet. Der Verweis auf einen URI oder URL mit der offiziellen
+                        Definition der gewählten Lizenz kann an <a class="gi" href="../specifications/ref-licence.html">&lt;licence&gt;</a> mit <span class="att">@target</span> vorgenommen werden.<sup><a href="#note_3" id="note_reference_3" class="note_mark">3)</a></sup> Beispiel:
+                     </p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<availability>
+   <p xml:lang="de">
+      Die Herausgeber erlauben ausdrücklich die Verbreitung und Nutzung 
+      der in diesem TEI-Dokument veröffentlichten Inhalte unter den Bedingungen
+      der angegebenen Lizenzbestimmungen.
+   </p>
+   <p xml:lang="en">
+      The editors explicitly allow the distribution and use of the content published
+      in this TEI document under the conditions of the indicated licence regulations. 
+   </p>
+   <licence target="https://creativecommons.org/licenses/by-sa/4.0">
+      <p xml:lang="de">
+         Dieses Dokument wurde unter der Lizenz
+         Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
+         veröffentlicht.
+      </p>
+      <p xml:lang="en">
+         This document has been published under the Creative Commons licence 
+         Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
+      </p>
+   </licence>                             
+</availability>--></code>
+            </pre>
+        </div>
+    
+                     <p>
+                        Oder deutlich kürzer, aber praktisch mit derselben Aussage:
+                     </p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<availability>
+   <licence target="https://creativecommons.org/licenses/by-sa/4.0">
+      <p>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</p>
+   </licence>
+</availability>--></code>
+            </pre>
+        </div>
+    
+                     <p>Ein Beispiel für eine restriktive Bestimmung:</p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<availability>
+   <p xml:lang="de">
+      Freier Zugang, alle Rechte vorbehalten. Die Herausgeber bitten bei Nutzungswünschen
+      um Kontaktaufnahme.
+   </p>
+   <p xml:lang="en">
+      Free access, all rights reserved. Please contact the editors if you wish to use the content.
+   </p>
+</availability>--></code>
+            </pre>
+        </div>
+    
+                  </div>
+                  
+                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-IDNO">
+                     
+                     <h4>Identifikatoren der Veröffentlichung</h4>
+                     
+                     
                      
                   </div>
+                  
+                  
                
                </div>
                
@@ -655,7 +735,19 @@
                   
                   <h3>Angaben zur Publikationsreihe</h3>
                   
-               </div>          
+               </div>   
+               
+               <div id="TEIHEADER-FILEDESC-NOTESSTMT">
+                  
+                  <h3>Weitere Vermerke</h3>
+                  
+               </div>
+               
+               <div id="TEIHEADER-FILEDESC-SOURCEDESC">
+                  
+                  <h3>Angaben zur Quelle</h3>
+                  
+               </div>
                
             </div>
             
@@ -684,7 +776,14 @@
                         Das kann nützlich sein,
                         wenn etwa bestimmte editorische Eingriffe einem konkreten Bearbeiter persönlich zugewiesen werden sollen 
                         (z. B. mit <span class="att">@resp</span> an <a class="gi" href="../specifications/ref-corr.html">&lt;corr&gt;</a>).
-                     </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                     </div><div class="endnote" id="note_3"><a class="endnote_number" href="#note_reference_3">3</a>
+                           Bei der Verarbeitung durch die technische Infrastruktur von ›heiEDITIONS‹ kann
+                           für bekannte Lizenzen aufgrund des angegebenen URI eine Graphik mit dem Logo der gewählten Lizenz 
+                           eingebunden werden. Dafür erlaubt das ›heiEDITIONS Schema‹ innerhalb von <a class="gi" href="../specifications/ref-licence.html">&lt;licence&gt;</a>
+                           das Kindelement <a class="gi" href="../specifications/ref-figure.html">&lt;figure&gt;</a>. Dies ist jedoch normalerweise nicht händisch einzusetzen und ist
+                           auch nicht für öffentliche und zu archivierende Versionen der TEI-Dateien bestimmt, weil es allein
+                           Präsentationszwecken dient.
+                        </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
                         Letzte Aktualisierung: 02.02.2023
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
