@@ -165,7 +165,8 @@
                      des TEI-Dokuments festgehalten werden soll, mit einem eigenen Element anzugeben ist – also nicht
                      etwa zwei Autoren in einem einzigen Element <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a>, sondern jeder Autor in einem eigenen <a class="gi" href="../specifications/ref-author.html">&lt;author&gt;</a>.
                      Für eine Übersicht der möglichen Beteiligungsarten
-                     empfiehlt sich eine Liste der Library of Congress: <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators" target="_blank">http://id.loc.gov/vocabulary/relators</a>. Nicht alle Rollen in dieser Liste
+                     empfiehlt sich eine Liste der Library of Congress: <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators" target="_blank">http://id.loc.gov/vocabulary/relators</a>. 
+                     Nicht alle Rollen in dieser Liste
                      werden für TEI-Dokumente relevant sein; aus der Liste wird aber ersichtlich, dass die angegebene Beteiligung durchaus
                      auch eine passive sein kann, etwa beim Empfänger eines Briefes (<em>addresse</em> bzw. <em>recipient</em>, s.
                      <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/rcp" target="_blank">http://id.loc.gov/vocabulary/relators/rcp</a>.
@@ -187,9 +188,12 @@
                   </ul>
                   <p>
                      Für alle anderen Rollen ist das generische Element <a class="gi" href="../specifications/ref-respStmt.html">&lt;respStmt&gt;</a> zu verwenden und im Attribut 
-                     <span class="att">@ref</span> nach Möglichkeit mit dem passenden URI von <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators" target="_blank">http://id.loc.gov/vocabulary/relators</a> zu verknüpfen. Einige Beziehungen allerdings,
+                     <span class="att">@ref</span> nach Möglichkeit mit dem passenden URI von 
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators" target="_blank">http://id.loc.gov/vocabulary/relators</a> 
+                     zu verknüpfen. Einige Beziehungen allerdings,
                       die in der genannten Liste der Library of Congress erscheinen, sind zwar für den <a class="gi" href="../specifications/ref-teiHeader.html">&lt;teiHeader&gt;</a> relevant,
-                     jedoch nicht im <a class="gi" href="../specifications/ref-titleStmt.html">&lt;titleStmt&gt;</a> anzugeben, etwa <em>publisher</em> (<span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/pbl" target="_blank">http://id.loc.gov/vocabulary/relators/pbl</a>) oder 
+                     jedoch nicht im <a class="gi" href="../specifications/ref-titleStmt.html">&lt;titleStmt&gt;</a> anzugeben, etwa <em>publisher</em> 
+                     (<span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/pbl" target="_blank">http://id.loc.gov/vocabulary/relators/pbl</a>) oder 
                      <em>publication place</em> (<span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/pup" target="_blank">http://id.loc.gov/vocabulary/relators/pup</a>),
                      dazu s. hier <a class="inlink" href="#TEIHEADER-FILEDESC-PUBLICATIONSTMT">Angaben zur Veröffentlichung</a>.
                   </p>
@@ -249,6 +253,45 @@
                   <p>
                      Die Reihenfolge der (optionalen) Identifikatoren ist irrelevant.
                   </p>
+                  <p>
+                     <span class="aside">Institutionelle Zugehörigkeit &amp; E-Mail</span>
+                     Zusätzlich zum Namen und Identifikator können, besonders bei Nennungen aktiver Wissenschaftler,
+                     ggf. noch mit dem Element <a class="gi" href="../specifications/ref-affiliation.html">&lt;affiliation&gt;</a> die institutionelle Zugehörigkeit
+                     und mit dem Element <a class="gi" href="../specifications/ref-email.html">&lt;email&gt;</a> eine E-Mail-Adresse angegeben werden.
+                  </p>
+                  <p>
+                     Das Element <a class="gi" href="../specifications/ref-affiliation.html">&lt;affiliation&gt;</a> muss für die Angabe der institutionelle Zugehörigkeit
+                     mindestens ein <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> mit dem Namen der Institution enthalten, für mehrsprachige
+                     Namensversionen ggf. wiederholt und mit <span class="att">@xml:lang</span> gekennzeichnet. (Mehrere Varianten
+                     eines Namens in derselben Sprache sind hier unnötig und sollten nicht angegeben werden.)
+                     Außer dem Namen der Körperschaft kann mit <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a>noch ein GND-Identifikator
+                     angeführt werden. Wenn die Zugehörigkeit zu mehreren Institutionen vermerkt werden soll,
+                     ist pro Institution jeweils ein eigenes <a class="gi" href="../specifications/ref-affiliation.html">&lt;affiliation&gt;</a> zu verwenden.
+                  </p>
+                  <p>
+                     Mehrere E-Mail-Adressen können bei Bedarf durch die Wiederholung von <a class="gi" href="../specifications/ref-email.html">&lt;email&gt;</a>
+                     aufgelistet werden.
+                  </p>
+                  <p>
+                     Beispiel:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<editor>
+                        <persName>Jakub Šimek</persName>
+                        <idno ana="hc:GNDURI">https://d-nb.info/gnd/1037976495</idno>
+                        <idno ana="hc:ORCIDURI">https://orcid.org/0000-0002-7262-7342</idno>
+                        <affiliation>
+                           <orgName xml:lang="de">Universitätsbibliothek Heidelberg</orgName>
+                           <orgName xml:lang="en">Heidelberg University Library</orgName>
+                           <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
+                        </affiliation>
+                        <email>simek@ub.uni-heidelberg.de</email>
+                     </editor>--></code>
+            </pre>
+        </div>
+    
                   <p>
                      <span class="aside">Untergliederung von Personennamen</span>
                      Bei Personennamen kann der Wunsch aufkommen, Namensbestandteile mit speziellen Elementen gesondert
@@ -809,23 +852,62 @@
                         </listRef>--></code>
             </pre>
         </div>
-    
-                     
-                  </div>
-                  
-                  
-               
+                         
+                  </div>                               
                </div>
                
                <div id="TEIHEADER-FILEDESC-SERIESSTMT">
                   
                   <h3>Angaben zur Publikationsreihe</h3>
                   
+                  <p>
+                     [Noch nicht ausgearbeitet, da nicht klar ist, ob in Heidelberg Reihen-Angaben für TEI-Dokumente relevant sind. 
+                     Kann eine Edition, die aus mehreren edierten Texten besteht, als übergeordnete ›Reihe‹
+                     für diese einzelnen Texte verstanden werden?]
+                  </p>
+                  
                </div>   
                
                <div id="TEIHEADER-FILEDESC-NOTESSTMT">
                   
                   <h3>Weitere Vermerke</h3>
+                  
+                  <p>
+                     <span class="aside"><a class="gi" href="../specifications/ref-notesStmt.html">&lt;notesStmt&gt;</a></span>
+                     Im Element <a class="gi" href="../specifications/ref-notesStmt.html">&lt;notesStmt&gt;</a> können jeweils mit <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> weitere Informationen 
+                     vermerkt werden, wobei für jede signifikante Information ein eigenes <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> verwendet
+                     werden kann. Für weiter untergliederte Texte kann <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> Absätze (<a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a>) oder
+                     gar Listen (<a class="gi" href="../specifications/ref-list.html">&lt;list&gt;</a>) oder Tabellen (<a class="gi" href="../specifications/ref-table.html">&lt;table&gt;</a>) enthalten. Einfache Texte können aber
+                     auch ohne Untergliederung direkt in <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> eingegeben werden.
+                  </p>
+                  <p>
+                     Mehrsprachige Informationen können eingegeben werden, indem <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> mit <span class="att">@xml:lang</span>
+                     versehen und wiederholt wird.
+                  </p>
+                  <p>
+                     <a class="gi" href="../specifications/ref-notesStmt.html">&lt;notesStmt&gt;</a> eignet sich beispielsweise, um die Beteiligung von Personen oder Institutionen
+                     am vorliegenden Dokument zu erwähnen, die nicht strukturiert und einzeln in <a class="gi" href="../specifications/ref-titleStmt.html">&lt;titleStmt&gt;</a> aufgelistet
+                     werden. So kann etwa die Beteiligung studentischer Hilfskräfte zum Ausdruck gebracht werden, wenn
+                     ihre Rolle nicht substanziell genug ist, um in <a class="gi" href="../specifications/ref-titleStmt.html">&lt;titleStmt&gt;</a> genannt zu werden. Auch Beratung 
+                     oder technische Unterstützung bei der Entstehung des TEI-Dokuments kann hier vermerkt werden.
+                  </p>
+                  <p>
+                     Beispiele:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<notesStmt>
+                        <note xml:lang="de">
+                           Bei der Transkription haben die studentischen Hilfskräfte Max Mustermann und Maximiliane Musterfrau mitgewirkt.                           
+                        </note>
+                        <note xml:lang="en">
+                           Max Mustermann und Maximiliane Musterfrau contributed as student assistants to the transcription. 
+                        </note>
+                     </notesStmt>--></code>
+            </pre>
+        </div>
+    
                   
                </div>
                
