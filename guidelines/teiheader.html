@@ -514,6 +514,17 @@
                      auch auf das TEI-Dokument selbst, aber gleichzeitig auf alle
                      Publikationsmodi, denen das vorliegende TEI-Dokument als Grundlage und Quelle dient.
                   </p>
+                  <p>
+                     <a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a> enthält die folgenden Elemente in dieser Reihenfolge:
+                  </p>
+                  <ul>
+                     <li><a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a>: Verlag oder Verleger (obligatorisch)</li>
+                     <li><a class="gi" href="../specifications/ref-pubPlace.html">&lt;pubPlace&gt;</a>: Veröffentlichungsort (obligatorisch, ggf. mehrfach, wenn der betreffende Verleger von mehreren Orten aus agiert)</li>
+                     <li><a class="gi" href="../specifications/ref-date.html">&lt;date&gt;</a>: Veröffentlichungsdatum (obligatorisch)</li>
+                     <li><a class="gi" href="../specifications/ref-availability.html">&lt;availability&gt;</a>: Informationen zu Nutzungsmöglichkeiten (obligatorisch)</li>
+                     <li><a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a>: Identifikator der Veröffentlichung (optional, ggf. mehrfach)</li>
+                     <li><a class="gi" href="../specifications/ref-listRef.html">&lt;listRef&gt;</a>: Internetlinks (optional)</li>
+                  </ul>
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBLISHER">
                      
@@ -721,9 +732,84 @@
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-IDNO">
                      
-                     <h4>Identifikatoren der Veröffentlichung</h4>
+                     <h4>Identifikator der Veröffentlichung</h4>
                      
+                     <p>
+                        <span class="aside">idno</span>
+                        Mit dem Element <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> können Identifikatoren des veröffentlichten TEI-Dokuments sowie der daraus erzeugten
+                        Publikationsformen (typischerweise HTML-Seiten oder PDF-Dokumente) angegeben werden, in der Regel als DOI, URN oder ISBN. 
+                        Die DOI-Angabe kann sich auf das in ›heiDATA‹ abgelegte Dataset beziehen, in dem das 
+                        TEI-Dokument enthalten ist, ggf. auch auf das Webportal der digitalen Edition als Ganzes. 
+                        An dieser Stelle sollen keine DOIs der digitalisierten Quelle(n) angegeben werden. 
+                     </p>
+                     <p>
+                        Beispiele:
+                     </p>
                      
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<idno ana="hc:DOI">https://doi.org/10.11588/data/FNKJ2Y</idno>--></code>
+            </pre>
+        </div>
+    
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<idno ana="hc:DOI">https://doi.org/10.11588/edition.kcd</idno>--></code>
+            </pre>
+        </div>
+    
+                     
+                  </div>
+                  
+                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-LISTREF">
+                     
+                     <h4>Internetlinks</h4>
+                     
+                     <p>
+                        Persistente Internetadressen (URLs) von Webseiten, die aus dem TEI-Dokument erzeugt wurden
+                        und zu dessen Veröffentlichung gehören, oder von Katalogseiten mit Metadaten, welche die Ressource 
+                        oder eine entsprechende Ressourcen- oder Datensammlung oder eine Edition repräsentieren, können innerhalb von <a class="gi" href="../specifications/ref-listRef.html">&lt;listRef&gt;</a>
+                        wahlweise mit <a class="gi" href="../specifications/ref-ptr.html">&lt;ptr&gt;</a> oder <a class="gi" href="../specifications/ref-ref.html">&lt;ref&gt;</a>, angegeben werden, jeweils an <span class="att">@ana</span>
+                        gekennzeichnet als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/urlreference.html" target="_blank">hc:URLReference</a><span class="loddocborder"> ‹</span>. Die Internetadresse selbst
+                        wird im Attribut <span class="att">@target</span> angegeben, und zwar vollständig einschließlich der
+                        Protokollangabe <span class="code">http://</span> oder <span class="code">https://</span>.
+                     </p>
+                     <p>
+                        Der Unterschied zwischen der Verwendung von <a class="gi" href="../specifications/ref-ptr.html">&lt;ptr&gt;</a> oder <a class="gi" href="../specifications/ref-ref.html">&lt;ref&gt;</a> besteht darin,
+                        dass in <a class="gi" href="../specifications/ref-ref.html">&lt;ref&gt;</a> zusätzlich zum URL auch noch ein beliebiger Text angegeben werden kann,
+                        unter dem in einer Visualisierung der URL-Link angezeigt werden kann und der als 
+                        Erläuterung oder kurze Charakterisierung der Webressource dienen kann. Den URL
+                        als Textinhalt von <a class="gi" href="../specifications/ref-ref.html">&lt;ref&gt;</a> bloß zu wiederholen (identisch mit <span class="att">@target</span>) ist
+                        möglich, aber unnötig – in derselben Funktion kann <a class="gi" href="../specifications/ref-ptr.html">&lt;ptr&gt;</a> verwendet werden, das keinen
+                        Textinhalt hat.
+                     </p>
+                     <p>
+                        DOI-URLs sollten hier nicht angegeben werden, weil sie besser als Identifikatoren in <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> 
+                        untergebracht werden können. Auch Webseiten von Digitalisaten historischer Quellen, die im TEI-Dokument
+                        ediert sind, sollten hier nicht angegeben werden.
+                     </p>
+                     <p>Beispiele:</p>
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<listRef>
+                           <ref ana="hc:URLReference" target="https://digi.ub.uni-heidelberg.de/wgd">Portalseite von Welscher Gast digital</ref>
+                           <ref ana="hc:URLReference" target="https://katalog.ub.uni-heidelberg.de/titel/68287294">Eintrag im Heidelberger Bibliothekskatalog HEIDI</ref>
+                           <ref ana="hc:URLReference" target="https://opac.k10plus.de/DB=2.299/PPNSET?PPN=1654589543&PRS=HOL&HILN=888&INDEXSET=21">Eintrag im Katalog des Bibliotheksverbunds K10plus</ref>
+                        </listRef>--></code>
+            </pre>
+        </div>
+    
+                     
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<listRef>
+                           <ptr ana="hc:URLReference" target="http://www.ub.uni-heidelberg.de/archiv/20180"/>
+                        </listRef>--></code>
+            </pre>
+        </div>
+    
                      
                   </div>
                   
@@ -784,7 +870,7 @@
                            auch nicht für öffentliche und zu archivierende Versionen der TEI-Dateien bestimmt, weil es allein
                            Präsentationszwecken dient.
                         </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 02.02.2023
+                        Letzte Aktualisierung: 03.02.2023
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
