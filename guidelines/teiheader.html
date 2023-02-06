@@ -158,7 +158,6 @@
             </pre>
         </div>
     
-                  
                   <p>
                      <span class="aside">Beteiligungsrollen</span>
                      Für die Verantwortlichkeitsangaben gilt, dass jeder Akteur (Person oder Körperschaft), dessen Beteiligung am Inhalt oder an der Form
@@ -558,7 +557,24 @@
                      Publikationsmodi, denen das vorliegende TEI-Dokument als Grundlage und Quelle dient.
                   </p>
                   <p>
-                     <a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a> enthält die folgenden Elemente in dieser Reihenfolge:
+                     Bei Arbeitsdateien, die noch nicht für eine förmliche Veröffentlichung bestimmt sind 
+                     (unabhängig davon, ob sie vielleicht dennoch schon in einem öffentlichen Repositorium wie
+                     z. B. GitHub oder GitLab einsehbar sind), reicht es aus, <a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a> mit einem 
+                     entsprechenden Hinweis in <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a> zu befüllen (ggf. mehrsprachig mit mehreren, jeweils
+                     mit <span class="att">@xml:lang</span> gekennzeichneten <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a>-Elementen). Beispiel:
+                  </p>
+                  
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<publicationStmt>
+   <p>This document is not yet released for publication.</p>
+</publicationStmt>--></code>
+            </pre>
+        </div>
+    
+                  <p>
+                     Bei TEI-Dokumenten, die bereits zur Veröffentlichung freigegeben sind,
+                     enthält <a class="gi" href="../specifications/ref-publicationStmt.html">&lt;publicationStmt&gt;</a> hingegen die folgenden Elemente in dieser Reihenfolge:
                   </p>
                   <ul>
                      <li><a class="gi" href="../specifications/ref-publisher.html">&lt;publisher&gt;</a>: Verlag oder Verleger (obligatorisch)</li>
@@ -952,7 +968,7 @@
                            auch nicht für öffentliche und zu archivierende Versionen der TEI-Dateien bestimmt, weil es allein
                            Präsentationszwecken dient.
                         </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 03.02.2023
+                        Letzte Aktualisierung: 06.02.2023
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
