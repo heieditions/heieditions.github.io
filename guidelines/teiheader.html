@@ -931,6 +931,36 @@
                   
                   <h3>Angaben zur Quelle</h3>
                   
+                  <p>
+                     <span class="aside"><a class="gi" href="../specifications/ref-sourceDesc.html">&lt;sourceDesc&gt;</a></span>
+                     Das Element <a class="gi" href="../specifications/ref-sourceDesc.html">&lt;sourceDesc&gt;</a> gibt an, woher der Inhalt des TEI-Dokuments bzw. genauer der Inhalt
+                     von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> stammt. Es gibt grundsätzlich zwei Möglichkeiten:
+                  </p>
+                  <ul>
+                     <li>
+                        Der Inhalt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> ist die Edition oder Transkription eines früher bereits vorliegenden Textes im breitesten Sinne,
+                        unabhängig davon, ob das TEI-Dokument eine genuine digitale Edition darstellt oder einen digitalisierten Text
+                        einer bereits zuvor ausgearbeiteten oder gedruckten Ausgabe eines (meist historischen) Textes wiedergibt. Entscheidend ist,
+                        dass es eine Vorlage für den Inhalt gibt, die transkribierend bzw. edierend in den in <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> vorliegenden
+                        Inhalt überführt wurde. In diesem Fall wird in <a class="gi" href="../specifications/ref-sourceDesc.html">&lt;sourceDesc&gt;</a> die Quelle (oder mehrere Quellen) genannt.
+                        Dafür kommen die Elemente <a class="gi" href="../specifications/ref-msDesc.html">&lt;msDesc&gt;</a> (für Handschriften und ggf. alte Drucke sowie andere historische
+                        Textträger) oder <a class="gi" href="../specifications/ref-bibl.html">&lt;bibl&gt;</a> oder <a class="gi" href="../specifications/ref-biblStruct.html">&lt;biblStruct&gt;</a> (für gedruckte Vorlagen).
+                     </li>
+                     <li>
+                        Den Inhalt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> gab es vor dem Anlegen des TEI-Dokuments gar nicht, weil das TEI-Dokument einen
+                        neuen, hierfür überhaupt erst geschaffenen Inhalt beherbergt, oder eine etwaige Arbeitsvorlage für den Inhalt 
+                        (z. B. handgeschriebene Zettel oder digitale Arbeitsdateien in einem anderen Format) außer Acht gelassen werden
+                        kann und das TEI-Dokument die erste erwähnenswerte Ausdrucksform des Inhalts überhaupt ist. In diesem Fall
+                        handelt es sich um einen genuin digital entstandenen Inhalt, der im Englischen als <em>born digital</em>
+                        bezeichnet. Eine entsprechende Angabe ist in <a class="gi" href="../specifications/ref-sourceDesc.html">&lt;sourceDesc&gt;</a> als Freitext in einem oder (mehrsprachig) in 
+                        mehreren mit <span class="att">@xml:lang</span> gekennzeichneten <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a>-Elementen zu machen.
+                        
+                     </li>
+                  </ul>
+                  
+                  
+                  
+                  
                </div>
                
             </div>
@@ -968,7 +998,7 @@
                            auch nicht für öffentliche und zu archivierende Versionen der TEI-Dateien bestimmt, weil es allein
                            Präsentationszwecken dient.
                         </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 06.02.2023
+                        Letzte Aktualisierung: 09.02.2023
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
