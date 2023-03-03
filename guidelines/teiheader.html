@@ -1145,10 +1145,245 @@
                         
         <div class="egxml">
             <pre class="language-xml">
-                <code><!----></code>
+                <code><!--<msIdentifier>
+   <bloc from="1957">
+      <placeName>Europäische Union</placeName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/5098525-5</idno>
+   </bloc>
+   <country>
+      <placeName>Deutschland</placeName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/4011882-4</idno>
+   </country>
+   <region>
+      <placeName>Baden-Württemberg</placeName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/4004176-1</idno>
+   </region>
+   <region to="1801">
+      <placeName>Kurpfalz</placeName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/25943-3</idno>
+   </region>
+   <settlement>
+      <placeName>Heidelberg</placeName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/4023996-2</idno>
+   </settlement>
+   <district>
+      <placeName>Heidelberg-Altstadt</placeName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/7760544-5</idno>
+   </district>
+   <institution>
+      <orgName>Ruprecht-Karls-Universität Heidelberg</orgName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/2024349-2</idno>
+   </institution>
+   <repository>
+      <orgName>Universitätsbibliothek Heidelberg</orgName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
+   </repository>
+   <collection>
+      <name ana="hc:CollectionName">Codices Palatini germanici</name>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/7519176-3</idno>
+   </collection>
+   <idno ana="hc:Shelfmark">Cod. Pal. germ. 848</idno>                 
+</msIdentifier>--></code>
             </pre>
         </div>
     
+                        <p>
+                           <span class="aside">zeitlich eingeschränkte Lokalisierung</span>
+                           An den fünf Elementen für geographische bzw. geopolitische Einheiten 
+                           (<a class="gi" href="../specifications/ref-bloc.html">&lt;bloc&gt;</a>, <a class="gi" href="../specifications/ref-country.html">&lt;country&gt;</a>, <a class="gi" href="../specifications/ref-region.html">&lt;region&gt;</a>, <a class="gi" href="../specifications/ref-settlement.html">&lt;settlement&gt;</a>, <a class="gi" href="../specifications/ref-district.html">&lt;district&gt;</a>)
+                           sind die Datierungsattribute <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>,
+                           <span class="att">@from</span> und <span class="att">@to</span> möglich, die als Wert eine Angabe in der Form 
+                           <span class="val">JJJJ-MM-TT</span>, <span class="val">JJJJ-MM</span> oder <span class="val">JJJJ</span> erwarten (zu der genauen Semantik
+                           und den Kombinationsmöglichkeiten dieser Attribute vgl. <a class="inlink" href="indexes.html#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>).
+                           Diese Attribute können verwendet werden, um die zeitliche Ausdehnung einer geopolitischen Lokalisierung
+                           einzuschränken, wie im vorangegangenen Beispiel an <a class="gi" href="../specifications/ref-bloc.html">&lt;bloc&gt;</a> und <a class="gi" href="../specifications/ref-region.html">&lt;region&gt;</a>
+                           demonstriert. Sie beziehen sich aber nur auf die historische Zugehörigkeit der Lokalisierung 
+                           einer Handschrift, nicht auf die Historizität der mit <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> angegebenen Namen.
+                           Diese Attribute sind auch nicht dafür vorgesehen, eine abweichenden Standort der Handschrift
+                           in der Vergangenheit zu beschreiben – das ist ggf. mit <a class="gi" href="../specifications/ref-altIdentifier.html">&lt;altIdentifier&gt;</a> umzusetzen. Sie eignen
+                           sich also an dieser Stelle nur dafür, auszudrücken, dass beispielsweise eine Region wie die Kurpfalz,
+                           innerhalb deren sich der Aufbewahrungsort der Handschrift befindet,
+                           als geopolitische administrative Einheit nur bis zu einem bestimmten Jahr bestand. 
+                           Normalerweise ist die Nennung solcher übergeordneten – und noch dazu historischen –
+                           Einheiten für die Identifizierung einer Handschrift überhaupt überflüssig. Die Möglichkeit dazu
+                           wird jedoch für besondere Fälle gegeben.
+                        </p>
+                        <p>
+                           <span class="aside">mehrsprachige Namensangaben</span>
+                           Die Namensangaben in den fünf Elementen für geographische bzw. geopolitische Einheiten sowie
+                           in <a class="gi" href="../specifications/ref-institution.html">&lt;institution&gt;</a>, <a class="gi" href="../specifications/ref-repository.html">&lt;repository&gt;</a> und <a class="gi" href="../specifications/ref-collection.html">&lt;collection&gt;</a> können mehrsprachig angegeben werden.
+                           Dafür wird das jeweilige Namenselement (<a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a>, <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a> oder <a class="gi" href="../specifications/ref-name.html">&lt;name&gt;</a>) wiederholt
+                           und jeweils mit <span class="att">@xml:lang</span> versehen. Beispiel:
+                        </p>
+                        
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<repository>
+   <orgName xml:lang="de">Universitätsbibliothek Heidelberg</orgName>
+   <orgName xml:lang="en">Heidelberg University Library</orgName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
+</repository>--></code>
+            </pre>
+        </div>
+    
+                        <p>
+                           <span class="aside">GeoNames</span>
+                           Beispiel für die Angabe eines GeoNames-Identifikators zusätzlich zum GND-URI: 
+                        </p>
+                        
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<settlement>
+   <placeName>Schlierbach</placeName>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/4268474-2</idno>
+   <idno ana="hc:GeonamesURI">https://sws.geonames.org/2765894/</idno>
+</settlement>--></code>
+            </pre>
+        </div>
+    
+                        <p>
+                           <span class="aside">Identifikatoren der Handschrift</span>
+                           Als Identifikator der Handschrift selbst wird in einem <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> mit dem Wert
+                           <span class="loddocborder">› </span><a class="loddoc" href="../concepts/shelfmark.html" target="_blank">hc:Shelfmark</a><span class="loddocborder"> ‹</span> am Attribut <span class="att">@ana</span> die aktuell gültige Signatur
+                           der Handschrift an ihrem aktuellen Aufbewahrungsort angegeben. (Gibt es keine Signatur,
+                           wird dieses <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> weggelassen; umso wichtiger ist es ggf., mit <a class="gi" href="../specifications/ref-msName.html">&lt;msName&gt;</a>
+                           oder <a class="gi" href="../specifications/ref-objectName.html">&lt;objectName&gt;</a> einen Namen zu verzeichnen, mit dessen Hilfe das texttragende
+                           Artefakt identifiziert werden könnte.) Außer der Signatur
+                           können ggf. auch noch weitere Identifikatoren für die Handschrift jeweils mit einem
+                           <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> vermerkt werden:
+                        </p>
+                        <ul>
+                           <li>
+                              editorisches Sigel (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/editorialsiglum.html" target="_blank">hc:EditorialSiglum</a><span class="loddocborder"> ‹</span>: Kürzel für einen Textzeugen, in kritischen Editionen von Texten 
+                              mit Mehrfachüberlieferung üblich und nur im Kontext einer solchen Edition sinnvoll
+                           </li>
+                           <li>
+                              GND-URI (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/gnduri.html" target="_blank">hc:GNDURI</a><span class="loddocborder"> ‹</span>): In Fällen, wenn die Handschrift in der GND als
+                              Schriftdenkmal 
+                              (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://d-nb.info/standards/elementset/gnd#Manuscript" target="_blank">https://d-nb.info/standards/elementset/gnd#Manuscript</a>)
+                              verzeichnet ist (oder der GND-Eintrag im Rahmen des Editionsprojekts vorgenommen wurde).
+                           </li>
+                        </ul>
+                        <p>
+                           <span class="aside">Namen der Handschrift</span>
+                           Manche Handschriften tragen mehr oder weniger eingebürgerte konventionelle Bezeichnungen
+                           bzw. Namen. Solche Namen können für Handschriften im Element <a class="gi" href="../specifications/ref-msName.html">&lt;msName&gt;</a> angegeben werden,
+                           bei sonstigen texttragenden Artefakten steht das neutralere Element <a class="gi" href="../specifications/ref-objectName.html">&lt;objectName&gt;</a>
+                           zur Verfügung. Wenn solche Namen mehrsprachig verzeichnet werden sollen, können <a class="gi" href="../specifications/ref-msName.html">&lt;msName&gt;</a> 
+                           bzw. <a class="gi" href="../specifications/ref-objectName.html">&lt;objectName&gt;</a> wiederholt und mit <span class="att">@xml:lang</span> versehen werden.
+                        </p>
+                        <p>
+                           Beispiele für Identifikatoren und Namen:
+                        </p>
+                        
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<msIdentifier>
+   […]
+   <idno ana="hc:Shelfmark">Cod. Pal. germ. 848</idno>
+   <idno ana="hc:EditorialSiglum">C</idno> <!- - editionsspezifisch - ->
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/4135049-2</idno>          
+   <msName>Große Heidelberger Liederhandschrift</msName>
+   <msName>Codex Manesse</msName>                  
+</msIdentifier>--></code>
+            </pre>
+        </div>
+    
+                        
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<msIdentifier>
+   […]
+   <idno ana="hc:Shelfmark">Clm 4660</idno>
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/7857351-8</idno>          
+   <msName>Codex Buranus</msName>
+   <msName>Carmina Burana</msName>                                                                
+</msIdentifier>--></code>
+            </pre>
+        </div>
+    
+                        
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<msIdentifier>
+   […]
+   <idno ana="hc:GNDURI">https://d-nb.info/gnd/4199489-9</idno>          
+   <objectName xml:lang="de">Stein von Rosette</objectName>
+   <objectName xml:lang="en">Rosetta Stone</objectName>                                                        
+</msIdentifier>--></code>
+            </pre>
+        </div>
+    
+                        <p>
+                           <span class="aside">Alternative Signaturen</span>
+                           Das Element <a class="gi" href="../specifications/ref-altIdentifier.html">&lt;altIdentifier&gt;</a> ist für die Angabe weiterer, insbesondere historischer
+                           Signaturen vorgesehen, die sich von der aktuell gültigen Signatur unterscheiden. Wenn mehrere
+                           alternative Signaturen angegeben werden sollen, erhält jede ein eigenes Element
+                           <a class="gi" href="../specifications/ref-altIdentifier.html">&lt;altIdentifier&gt;</a>. Die Signatur steht dann in einem <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a>, das am Attribut <span class="att">@ana</span>
+                           mit <span class="loddocborder">› </span><a class="loddoc" href="../concepts/shelfmark.html" target="_blank">hc:Shelfmark</a><span class="loddocborder"> ‹</span> gekennzeichnet ist.
+                        </p>
+                        <p>
+                           Der eigentlichen Signaturangabe mit <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> können in <a class="gi" href="../specifications/ref-altIdentifier.html">&lt;altIdentifier&gt;</a> dieselben Elemente
+                           vorangehen wie eine Ebene höher in <a class="gi" href="../specifications/ref-msIdentifier.html">&lt;msIdentifier&gt;</a>, also z. B. <a class="gi" href="../specifications/ref-settlement.html">&lt;settlement&gt;</a> und
+                           <a class="gi" href="../specifications/ref-repository.html">&lt;repository&gt;</a>, in derselben Reihenfolge. Zusätzlich nach <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a>
+                           ein <a class="gi" href="../specifications/ref-note.html">&lt;note&gt;</a> folgen (ggf. mehrfach und ggf. mit <span class="att">@xml:lang</span> für die Sprachkennzeichnung),
+                           um die Umstände der alternativen Signatur zu erläutern. 
+                        </p>
+                        <p>
+                           <a class="gi" href="../specifications/ref-altIdentifier.html">&lt;altIdentifier&gt;</a> eignet sich sowohl für die Angabe älterer Signaturen einer Handschrift,
+                           die sie am selben Ort wie dem aktuellen trug, als auch für die Angabe von Signaturen an einem
+                           anderen Aufbewahrungsort in der Geschichte der Handschrift. Im letzteren Fall sollte die 
+                           frühere Lokalisierung der Handschrift anhand der geographischen bzw. geopolitischen Elemente
+                           wie <a class="gi" href="../specifications/ref-settlement.html">&lt;settlement&gt;</a> und der frühere Aufbewahrungsort mit <a class="gi" href="../specifications/ref-repository.html">&lt;repository&gt;</a> angegeben
+                           werden. Beispiel:                          
+                        </p>
+                        
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<msDesc>
+   <msIdentifier>
+      <settlement>
+         <placeName>New York</placeName>
+         <idno ana="hc:GNDURI">https://d-nb.info/gnd/4042011-5</idno>
+         <idno ana="hc:GeonamesURI">https://sws.geonames.org/5128581/</idno>
+      </settlement>
+      <repository>
+         <orgName>The Morgan Library & Museum</orgName>
+         <idno ana="hc:GNDURI">https://d-nb.info/gnd/10156282-2</idno>
+      </repository>
+      <idno ana="hc:Shelfmark">Ms. G. 54</idno>
+      <altIdentifier>
+         <idno ana="hc:Shelfmark">Glazier Ms. Nr. 51</idno>
+      </altIdentifier>
+      <altIdentifier>
+         <settlement>
+            <placeName>Erbach</placeName>
+            <idno ana="hc:GNDURI">https://d-nb.info/gnd/4015092-6</idno>
+            <idno ana="hc:GeonamesURI">https://sws.geonames.org/2929802/</idno>
+         </settlement>
+         <repository>
+            <orgName>Gräflich Erbachisches Gesamthausarchiv</orgName>
+            <idno ana="hc:GNDURI">https://d-nb.info/gnd/1217263926</idno>
+         </repository>
+         <idno ana="hc:Shelfmark">Nr. 1</idno>
+         <note>Nach dem 1. Weltkrieg verkauft.</note>
+      </altIdentifier>
+   </msIdentifier>
+</msDesc>--></code>
+            </pre>
+        </div>
+    
+                        <p>
+                           Mit den Datierungsattributen <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>,
+                           <span class="att">@from</span> und <span class="att">@to</span> ist in der Form 
+                           <span class="val">JJJJ-MM-TT</span>, <span class="val">JJJJ-MM</span> oder <span class="val">JJJJ</span> 
+                           die Angabe der zeitlichen Gültigkeit der früheren Signatur möglich
+                           (zu diesen Attributen vgl. sonst <a class="inlink" href="indexes.html#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>).
+                        </p>
+                        
+                        
+                        
+                        
                         
                      </div>
                      
@@ -1200,7 +1435,7 @@
                            durch nachträgliche Fragmentierung heute aus mehreren, ggf. dislozierten Fragmenten besteht. Eine solche
                            Quelle wird mit einem einzigen <a class="gi" href="../specifications/ref-msDesc.html">&lt;msDesc&gt;</a> angegeben (s. XXX). 
                         </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 13.02.2023
+                        Letzte Aktualisierung: 03.03.2023
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

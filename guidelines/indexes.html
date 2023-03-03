@@ -566,7 +566,7 @@
                      <p>
                         Benennungen von Entitäten, die in Registern verwaltet werden, können möglicherweise nur in bestimmten Zeiträumen 
                         im Gebrauch gewesen sein. Um eine zeitliche Einschränkung zum Ausdruck zu bringen, ist es möglich,
-                        die für Benennungen vorgesehenen Elemente <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a>, <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a>, <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a>, <a class="gi" href="../specifications/ref-label.html">&lt;label&gt;</a>
+                        die für Benennungen vorgesehenen Elemente <a class="gi" href="../specifications/ref-persName.html">&lt;persName&gt;</a>, <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a>, <a class="gi" href="../specifications/ref-orgName.html">&lt;orgName&gt;</a>, <a class="gi" href="../specifications/ref-name.html">&lt;name&gt;</a>, <a class="gi" href="../specifications/ref-label.html">&lt;label&gt;</a>
                         und <a class="gi" href="../specifications/ref-title.html">&lt;title&gt;</a> mit folgenden Attributen zu versehen, die jeweils einen Wert in der Form 
                         <span class="val">JJJJ-MM-TT</span>, <span class="val">JJJJ-MM</span> oder <span class="val">JJJJ</span> erwarten:                  
                      </p>
@@ -757,29 +757,39 @@
                      zur kleinsten Ebene:
                   </p>
                   <ul>
-                     <li><a class="gi" href="../specifications/ref-bloc.html">&lt;bloc&gt;</a></li>
-                     <li><a class="gi" href="../specifications/ref-country.html">&lt;country&gt;</a></li>
-                     <li><a class="gi" href="../specifications/ref-region.html">&lt;region&gt;</a></li>
-                     <li><a class="gi" href="../specifications/ref-district.html">&lt;district&gt;</a></li>
-                     <li><a class="gi" href="../specifications/ref-settlement.html">&lt;settlement&gt;</a></li>
+                     <li><a class="gi" href="../specifications/ref-bloc.html">&lt;bloc&gt;</a> für länderübergreifende geopolitische Einheiten, z. B. die Europäische Union oder
+                        Kontinente</li> 
+                     <li><a class="gi" href="../specifications/ref-country.html">&lt;country&gt;</a> für Länder und Staaten, ggf. auch für Gliedstaaten in einer Föderation</li>
+                     <li><a class="gi" href="../specifications/ref-region.html">&lt;region&gt;</a> für Regionen unterhalb der Ebene von Ländern und Staaten, ggf. auch für Gliedstaaten in einer Föderation</li>                    
+                     <li><a class="gi" href="../specifications/ref-settlement.html">&lt;settlement&gt;</a> für Kommunen, also Städte, Dörfer und sonstige Gemeindetypen</li>
+                     <li><a class="gi" href="../specifications/ref-district.html">&lt;district&gt;</a> für Stadtviertel und andere Typen von Teilen innerhalb von Kommunen</li>
                   </ul>
                   <p>
-                     Unterhalb der Ebene der Siedlung (<a class="gi" href="../specifications/ref-settlement.html">&lt;settlement&gt;</a>, etwa Stadt, Gemeinde, Ort) können weitere präzisierende
-                     Angaben mithilfe von <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> gemacht werden.
-                     ›heiEDITIONS‹ gibt nicht vor, welche der genannten Ebenen benutzt werden sollen
-                     und in welcher Reihenfolge sie ggf. erfasst werden müssten. Innerhalb eines Registers sollte jedoch Einheitlichkeit
-                     angestrebt werden. Die Elemente können sich innerhalb eines <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> auch wiederholen (z. B. 
-                     für Angabe mehrerer, ineinander enthaltener Regionen oder für gleiche Angaben in unterschiedlichen Sprachen). 
+                     Die genannten Elemente müssen die angegebene Reihenfolge einhalten, alle sind jedoch optional und 
+                     können sich andererseits auch wiederholen, (z. B. <a class="gi" href="../specifications/ref-region.html">&lt;region&gt;</a>
+                     für die Angabe mehrerer, ineinander enthaltener Regionen). Für jedes dieser Elemente ist in
+                     ›heiEDITIONS‹ strukturierter Inhalt vorgesehen, der aus einem oder
+                     mehreren <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> und optional einem oder mehreren Identifikatoren in <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a>
+                     besteht. Die Angabe mehrerer Namen durch Wiederholung von <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a>
+                     kann durch alternative, ggf. historische, Namensvarianten bedingt sein, aber auch der
+                     Mehrsprachigeit dienen (dann ist jedes <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> mit <span class="att">@xml:lang</span> zu kennzeichnen).
                   </p>                   
                   <p>
-                     Beispiel für die Angabe der Lage eines Ortes mithilfe zweier Ebenen geopolitischer Verwaltungseinheiten: 
+                     Beispiel für die Angabe der Lage eines Ortes mithilfe zweier Ebenen geopolitischer Verwaltungseinheiten,
+                     jeweils mit GND-Verknüpfung: 
                   </p>
                   
         <div class="egxml">
             <pre class="language-xml">
                 <code><!--<location>
-   <region>Baden-Württemberg</region>
-   <region>Rhein-Neckar-Kreis</region>
+   <region>
+      <placeName>Baden-Württemberg</placeName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/4004176-1</idno>
+   </region>
+   <region>
+      <placeName>Rhein-Neckar-Kreis</placeName>
+      <idno ana="hc:GNDURI">https://d-nb.info/gnd/4049805-0</idno>
+   </region>
 </location>--></code>
             </pre>
         </div>
@@ -1010,7 +1020,7 @@
                         <a class="gi" href="../specifications/ref-label.html">&lt;label&gt;</a> ist zu verwenden, wenn die Benennung des Ereignisses nicht den Charakter eines Eigennamens hat; andernfalls 
                         sollte <a class="gi" href="../specifications/ref-name.html">&lt;name&gt;</a> genutzt werden. Die Verwendung von <a class="gi" href="../specifications/ref-label.html">&lt;label&gt;</a> und <a class="gi" href="../specifications/ref-name.html">&lt;name&gt;</a> gleichzeitig ist nicht erlaubt.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 13.02.2023
+                        Letzte Aktualisierung: 03.03.2023
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
