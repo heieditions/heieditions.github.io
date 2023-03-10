@@ -443,7 +443,8 @@
                      <p>
                         Primär ist in ›heiEDITIONS‹ die Verwendung von <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> für die Gleichsetzung 
                         mit Normdatensätzen der GND vorgesehen. Die Liste der unterstützten Normdateien ist aber grundsätzlich erweiterbar.
-                        In Ortsregistern ist etwa auch die Angabe eines Normdatensatzes von Geonames möglich. 
+                        In Ortsregistern und sonstigen Lokalisierungsangaben mithilfe von <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a>
+                        ist etwa auch die Angabe eines Normdatensatzes von Geonames möglich. 
                         In einem Registereintrag darf nur ein <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> eines Typs vorkommen, d. h. Gleichsetzungen mit
                         mehreren Normdatensätzen derselben Normdatei sind nicht möglich.
                      </p>
@@ -468,9 +469,15 @@
    <idno ana="hc:GNDURI">https://d-nb.info/gnd/4023996-2</idno>
    <idno ana="hc:GeonamesURI">https://sws.geonames.org/2907911</idno>
    <location>
-      <country>Deutschland</country>
-      <region>Baden-Württemberg</region>
-      <region>Rhein-Neckar-Kreis</region>
+      <country>
+         <placeName>Deutschland</placeName>
+      </country>
+      <region>
+         <placeName>Baden-Württemberg</placeName>
+      </region>
+      <region>
+         <placeName>Rhein-Neckar-Kreis</placeName>
+      </region>
    </location>
    <location>
       <geo>49.41032 8.69707</geo>
@@ -828,7 +835,10 @@
                   </ul>
                   <p>
                      Die Verortung einer Körperschaft mithilfe von <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> folgt denselben Regeln wie bei Orten, s. oben 
-                     <a class="inlink" href="#INDEXES-LISTS-PLACES">Informationen zu Orten</a>.
+                     <a class="inlink" href="#INDEXES-LISTS-PLACES">Informationen zu Orten</a>. Zusätzlich kann jedoch, ggf. an letzter Stelle nach den optionalen Elementen
+                     <a class="gi" href="../specifications/ref-bloc.html">&lt;bloc&gt;</a>, <a class="gi" href="../specifications/ref-country.html">&lt;country&gt;</a>, <a class="gi" href="../specifications/ref-region.html">&lt;region&gt;</a>, <a class="gi" href="../specifications/ref-settlement.html">&lt;settlement&gt;</a> und <a class="gi" href="../specifications/ref-district.html">&lt;district&gt;</a>, ein konkreter Ort
+                     wie etwa ein Gebäude mit <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> (ggf. mehrfach und ggf. mehrsprachig) und ggf. <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> (ggf. mehrfach)
+                     angegeben werden.
                   </p>
                   
                </div>
@@ -852,7 +862,12 @@
                   </ul>
                   <p>
                      Die Ortsangabe eines Ereignisses mithilfe von <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> folgt denselben Regeln wie bei Orten, s. oben 
-                     <a class="inlink" href="#INDEXES-LISTS-PLACES">Informationen zu Orten</a>. Für den Fall, dass ein Ereignis an mehreren Orten stattfand (z. B. bei einer Konferenz),
+                     <a class="inlink" href="#INDEXES-LISTS-PLACES">Informationen zu Orten</a>. 
+                     Zusätzlich kann jedoch, ggf. an letzter Stelle nach den optionalen Elementen
+                     <a class="gi" href="../specifications/ref-bloc.html">&lt;bloc&gt;</a>, <a class="gi" href="../specifications/ref-country.html">&lt;country&gt;</a>, <a class="gi" href="../specifications/ref-region.html">&lt;region&gt;</a>, <a class="gi" href="../specifications/ref-settlement.html">&lt;settlement&gt;</a> und <a class="gi" href="../specifications/ref-district.html">&lt;district&gt;</a>, ein konkreter Ort
+                     wie etwa ein Gebäude mit <a class="gi" href="../specifications/ref-placeName.html">&lt;placeName&gt;</a> (ggf. mehrfach und ggf. mehrsprachig) und ggf. <a class="gi" href="../specifications/ref-idno.html">&lt;idno&gt;</a> (ggf. mehrfach)
+                     angegeben werden.
+                     Für den Fall, dass ein Ereignis an mehreren Orten stattfand (z. B. bei einer Konferenz),
                      kann <a class="gi" href="../specifications/ref-location.html">&lt;location&gt;</a> wiederholt und ggf. auch mit Datierungsangaben anhand der Attribute 
                      <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>, <span class="att">@from</span> und <span class="att">@to</span>
                      präzisiert werden. (Für die Verwendung dieser Attribute gelten die oben unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>
