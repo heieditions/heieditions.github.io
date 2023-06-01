@@ -94,9 +94,51 @@
             </pre>
         </div>
     
+               <p>
+                  Das zweite Kind des Wurzelelements <a class="gi" href="../specifications/ref-TEI.html">&lt;TEI&gt;</a> (es muss immer genau zwei Kindelemente geben)
+                  definiert das Element in der Editionsdatei, auf dessen Inhalt die virtuelle Struktur angewandt werden soll.
+                  Das kann entweder <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> oder <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> sein. <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> ist zu verwenden, wenn sich die
+                  virtuelle Struktur nicht nur auf den Inhalt des <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> im Editionsdokument beziehen soll,
+                  sondern wenn neben <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> auch noch <a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a> oder <a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a> (oder beides)
+                  für die virtuelle Struktur zur Anwendung kommen soll. Je nach dem, ob hier <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> oder <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>
+                  angegeben ist, wird in der Verarbeitung entweder die ggf. vorgefundene Gliederung (<a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a>, <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>,
+                  <a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a>, <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> auf beliebiger Ebene) im gesamten <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> entfernt und durch die virtuelle Struktur ersetzt
+                  oder nur ggf. vorgefundene <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Elemente innerhalb von <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>. Das Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>
+                  oder <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> bleibt dabei selbst (ggf. mit seinen Attributen) jeweils unangetastet, nur dessen Inhalt wird verarbeitet.
+               </p>
+               <p>
+                  Der Inhalt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> oder <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> bildet dann den gewünschten Gliederungsbaum ab,
+                  dessen wesentliche Struktur entweder aus <a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a>, <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>,<a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a> und darin 
+                  befindlichen <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Strukturen besteht (wenn das zweite Kindelement von <a class="gi" href="../specifications/ref-TEI.html">&lt;TEI&gt;</a> <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>
+                  ist) oder aus <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Strukturen (wenn das zweite Kindelement von <a class="gi" href="../specifications/ref-TEI.html">&lt;TEI&gt;</a> <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>
+                  ist).
+               </p>
+               <p>
+                  In einem so deklarierten Baum übernehmen dann jeweils in den kleinsten Gliederungseinheiten 
+                  (die selbst keine weitere tiefer gelegene Gliederungseinheit enthalten) die <a class="gi" href="../specifications/ref-ptr.html">&lt;ptr&gt;</a>-Elemente
+                  die Funktion der Platzhalter für jene Dateibereiche, die mit den virtuellen Einheiten umschlossen werden sollen. 
+               </p>
+               <p>
+                  Nehmen wir als einfaches Beispiel ein <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> an, das in der Editionsdatei eine ›flache‹ Abfolge von 
+                  neun Absätzen enthält:
+               </p>
                
-               
-               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<body>
+   <p xml:id="p_1">[Absatz 1]</p>
+   <p xml:id="p_2">[Absatz 2]</p>
+   <p xml:id="p_3">[Absatz 3]</p>
+   <p xml:id="p_4">[Absatz 4]</p>
+   <p xml:id="p_5">[Absatz 5]</p>
+   <p xml:id="p_6">[Absatz 6]</p>
+   <p xml:id="p_7">[Absatz 7]</p>
+   <p xml:id="p_8">[Absatz 8]</p>
+   <p xml:id="p_9">[Absatz 9]</p>
+</body>--></code>
+            </pre>
+        </div>
+    
                
             </div>
             
