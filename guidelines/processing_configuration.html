@@ -217,6 +217,90 @@
             </pre>
         </div>
     
+               <p>
+                  Wenn sinnvoll, kann eine virtuelle Gliederung auch mehrere <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Ebenen umfassen.
+                  Das folgende Beispiel zeigt, wie die ursprünglich flache Beispielstruktur mit neun Absätzen
+                  in eine neue Struktur überführt wird, in der Absatz 1 in einem eigenen <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> auf oberster Ebene steht,
+                  die folgenden sieben Absätze in einem größeren Abschnitt zusammengefasst sind, der seinerseits Unterabschnitte
+                  mit den Absätzen 2–3,  4–5 sowie 6–8 enthält und der letzte Absatz 9 wiederum in einem eigenen <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>
+                  auf oberster Ebene steht:
+               </p>   
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<body>
+   <div ana="hc:Section" xml:id="d_1" n="1">
+      <head ana="hc:EditorialContent">Vorbemerkungen</head>
+      <ptr target="wit:range(p_1,p_1)"/>
+   </div>
+   <div ana="hc:Section" xml:id="d_2" n="2">
+      <head ana="hc:EditorialContent">Erörterung der Kernthese</head>
+      <div ana="hc:Section" xml:id="d_2_1" n="2.1">
+         <head>Hauptargumente</head>
+         <ptr target="wit:range(p_2,p_3)"/>
+      </div>
+      <div ana="hc:Section" xml:id="d_2_2" n="2.2">
+         <head>Gegenpositionen</head>
+         <ptr target="wit:range(p_4,p_5)"/>
+      </div>
+      <div ana="hc:Section" xml:id="d_2_3" n="2.3">
+         <head>Mögliche Lösungsansätze</head>
+         <ptr target="wit:range(p_6,p_8)"/>
+      </div>
+   </div>
+   <div ana="hc:Section" xml:id="d_3" n="3">
+      <head ana="hc:EditorialContent">Fazit</head>
+      <ptr target="wit:range(p_9,p_9)"/>
+   </div>
+</body>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Die <a class="gi" href="../specifications/ref-ptr.html">&lt;ptr&gt;</a>-Elemente als Stellvertreter für die zu umschließenden Textbereiche dürfen
+                  jeweils nur auf untersten <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Ebene stehen, d. h. eine Gliederungseinheit darf nicht gleichzeitig 
+                  <a class="gi" href="../specifications/ref-ptr.html">&lt;ptr&gt;</a> und <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> als Geschwisterelemente enthalten.
+               </p>
+               <p>
+                  Wenn für die im vorangehenden Beispiel gezeigte Gliederung statt einer zweistufigen <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Hierarchie
+                  eine Kombination von <a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a>, <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> und <a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a> mit drei <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Abschnitten
+                  innerhalb von <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> zum Einsatz kommen sollte, ist das zweite Kindelement der Konfigurationsdatei 
+                  <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> statt <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>. Ansonsten bleibt das Prinzip gleich (mit dem Unterschied, dass
+                  <a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a>, <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> und <a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a> keine Attribute <span class="att">@ana</span> tragen, weil sie als Elemente
+                  durch ihre Semantik in ihrer Gliederungsfunktion ausreichend beschrieben sind):
+               </p>              
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<text>
+   <front xml:id="front_1" n="1">
+      <head ana="hc:EditorialContent">Vorbemerkungen</head>
+      <ptr target="wit:range(p_1,p_1)"/>
+   </front>
+   <body xml:id="body_1" n="2">
+      <head ana="hc:EditorialContent">Erörterung der Kernthese</head>
+      <div ana="hc:Section" xml:id="div_2_1" n="2.1">
+         <head>Hauptargumente</head>
+         <ptr target="wit:range(p_2,p_3)"/>
+      </div>
+      <div ana="hc:Section" xml:id="div_2_2" n="2.2">
+         <head>Gegenpositionen</head>
+         <ptr target="wit:range(p_4,p_5)"/>
+      </div>
+      <div ana="hc:Section" xml:id="div_2_3" n="2.3">
+         <head>Mögliche Lösungsansätze</head>
+         <ptr target="wit:range(p_6,p_8)"/>
+      </div>
+   </body>
+   <back xml:id="back_1" n="3">
+      <head ana="hc:EditorialContent">Fazit</head>
+      <ptr target="wit:range(p_9,p_9)"/>
+   </back>
+</text>--></code>
+            </pre>
+        </div>
+    
+               
                
                
                
