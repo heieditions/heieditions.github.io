@@ -160,12 +160,38 @@
             </pre>
         </div>
     
+               <p>
+                  Die Bereiche der Editionsdatei, die innerhalb des dort befindlichen <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> mit <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Elementen
+                  umschlossen werden sollen, werden in <span class="att">@target</span> der <a class="gi" href="../specifications/ref-ptr.html">&lt;ptr&gt;</a>-Elemente als
+                  ›von–bis‹-Verweise auf die <span class="att">@xml:id</span> des jeweils ersten und letzten Elements eines
+                  Bereichs angegeben, und zwar mithilfe von der TEI definierten <em>range</em>-Pointer-Syntax 
+                  <sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup> mit
+                  dem vorangestellten Präfix <span class="code">wit</span>, der den Pfad zur Editionsdatei repräsentiert. Die durch ein
+                  Komma getrennten beiden Werte innerhalb der Klammern von <span class="code">range()</span> sind also
+                  die <span class="att">@xml:id</span>-Werte des ersten und letzten Elements eines Abschnitts. Bevor also 
+                  eine solche Konfiguration sinnvoll geschrieben werden, müssen im Editionsdokument 
+                  zumindest an den betroffenen jeweils ersten und letzten Elementen eines virtuellen Abschnitts
+                  die Attribute <span class="att">@xml:id</span> vorliegen.
+               </p>
+               <p>
+                  Die virtuellen <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Elemente müssen das Attribut <span class="att">@ana</span> tragen. 
+                  Wenn keine andere heiEDITIONS-Klasse besser zutrifft, ist dabei als Wert das generische <span class="loddocborder">› </span><a class="loddoc" href="../concepts/section.html" target="_blank">hc:Section</a><span class="loddocborder"> ‹</span>
+                  zu wählen. Das Attribut <span class="att">@xml:id</span> wird ebenfalls benötigt, wird aber – falls es fehlen sollte –
+                  in der Verarbeitungspipeline ergänzt. Mit dem Attribut <span class="att">@n</span> kann eine sinnvolle Nummerierung
+                  angegeben werden. 
+               </p>
+               <p>
+                  Neben den genannten Attributen <span class="att">@ana</span>, <span class="att">@xml:id</span> und <span class="att">@n</span> kann
+                  an <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> ebenfalls das Attribut <span class="att">@rendition</span> mit den möglichen Werten 
+                  <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> angegeben werden (dazu s. weiter unten
+                  <a class="inlink" href="#PROCESSING_CONFIGURATION-DISPLAY"></a>).
+               </p>
                
                
             </div>
             
          </div>
-      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+      <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>S. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SATSRN" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SATSRN</a>.</div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
                         Letzte Aktualisierung: 01.06.2023
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
