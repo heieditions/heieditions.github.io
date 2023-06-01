@@ -186,6 +186,38 @@
                   <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> angegeben werden (dazu s. weiter unten
                   <a class="inlink" href="#PROCESSING_CONFIGURATION-DISPLAY"></a>).
                </p>
+               <p>
+                  Es ist zwar nicht zwingend erforderlich, aber sehr empfehlenswert, die virtuell deklarierten Gliederungseinheiten
+                  mit editorischen Überschriften zu versehen, um die Abschnitte verständlicher und in einem Inhaltsverzeichnis
+                  fassbarer zu machen. Dafür kann am Anfang jedes <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> ein Element <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a> (oder für mehrsprachige 
+                  Überschriften auch mehrfaches <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a>, jeweils mit einem unterschiedlichen <span class="att">@xml:lang</span> versehen)
+                  platziert werden, das an <span class="att">@ana</span> mit der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/editorialcontent.html" target="_blank">hc:EditorialContent</a><span class="loddocborder"> ‹</span> versehen ist,
+                  um deutlich zu machen, dass der Text der Überschrift nicht genuiner Bestandteil des Primärtextes ist.
+               </p>
+               <p>
+                  Das obige Beispiel mit den Dreiergruppen von Absätzen könnte also weiter angereichert etwa so aussehen:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<body>
+   <div ana="hc:Section" xml:id="division_1" n="1">
+      <head ana="hc:EditorialContent">Vorbemerkungen</head>
+      <ptr target="wit:range(p_1,p_3)"/>
+   </div>
+   <div ana="hc:Section" xml:id="division_2" n="2">
+      <head ana="hc:EditorialContent">Erörterung der Kernthese</head>
+      <ptr target="wit:range(p_4,p_6)"/>
+   </div>
+   <div ana="hc:Section" xml:id="division_3" n="3">
+      <head ana="hc:EditorialContent">Fazit</head>
+      <ptr target="wit:range(p_7,p_9)"/>
+   </div>
+</body>--></code>
+            </pre>
+        </div>
+    
+               
                
                
             </div>
