@@ -66,18 +66,36 @@
                   sie folgt dem heiEDITIONS-eigenen speziellen Schema 
                   <span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/structure_configuration_schema.rng" target="_blank">https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/structure_configuration_schema.rng</a> ,
                   das auf dem ODD-Dokument 
-                  <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/special_schemata/structure_configuration_schema.odd" target="_blank">structure_configuration_schema.odd</a> basiert.
+                  <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/special_schemata/structure_configuration_schema.odd" target="_blank">structure_configuration_schema.odd</a> basiert. Die Angabe des Schemas für Validierungszwecke
+                  kann der Musterdatei 
+                  <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/mockups/structure_xy.xml" target="_blank">structure_xy.xml</a> entnommen werden.
                </p>
                <p>
-                  Für Validierungszwecke kann also das Schema nach der Dokumentdeklaration wie folgt angegeben werden:
+                  Das erste Kindelement der Datei ist die Präfixdeklaration <a class="gi" href="../specifications/ref-listPrefixDef.html">&lt;listPrefixDef&gt;</a>, in der erstens – 
+                  wie auch sonst immer in ›heiEDITIONS‹ – das Präfix <span class="code">hc</span> für
+                  den URI der Ontologie ›heiEDITIONS Concepts‹ und zweitens das Präfix <span class="code">wit</span>
+                  als Stellvertreter für den relativen Pfad zur entsprechenden Editionsdatei deklariert werden. Das Präfix
+                  <span class="code">wit</span> fungiert also im Weiteren als Abkürzung des Pfades und des Dateinamens der Datei,
+                  in der der Text enthalten ist, auf den die virtuelle Struktur angewandt werden soll. Im folgenden
+                  Beispiel steht <span class="code">wit</span> für eine Datei, die im Projektrepositorium der Edition unter <span class="code">texts/tagebuch.xml</span>
+                  zu finden wäre; der relative Pfad geht davon aus, dass die Strukturkonfigurationsdatei im Projektrepositorium 
+                  im Verzeichnis <span class="code">configurations</span> liegt – deswegen gibt der Pfad zunächst einen Schritt ›nach oben‹
+                  ins Elternverzeichnis an.
                </p>
                
         <div class="egxml">
             <pre class="language-xml">
-                <code><!----></code>
+                <code><!--<listPrefixDef>
+   <prefixDef ident="hc" matchPattern="(.+)" replacementPattern="https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1">
+   </prefixDef>
+   <prefixDef ident="wit" matchPattern="(.+)" replacementPattern="../texts/tagebuch.xml#$1">
+   </prefixDef>
+</listPrefixDef>--></code>
             </pre>
         </div>
     
+               
+               
                
                
             </div>
