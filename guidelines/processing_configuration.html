@@ -1,0 +1,91 @@
+<!DOCTYPE HTML><html><head><title>heiEDITIONS Dokumentation | Konfigurationen für Verarbeitung und Visualisierung</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Konfigurationen für Verarbeitung und Visualisierung</nav><main>
+         <div id="PROCESSING_CONFIGURATION">
+            
+            <h1>Konfigurationen für Verarbeitung und Visualisierung</h1>
+            
+            <p>
+               Um editorische Arbeitsdateien für die verschiedenen Arten der Visualisierung aufzubereiten,
+               werden sie in heiEDITIONS durch XProc-Verarbeitungspipelines geleitet. Solche Pipelines
+               können mit bestimmten Parametern und begleitet durch Konfigurationsdateien aufgerufen werden,
+               um spezifische Informationen festzulegen, entweder pauschal für ein ganzes Editionsprojekt 
+               oder einzeln pro Editionstext.
+            </p>
+            <p>
+               Konfigurationsdateien sollen in heiEDITIONS innerhalb des GitLab-Repositoriums eines
+               Editionsprojekts im Verzeichnis <span class="code">configurations</span> vorgehalten werden.
+            </p>
+            
+            <div id="PROCESSING_CONFIGURATION-STRUCTURE">
+               
+               <h2>Konfiguration einer virtuellen Textgliederung</h2>
+               
+               <p>
+                  Editionstexte können in einem TEI-Dokument innerhalb des Elements <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>
+                  mithilfe von <a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a>, <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> und <a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a> sowie weiter mit einer beliebig
+                  tiefen Hierarchie von <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Elementen gegliedert werden. Eine solche Gliederung
+                  kann sich auf visuelle Signale einer historischen Quelle stützen oder rein editorische sein. 
+               </p>
+               <p>
+                  Es mag mindestens zwei Gründe geben, die Gliederung eines Editionstextes der eigentlichen
+                  Arbeitsdatei mit dem Text fernzuhalten und sie separat (<em>stand-off</em>)
+                  zu beschreiben:
+               </p>
+               <ul>
+                  <li>
+                     Bei langen Texten, die über eine sehr flache Struktur verfügen (z. B. mittelalterliche Versromane
+                     mit vielen Tausenden von Versen ohne eine Kapitelstruktur) kann es für eine sinnvolle Navigation
+                     und effiziente Anzeige in der Leseansicht sinnvoll sein, eine künstliche Gliederung allein für
+                     die Anzeigezwecke festzulegen. So kann ein langer Text in nicht allzu lange Abschnitte für die Anzeige 
+                     aufgeteilt werden, ohne dass dem Text in der Arbeitsdatei selbst eine eigentlich fremde und verfremdende
+                     Struktur ›aufgezwungen‹ werden müsste.
+                  </li>
+                  <li>
+                     Über eine externe Gliederungsbeschreibung wäre es auch möglich, eine alternative Gliederung festzulegen,
+                     selbst wenn in der Arbeitsdatei schon eine Gliederung vorliegt. So könnte z. B. neben der Gliederung,
+                     die sich an visuellen Merkmalen einer Quelle orientiert, parallel noch eine editorisch veränderte
+                     Gliederung erstellt werden, die zur Visualisierung in der Leseansicht herangezogen wird.
+                  </li>
+               </ul>
+               <p>
+                  Für die <em>stand-off</em>-Beschreibung einer Gliederung bedarf es jeweils pro Text einer
+                  eigenen Konfigurationsdatei (eine pauschale Gliederungskonfiguration für mehrere Texte gleichzeitig
+                  ist nicht möglich).
+                  Der Name einer solchen Datei soll sich aus <span class="code">structure_</span> und dem Namen
+                  derjenigen Editionsdatei zusammensetzen, auf deren Text sich die Gliederung bezieht. 
+                  Die Konfigurationsdatei ist eine XML-Datei mit dem Suffix <span class="code">.xml</span>. So würde 
+                  hypothetisch zu einer Editionsdatei <span class="code">texts/WelscherGast_A.xml</span> eine Strukturkonfigurationsdatei
+                  <span class="code">configurations/structure_WelscherGast_A.xml</span> existieren.
+               </p>
+               <p>
+                  Die Strukturkonfigurationsdatei hat das Wurzelelement <a class="gi" href="../specifications/ref-TEI.html">&lt;TEI&gt;</a> und verwendet
+                  auch sonst Elemente des TEI-Namensraums <span class="code">http://www.tei-c.org/ns/1.0</span>,
+                  sie folgt dem heiEDITIONS-eigenen speziellen Schema 
+                  <span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/structure_configuration_schema.rng" target="_blank">https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/structure_configuration_schema.rng</a> ,
+                  das auf dem ODD-Dokument 
+                  <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/special_schemata/structure_configuration_schema.odd" target="_blank">structure_configuration_schema.odd</a> basiert.
+               </p>
+               <p>
+                  Für Validierungszwecke kann also das Schema nach der Dokumentdeklaration wie folgt angegeben werden:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!----></code>
+            </pre>
+        </div>
+    
+               
+               
+            </div>
+            
+         </div>
+      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 01.06.2023
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script></body></html>
