@@ -1,0 +1,57 @@
+<!DOCTYPE HTML><html><head><title>heiEDITIONS Dokumentation | Bilder und Tabellen</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Bilder und Tabellen</nav><main>
+         <div id="FIGURESTABLES">
+            <h1>Bilder und Tabellen</h1>
+            <p>Alle Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) von Inhaltsflächen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentsurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>), typischerweise von Seiten (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/page.html" target="_blank">hc:Page</a><span class="loddocborder"> ‹</span>), müssen innerhalb von <a class="gi" href="../specifications/ref-facsimile.html">&lt;facsimile&gt;</a> deklariert und im Layout der entsprechenden Inhaltsfläche platziert werden. Neben Textbereichen betrifft dies u. a. auch Bereiche mit Bildern und Tabellen. Bei der Layoutdeklaration von Bildern und Tabellen ist zu beachten, dass zugehörige Über- bzw. Unterschriften in der Regel nicht Bestandteil des Bildes im Sinne des Layouts sind, sondern entweder Teil eines benachbarten Textbereichs sind oder einen eigenen Textbereich bilden.</p>
+            
+            
+            
+            <div id="FIGURESTABLES-TABLES">
+               <h2>Tabellen</h2>
+               
+               <p>
+                  In ›heiEDITIONS‹ besteht die Möglichkeit, für Tabellen die relative Breite ihrer
+                  Spalten in Bezug auf die Gesamtbreite der Tabelle zu beschreiben (bzw. in <em>born-digital</em>-Texten vozugeben).
+                  Da es im Tabellenmodell von TEI (und HTML) kein Element für Spalten gibt und die Beschreibung jeder Tabelle
+                  von der Tabellenzeile ausgeht, in der Zellen untergebracht sind, wird die Breite einer Spalte am
+                  <a class="gi" href="../specifications/ref-cell.html">&lt;cell&gt;</a> der ersten Tabellenzeile (<a class="gi" href="../specifications/ref-row.html">&lt;row&gt;</a>) angegeben. Duch die Angabe am ersten <a class="gi" href="../specifications/ref-cell.html">&lt;cell&gt;</a>
+                  einer Spalte gilt die Breite für die ganze Spalte.
+               </p>
+               <p>
+                  Für die Angabe der relativen Breite verwenden wir das Attribut <span class="att">@hei:width</span>, dessen Inhalt eine ein- bis zweistellige 
+                  Zahl sowie das Prozentzeichen ist. Beispiel:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<table>
+   <row>
+      <cell hei:width="20%">...</cell>
+      <cell hei:width="50%">...</cell>
+      <cell hei:width="30%">...</cell>
+   </row>
+</table>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Wenn die Breitenangabe nur für einige Spalten vorhanden wäre und für andere nicht, wäre es so zu verstehen,
+                  dass sich die verbleibende prozentuelle Breite (nach Abzug der explizit angegebenen Breitenanteile) gleichmäßig
+                  auf die Spalten verteilt, die keine Breitenangabe tragen.
+               </p>
+               
+                  
+                  
+          
+               
+            </div>
+         </div>
+      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 16.06.2023
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script></body></html>
