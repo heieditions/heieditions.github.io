@@ -9,13 +9,13 @@
             
             <p>
                Um editorische Arbeitsdateien für die verschiedenen Arten der Visualisierung aufzubereiten,
-               werden sie in heiEDITIONS durch XProc-Verarbeitungspipelines geleitet. Solche Pipelines
+               werden sie in ›heiEDITIONS‹ durch XProc-Verarbeitungspipelines geleitet. Solche Pipelines
                können mit bestimmten Parametern und begleitet durch Konfigurationsdateien aufgerufen werden,
                um spezifische Informationen festzulegen, entweder pauschal für ein ganzes Editionsprojekt 
                oder einzeln pro Editionstext.
             </p>
             <p>
-               Konfigurationsdateien sollen in heiEDITIONS innerhalb des GitLab-Repositoriums eines
+               Konfigurationsdateien sollen in ›heiEDITIONS‹ innerhalb des GitLab-Repositoriums eines
                Editionsprojekts im Verzeichnis <span class="code">configurations</span> vorgehalten werden.
             </p>
             
@@ -27,7 +27,7 @@
                   Editionstexte können in einem TEI-Dokument innerhalb des Elements <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>
                   mithilfe von <a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a>, <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> und <a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a> sowie weiter mit einer beliebig
                   tiefen Hierarchie von <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Elementen gegliedert werden. Eine solche Gliederung
-                  kann sich auf visuelle Signale einer historischen Quelle stützen oder rein editorische sein. 
+                  kann sich auf visuelle Signale einer historischen Quelle stützen oder rein editorisch sein. 
                </p>
                <p>
                   Es mag mindestens zwei Gründe geben, die Gliederung eines Editionstextes der eigentlichen
@@ -63,7 +63,7 @@
                <p>
                   Die Strukturkonfigurationsdatei hat das Wurzelelement <a class="gi" href="../specifications/ref-TEI.html">&lt;TEI&gt;</a> und verwendet
                   auch sonst Elemente des TEI-Namensraums <span class="code">http://www.tei-c.org/ns/1.0</span>,
-                  sie folgt dem heiEDITIONS-eigenen speziellen Schema 
+                  sie folgt aber dem ›heiEDITIONS‹-eigenen speziellen Schema 
                   <span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/structure_configuration_schema.rng" target="_blank">https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/structure_configuration_schema.rng</a> ,
                   das auf dem ODD-Dokument 
                   <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/special_schemata/structure_configuration_schema.odd" target="_blank">structure_configuration_schema.odd</a> basiert. Die Angabe des Schemas für Validierungszwecke
@@ -100,17 +100,19 @@
                   Das kann entweder <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> oder <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> sein. <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> ist zu verwenden, wenn sich die
                   virtuelle Struktur nicht nur auf den Inhalt des <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> im Editionsdokument beziehen soll,
                   sondern wenn neben <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> auch noch <a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a> oder <a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a> (oder beides)
-                  für die virtuelle Struktur zur Anwendung kommen soll. Je nach dem, ob hier <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> oder <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>
+                  für die virtuelle Struktur zur Anwendung kommen sollen. Je nach dem, ob hier <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> oder <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>
                   angegeben ist, wird in der Verarbeitung entweder die ggf. vorgefundene Gliederung (<a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a>, <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>,
                   <a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a>, <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> auf beliebiger Ebene) im gesamten <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> entfernt und durch die virtuelle Struktur ersetzt
                   oder nur ggf. vorgefundene <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Elemente innerhalb von <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>. Das Element <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>
-                  oder <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> bleibt dabei selbst (ggf. mit seinen Attributen) jeweils unangetastet, nur dessen Inhalt wird verarbeitet.
+                  oder <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> bleibt dabei selbst (ggf. mit seinen Attributen) in der Editionsdatei jeweils unangetastet, 
+                  nur dessen Inhalt wird verarbeitet.
                </p>
                <p>
-                  Der Inhalt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> oder <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> bildet dann den gewünschten Gliederungsbaum ab,
+                  Der Inhalt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> oder <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> in der Konfigurationsdatei bildet dann den gewünschten Gliederungsbaum ab,
                   dessen wesentliche Struktur entweder aus <a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a>, <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>,<a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a> und darin 
-                  befindlichen <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Strukturen besteht (wenn das zweite Kindelement von <a class="gi" href="../specifications/ref-TEI.html">&lt;TEI&gt;</a> <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>
-                  ist) oder aus <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Strukturen (wenn das zweite Kindelement von <a class="gi" href="../specifications/ref-TEI.html">&lt;TEI&gt;</a> <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>
+                  befindlichen <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Strukturen besteht (wenn in der Konfigurationsdatei 
+                  das zweite Kindelement von <a class="gi" href="../specifications/ref-TEI.html">&lt;TEI&gt;</a> <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>
+                  ist) oder aus <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Strukturen (wenn in der Konfigurationsdatei das zweite Kindelement von <a class="gi" href="../specifications/ref-TEI.html">&lt;TEI&gt;</a> <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>
                   ist).
                </p>
                <p>
@@ -119,7 +121,7 @@
                   die Funktion der Platzhalter für jene Dateibereiche, die mit den virtuellen Einheiten umschlossen werden sollen. 
                </p>
                <p>
-                  Nehmen wir als einfaches Beispiel ein <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a> an, das in der Editionsdatei eine ›flache‹ Abfolge von 
+                  Betrachten wir als einfaches Beispiel ein <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>, das in der Editionsdatei eine ›flache‹ Abfolge von 
                   neun Absätzen enthält:
                </p>
                
@@ -166,19 +168,19 @@
                   ›von–bis‹-Verweise auf die <span class="att">@xml:id</span> des jeweils ersten und letzten Elements eines
                   Bereichs angegeben, und zwar mithilfe von der TEI definierten <em>range</em>-Pointer-Syntax 
                   <sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup> mit
-                  dem vorangestellten Präfix <span class="code">wit</span>, der den Pfad zur Editionsdatei repräsentiert. Die durch ein
-                  Komma getrennten beiden Werte innerhalb der Klammern von <span class="code">range()</span> sind also
+                  dem vorangestellten Präfix <span class="code">wit</span>, das den Pfad zur Editionsdatei repräsentiert. Die durch ein
+                  Komma getrennten beiden Werte innerhalb der Klammern von <span class="code">range()</span> sind
                   die <span class="att">@xml:id</span>-Werte des ersten und letzten Elements eines Abschnitts. Bevor also 
-                  eine solche Konfiguration sinnvoll geschrieben werden, müssen im Editionsdokument 
+                  eine solche Konfiguration sinnvoll geschrieben werden kann, müssen im Editionsdokument 
                   zumindest an den betroffenen jeweils ersten und letzten Elementen eines virtuellen Abschnitts
-                  die Attribute <span class="att">@xml:id</span> vorliegen.
+                  die Attribute <span class="att">@xml:id</span> vorliegen – sonst wären die ›Grenzen‹ der virtuellen Abschnitte nicht fassbar.
                </p>
                <p>
                   Die virtuellen <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Elemente müssen das Attribut <span class="att">@ana</span> tragen. 
-                  Wenn keine andere heiEDITIONS-Klasse besser zutrifft, ist dabei als Wert das generische <span class="loddocborder">› </span><a class="loddoc" href="../concepts/section.html" target="_blank">hc:Section</a><span class="loddocborder"> ‹</span>
+                  Wenn keine andere ›heiEDITIONS‹-Klasse besser zutrifft, ist dabei als Wert das generische <span class="loddocborder">› </span><a class="loddoc" href="../concepts/section.html" target="_blank">hc:Section</a><span class="loddocborder"> ‹</span>
                   zu wählen. Das Attribut <span class="att">@xml:id</span> wird ebenfalls benötigt, wird aber – falls es fehlen sollte –
                   in der Verarbeitungspipeline ergänzt. Mit dem Attribut <span class="att">@n</span> kann eine sinnvolle Nummerierung
-                  angegeben werden. 
+                  angegeben werden, was für eine übersichtliche Navigation im Inhaltsverzeichnis hilfreich ist. 
                </p>
                <p>
                   Neben den genannten Attributen <span class="att">@ana</span>, <span class="att">@xml:id</span> und <span class="att">@n</span> kann
@@ -189,13 +191,13 @@
                <p>
                   Es ist zwar nicht zwingend erforderlich, aber sehr empfehlenswert, die virtuell deklarierten Gliederungseinheiten
                   mit editorischen Überschriften zu versehen, um die Abschnitte verständlicher und in einem Inhaltsverzeichnis
-                  fassbarer zu machen. Dafür kann am Anfang jedes <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> ein Element <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a> (oder für mehrsprachige 
+                  greifbarer zu machen. Dafür kann am Anfang jedes <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> ein Element <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a> (oder für mehrsprachige 
                   Überschriften auch mehrfaches <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a>, jeweils mit einem unterschiedlichen <span class="att">@xml:lang</span> versehen)
                   platziert werden, das an <span class="att">@ana</span> mit der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/editorialcontent.html" target="_blank">hc:EditorialContent</a><span class="loddocborder"> ‹</span> versehen ist,
-                  um deutlich zu machen, dass der Text der Überschrift nicht genuiner Bestandteil des Primärtextes ist.
+                  um deutlich zu machen, dass der Text der Überschrift  weder genuiner noch rekonstruierter Bestandteil des Primärtextes ist.
                </p>
                <p>
-                  Das obige Beispiel mit den Dreiergruppen von Absätzen könnte also weiter angereichert etwa so aussehen:
+                  Das obige Beispiel mit den Dreiergruppen von Absätzen könnte also – weiter angereichert – etwa so aussehen:
                </p>
                
         <div class="egxml">
@@ -258,7 +260,7 @@
     
                <p>
                   Die <a class="gi" href="../specifications/ref-ptr.html">&lt;ptr&gt;</a>-Elemente als Stellvertreter für die zu umschließenden Textbereiche dürfen
-                  jeweils nur auf untersten <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Ebene stehen, d. h. eine Gliederungseinheit darf nicht gleichzeitig 
+                  jeweils nur auf der untersten <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Ebene stehen, d. h. eine Gliederungseinheit darf nicht gleichzeitig 
                   <a class="gi" href="../specifications/ref-ptr.html">&lt;ptr&gt;</a> und <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> als Geschwisterelemente enthalten.
                </p>
                <p>
