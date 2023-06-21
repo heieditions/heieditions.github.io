@@ -324,7 +324,7 @@
                   einzuteilen, wird an den Elementen dieser gewählten Abschnitte
                   (<a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a>, <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>, <a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a>, <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>)
                   während der Verarbeitung am Attribut <span class="att">@rendition</span>
-                  der Wert <span class="val">hc:DisplayDivision</span> erzeugt (vgl. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span>).  
+                  der Wert <span class="val">hc:DisplayDivision</span> erzeugt (s. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span>).  
                   Bei der Festlegung, welche Elemente als solche Anzeigeabschnitte markiert werden, ist darauf
                   zu achten, dass keine Lücken verbleiben, durch die bestimmte Inhalte von der Anzeige ganz
                   ausgeschlossen würden (es sei denn, gerade dies wäre editorische Absicht).
@@ -338,7 +338,7 @@
                <p>
                   Wie schon angesprochen, ist bei der Zuweisung der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span>
                   an Gliederungseinheiten des Textes dafür Sorge zu tragen, dass innerhalb von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>
-                  keine textuellen Inhalte übrigbleiben, die von keiner <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> abgedeckt wären. 
+                  keine textuellen Inhalte übrig bleiben, die von keiner <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> abgedeckt wären. 
                   Allenfalls übergeordnete Gliederungseinheiten ohne eigentlichen Inhalt können als Ausnahme 
                   gelten, da diese – ggf. mit ihren als <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a> kodierten Überschriften – zumindest im Inhaltsverzeichnis 
                   sichtbar wären. Das folgende Codebeispiel soll dies verdeutlichen (wobei das Attribut <span class="att">@rendition</span>
@@ -362,8 +362,8 @@
     
                <p>
                   Im vorangehenden Beispiel ist es in Ordnung, dass das Element <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> mit dem Identifikator <span class="val">abschnitt_1</span>
-                  keine Kennzeichnung als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> erfährt. Zwar wird diese Gliederungseinheit als ganze
-                  nie im Hauptfenster der Leseansicht angezeigt, aber der Abschnitt ist als solcher mit seiner Überschrift 
+                  keine Kennzeichnung als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> erfährt. Zwar wird diese Gliederungseinheit als Ganzes
+                  nie im Hauptfenster der Leseansicht angezeigt, aber der Abschnitt ist als Gliederungseinheit mit seiner Überschrift 
                   zumindest im Inhaltsverzeichnis sichtbar. Der vollen Anzeige zugeführt werden stattdessen seine zwei untergeordneten Abschnitte
                   <span class="val">abschnitt_1_1</span> und <span class="val">abschnitt_1_2</span>. Wenn ein Nutzer im Inhaltsverzeichnis 
                   den Eintrag für <span class="val">abschnitt_1</span> anklickt, wird im Hauptfenster der Leseansicht das erste
@@ -371,11 +371,11 @@
                </p>
                <p>
                   Dass hingegen <span class="val">abschnitt_3</span> nicht als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> gekennzeichnet ist, wird dazu
-                  führen, dass die Anzeige dieses Abschnitts in der Leseansicht unterdrückt wird. Es gilt also: Wenn auch
+                  führen, dass die Anzeige dieses Abschnitts im Hauptfenster der Leseansicht unterbunden wird. Es gilt also: Wenn auch
                   nur ein Gliederungselement in einer Datei als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> gekennzeichnet ist,
-                  wird im heiVIEWER davon ausgegangen, dass keine Anzeige des gesamten Dokuments in der Leseansicht erwartet wird.
-                  Gliederungselemente, die weder selbst als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> gekennzeichnet sind noch solche <em>descendant</em>-Elemente
-                  enthalten, können mit ihrem textuellen Inhalt in der Leseansicht nicht angezeigt werden (das gilt
+                  wird im ›heiVIEWER‹ davon ausgegangen, dass keine Anzeige des gesamten Dokuments in der Leseansicht erwartet wird.
+                  Gliederungselemente, die weder selbst als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> gekennzeichnet sind noch solche Elemente
+                  als <em>ancestor</em> ›über sich‹ haben, können mit ihrem textuellen Inhalt in der Leseansicht nicht angezeigt werden (das gilt
                   natürlich nur, wenn die Auswertung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> für einen
                   Editionstext grundsätzlich aktiviert wurde, also wenn für einen Editionstext von einer Teilanzeige
                   ausgegangen wird). Allerdings verhindert das Fehlen der Kennzeichnung als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span>
@@ -418,6 +418,7 @@
                   im Inhaltsverzeichnis ausgewählt und im Hauptfenster der Leseansicht zur Anzeige gebracht werden.
                </p>
                <p>
+                  <span class="aside">Ausblenden im Inhaltsverzeichnis</span>
                   Unabhängig davon, ob ein Text für die Anzeige in der Leseansicht aufgeteilt wird 
                   (also ob <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> verwendet wird oder nicht), kann die Anzeige
                   bestimmter Gliederungseinheiten im Inhaltsverzeichnis unterdrückt werden. Das können z. B.
@@ -431,12 +432,12 @@
                <p>
                   Grundsätzlich gilt, dass jedes <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> (und auch <a class="gi" href="../specifications/ref-front.html">&lt;front&gt;</a> und <a class="gi" href="../specifications/ref-back.html">&lt;back&gt;</a>, ja auch <a class="gi" href="../specifications/ref-body.html">&lt;body&gt;</a>, wenn es
                   über eine eigene Überschrift verfügt) egal welcher Schachtelungsstufe im Inhaltsverzeichnis angezeigt wird.<sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup>
-                  Durch die Konfiguration der Zuweisung von <span class="val">hc:SuppressInTOC</span> ist es möglich, bestimmte Gliederungselemente
+                  Durch die Konfiguration der Zuweisung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> ist es möglich, bestimmte Gliederungselemente
                   im Inhaltsverzeichnis auszublenden. Wenn in der Leseansicht jeweils der ganze Editionstext angezeigt wird, wird 
-                  dieser Abschnitt dennoch als Teil des Textes angezeigt und kann durch händisches Scrollen erreicht werden; wenn hingegen 
+                  ein solcher Abschnitt dennoch als Teil des Textes angezeigt und kann durch händisches Scrollen erreicht werden; wenn hingegen 
                   der Text abschnittsweise präsentiert wird (per Konfiguration von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span>), wird ein
-                  Abschnitt nie eingeblendet werden können, wenn er als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> gekennzeichnet ist und kein
-                  <em>ancestor</em> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> markiert ist (die gleichzeitige Markierung ines Elements als 
+                  Abschnitt nie eingeblendet werden können, wenn er als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> gekennzeichnet ist und kein sein
+                  <em>ancestor</em>-Element als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> markiert ist (die gleichzeitige Markierung eines Elements als 
                   <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> ist nicht möglich). Sehr wohl möglich und geradezu 
                   vorgesehen ist aber die Möglichkeit, Unterabschnitte von der Anzeige im Inhaltsverzeichnis auszuschließen, aber
                   ein ihnen übergeordnetes Element als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> zu deklarieren. Dann werden die Unterabschnitte 
@@ -471,12 +472,12 @@
                <p>
                   Anzeigekonfigurationsdateien sollten – wie auch andere Konfigurationen – innerhalb des GitLab-Repositoriums eines
                   Editionsprojekts im Verzeichnis <span class="code">configurations</span> vorgehalten werden. 
-                  Für die Benennung dieser Datei soll die Konventionen gelten: 
+                  Für die Benennung einer Anzeigekonfigurationsdatei Datei soll gelten: 
                   Der Name einer solchen Datei soll sich aus <span class="code">display_</span> und dem Namen
                   derjenigen Editionsdatei zusammensetzen, auf deren Text sich die Gliederung bezieht. 
                   Die Konfigurationsdatei ist eine XML-Datei mit dem Suffix <span class="code">.xml</span>.
                   So könnte hypothetisch zu einer Editionsdatei <span class="code">texts/WelscherGast_A.xml</span> eine Anzeigekonfigurationsdatei
-                  <span class="code">configurations/display_WelscherGast_A.xml</span> existieren
+                  <span class="code">configurations/display_WelscherGast_A.xml</span> existieren.
                   Wenn es sich um eine globale Konfigurationsdatei handeln würde, die für alle Texte des Editionsprojekts gelten
                   soll, soll sie <span class="code">display_all.xml</span> heißen.
                </p>
@@ -498,7 +499,7 @@
                   (die am gewünschten Zielelement an <span class="att">@ana</span> angegeben wäre) oder schließlich 
                   gruppenweise durch die Deklaration eines XPath-Ausdrucks, der Elemente über einen mit XPath
                   definierten Pfad adressiert. (Die dritte Möglichkeit ist sicherlich am flexibelsten, ist aber momentan aus technischen
-                  Gründen noch nicht nutzbar.) Grundsätzlich können alle drei Möglichkeit auch miteinander kombiniert werden.
+                  Gründen noch nicht nutzbar.) Grundsätzlich können alle drei Möglichkeiten auch miteinander kombiniert werden.
                   Die Elemente und erwarteten Elementinhalte für die gennanten drei Konfigurationsmöglichkeiten sind:
                </p>
                <ul>
