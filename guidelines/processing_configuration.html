@@ -186,7 +186,7 @@
                   Neben den genannten Attributen <span class="att">@ana</span>, <span class="att">@xml:id</span> und <span class="att">@n</span> kann
                   an <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> ebenfalls das Attribut <span class="att">@rendition</span> mit den möglichen Werten 
                   <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> angegeben werden (dazu s. weiter unten
-                  <a class="inlink" href="#PROCESSING_CONFIGURATION-DISPLAY">Konfiguration der Anzeige im Inhaltsverzeichnis</a>).
+                  <a class="inlink" href="#PROCESSING_CONFIGURATION-DISPLAY">Konfiguration der Textaufteilung und der Anzeige im Inhaltsverzeichnis</a>).
                </p>
                <p>
                   Es ist zwar nicht zwingend erforderlich, aber sehr empfehlenswert, die virtuell deklarierten Gliederungseinheiten
@@ -307,7 +307,7 @@
             
             <div id="PROCESSING_CONFIGURATION-DISPLAY">
                
-               <h2>Konfiguration der Anzeige im Inhaltsverzeichnis</h2>
+               <h2>Konfiguration der Textaufteilung und der Anzeige im Inhaltsverzeichnis</h2>
                
                <p>
                   Aus den innerhalb von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> verwendeten Gliederungseinheiten (besonders <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>,
@@ -547,8 +547,139 @@
 </suppressInTOC>--></code>
             </pre>
         </div>
+                  
+            </div>
+            
+            <div id="PROCESSING_CONFIGURATION-VISUAL">
+               
+               <h2>Konfiguration der Übernahme visueller Informationen</h2>
+               
+               <p>
+                  Editionsdateien, die den Text einer historischen Quelle (z. B. einer Handschrift oder
+                  eines alten Drucks) dokumentieren und wiedergeben, enthalten in ›heiEDITIONS‹
+                  in der Regel auch zahlreiche Informationen über visuelle Eigenschaften der Quelle. Dazu gehören Angaben
+                  über Layout sowie verschiedene Informationen über die visuelle Beschaffenheit von Textsegmenten,
+                  etwa über verschiedene Arten der Auszeichnung oder die äußere Art von Eingriffen oder Schäden.                  
+               </p>
+               <p>
+                  Für die Leseansicht von ›heiEDITIONS‹ wird primär davon ausgegangen,
+                  dass dort solche visuellen Informationen irrelevant sind. Dennoch kann es in bestimmten Situation
+                  wichtig sein, bestimmte Informationen dieser Art für die Leseansicht zu bewahren, etwa die
+                  Angabe über Hoch- oder Tiefstellung einzelner Buchstaben. Daneben ist auch die Möglichkeit 
+                  nicht völlig ausgeschlossen, alle visuellen Informationen der Arbeitsdatei in die Leseansicht-Kodierung
+                  zu übernehmen, wenn das aus spezifischen Gründen erforderlich wäre.
+               </p>
+               <p>
+                  Für die Fälle, in denen visuelle Informationen für die Leseansicht weder pauschal getilgt noch 
+                  komplett übernommen werden sollen, gibt es die Möglichkeit einer Konfiguration. Eine solche Konfiguration 
+                  erfolgt in einer globalen oder textspezifischen Konfigurationsdatei, deren Name auf <span class="code">display_</span>
+                  anfängt, wie schon oben in <a class="inlink" href="#PROCESSING_CONFIGURATION-DISPLAY">Konfiguration der Textaufteilung und der Anzeige im Inhaltsverzeichnis</a> beschrieben.
+                  Sie kann (und soll) in derselben Datei wie die Konfiguration der Aufteilung der Textanzeige und der
+                  Anzeige im Inhaltsverzeichnis erfolgen, um die Anzahl der Konfigurationsdateien nicht ohne Not wachsen zu lassen.
+                  Für den Speicherort, die Dateibenennung, das Schema, den Namensraum und das Wurzelelement gilt dasselbe
+                  wie oben in <a class="inlink" href="#PROCESSING_CONFIGURATION-DISPLAY">Konfiguration der Textaufteilung und der Anzeige im Inhaltsverzeichnis</a> beschrieben.
+               </p>
+               <p>
+                  Aktuell ist nur für die differenzierte Behandlung der ›heiEDITIONS‹-Klassen im Attribut
+                  <span class="att">@rendition</span> eine Konfiguration vorgesehen. Dafür wird auf der Kindebene des Wurzelelements <a class="gi" href="../specifications/ref-configuration.html">&lt;configuration&gt;</a> 
+                  das Element <a class="gi" href="../specifications/ref-renditionFilter.html">&lt;renditionFilter&gt;</a> angelegt. <a class="gi" href="../specifications/ref-renditionFilter.html">&lt;renditionFilter&gt;</a> verfügt seinerseits über zwei möglichen Kindelemente,
+                  die nicht beide gleichzeitig vorhanden sein können:
+               </p>
+               <ul>
+                  <li><a class="gi" href="../specifications/ref-include.html">&lt;include&gt;</a>: gibt in positiver Weise ›heiEDITIONS‹-Klassen an, 
+                     die für die Leseansicht bewahrt werden sollen, ggf. auch nur an einem spezifischen Element</li>
+                  <li><a class="gi" href="../specifications/ref-exclude.html">&lt;exclude&gt;</a>: gibt in negativer Weise ›heiEDITIONS‹-Klassen an, 
+                     die für die Leseansicht ausgeschlossen werden sollen, ggf. auch nur an einem spezifischen Element</li>
+               </ul>
+               <p>
+                  Die Konfiguration funktioniert also entweder als ›Positivliste‹ oder als ›Negativliste‹,
+                  eine Kombination der beiden Möglichkeiten ist global oder für einen bestimmten Editionstext nicht möglich.
+               </p>
+               <p>
+                  Die Elemente <a class="gi" href="../specifications/ref-include.html">&lt;include&gt;</a> und <a class="gi" href="../specifications/ref-exclude.html">&lt;exclude&gt;</a> sehen als ihren Inhalt die Kindelemente
+                  <a class="gi" href="../specifications/ref-class.html">&lt;class&gt;</a> vor, in denen jeweils als Textknoten eine ›heiEDITIONS‹-Klasse
+                  (ohne das Präfix <span class="code">hc</span>) angegeben wird, z. B.:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<include>
+   <class>Superscript</class>
+   <class>Subscript</class>
+   <class>Centered</class>
+</include>--></code>
+            </pre>
+        </div>
     
-              
+               <p>
+                  Durch diese Konfiguration werden an die Klassenangaben <span class="val">hc:Superscript</span>, <span class="val">hc:Subscript</span>
+                  und <span class="val">hc:Centered</span>, wenn sie an beliebigen Elementen im Attribut <span class="att">@rendition</span> vorkommen würden,
+                  für die Leseansicht bewahrt; alle anderen ggf. in <span class="att">@rendition</span> vorkommenden Klassen werden entfernt.
+                  Wenn die Konfiguration nicht für alle, sondern nur ausgewählte Elemente gelten soll, kann diese Einschränkung
+                  an <a class="gi" href="../specifications/ref-class.html">&lt;class&gt;</a> mit dem Attribut <span class="att">@onElement</span> vorgenommen werden. Im Attribut <span class="att">@onElement</span> 
+                  können – in der sogenannten Clark-Syntax<sup><a href="#note_3" id="note_reference_3" class="note_mark">3)</a></sup> und bei Mehrfachangaben durch Leerzeichen getrennt – Elemente aufgelistet werden, 
+                  auf die die Konfiguration eingeschränkt werden soll, z. B.:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<include>
+   <class onElement="{http://www.tei-c.org/ns/1.0}seg {http://www.tei-c.org/ns/1.0}hi">Superscript</class>
+   <class onElement="{http://www.tei-c.org/ns/1.0}seg {http://www.tei-c.org/ns/1.0}hi">Subscript</class>
+   <class onElement="{http://www.tei-c.org/ns/1.0}p">Centered</class>
+</include>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Durch diese Konfiguration werden nur an den explizit gelisteten Elementen <a class="gi" href="../specifications/ref-seg.html">&lt;seg&gt;</a> und
+                  <a class="gi" href="../specifications/ref-hi.html">&lt;hi&gt;</a> bzw. <a class="gi" href="../specifications/ref-p.html">&lt;p&gt;</a> die Klassen <span class="loddocborder">› </span><a class="loddoc" href="../concepts/superscript.html" target="_blank">hc:Superscript</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/subscript.html" target="_blank">hc:Subscript</a><span class="loddocborder"> ‹</span>
+                  bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/centered.html" target="_blank">hc:Centered</a><span class="loddocborder"> ‹</span> übernommen, an allen anderen Elementen werden diese und alle anderen
+                  <span class="att">@rendition</span>-Werte entfernt.
+               </p>
+               <p>
+                  Das alternativ zu <a class="gi" href="../specifications/ref-include.html">&lt;include&gt;</a> zur Verfügung stehende Element <a class="gi" href="../specifications/ref-exclude.html">&lt;exclude&gt;</a> funktioniert
+                  entsprechend ähnlich, nur eben mit umgekehrter Wirkung: Es werden alle Angaben an <span class="att">@rendition</span>
+                  für die Leseansicht übernommen, außer denen, die in <a class="gi" href="../specifications/ref-exclude.html">&lt;exclude&gt;</a> explizit angegeben werden,
+                  z. B.:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<exclude>
+   <class>RubbedOff</class>
+   <class>CutOff</class>
+   <class>TornOff</class>
+</exclude>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Durch eine solche Konfiguration werden nur die Klassen <span class="loddocborder">› </span><a class="loddoc" href="../concepts/rubbedoff.html" target="_blank">hc:RubbedOff</a><span class="loddocborder"> ‹</span>, <span class="loddocborder">› </span><a class="loddoc" href="../concepts/cutoff.html" target="_blank">hc:CutOff</a><span class="loddocborder"> ‹</span>
+                  sowie <span class="loddocborder">› </span><a class="loddoc" href="../concepts/tornoff.html" target="_blank">hc:TornOff</a><span class="loddocborder"> ‹</span> aus der Kodierung für die Leseansicht entfernt, an allen Elementen,
+                  an denen sie in <span class="att">@rendition</span> vorkommen würden. Mit einer Einschränkung auf bestimmte Elemente
+                  könnte die Konfiguration so aussehen:
+               </p>
+               
+        <div class="egxml">
+            <pre class="language-xml">
+                <code><!--<exclude>
+   <class onElement="{http://www.tei-c.org/ns/1.0}del">RubbedOff</class>
+   <class onElement="{http://www.tei-c.org/ns/1.0}del">CutOff</class>
+   <class onElement="{http://www.tei-c.org/ns/1.0}del">TornOff</class>
+</exclude>--></code>
+            </pre>
+        </div>
+    
+               <p>
+                  Auf diese Weise würden die angeführten drei Klassen jeweils nur vom Element <a class="gi" href="../specifications/ref-del.html">&lt;del&gt;</a> entfernt,
+                  beispielsweise an <a class="gi" href="../specifications/ref-gap.html">&lt;gap&gt;</a> blieben sie weiterhin erhalten.<sup><a href="#note_4" id="note_reference_4" class="note_mark">4)</a></sup>
+               </p>
+               <p>
+                  Für das ›heiEDITIONS‹-eigene Attribut <span class="att">@hei:color</span> gibt es keine
+                  differenzierte Konfigurationsmöglichkeit für einzelne Farben, in einer Verarbeitungspipeline kann aber festgelegt werden,
+                  ob dieses Attribut als solches für die Leseansicht übernommen wird oder entfernt wird.
+               </p>
                
             </div>
             
@@ -559,6 +690,14 @@
                      <span class="loddocborder">› </span><a class="loddoc" href="../concepts/advertisement.html" target="_blank">hc:Advertisement</a><span class="loddocborder"> ‹</span>, <span class="loddocborder">› </span><a class="loddoc" href="../concepts/advertisinginperiodical.html" target="_blank">hc:AdvertisingInPeriodical</a><span class="loddocborder"> ‹</span>, <span class="loddocborder">› </span><a class="loddoc" href="../concepts/deathnotice.html" target="_blank">hc:DeathNotice</a><span class="loddocborder"> ‹</span>.
                      Künftig soll es auch möglich sein, diese Voreinstellung gezielt zu überschreiben, entweder pauschal pro Klasse
                      oder individuell per Angabe der <span class="att">@xml:id</span>.
+                  </div><div class="endnote" id="note_3"><a class="endnote_number" href="#note_reference_3">3</a>
+                     Vgl. <span class="outlinkprefix">↪ </span><a class="outlink" href="http://www.jclark.com/xml/xmlns.htm" target="_blank">http://www.jclark.com/xml/xmlns.htm</a>
+                  </div><div class="endnote" id="note_4"><a class="endnote_number" href="#note_reference_4">4</a>
+                     In der konkreten Implementierung der Verarbeitung solcher Konfigurationen gilt für
+                     die Elemente <a class="gi" href="../specifications/ref-hi.html">&lt;hi&gt;</a> und <a class="gi" href="../specifications/ref-seg.html">&lt;seg&gt;</a>, dass sie sogar als Elemente entfernt werden und
+                     nur ihr Inhalt bewahrt bleibt, wenn nach der Umsetzung solcher Konfigurationen
+                     durch <a class="gi" href="../specifications/ref-include.html">&lt;include&gt;</a> und <a class="gi" href="../specifications/ref-exclude.html">&lt;exclude&gt;</a> nur das Element selbst ohne weitere Attribute
+                     übrig bleiben würde. Die beiden Elemente würden ohne Attribute ihre Aussagekraft verlieren.
                   </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
                         Letzte Aktualisierung: 22.06.2023
                         ·
