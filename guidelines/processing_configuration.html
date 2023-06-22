@@ -30,6 +30,7 @@
                   kann sich auf visuelle Signale einer historischen Quelle stützen oder rein editorisch sein. 
                </p>
                <p>
+                  <span class="aside">Gliederung <em>stand-off</em></span>
                   Es mag mindestens zwei Gründe geben, die Gliederung eines Editionstextes der eigentlichen
                   Arbeitsdatei mit dem Text fernzuhalten und sie separat (<em>stand-off</em>)
                   zu beschreiben:
@@ -176,9 +177,9 @@
                   die Attribute <span class="att">@xml:id</span> vorliegen – sonst wären die ›Grenzen‹ der virtuellen Abschnitte nicht fassbar.
                </p>
                <p>
-                  Die virtuellen <span class="gi">&lt;div&gt;</span>-Elemente müssen das Attribut <span class="att">@ana</span> tragen. 
-                  Wenn keine andere ›heiEDITIONS‹-Klasse besser zutrifft, ist dabei als Wert das generische <span class="loddocborder">› </span><a class="loddoc" href="../concepts/section.html" target="_blank">hc:Section</a><span class="loddocborder"> ‹</span>
-                  zu wählen. Das Attribut <span class="att">@xml:id</span> wird ebenfalls benötigt, wird aber – falls es fehlen sollte –
+                  Es wird empfohlen, ist aber nicht zwingend notwendig, dass die virtuellen <span class="gi">&lt;div&gt;</span>-Elemente das Attribut <span class="att">@ana</span> tragen.
+                  Wenn keine andere ›heiEDITIONS‹-Klasse besser zutrifft, kann dabei als Wert das generische <span class="loddocborder">› </span><a class="loddoc" href="../concepts/section.html" target="_blank">hc:Section</a><span class="loddocborder"> ‹</span>
+                  gewählt werden. Das Attribut <span class="att">@xml:id</span> wird ebenfalls benötigt, wird aber – falls es fehlen sollte –
                   in der Verarbeitungspipeline ergänzt. Mit dem Attribut <span class="att">@n</span> kann eine sinnvolle Nummerierung
                   angegeben werden, was für eine übersichtliche Navigation im Inhaltsverzeichnis hilfreich ist. 
                </p>
@@ -189,8 +190,8 @@
                   <a class="inlink" href="#PROCESSING_CONFIGURATION-DISPLAY">Konfiguration der Textaufteilung und der Anzeige im Inhaltsverzeichnis</a>).
                </p>
                <p>
-                  Es ist zwar nicht zwingend erforderlich, aber sehr empfehlenswert, die virtuell deklarierten Gliederungseinheiten
-                  mit editorischen Überschriften zu versehen, um die Abschnitte verständlicher und in einem Inhaltsverzeichnis
+                  Sinnvollerweise sollten die virtuell deklarierten Gliederungseinheiten
+                  mit editorischen Überschriften versehen werden, um die Abschnitte verständlicher und in einem Inhaltsverzeichnis
                   greifbarer zu machen. Dafür kann am Anfang jedes <span class="gi">&lt;div&gt;</span> ein Element <span class="gi">&lt;head&gt;</span> (oder für mehrsprachige 
                   Überschriften auch mehrfaches <span class="gi">&lt;head&gt;</span>, jeweils mit einem unterschiedlichen <span class="att">@xml:lang</span> versehen)
                   platziert werden, das an <span class="att">@ana</span> mit der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/editorialcontent.html" target="_blank">hc:EditorialContent</a><span class="loddocborder"> ‹</span> versehen ist,
