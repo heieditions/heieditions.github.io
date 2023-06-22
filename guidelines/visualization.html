@@ -14,7 +14,7 @@
                üblichen semantisch-logischen TEI-Kodierung generiert wird, die in der Regel auch der Arbeitskodierung
                der Editionsprojekte entspricht, basiert die Quellenansicht auf einer sekundär abgeleiteten 
                TEI-Code-Struktur, die wir als ›sourceDoc-Kodierung‹ bezeichnen, weil das 
-               oberste Containerelement für alle eigentlichen Inhalte <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> ist (anstatt von <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a>). 
+               oberste Containerelement für alle eigentlichen Inhalte <span class="gi">&lt;sourceDoc&gt;</span> ist (anstatt von <span class="gi">&lt;text&gt;</span>). 
             </p>
             
             <div id="VIS-READING">
@@ -31,26 +31,26 @@
                   Die Quellenansicht ist ein Visualisierungsmodus, der auf der physisch-visuellen Struktur eines Inhaltsträgers basiert.
                   Eine solche Struktur wird durch Inhaltsflächen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentsurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>), Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) 
                   sowie (bei Textbereichen) Zeilen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/line.html" target="_blank">hc:Line</a><span class="loddocborder"> ‹</span>) konstituiert. Den genannten drei Ebenen entsprechen
-                  in der TEI die Elemente <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>, <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> und <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a>. Für die Quellenansicht wird
+                  in der TEI die Elemente <span class="gi">&lt;surface&gt;</span>, <span class="gi">&lt;zone&gt;</span> und <span class="gi">&lt;line&gt;</span>. Für die Quellenansicht wird
                   in ›heiEDITIONS‹ die primäre semantisch-logisch strukturierte TEI-Kodierung aus
-                  <a class="gi" href="../specifications/ref-text.html">&lt;text&gt;</a> in <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> umgewandelt, wo <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>, <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> und <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a> die 
+                  <span class="gi">&lt;text&gt;</span> in <span class="gi">&lt;sourceDoc&gt;</span> umgewandelt, wo <span class="gi">&lt;surface&gt;</span>, <span class="gi">&lt;zone&gt;</span> und <span class="gi">&lt;line&gt;</span> die 
                   maßgeblichen strukturellen Containerelemente sind.                  
                </p>
                <p>
-                  Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> wird in ›heiEDITIONS‹ nicht nur für Inhaltsbereiche 
+                  Das Element <span class="gi">&lt;zone&gt;</span> wird in ›heiEDITIONS‹ nicht nur für Inhaltsbereiche 
                   eingesetzt, die den jeweiligen konkreten Inhalt tragen, sondern auch für die Gruppierung von 
                   Inhaltsbereichen zwecks Layouterfassung. Die deklarative Dokumentation der groben Anordnung von
                   Inhaltsbereichen auf einer Inhaltsfläche wird in der Quellenansicht-Visualisierung in CSS-Flexbox-Strukturen
                   umgesetzt, wodurch eine der Anordnung in der Quelle grob nachempfundene HTML-Anzeige möglich wird.
                </p>
                <p>
-                  Neben geschachtelten Gruppen von <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> innerhalb eines <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> stellt ›heiEDITIONS‹
-                  mit <a class="gi" href="../specifications/ref-hei:box.html">&lt;hei:box&gt;</a>eine Erweiterung zur Verfügung, mit der innerhalb von <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> ein <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> jeweils in eine 
+                  Neben geschachtelten Gruppen von <span class="gi">&lt;zone&gt;</span> innerhalb eines <span class="gi">&lt;surface&gt;</span> stellt ›heiEDITIONS‹
+                  mit <span class="gi">&lt;hei:box&gt;</span>eine Erweiterung zur Verfügung, mit der innerhalb von <span class="gi">&lt;sourceDoc&gt;</span> ein <span class="gi">&lt;surface&gt;</span> jeweils in eine 
                   vorkonfigurierte übergeordnete Struktur eingebettet werden kann, die typischerweise mit editorischen Inhalten 
-                  und Übersetzungen befüllt werden kann. Pro <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> (das in der Regel einer Seite der Quelle entspricht) 
-                  kann sich auf diese Weise jeweils eine Struktur von Inhaltscontainern ergeben, in die ein <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> eingebettet ist. 
+                  und Übersetzungen befüllt werden kann. Pro <span class="gi">&lt;surface&gt;</span> (das in der Regel einer Seite der Quelle entspricht) 
+                  kann sich auf diese Weise jeweils eine Struktur von Inhaltscontainern ergeben, in die ein <span class="gi">&lt;surface&gt;</span> eingebettet ist. 
                   Solche Strukturen stellen eine technische Visualisierungsschnittstelle dar und sollten – wie im Übrigen aber auch
-                  <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> als solches – nie direkt von Herausgebern angelegt werden.
+                  <span class="gi">&lt;sourceDoc&gt;</span> als solches – nie direkt von Herausgebern angelegt werden.
                </p>
                
                <div id="VIS-LAYOUT">
@@ -58,24 +58,24 @@
                   <h3>Mapping zwischen Layoutdeklaration und Visualisierungstechnologie</h3>
                   
                   <p>
-                     Wenn <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a> in <a class="gi" href="../specifications/ref-sourceDoc.html">&lt;sourceDoc&gt;</a> das oberste einer Seite zugeordnete Containerelement ist 
-                     (also wenn es in keine <a class="gi" href="../specifications/ref-hei:box.html">&lt;hei:box&gt;</a>-Struktur eingebettet ist), entspricht es einem obersten
-                     <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> für die jeweilige Seite in HTML. Die <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>-Elemente auf Kindebene von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>
+                     Wenn <span class="gi">&lt;surface&gt;</span> in <span class="gi">&lt;sourceDoc&gt;</span> das oberste einer Seite zugeordnete Containerelement ist 
+                     (also wenn es in keine <span class="gi">&lt;hei:box&gt;</span>-Struktur eingebettet ist), entspricht es einem obersten
+                     <span class="gi">&lt;div&gt;</span> für die jeweilige Seite in HTML. Die <span class="gi">&lt;zone&gt;</span>-Elemente auf Kindebene von <span class="gi">&lt;surface&gt;</span>
                      werden dann in der Dokumentreihenfolge nacheinander ausgelesen und ihrerseits jeweils zu
-                     <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a> umgewandelt. Dabei gilt es zu unterscheiden:
+                     <span class="gi">&lt;div&gt;</span> umgewandelt. Dabei gilt es zu unterscheiden:
                   </p>
                   <ul>
                      <li>
-                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Gruppierungsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/groupingzone.html" target="_blank">hc:GroupingZone</a><span class="loddocborder"> ‹</span>) dar, 
+                        Das Element <span class="gi">&lt;zone&gt;</span> stellt einen Gruppierungsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/groupingzone.html" target="_blank">hc:GroupingZone</a><span class="loddocborder"> ‹</span>) dar, 
                         d. h. einen Container, dessen Komponenten 
                         in einem bestimmten Layout angeordnet werden sollen. Solche Gruppierungsbereiche werden mit CSS
                         als <em>flex container</em> ausgewiesen.
                      </li>
                      <li>
-                        Das Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> stellt einen Inhaltsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) dar, 
+                        Das Element <span class="gi">&lt;zone&gt;</span> stellt einen Inhaltsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) dar, 
                         das unmittelbar einen Inhalt enthält, z. B. Zeilen (wenn es sich um einen Textbereich handeln würde).
-                        Inhaltsbereiche werden bei der Umwandlung in HTML zu <a class="gi" href="../specifications/ref-div.html">&lt;div&gt;</a>-Elementen, die entweder
-                        Kindelemente des Seitencontainers (HTML-Entsprechung von <a class="gi" href="../specifications/ref-surface.html">&lt;surface&gt;</a>)  
+                        Inhaltsbereiche werden bei der Umwandlung in HTML zu <span class="gi">&lt;div&gt;</span>-Elementen, die entweder
+                        Kindelemente des Seitencontainers (HTML-Entsprechung von <span class="gi">&lt;surface&gt;</span>)  
                         oder Kindelemente eines Layout-Containers (Entsprechung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/groupingzone.html" target="_blank">hc:GroupingZone</a><span class="loddocborder"> ‹</span>) sind.
                         Im letzteren Fall funktionieren sie in einem <em>flex container</em> als dessen <em>flex items</em>.
                         Jedenfalls beinhalten Inhaltsbereiche ihrerseits keine Gruppierungsbereiche, sondern unmittelbar den 
@@ -84,7 +84,7 @@
                   </ul>
                   <p>
                      Um die Unterscheidung zwischen Gruppierungsbereichen und Inhaltsbereichen für die Visualisierung
-                     zu vereinfachen, wird an das jeweilige <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a>/<span class="att">@ana</span> beim Durchlaufen der TEI-Verarbeitungspipeline
+                     zu vereinfachen, wird an das jeweilige <span class="gi">&lt;zone&gt;</span>/<span class="att">@ana</span> beim Durchlaufen der TEI-Verarbeitungspipeline
                      eindeutig entweder <span class="val">hc:GroupingZone</span> oder <span class="val">hc:ContentZone</span> gesetzt.
                   </p>
                   <p>
@@ -103,7 +103,7 @@
                   </ul>
                   <p>
                      <span class="aside">horizontale Container</span>
-                     Für ein <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> mit der Angabe <span class="val">hc:HorizontalLayout</span> sind ferner 
+                     Für ein <span class="gi">&lt;zone&gt;</span> mit der Angabe <span class="val">hc:HorizontalLayout</span> sind ferner 
                      folgende Attributangaben möglich:
                   </p>
                   <ul>
@@ -165,7 +165,7 @@
                      <span class="aside">vertikale Container</span>
                      Um auf oberster Ebene der Elemente einer Inhaltsfläche eine vertikale Anordnung festzulegen, ist
                      keine explizite Angabe eines vertikalen Containers notwendig. Deswegen werden vertikale Container 
-                     nur für ggf. tiefer geschachtelte Bereiche verwendet. Für ein <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> mit der Angabe <span class="val">hc:VerticalLayout</span> sind  
+                     nur für ggf. tiefer geschachtelte Bereiche verwendet. Für ein <span class="gi">&lt;zone&gt;</span> mit der Angabe <span class="val">hc:VerticalLayout</span> sind  
                      folgende Attributangaben möglich:
                   </p>
                   <ul>
@@ -269,7 +269,7 @@
                      </li>
                   </ul>
                   <p>
-                     Zusammengefasst kommen an <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> folgende Kombinationen von Attributen und Attributwerten vor,
+                     Zusammengefasst kommen an <span class="gi">&lt;zone&gt;</span> folgende Kombinationen von Attributen und Attributwerten vor,
                      die für die Ausrichtung in einem <em>flex container</em> auszuwerten sind:
                   </p>
                   <div style="overflow-x:auto;"><table>
@@ -332,7 +332,7 @@
                   </p>
                   <p>
                      <span class="aside"><span class="att">@rotate</span></span>
-                     An jedem Element <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> kann mit dem Attribut <span class="att">@rotate</span> die Drehung des Bereichs 
+                     An jedem Element <span class="gi">&lt;zone&gt;</span> kann mit dem Attribut <span class="att">@rotate</span> die Drehung des Bereichs 
                      angegeben werden. Sie wird in der Visualisierung voraussichtlich nur verbal angezeigt und nicht nachgeahmt.
                   </p>                 
                   <p>

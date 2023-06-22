@@ -19,13 +19,13 @@
                </p>
                <p>
                   Bei einer Textedition, die visuelle Strukturen eines Textträgers dokumentiert, wird auch in Listen die Erfassung 
-                  des Zeilenfalls mit <a class="gi" href="../specifications/ref-lb.html">&lt;lb&gt;</a> erwartet; vom Layout her sind Listen in normalen Textbereichen untergebracht, deren
+                  des Zeilenfalls mit <span class="gi">&lt;lb&gt;</span> erwartet; vom Layout her sind Listen in normalen Textbereichen untergebracht, deren
                   wesentliche visuelle Baueinheit die Zeile ist. Das unterscheidet Listen von Tabellen, die nicht in Zeilen, 
                   sondern in Zeilen <em>und</em> Spalten angeordnet sind und vom Layout her nicht in Textbereichen,
                   sondern in speziellen Tabellenbereichen stehen.
                </p>
                <p>
-                  Listen bestehen aus Listeneinträgen. Diese Grundstruktur wird durch die Elemente <a class="gi" href="../specifications/ref-list.html">&lt;list&gt;</a> und <a class="gi" href="../specifications/ref-item.html">&lt;item&gt;</a>
+                  Listen bestehen aus Listeneinträgen. Diese Grundstruktur wird durch die Elemente <span class="gi">&lt;list&gt;</span> und <span class="gi">&lt;item&gt;</span>
                   abgebildet, z. B.:
                </p>
                
@@ -40,7 +40,7 @@
         </div>
     
                <p>
-                  Listen können Überschriften tragen, die mit dem Element <a class="gi" href="../specifications/ref-head.html">&lt;head&gt;</a> als erstes Kindelement von <a class="gi" href="../specifications/ref-list.html">&lt;list&gt;</a>
+                  Listen können Überschriften tragen, die mit dem Element <span class="gi">&lt;head&gt;</span> als erstes Kindelement von <span class="gi">&lt;list&gt;</span>
                   zu kodieren sind, z. B.:
                </p>
                
@@ -58,8 +58,8 @@
                <p>
                   Listeneinträge können jeweils nicht weiter unterteilte textuelle Einheiten bilden, häufig haben sie aber
                   auch eine binäre Struktur, die aus einer Beschriftung (<em>label</em>) und weiterem Inhalt besteht.
-                  Eine solche Beschriftung wird jeweils mit <a class="gi" href="../specifications/ref-label.html">&lt;label&gt;</a> kodiert, das in ›heiEDITIONS‹
-                  immer als erstes Elementkind eines <a class="gi" href="../specifications/ref-item.html">&lt;item&gt;</a> zu platzieren ist.<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
+                  Eine solche Beschriftung wird jeweils mit <span class="gi">&lt;label&gt;</span> kodiert, das in ›heiEDITIONS‹
+                  immer als erstes Elementkind eines <span class="gi">&lt;item&gt;</span> zu platzieren ist.<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
                   Eine solche Liste mit Beschriftungen ihrer Einträge hat dann etwa die folgende schematische Struktur:
                </p>
                
@@ -98,7 +98,7 @@
                <p>
                   Falls in einer Liste Einträge mit unterschiedlicher innerer Struktur gemischt vorkämen, sodass es sinnvoll sein
                   könnte, diejenigen Einträge, die eine Beschriftung enthalten, jeweils einzeln zu kennzeichnen, kann
-                  an <a class="gi" href="../specifications/ref-item.html">&lt;item&gt;</a> mit <span class="att">@ana</span> die folgende Typangabe gemacht werden:
+                  an <span class="gi">&lt;item&gt;</span> mit <span class="att">@ana</span> die folgende Typangabe gemacht werden:
                </p>
                <p class="resdef">
                   <a class="refboxlink" href="../concepts/labeledlistitem.html"><span class="val">hc:LabeledListItem</span></a> ( ›beschrifteter Listeneintrag‹ ): Listeneintrag mit einer binären Struktur in der Form <em>Beschriftung – Inhalt</em>.
@@ -124,17 +124,17 @@
                   
                   <p>
                      Wenn es bei der Edition von Listen aus historischen Vorlagen erwünscht ist, bestimmte visuelle Eigenschaften
-                     zu dokumentieren, ist es an <a class="gi" href="../specifications/ref-list.html">&lt;list&gt;</a> bzw. <a class="gi" href="../specifications/ref-item.html">&lt;item&gt;</a> mit <span class="att">@rendition</span> möglich. So ist 
+                     zu dokumentieren, ist es an <span class="gi">&lt;list&gt;</span> bzw. <span class="gi">&lt;item&gt;</span> mit <span class="att">@rendition</span> möglich. So ist 
                      auch immer dann vorzugehen, wenn Listeneinträgen zwecks besserer visueller Erkennbarkeit Symbole vorangestellt sind.
                      Solche Gliederungssymbole (wie Minuszeichen, Kreise oder Sterne) sollten vorzugsweise nicht explizit 
-                     mit <a class="gi" href="../specifications/ref-label.html">&lt;label&gt;</a> transkribiert werden (was eine zweiteilige Struktur der Einträge suggerieren würde),
-                     sondern eine solche visuelle Umsetzung der Liste sollte an <a class="gi" href="../specifications/ref-list.html">&lt;list&gt;</a> pauschal mit <span class="att">@rendition</span>
+                     mit <span class="gi">&lt;label&gt;</span> transkribiert werden (was eine zweiteilige Struktur der Einträge suggerieren würde),
+                     sondern eine solche visuelle Umsetzung der Liste sollte an <span class="gi">&lt;list&gt;</span> pauschal mit <span class="att">@rendition</span>
                      angegeben werden. Bei Listen mit durchnummerierten Einträgen liegt es im Ermessen des Herausgebers,
-                     ob er die Nummerierung an jedem <a class="gi" href="../specifications/ref-item.html">&lt;item&gt;</a> als Beschriftung explizit mit <a class="gi" href="../specifications/ref-label.html">&lt;label&gt;</a> erfasst oder 
-                     sie an <a class="gi" href="../specifications/ref-list.html">&lt;list&gt;</a> pauschal mit <span class="att">@rendition</span> angibt.
+                     ob er die Nummerierung an jedem <span class="gi">&lt;item&gt;</span> als Beschriftung explizit mit <span class="gi">&lt;label&gt;</span> erfasst oder 
+                     sie an <span class="gi">&lt;list&gt;</span> pauschal mit <span class="att">@rendition</span> angibt.
                   </p>
                   <p>
-                     Für die Erfassung von vorangestellten Symbolen oder Nummern bei Einträgen einer Liste können an <a class="gi" href="../specifications/ref-list.html">&lt;list&gt;</a>
+                     Für die Erfassung von vorangestellten Symbolen oder Nummern bei Einträgen einer Liste können an <span class="gi">&lt;list&gt;</span>
                      mit <span class="att">@rendition</span> folgende Klassenangaben gemacht werden:<sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup>
                   </p>
                   <p class="resdef">
@@ -149,14 +149,14 @@
                   <p>
                      Listen mit zweigeteilter Struktur ihrer Einträge verwenden manchmal sog. Führungspunkte als
                      visuelles Trennmittel und auch als Raumfüller zwischen der Beschriftung und dem sonstigen Inhalt eines Eintrags.
-                     Diese visuelle Eigenschaft kann an <a class="gi" href="../specifications/ref-list.html">&lt;list&gt;</a> ebenfalls mit <span class="att">@rendition</span> angegeben werden:
+                     Diese visuelle Eigenschaft kann an <span class="gi">&lt;list&gt;</span> ebenfalls mit <span class="att">@rendition</span> angegeben werden:
                   </p>
                   <p class="resdef">
                      <a class="refboxlink" href="../concepts/dotleaders.html"><span class="val">hc:DotLeaders</span></a> ( ›Führungspunkte‹ ): Visueller Gegenstand, der Führungspunkte verwendet, typischerweise eine Liste, deren (zweigeteilte) Einträge Führungspunkte enthalten, oder ein einzelner (zweigeteilter) Listeneintrag mit Führungspunkten, oder der erste Teil eines (zweigeteilten) Listeneintrags, dem Führungspunkte folgen.
                   </p>
                   <p>
                      Falls nicht jeder Eintrag in einer Liste mit Führungspunkten versehen ist, kann die Angabe von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/dotleaders.html" target="_blank">hc:DotLeaders</a><span class="loddocborder"> ‹</span>
-                     auch an einzelnen <a class="gi" href="../specifications/ref-item.html">&lt;item&gt;</a>-Elementen erfolgen.
+                     auch an einzelnen <span class="gi">&lt;item&gt;</span>-Elementen erfolgen.
                   </p>
                   
                   
@@ -168,9 +168,9 @@
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                      Die TEI-Guidelines bevorzugen die Platzierung der Beschriftungen von Listeneinträgen außerhalb des
-                     <a class="gi" href="../specifications/ref-item.html">&lt;item&gt;</a>, sodass das <a class="gi" href="../specifications/ref-label.html">&lt;label&gt;</a> als <em>preceding sibling</em> des entsprechenden
-                     <a class="gi" href="../specifications/ref-item.html">&lt;item&gt;</a> auf Kindebene von <a class="gi" href="../specifications/ref-list.html">&lt;list&gt;</a> steht. In ›heiEDITIONS‹ halten wir es für 
-                     angebracht, einen Listeneintrag samt seiner Beschriftung als eine Einheit zu betrachten, die durch <a class="gi" href="../specifications/ref-item.html">&lt;item&gt;</a>
+                     <span class="gi">&lt;item&gt;</span>, sodass das <span class="gi">&lt;label&gt;</span> als <em>preceding sibling</em> des entsprechenden
+                     <span class="gi">&lt;item&gt;</span> auf Kindebene von <span class="gi">&lt;list&gt;</span> steht. In ›heiEDITIONS‹ halten wir es für 
+                     angebracht, einen Listeneintrag samt seiner Beschriftung als eine Einheit zu betrachten, die durch <span class="gi">&lt;item&gt;</span>
                      repräsentiert wird. Auch befolgen wir hier – wie auch bei Überschriften hierarchisch höherer Gliederungseinheiten –
                      das Prinzip, dass überschriftartige Textsegmente als erstes Kind des Elements kodiert werden sollten, als dessen
                      Überschrift sie fungieren.

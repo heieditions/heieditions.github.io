@@ -55,7 +55,7 @@
                      Um eine einheitliche Darstellung von ggf. automatisch erzeugten Trennstrichen am Zeilenende 
                      und ggf. auch eine sinnvolle Indexierung zu gewährleisten, werden in nicht tokenisierten Texten
                      die Wortteile, die sich im Zeilenumbruch (und ggf. Spalten- und Seitenumbruch u. Ä.) befinden,
-                     mit <a class="gi" href="../specifications/ref-w.html">&lt;w&gt;</a>-Elementen umschlossen, die das Attribut <span class="att">@part</span> tragen.
+                     mit <span class="gi">&lt;w&gt;</span>-Elementen umschlossen, die das Attribut <span class="att">@part</span> tragen.
                   </p>
                   <p>
                      Die Verarbeitung ist implementiert im XProc-Schritt <span class="code">text_wrapWordPartsAtLineBreaks</span> in <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank"><span class="code">transformations/steplibrary.xpl</span></a>,
@@ -90,17 +90,17 @@
                   
                   <p>
                      In bestimmten Fällen ist es erforderlich, Elemente mit editorischem Inhalt (wie Überschriften oder Anmerkungen)
-                     für die Quellenansicht aus <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a>-Elementen, in denen sie während der Erzeugung der sourceDoc-Kodierung
-                     zunächst platziert wurden, zu extrahieren und sie außerhalb von <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a> zu stellen. Für editorische Inhalte innerhalb von 
-                     <a class="gi" href="../specifications/ref-zone.html">&lt;zone&gt;</a> und außerhalb von <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a> sieht das ›heiEDITIONS Schema‹ das eigene
-                     Element <a class="gi" href="../specifications/ref-hei:editorialContent.html">&lt;hei:editorialContent&gt;</a> vor, in dem beliebige editorische Inhalte untergebracht werden können,
+                     für die Quellenansicht aus <span class="gi">&lt;line&gt;</span>-Elementen, in denen sie während der Erzeugung der sourceDoc-Kodierung
+                     zunächst platziert wurden, zu extrahieren und sie außerhalb von <span class="gi">&lt;line&gt;</span> zu stellen. Für editorische Inhalte innerhalb von 
+                     <span class="gi">&lt;zone&gt;</span> und außerhalb von <span class="gi">&lt;line&gt;</span> sieht das ›heiEDITIONS Schema‹ das eigene
+                     Element <span class="gi">&lt;hei:editorialContent&gt;</span> vor, in dem beliebige editorische Inhalte untergebracht werden können,
                      die in der Quellenansicht zwischen Zeilen des Primärtextes angezeigt werden sollen.
                   </p>
                   <p>
                      Die aktuelle Implementierung erwartet im Parameter <span class="code">elements</span> eine durch Leerzeichen getrennte Liste von Elementnamen.
                      Nur für die so aufgelisteten Elemente wird die Extraktion vorgenommen. Außerdem müssen die betreffenden Elemente
                      an <span class="att">@ana</span> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/editorialcontent.html" target="_blank">hc:EditorialContent</a><span class="loddocborder"> ‹</span> gekennzeichnet sein. Elemente, auf die beide Bedingungen zutreffen 
-                     und die sich innerhalb von <a class="gi" href="../specifications/ref-line.html">&lt;line&gt;</a> befinden, werden <em>vor</em> die jeweilige Zeile verschoben.
+                     und die sich innerhalb von <span class="gi">&lt;line&gt;</span> befinden, werden <em>vor</em> die jeweilige Zeile verschoben.
                   </p>
                   <p>
                      Die Verarbeitungsaufgabe ist implementiert im XSLT-Skript 
