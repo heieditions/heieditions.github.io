@@ -29,7 +29,7 @@ a.endnote_number::after {
     content: ' '
 }
 
-a.gi {
+.gi {
     text-decoration: none;
     font-family: 'Ubuntu Mono', monospace;
     color: #000096;
