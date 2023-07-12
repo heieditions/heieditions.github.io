@@ -142,6 +142,11 @@ h4 {
     color: #9F0001; /* Heidelberg Red */
 }
 
+h5 {
+    font-family: 'Open Sans', sans-serif;
+    color: #9F0001; /* Heidelberg Red */
+}
+
 header {
     display:flex;
     justify-content: space-between;
