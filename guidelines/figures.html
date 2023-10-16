@@ -13,6 +13,41 @@
                <h2>Tabellen</h2>
                
                <p>
+                  Tabellen sind Strukturen, die ihrem Wesen nach aus Zeilen und Spalten bestehen. Dadurch unterscheiden sie sich
+                  layoutmäßig von einer normalen Textstruktur, die nur aus Zeilen besteht. Um keine Verwechslung mit Zeilen
+                  in normalen Textbereichen und Spalten als Layoutstrukturen einer Seite aufkommen zu lassen, sprechen wir bei
+                  Tabellen immer von ›Tabellenzeilen‹ und ›Tabellenspalten‹. In einem
+                  weiteren Sinne kann zu einer Tabelle aber auch eine Überschrift gehören (visuell oberhalb oder unterhalb der Tabelle platziert),
+                  die sich außerhalb der eigentlichen Tabellenstruktur von Tabellenzeilen und Tabellenspalten befindet.
+               </p>
+               <p>
+                  Ähnlich wie Abbildungen mit dem Element <span class="gi">&lt;figure&gt;</span>, betrachten wir daher in ›heiEDITIONS‹ 
+                  Tabellen und das Element <span class="gi">&lt;table&gt;</span> als ein ›hybrides‹ Phänomen in diesem Sinne: Einerseits umfasst
+                  das Element <span class="gi">&lt;table&gt;</span> eine semantisch-logische Sinneinheit, die eine Überschrift mit einschließt, 
+                  andererseits handelt es sich aus der Perspektive des Layouts bei einer Tabelle im engeren Sinne nur um das,
+                  was aus Tabellenzeilen und Tabellenspalten besteht. Nur das letztere ist – sofern aus einer Quelle ediert wird und in <span class="gi">&lt;facsimile&gt;</span>
+                  eine Layoutdeklaration vorgenommen wird – einem Tabellenbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/tablezone.html" target="_blank">hc:TableZone</a><span class="loddocborder"> ‹</span>) zuzuordnen,
+                  während eine Überschrift außerhalb der eigentlichen Tabellenstruktur in der Regel einem Textbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/textzone.html" target="_blank">hc:TextZone</a><span class="loddocborder"> ‹</span>)
+                  angehört, da ihr Inhalt üblicherweise nur in Zeilen, nicht in Tabellenzeilen und Tabellenspalten, angeordnet ist.
+               </p>
+               <p>
+                  In <em>born-digital</em>-Dokumenten spielen die skizzierten Implikationen der Layouterfassung
+                  natürlich keine Rolle. 
+               </p>
+               <p>
+                  Die TEI-Struktur des Elements <span class="gi">&lt;table&gt;</span> besteht immer aus einer Abfolge von Tabellenzeilen,
+                  repräsentiert durch das Element <span class="gi">&lt;row&gt;</span>. Auch eine Tabelle mit nur einer einzigen Tabellenzeile
+                  ist denkbar und erlaubt. Oberhalb oder unterhalb der Abfolge von <span class="gi">&lt;row&gt;</span> kann sich eine Überschrift (oder ggf. 
+                  mehrere Überschriften) befinden.  
+               </p>
+               <p>
+                  Die Abfolge der Tabellenzeilen (<span class="gi">&lt;row&gt;</span>) darf durch kein anderes Element mit Ausnahme von <span class="gi">&lt;pb&gt;</span>,
+                  <span class="gi">&lt;cb&gt;</span> oder <span class="gi">&lt;milestone&gt;</span> unterbrochen werden (<span class="gi">&lt;milestone&gt;</span> nur vom Typ <span class="loddocborder">› </span><a class="loddoc" href="../concepts/zonebeginning.html" target="_blank">hc:ZoneBeginning</a><span class="loddocborder"> ‹</span>
+                  oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/zoneshift.html" target="_blank">hc:ZoneShift</a><span class="loddocborder"> ‹</span>), um ggf. Seiten- bzw. Spaltengrenzen bei Tabellen festzuhalten, die sich über mehrere Seiten,
+                  Spalten oder sonstige Layoutbereiche erstrecken.
+               </p>
+               
+               <p>
                   <span class="aside">Rahmen</span>
                   Auf der Ebene ganzer Tabellen, Tabellenzeilen oder Zellen (<span class="gi">&lt;table&gt;</span>, <span class="gi">&lt;row&gt;</span>, <span class="gi">&lt;cell&gt;</span>)
                   ist es möglich, mit dem Attribut <span class="att">@rendition</span> das Vorhandenseit oder Fehlen eines Rahmens
@@ -64,7 +99,7 @@
             </div>
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 14.07.2023
+                        Letzte Aktualisierung: 16.10.2023
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
