@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html><head><title>heiEDITIONS Dokumentation | Konfigurationen für Verarbeitung und Visualisierung</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><title>heiEDITIONS Dokumentation | Konfigurationen für Verarbeitung und Visualisierung</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
@@ -83,18 +83,14 @@
                   im Verzeichnis <span class="code">configurations</span> liegt – deswegen gibt der Pfad zunächst einen Schritt ›nach oben‹
                   ins Elternverzeichnis an.
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<listPrefixDef>
-   <prefixDef ident="hc" matchPattern="(.+)" replacementPattern="https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1">
-   </prefixDef>
-   <prefixDef ident="wit" matchPattern="(.+)" replacementPattern="../texts/tagebuch.xml#$1">
-   </prefixDef>
-</listPrefixDef>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;listPrefixDef xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;prefixDef ident="hc" matchPattern="(.+)" replacementPattern="https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1"&gt;
+   &lt;/prefixDef&gt;
+   &lt;prefixDef ident="wit" matchPattern="(.+)" replacementPattern="../texts/tagebuch.xml#$1"&gt;
+   &lt;/prefixDef&gt;
+&lt;/listPrefixDef&gt;
+               </code></pre></div>
                <p>
                   Das zweite Kind des Wurzelelements <span class="gi">&lt;TEI&gt;</span> (es muss immer genau zwei Kindelemente geben)
                   definiert das Element in der Editionsdatei, auf dessen Inhalt die virtuelle Struktur angewandt werden soll.
@@ -125,44 +121,36 @@
                   Betrachten wir als einfaches Beispiel ein <span class="gi">&lt;body&gt;</span>, das in der Editionsdatei eine ›flache‹ Abfolge von 
                   neun Absätzen enthält:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<body>
-   <p xml:id="p_1">[Absatz 1]</p>
-   <p xml:id="p_2">[Absatz 2]</p>
-   <p xml:id="p_3">[Absatz 3]</p>
-   <p xml:id="p_4">[Absatz 4]</p>
-   <p xml:id="p_5">[Absatz 5]</p>
-   <p xml:id="p_6">[Absatz 6]</p>
-   <p xml:id="p_7">[Absatz 7]</p>
-   <p xml:id="p_8">[Absatz 8]</p>
-   <p xml:id="p_9">[Absatz 9]</p>
-</body>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;body xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;p xml:id="p_1"&gt;[Absatz 1]&lt;/p&gt;
+   &lt;p xml:id="p_2"&gt;[Absatz 2]&lt;/p&gt;
+   &lt;p xml:id="p_3"&gt;[Absatz 3]&lt;/p&gt;
+   &lt;p xml:id="p_4"&gt;[Absatz 4]&lt;/p&gt;
+   &lt;p xml:id="p_5"&gt;[Absatz 5]&lt;/p&gt;
+   &lt;p xml:id="p_6"&gt;[Absatz 6]&lt;/p&gt;
+   &lt;p xml:id="p_7"&gt;[Absatz 7]&lt;/p&gt;
+   &lt;p xml:id="p_8"&gt;[Absatz 8]&lt;/p&gt;
+   &lt;p xml:id="p_9"&gt;[Absatz 9]&lt;/p&gt;
+&lt;/body&gt;
+               </code></pre></div>
                <p>
                   Auf dieses <span class="gi">&lt;body&gt;</span> soll eine virtuelle Gliederung angewandt werden, die jeweils drei Absätze in einem
                   <span class="gi">&lt;div&gt;</span> zusammenfasst. Dafür sähe das zweite Kindelement der Strukturkonfigurationsdatei so aus:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<body>
-   <div ana="hc:Section" xml:id="div_1">
-      <ptr target="wit:range(p_1,p_3)"/>
-   </div>
-   <div ana="hc:Section" xml:id="div_2">
-      <ptr target="wit:range(p_4,p_6)"/>
-   </div>
-   <div ana="hc:Section" xml:id="div_3">
-      <ptr target="wit:range(p_7,p_9)"/>
-   </div>
-</body>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;body xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;div ana="hc:Section" xml:id="div_1"&gt;
+      &lt;ptr target="wit:range(p_1,p_3)"/&gt;
+   &lt;/div&gt;
+   &lt;div ana="hc:Section" xml:id="div_2"&gt;
+      &lt;ptr target="wit:range(p_4,p_6)"/&gt;
+   &lt;/div&gt;
+   &lt;div ana="hc:Section" xml:id="div_3"&gt;
+      &lt;ptr target="wit:range(p_7,p_9)"/&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
+               </code></pre></div>
                <p>
                   Die Bereiche der Editionsdatei, die innerhalb des dort befindlichen <span class="gi">&lt;body&gt;</span> mit <span class="gi">&lt;div&gt;</span>-Elementen
                   umschlossen werden sollen, werden in <span class="att">@target</span> der <span class="gi">&lt;ptr&gt;</span>-Elemente als
@@ -178,7 +166,7 @@
                </p>
                <p>
                   Es wird empfohlen, ist aber nicht zwingend notwendig, dass die virtuellen <span class="gi">&lt;div&gt;</span>-Elemente das Attribut <span class="att">@ana</span> tragen.
-                  Wenn keine andere ›heiEDITIONS‹-Klasse besser zutrifft, kann dabei als Wert das generische <span class="loddocborder">› </span><a class="loddoc" href="../concepts/section.html" target="_blank">hc:Section</a><span class="loddocborder"> ‹</span>
+                  Wenn keine andere ›heiEDITIONS‹-Klasse besser zutrifft, kann dabei als Wert das generische 
                   gewählt werden. Das Attribut <span class="att">@xml:id</span> wird ebenfalls benötigt, wird aber – falls es fehlen sollte –
                   in der Verarbeitungspipeline ergänzt. Mit dem Attribut <span class="att">@n</span> kann eine sinnvolle Nummerierung
                   angegeben werden, was für eine übersichtliche Navigation im Inhaltsverzeichnis hilfreich ist. 
@@ -186,40 +174,36 @@
                <p>
                   Neben den genannten Attributen <span class="att">@ana</span>, <span class="att">@xml:id</span> und <span class="att">@n</span> kann
                   an <span class="gi">&lt;div&gt;</span> ebenfalls das Attribut <span class="att">@rendition</span> mit den möglichen Werten 
-                  <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> angegeben werden (dazu s. weiter unten
-                  <a class="inlink" href="#PROCESSING_CONFIGURATION-DISPLAY">Konfiguration der Textaufteilung und der Anzeige im Inhaltsverzeichnis</a>).
+                   oder  angegeben werden (dazu s. weiter unten
+                  ).
                </p>
                <p>
                   Sinnvollerweise sollten die virtuell deklarierten Gliederungseinheiten
                   mit editorischen Überschriften versehen werden, um die Abschnitte verständlicher und in einem Inhaltsverzeichnis
                   greifbarer zu machen. Dafür kann am Anfang jedes <span class="gi">&lt;div&gt;</span> ein Element <span class="gi">&lt;head&gt;</span> (oder für mehrsprachige 
                   Überschriften auch mehrfaches <span class="gi">&lt;head&gt;</span>, jeweils mit einem unterschiedlichen <span class="att">@xml:lang</span> versehen)
-                  platziert werden, das an <span class="att">@ana</span> mit der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/editorialcontent.html" target="_blank">hc:EditorialContent</a><span class="loddocborder"> ‹</span> versehen ist,
+                  platziert werden, das an <span class="att">@ana</span> mit der Klasse  versehen ist,
                   um deutlich zu machen, dass der Text der Überschrift  weder genuiner noch rekonstruierter Bestandteil des Primärtextes ist.
                </p>
                <p>
                   Das obige Beispiel mit den Dreiergruppen von Absätzen könnte also – weiter angereichert – etwa so aussehen:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<body>
-   <div ana="hc:Section" xml:id="division_1" n="1">
-      <head ana="hc:EditorialContent">Vorbemerkungen</head>
-      <ptr target="wit:range(p_1,p_3)"/>
-   </div>
-   <div ana="hc:Section" xml:id="division_2" n="2">
-      <head ana="hc:EditorialContent">Erörterung der Kernthese</head>
-      <ptr target="wit:range(p_4,p_6)"/>
-   </div>
-   <div ana="hc:Section" xml:id="division_3" n="3">
-      <head ana="hc:EditorialContent">Fazit</head>
-      <ptr target="wit:range(p_7,p_9)"/>
-   </div>
-</body>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;body xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;div ana="hc:Section" xml:id="division_1" n="1"&gt;
+      &lt;head ana="hc:EditorialContent"&gt;Vorbemerkungen&lt;/head&gt;
+      &lt;ptr target="wit:range(p_1,p_3)"/&gt;
+   &lt;/div&gt;
+   &lt;div ana="hc:Section" xml:id="division_2" n="2"&gt;
+      &lt;head ana="hc:EditorialContent"&gt;Erörterung der Kernthese&lt;/head&gt;
+      &lt;ptr target="wit:range(p_4,p_6)"/&gt;
+   &lt;/div&gt;
+   &lt;div ana="hc:Section" xml:id="division_3" n="3"&gt;
+      &lt;head ana="hc:EditorialContent"&gt;Fazit&lt;/head&gt;
+      &lt;ptr target="wit:range(p_7,p_9)"/&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
+               </code></pre></div>
                <p>
                   Wenn sinnvoll, kann eine virtuelle Gliederung auch mehrere <span class="gi">&lt;div&gt;</span>-Ebenen umfassen.
                   Das folgende Beispiel zeigt, wie die ursprünglich flache Beispielstruktur mit neun Absätzen
@@ -228,37 +212,33 @@
                   mit den Absätzen 2–3,  4–5 sowie 6–8 enthält und der letzte Absatz 9 wiederum in einem eigenen <span class="gi">&lt;div&gt;</span>
                   auf oberster Ebene steht:
                </p>   
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<body>
-   <div ana="hc:Section" xml:id="d_1" n="1">
-      <head ana="hc:EditorialContent">Vorbemerkungen</head>
-      <ptr target="wit:range(p_1,p_1)"/>
-   </div>
-   <div ana="hc:Section" xml:id="d_2" n="2">
-      <head ana="hc:EditorialContent">Erörterung der Kernthese</head>
-      <div ana="hc:Section" xml:id="d_2_1" n="2.1">
-         <head>Hauptargumente</head>
-         <ptr target="wit:range(p_2,p_3)"/>
-      </div>
-      <div ana="hc:Section" xml:id="d_2_2" n="2.2">
-         <head>Gegenpositionen</head>
-         <ptr target="wit:range(p_4,p_5)"/>
-      </div>
-      <div ana="hc:Section" xml:id="d_2_3" n="2.3">
-         <head>Mögliche Lösungsansätze</head>
-         <ptr target="wit:range(p_6,p_8)"/>
-      </div>
-   </div>
-   <div ana="hc:Section" xml:id="d_3" n="3">
-      <head ana="hc:EditorialContent">Fazit</head>
-      <ptr target="wit:range(p_9,p_9)"/>
-   </div>
-</body>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;body xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;div ana="hc:Section" xml:id="d_1" n="1"&gt;
+      &lt;head ana="hc:EditorialContent"&gt;Vorbemerkungen&lt;/head&gt;
+      &lt;ptr target="wit:range(p_1,p_1)"/&gt;
+   &lt;/div&gt;
+   &lt;div ana="hc:Section" xml:id="d_2" n="2"&gt;
+      &lt;head ana="hc:EditorialContent"&gt;Erörterung der Kernthese&lt;/head&gt;
+      &lt;div ana="hc:Section" xml:id="d_2_1" n="2.1"&gt;
+         &lt;head&gt;Hauptargumente&lt;/head&gt;
+         &lt;ptr target="wit:range(p_2,p_3)"/&gt;
+      &lt;/div&gt;
+      &lt;div ana="hc:Section" xml:id="d_2_2" n="2.2"&gt;
+         &lt;head&gt;Gegenpositionen&lt;/head&gt;
+         &lt;ptr target="wit:range(p_4,p_5)"/&gt;
+      &lt;/div&gt;
+      &lt;div ana="hc:Section" xml:id="d_2_3" n="2.3"&gt;
+         &lt;head&gt;Mögliche Lösungsansätze&lt;/head&gt;
+         &lt;ptr target="wit:range(p_6,p_8)"/&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div ana="hc:Section" xml:id="d_3" n="3"&gt;
+      &lt;head ana="hc:EditorialContent"&gt;Fazit&lt;/head&gt;
+      &lt;ptr target="wit:range(p_9,p_9)"/&gt;
+   &lt;/div&gt;
+&lt;/body&gt;
+               </code></pre></div>
                <p>
                   Die <span class="gi">&lt;ptr&gt;</span>-Elemente als Stellvertreter für die zu umschließenden Textbereiche dürfen
                   jeweils nur auf der untersten <span class="gi">&lt;div&gt;</span>-Ebene stehen, d. h. eine Gliederungseinheit darf nicht gleichzeitig 
@@ -272,37 +252,33 @@
                   <span class="gi">&lt;front&gt;</span>, <span class="gi">&lt;body&gt;</span> und <span class="gi">&lt;back&gt;</span> keine Attribute <span class="att">@ana</span> tragen, weil sie als Elemente
                   durch ihre Semantik in ihrer Gliederungsfunktion ausreichend beschrieben sind):
                </p>              
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<text>
-   <front xml:id="front_1" n="1">
-      <head ana="hc:EditorialContent">Vorbemerkungen</head>
-      <ptr target="wit:range(p_1,p_1)"/>
-   </front>
-   <body xml:id="body_1" n="2">
-      <head ana="hc:EditorialContent">Erörterung der Kernthese</head>
-      <div ana="hc:Section" xml:id="div_2_1" n="2.1">
-         <head>Hauptargumente</head>
-         <ptr target="wit:range(p_2,p_3)"/>
-      </div>
-      <div ana="hc:Section" xml:id="div_2_2" n="2.2">
-         <head>Gegenpositionen</head>
-         <ptr target="wit:range(p_4,p_5)"/>
-      </div>
-      <div ana="hc:Section" xml:id="div_2_3" n="2.3">
-         <head>Mögliche Lösungsansätze</head>
-         <ptr target="wit:range(p_6,p_8)"/>
-      </div>
-   </body>
-   <back xml:id="back_1" n="3">
-      <head ana="hc:EditorialContent">Fazit</head>
-      <ptr target="wit:range(p_9,p_9)"/>
-   </back>
-</text>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;text xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;front xml:id="front_1" n="1"&gt;
+      &lt;head ana="hc:EditorialContent"&gt;Vorbemerkungen&lt;/head&gt;
+      &lt;ptr target="wit:range(p_1,p_1)"/&gt;
+   &lt;/front&gt;
+   &lt;body xml:id="body_1" n="2"&gt;
+      &lt;head ana="hc:EditorialContent"&gt;Erörterung der Kernthese&lt;/head&gt;
+      &lt;div ana="hc:Section" xml:id="div_2_1" n="2.1"&gt;
+         &lt;head&gt;Hauptargumente&lt;/head&gt;
+         &lt;ptr target="wit:range(p_2,p_3)"/&gt;
+      &lt;/div&gt;
+      &lt;div ana="hc:Section" xml:id="div_2_2" n="2.2"&gt;
+         &lt;head&gt;Gegenpositionen&lt;/head&gt;
+         &lt;ptr target="wit:range(p_4,p_5)"/&gt;
+      &lt;/div&gt;
+      &lt;div ana="hc:Section" xml:id="div_2_3" n="2.3"&gt;
+         &lt;head&gt;Mögliche Lösungsansätze&lt;/head&gt;
+         &lt;ptr target="wit:range(p_6,p_8)"/&gt;
+      &lt;/div&gt;
+   &lt;/body&gt;
+   &lt;back xml:id="back_1" n="3"&gt;
+      &lt;head ana="hc:EditorialContent"&gt;Fazit&lt;/head&gt;
+      &lt;ptr target="wit:range(p_9,p_9)"/&gt;
+   &lt;/back&gt;
+&lt;/text&gt;
+               </code></pre></div>
                               
             </div>
             
@@ -325,45 +301,36 @@
                   einzuteilen, wird an den Elementen dieser gewählten Abschnitte
                   (<span class="gi">&lt;front&gt;</span>, <span class="gi">&lt;body&gt;</span>, <span class="gi">&lt;back&gt;</span>, <span class="gi">&lt;div&gt;</span>)
                   während der Verarbeitung am Attribut <span class="att">@rendition</span>
-                  der Wert <span class="val">hc:DisplayDivision</span> erzeugt (s. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span>).  
+                  der Wert <span class="val">hc:DisplayDivision</span> erzeugt (s. ).  
                   Bei der Festlegung, welche Elemente als solche Anzeigeabschnitte markiert werden, ist darauf
                   zu achten, dass keine Lücken verbleiben, durch die bestimmte Inhalte von der Anzeige ganz
                   ausgeschlossen würden (es sei denn, gerade dies wäre editorische Absicht).
                </p>
+               
                <p>
-                  Die Markierung von Gliederungseinheiten als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> ist allein
-                  für die Visualisierung vorgesehen und sollte nicht bereits in den Arbeitsdateien erfolgen. Stattdessen
-                  sehen wir vor, die Kennzeichnung mit <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> 
-                  in separaten Dateien zu konfigurieren, die während der Verarbeitung eingelesen werden (s. u.).
-               </p>
-               <p>
-                  Wie schon angesprochen, ist bei der Zuweisung der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span>
+                  Wie schon angesprochen, ist bei der Zuweisung der Klasse 
                   an Gliederungseinheiten des Textes dafür Sorge zu tragen, dass innerhalb von <span class="gi">&lt;text&gt;</span>
-                  keine textuellen Inhalte übrig bleiben, die von keiner <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> abgedeckt wären. 
+                  keine textuellen Inhalte übrig bleiben, die von keiner  abgedeckt wären. 
                   Allenfalls übergeordnete Gliederungseinheiten ohne eigentlichen Inhalt können als Ausnahme 
                   gelten, da diese – ggf. mit ihren als <span class="gi">&lt;head&gt;</span> kodierten Überschriften – zumindest im Inhaltsverzeichnis 
                   sichtbar wären. Das folgende Codebeispiel soll dies verdeutlichen (wobei das Attribut <span class="att">@rendition</span>
                   so nicht in einer Arbeitsdatei stünde, sondern als Ergebnis einer entsprechenden Konfiguration in die Datei 
                   maschinell geschrieben würde):
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<text>
-   <div xml:id="abschnitt_1">
-      <head>[...]</head>
-      <div xml:id="abschnitt_1_1" rendition="hc:DisplayDivision">[...]</div>
-      <div xml:id="abschnitt_1_2" rendition="hc:DisplayDivision">[...]</div>
-   </div>
-   <div xml:id="abschnitt_2" rendition="hc:DisplayDivision">[...]</div>
-   <div xml:id="abschnitt_3">[...]</div>
-</text>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;text xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;div xml:id="abschnitt_1"&gt;
+      &lt;head&gt;[...]&lt;/head&gt;
+      &lt;div xml:id="abschnitt_1_1" rendition="hc:DisplayDivision"&gt;[...]&lt;/div&gt;
+      &lt;div xml:id="abschnitt_1_2" rendition="hc:DisplayDivision"&gt;[...]&lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div xml:id="abschnitt_2" rendition="hc:DisplayDivision"&gt;[...]&lt;/div&gt;
+   &lt;div xml:id="abschnitt_3"&gt;[...]&lt;/div&gt;
+&lt;/text&gt;
+               </code></pre></div>
                <p>
                   Im vorangehenden Beispiel ist es in Ordnung, dass das Element <span class="gi">&lt;div&gt;</span> mit dem Identifikator <span class="val">abschnitt_1</span>
-                  keine Kennzeichnung als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> erfährt. Zwar wird diese Gliederungseinheit als Ganzes
+                  keine Kennzeichnung als  erfährt. Zwar wird diese Gliederungseinheit als Ganzes
                   nie im Hauptfenster der Leseansicht angezeigt, aber der Abschnitt ist als Gliederungseinheit mit seiner Überschrift 
                   zumindest im Inhaltsverzeichnis sichtbar. Der vollen Anzeige zugeführt werden stattdessen seine zwei untergeordneten Abschnitte
                   <span class="val">abschnitt_1_1</span> und <span class="val">abschnitt_1_2</span>. Wenn ein Nutzer im Inhaltsverzeichnis 
@@ -371,45 +338,37 @@
                   als Anzeigeabschnitt konfigurierte Element angezeigt, also <span class="val">abschnitt_1_1</span>. 
                </p>
                <p>
-                  Dass hingegen <span class="val">abschnitt_3</span> nicht als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> gekennzeichnet ist, wird dazu
+                  Dass hingegen <span class="val">abschnitt_3</span> nicht als  gekennzeichnet ist, wird dazu
                   führen, dass die Anzeige dieses Abschnitts im Hauptfenster der Leseansicht unterbunden wird. Es gilt also: Wenn auch
-                  nur ein Gliederungselement in einer Datei als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> gekennzeichnet ist,
+                  nur ein Gliederungselement in einer Datei als  gekennzeichnet ist,
                   wird im ›heiVIEWER‹ davon ausgegangen, dass keine Anzeige des gesamten Dokuments in der Leseansicht erwartet wird.
-                  Gliederungselemente, die weder selbst als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> gekennzeichnet sind noch solche Elemente
+                  Gliederungselemente, die weder selbst als  gekennzeichnet sind noch solche Elemente
                   als <em>ancestor</em> ›über sich‹ haben, können mit ihrem textuellen Inhalt in der Leseansicht nicht angezeigt werden (das gilt
-                  natürlich nur, wenn die Auswertung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> für einen
+                  natürlich nur, wenn die Auswertung von  für einen
                   Editionstext grundsätzlich aktiviert wurde, also wenn für einen Editionstext von einer Teilanzeige
-                  ausgegangen wird). Allerdings verhindert das Fehlen der Kennzeichnung als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span>
+                  ausgegangen wird). Allerdings verhindert das Fehlen der Kennzeichnung als 
                   bei <span class="val">abschnitt_3</span> im vorliegenden Beispiel nicht die Anzeige der Gliederungseinheit im Inhaltsverzeichnis;
                   das Anklicken dieses Eintrags im Inhaltsverzeichnis würde zu einem Fehler führen oder zum ersten
                   tatsächlich darstellbaren Abschnitt des Textes weiterleiten.
-                  (Um die Anzeige im Inhaltsverzeichnis zu unterdrücken, müsste der Abschnitt als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span>
+                  (Um die Anzeige im Inhaltsverzeichnis zu unterdrücken, müsste der Abschnitt als 
                   markiert werden – s. u.)
                </p>
-               <p>
-                  In besonderen Fällen ist es jedoch möglich, mehrere ineinander geschachtelte Gliederungselemente
-                  gleichzeitig als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> zu kennzeichnen. Das folgende Beispiel soll
-                  dies verdeutlichen:
-               </p>
                
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<text>
-   <div xml:id="di_1" rendition="hc:DisplayDivision">
-      <head>[...]</head>
-      <p>[...]</p>
-      <div xml:id="di_1_1" rendition="hc:DisplayDivision">[...]</div>
-      <div xml:id="di_1_2" rendition="hc:DisplayDivision">[...]</div>
-      <p>[...]</p>
-   </div>
-</text>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;text xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;div xml:id="di_1" rendition="hc:DisplayDivision"&gt;
+      &lt;head&gt;[...]&lt;/head&gt;
+      &lt;p&gt;[...]&lt;/p&gt;
+      &lt;div xml:id="di_1_1" rendition="hc:DisplayDivision"&gt;[...]&lt;/div&gt;
+      &lt;div xml:id="di_1_2" rendition="hc:DisplayDivision"&gt;[...]&lt;/div&gt;
+      &lt;p&gt;[...]&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/text&gt;                  
+               </code></pre></div>
                <p>
                   In diesem besonderen Fall sind sowohl das <span class="gi">&lt;div&gt;</span> mit dem Identifikator <span class="val">di_1</span>
                   als auch seine beiden untergeordneten Abschnitte <span class="val">di_1_1</span> und <span class="val">di_1_2</span>
-                  als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> gekennzeichnet. Diese Lösung kann sinnvoll sein,
+                  als  gekennzeichnet. Diese Lösung kann sinnvoll sein,
                   wenn <span class="val">di_1_1</span> und <span class="val">di_1_2</span> von einer Länge sind, die ihre Anzeige
                   als jeweils separate Abschnitte in der Leseansicht erfordert, und wenn sich gleichzeitig innerhalb
                   von <span class="val">di_1</span> mit den beiden <span class="gi">&lt;p&gt;</span>-Elementen Inhalte befinden, die außerhalb von
@@ -421,56 +380,43 @@
                <p>
                   <span class="aside">Ausblenden im Inhaltsverzeichnis</span>
                   Unabhängig davon, ob ein Text für die Anzeige in der Leseansicht aufgeteilt wird 
-                  (also ob <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> verwendet wird oder nicht), kann die Anzeige
+                  (also ob  verwendet wird oder nicht), kann die Anzeige
                   bestimmter Gliederungseinheiten im Inhaltsverzeichnis unterdrückt werden. Das können z. B.
                   tiefer geschachtelte Untergliederungen (etwa <span class="gi">&lt;div&gt;</span>-Elemente, denen schon zwei Ebenen
                   von <span class="gi">&lt;div&gt;</span>-Elementen übergeordnet sind) oder irrelevante Abschnitte am Anfang oder Ende
                   eines Textes sein (etwa die Titelei oder eine Widmung am Anfang oder Anhänge am Ende).
                   Solche Gliederungselemente werden während der Verarbeitung an <span class="att">@rendition</span> mit dem Wert
-                  <span class="val">hc:SuppressInTOC</span> markiert (s. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span>). Auch diese Kennzeichnung 
+                  <span class="val">hc:SuppressInTOC</span> markiert (s. ). Auch diese Kennzeichnung 
                   soll nicht direkt in Arbeitsdateien erfolgen, sondern kann entsprechend konfiguriert werden (s. u.).                   
                </p>
                <p>
                   Grundsätzlich gilt, dass jedes <span class="gi">&lt;div&gt;</span> (und auch <span class="gi">&lt;front&gt;</span> und <span class="gi">&lt;back&gt;</span>, ja auch <span class="gi">&lt;body&gt;</span>, wenn es
                   über eine eigene Überschrift verfügt) egal welcher Schachtelungsstufe im Inhaltsverzeichnis angezeigt wird.<sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup>
-                  Durch die Konfiguration der Zuweisung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> ist es möglich, bestimmte Gliederungselemente
+                  Durch die Konfiguration der Zuweisung von  ist es möglich, bestimmte Gliederungselemente
                   im Inhaltsverzeichnis auszublenden. Wenn in der Leseansicht jeweils der ganze Editionstext angezeigt wird, wird 
                   ein solcher Abschnitt dennoch als Teil des Textes angezeigt und kann durch händisches Scrollen erreicht werden; wenn hingegen 
-                  der Text abschnittsweise präsentiert wird (per Konfiguration von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span>), wird ein
-                  Abschnitt nie eingeblendet werden können, wenn er als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> gekennzeichnet ist und kein sein
-                  <em>ancestor</em>-Element als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> markiert ist (die gleichzeitige Markierung eines Elements als 
-                  <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> ist nicht möglich). Sehr wohl möglich und geradezu 
+                  der Text abschnittsweise präsentiert wird (per Konfiguration von ), wird ein
+                  Abschnitt nie eingeblendet werden können, wenn er als  gekennzeichnet ist und kein sein
+                  <em>ancestor</em>-Element als  markiert ist (die gleichzeitige Markierung eines Elements als 
+                   und  ist nicht möglich). Sehr wohl möglich und geradezu 
                   vorgesehen ist aber die Möglichkeit, Unterabschnitte von der Anzeige im Inhaltsverzeichnis auszuschließen, aber
-                  ein ihnen übergeordnetes Element als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> zu deklarieren. Dann werden die Unterabschnitte 
+                  ein ihnen übergeordnetes Element als  zu deklarieren. Dann werden die Unterabschnitte 
                   mit ihren Inhalten in der Leseansicht angezeigt und sind durch Scrollen erreichbar, 
                   sie können aber nicht indiviuell aus dem Inhaltsverzeichnis heraus angesprungen werden. Ein solches Szenario ist besonders
                   dafür geeignet, das Inhaltsverzeichnis von der Einblendung kleiner Gliederungsabschnitte in 
                   feinkörnig gegliederten Editionstexten zu entlasten.
                </p>
-               <p>
-                  Die eigentliche Konfiguration der Zuweisung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span>
-                  kann grundsätzlich auf zweifache Weise erfolgen:
-               </p>
+               
                <p>
                   Wenn Editionstexte für die Leseansicht ohnehin durch 
-                  Strukturkonfigurationsdateien (s. o. <a class="inlink" href="#PROCESSING_CONFIGURATION-STRUCTURE">Konfiguration einer virtuellen Textgliederung</a>) aufgeteilt werden,
+                  Strukturkonfigurationsdateien (s. o. ) aufgeteilt werden,
                   können die Werte <span class="val">hc:DisplayDivision</span> bzw. <span class="val">hc:SuppressInTOC</span> bereits in diesen
                   Dateien an <span class="att">@rendition</span> von <span class="gi">&lt;div&gt;</span> (bzw. auch <span class="gi">&lt;front&gt;</span>, <span class="gi">&lt;body&gt;</span> und <span class="gi">&lt;back&gt;</span>) 
                   angegeben werden. Das Attribut <span class="att">@rendition</span> wird mit den virtuellen Gliederungselementen in die 
                   zu verarbeitenden Dateien übernommen.
                </p>
-               <p>
-                  Die andere Möglichkeit (wenn keine Strukturkonfigurationsdateien vorliegen oder zusätzlich zu solchen)
-                  besteht darin, Konfigurationsangaben zu <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span>
-                  in separaten Anzeigekonfigurationsdateien vorzunehmen.
-               </p>
-               <p>
-                  Anzeigekonfigurationsdateien können neben <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span>
-                  noch anderen Zwecken dienen (s. u.). Sie können global pro Editionsprojekt oder spezifisch für einzelne 
-                  Editionstexte angelegt werden. Es ist auch möglich, z. B. die Konfiguration von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> 
-                  und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> global in einer zentralen Anzeigekonfigurationsdatei vorzunehmen
-                  und andere Dinge textspezifisch in Einzeldateien zu konfigurieren.
-               </p>
+               
+               
                <p>
                   Anzeigekonfigurationsdateien sollten – wie auch andere Konfigurationen – innerhalb des GitLab-Repositoriums eines
                   Editionsprojekts im Verzeichnis <span class="code">configurations</span> vorgehalten werden. 
@@ -494,7 +440,7 @@
                   <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/mockups/display_xy.xml" target="_blank">display_xy.xml</a> entnommen werden.
                </p>
                <p>
-                  Die Konfiguration der Zuweisung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> erfolgt innerhalb des
+                  Die Konfiguration der Zuweisung von  erfolgt innerhalb des
                   Wurzelelements <span class="gi">&lt;configurations&gt;</span> mit dessen Kindelement <span class="gi">&lt;displayDivision&gt;</span>.
                   Die Konfiguration kann auf dreifache Weise erfolgen: Für einzelne Elemente durch die Nennung ihrer 
                   <span class="att">@xml:id</span>, gruppenweise über die Angabe einer ›heiEDITIONS‹-Klasse 
@@ -514,18 +460,14 @@
                <p>
                   Jedes der genannten Konfigurationselemente kann sich beliebig oft wiederholen. Beispiel:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<displayDivision>
-   <ID>front_1</ID>
-   <ID>back_1</ID>
-   <class>Chapter</class>
-   <XPath>TEI/text/body/div</XPath>
-</displayDivision>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;displayDivision xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;ID&gt;front_1&lt;/ID&gt;
+   &lt;ID&gt;back_1&lt;/ID&gt;
+   &lt;class&gt;Chapter&lt;/class&gt;
+   &lt;XPath&gt;TEI/text/body/div&lt;/XPath&gt;
+&lt;/displayDivision&gt;
+               </code></pre></div>
                <p>
                   Diese beispielhafte Belegung von <span class="gi">&lt;displayDivision&gt;</span> würde die Verarbeitung veranlassen,
                   an den beiden über ihre <span class="att">@xml:id</span> addressierten Elementen <span class="gi">&lt;front&gt;</span> und <span class="gi">&lt;back&gt;</span>,
@@ -534,21 +476,17 @@
                   <span class="val">hc:DisplayDivision</span> am Attribut <span class="att">@rendition</span> einzutragen.
                </p>
                <p>
-                  Die Zuweisung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> funktioniert auf gleiche Weise in einem
+                  Die Zuweisung von  funktioniert auf gleiche Weise in einem
                   Element <span class="gi">&lt;suppressInTOC&gt;</span>, z. B.:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<suppressInTOC>
-   <ID>div_00_0</ID>
-   <class>Section</class>
-   <class>Appendix</class>
-   <XPath>TEI/text/back/div</XPath>
-</suppressInTOC>--></code>
-            </pre>
-        </div>
-                  
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;suppressInTOC xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;ID&gt;div_00_0&lt;/ID&gt;
+   &lt;class&gt;Section&lt;/class&gt;
+   &lt;class&gt;Appendix&lt;/class&gt;
+   &lt;XPath&gt;TEI/text/back/div&lt;/XPath&gt;
+&lt;/suppressInTOC&gt;
+               </code></pre></div>              
             </div>
             
             <div id="PROCESSING_CONFIGURATION-VISUAL">
@@ -574,11 +512,11 @@
                   Für die Fälle, in denen visuelle Informationen für die Leseansicht weder pauschal getilgt noch 
                   komplett übernommen werden sollen, gibt es die Möglichkeit einer Konfiguration. Eine solche Konfiguration 
                   erfolgt in einer globalen oder textspezifischen Konfigurationsdatei, deren Name auf <span class="code">display_</span>
-                  anfängt, wie schon oben in <a class="inlink" href="#PROCESSING_CONFIGURATION-DISPLAY">Konfiguration der Textaufteilung und der Anzeige im Inhaltsverzeichnis</a> beschrieben.
+                  anfängt, wie schon oben in  beschrieben.
                   Sie kann (und soll) in derselben Datei wie die Konfiguration der Aufteilung der Textanzeige und der
                   Anzeige im Inhaltsverzeichnis erfolgen, um die Anzahl der Konfigurationsdateien nicht ohne Not wachsen zu lassen.
                   Für den Speicherort, die Dateibenennung, das Schema, den Namensraum und das Wurzelelement gilt dasselbe, was
-                  schon oben in <a class="inlink" href="#PROCESSING_CONFIGURATION-DISPLAY">Konfiguration der Textaufteilung und der Anzeige im Inhaltsverzeichnis</a> ausgeführt ist.
+                  schon oben in  ausgeführt ist.
                </p>
                <p>
                   Aktuell ist nur für die differenzierte Behandlung der ›heiEDITIONS‹-Klassen im Attribut
@@ -601,17 +539,13 @@
                   <span class="gi">&lt;class&gt;</span> vor, in denen jeweils als Textknoten eine ›heiEDITIONS‹-Klasse
                   (ohne das Präfix <span class="code">hc</span>) angegeben wird, z. B.:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<include>
-   <class>Superscript</class>
-   <class>Subscript</class>
-   <class>Centered</class>
-</include>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;include xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;class&gt;Superscript&lt;/class&gt;
+   &lt;class&gt;Subscript&lt;/class&gt;
+   &lt;class&gt;Centered&lt;/class&gt;
+&lt;/include&gt;
+               </code></pre></div>
                <p>
                   Durch diese Konfiguration werden die Klassenangaben <span class="val">hc:Superscript</span>, <span class="val">hc:Subscript</span>
                   und <span class="val">hc:Centered</span>, wenn sie an beliebigen Elementen im Attribut <span class="att">@rendition</span> vorkommen würden,
@@ -621,21 +555,17 @@
                   können – in der sogenannten Clark-Syntax<sup><a href="#note_3" id="note_reference_3" class="note_mark">3)</a></sup> und bei Mehrfachangaben durch Leerzeichen getrennt – Elemente aufgelistet werden, 
                   auf die die Konfiguration eingeschränkt werden soll, z. B.:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<include>
-   <class onElement="{http://www.tei-c.org/ns/1.0}seg {http://www.tei-c.org/ns/1.0}hi">Superscript</class>
-   <class onElement="{http://www.tei-c.org/ns/1.0}seg {http://www.tei-c.org/ns/1.0}hi">Subscript</class>
-   <class onElement="{http://www.tei-c.org/ns/1.0}p">Centered</class>
-</include>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;include xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;class onElement="{http://www.tei-c.org/ns/1.0}seg {http://www.tei-c.org/ns/1.0}hi"&gt;Superscript&lt;/class&gt;
+   &lt;class onElement="{http://www.tei-c.org/ns/1.0}seg {http://www.tei-c.org/ns/1.0}hi"&gt;Subscript&lt;/class&gt;
+   &lt;class onElement="{http://www.tei-c.org/ns/1.0}p"&gt;Centered&lt;/class&gt;
+&lt;/include&gt;
+               </code></pre></div>
                <p>
                   Durch diese Konfiguration werden nur an den explizit gelisteten Elementen <span class="gi">&lt;seg&gt;</span> und
-                  <span class="gi">&lt;hi&gt;</span> bzw. <span class="gi">&lt;p&gt;</span> die Klassen <span class="loddocborder">› </span><a class="loddoc" href="../concepts/superscript.html" target="_blank">hc:Superscript</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/subscript.html" target="_blank">hc:Subscript</a><span class="loddocborder"> ‹</span>
-                  bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/centered.html" target="_blank">hc:Centered</a><span class="loddocborder"> ‹</span> übernommen, an allen anderen Elementen werden diese und alle anderen
+                  <span class="gi">&lt;hi&gt;</span> bzw. <span class="gi">&lt;p&gt;</span> die Klassen  und 
+                  bzw.  übernommen, an allen anderen Elementen werden diese und alle anderen
                   <span class="att">@rendition</span>-Werte entfernt.
                </p>
                <p>
@@ -644,34 +574,26 @@
                   für die Leseansicht übernommen, außer denen, die in <span class="gi">&lt;exclude&gt;</span> explizit angegeben sind,
                   z. B.:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<exclude>
-   <class>RubbedOff</class>
-   <class>CutOff</class>
-   <class>TornOff</class>
-</exclude>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;exclude xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;class&gt;RubbedOff&lt;/class&gt;
+   &lt;class&gt;CutOff&lt;/class&gt;
+   &lt;class&gt;TornOff&lt;/class&gt;
+&lt;/exclude&gt;
+               </code></pre></div>
                <p>
-                  Durch eine solche Konfiguration werden nur die Klassen <span class="loddocborder">› </span><a class="loddoc" href="../concepts/rubbedoff.html" target="_blank">hc:RubbedOff</a><span class="loddocborder"> ‹</span>, <span class="loddocborder">› </span><a class="loddoc" href="../concepts/cutoff.html" target="_blank">hc:CutOff</a><span class="loddocborder"> ‹</span>
-                  sowie <span class="loddocborder">› </span><a class="loddoc" href="../concepts/tornoff.html" target="_blank">hc:TornOff</a><span class="loddocborder"> ‹</span> aus der Kodierung für die Leseansicht entfernt, an allen Elementen,
+                  Durch eine solche Konfiguration werden nur die Klassen , 
+                  sowie  aus der Kodierung für die Leseansicht entfernt, an allen Elementen,
                   an denen sie in <span class="att">@rendition</span> vorkommen würden. Mit einer Einschränkung auf bestimmte Elemente
                   könnte die Konfiguration so aussehen:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<exclude>
-   <class onElement="{http://www.tei-c.org/ns/1.0}del">RubbedOff</class>
-   <class onElement="{http://www.tei-c.org/ns/1.0}del">CutOff</class>
-   <class onElement="{http://www.tei-c.org/ns/1.0}del">TornOff</class>
-</exclude>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;exclude xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;class onElement="{http://www.tei-c.org/ns/1.0}del"&gt;RubbedOff&lt;/class&gt;
+   &lt;class onElement="{http://www.tei-c.org/ns/1.0}del"&gt;CutOff&lt;/class&gt;
+   &lt;class onElement="{http://www.tei-c.org/ns/1.0}del"&gt;TornOff&lt;/class&gt;
+&lt;/exclude&gt;       
+               </code></pre></div>
                <p>
                   Auf diese Weise würden die angeführten drei Klassen jeweils nur vom Element <span class="gi">&lt;del&gt;</span> entfernt,
                   beispielsweise an <span class="gi">&lt;gap&gt;</span> blieben sie weiterhin erhalten.<sup><a href="#note_4" id="note_reference_4" class="note_mark">4)</a></sup>
@@ -688,7 +610,7 @@
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>S. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SATSRN" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SATSRN</a>.</div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
                      Von dieser Regel gibt es einige Ausnahmen bzw. eine Negativliste von ›heiEDITIONS‹-Klassen,
                      die von der Anzeige im Inhaltsverzeichnis als Voreinstellung <em>nicht</em> angezeigt werden. Bislang gehören dazu:
-                     <span class="loddocborder">› </span><a class="loddoc" href="../concepts/advertisement.html" target="_blank">hc:Advertisement</a><span class="loddocborder"> ‹</span>, <span class="loddocborder">› </span><a class="loddoc" href="../concepts/advertisinginperiodical.html" target="_blank">hc:AdvertisingInPeriodical</a><span class="loddocborder"> ‹</span>, <span class="loddocborder">› </span><a class="loddoc" href="../concepts/deathnotice.html" target="_blank">hc:DeathNotice</a><span class="loddocborder"> ‹</span>.
+                     , , .
                      Künftig soll es auch möglich sein, diese Voreinstellung gezielt zu überschreiben, entweder pauschal pro Klasse
                      oder individuell per Angabe der <span class="att">@xml:id</span>.
                   </div><div class="endnote" id="note_3"><a class="endnote_number" href="#note_reference_3">3</a>
@@ -700,7 +622,7 @@
                      durch <span class="gi">&lt;include&gt;</span> und <span class="gi">&lt;exclude&gt;</span> nur das Element selbst ohne weitere Attribute
                      übrig bleiben würde. Die beiden Elemente würden ohne Attribute ihre Aussagekraft verlieren.
                   </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 16.04.2024
+                        Letzte Aktualisierung: 22.07.2024
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

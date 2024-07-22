@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html><head><title>heiEDITIONS Dokumentation | Genuin digital entstandene Texte</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><title>heiEDITIONS Dokumentation | Genuin digital entstandene Texte</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
@@ -34,25 +34,15 @@
                   oder Teil des Fließtextes sein. Dieser Unterscheidung dienen die folgenden beiden Klassen,
                   die an <span class="att">@ana</span> angegeben werden können:
                </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/blockquotation.html"><span class="val">hc:BlockQuotation</span></a> ( ›Blockzitat‹ ): 
-               </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/runinquotation.html"><span class="val">hc:RunInQuotation</span></a> ( ›Fließtextzitat‹ ): 
-               </p>
+               
+               
                <p>
                   Je nach Art des Textes, aus dem ein Zitat übernommen wird, kann außerdem die Verwendung der folgenden
                   Klassen sinnvoll sein (ebenfalls an <span class="att">@ana</span>):
                </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/primarysourcequotation.html"><span class="val">hc:PrimarySourceQuotation</span></a> ( ›Zitat aus Primärtext‹ ): Zitat aus einer historischen Quelle (d. h. einem historischen Primärtext), in der Regel in einer historischen Originalsprache.
-               </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/primarysourcetranslationquotation.html"><span class="val">hc:PrimarySourceTranslationQuotation</span></a> ( ›Zitat aus übersetztem Primärtext‹ ): Zitat aus der modernen Übersetzung einer historischen Quelle (d. h. eines historischen Primärtextes).
-               </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/secondaryliteraturequotation.html"><span class="val">hc:SecondaryLiteratureQuotation</span></a> ( ›Zitat aus Sekundärliteratur‹ ): Zitat aus der Sekundärliteratur, d. h. aus herangezogenen Forschungspublikationen.
-               </p>
+               
+               
+               
                
             </div>
             
@@ -81,39 +71,29 @@
                   die Verwendung der folgenden Klassen am Attribut <span class="att">@ana</span> eines <span class="gi">&lt;figure&gt;</span> bzw. 
                   <span class="gi">&lt;table&gt;</span> zum Ausdruck gebracht werden:
                </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/connectedfigure.html"><span class="val">hc:ConnectedFigure</span></a> ( ›verbundene Abbildung‹ ): Abbildung, die in einem bestimmten fixierten Zusammenhang mit vorangehendem und nachfolgendem Inhalt Teil einer Expression ist.
-               </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/connectedtable.html"><span class="val">hc:ConnectedTable</span></a> ( ›verbundene Tabelle‹ ): Tabelle, die in einem bestimmten fixierten Zusammenhang mit vorangehendem und nachfolgendem Inhalt Teil einer Expression ist.
-               </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/detachedfigure.html"><span class="val">hc:DetachedFigure</span></a> ( ›unverbundene Abbildung‹ ): Abbildung, die in keinem bestimmten fixierten Zusammenhang mit vorangehendem und nachfolgendem Inhalt Teil einer Expression ist.
-               </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/detachedtable.html"><span class="val">hc:DetachedTable</span></a> ( ›unverbundene Tabelle‹ ): Tabelle, die in keinem bestimmten fixierten Zusammenhang mit vorangehendem und nachfolgendem Inhalt Teil einer Expression ist.
-               </p>
+               
+               
+               
+               
                <p>
                   Wenn ein <span class="gi">&lt;figure&gt;</span> oder <span class="gi">&lt;table&gt;</span> keine dieser Angaben tragen, wird implizit davon ausgegangen,
                   dass die Position des Elements im umgebenden Kontext relevant ist, also dass es sich um eine Instanz 
-                  von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/connectedfigure.html" target="_blank">hc:ConnectedFigure</a><span class="loddocborder"> ‹</span> bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/connectedtable.html" target="_blank">hc:ConnectedTable</a><span class="loddocborder"> ‹</span> handelt.
+                  von  bzw.  handelt.
                </p>
                <p>
                   Bei der Visualisierung in einem Viewer von ›heiEDITIONS‹ werden bei genuin digital entstandenen Texten
                   Bilder und Tabellen normalerweise aus dem Fließtext ausgelagert und in einem dedizierten Medienbereich gesondert 
-                  eingeblendet. Bei Instanzen von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/detachedfigure.html" target="_blank">hc:DetachedFigure</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/detachedtable.html" target="_blank">hc:DetachedTable</a><span class="loddocborder"> ‹</span> muss
+                  eingeblendet. Bei Instanzen von  und  muss
                   es auch zwingend so sein, weil die Präsentation an einer konkreten Textstelle irreführend sein könnte. 
                   Ist hingegen der Kontext eines <span class="gi">&lt;figure&gt;</span> oder <span class="gi">&lt;table&gt;</span> relevant 
-                  (also bei <span class="loddocborder">› </span><a class="loddoc" href="../concepts/connectedfigure.html" target="_blank">hc:ConnectedFigure</a><span class="loddocborder"> ‹</span> bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/connectedtable.html" target="_blank">hc:ConnectedTable</a><span class="loddocborder"> ‹</span>),
+                  (also bei  bzw. ),
                   ist es einem Autor freigestellt, die direkte Visualisierung eines Bildes oder einer Tabelle an der Stelle des
                   entsprechenden Elements im TEI-Dokument vorzugeben oder die Auslagerung des direkten Inhalts und dessen Ersetzung
                   durch einen verweisenden Platzhalter zu wählen. Das Letztere ist voreingestellt. Nur wenn also ein Bild 
                   oder eine Tabelle direkt als solche mitten im Text eingeblendet werden sollen, ist eine explizite Angabe am
                   Attribut <span class="att">@rendition</span> notwendig:
                </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/embedded.html"><span class="val">hc:Embedded</span></a> ( ›eingebettet‹ ): Präsentation eines visuellen Gegenstands, typischerweise einer Abbildung oder einer Tabelle, an einer spezifischen Textstelle durch direkte Einbettung des Inhalts (z. B. des Bildes oder der Tabelle) in den umliegenden Text (im Unterschied zu einer etwaigen Auslagerung außerhalb des Textes und der Ersetzung des Inhalts durch einen verweisenden Platzhalter).
-               </p>
+               
 
                <p>[... Fortsetzung folgt ...]</p>
                
@@ -122,7 +102,7 @@
 
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 16.04.2024
+                        Letzte Aktualisierung: 22.07.2024
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

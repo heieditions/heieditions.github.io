@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html><head><title>heiEDITIONS Dokumentation | Visualisierung</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><title>heiEDITIONS Dokumentation | Visualisierung</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
@@ -29,8 +29,8 @@
                
                <p>
                   Die Quellenansicht ist ein Visualisierungsmodus, der auf der physisch-visuellen Struktur eines Inhaltsträgers basiert.
-                  Eine solche Struktur wird durch Inhaltsflächen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentsurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>), Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) 
-                  sowie (bei Textbereichen) Zeilen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/line.html" target="_blank">hc:Line</a><span class="loddocborder"> ‹</span>) konstituiert. Den genannten drei Ebenen entsprechen
+                  Eine solche Struktur wird durch Inhaltsflächen (), Inhaltsbereiche () 
+                  sowie (bei Textbereichen) Zeilen () konstituiert. Den genannten drei Ebenen entsprechen
                   in der TEI die Elemente <span class="gi">&lt;surface&gt;</span>, <span class="gi">&lt;zone&gt;</span> und <span class="gi">&lt;line&gt;</span>. Für die Quellenansicht wird
                   in ›heiEDITIONS‹ die primäre semantisch-logisch strukturierte TEI-Kodierung aus
                   <span class="gi">&lt;text&gt;</span> in <span class="gi">&lt;sourceDoc&gt;</span> umgewandelt, wo <span class="gi">&lt;surface&gt;</span>, <span class="gi">&lt;zone&gt;</span> und <span class="gi">&lt;line&gt;</span> die 
@@ -66,17 +66,17 @@
                   </p>
                   <ul>
                      <li>
-                        Das Element <span class="gi">&lt;zone&gt;</span> stellt einen Gruppierungsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/groupingzone.html" target="_blank">hc:GroupingZone</a><span class="loddocborder"> ‹</span>) dar, 
+                        Das Element <span class="gi">&lt;zone&gt;</span> stellt einen Gruppierungsbereich () dar, 
                         d. h. einen Container, dessen Komponenten 
                         in einem bestimmten Layout angeordnet werden sollen. Solche Gruppierungsbereiche werden mit CSS
                         als <em>flex container</em> ausgewiesen.
                      </li>
                      <li>
-                        Das Element <span class="gi">&lt;zone&gt;</span> stellt einen Inhaltsbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) dar, 
+                        Das Element <span class="gi">&lt;zone&gt;</span> stellt einen Inhaltsbereich () dar, 
                         das unmittelbar einen Inhalt enthält, z. B. Zeilen (wenn es sich um einen Textbereich handeln würde).
                         Inhaltsbereiche werden bei der Umwandlung in HTML zu <span class="gi">&lt;div&gt;</span>-Elementen, die entweder
                         Kindelemente des Seitencontainers (HTML-Entsprechung von <span class="gi">&lt;surface&gt;</span>)  
-                        oder Kindelemente eines Layout-Containers (Entsprechung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/groupingzone.html" target="_blank">hc:GroupingZone</a><span class="loddocborder"> ‹</span>) sind.
+                        oder Kindelemente eines Layout-Containers (Entsprechung von ) sind.
                         Im letzteren Fall funktionieren sie in einem <em>flex container</em> als dessen <em>flex items</em>.
                         Jedenfalls beinhalten Inhaltsbereiche ihrerseits keine Gruppierungsbereiche, sondern unmittelbar den 
                         jeweiligen Inhalt.                       
@@ -87,10 +87,7 @@
                      zu vereinfachen, wird an das jeweilige <span class="gi">&lt;zone&gt;</span>/<span class="att">@ana</span> beim Durchlaufen der TEI-Verarbeitungspipeline
                      eindeutig entweder <span class="val">hc:GroupingZone</span> oder <span class="val">hc:ContentZone</span> gesetzt.
                   </p>
-                  <p>
-                     Die in <a class="inlink" href="layout.html#FAC-DEC-LAYOUT">Layouterfassung</a> beschriebenen layout-relevanten Typen der 
-                     Gruppierungsbereiche werden in HTML wie folgt umgesetzt:              
-                  </p>
+                  
                   <ul>
                      <li>
                         <span class="item_label"><span class="val">hc:HorizontalLayout</span></span>
@@ -342,19 +339,19 @@
                      die das Layout näher beschreiben, aber für technische Aspekte der Visualisierung irrelevant sind. 
                      Diese Angaben werden jeweils in ihre deutschen oder englischen natursprachlichen <em>label</em> 
                      übersetzt und am betroffenen HTML-Element optional als Information ausgegeben. 
-                     Die hier einschlägigen URIs sind den Abschnitten <a class="inlink" href="layout.html#FAC-DEC-CONTENTZONE">Angaben zu Typen von Inhaltsbereichen</a> sowie 
-                     <a class="inlink" href="layout.html#FAC-DEC-SEMISTRUC">Semistrukturelle Angaben zu Layout- und Inhaltsbereichen</a> zu entnehmen.
+                     Die hier einschlägigen URIs sind den Abschnitten  sowie 
+                      zu entnehmen.
                   </p>
                   <p>
                      <span class="aside"><span class="att">@hei:placeRef</span></span>
-                     An Randbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/marginalzone.html" target="_blank">hc:MarginalZone</a><span class="loddocborder"> ‹</span> bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/marginalcolumn.html" target="_blank">hc:MarginalColumn</a><span class="loddocborder"> ‹</span>)
+                     An Randbereichen ( bzw. )
                      kann mit dem Attribut <span class="att">@hei:placeRef</span> als ergänzende Information
                      zur strukturellen Layoutbeschreibung die Platzierung an einem der im Layoutsystem der jeweiligen 
                      Inhaltsfläche vorhandenen Ränder angegeben werden. Diese Angaben werden für die Visualisierung
                      jeweils in ihre deutschen oder englischen natursprachlichen <em>label</em> 
                      übersetzt und am betroffenen HTML-Element optional als Information ausgegeben.
                      Die hierfür einschlägigen URIs sind dem Abschnitt 
-                     <a class="inlink" href="layout.html#FAC-DEC-PLACEMENT">Ergänzende Angaben zur Platzierung von Randbereichen</a> zu entnehmen.                     
+                      zu entnehmen.                     
                   </p>
                   
                   
@@ -369,7 +366,7 @@
             
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 16.04.2024
+                        Letzte Aktualisierung: 22.07.2024
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

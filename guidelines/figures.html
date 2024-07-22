@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html><head><title>heiEDITIONS Dokumentation | Bilder und Tabellen</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><title>heiEDITIONS Dokumentation | Bilder und Tabellen</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
@@ -155,28 +155,20 @@
                   Ein Bild könnte also in einem sehr einfachen Fall (ohne intendierte Quellenansicht, also unter Verzicht auf
                   Layouterfassung) so kodiert werden:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<figure>
-   <figDesc>Schwarzweißfotografie von zwei spielenden Knaben</figDesc>
-</figure>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;figure xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;figDesc&gt;Schwarzweißfotografie von zwei spielenden Knaben&lt;/figDesc&gt;
+&lt;/figure&gt;
+               </code></pre></div>
                <p>
                   Mit den vergebenen Attributen <span class="att">@n</span> und <span class="att">@xml:id</span> könnte das Beispiel etwa so
                   aussehen:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<figure n="3" xml:id="fig_3">
-   <figDesc>Schwarzweißfotografie von zwei spielenden Knaben</figDesc>
-</figure>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;figure xmlns="http://www.tei-c.org/ns/Examples" n="3" xml:id="fig_3"&gt;
+   &lt;figDesc&gt;Schwarzweißfotografie von zwei spielenden Knaben&lt;/figDesc&gt;
+&lt;/figure&gt;                  
+               </code></pre></div>
                <p>
                   <span class="aside">Bildüberschrift</span>
                   Eine Bildüberschrift bzw. -unterschrift wird mit dem Element <span class="gi">&lt;head&gt;</span> erfasst. Dabei kann es sich einerseits 
@@ -213,8 +205,8 @@
                   das Element <span class="gi">&lt;table&gt;</span> eine semantisch-logische Sinneinheit, die eine Überschrift mit einschließt, 
                   andererseits handelt es sich aus der Perspektive des Layouts bei einer Tabelle im engeren Sinne nur um das,
                   was aus Tabellenzeilen und Tabellenspalten besteht. Nur das letztere ist – sofern aus einer Quelle ediert wird und in <span class="gi">&lt;facsimile&gt;</span>
-                  eine Layoutdeklaration vorgenommen wird – einem Tabellenbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/tablezone.html" target="_blank">hc:TableZone</a><span class="loddocborder"> ‹</span>) zuzuordnen,
-                  während eine Überschrift außerhalb der eigentlichen Tabellenstruktur in der Regel einem Textbereich (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/textzone.html" target="_blank">hc:TextZone</a><span class="loddocborder"> ‹</span>)
+                  eine Layoutdeklaration vorgenommen wird – einem Tabellenbereich () zuzuordnen,
+                  während eine Überschrift außerhalb der eigentlichen Tabellenstruktur in der Regel einem Textbereich ()
                   angehört, da ihr Inhalt üblicherweise nur in Zeilen, nicht in Tabellenzeilen und Tabellenspalten, angeordnet ist.
                </p>
                <p>
@@ -229,8 +221,8 @@
                </p>
                <p>
                   Die Abfolge der Tabellenzeilen (<span class="gi">&lt;row&gt;</span>) darf durch kein anderes Element mit Ausnahme von <span class="gi">&lt;pb&gt;</span>,
-                  <span class="gi">&lt;cb&gt;</span> oder <span class="gi">&lt;milestone&gt;</span> unterbrochen werden (<span class="gi">&lt;milestone&gt;</span> nur vom Typ <span class="loddocborder">› </span><a class="loddoc" href="../concepts/zonebeginning.html" target="_blank">hc:ZoneBeginning</a><span class="loddocborder"> ‹</span>
-                  oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/zoneshift.html" target="_blank">hc:ZoneShift</a><span class="loddocborder"> ‹</span>), um ggf. Seiten- bzw. Spaltengrenzen bei Tabellen festzuhalten, die sich über mehrere Seiten,
+                  <span class="gi">&lt;cb&gt;</span> oder <span class="gi">&lt;milestone&gt;</span> unterbrochen werden (<span class="gi">&lt;milestone&gt;</span> nur vom Typ 
+                  oder ), um ggf. Seiten- bzw. Spaltengrenzen bei Tabellen festzuhalten, die sich über mehrere Seiten,
                   Spalten oder sonstige Layoutbereiche erstrecken.
                </p>
                
@@ -240,12 +232,8 @@
                   ist es möglich, mit dem Attribut <span class="att">@rendition</span> das Vorhandenseit oder Fehlen eines Rahmens
                   anzugeben. Dazu dienen diese beiden Klassen: 
                </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/border.html"><span class="val">hc:Border</span></a> ( ›mit Rahmen‹ ): Visueller Gegenstand, der mit einem Rahmen versehen ist.
-               </p>
-               <p class="resdef">
-                  <a class="refboxlink" href="../concepts/noborder.html"><span class="val">hc:NoBorder</span></a> ( ›ohne Rahmen‹ ): Visueller Gegenstand, der mit keinem Rahmen versehen ist.
-               </p>
+               
+               
                
                <p>
                   <span class="aside">Spaltenbreite</span>
@@ -260,19 +248,15 @@
                   Für die Angabe der relativen Breite verwenden wir das Attribut <span class="att">@hei:width</span>, dessen Inhalt eine ein- bis zweistellige 
                   Zahl sowie das Prozentzeichen ist. Beispiel:
                </p>
-               
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<table>
-   <row>
-      <cell hei:width="20%">...</cell>
-      <cell hei:width="50%">...</cell>
-      <cell hei:width="30%">...</cell>
-   </row>
-</table>--></code>
-            </pre>
-        </div>
-    
+               <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;table xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;row&gt;
+      &lt;cell hei:width="20%"&gt;...&lt;/cell&gt;
+      &lt;cell hei:width="50%"&gt;...&lt;/cell&gt;
+      &lt;cell hei:width="30%"&gt;...&lt;/cell&gt;
+   &lt;/row&gt;
+&lt;/table&gt;                 
+               </code></pre></div>
                <p>
                   Wenn die Breitenangabe nur für einige Spalten vorhanden wäre und für andere nicht, wäre es so zu verstehen,
                   dass sich die verbleibende prozentuelle Breite (nach Abzug der explizit angegebenen Breitenanteile) gleichmäßig
@@ -287,7 +271,7 @@
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>Somit entspricht in TEI das Element <span class="gi">&lt;figDesc&gt;</span> dem Attribut <span class="att">@alt</span> an <span class="gi">&lt;img&gt;</span>
                   in HTML.</div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 16.04.2024
+                        Letzte Aktualisierung: 22.07.2024
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

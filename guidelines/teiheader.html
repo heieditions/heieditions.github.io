@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html><head><title>heiEDITIONS Dokumentation | Metadaten</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><title>heiEDITIONS Dokumentation | Metadaten</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
@@ -105,7 +105,7 @@
                      <span class="gi">&lt;title&gt;</span>-Elementen untergebracht werden; sie können aber auch als eine einzige Angabe in einem 
                      <span class="gi">&lt;title&gt;</span> stehen, dann in der Regel mit einem geeigneten Trennzeichen in der Mitte. Bei formaler Trennung
                      von Haupttitel und Untertitel erfolgt die Kennzeichnung am Attribut <span class="att">@ana</span> mit den Werten
-                     <span class="loddocborder">› </span><a class="loddoc" href="../concepts/maintitle.html" target="_blank">hc:MainTitle</a><span class="loddocborder"> ‹</span> bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/subtitle.html" target="_blank">hc:Subtitle</a><span class="loddocborder"> ‹</span>.                    
+                      bzw. .                    
                   </p>
                   <p>
                      Titel können auch in mehreren Sprachvarianten angegeben werden. Das Element <span class="gi">&lt;title&gt;</span> trägt
@@ -114,51 +114,35 @@
                   <p>
                      Code-Beispiele:
                   </p>
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<titleStmt>
-   <title>Wolframs von Eschenbach Parzival nach der Handschrift G – digitale Edition</title>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;titleStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;title&gt;Wolframs von Eschenbach Parzival nach der Handschrift G – digitale Edition&lt;/title&gt;
    […]
-</titleStmt>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<titleStmt>
-   <title xml:lang="de">Brief von Theodor Mommsen an Marie Reimer, Zürich, 30.05.1854 – digitale Edition nach dem Autograf</title>
-   <title xml:lang="en">Letter from Theodor Mommsen to Marie Reimer, Zurich, 30.05.1854 – a digital edition from the autograph</title>
+&lt;/titleStmt&gt;
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;titleStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;title xml:lang="de"&gt;Brief von Theodor Mommsen an Marie Reimer, Zürich, 30.05.1854 – digitale Edition nach dem Autograf&lt;/title&gt;
+   &lt;title xml:lang="en"&gt;Letter from Theodor Mommsen to Marie Reimer, Zurich, 30.05.1854 – a digital edition from the autograph&lt;/title&gt;
    […] 
-</titleStmt>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<titleStmt>
-   <title ana="hc:MainTitle">Altjavanische Sprachdenkmäler – rezente Funde</title>
-   <title ana="hc:Subtitle">Kommentierte digitale Edition</title>
+&lt;/titleStmt&gt;
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;titleStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;title ana="hc:MainTitle"&gt;Altjavanische Sprachdenkmäler – rezente Funde&lt;/title&gt;
+   &lt;title ana="hc:Subtitle"&gt;Kommentierte digitale Edition&lt;/title&gt;
    […]
-</titleStmt>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<titleStmt>
-   <title ana="hc:MainTitle" xml:lang="de">Das Passauer Osterspiel</title>
-   <title ana="hc:Subtitle" xml:lang="de">Digitale Edition nach allen erhaltenen Handschriften</title>
-   <title ana="hc:MainTitle" xml:lang="en">The Easter play of Passau</title>
-   <title ana="hc:Subtitle" xml:lang="en">Digital edition from all extant manuscripts</title>
+&lt;/titleStmt&gt;
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;titleStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;title ana="hc:MainTitle" xml:lang="de"&gt;Das Passauer Osterspiel&lt;/title&gt;
+   &lt;title ana="hc:Subtitle" xml:lang="de"&gt;Digitale Edition nach allen erhaltenen Handschriften&lt;/title&gt;
+   &lt;title ana="hc:MainTitle" xml:lang="en"&gt;The Easter play of Passau&lt;/title&gt;
+   &lt;title ana="hc:Subtitle" xml:lang="en"&gt;Digital edition from all extant manuscripts&lt;/title&gt;
    […]
-</titleStmt>--></code>
-            </pre>
-        </div>
-    
+&lt;/titleStmt&gt;
+                  </code></pre></div>
                   <p>
                      <span class="aside">Beteiligungsrollen</span>
                      Für die Verantwortlichkeitsangaben gilt, dass jeder Akteur (Person oder Körperschaft), dessen Beteiligung am Inhalt oder an der Form
@@ -195,7 +179,7 @@
                      jedoch nicht im <span class="gi">&lt;titleStmt&gt;</span> anzugeben, etwa <em>publisher</em> 
                      (<span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/pbl" target="_blank">http://id.loc.gov/vocabulary/relators/pbl</a>) oder 
                      <em>publication place</em> (<span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/pup" target="_blank">http://id.loc.gov/vocabulary/relators/pup</a>),
-                     dazu s. hier <a class="inlink" href="#TEIHEADER-FILEDESC-PUBLICATIONSTMT">Angaben zur Veröffentlichung</a>.
+                     dazu s. hier .
                   </p>
                   <p>
                      Die vorgesehene Struktur der Elemente <span class="gi">&lt;author&gt;</span>, <span class="gi">&lt;editor&gt;</span>, <span class="gi">&lt;principal&gt;</span>, <span class="gi">&lt;funder&gt;</span> und <span class="gi">&lt;sponsor&gt;</span>
@@ -209,47 +193,35 @@
                      ein URI der Gemeinsamen Normdatei (GND) und ein ORCID-URI als Identifikatoren angegeben
                      werden, z. B.:
                   </p>
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<titleStmt>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;titleStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
    […]
-   <author>
-      <persName>Marcus Tullius Cicero</persName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/118520814</idno>
-   </author>
+   &lt;author&gt;
+      &lt;persName&gt;Marcus Tullius Cicero&lt;/persName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/118520814&lt;/idno&gt;
+   &lt;/author&gt;
    […]
-</titleStmt>--></code>
-            </pre>
-        </div>
-    
+&lt;/titleStmt&gt;
+                  </code></pre></div>
                   <p>oder:</p>
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<titleStmt>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;titleStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
    […]
-   <editor>
-      <persName>Carmen Cardelle de Hartmann</persName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/113694237</idno>
-      <idno ana="hc:ORCIDURI">https://orcid.org/0000-0002-5251-050X</idno>
-   </editor>
+   &lt;editor&gt;
+      &lt;persName&gt;Carmen Cardelle de Hartmann&lt;/persName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/113694237&lt;/idno&gt;
+      &lt;idno ana="hc:ORCIDURI"&gt;https://orcid.org/0000-0002-5251-050X&lt;/idno&gt;
+   &lt;/editor&gt;
    […]
-</titleStmt>--></code>
-            </pre>
-        </div>
-    
+&lt;/titleStmt&gt;
+                  </code></pre></div>
                   <p>oder:</p>
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<funder>
-   <orgName>Deutsche Forschungsgemeinschaft</orgName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/2007744-0</idno>
-</funder>--></code>
-            </pre>
-        </div>
-    
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;funder xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;orgName&gt;Deutsche Forschungsgemeinschaft&lt;/orgName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/2007744-0&lt;/idno&gt;
+&lt;/funder&gt;
+                  </code></pre></div>
                   <p>
                      Die Reihenfolge der (optionalen) Identifikatoren ist irrelevant.
                   </p>
@@ -275,23 +247,19 @@
                   <p>
                      Beispiel:
                   </p>
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<editor>
-   <persName>Jakub Šimek</persName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/1037976495</idno>
-   <idno ana="hc:ORCIDURI">https://orcid.org/0000-0002-7262-7342</idno>
-   <affiliation>
-      <orgName xml:lang="de">Universitätsbibliothek Heidelberg</orgName>
-      <orgName xml:lang="en">Heidelberg University Library</orgName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
-   </affiliation>
-   <email>simek@ub.uni-heidelberg.de</email>
-</editor>--></code>
-            </pre>
-        </div>
-    
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;editor xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;persName&gt;Jakub Šimek&lt;/persName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/1037976495&lt;/idno&gt;
+   &lt;idno ana="hc:ORCIDURI"&gt;https://orcid.org/0000-0002-7262-7342&lt;/idno&gt;
+   &lt;affiliation&gt;
+      &lt;orgName xml:lang="de"&gt;Universitätsbibliothek Heidelberg&lt;/orgName&gt;
+      &lt;orgName xml:lang="en"&gt;Heidelberg University Library&lt;/orgName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/2002498-8&lt;/idno&gt;
+   &lt;/affiliation&gt;
+   &lt;email&gt;simek@ub.uni-heidelberg.de&lt;/email&gt;
+&lt;/editor&gt;
+                  </code></pre></div>
                   <p>
                      <span class="aside">Untergliederung von Personennamen</span>
                      Bei Personennamen kann der Wunsch aufkommen, Namensbestandteile mit speziellen Elementen gesondert
@@ -327,27 +295,19 @@
                   <p>
                      Beispiele für <span class="gi">&lt;persName&gt;</span> mit Auszeichnungen der Namensbestandteile:
                   </p>
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<persName>
-   <forename>Karl-Theodor</forename>
-   <nameLink>zu</nameLink>
-   <surname>Guttenberg</surname>
-</persName>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<persName>
-   <forename>Ekkehard</forename>
-   <genName>IV.</genName>
-</persName>--></code>
-            </pre>
-        </div>
-    
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;persName xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;forename&gt;Karl-Theodor&lt;/forename&gt;
+   &lt;nameLink&gt;zu&lt;/nameLink&gt;
+   &lt;surname&gt;Guttenberg&lt;/surname&gt;
+&lt;/persName&gt;
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;persName xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;forename&gt;Ekkehard&lt;/forename&gt;
+   &lt;genName&gt;IV.&lt;/genName&gt;
+&lt;/persName&gt;
+                  </code></pre></div>
                   <p>
                      Sowohl bei Personen als auch bei Körperschaften können, wenn sinnvoll, auch mehrere Namen
                      (einer Person oder einer Körperschaft) angegeben werden, jeweils mit einem eigenen
@@ -355,28 +315,20 @@
                      Namen möglich – dann sollte jedes <span class="gi">&lt;persName&gt;</span> oder <span class="gi">&lt;orgName&gt;</span> mit <span class="att">@xml:lang</span>
                      gekennzeichnet werden. Beispiele:
                   </p>
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<author>
-   <persName>Kate Middleton</persName>
-   <persName>Catherine, Princess of Wales</persName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/140486755</idno>
-</author>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<funder>
-   <orgName xml:lang="de">Fritz-Thyssen-Stiftung</orgName>
-   <orgName xml:lang="en">Fritz Thyssen Foundation</orgName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/2010888-6</idno>
-</funder>--></code>
-            </pre>
-        </div>
-    
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;author xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;persName&gt;Kate Middleton&lt;/persName&gt;
+   &lt;persName&gt;Catherine, Princess of Wales&lt;/persName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/140486755&lt;/idno&gt;
+&lt;/author&gt;
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;funder xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;orgName xml:lang="de"&gt;Fritz-Thyssen-Stiftung&lt;/orgName&gt;
+   &lt;orgName xml:lang="en"&gt;Fritz Thyssen Foundation&lt;/orgName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/2010888-6&lt;/idno&gt;
+&lt;/funder&gt;
+                  </code></pre></div>
                   <p>
                      <span class="aside"><span class="gi">&lt;respStmt&gt;</span></span>
                      Bei der Verwendung des generischen Elements <span class="gi">&lt;respStmt&gt;</span> für die Angabe der Beteiligung
@@ -396,43 +348,31 @@
                      Sprachen jeweils einmal pro Sprache. Es kann sinnvoll sein, eine deutsche und eine englische Version
                      anzugeben. Beispiele:
                   </p>
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<respStmt ref="http://id.loc.gov/vocabulary/relators/trc">
-   <resp xml:lang="de">Transkription</resp>
-   <resp xml:lang="en">transcription</resp>
-   <persName>Karl Lachmann</persName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/118568558</idno>
-</respStmt>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<respStmt ref="http://id.loc.gov/vocabulary/relators/red">
-   <resp xml:lang="de">TEI-Redaktion</resp>
-   <resp xml:lang="en">TEI redaction</resp>
-   <orgName xml:lang="de">Universitätsbibliothek Heidelberg</orgName>
-   <orgName xml:lang="en">Heidelberg University Library</orgName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
-</respStmt>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<respStmt ref="http://id.loc.gov/vocabulary/relators/csl http://id.loc.gov/vocabulary/relators/pfr">
-   <resp xml:lang="de">Beratung und Korrekturlesen</resp>
-   <resp xml:lang="en">consulting and proofreading</resp>
-   <persName>Charlotte von Stein</persName>                    
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/118617222</idno>
-</respStmt>--></code>
-            </pre>
-        </div>
-    
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;respStmt xmlns="http://www.tei-c.org/ns/Examples" ref="http://id.loc.gov/vocabulary/relators/trc"&gt;
+   &lt;resp xml:lang="de"&gt;Transkription&lt;/resp&gt;
+   &lt;resp xml:lang="en"&gt;transcription&lt;/resp&gt;
+   &lt;persName&gt;Karl Lachmann&lt;/persName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/118568558&lt;/idno&gt;
+&lt;/respStmt&gt;                     
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;respStmt xmlns="http://www.tei-c.org/ns/Examples" ref="http://id.loc.gov/vocabulary/relators/red"&gt;
+   &lt;resp xml:lang="de"&gt;TEI-Redaktion&lt;/resp&gt;
+   &lt;resp xml:lang="en"&gt;TEI redaction&lt;/resp&gt;
+   &lt;orgName xml:lang="de"&gt;Universitätsbibliothek Heidelberg&lt;/orgName&gt;
+   &lt;orgName xml:lang="en"&gt;Heidelberg University Library&lt;/orgName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/2002498-8&lt;/idno&gt;
+&lt;/respStmt&gt;                     
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;respStmt xmlns="http://www.tei-c.org/ns/Examples" ref="http://id.loc.gov/vocabulary/relators/csl http://id.loc.gov/vocabulary/relators/pfr"&gt;
+   &lt;resp xml:lang="de"&gt;Beratung und Korrekturlesen&lt;/resp&gt;
+   &lt;resp xml:lang="en"&gt;consulting and proofreading&lt;/resp&gt;
+   &lt;persName&gt;Charlotte von Stein&lt;/persName&gt;                    
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/118617222&lt;/idno&gt;
+&lt;/respStmt&gt;    
+                  </code></pre></div>
                   <p>
                      Die Elemente <span class="gi">&lt;author&gt;</span>, <span class="gi">&lt;editor&gt;</span>, <span class="gi">&lt;principal&gt;</span>, <span class="gi">&lt;funder&gt;</span> und <span class="gi">&lt;sponsor&gt;</span>
                      sowie <span class="gi">&lt;respStmt&gt;</span> können mit einer <span class="att">@xml:id</span> versehen werden. Dadurch sind sie
@@ -487,60 +427,40 @@
                      verbal Bezug genommen werden, dann aber ohne gesondertes Markup.
                   </p>
                   <p>Beispiele:</p>
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<editionStmt>
-   <edition>Vorläufige Arbeitsversion</edition>
-</editionStmt>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<editionStmt>
-   <edition xml:lang="de">Grobe Transkription ohne weitergehende Qualitätssicherung und editorische Aufbereitung</edition>
-   <edition xml:lang="en">Raw transcription without further quality control and editorial processing</edition>
-</editionStmt>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<editionStmt>
-   <edition xml:lang="de">3., um Literaturhinweise ergänzte Ausgabe</edition>
-   <edition xml:lang="en">3rd edition with additional bibliographic references</edition>
-   <respStmt ref="http://id.loc.gov/vocabulary/relators/ctb">
-      <resp xml:lang="de">Ergänzung von Literaturhinweisen</resp>
-      <resp xml:lang="en">addition of bibliographic references</resp>
-      <persName>Max Mustermann</persName>
-      <idno ana="hc:ORCIDURI">https://orcid.org/1234-1234-1234-1234</idno>
-   </respStmt>
-</editionStmt>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<editionStmt>
-   <edition xml:lang="de">2., wesentlich verbesserte Ausgabe</edition>
-   <edition xml:lang="en">2nd edition, substantially revised</edition>
-</editionStmt>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<editionStmt>
-   <edition>Revidierte Fassung der Ausgabe von 2018</edition>
-</editionStmt>--></code>
-            </pre>
-        </div>
-    
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;editionStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;edition&gt;Vorläufige Arbeitsversion&lt;/edition&gt;
+&lt;/editionStmt&gt;
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;editionStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;edition xml:lang="de"&gt;Grobe Transkription ohne weitergehende Qualitätssicherung und editorische Aufbereitung&lt;/edition&gt;
+   &lt;edition xml:lang="en"&gt;Raw transcription without further quality control and editorial processing&lt;/edition&gt;
+&lt;/editionStmt&gt;
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;editionStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;edition xml:lang="de"&gt;3., um Literaturhinweise ergänzte Ausgabe&lt;/edition&gt;
+   &lt;edition xml:lang="en"&gt;3rd edition with additional bibliographic references&lt;/edition&gt;
+   &lt;respStmt ref="http://id.loc.gov/vocabulary/relators/ctb"&gt;
+      &lt;resp xml:lang="de"&gt;Ergänzung von Literaturhinweisen&lt;/resp&gt;
+      &lt;resp xml:lang="en"&gt;addition of bibliographic references&lt;/resp&gt;
+      &lt;persName&gt;Max Mustermann&lt;/persName&gt;
+      &lt;idno ana="hc:ORCIDURI"&gt;https://orcid.org/1234-1234-1234-1234&lt;/idno&gt;
+   &lt;/respStmt&gt;
+&lt;/editionStmt&gt;
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;editionStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;edition xml:lang="de"&gt;2., wesentlich verbesserte Ausgabe&lt;/edition&gt;
+   &lt;edition xml:lang="en"&gt;2nd edition, substantially revised&lt;/edition&gt;
+&lt;/editionStmt&gt;
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;editionStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;edition&gt;Revidierte Fassung der Ausgabe von 2018&lt;/edition&gt;
+&lt;/editionStmt&gt;
+                  </code></pre></div>
                </div>
                
                <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT">
@@ -564,15 +484,11 @@
                      entsprechenden Hinweis in <span class="gi">&lt;p&gt;</span> zu befüllen (ggf. mehrsprachig mit mehreren, jeweils
                      mit <span class="att">@xml:lang</span> gekennzeichneten <span class="gi">&lt;p&gt;</span>-Elementen). Beispiel:
                   </p>
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<publicationStmt>
-   <p>This document is not yet released for publication.</p>
-</publicationStmt>--></code>
-            </pre>
-        </div>
-    
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;publicationStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;p&gt;This document is not yet released for publication.&lt;/p&gt;
+&lt;/publicationStmt&gt;
+                  </code></pre></div>
                   <p>
                      Bei TEI-Dokumenten, die bereits zur Veröffentlichung freigegeben sind,
                      enthält <span class="gi">&lt;publicationStmt&gt;</span> hingegen die folgenden Elemente in dieser Reihenfolge:
@@ -623,35 +539,27 @@
                         Die entsprechende Standardangabe für Publikationen, die durch die Universitätsbibliothek Heidelberg 
                         veröffentlicht werden, ist wie folgt:
                      </p>
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<publisher>
-   <orgName>Universitätsbibliothek Heidelberg</orgName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
-   <listRef>
-      <ptr ana="hc:URLReference" target="https://www.ub.uni-heidelberg.de/"/>
-   </listRef>                          
-</publisher>--></code>
-            </pre>
-        </div>
-    
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;publisher xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;orgName&gt;Universitätsbibliothek Heidelberg&lt;/orgName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/2002498-8&lt;/idno&gt;
+   &lt;listRef&gt;
+      &lt;ptr ana="hc:URLReference" target="https://www.ub.uni-heidelberg.de/"/&gt;
+   &lt;/listRef&gt;                          
+&lt;/publisher&gt;                       
+                     </code></pre></div>
                      <p>
                         Für eine beim FID Propylaeum erschienene Publikation kann die folgende Angabe verwendet werden:
                      </p>
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<publisher>
-   <orgName>Propylaeum</orgName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/1257896830</idno>
-   <listRef>
-      <ptr ana="hc:URLReference" target="https://www.propylaeum.de/"/>
-   </listRef>     
-</publisher>--></code>
-            </pre>
-        </div>
-    
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;publisher xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;orgName&gt;Propylaeum&lt;/orgName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/1257896830&lt;/idno&gt;
+   &lt;listRef&gt;
+      &lt;ptr ana="hc:URLReference" target="https://www.propylaeum.de/"/&gt;
+   &lt;/listRef&gt;     
+&lt;/publisher&gt;
+                     </code></pre></div>
                   </div>
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBPLACE">
@@ -671,16 +579,12 @@
                         Bei einer typischen von der Universitätsbibliothek Heidelberg herausgegebenen Publikation
                         sieht <span class="gi">&lt;pubPlace&gt;</span> wie folgt aus:
                      </p>
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<pubPlace>
-   <placeName>Heidelberg</placeName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/4023996-2</idno>
-</pubPlace>--></code>
-            </pre>
-        </div>
-                         
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;pubPlace xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;placeName&gt;Heidelberg&lt;/placeName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4023996-2&lt;/idno&gt;
+&lt;/pubPlace&gt;
+                     </code></pre></div>                     
                   </div>
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-DATE">
@@ -695,18 +599,10 @@
                         eine maschinenlesbare Datumsangabe in der Form <span class="val">JJJJ-MM-TT</span>, <span class="val">JJJJ-MM</span> oder <span class="val">JJJJ</span> 
                         bereitgestellt werden, z. B.:
                      </p>
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<date when="2022">2022</date>--></code>
-            </pre>
-        </div>
-    
-                     <p>
-                        Wenn es sich bei der veröffentlichten Ressource um eine spezifische Auflage, Ausgabe oder Version 
-                        (von mehreren vorliegenden oder zu erwartenden) handelt (s. <a class="inlink" href="#TEIHEADER-FILEDESC-EDITIONSTMT">Angaben zur Auflage</a>), 
-                        entspricht das hier angegebene Datum dem Veröffentlichungsdatum der spezifischen Version.
-                     </p>                    
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;date xmlns="http://www.tei-c.org/ns/Examples" when="2022"&gt;2022&lt;/date&gt;
+                     </code></pre></div>
+                                         
                   </div>
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-AVAILABILITY">
@@ -731,64 +627,52 @@
                         jeweils mit <span class="att">@xml:lang</span> gekennzeichnet. Der Verweis auf einen URI oder URL mit der offiziellen
                         Definition der gewählten Lizenz kann an <span class="gi">&lt;licence&gt;</span> mit <span class="att">@target</span> vorgenommen werden.<sup><a href="#note_3" id="note_reference_3" class="note_mark">3)</a></sup> Beispiel:
                      </p>
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<availability>
-   <p xml:lang="de">
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;availability xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;p xml:lang="de"&gt;
       Die Herausgeber erlauben ausdrücklich die Verbreitung und Nutzung 
       der in diesem TEI-Dokument veröffentlichten Inhalte unter den Bedingungen
       der angegebenen Lizenzbestimmungen.
-   </p>
-   <p xml:lang="en">
+   &lt;/p&gt;
+   &lt;p xml:lang="en"&gt;
       The editors explicitly allow the distribution and use of the content published
       in this TEI document under the conditions of the indicated licence regulations. 
-   </p>
-   <licence target="https://creativecommons.org/licenses/by-sa/4.0">
-      <p xml:lang="de">
+   &lt;/p&gt;
+   &lt;licence target="https://creativecommons.org/licenses/by-sa/4.0"&gt;
+      &lt;p xml:lang="de"&gt;
          Dieses Dokument wurde unter der Lizenz
          Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)
          veröffentlicht.
-      </p>
-      <p xml:lang="en">
+      &lt;/p&gt;
+      &lt;p xml:lang="en"&gt;
          This document has been published under the Creative Commons licence 
          Attribution-ShareAlike 4.0 International (CC BY-SA 4.0).
-      </p>
-   </licence>                             
-</availability>--></code>
-            </pre>
-        </div>
-    
+      &lt;/p&gt;
+   &lt;/licence&gt;                             
+&lt;/availability&gt;
+                     </code></pre></div>
                      <p>
                         Oder deutlich kürzer, aber praktisch mit derselben Aussage:
                      </p>
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<availability>
-   <licence target="https://creativecommons.org/licenses/by-sa/4.0">
-      <p>Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)</p>
-   </licence>
-</availability>--></code>
-            </pre>
-        </div>
-    
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;availability xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;licence target="https://creativecommons.org/licenses/by-sa/4.0"&gt;
+      &lt;p&gt;Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)&lt;/p&gt;
+   &lt;/licence&gt;
+&lt;/availability&gt;
+                     </code></pre></div>
                      <p>Ein Beispiel für eine restriktive Bestimmung:</p>
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<availability>
-   <p xml:lang="de">
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;availability xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;p xml:lang="de"&gt;
       Freier Zugang, alle Rechte vorbehalten. Die Herausgeber bitten bei Nutzungswünschen
       um Kontaktaufnahme.
-   </p>
-   <p xml:lang="en">
+   &lt;/p&gt;
+   &lt;p xml:lang="en"&gt;
       Free access, all rights reserved. Please contact the editors if you wish to use the content.
-   </p>
-</availability>--></code>
-            </pre>
-        </div>
-    
+   &lt;/p&gt;
+&lt;/availability&gt;
+                     </code></pre></div>
                   </div>
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-IDNO">
@@ -806,20 +690,12 @@
                      <p>
                         Beispiele:
                      </p>
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<idno ana="hc:DOI">https://doi.org/10.11588/data/FNKJ2Y</idno>--></code>
-            </pre>
-        </div>
-    
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<idno ana="hc:DOI">https://doi.org/10.11588/edition.kcd</idno>--></code>
-            </pre>
-        </div>
-    
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;idno xmlns="http://www.tei-c.org/ns/Examples" ana="hc:DOI"&gt;https://doi.org/10.11588/data/FNKJ2Y&lt;/idno&gt;
+                     </code></pre></div>
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;idno xmlns="http://www.tei-c.org/ns/Examples" ana="hc:DOI"&gt;https://doi.org/10.11588/edition.kcd&lt;/idno&gt;
+                     </code></pre></div>
                      
                   </div>
                   
@@ -833,7 +709,7 @@
                         und zu dessen Veröffentlichung gehören, oder von Katalogseiten mit Metadaten, welche die Ressource 
                         oder eine entsprechende Ressourcen- oder Datensammlung oder eine Edition repräsentieren, können innerhalb von <span class="gi">&lt;listRef&gt;</span>
                         wahlweise mit <span class="gi">&lt;ptr&gt;</span> oder <span class="gi">&lt;ref&gt;</span> angegeben werden, jeweils an <span class="att">@ana</span>
-                        gekennzeichnet als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/urlreference.html" target="_blank">hc:URLReference</a><span class="loddocborder"> ‹</span>. Die Internetadresse selbst
+                        gekennzeichnet als . Die Internetadresse selbst
                         wird im Attribut <span class="att">@target</span> angegeben, und zwar vollständig einschließlich der
                         Protokollangabe <span class="code">http://</span> oder <span class="code">https://</span>.
                      </p>
@@ -852,26 +728,18 @@
                         ediert sind, sollten hier nicht angegeben werden.
                      </p>
                      <p>Beispiele:</p>
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<listRef>
-   <ref ana="hc:URLReference" target="https://digi.ub.uni-heidelberg.de/wgd">Portalseite von Welscher Gast digital</ref>
-   <ref ana="hc:URLReference" target="https://katalog.ub.uni-heidelberg.de/titel/68287294">Eintrag im Heidelberger Bibliothekskatalog HEIDI</ref>
-   <ref ana="hc:URLReference" target="https://opac.k10plus.de/DB=2.299/PPNSET?PPN=1654589543&PRS=HOL&HILN=888&INDEXSET=21">Eintrag im Katalog des Bibliotheksverbunds K10plus</ref>
-</listRef>--></code>
-            </pre>
-        </div>
-    
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<listRef>
-   <ptr ana="hc:URLReference" target="http://www.ub.uni-heidelberg.de/archiv/20180"/>
-</listRef>--></code>
-            </pre>
-        </div>
-                         
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;listRef xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;ref ana="hc:URLReference" target="https://digi.ub.uni-heidelberg.de/wgd"&gt;Portalseite von Welscher Gast digital&lt;/ref&gt;
+   &lt;ref ana="hc:URLReference" target="https://katalog.ub.uni-heidelberg.de/titel/68287294"&gt;Eintrag im Heidelberger Bibliothekskatalog HEIDI&lt;/ref&gt;
+   &lt;ref ana="hc:URLReference" target="https://opac.k10plus.de/DB=2.299/PPNSET?PPN=1654589543&amp;PRS=HOL&amp;HILN=888&amp;INDEXSET=21"&gt;Eintrag im Katalog des Bibliotheksverbunds K10plus&lt;/ref&gt;
+&lt;/listRef&gt;
+                     </code></pre></div>
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;listRef xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;ptr ana="hc:URLReference" target="http://www.ub.uni-heidelberg.de/archiv/20180"/&gt;
+&lt;/listRef&gt;
+                     </code></pre></div>                     
                   </div>    
                   
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-LISTBIBL">
@@ -897,20 +765,16 @@
                      </p>
                      <p>
                         Jedes <span class="gi">&lt;bibl&gt;</span> für eine solche bibliographische Angabe ist an <span class="att">@ana</span> der Klasse
-                        <span class="loddocborder">› </span><a class="loddoc" href="../concepts/recommendedbibliographicreference.html" target="_blank">hc:RecommendedBibliographicReference</a><span class="loddocborder"> ‹</span> (oder ggf. künftig einer Unterklasse
+                         (oder ggf. künftig einer Unterklasse
                         davon – etwa für die Unterscheidung zwischen einer zitierten Ebene oder zwischen zitierten
                         Visualisierungsansichten) zuzuweisen. Beispiel:
                      </p>
-                     
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<listBibl>
-   <bibl ana="hc:RecommendedBibliographicReference" xml:lang="de">Exemplum exemplorum nach der Handschrift ω. Transkription mit Normalisierung und Sacherschließung. Digitale Edition im Rahmen von Exemplum exemplorum digital. Hrsg. von Max Mustermann unter Mitwirkung von Maximiliane Musterfrau. Heidelberg: Universitätsbibliothek 2023.</bibl>
-   <bibl ana="hc:RecommendedBibliographicReference" xml:lang="en">Exemplum exemplorum according to the manuscript ω. Transcription with regularization and subject annotation. A digital edition within Exemplum exemplorum digital. Edited by Max Mustermann with the help of Maximiliane Musterfrau. Heidelberg: University Library, 2023.</bibl>
-</listBibl>--></code>
-            </pre>
-        </div>
-    
+                     <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;listBibl xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;bibl ana="hc:RecommendedBibliographicReference" xml:lang="de"&gt;Exemplum exemplorum nach der Handschrift ω. Transkription mit Normalisierung und Sacherschließung. Digitale Edition im Rahmen von Exemplum exemplorum digital. Hrsg. von Max Mustermann unter Mitwirkung von Maximiliane Musterfrau. Heidelberg: Universitätsbibliothek 2023.&lt;/bibl&gt;
+   &lt;bibl ana="hc:RecommendedBibliographicReference" xml:lang="en"&gt;Exemplum exemplorum according to the manuscript ω. Transcription with regularization and subject annotation. A digital edition within Exemplum exemplorum digital. Edited by Max Mustermann with the help of Maximiliane Musterfrau. Heidelberg: University Library, 2023.&lt;/bibl&gt;
+&lt;/listBibl&gt;
+                     </code></pre></div>
                      
                   </div>
                   
@@ -956,36 +820,28 @@
                   <p>
                      Beispiele:
                   </p>
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<notesStmt>
-   <note xml:lang="de">
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;notesStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;note xml:lang="de"&gt;
       Bei der Transkription haben die studentischen Hilfskräfte Max Mustermann und Maximiliane Musterfrau mitgewirkt.                           
-   </note>
-   <note xml:lang="en">
+   &lt;/note&gt;
+   &lt;note xml:lang="en"&gt;
       Max Mustermann und Maximiliane Musterfrau contributed as student assistants to the transcription. 
-   </note>
-</notesStmt>--></code>
-            </pre>
-        </div>
-    
-                  
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<notesStmt>
-   <note>
+   &lt;/note&gt;
+&lt;/notesStmt&gt;
+                  </code></pre></div>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;notesStmt xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;note&gt;
       Die Herausgeber bedanken sich bei der Universitätsbibliothek Heidelberg für die konzeptuelle und 
       technische Unterstützung bei der TEI-Datenmodellierung und -Redaktion dieses Editionsdokuments.
-   </note>
-   <note>
+   &lt;/note&gt;
+   &lt;note&gt;
       Ein herzlicher Dank gilt der Stiftung ABC für die Hilfe bei der Besorgung digitaler Kopien,
       die der vorliegenden Ausgabe zugrunde liegen.
-   </note>
-</notesStmt>--></code>
-            </pre>
-        </div>
-    
+   &lt;/note&gt;
+&lt;/notesStmt&gt;
+                  </code></pre></div>
                </div>
                
                <div id="TEIHEADER-FILEDESC-SOURCEDESC">
@@ -1076,7 +932,7 @@
                            <span class="aside"><span class="gi">&lt;msIdentifier&gt;</span></span>
                            Das Element <span class="gi">&lt;msIdentifier&gt;</span> enthält in strukturierter Weise Angaben, die für eine Identifizierung der Handschrift
                            notwendig sind, in der Regel mindestens Informationen über den Aufbewahrungsort (<span class="gi">&lt;repository&gt;</span>) und die 
-                           aktuell gültige Signatur (<span class="gi">&lt;idno&gt;</span> mit der Typangabe <span class="loddocborder">› </span><a class="loddoc" href="../concepts/shelfmark.html" target="_blank">hc:Shelfmark</a><span class="loddocborder"> ‹</span> in <span class="att">@ana</span>).
+                           aktuell gültige Signatur (<span class="gi">&lt;idno&gt;</span> mit der Typangabe  in <span class="att">@ana</span>).
                            Typisch und empfehlenswert ist die Angabenreihe Ort, Aufbewahrungsort, Signatur, 
                            repräsentiert durch die Elemente <span class="gi">&lt;settlement&gt;</span>, <span class="gi">&lt;repository&gt;</span> und <span class="gi">&lt;idno&gt;</span>.
                         </p>
@@ -1090,36 +946,28 @@
                            So sieht die Angabe eines Aufbewahrungsortes, der entweder als Institution oder als Ort (z.B. eine Kirche)
                            beschrieben werden kann, beispielsweise so aus:
                         </p>
-                        
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<repository>
-   <orgName>Staatsbibliothek zu Berlin – Preußischer Kulturbesitz</orgName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/5036103-X</idno>
-</repository>--></code>
-            </pre>
-        </div>
-    
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;repository xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;orgName&gt;Staatsbibliothek zu Berlin – Preußischer Kulturbesitz&lt;/orgName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/5036103-X&lt;/idno&gt;
+&lt;/repository&gt;
+                        </code></pre></div>
                         <p>
                            Eine typische komplette Identifizierung einer Handschrift mit Verknüpfungen zu Normdaten sieht etwa so aus:
                         </p>
-                        
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<msIdentifier>
-   <settlement>
-      <placeName>Berlin</placeName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/4005728-8</idno>
-   </settlement>
-   <repository>
-      <orgName>Staatsbibliothek zu Berlin – Preußischer Kulturbesitz</orgName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/5036103-X</idno>
-   </repository>
-   <idno ana="hc:Shelfmark">Ms. Hamilton 675</idno>
-</msIdentifier>--></code>
-            </pre>
-        </div>
-    
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;msIdentifier xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;settlement&gt;
+      &lt;placeName&gt;Berlin&lt;/placeName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4005728-8&lt;/idno&gt;
+   &lt;/settlement&gt;
+   &lt;repository&gt;
+      &lt;orgName&gt;Staatsbibliothek zu Berlin – Preußischer Kulturbesitz&lt;/orgName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/5036103-X&lt;/idno&gt;
+   &lt;/repository&gt;
+   &lt;idno ana="hc:Shelfmark"&gt;Ms. Hamilton 675&lt;/idno&gt;
+&lt;/msIdentifier&gt;
+                        </code></pre></div>
                         <p>
                            Wie auch sonst fast immer, ist auch hier die Angabe der Normdaten (vorzugsweise der
                            Identifikatoren der Gemeinsamen Normdatei (GND) optional, sie sollte aber 
@@ -1198,7 +1046,7 @@
                            für die drei Elemente <span class="gi">&lt;institution&gt;</span>, <span class="gi">&lt;repository&gt;</span> und <span class="gi">&lt;collection&gt;</span>
                            in ›heiEDITIONS‹ ein strukturierter Inhalt vorgesehen, der mindestens
                            ein Namenselement (<span class="gi">&lt;orgName&gt;</span> in <span class="gi">&lt;institution&gt;</span>; <span class="gi">&lt;placeName&gt;</span> oder <span class="gi">&lt;orgName&gt;</span>
-                           in <span class="gi">&lt;repository&gt;</span>; <span class="gi">&lt;name&gt;</span> mit der <span class="att">@ana</span>-Angabe <span class="loddocborder">› </span><a class="loddoc" href="../concepts/collectionname.html" target="_blank">hc:CollectionName</a><span class="loddocborder"> ‹</span> in 
+                           in <span class="gi">&lt;repository&gt;</span>; <span class="gi">&lt;name&gt;</span> mit der <span class="att">@ana</span>-Angabe  in 
                            <span class="gi">&lt;collection&gt;</span>) und optional Normdatenverknüpfungen mit <span class="gi">&lt;idno&gt;</span> umfasst. 
                            Alternative Namen für dieselbe Sache können, ggf. mehrsprachig und dann mit
                            <span class="att">@xml:lang</span> gekennzeichnet, durch Wiederholung der jeweils vorgesehenen Namenselemente 
@@ -1208,51 +1056,47 @@
                            Das folgende Beispiel zeigt einen <span class="gi">&lt;msIdentifier&gt;</span>, in dem (für die meisten Zwecke übertriebenerweise)
                            alle bisher genannten Elemente verwendet werden:
                         </p>
-                        
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<msIdentifier>
-   <bloc from="1957">
-      <placeName>Europäische Union</placeName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/5098525-5</idno>
-   </bloc>
-   <country>
-      <placeName>Deutschland</placeName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/4011882-4</idno>
-   </country>
-   <region>
-      <placeName>Baden-Württemberg</placeName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/4004176-1</idno>
-   </region>
-   <region to="1801">
-      <placeName>Kurpfalz</placeName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/25943-3</idno>
-   </region>
-   <settlement>
-      <placeName>Heidelberg</placeName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/4023996-2</idno>
-   </settlement>
-   <district>
-      <placeName>Heidelberg-Altstadt</placeName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/7760544-5</idno>
-   </district>
-   <institution>
-      <orgName>Ruprecht-Karls-Universität Heidelberg</orgName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/2024349-2</idno>
-   </institution>
-   <repository>
-      <orgName>Universitätsbibliothek Heidelberg</orgName>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
-   </repository>
-   <collection>
-      <name ana="hc:CollectionName">Codices Palatini germanici</name>
-      <idno ana="hc:GNDURI">https://d-nb.info/gnd/7519176-3</idno>
-   </collection>
-   <idno ana="hc:Shelfmark">Cod. Pal. germ. 848</idno>                 
-</msIdentifier>--></code>
-            </pre>
-        </div>
-    
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;msIdentifier xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;bloc from="1957"&gt;
+      &lt;placeName&gt;Europäische Union&lt;/placeName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/5098525-5&lt;/idno&gt;
+   &lt;/bloc&gt;
+   &lt;country&gt;
+      &lt;placeName&gt;Deutschland&lt;/placeName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4011882-4&lt;/idno&gt;
+   &lt;/country&gt;
+   &lt;region&gt;
+      &lt;placeName&gt;Baden-Württemberg&lt;/placeName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4004176-1&lt;/idno&gt;
+   &lt;/region&gt;
+   &lt;region to="1801"&gt;
+      &lt;placeName&gt;Kurpfalz&lt;/placeName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/25943-3&lt;/idno&gt;
+   &lt;/region&gt;
+   &lt;settlement&gt;
+      &lt;placeName&gt;Heidelberg&lt;/placeName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4023996-2&lt;/idno&gt;
+   &lt;/settlement&gt;
+   &lt;district&gt;
+      &lt;placeName&gt;Heidelberg-Altstadt&lt;/placeName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/7760544-5&lt;/idno&gt;
+   &lt;/district&gt;
+   &lt;institution&gt;
+      &lt;orgName&gt;Ruprecht-Karls-Universität Heidelberg&lt;/orgName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/2024349-2&lt;/idno&gt;
+   &lt;/institution&gt;
+   &lt;repository&gt;
+      &lt;orgName&gt;Universitätsbibliothek Heidelberg&lt;/orgName&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/2002498-8&lt;/idno&gt;
+   &lt;/repository&gt;
+   &lt;collection&gt;
+      &lt;name ana="hc:CollectionName"&gt;Codices Palatini germanici&lt;/name&gt;
+      &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/7519176-3&lt;/idno&gt;
+   &lt;/collection&gt;
+   &lt;idno ana="hc:Shelfmark"&gt;Cod. Pal. germ. 848&lt;/idno&gt;                 
+&lt;/msIdentifier&gt;
+                        </code></pre></div>
                         <p>
                            <span class="aside">zeitlich eingeschränkte Lokalisierung</span>
                            An den fünf Elementen für geographische bzw. geopolitische Einheiten 
@@ -1260,7 +1104,7 @@
                            sind die Datierungsattribute <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>,
                            <span class="att">@from</span> und <span class="att">@to</span> möglich, die als Wert eine Angabe in der Form 
                            <span class="val">JJJJ-MM-TT</span>, <span class="val">JJJJ-MM</span> oder <span class="val">JJJJ</span> erwarten (zu der genauen Semantik
-                           und den Kombinationsmöglichkeiten dieser Attribute vgl. <a class="inlink" href="indexes.html#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>).
+                           und den Kombinationsmöglichkeiten dieser Attribute vgl. ).
                            Diese Attribute können verwendet werden, um die zeitliche Ausdehnung einer geopolitischen Lokalisierung
                            einzuschränken, wie im vorangegangenen Beispiel an <span class="gi">&lt;bloc&gt;</span> und <span class="gi">&lt;region&gt;</span>
                            demonstriert. Sie beziehen sich aber nur auf die historische Zugehörigkeit der Lokalisierung 
@@ -1281,36 +1125,28 @@
                            Dafür wird das jeweilige Namenselement (<span class="gi">&lt;placeName&gt;</span>, <span class="gi">&lt;orgName&gt;</span> oder <span class="gi">&lt;name&gt;</span>) wiederholt
                            und jeweils mit <span class="att">@xml:lang</span> versehen. Beispiel:
                         </p>
-                        
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<repository>
-   <orgName xml:lang="de">Universitätsbibliothek Heidelberg</orgName>
-   <orgName xml:lang="en">Heidelberg University Library</orgName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/2002498-8</idno>
-</repository>--></code>
-            </pre>
-        </div>
-    
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;repository xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;orgName xml:lang="de"&gt;Universitätsbibliothek Heidelberg&lt;/orgName&gt;
+   &lt;orgName xml:lang="en"&gt;Heidelberg University Library&lt;/orgName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/2002498-8&lt;/idno&gt;
+&lt;/repository&gt;
+                        </code></pre></div>
                         <p>
                            <span class="aside">GeoNames</span>
                            Beispiel für die Angabe eines GeoNames-Identifikators zusätzlich zum GND-URI: 
                         </p>
-                        
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<settlement>
-   <placeName>Schlierbach</placeName>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/4268474-2</idno>
-   <idno ana="hc:GeonamesURI">https://sws.geonames.org/2765894/</idno>
-</settlement>--></code>
-            </pre>
-        </div>
-    
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;settlement xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;placeName&gt;Schlierbach&lt;/placeName&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4268474-2&lt;/idno&gt;
+   &lt;idno ana="hc:GeonamesURI"&gt;https://sws.geonames.org/2765894/&lt;/idno&gt;
+&lt;/settlement&gt;
+                        </code></pre></div>
                         <p>
                            <span class="aside">Identifikatoren der Handschrift</span>
                            Als Identifikator der Handschrift selbst wird in einem <span class="gi">&lt;idno&gt;</span> mit dem Wert
-                           <span class="loddocborder">› </span><a class="loddoc" href="../concepts/shelfmark.html" target="_blank">hc:Shelfmark</a><span class="loddocborder"> ‹</span> am Attribut <span class="att">@ana</span> die aktuell gültige Signatur
+                            am Attribut <span class="att">@ana</span> die aktuell gültige Signatur
                            der Handschrift an ihrem aktuellen Aufbewahrungsort angegeben. (Gibt es keine Signatur,
                            wird dieses <span class="gi">&lt;idno&gt;</span> weggelassen; umso wichtiger ist es ggf., mit <span class="gi">&lt;msName&gt;</span>
                            oder <span class="gi">&lt;objectName&gt;</span> einen Namen zu verzeichnen, mit dessen Hilfe das texttragende
@@ -1320,11 +1156,11 @@
                         </p>
                         <ul>
                            <li>
-                              editorisches Sigel (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/editorialsiglum.html" target="_blank">hc:EditorialSiglum</a><span class="loddocborder"> ‹</span>: Kürzel für einen Textzeugen, in kritischen Editionen von Texten 
+                              editorisches Sigel (: Kürzel für einen Textzeugen, in kritischen Editionen von Texten 
                               mit Mehrfachüberlieferung üblich und nur im Kontext einer solchen Edition sinnvoll
                            </li>
                            <li>
-                              GND-URI (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/gnduri.html" target="_blank">hc:GNDURI</a><span class="loddocborder"> ‹</span>): In Fällen, wenn die Handschrift in der GND als
+                              GND-URI (): In Fällen, wenn die Handschrift in der GND als
                               Schriftdenkmal 
                               (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://d-nb.info/standards/elementset/gnd#Manuscript" target="_blank">https://d-nb.info/standards/elementset/gnd#Manuscript</a>)
                               verzeichnet ist (oder der GND-Eintrag im Rahmen des Editionsprojekts vorgenommen wurde).
@@ -1341,52 +1177,40 @@
                         <p>
                            Beispiele für Identifikatoren und Namen:
                         </p>
-                        
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<msIdentifier>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;msIdentifier xmlns="http://www.tei-c.org/ns/Examples"&gt;
    […]
-   <idno ana="hc:Shelfmark">Cod. Pal. germ. 848</idno>
-   <idno ana="hc:EditorialSiglum">C</idno> <!- - editionsspezifisch - ->
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/4135049-2</idno>          
-   <msName>Große Heidelberger Liederhandschrift</msName>
-   <msName>Codex Manesse</msName>                  
-</msIdentifier>--></code>
-            </pre>
-        </div>
-    
-                        
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<msIdentifier>
+   &lt;idno ana="hc:Shelfmark"&gt;Cod. Pal. germ. 848&lt;/idno&gt;
+   &lt;idno ana="hc:EditorialSiglum"&gt;C&lt;/idno&gt; &lt;!-- editionsspezifisch --&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4135049-2&lt;/idno&gt;          
+   &lt;msName&gt;Große Heidelberger Liederhandschrift&lt;/msName&gt;
+   &lt;msName&gt;Codex Manesse&lt;/msName&gt;                  
+&lt;/msIdentifier&gt;
+                        </code></pre></div>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;msIdentifier xmlns="http://www.tei-c.org/ns/Examples"&gt;
    […]
-   <idno ana="hc:Shelfmark">Clm 4660</idno>
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/7857351-8</idno>          
-   <msName>Codex Buranus</msName>
-   <msName>Carmina Burana</msName>                                                                
-</msIdentifier>--></code>
-            </pre>
-        </div>
-    
-                        
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<msIdentifier>
+   &lt;idno ana="hc:Shelfmark"&gt;Clm 4660&lt;/idno&gt;
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/7857351-8&lt;/idno&gt;          
+   &lt;msName&gt;Codex Buranus&lt;/msName&gt;
+   &lt;msName&gt;Carmina Burana&lt;/msName&gt;                                                                
+&lt;/msIdentifier&gt;
+                        </code></pre></div>
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;msIdentifier xmlns="http://www.tei-c.org/ns/Examples"&gt;
    […]
-   <idno ana="hc:GNDURI">https://d-nb.info/gnd/4199489-9</idno>          
-   <objectName xml:lang="de">Stein von Rosette</objectName>
-   <objectName xml:lang="en">Rosetta Stone</objectName>                                                        
-</msIdentifier>--></code>
-            </pre>
-        </div>
-    
+   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4199489-9&lt;/idno&gt;          
+   &lt;objectName xml:lang="de"&gt;Stein von Rosette&lt;/objectName&gt;
+   &lt;objectName xml:lang="en"&gt;Rosetta Stone&lt;/objectName&gt;                                                        
+&lt;/msIdentifier&gt;
+                        </code></pre></div>
                         <p>
                            <span class="aside">Alternative Signaturen</span>
                            Das Element <span class="gi">&lt;altIdentifier&gt;</span> ist für die Angabe weiterer, insbesondere historischer
                            Signaturen vorgesehen, die sich von der aktuell gültigen Signatur unterscheiden. Wenn mehrere
                            alternative Signaturen angegeben werden sollen, erhält jede ein eigenes Element
                            <span class="gi">&lt;altIdentifier&gt;</span>. Die Signatur steht dann in einem <span class="gi">&lt;idno&gt;</span>, das am Attribut <span class="att">@ana</span>
-                           mit <span class="loddocborder">› </span><a class="loddoc" href="../concepts/shelfmark.html" target="_blank">hc:Shelfmark</a><span class="loddocborder"> ‹</span> gekennzeichnet ist.
+                           mit  gekennzeichnet ist.
                         </p>
                         <p>
                            Der eigentlichen Signaturangabe mit <span class="gi">&lt;idno&gt;</span> können in <span class="gi">&lt;altIdentifier&gt;</span> dieselben Elemente
@@ -1403,48 +1227,44 @@
                            wie <span class="gi">&lt;settlement&gt;</span> und der frühere Aufbewahrungsort mit <span class="gi">&lt;repository&gt;</span> angegeben
                            werden. Beispiel:                          
                         </p>
-                        
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<msDesc>
-   <msIdentifier>
-      <settlement>
-         <placeName>New York</placeName>
-         <idno ana="hc:GNDURI">https://d-nb.info/gnd/4042011-5</idno>
-         <idno ana="hc:GeonamesURI">https://sws.geonames.org/5128581/</idno>
-      </settlement>
-      <repository>
-         <orgName>The Morgan Library & Museum</orgName>
-         <idno ana="hc:GNDURI">https://d-nb.info/gnd/10156282-2</idno>
-      </repository>
-      <idno ana="hc:Shelfmark">Ms. G. 54</idno>
-      <altIdentifier>
-         <idno ana="hc:Shelfmark">Glazier Ms. Nr. 51</idno>
-      </altIdentifier>
-      <altIdentifier>
-         <settlement>
-            <placeName>Erbach</placeName>
-            <idno ana="hc:GNDURI">https://d-nb.info/gnd/4015092-6</idno>
-            <idno ana="hc:GeonamesURI">https://sws.geonames.org/2929802/</idno>
-         </settlement>
-         <repository>
-            <orgName>Gräflich Erbachisches Gesamthausarchiv</orgName>
-            <idno ana="hc:GNDURI">https://d-nb.info/gnd/1217263926</idno>
-         </repository>
-         <idno ana="hc:Shelfmark">Nr. 1</idno>
-         <note>Nach dem 1. Weltkrieg verkauft.</note>
-      </altIdentifier>
-   </msIdentifier>
-</msDesc>--></code>
-            </pre>
-        </div>
-    
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;msDesc xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;msIdentifier&gt;
+      &lt;settlement&gt;
+         &lt;placeName&gt;New York&lt;/placeName&gt;
+         &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4042011-5&lt;/idno&gt;
+         &lt;idno ana="hc:GeonamesURI"&gt;https://sws.geonames.org/5128581/&lt;/idno&gt;
+      &lt;/settlement&gt;
+      &lt;repository&gt;
+         &lt;orgName&gt;The Morgan Library &amp; Museum&lt;/orgName&gt;
+         &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/10156282-2&lt;/idno&gt;
+      &lt;/repository&gt;
+      &lt;idno ana="hc:Shelfmark"&gt;Ms. G. 54&lt;/idno&gt;
+      &lt;altIdentifier&gt;
+         &lt;idno ana="hc:Shelfmark"&gt;Glazier Ms. Nr. 51&lt;/idno&gt;
+      &lt;/altIdentifier&gt;
+      &lt;altIdentifier&gt;
+         &lt;settlement&gt;
+            &lt;placeName&gt;Erbach&lt;/placeName&gt;
+            &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4015092-6&lt;/idno&gt;
+            &lt;idno ana="hc:GeonamesURI"&gt;https://sws.geonames.org/2929802/&lt;/idno&gt;
+         &lt;/settlement&gt;
+         &lt;repository&gt;
+            &lt;orgName&gt;Gräflich Erbachisches Gesamthausarchiv&lt;/orgName&gt;
+            &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/1217263926&lt;/idno&gt;
+         &lt;/repository&gt;
+         &lt;idno ana="hc:Shelfmark"&gt;Nr. 1&lt;/idno&gt;
+         &lt;note&gt;Nach dem 1. Weltkrieg verkauft.&lt;/note&gt;
+      &lt;/altIdentifier&gt;
+   &lt;/msIdentifier&gt;
+&lt;/msDesc&gt;
+                        </code></pre></div>
                         <p>
                            Mit den Datierungsattributen <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>,
                            <span class="att">@from</span> und <span class="att">@to</span> ist an <span class="gi">&lt;altIdentifier&gt;</span> in der Form 
                            <span class="val">JJJJ-MM-TT</span>, <span class="val">JJJJ-MM</span> oder <span class="val">JJJJ</span> 
                            die Angabe der zeitlichen Gültigkeit der früheren Signatur möglich
-                           (zu diesen Attributen vgl. sonst <a class="inlink" href="indexes.html#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>).
+                           (zu diesen Attributen vgl. sonst ).
                         </p>
                         <p>
                            <span class="gi">&lt;altIdentifier&gt;</span> ist nicht dazu vorgesehen, die Provenienz oder gar Entstehungsgeschichte eines
@@ -1512,9 +1332,9 @@
                            <span class="att">@ana</span> zu unterscheiden. Dafür stehen in diesem Kontext folgende Klassen zur Verfügung:
                         </p>
                         <ul>
-                           <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/bibliographicreferenceforprintedfacsimile.html" target="_blank">hc:BibliographicReferenceForPrintedFacsimile</a><span class="loddocborder"> ‹</span></li>
-                           <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/bibliographicreferenceforcdromfacsimile.html" target="_blank">hc:BibliographicReferenceForCDROMFacsimile</a><span class="loddocborder"> ‹</span></li>
-                           <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/bibliographicreferenceforonlinefacsimile.html" target="_blank">hc:BibliographicReferenceForOnlineFacsimile</a><span class="loddocborder"> ‹</span></li>
+                           <li></li>
+                           <li></li>
+                           <li></li>
                         </ul>
                         <p>
                            Für die konkrete Form der bibliographischen Angabe, also den Zitationsstil und dessen Einheitlichkeit,
@@ -1523,19 +1343,15 @@
                         <p>
                            Beispiele:
                         </p>                        
-                        
-        <div class="egxml">
-            <pre class="language-xml">
-                <code><!--<surrogates>
-   <listBibl>
-      <bibl ana="hc:BibliographicReferenceForPrintedFacsimile">Karl Bischoff, Heinrich Matthias Heinrichs und Werner Schröder (Hg.), Das Nibelungenlied und Die Klage. Handschrift B (Cod. Sangall. 857) [Faksimile mit einer Einleitung von Johannes Duft] (Deutsche Texte in Handschriften 1), Köln/Graz 1962</bibl>
-      <bibl ana="hc:BibliographicReferenceForCDROMFacsimile">Sankt Galler Nibelungenhandschrift (Cod. Sang. 857); Parzival, Nibelungenlied, Klage; Karl der Große, Willehalm. Digitalfaksimile, hg. von der Stiftsbibliothek St. Gallen 2003. 1 CD-ROM, Begleitheft von Michael Stolz (Codices Electronici Sangallenses 1)</bibl>
-      <bibl ana="hc:BibliographicReferenceForOnlineFacsimile">St. Gallen, Stiftsbibliothek, Cod. Sang. 857: Die St. Galler Nibelungenhandschrift B mit Nibelungenlied und „Klage“, „Parzival“ und „Willehalm“ von Wolfram von Eschenbach und mit Strickers „Karl der Grosse“. Digitale Präsentation auf e-codices seit 2015 (Permalink: <ptr ana="hc:URLReference" target="https://www.e-codices.unifr.ch/en/list/one/csg/0857"/>; DOI: <idno ana="hc:DOI">http://dx.doi.org/10.5076/e-codices-csg-0857</idno>; IIIF-Manifest: <ptr ana="hc:IIIFManifestURL" target="https://www.e-codices.unifr.ch/metadata/iiif/csg-0857/manifest.json"/>)</bibl>
-   </listBibl>
-</surrogates>--></code>
-            </pre>
-        </div>
-    
+                        <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+&lt;surrogates xmlns="http://www.tei-c.org/ns/Examples"&gt;
+   &lt;listBibl&gt;
+      &lt;bibl ana="hc:BibliographicReferenceForPrintedFacsimile"&gt;Karl Bischoff, Heinrich Matthias Heinrichs und Werner Schröder (Hg.), Das Nibelungenlied und Die Klage. Handschrift B (Cod. Sangall. 857) [Faksimile mit einer Einleitung von Johannes Duft] (Deutsche Texte in Handschriften 1), Köln/Graz 1962&lt;/bibl&gt;
+      &lt;bibl ana="hc:BibliographicReferenceForCDROMFacsimile"&gt;Sankt Galler Nibelungenhandschrift (Cod. Sang. 857); Parzival, Nibelungenlied, Klage; Karl der Große, Willehalm. Digitalfaksimile, hg. von der Stiftsbibliothek St. Gallen 2003. 1 CD-ROM, Begleitheft von Michael Stolz (Codices Electronici Sangallenses 1)&lt;/bibl&gt;
+      &lt;bibl ana="hc:BibliographicReferenceForOnlineFacsimile"&gt;St. Gallen, Stiftsbibliothek, Cod. Sang. 857: Die St. Galler Nibelungenhandschrift B mit Nibelungenlied und „Klage“, „Parzival“ und „Willehalm“ von Wolfram von Eschenbach und mit Strickers „Karl der Grosse“. Digitale Präsentation auf e-codices seit 2015 (Permalink: &lt;ptr ana="hc:URLReference" target="https://www.e-codices.unifr.ch/en/list/one/csg/0857"/&gt;; DOI: &lt;idno ana="hc:DOI"&gt;http://dx.doi.org/10.5076/e-codices-csg-0857&lt;/idno&gt;; IIIF-Manifest: &lt;ptr ana="hc:IIIFManifestURL" target="https://www.e-codices.unifr.ch/metadata/iiif/csg-0857/manifest.json"/&gt;)&lt;/bibl&gt;
+   &lt;/listBibl&gt;
+&lt;/surrogates&gt;
+                        </code></pre></div>
                                                 
                         
                      </div>
@@ -1598,7 +1414,7 @@
                            durch nachträgliche Fragmentierung heute aus mehreren, ggf. dislozierten Fragmenten besteht. Eine solche
                            Quelle wird mit einem einzigen <span class="gi">&lt;msDesc&gt;</span> angegeben (s. XXX). 
                         </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 16.04.2024
+                        Letzte Aktualisierung: 22.07.2024
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
