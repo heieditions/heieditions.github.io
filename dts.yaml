@@ -1,0 +1,185 @@
+openapi: 3.0.0
+info:
+  version: 1.0.0
+  title: DTS API Documentation
+  description: | 
+    This is the Documentation of Heidelberg University's implementation of the DTS (Distributed Text
+    Services) API Specification. 
+    The DTS Specification can  be found at: https://distributed-text-services.github.io/specifications/
+servers:
+  - description: Endpoint
+    url: https://digi.ub.uni-heidelberg.de/editionService
+tags:
+  - name: dts
+    description: |
+      Implementation of the DTS (Distributed Text Services) API Specification
+components:
+  parameters:
+    param_resource:
+      name: resource
+      description: |
+        ID of a single document. Different documents and their IDs can be found by querying the collection endpoint.
+      in: query
+      schema:
+        type: string
+      example: https://heieditions.ub.uni-heidelberg.de/dts/Iwein/D
+      required: true
+    param_ref:
+      name: ref
+      description: |
+        References a specific unit in the document. Not allowed if start and end
+        are used.
+      in: query
+      schema:
+        type: string
+      example: Iwein_D_Florenz_1_1
+      required: false
+    param_start:
+      name: start
+      description: | 
+        References a specific unit from which to start the retrieval of a range
+        of units. Must be used together with end and must not be used with ref.
+      in: query
+      schema:
+        type: string
+      example: l_1
+      required: false
+    param_end:
+      name: end
+      description: |
+        References the last unit in the range to be retrieved. Must be used
+        together with start and must not be used with ref.
+      in: query
+      schema:
+        type: string
+      example: l_99
+      required: false
+paths:
+  /dts:
+    get:
+      summary: Entry point
+      description: | 
+        Returns the base paths for the 3 endpoints (collection, navigation and
+        document).
+      operationId: dts:entrypoint
+      tags:
+        - dts
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  '@context':
+                    type: object
+                    properties:
+                      dc:
+                        type: string
+                      dts:
+                        type: string
+                      tei:
+                        type: string
+                    nullable: false
+                  '@id':
+                    type: string
+                    nullable: false
+                  '@type':
+                    type: string
+                    nullable: false
+                  collection:
+                    type: string
+                    nullable: false
+                  navigation:
+                    type: string
+                    nullable: false
+                  document:
+                    type: string
+                    nullable: false
+  /dts/collection:
+    get:
+      summary: Explore available collections
+      description: | 
+        Each collection contains metadata about itself (e.g. title and
+        description) as well as an array of members. With nav=children, these
+        are either subcollections or documents, with nav=parents information
+        about the parent collection is shown.
+      operationId: dts:collection
+      tags:
+        - dts
+      parameters:
+        - name: id
+          in: query
+          schema:
+            type: string
+          example: Iwein
+          required: false
+        - name: nav
+          in: query
+          schema:
+            type: string
+            enum:
+              - parents
+              - children
+            default: children
+          required: false
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /dts/navigation:
+    get:
+      summary: Explore a single document
+      description: |
+        To show a document's structure in its entirety, use down=-1 with the resource parameter.
+      operationId: dts:navigation
+      tags:
+        - dts
+      parameters:
+        - $ref: "#/components/parameters/param_resource"
+        - $ref: "#/components/parameters/param_ref"
+        - $ref: "#/components/parameters/param_start"
+        - $ref: "#/components/parameters/param_end"
+        - name: down
+          description: >-
+            Specifies the depth to which the document's structure will be
+            queried. -1 indicates the maximum depth. If ref is used, the depth
+            will be relative to that of the unit identified by ref; if start/end
+            are used, the deeper unit will be the point of reference.
+          in: query
+          schema:
+            type: integer
+          example: 1
+          required: false
+        
+
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: object
+  /dts/document:
+    get:
+      summary: Retrieve a single document or parts of it
+      description: ''
+      operationId: dts:document
+      tags:
+        - dts
+      parameters:
+        - $ref: "#/components/parameters/param_resource"
+        - $ref: "#/components/parameters/param_ref"
+        - $ref: "#/components/parameters/param_start"
+        - $ref: "#/components/parameters/param_end"
+      responses:
+        '200':
+          description: TEI/XML of the document
+          content:
+            application/xml:
+              schema:
+                type: string
