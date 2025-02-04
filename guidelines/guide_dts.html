@@ -26,12 +26,7 @@
 window.onload = function() {
   const ui = SwaggerUIBundle({
     url: "../dts.yaml",
-    dom_id: '#DTS',
-    presets: [
-      SwaggerUIBundle.presets.apis,
-      SwaggerUIStandalonePreset
-    ],
-    layout: "StandaloneLayout"
+    dom_id: '#DTS'
   })
 
   window.ui = ui
