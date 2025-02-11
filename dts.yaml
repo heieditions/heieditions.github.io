@@ -73,14 +73,7 @@ paths:
                 type: object
                 properties:
                   '@context':
-                    type: object
-                    properties:
-                      dc:
-                        type: string
-                      dts:
-                        type: string
-                      tei:
-                        type: string
+                    type: string
                     nullable: false
                   '@id':
                     type: string
