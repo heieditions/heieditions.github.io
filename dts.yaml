@@ -9,8 +9,10 @@ info:
     to explore the available collections as well as their metadata and retrieve individual texts or text passages.
     
     
-    The documentation of the heiEditions infrastructure can be found at: https://heieditions.github.io/
-    For details about the DTS Specification, see: https://distributed-text-services.github.io/specifications/
+    The heiEditions infrastructure is described in more detail at: https://heieditions.github.io/
+
+    
+    For more information about the DTS Specification, see: https://distributed-text-services.github.io/specifications/
 servers:
   - description: Endpoint
     url: https://digi.ub.uni-heidelberg.de/editionService
