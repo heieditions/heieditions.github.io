@@ -3,9 +3,14 @@ info:
   version: 1.0.0
   title: DTS API Documentation
   description: | 
-    This is the Documentation of Heidelberg University's implementation of the DTS (Distributed Text
-    Services) API Specification. 
-    The DTS Specification can  be found at: https://distributed-text-services.github.io/specifications/
+    This is the documentation of Heidelberg University's implementation of the DTS (Distributed Text
+    Services) API Specification. As part of the heiEDITIONS infrastructure, this API is intended to
+    facilitate access to its texts as machine-actionable data: The three defined endpoints can be used
+    to explore the available collections as well as their metadata and retrieve individual texts or text passages.
+    
+    
+    The documentation of the heiEditions infrastructure can be found at: https://heieditions.github.io/
+    For details about the DTS Specification, see: https://distributed-text-services.github.io/specifications/
 servers:
   - description: Endpoint
     url: https://digi.ub.uni-heidelberg.de/editionService
