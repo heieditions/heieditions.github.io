@@ -45,6 +45,10 @@ a.conceptstoc {
     color: #9F0001; /* Heidelberg Red */
 }
 
+a.cross {
+    color: DimGray; 
+}
+
 a.inlink {
     color: DimGray; 
 }
