@@ -190,6 +190,12 @@ nav {
     margin-bottom: 70px;
 }
 
+.pi {
+    text-decoration: none;
+    font-family: 'Ubuntu Mono', monospace;
+    color: #8F07CC;
+}
+
 p.bildunterschrift {
   width: 80%; 
   font-weight: bold;
