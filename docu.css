@@ -224,6 +224,8 @@ p.tagex {
   font-family: 'Ubuntu Mono', monospace;
   font-size: 93%;
   background-color: #F5F2F0;
+  padding: 10px;
+  line-height: 100%;
 }
 
 span.att {
