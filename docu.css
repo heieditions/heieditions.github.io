@@ -220,6 +220,12 @@ p.resdef {
   border-color: Gray;
 }
 
+p.tagex {
+  font-family: 'Ubuntu Mono', monospace;
+  font-size: 93%;
+  background-color: #F5F2F0;
+}
+
 span.att {
     font-family: 'Ubuntu Mono', monospace;
     font-style: italic;
