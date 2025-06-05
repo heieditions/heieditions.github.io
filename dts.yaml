@@ -62,6 +62,141 @@ components:
         type: string
       example: l_99
       required: false
+  schemas:
+    base:
+      type: object
+      properties:
+        '@context':
+          type: string
+          nullable: false
+        '@id':
+          type: string
+          nullable: false
+        '@type':
+          type: string
+          nullable: false
+        dtsVersion:
+          type: string
+          nullable: false
+        collection:
+          type: string
+          nullable: false
+        navigation:
+          type: string
+          nullable: false
+        document:
+          type: string
+          nullable: false
+    collection:
+      type: object
+      properties:
+        '@context':
+          type: string
+          nullable: false
+        '@id':
+          type: string
+          nullable: false
+        '@type':
+          type: string
+          nullable: false
+        collection:
+          type: string
+          nullable: false
+        description:
+          type: string
+          nullable: false
+        dtsVersion:
+          type: string
+          nullable: false
+        dublinCore:
+          type: object
+          properties:
+            description:
+              type: array
+              items:
+                type: object
+                properties:
+                  lang:
+                    type: string
+                  value:
+                    type: string
+        title:
+          type: string
+        totalChildren:
+          type: integer
+        totalParents:
+          type: integer  
+    subcollection:
+      allOf:
+        - $ref: "#/components/schemas/collection"
+        - type: object
+          properties:
+            dublinCore:
+              type: object
+              properties:
+                description:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      lang:
+                        type: string
+                      value:
+                        type: string
+                title:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      lang:
+                        type: string
+                      value:
+                        type: string
+    resource:
+      allOf:
+        - $ref: "#/components/schemas/base" 
+        - type: object
+          properties:
+            citationTrees:
+              type: object
+              properties:
+                '@type':
+                  type: string
+                citeStructure:
+                  type: object
+                  properties:
+                    '@type': 
+                      type: string
+                    citeType: 
+                      type: string
+                cityType:
+                  type: string
+            dublinCore:
+              type: object
+              properties:
+                creator:
+                  type: array
+                  items:
+                    type: string
+                publisher:
+                  type: array
+                  items:
+                    type: string
+                rights:
+                  type: array
+                  items:
+                    type: string
+                type:
+                  type: array
+                  items:
+                    type: string
+            title:
+              type: string
+            totalChildren:
+              type: integer
+            totalParents:
+              type: integer  
+
 paths:
   /dts:
     get:
@@ -78,26 +213,8 @@ paths:
           content:
             application/json:
               schema:
-                type: object
-                properties:
-                  '@context':
-                    type: string
-                    nullable: false
-                  '@id':
-                    type: string
-                    nullable: false
-                  '@type':
-                    type: string
-                    nullable: false
-                  collection:
-                    type: string
-                    nullable: false
-                  navigation:
-                    type: string
-                    nullable: false
-                  document:
-                    type: string
-                    nullable: false
+                $ref: "#/components/schemas/base"
+              
   /dts/collection:
     get:
       summary: Explore available collections
@@ -131,7 +248,27 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                oneOf:
+                  - allOf:
+                    - $ref: "#/components/schemas/collection"
+                    - type: object
+                      properties:
+                        member:
+                            type: array
+                            items:
+                              $ref: "#/components/schemas/subcollection"
+                  - allOf:
+                    - $ref: "#/components/schemas/subcollection"
+                    - type: object
+                      properties:
+                        member:
+                          type: array
+                          items: 
+                            $ref: "#/components/schemas/resource"
+                  - allOf:
+                      - $ref: "#/components/schemas/resource"
+
+              
   /dts/navigation:
     get:
       summary: Explore a single document
@@ -164,7 +301,9 @@ paths:
           content:
             application/json:
               schema:
-                type: object
+                allOf:
+                  - $ref: "#/components/schemas/collection"
+
   /dts/document:
     get:
       summary: Retrieve a single document or parts of it
@@ -184,3 +323,4 @@ paths:
             application/xml:
               schema:
                 type: string
+
