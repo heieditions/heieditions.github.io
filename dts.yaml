@@ -78,6 +78,9 @@ components:
         dtsVersion:
           type: string
           nullable: false
+    links:
+      type: object
+      properties:
         collection:
           type: string
           nullable: false
@@ -87,45 +90,62 @@ components:
         document:
           type: string
           nullable: false
+    citationTrees:
+      type: array
+      nullable: true
+      items:
+        type: object
+        properties:
+          '@type':
+            type: string
+          citeStructure:
+            type: array
+            items:
+              type: object
+              properties:
+                '@type': 
+                  type: string
+                citeType: 
+                  type: string
+                citeStructure:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      '@type':
+                        type: string
+                      citeType:
+                        type: string
+           
     collection:
-      type: object
-      properties:
-        '@context':
-          type: string
-          nullable: false
-        '@id':
-          type: string
-          nullable: false
-        '@type':
-          type: string
-          nullable: false
-        collection:
-          type: string
-          nullable: false
-        description:
-          type: string
-          nullable: false
-        dtsVersion:
-          type: string
-          nullable: false
-        dublinCore:
-          type: object
+      allOf:
+        - $ref: "#/components/schemas/base"
+        - type: object
           properties:
+            collection:
+              type: string
+              nullable: false
             description:
-              type: array
-              items:
-                type: object
-                properties:
-                  lang:
-                    type: string
-                  value:
-                    type: string
-        title:
-          type: string
-        totalChildren:
-          type: integer
-        totalParents:
-          type: integer  
+              type: string
+              nullable: false
+            dublinCore:
+              type: object
+              properties:
+                description:
+                  type: array
+                  items:
+                    type: object
+                    properties:
+                      lang:
+                        type: string
+                      value:
+                        type: string
+            title:
+              type: string
+            totalChildren:
+              type: integer
+            totalParents:
+              type: integer  
     subcollection:
       allOf:
         - $ref: "#/components/schemas/collection"
@@ -154,23 +174,11 @@ components:
                         type: string
     resource:
       allOf:
-        - $ref: "#/components/schemas/base" 
+        - $ref: "#/components/schemas/base"
+        - $ref: "#/components/schemas/links"
+        - $ref: "#/components/schemas/citationTrees"
         - type: object
           properties:
-            citationTrees:
-              type: object
-              properties:
-                '@type':
-                  type: string
-                citeStructure:
-                  type: object
-                  properties:
-                    '@type': 
-                      type: string
-                    citeType: 
-                      type: string
-                cityType:
-                  type: string
             dublinCore:
               type: object
               properties:
@@ -195,7 +203,43 @@ components:
             totalChildren:
               type: integer
             totalParents:
-              type: integer  
+              type: integer
+    navigation_base:
+      allOf:
+        - $ref: "#/components/schemas/base"
+        - type: object
+          properties:
+            resource:
+              allOf:
+                - type: object
+                  properties:
+                    '@id':
+                      type: string
+                      nullable: false
+                    '@type':
+                      type: string
+                      nullable: false
+                - type: object
+                  properties:
+                    citationTrees:
+                      $ref: "#/components/schemas/citationTrees"
+                - $ref: "#/components/schemas/links"
+    navigation_member:
+      type: object
+      properties:
+        '@type':
+          type: string
+        citeType:
+          type: string
+        identifier:
+          type: string
+        level:
+          type: integer
+        parent:
+          type: string
+                
+                
+      
 
 paths:
   /dts:
@@ -301,8 +345,8 @@ paths:
           content:
             application/json:
               schema:
-                allOf:
-                  - $ref: "#/components/schemas/collection"
+                oneOf:
+                  - $ref: "#/components/schemas/navigation_base"
 
   /dts/document:
     get:
