@@ -78,7 +78,7 @@ components:
         dtsVersion:
           type: string
           nullable: false
-    links:
+    links_to_other_endpoints:
       type: object
       properties:
         collection:
@@ -175,7 +175,7 @@ components:
     resource:
       allOf:
         - $ref: "#/components/schemas/base"
-        - $ref: "#/components/schemas/links"
+        - $ref: "#/components/schemas/links_to_other_endpoints"
         - $ref: "#/components/schemas/citationTrees"
         - type: object
           properties:
@@ -223,7 +223,7 @@ components:
                   properties:
                     citationTrees:
                       $ref: "#/components/schemas/citationTrees"
-                - $ref: "#/components/schemas/links"
+                - $ref: "#/components/schemas/links_to_other_endpoints"
     navigation_member:
       type: object
       properties:
@@ -346,7 +346,57 @@ paths:
             application/json:
               schema:
                 oneOf:
-                  - $ref: "#/components/schemas/navigation_base"
+                  - allOf:
+                    - $ref: "#/components/schemas/navigation_base"
+                    - type: object
+                      properties:
+                        member:
+                            type: array
+                            items:
+                              $ref: "#/components/schemas/navigation_member"
+                  - allOf:
+                    - $ref: "#/components/schemas/navigation_base"
+                    - type: object
+                      properties:
+                        ref:
+                          type: object
+                          $ref: "#/components/schemas/navigation_member"
+                  - allOf:
+                    - $ref: "#/components/schemas/navigation_base"
+                    - type: object
+                      properties:
+                        ref:
+                          type: object
+                          $ref: "#/components/schemas/navigation_member"
+                        member:
+                          type: array
+                          items:
+                            $ref: "#/components/schemas/navigation_member"
+                  - allOf:
+                    - $ref: "#/components/schemas/navigation_base"
+                    - type: object
+                      properties:
+                        start:
+                          type: object
+                          $ref: "#/components/schemas/navigation_member"
+                        end:
+                          type: object
+                          $ref: "#/components/schemas/navigation_member"
+                  - allOf:
+                    - $ref: "#/components/schemas/navigation_base"
+                    - type: object
+                      properties:
+                        start:
+                          type: object
+                          $ref: "#/components/schemas/navigation_member"
+                        end:
+                          type: object
+                          $ref: "#/components/schemas/navigation_member"
+                        member:
+                          type: array
+                          items:
+                            $ref: "#/components/schemas/navigation_member"
+                          
 
   /dts/document:
     get:
