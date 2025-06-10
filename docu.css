@@ -265,6 +265,10 @@ span.item_label::after {
     content: ' '
 }
 
+span.ubhd-caps {
+   font-variant: small-caps;
+}
+
 span.val {
     font-family: 'Ubuntu Mono', monospace;
     color: #993300;
