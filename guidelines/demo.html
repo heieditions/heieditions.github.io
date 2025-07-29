@@ -1,12 +1,10 @@
-<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><title>heiEDITIONS Dokumentation | Erfassung visueller Strukturen des Textträgers</title><script src="https://www.ub.uni-heidelberg.de/cdn/jquery/1.11.1/jquery.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/bootstrap/3.2.0-ubhd-digi/css/bootstrap.min.css" rel="stylesheet" type="text/css"><script src="https://www.ub.uni-heidelberg.de/cdn/bootstrap/3.2.0/js/bootstrap.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/font-awesome/4.7.0/font-awesome.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://digi.ub.uni-heidelberg.de/diglit_pub/css/tei.min.css" type="text/css"><script type="text/javascript" src="../../scripts/visualize_examples.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/handlebars/latest/handlebars.min.js"></script><script src="https://digi.ub.uni-heidelberg.de/diglit_pub/bundle.min.js"></script><script>DigiLayout.init('ger')</script><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Erfassung visueller Strukturen des Textträgers</title><script src="https://www.ub.uni-heidelberg.de/cdn/jquery/1.11.1/jquery.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/bootstrap/3.2.0-ubhd-digi/css/bootstrap.min.css" rel="stylesheet" type="text/css"><script src="https://www.ub.uni-heidelberg.de/cdn/bootstrap/3.2.0/js/bootstrap.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/font-awesome/4.7.0/font-awesome.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://digi.ub.uni-heidelberg.de/diglit_pub/css/tei.min.css" type="text/css"><script type="text/javascript" src="../../scripts/visualize_examples.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/handlebars/latest/handlebars.min.js"></script><script src="https://digi.ub.uni-heidelberg.de/diglit_pub/bundle.min.js"></script><script>DigiLayout.init('ger')</script><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
                     Erfassung visueller Strukturen des Textträgers</nav><main>
          <div id="demo_test">
-            
             <h1>Erfassung visueller Strukturen des Textträgers</h1>
-            
             <p>
                Die ›Quellenansicht‹ (<em>source view</em>) ist
                ein Visualisierungsmodus von ›heiEDITIONS‹, der strukturierte
@@ -28,18 +26,22 @@
                in dem sich die Expression manifestiert und verkörpert und
                der als Vorlage für die im TEI-Dokument erarbeitete Edition fungiert. 
                Wenn das der Fall ist, muss das TEI-Dokument unterhalb des Wurzelelements <span class="gi">&lt;TEI&gt;</span> 
-               neben <span class="gi">&lt;teiHeader&gt;</span> und <span class="gi">&lt;text&gt;</span> zusätzlich das Element <span class="gi">&lt;facsimile&gt;</span> 
-               <span class="aside"><span class="gi">&lt;facsimile&gt;</span></span> enthalten (s. weiter unten . 
+               neben <span class="gi">&lt;teiHeader&gt;</span> und <span class="gi">&lt;text&gt;</span> zusätzlich das Element <span class="gi">&lt;facsimile&gt;</span>
+               <span class="aside">
+                  <span class="gi">&lt;facsimile&gt;</span>
+               </span> enthalten (s. weiter unten <a class="inlink" href="#FAC-DEC">Faksimile-Deklaration</a>. 
                Ist kein Element <span class="gi">&lt;facsimile&gt;</span> vorhanden, wird davon ausgegangen, dass das TEI-Dokument 
                keinen physischen Textträger dokumentiert; der Inhalt von <span class="gi">&lt;text&gt;</span> wird dann als 
-               eine Instanz der Klasse  betrachtet.
+               eine Instanz der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionwithoutexemplar.html" target="_blank">hc:ExpressionWithoutExemplar</a><span class="loddocborder"> ‹</span> betrachtet.
                <sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
             </p>
-            
+            <p class="resdef">
+               <a class="refboxlink" href="../concepts/expressionwithoutexemplar.html"><span class="val">hc:ExpressionWithoutExemplar</span></a> ( ›Expression ohne (physische) Vorlage‹ ): Expression, die auf keinem physischen Träger als Vorlage basiert.
+            </p>
             <p>
                Selbst dann, wenn ein TEI-Dokument mehrere Expressionen wiedergibt 
-               (wenn das Element <span class="gi">&lt;text&gt;</span> als  fungiert, 
-               vgl. ) und wenn gleichzeitig
+               (wenn das Element <span class="gi">&lt;text&gt;</span> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressioncontainer.html" target="_blank">hc:ExpressionContainer</a><span class="loddocborder"> ‹</span> fungiert, 
+               vgl. <a class="inlink" href="document_structure.html#STRU">Dokumentstruktur</a>) und wenn gleichzeitig
                die Erfassung der Strukturen des physischen Trägers angestrebt wird, 
                müssen diese Expressionen einem einzigen 
                physischen Träger entstammen. Eine Ausnahme bilden nur solche Fälle, 
@@ -51,8 +53,8 @@
             <p>
                Wenn ein TEI-Dokument nur einen Teil einer Expression enthält, weil die Expression 
                wegen ihrer Länge auf mehrere TEI-Dokumente aufgeteilt wurde (dann fungiert das 
-               Element <span class="gi">&lt;text&gt;</span> als , 
-               vgl. ), wird ein Element <span class="gi">&lt;facsimile&gt;</span> 
+               Element <span class="gi">&lt;text&gt;</span> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionpartcontainer.html" target="_blank">hc:ExpressionPartContainer</a><span class="loddocborder"> ‹</span>, 
+               vgl. <a class="inlink" href="document_structure.html#STRU">Dokumentstruktur</a>), wird ein Element <span class="gi">&lt;facsimile&gt;</span> 
                im übergeordneten TEI-Dokument erwartet, in dem die in mehrere Teildokumente aufgeteilte 
                Expression zusammengeführt wird.
             </p>
@@ -89,24 +91,19 @@
                <span class="val">hc:ExemplarDescription</span> an <span class="att">@ana</span>.
                <sup><a href="#note_3" id="note_reference_3" class="note_mark">3)</a></sup>
             </p>
-            
             <div id="FAC-DEC">
-               
                <h2>Faksimile-Deklaration</h2>
-               
                <p>
                   Das Element <span class="gi">&lt;facsimile&gt;</span> mit der Deklaration visueller Strukturen des Inhaltsträgers wird 
                   auf oberster Dokumentebene zwischen <span class="gi">&lt;teiHeader&gt;</span> und <span class="gi">&lt;text&gt;</span> platziert:
                </p>
-               
                <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;TEI xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;TEI&gt;
   &lt;teiHeader&gt;[…]&lt;/teiHeader&gt;
    &lt;facsimile&gt;[…]&lt;/facsimile&gt;
    &lt;text&gt;[…]&lt;/text&gt;
 &lt;/TEI&gt;
                </code></pre></div>
-               
                <p>
                   Die beiden wichtigsten Elemente für die Deklaration physischer Strukturen des Inhaltsträgers in <span class="gi">&lt;facsimile&gt;</span> sind: 
                   <ul><li><span class="item_label"><span class="gi">&lt;surface&gt;</span></span> ( ›Inhaltsfläche‹ )  Zweidimensionale Fläche mit einem Inhalt, der in einem oder mehreren Inhaltsbereichen auf der Inhaltsfläche platziert ist. Die strukturelle Beschreibung einer solchen Fläche ist durch Koordinaten oder mit einem Layoutsystem möglich. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-surface.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@ana</span></span>gibt die Art der Inhaltsfläche an.</li><li><span class="item_label"><span class="att">@n</span></span>( ›Bezeichner‹ ) gibt einen eindeutigen Bezeichner für die Inhaltsfläche an.</li><li><span class="item_label"><span class="att">@xml:id</span></span>( ›ID‹ ) gibt einen eindeutigen technischen Identifier für die Inhaltsfläche an.</li></ul></li><li><span class="item_label"><span class="gi">&lt;zone&gt;</span></span> ( ›Bereich‹; ›Zone‹ )  Ein beliebiger zweidimensionaler Bereich innerhalb einer Inhaltsfläche. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@ana</span></span>gibt die Art des Bereichs an.</li><li><span class="item_label"><span class="att">@n</span></span>( ›Bezeichner‹ ) gibt einen eindeutigen Bezeichner für den Bereich an.</li><li><span class="item_label"><span class="att">@xml:id</span></span>( ›ID‹ ) gibt einen eindeutigen technischen Identifier für den Bereich an.</li><li><span class="item_label"><span class="att">@rendition</span></span>( ›Wiedergabe‹ ) gibt die Art des Bereichs hinsichtlich seiner visuellen Umsetzung an.</li><li><span class="item_label"><span class="att">@hei:width</span></span>( ›Breite‹ ) gibt die relative Breite des Bereichs in Prozentanteilen an.</li><li><span class="item_label"><span class="att">@rotate</span></span>»gibt das Ausmaß der Drehung (im Uhrzeigersinn) dieser <span class="gi">&lt;zone&gt;</span> an.
@@ -115,7 +112,6 @@
         Die Drehung wird in Bogengrad angegeben. 
       « (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-zone.html" target="_blank">TEI</a>)</li></ul></li></ul>
                </p>
-               
                <p>
                   Im Element <span class="gi">&lt;facsimile&gt;</span> wird zunächst für jede Seite, zu der innerhalb von <span class="gi">&lt;text&gt;</span> ein Inhalt erfasst wird, 
                   ein Element <span class="gi">&lt;surface&gt;</span> angelegt. Die Reihenfolge der <span class="gi">&lt;surface&gt;</span>-Elemente kann 
@@ -123,52 +119,54 @@
                   orientieren, muss es aber nicht notwendigerweise. 
                   Es ergibt sich also die folgende Struktur für die inhaltstragenden Seiten des Dokuments:
                </p>
-               
-               
-               
-                   <div class="egxml" data-example-id="am_ex_simple" data-visualization-type="abbr"><pre class="language-xml"><code>Hier wird etw&lt;am&gt;.&lt;/am&gt;&lt;ex&gt;as&lt;/ex&gt; abgekürzt.</code></pre></div>
-               
-
+               <div class="egxml" data-example-id="am_ex_simple" data-visualization-type="abbr"><pre class="language-xml"><code>Hier wird etw&lt;am&gt;.&lt;/am&gt;&lt;ex&gt;as&lt;/ex&gt; abgekürzt.</code></pre></div>
                <p>
                   Seiten, die keinen Inhalt tragen, der mit TEI-Mitteln erfasst würde (Texte oder Bilder), 
                   erhalten in der Regel kein eigenes <span class="gi">&lt;surface&gt;</span>. Falls doch, bleibt der TEI-Inhalt solcher Seiten 
                   ohnehin leer.
                </p>
-               
-               
                <div id="FAC-DEC-SURFACE">
-                  
                   <h3>Angaben zu Inhaltsflächen</h3>
-                  
                   <p>
-                     <span class="aside"><span class="gi">&lt;surface&gt;</span>/<span class="att">@ana</span></span>
+                     <span class="aside">
+                        <span class="gi">&lt;surface&gt;</span>/<span class="att">@ana</span>
+                     </span>
                      Die Art der von <span class="gi">&lt;surface&gt;</span> repräsentierten Inhaltsfläche wird an <span class="att">@ana</span> angegeben, 
                      in der Regel handelt es sich dabei um eine Seite (<span class="val">hc:Page</span>).</p>
-                  
-                  
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/page.html"><span class="val">hc:Page</span></a> ( ›Seite‹ ): Eine der beiden Seiten eines Blattes.
+                  </p>
                   <p>
                      Andere vorgesehenen Typen von Inhaltsflächen sind:
                   </p>
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/frontcover.html"><span class="val">hc:FrontCover</span></a> ( ›Vorderdeckel‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/backcover.html"><span class="val">hc:BackCover</span></a> ( ›Hinterdeckel‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/frontpastedown.html"><span class="val">hc:FrontPasteDown</span></a> ( ›Vorderspiegel; Rückseite des Vorderdeckels; Innenseite des Vorderdeckels‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/backpastedown.html"><span class="val">hc:BackPasteDown</span></a> ( ›Hinterspiegel; Rückseite des Hinterdeckels; Innenseite des Hinterdeckels‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/bookback.html"><span class="val">hc:BookBack</span></a> ( ›Buchrücken‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/foreedge.html"><span class="val">hc:ForeEdge</span></a> ( ›Vorderschnitt‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/topedge.html"><span class="val">hc:TopEdge</span></a> ( ›Kopfschnitt; Oberschnitt; Oberkante‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/bottomedge.html"><span class="val">hc:BottomEdge</span></a> ( ›Fußschnitt; Unterschnitt; unterer Buchschnitt‹ ): 
+                  </p>
                   <p>
-                     <span class="aside"><span class="gi">&lt;surface&gt;</span>/<span class="att">@n</span></span>
+                     <span class="aside">
+                        <span class="gi">&lt;surface&gt;</span>/<span class="att">@n</span>
+                     </span>
                      Der Wert des Attributs <span class="att">@n</span> wird als Seitenbezeichner in der Visualisierung angezeigt. 
                      Er enthält meist eine Nummer, bei mittelalterlichen Handschriften häufig zusätzlich mit ›r‹ oder ›v‹
                      (für <em>recto</em> bzw. <em>verso</em>). Möglich sind aber auch
@@ -176,7 +174,9 @@
                      z. B. <span class="val">4a</span> oder <span class="val">1*</span>, oder auch Kombinationen solcher Muster.<sup><a href="#note_4" id="note_reference_4" class="note_mark">4)</a></sup>
                   </p>
                   <p>
-                     <span class="aside"><span class="gi">&lt;surface&gt;</span>/<span class="att">@xml:id</span></span>
+                     <span class="aside">
+                        <span class="gi">&lt;surface&gt;</span>/<span class="att">@xml:id</span>
+                     </span>
                      Der Wert des Attributs <span class="att">@xml:id</span> ist vom Herausgeber grundsätzlich frei wählbar. 
                      Wir empfehlen eine Syntax, die dem für <span class="att">@n</span> gewählten Seitenbezeichner einen 
                      Identifier für den Inhaltsträger bzw. Textzeugen voranstellt, getrennt durch einen Unterstrich,
@@ -187,7 +187,7 @@
                       B.:                  
                   </p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;facsimile xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;facsimile&gt;
    &lt;surface ana="hc:Page" xml:id="G_1r" n="1r"&gt;[…]&lt;/surface&gt;
    &lt;surface ana="hc:Page" xml:id="G_1v" n="1v"&gt;[…]&lt;/surface&gt;
    &lt;surface ana="hc:Page" xml:id="G_2r" n="2r"&gt;[…]&lt;/surface&gt;
@@ -204,64 +204,84 @@
                      z. B.:                 
                   </p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;facsimile xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;facsimile&gt;
    &lt;surface ana="hc:Page" xml:id="wm001_1" n="1"&gt;
       &lt;graphic url="https://digi.ub.uni-heidelberg.de/diglit/wm001/0001" mimeType="image/*"/&gt;
       […]
    &lt;/surface&gt;
 &lt;/facsimile&gt;
                   </code></pre></div>
-                  
                </div>
-               
                <div id="FAC-DEC-CONTENTZONE">
-                  
                   <h3>Angaben zu Typen von Inhaltsbereichen</h3>
-                  
                   <p>
-                     Auf einer Inhaltsfläche () sind einzelne Inhalte 
-                     in Inhaltsbereichen () untergebracht.
+                     Auf einer Inhaltsfläche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentsurface.html" target="_blank">hc:ContentSurface</a><span class="loddocborder"> ‹</span>) sind einzelne Inhalte 
+                     in Inhaltsbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>) untergebracht.
                      Inhaltsbereiche werden <span class="gi">&lt;zone&gt;</span>-Elemente repräsentiert, die in <span class="gi">&lt;facsimile&gt;</span> 
                      entweder direkt als Kindelemente innerhalb von <span class="gi">&lt;surface&gt;</span> oder innerhalb eines übergeordneten
                      <span class="gi">&lt;zone&gt;</span> stehen. Ein Element <span class="gi">&lt;zone&gt;</span>, das seinerseits kein Kindelement <span class="gi">&lt;zone&gt;</span>
-                     enthält, ist ein Inhaltsbereich (von Ausnahmen bei Hilfsbereichen –  – abgesehen).
-                  </p>                  
+                     enthält, ist ein Inhaltsbereich (von Ausnahmen bei Hilfsbereichen – <span class="loddocborder">› </span><a class="loddoc" href="../concepts/auxiliaryzone.html" target="_blank">hc:AuxiliaryZone</a><span class="loddocborder"> ‹</span> – abgesehen).
+                  </p>
                   <p>
-                     <span class="aside"><span class="gi">&lt;zone&gt;</span>/<span class="att">@ana</span></span>
+                     <span class="aside">
+                        <span class="gi">&lt;zone&gt;</span>/<span class="att">@ana</span>
+                     </span>
                      Je nach Inhaltstyp werden in ›heiEDITIONS‹ folgende Kategorien von Inhaltsbereichen 
                      unterschieden, die jeweils an <span class="att">@ana</span> anzugeben sind:  
                   </p>
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/textzone.html"><span class="val">hc:TextZone</span></a> ( ›Textbereich‹ ): Inhaltsbereich, der aus mindestens einer Zeile besteht.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/initialzone.html"><span class="val">hc:InitialZone</span></a> ( ›Bereich mit einer Initiale‹ ): Bereich, der eine Initiale enthält. Solche Bereiche haben einen hybriden Charakter, weil sie textuellen und bildlichen Inhalt gleichzeitig tragen. Sie enthalten eine Textzeile mit meist einem einzigen Zeichen und verweisen gleichzeitig auf einen Bildausschnitt.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/tablezone.html"><span class="val">hc:TableZone</span></a> ( ›Tabellarischer Bereich‹ ): Inhaltsbereich, der aus einer Tabelle oder einem Teil einer Tabelle besteht.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/mathematicalformulazone.html"><span class="val">hc:MathematicalFormulaZone</span></a> ( ›Bereich mit einer mathematischen Formel‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/chemicalformulazone.html"><span class="val">hc:ChemicalFormulaZone</span></a> ( ›Bereich mit einer chemischen Formel‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/musicalnotationzone.html"><span class="val">hc:MusicalNotationZone</span></a> ( ›Bereich mit musikalischer Notation‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/imagezone.html"><span class="val">hc:ImageZone</span></a> ( ›Bildbereich‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/linedrawingzone.html"><span class="val">hc:LineDrawingZone</span></a> ( ›Bereich mit Strichzeichnung‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/graphiczone.html"><span class="val">hc:GraphicZone</span></a> ( ›Graphikbereich‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/chartzone.html"><span class="val">hc:ChartZone</span></a> ( ›Diagrammbereich‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/mapzone.html"><span class="val">hc:MapZone</span></a> ( ›Kartenbereich‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/separatorzone.html"><span class="val">hc:SeparatorZone</span></a> ( ›Trennbereich‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/spacezone.html"><span class="val">hc:SpaceZone</span></a> ( ›Freiraumbereich; Aussparungsbereich‹ ): 
+                  </p>
                   <p>
                      In einem einfachen Fall, wenn sich auf einer Seite ein einziger Textbereich befindet,
                      könnte dies innerhalb von <span class="gi">&lt;facsimile&gt;</span> auf folgende Weise deklariert werden:
                   </p>
                   <img class="smaller_graphic" src="../images/page_with_1_text_zone.svg" alt="Eine Seite mit einem einzigen, nicht näher beschriebenen Textbereich."><p class="bildunterschrift">Abb. 1: Eine Seite mit einem einzigen, nicht näher beschriebenen Textbereich.</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;surface xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Page" xml:id="Ex_1r" n="1r"&gt;
+&lt;surface ana="hc:Page" xml:id="Ex_1r" n="1r"&gt;
    &lt;graphic url="https://digi.ub.uni-heidelberg.de/diglit/ex001/0001" mimeType="image/*"/&gt;
    &lt;zone ana="hc:TextZone" xml:id="Ex_1r-a"/&gt;
 &lt;/surface&gt;                    
                   </code></pre></div>
                </div>
-               
                <div id="FAC-DEC-LAYOUT">
-                  
                   <h3>Layouterfassung</h3>
-                  
                   <p>
                      Wenn auf einer Inhaltsfläche mehrere Inhaltsbereiche vorkommen, die
                      in einer bestimmten Anordnung zueinander stehen, bietet ›heiEDITIONS‹
@@ -285,7 +305,7 @@
                   </p>
                   <img class="smaller_graphic" src="../images/page_with_text_and_image_zone.svg" alt="Eine Seite mit einem Textbereich und einem Bildbereich darunter."><p class="bildunterschrift">Abb. 2: Eine Seite mit einem Textbereich und einem Bildbereich darunter.</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;surface xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Page" xml:id="Ex_1v" n="1v"&gt;
+&lt;surface ana="hc:Page" xml:id="Ex_1v" n="1v"&gt;
    &lt;graphic url="https://digi.ub.uni-heidelberg.de/diglit/ex001/0002" mimeType="image/*"/&gt;
    &lt;zone ana="hc:TextZone" xml:id="Ex_1v-1"/&gt;
    &lt;zone ana="hc:ImageZone" xml:id="Ex_1v-2"/&gt;
@@ -293,22 +313,26 @@
                   </code></pre></div>
                   <p>
                      Komplexere Anordnungen lassen sich mit horizontalen und vertikalen Containern
-                     beschreiben, die mit <span class="gi">&lt;zone&gt;</span> des Typs 
-                     bzw.  kodiert werden.
+                     beschreiben, die mit <span class="gi">&lt;zone&gt;</span> des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/horizontallayout.html" target="_blank">hc:HorizontalLayout</a><span class="loddocborder"> ‹</span>
+                     bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/verticallayout.html" target="_blank">hc:VerticalLayout</a><span class="loddocborder"> ‹</span> kodiert werden.
                   </p>
-                  
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/horizontallayout.html"><span class="val">hc:HorizontalLayout</span></a> ( ›horizontales Layout‹ ): Gruppierungsbereich, dessen Elemente nebeneinander horizontal fest angeordnet sind, vergleichbar mit einer Zeile.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/verticallayout.html"><span class="val">hc:VerticalLayout</span></a> ( ›vertikales Layout‹ ): Gruppierungsbereich, dessen Elemente übereinander vertikal fest angeordnet sind, vergleichbar mit einer Spalte.
+                  </p>
                   <p>
                      Die Beschreibung einer Seite mit zwei Textbereichen nebeneinander demonstriert das folgende Beispiel.
                      Hier dient das übergeordnete <span class="gi">&lt;zone&gt;</span> als Container für die Gruppierung
                      und richtige Anordnung der beiden Textbereiche. Erst die beiden Textbereiche sind 
-                     jeweils Inhaltsbereiche (). Auf eine mögliche Bezeichnung
+                     jeweils Inhaltsbereiche (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/contentzone.html" target="_blank">hc:ContentZone</a><span class="loddocborder"> ‹</span>). Auf eine mögliche Bezeichnung
                      der beiden Textbereiche als ›Spalten‹ wird hier übrigens noch verzichtet,
-                     vgl. dazu unten den Abschnitt .
+                     vgl. dazu unten den Abschnitt <a class="inlink" href="#FAC-DEC-SEMISTRUC">Semistrukturelle Angaben zu Layout- und Inhaltsbereichen</a>.
                   </p>
                   <img class="smaller_graphic" src="../images/2_text_zones.svg" alt="Eine Seite mit zwei Textbereichen nebeneinander."><p class="bildunterschrift">Abb. 3: Eine Seite mit zwei Textbereichen nebeneinander.</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;surface xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Page" xml:id="Ex_2r" n="2r"&gt;
+&lt;surface ana="hc:Page" xml:id="Ex_2r" n="2r"&gt;
    &lt;graphic url="https://digi.ub.uni-heidelberg.de/diglit/ex001/0003" mimeType="image/*"/&gt;
    &lt;zone ana="hc:HorizontalLayout"&gt;
       &lt;zone ana="hc:TextZone" xml:id="Ex_2r-1"/&gt;
@@ -326,7 +350,7 @@
                   </p>
                   <img class="smaller_graphic" src="../images/2_text_zones_width.svg" alt="Eine Seite mit zwei unterschiedlich breiten Textbereichen nebeneinander."><p class="bildunterschrift">Abb. 4: Eine Seite mit zwei unterschiedlich breiten Textbereichen nebeneinander.</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;surface xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Page" xml:id="Ex_2v" n="2v"&gt;
+&lt;surface ana="hc:Page" xml:id="Ex_2v" n="2v"&gt;
    &lt;graphic url="https://digi.ub.uni-heidelberg.de/diglit/ex001/0004" mimeType="image/*"/&gt;
    &lt;zone ana="hc:HorizontalLayout"&gt;
       &lt;zone ana="hc:TextZone" xml:id="Ex_2v-1" hei:width="33%"/&gt;
@@ -335,7 +359,7 @@
 &lt;/surface&gt;                    
                   </code></pre></div>
                   <p>
-                     Eine explizite Angabe der relativen Höhe eines Bereichs ist nicht vorgesehen.<sup><a href="#note_8" id="note_reference_8" class="note_mark">8)</a></sup>                     
+                     Eine explizite Angabe der relativen Höhe eines Bereichs ist nicht vorgesehen.<sup><a href="#note_8" id="note_reference_8" class="note_mark">8)</a></sup>
                   </p>
                   <p>
                      Durch die Kombination eines horizontalen Containers mit einem nachfolgenden direkten
@@ -345,7 +369,7 @@
                   </p>
                   <img class="smaller_graphic" src="../images/3_zones.svg" alt="Eine Seite mit zwei Textbereichen nebeneinander und einem dritten Textbereich unter ihnen."><p class="bildunterschrift">Abb. 5: Eine Seite mit zwei Textbereichen nebeneinander und einem dritten Textbereich unter ihnen.</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;surface xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Page" xml:id="Ex_3r" n="3r"&gt;
+&lt;surface ana="hc:Page" xml:id="Ex_3r" n="3r"&gt;
    &lt;graphic url="https://digi.ub.uni-heidelberg.de/diglit/ex001/0005" mimeType="image/*"/&gt;
    &lt;zone ana="hc:HorizontalLayout"&gt;
       &lt;zone ana="hc:TextZone" xml:id="Ex_3r-1"/&gt;
@@ -353,18 +377,13 @@
    &lt;/zone&gt;
    &lt;zone ana="hc:TextZone" xml:id="Ex_3r-3"/&gt;
 &lt;/surface&gt;                    
-                  </code></pre></div> 
+                  </code></pre></div>
                   <p>
                      Bei den Beispielen auf Abb. 2 und 5 befinden sich auf oberster Ebene
                   </p>
-                  
-                  
                </div>
-               
                <div id="FAC-DEC-SEMISTRUC">
-                  
                   <h3>Semistrukturelle Angaben zu Layout- und Inhaltsbereichen</h3>
-                  
                   <p>
                      Ergänzend zur Angabe des jeweiligen Inhaltstyps eines Inhaltsbereichs und zur strukturellen
                      Beschreibung des Layouts mithilfe von Angaben zu einem Containertyp und dessen Ausrichtung
@@ -374,43 +393,36 @@
                      Ermessen des Herausgebers überlassen; wenn verwendet, sollten diese Angaben aber 
                      semantisch mit ›heiEDITIONS Concepts‹ konform sein.
                   </p>
-                  
-                  
-                  
-                  
-                  
-                  
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/mainzone.html"><span class="val">hc:MainZone</span></a> ( ›Hauptbereich‹ ): Bereich einer Inhaltsfläche, der sich innerhalb des Satz- oder Schriftspiegels befindet.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/marginalzone.html"><span class="val">hc:MarginalZone</span></a> ( ›Randbereich‹ ): Bereich einer Inhaltsfläche, der sich außerhalb des Satz- oder Schriftspiegels befindet, in mehrspaltigem Layout ggf. auch zwischen Spalten.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/column.html"><span class="val">hc:Column</span></a> ( ›Spalte‹ ): Planvoll angelegter und für regelmäßig zu platzierenden Inhalt geschaffener Bereich einer Inhaltsfläche, der entweder direkt einen homogenen Inhalt enthält oder als Container für andere untergeordnete Inhaltsbereiche fungiert.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/maincolumn.html"><span class="val">hc:MainColumn</span></a> ( ›Hauptspalte‹ ): Spalte innerhalb des Satz- oder Schriftspiegels.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/marginalcolumn.html"><span class="val">hc:MarginalColumn</span></a> ( ›Randspalte‹ ): Spalte außerhalb des Satz- oder Schriftspiegels.
+                  </p>
                </div>
-               
                <div id="FAC-DEC-PLACEMENT">
-                  
                   <h3>Ergänzende Angaben zur Platzierung von Randbereichen</h3>
-                  
                   <p>TODO</p>
-                  
                </div>
-               
-               
-               
-               
             </div>
-            
             <div id="FAC-CON">
-               
                <h2>Verknüpfung zwischen Text und Faksimiledeklaration</h2>
-               
                <p>
                   TODO
                   
                </p>
-               
             </div>
-            
             <div id="FAC-LINES">
-               
                <h2>Erfassung des Zeilenfalls</h2>
-               
                <p>
                   Die in ›heiEDITIONS‹ bereitgestellten Mittel machen es nicht nur möglich,
                   visuelle Zeilenanfänge zu kennzeichnen und somit den groben Zeilenumbruch einer Quelle zu dokumentieren,
@@ -427,21 +439,20 @@
                   zur Dokumentation von Layoutbereichen – u. a. auch unter Berücksichtigung der Kompatibilität mit OCR/HTR-Systemen
                   entwickelt. 
                </p>
-               
                <div id="FAC-LINES-TRIVIA">
-                  
                   <h3>Grundsätzliches zur Zeilenerfassung</h3>
-                  
                   <p>
                      Die Zeile ist in der visuellen Strukturhierarchie einer inhaltstragenden Fläche unterhalb der Ebene von Inhaltsbereichen 
                      angesiedelt und ist in dieser Hierarchie ›von oben kommend‹ die erste Einheit, die direkt Textzeichen 
                      enthalten kann.
                   </p>
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/line.html"><span class="val">hc:Line</span></a> ( ›Zeile‹ ): Eine geordnete, gerichtete und visuell kohärente Sequenz von Glyphen und ggf. anderen Elementen, die in der Regel, jedoch nicht zwingend einer geometrischen Geraden folgt, immer aber auf einem intentional geschaffenen visuellen Zusammenhang gründet.
+                  </p>
                   <p>
-                     Zeilen sind die konstituierenden Komponenten von Textbereichen (), die in der Regel
+                     Zeilen sind die konstituierenden Komponenten von Textbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/textzone.html" target="_blank">hc:TextZone</a><span class="loddocborder"> ‹</span>), die in der Regel
                      als unmittelbare Container für jeweils eine geordnete Sequenz von Zeilen fungieren.<sup><a href="#note_9" id="note_reference_9" class="note_mark">9)</a></sup>
-                  </p>                  
+                  </p>
                   <p>
                      Wenn das Digitalisat der Quelle (das inhaltstragende Artefakt) einer Expression nicht mithilfe von Koordinatenangaben
                      segmentiert wird (typischerweise anhand eines OCR/HTR-Systems), sodass Koordinatenangaben in das TEI-Dokument
@@ -450,11 +461,11 @@
                      die Zeilenanfänge mit <span class="gi">&lt;lb&gt;</span> markiert. Dabei ist für die Anordnung der Zeilen innerhalb eines Inhaltsbereichs
                      die Nummerierung der <span class="gi">&lt;lb&gt;</span>-Elemente mit <span class="att">@n</span> signifikant. Die so markierten Zeilen werden
                      implizit auf den nächsten vorausgehenden, im Text mit <span class="gi">&lt;cb&gt;</span>, <span class="code">&lt;milestone ana="hc:ZoneBeginning"&gt;</span> 
-                     oder <span class="code">&lt;milestone ana="hc:ZoneShift"&gt;</span> (s. oben ) angegebenen Inhaltsbereich bezogen 
+                     oder <span class="code">&lt;milestone ana="hc:ZoneShift"&gt;</span> (s. oben <a class="inlink" href="#FAC-CON">Verknüpfung zwischen Text und Faksimiledeklaration</a>) angegebenen Inhaltsbereich bezogen 
                      und diesem zugewiesen.
                   </p>
                   <p>
-                     <span class="aside">Zeilenanfänge</span> Nachdem also, wie oben unter  beschrieben, jeweils der Anfang eines Inhaltsbereichs mit 
+                     <span class="aside">Zeilenanfänge</span> Nachdem also, wie oben unter <a class="inlink" href="#FAC-CON">Verknüpfung zwischen Text und Faksimiledeklaration</a> beschrieben, jeweils der Anfang eines Inhaltsbereichs mit 
                      <span class="gi">&lt;cb&gt;</span> (bei Spaltenanfängen) oder <span class="code">&lt;milestone ana="hc:ZoneBeginning"&gt;</span> (bei Anfängen sonstiger Inhaltsbereiche)
                      gekennzeichnet worden ist (bzw. ggf. der Wechsel zurück in einen zuvor bereits einmal begonnenen Inhaltsbereich 
                      mittels <span class="code">&lt;milestone ana="hc:ZoneShift"&gt;</span> deklariert worden ist), wird <em>vor</em> den Text jeder Zeile das Element
@@ -462,7 +473,7 @@
                      tragen.
                   </p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;p xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;p&gt;
    &lt;cb facs="#A_5-a"/&gt;
    &lt;lb n="1"/&gt;Text von Zeile 1
    &lt;lb n="2"/&gt;Text von Zeile 2
@@ -489,7 +500,7 @@
                      erfasst werden:
                   </p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;lg&gt;
    &lt;l&gt;
       &lt;lb n="1"/&gt;Text von Vers 1.                              
    &lt;/l&gt;
@@ -511,7 +522,7 @@
                      Genauso möglich wäre aber stattdessen auch:
                   </p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;lg&gt;
    &lt;lb n="1"/&gt;
    &lt;l&gt;
       Text von Vers 1.                              
@@ -543,7 +554,7 @@
                      unmittelbar abbilden, da zwei XML-Elemente nicht dieselbe Position in einem XML-Dokument einnehmen können.<sup><a href="#note_11" id="note_reference_11" class="note_mark">11)</a></sup> 
                      Auch wenn die technische Abfolge der beiden Typen von Anfängen in einem TEI-Dokument also letztlich
                      beliebig ist, empfiehlt sich jeweils projektspezifisch eine einheitliche Regelung.                    
-                  </p>                 
+                  </p>
                   <p>
                      Wie bei <span class="gi">&lt;pb&gt;</span>, <span class="gi">&lt;cb&gt;</span>, <span class="code">&lt;milestone ana="hc:ZoneBeginning"&gt;</span> 
                      oder <span class="code">&lt;milestone ana="hc:ZoneShift"&gt;</span> gilt auch für die Markierungen von Zeilenanfängen mit <span class="gi">&lt;lb&gt;</span>,
@@ -580,7 +591,7 @@
                      in der Quelle ab. Meist sind Abweichungen in der Anordung am Wechsel zwischen Textbereichen festzumachen, etwa wenn der Textlauf
                      von einer Spalte in eine Marginalie wechselt und danach wieder in der Spalte fortgesetzt wird. Gelegentlich kann aber auch innerhalb 
                      eines Textbereichs die visuelle Abfolge von der sinnvoll zu lesenden Abfolge abweichen. Zeilenüberläufe und quer zur Zeilenanordnung
-                     verlaufende parallele Textströme (s. u. ) sind die typischsten Phänomene dieser Art. 
+                     verlaufende parallele Textströme (s. u. <a class="inlink" href="#FAC-LINES-RUNOVER">Zeilenüberläufe und quer zu Zeilen verlaufende Textströme</a>) sind die typischsten Phänomene dieser Art. 
                   </p>
                   <p>
                      Grundsätzlich hindert einen Herausgeber nichts daran, die sinngemäße Leseabfolge des Textes völlig frei festzulegen
@@ -588,7 +599,7 @@
                      führt einen solchen Vorgang vor: 
                   </p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;lg&gt;
    &lt;l n="1"&gt;
       &lt;lb n="1"/&gt;Text von Vers 1.                              
    &lt;/l&gt;
@@ -624,7 +635,7 @@
                      an der  Lesereihenfolge etwas ändern würde:                  
                   </p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;lg&gt;
    &lt;l n="1"&gt;
       &lt;lb n="1"/&gt;Text von Vers 1.                              
    &lt;/l&gt;
@@ -643,15 +654,13 @@
 &lt;/lg&gt;
                   </code></pre></div>
                   
-                  
                </div>
-               
                <div id="FAC-LINES-BREAKS">
-                  
                   <h3>Worttrennung</h3>
-                  
                   <p>
-                     <span class="aside"><span class="att">@break</span></span>Die Zeilengrenzen entsprechen bekanntlich nicht immer den Wortgrenzen. Mit <span class="att">@break</span> stellt die TEI
+                     <span class="aside">
+                        <span class="att">@break</span>
+                     </span>Die Zeilengrenzen entsprechen bekanntlich nicht immer den Wortgrenzen. Mit <span class="att">@break</span> stellt die TEI
                      ein einfaches Mittel zur Verfügung, mit dem ausgedrückt werden kann, ob ein Zeilenanfang gleichzeitig auch
                      mit dem Anfang eines Tokens zusammenfällt, also ob die Zeilengrenze gleichzeitig auch eine Tokengrenze ist.
                      Mit <span class="code">&lt;lb break="no"&gt;</span> kann ausgedrückt werden, 
@@ -659,7 +668,7 @@
                   </p>
                   
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;p xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;p&gt;
    &lt;lb n="2"/&gt; […] hell und festlich, ganz frevelhaft unkirchlich scheint eine
    &lt;lb n="3"/&gt;warme Frühlingssonne am Karfreitag, wo sie eigentlich von den Sonnenschie
    &lt;lb n="4" break="no"/&gt;bern mit schwarzem Flore verbrämt werden müsste, und auch ich Heide sehe
@@ -688,30 +697,30 @@
                      muss an <span class="gi">&lt;lb&gt;</span>-Elementen innerhalb eines Wortes <span class="att">@break</span> nicht händisch gesetzt werden.
                      Wenn es fehlt, wird es während der Verarbeitung ergänzt. 
                   </p>
-                  
                </div>
-               
                <div id="FAC-LINES-SEGMENTS">
-                  
                   <h3>Zeilensegmente</h3>
-                  
                   <p>
                      Zwischen den visuellen Gliederungsebenen der Zeilen und der Zeichen bzw. Glyphen kann bei Bedarf zusätzlich
-                     die Ebene der Zeilensegmente angesetzt werden.<sup><a href="#note_13" id="note_reference_13" class="note_mark">13)</a></sup>                  
+                     die Ebene der Zeilensegmente angesetzt werden.<sup><a href="#note_13" id="note_reference_13" class="note_mark">13)</a></sup>
                   </p>
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/linesegment.html"><span class="val">hc:LineSegment</span></a> ( ›Zeilensegment‹ ): Eine geordnete, gerichtete und visuell kohärente Sequenz von Glyphen und ggf. anderen Elementen innerhalb einer Zeile.
+                  </p>
                   <p>
                      Grundsätzlich kann jede Zeile beliebig in Zeilensegmente unterteilt werden. Ähnlich wie bei Zeilenanfängen 
                      wird in der Arbeitskodierung und in der semantisch-logischen Kodierung nur der Anfang eines Zeilensegments
                      punktuell gekennzeichnet, und zwar mit <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span>.
                   </p>
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/linesegmentbeginning.html"><span class="val">hc:LineSegmentBeginning</span></a> ( ›Zeilensegmentanfang‹ ): Punktuell gedachter Anfang eines Zeilensegments.
+                  </p>
                   <img class="illustration" src="../images/line_with_segments.svg" alt="Eine Zeile mit drei Zeilensegmenten."><p class="bildunterschrift">Abb. 15: Eine Zeile mit drei Zeilensegmenten.</p>
                   <p>
                      Der Text einer Zeile mit der in der vorangehenden Abbildung skizzierten Struktur würde (etwa innerhalb eines Absatzes) wie folgt kodiert:
                   </p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;p xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;p&gt;
    […]
    &lt;lb n="3"/&gt;
    &lt;milestone ana="hc:LineSegmentBeginning" n="1"/&gt;
@@ -728,7 +737,7 @@
                      kann auf die explizite Deklaration des entsprechenden Zeilensegmentanfangs verzichtet werden:
                   </p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;p xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;p&gt;
    […]
    &lt;lb n="3"/&gt;
    Text von Zeilensegment 1
@@ -739,9 +748,19 @@
    […]
 &lt;/p&gt;
                   </code></pre></div>
-                  
                   <p>
-                     <span class="aside"><span class="att">@hei:belongsToLine</span></span>
+                     Zeilensegmente können verwendet werden, um Zeilenteile mit Informationen über ihre Ausrichtung und Abstände
+                     innerhalb der Zeile zu versehen (vergleichbar mit Tabulatoren im Desktop-Publishing); zu dieser Verwendung vgl. 
+                     weiter unten <a class="inlink" href="#FAC-LINES-ALIGNMENT">Ausrichtung und Abstände</a>. Sie dienen außerdem dazu, die Rückkehr eines Textstroms
+                     in eine Zeile zu erfassen, wenn der Textstrom zuvor die Zeile verlassen hat, typischerweise um vorübergehend in einer Marginalie
+                     fortgesetzt zu werden. In solchen Fällen findet ein zweifacher Wechsel des Textbereichs statt (zwischen einer Hauptspalte 
+                     und einem Randbereich und danach zwischen dem Randbereich und der ursprünglichen Hauptspalte). Ein weiterer
+                     Einsatzbereich von Zeilensegmenten ist die Erfassung von Zeilenüberläufen.
+                  </p>
+                  <p>
+                     <span class="aside">
+                        <span class="att">@hei:belongsToLine</span>
+                     </span>
                      Bei der Verwendung von Zeilensegmenten für die beiden zuletzt genannten Zwecke kann es erforderlich sein,
                      bei Zeilensegmenten (mit Ausnahme des jeweils ersten Zeilensegments, dessen Anfang praktisch mit dem Zeilenbeginn
                      zusammenfällt) ihre jeweilige Zugehörigkeit zu einer Zeile explizit anzugeben, und zwar immer dann, wenn
@@ -750,13 +769,9 @@
                      <span class="code">teidata.text</span> erwartet Werte, die mit der Zeilennummerangabe in <span class="att">@n</span> am zugehörigen <span class="gi">&lt;lb&gt;</span>
                      übereinstimmen müssen, normalerweise also einfach die Nummer der zugehörigen Zeile.<sup><a href="#note_14" id="note_reference_14" class="note_mark">14)</a></sup> Näheres und Beispiele sind den folgenden Abschnitten zu entnehmen.
                   </p>
-                  
                </div>
-               
                <div id="FAC-LINES-ALIGNMENT">
-                  
                   <h3>Ausrichtung und Abstände</h3>
-                  
                   <p>
                      Eine Zeile ist ein visueller Gegenstand, der normalerweise in einen größeren visuellen Kontext (einer Inhaltsfläche und eines Inhaltsbereichs)
                      eingebettet ist und zu anderen visuellen Objekten in einer Beziehung steht. In ›heiEDITIONS‹ wird angenommen,
@@ -783,10 +798,18 @@
                      von Einrückungen und Ausrückungen können an <span class="gi">&lt;lb&gt;</span> bzw. <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> jeweils 
                      mit dem Attribut <span class="att">@rendition</span> diese Angaben gemacht werden:
                   </p>
-                  
-                  
-                  
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/leftindent.html"><span class="val">hc:LeftIndent</span></a> ( ›links eingerückt‹ ): Links eingerückter textueller visueller Gegenstand, in der Regel eine Zeile, ggf. auch bezogen auf die zu einem Absatz u. Ä. gehörenden Zeilen oder ein sonstige Zeilengruppe als Block. Die Einrückung oder der Einzug besteht in der Belassung eines Freiraums auf der linken Seite einer Zeile, sodass der Zeileninhalt entsprechend verschoben wird.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/rightindent.html"><span class="val">hc:RightIndent</span></a> ( ›rechts eingerückt‹ ): Rechts eingerückter textueller visueller Gegenstand, in der Regel eine Zeile, ggf. auch bezogen auf die zu einem Absatz u. Ä. gehörenden Zeilen oder eine sonstige Zeilengruppe als Block. Die Einrückung oder der Einzug besteht in der Belassung eines Freiraums auf der rechten Seite einer Zeile, sodass der Zeileninhalt entsprechend verschoben wird.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/leftoutdent.html"><span class="val">hc:LeftOutdent</span></a> ( ›links ausgerückt‹ ): Textueller visueller Gegenstand, der über den regulären linken Rand eines Inhaltsbereichs hinausragt, in der Regel eine Zeile in einem Textbereich.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/rightoutdent.html"><span class="val">hc:RightOutdent</span></a> ( ›rechts ausgerückt‹ ): Textueller visueller Gegenstand, der über den regulären rechten Rand eines Inhaltsbereichs hinausragt, in der Regel eine Zeile in einem Textbereich oder ein Zeilensegment in einer Zeile.
+                  </p>
                   <p>
                      Die Zuweisung der aufgeführten Typen zu einer Zeile oder einem Zeilensegment drückt nur aus, dass eine Einrückung oder Ausrückung
                      vorliegt, nicht etwa wie groß diese ist. Für die genauere Erfassung der Ausdehnung einer Einrückung oder Ausrückung s. weiter unten (TODO). 
@@ -796,8 +819,12 @@
                      Zur Erfassung der vertikalen Absetzung bzw. von vertikalen Freiräumen oberhalb oder unterhalb einer Zeile können 
                      an <span class="gi">&lt;lb&gt;</span> mit dem Attribut <span class="att">@rendition</span> diese Angaben gemacht werden:
                   </p>
-                  
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/offsetabove.html"><span class="val">hc:OffsetAbove</span></a> ( ›mit Abstand nach oben; von oben abgesetzt‹ ): Visueller Gegenstand, in der Regel eine Zeile, ein Textblock (etwa einem Absatz als semantisch-logische Einheit entsprechend) oder seltener ein Layoutbereich, der mit einem Abstand nach oben erscheint bzw. von oben abgesetzt ist, sodass über dem Gegenstand ein gewisser vertikaler Freiraum erkennbar ist.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/offsetbelow.html"><span class="val">hc:OffsetBelow</span></a> ( ›mit Abstand nach unten‹ ): Visueller Gegenstand, in der Regel eine Zeile, ein Textblock (etwa einem Absatz als semantisch-logische Einheit entsprechend) oder seltener ein Layoutbereich, der mit einem Abstand nach unten erscheint, sodass unter dem Gegenstand ein gewisser vertikaler Freiraum erkennbar ist.
+                  </p>
                   <p>
                      Wie bei den zuvor beschriebenen einfachen Angaben für Einrückungen und Ausrückungen sind auch diese
                      Mittel zur Angabe vertikaler Absetzung nur für einfache ›Pauschalangaben‹ bestimmt, also für Projekte und Fälle,
@@ -810,11 +837,17 @@
                      – normalerweise der textuelle Inhalt – der Zeile linksbündig, rechtsbündig oder zentriert erscheinen. Dafür kann 
                      an <span class="gi">&lt;lb&gt;</span> mit dem Attribut <span class="att">@rendition</span> eine der folgenden drei Angaben gemacht werden:
                   </p>
-                  
-                  
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/flushleft.html"><span class="val">hc:FlushLeft</span></a> ( ›linksbündig‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt am linken Rand des Gegenstands ausgerichtet ist. Die Linksausrichtung wird normalerweise implizit angenommen.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/flushright.html"><span class="val">hc:FlushRight</span></a> ( ›rechtsbündig‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt am rechten Rand des Gegenstands ausgerichtet ist.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/centered.html"><span class="val">hc:Centered</span></a> ( ›zentriert‹ ): Visueller Gegenstand, typischerweise eine Zeile oder ggf. Tabellenzelle, dessen textueller Inhalt horizontal mittig ausgerichtet ist.
+                  </p>
                   <p>
-                     Die Angaben ,  und  beziehen sich
+                     Die Angaben <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushleft.html" target="_blank">hc:FlushLeft</a><span class="loddocborder"> ‹</span>, <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/centered.html" target="_blank">hc:Centered</a><span class="loddocborder"> ‹</span> beziehen sich
                      jeweils ›global‹ auf sämtliche Inhalte einer Zeile (bzw. anders betrachtet auf die ganze Zeile als Einheit).                   
                   </p>
                   <p>
@@ -824,31 +857,32 @@
                      <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> mit <span class="att">@rendition</span> die folgenden
                      Angaben gemacht werden:
                   </p>
-                  
-                  
-                  
-                  
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/selfalignmentleft.html"><span class="val">hc:SelfAlignmentLeft</span></a> ( ›links ausgerichtet‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mit seinem linken Rand bündig mit dem linken Rand des Containers erscheint.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/selfalignmentright.html"><span class="val">hc:SelfAlignmentRight</span></a> ( ›rechts ausgerichtet‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mit seinem rechten Rand bündig mit dem rechten Rand des Containers erscheint.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/selfalignmentcentered.html"><span class="val">hc:SelfAlignmentCentered</span></a> ( ›mittig ausgerichtet‹ ): Visueller Gegenstand, der in einem ihm übergeordneten visuellen Container (einem Layoutbereich oder einer Zeile) mittig erscheint.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/selfalignmentregularleftmargin.html"><span class="val">hc:SelfAlignmentRegularLeftMargin</span></a> ( ›ausgerichtet am regulären linken Rand‹ ): Visueller Gegenstand – typischerweise ein Zeilensegment –, der links bündig mit dem regulären linken Rand des Inhaltsbereiches erscheint.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/selfalignmentregularrightmargin.html"><span class="val">hc:SelfAlignmentRegularRightMargin</span></a> ( ›ausgerichtet am regulären rechten Rand‹ ): Visueller Gegenstand – typischerweise ein Zeilensegment –, der rechts bündig mit dem regulären rechten Rand des Inhaltsbereiches erscheint.
+                  </p>
                   <p>
                      TODOs: Beispiele für tabulatorähnliche Strukturen; Offset-Attribute für präzise Erfassung von Abständen;
                      Verwendung des Elements <span class="gi">&lt;rendition&gt;</span> für die Bündelung von Layoutangaben an Zeilen und Zeilensegmenten.           
                   </p>
-                  
-                  
                </div>
-               
                <div id="FAC-LINES-SWITCH">
-                  
                   <h3>Zeilensegmente beim Wechsel des Textstroms zwischen Textbereichen</h3>
-                  
                   <p>TODO</p>
-                  
                </div>
-               
                <div id="FAC-LINES-RUNOVER">
-                  
                   <h3>Zeilenüberläufe und quer zu Zeilen verlaufende Textströme</h3>
-                  
                   <p>
                      Ein Zeilenüberlauf liegt vor, wenn der textuelle Inhalt, der ursprünglich für eine Zeile vorgesehen worden wäre,
                      nicht vollständig auf diese Zeile passt, sodass der ›überschüssige‹ Text andernorts auf eine Weise untergebracht wird,
@@ -897,12 +931,12 @@
                   <img class="illustration" src="../images/run-over-type1.svg" alt="Zeilenüberlauf rechtsbündig in der nächsten regulären Zeile."><p class="bildunterschrift">Abb. 17: Zeilenüberlauf rechtsbündig in der nächsten regulären Zeile.</p>
                   <p>
                      Um den Zeilenüberlauf als solchen zu markieren, wird das <span class="gi">&lt;lb&gt;</span> der Zeile, die den
-                     überschüssigen Text aufnimmt, an <span class="att">@ana</span> als 
+                     überschüssigen Text aufnimmt, an <span class="att">@ana</span> als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span>
                      gekennzeichnet. Die rechtsbündige Ausrichtung des Zeileninhalts wird an <span class="att">@rendition</span>
-                     mit  angegeben:
+                     mit <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> angegeben:
                   </p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;p xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;p&gt;
    […]
    &lt;lb n="1"/&gt;Text, der eigentlich für eine Zeile vorgesehen wäre, aber
    &lt;lb n="2" ana="hc:RunOverBelow" rendition="hc:FlushRight"/&gt;zufällig etwas länger ist.
@@ -914,8 +948,12 @@
                      die mit dem Attribut <span class="att">@ana</span> an <span class="gi">&lt;lb&gt;</span> und <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span>
                      angegeben werden können:
                   </p>
-                  
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/runoverabove.html"><span class="val">hc:RunOverAbove</span></a> ( ›Zeilenüberlauf oben‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/runoverbelow.html"><span class="val">hc:RunOverBelow</span></a> ( ›Zeilenüberlauf unten‹ ): 
+                  </p>
                   <p>
                      Wenn in der nächsten regulären Zeile, die den überschüssigen Text als Zeilenüberlauf aufnimmt, der
                      Zeilenüberlauf als solcher visuell durch eine Absetzung oder Einrückung kenntlich gemacht wird, verfährt man
@@ -924,7 +962,7 @@
                   </p>
                   <img class="illustration" src="../images/run-over-type2.svg" alt="Zeilenüberlauf, markiert durch Einrückung in der nächsten regulären Zeile."><p class="bildunterschrift">Abb. 18: Zeilenüberlauf, markiert durch Einrückung in der nächsten regulären Zeile.</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;p xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;p&gt;
    […]
    &lt;lb n="1"/&gt;Text, der eigentlich für eine Zeile vorgesehen wäre, aber
    &lt;lb n="2" ana="hc:RunOverBelow" rendition="hc:LeftIndent"/&gt;zufällig etwas länger ist.
@@ -934,13 +972,13 @@
                   <p>
                      Wenn der Text des Zeilenüberlaufs zwischen den regulären Zeilen platziert wird, damit der folgende Textabschnitt
                      auf der nächsten regulären Zeile fortgesetzt werden kann, gilt die zusätzliche Zeile zwischen den Zeilen
-                     ebenfalls als eine eigenständige Zeile, und zwar als Zeile des Typs . Bei dieser Zeile
-                     sollte durch das Attribut <span class="att">@n</span> sichergestellt werden, dass sie richtig eingeordnet werden kann (vgl. oben ). Im Übrigen
+                     ebenfalls als eine eigenständige Zeile, und zwar als Zeile des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/interlinearline.html" target="_blank">hc:InterlinearLine</a><span class="loddocborder"> ‹</span>. Bei dieser Zeile
+                     sollte durch das Attribut <span class="att">@n</span> sichergestellt werden, dass sie richtig eingeordnet werden kann (vgl. oben <a class="inlink" href="#FAC-LINES-TRIVIA">Grundsätzliches zur Zeilenerfassung</a>). Im Übrigen
                      folgt die Kodierung aber den bereits erläuterten Prinzipien:
                   </p>
                   <img class="illustration" src="../images/run-over-type3.svg" alt="Zeilenüberlauf in einer rechtsbündig ausgerichteten Interlinearzeile."><p class="bildunterschrift">Abb. 19: Zeilenüberlauf in einer rechtsbündig ausgerichteten Interlinearzeile.</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;p xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;p&gt;
    […]
    &lt;lb n="1"/&gt;Text, der eigentlich für eine Zeile vorgesehen wäre, aber
    &lt;lb n="1.1" ana="hc:InterlinearLine hc:RunOverBelow" rendition="hc:FlushRight"/&gt;zufällig etwas länger ist.
@@ -962,14 +1000,14 @@
                      (und der semantisch-logischen Kodierung) immer die sinnvoll zu lesende Textabfolge sein muss.
                      Der Text wird also so erfasst, wie er zu lesen ist. Der visuelle Wechsel des Textstroms in Teile
                      anderer Zeilen als der direkt zuvor mit einem <span class="gi">&lt;lb&gt;</span> begonnenen erfolgt mithilfe des oben unter
-                      eingeführten Zeilensegment-Konstrukts. Hierbei muss zwingend das
+                     <a class="inlink" href="#FAC-LINES-SEGMENTS">Zeilensegmente</a> eingeführten Zeilensegment-Konstrukts. Hierbei muss zwingend das
                      Attribut <span class="att">@hei:belongsToLine</span> benutzt werden, denn das Zeilensegment mit dem Zeilenüberlauf
                      befindet sich in diesen Fällen immer in einer anderen Zeile als der, die mit dem nächsten vorausgehenden <span class="gi">&lt;lb&gt;</span>
                      deklariert wurde.
                   </p>
                   <img class="illustration" src="../images/run-over-type4.svg" alt="Zeilenüberlauf in einem Segment der folgenden regulären Zeile."><p class="bildunterschrift">Abb. 20: Zeilenüberlauf in einem Segment der folgenden regulären Zeile.</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;p xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;p&gt;
    […]
    &lt;lb n="1"/&gt;Text, der eigentlich für eine Zeile vorgesehen wäre, aber
    &lt;milestone ana="hc:LineSegmentBeginning hc:RunOverBelow" n="2" hei:belongsToLine="2"/&gt;zufällig etwas länger ist.
@@ -981,7 +1019,7 @@
                   <p>
                      Wie aus dem vorausgehenden Code-Beispiel ersichtlich ist, wird in diesem Fall nicht ein <span class="gi">&lt;lb&gt;</span>,
                      sondern das <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> an <span class="att">@ana</span> mit der Typangabe
-                      gekennzeichnet. Der Grund dafür ist, dass in diesem Fall nicht eine Zeile
+                     <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span> gekennzeichnet. Der Grund dafür ist, dass in diesem Fall nicht eine Zeile
                      als Ganzes, sondern ein Zeilensegment den Zeilenüberlauf darstellt. 
                   </p>
                   <p>
@@ -1002,7 +1040,7 @@
                   </p>
                   <img class="illustration" src="../images/cpg367_3v-a.jpg" alt="Zeilenüberlauf in einem Zeilensegment zwei Zeilen höher (Heidelberg, Universitätsbibliothek, Cod. Pal. germ. 367, fol. 3v)."><p class="bildunterschrift">Abb. 22: Zeilenüberlauf in einem Zeilensegment zwei Zeilen höher (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/cpg367/0018" target="_blank">Heidelberg, Universitätsbibliothek, Cod. Pal. germ. 367, fol. 3v</a>).</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Couplet"&gt;
+&lt;lg ana="hc:Couplet"&gt;
    &lt;l n="417"&gt;
       &lt;lb n="24"/&gt;
       &lt;hi rendition="hc:Versal"&gt;S&lt;/hi&gt;under d&lt;ex&gt;er&lt;/ex&gt; alleyne ot
@@ -1012,7 +1050,7 @@
       &lt;hi rendition="hc:Versal"&gt;D&lt;/hi&gt;er daz wachſin gebit got 
    &lt;/l&gt;
 &lt;/lg&gt;
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Couplet"&gt;
+&lt;lg ana="hc:Couplet"&gt;
    &lt;l n="419"&gt;
       &lt;lb n="26"/&gt;
       &lt;hi rendition="hc:Versal"&gt;D&lt;/hi&gt;och ſal menſlich flis ſich we&lt;milestone ana="hc:LineSegmentBeginning hc:RunOverAbove" n="2" hei:belongsToLine="24" break="no"/&gt;gin 
@@ -1029,7 +1067,7 @@
                      dass der Anfang des Zeilenüberlaufs mitten im Wort liegt:
                   </p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Couplet"&gt;
+&lt;lg ana="hc:Couplet"&gt;
 &lt;l n="417"&gt;
    &lt;lb n="24"/&gt;
    &lt;w&gt;&lt;hi rendition="hc:Versal"&gt;S&lt;/hi&gt;under&lt;/w&gt;
@@ -1053,7 +1091,7 @@
    &lt;w&gt;got&lt;/w&gt; 
 &lt;/l&gt;
 &lt;/lg&gt;
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Couplet"&gt;
+&lt;lg ana="hc:Couplet"&gt;
 &lt;l n="419"&gt;
    &lt;lb n="26"/&gt;
    &lt;w&gt;&lt;hi rendition="hc:Versal"&gt;D&lt;/hi&gt;och&lt;/w&gt;
@@ -1094,7 +1132,7 @@
                   </p>
                   <img class="illustration" src="../images/ubk-lmb_2_ms_philol_28_3_1r-a.jpg" alt="Doppelter Zeilenüberlauf (Kassel, Universitätsbibliothek, Landesbibliothek und Murhardsche Bibliothek der Stadt Kassel, 2° Ms. philol. 28[3, fol. 1r)."><p class="bildunterschrift">Abb. 23: Doppelter Zeilenüberlauf (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/ubk-lmb_2_ms_philol_28_3/0001" target="_blank">Kassel, Universitätsbibliothek, Landesbibliothek und Murhardsche Bibliothek der Stadt Kassel, 2° Ms. philol. 28[3, fol. 1r</a>).</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Couplet"&gt;
+&lt;lg ana="hc:Couplet"&gt;
    &lt;l n="339"&gt;
       &lt;lb n="6"/&gt;
       &lt;w xml:id="w_339_1"&gt;&lt;hi rendition="hc:RedStroke"&gt;D&lt;/hi&gt;a&lt;/w&gt;
@@ -1124,7 +1162,7 @@
       &lt;pc&gt;··&lt;/pc&gt;
    &lt;/l&gt;
 &lt;/lg&gt;
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Couplet"&gt;
+&lt;lg ana="hc:Couplet"&gt;
    &lt;l n="341"&gt;
       &lt;lb n="8"/&gt;
       &lt;w xml:id="w_341_1"&gt;&lt;hi rendition="hc:RedStroke"&gt;S&lt;/hi&gt;ie&lt;/w&gt;
@@ -1163,7 +1201,7 @@
                      keine Zusammenschreibung nahelegt. Jeweils am Ende von V. 339 und 340 ist daher kein Leerzeichen (explizit mit <span class="gi">&lt;c&gt;</span>) zu setzen,
                      da auf das Versende jeweils (aus Sicht der visuellen Anordnung, in diesem Fall nicht der Dokumentabfolge entsprechend) 
                      der Anfang eines Zeilensegments folgt (und nicht das Zeilenende). Am Ende von V. 341 ist hingegen ein explizit gesetztes Leerzeichen
-                     erforderlich, weil mitten in der Zeile zwei Verse aufeinandertreffen (s. dazu unten ).
+                     erforderlich, weil mitten in der Zeile zwei Verse aufeinandertreffen (s. dazu unten <a class="inlink" href="#FAC-LINES-MULTIPLEBLOCKS">Mehrere semantisch-logische Blöcke in einer Zeile</a>).
                   </p>
                   <p>
                      Oben wurde bereits an einem künstlichen Beispiel das Szenario veranschaulicht, in dem ein Zeilenüberlauf
@@ -1171,7 +1209,7 @@
                   </p>
                   <img class="illustration" src="../images/gnm_hs86035_17r-a.png" alt="Zeilenüberlauf in der folgenden Zeile, die rechtsbündig ausgerichtet ist (Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r)."><p class="bildunterschrift">Abb. 24: Zeilenüberlauf in der folgenden Zeile, die rechtsbündig ausgerichtet ist (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/gnm_hs86035/0038" target="_blank">Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r</a>).</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;lg&gt;
    &lt;l n="911"&gt;
       &lt;lb n="21"/&gt;&lt;hi rendition="hc:RedStroke"&gt;E&lt;/hi&gt;s ſei vbel oder es ſei gute
    &lt;/l&gt;
@@ -1186,15 +1224,15 @@
 &lt;/lg&gt;
                   </code></pre></div>
                   <p>
-                     Im vorangehenden Beispiel wird  an <span class="gi">&lt;lb&gt;</span> angegeben, weil 
+                     Im vorangehenden Beispiel wird <span class="loddocborder">› </span><a class="loddoc" href="../concepts/flushright.html" target="_blank">hc:FlushRight</a><span class="loddocborder"> ‹</span> an <span class="gi">&lt;lb&gt;</span> angegeben, weil 
                      damit die Ausrichtung des gesamten Zeileninhalts bzw. der ganzen Zeile beschrieben werden soll.
                      Wenn hingegen bei einem Zeilensegment dessen Ausrichtung angegeben werden soll, kommt
-                     (bei einer Ausrichtung am rechten Zeilenrand)  zum Einsatz,                    
-                     wie oben unter  beschrieben:
+                     (bei einer Ausrichtung am rechten Zeilenrand) <span class="loddocborder">› </span><a class="loddoc" href="../concepts/selfalignmentright.html" target="_blank">hc:SelfAlignmentRight</a><span class="loddocborder"> ‹</span> zum Einsatz,                    
+                     wie oben unter <a class="inlink" href="#FAC-LINES-ALIGNMENT">Ausrichtung und Abstände</a> beschrieben:
                   </p>
                   <img class="illustration" src="../images/gnm_hs86035_17r-a2.png" alt="Zeilenüberlauf in einem rechts ausgerichteten Segment der folgenden regulären Zeile (Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r)."><p class="bildunterschrift">Abb. 25: Zeilenüberlauf in einem rechts ausgerichteten Segment der folgenden regulären Zeile (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/gnm_hs86035/0038" target="_blank">Nürnberg, Germanisches Nationalmuseum, Hs. 86 035, fol. 17r</a>).</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;lg xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;lg&gt;
    &lt;l n="905"&gt;
       &lt;lb n="15"/&gt;&lt;hi rendition="hc:RedStroke"&gt;I&lt;/hi&gt;n wes műte ſıcheit leit
    &lt;/l&gt;
@@ -1214,14 +1252,14 @@
                      Diese Phänomene scheinen etwas planmäßiger zu sein als spontane Zeilenüberläufe, die Abgrenzung mag
                      aber im Einzelfall schwierig sein. Die Erfassung anhand des Zeilensegmentmechanismus ist identisch wie
                      bei ›echten‹ Zeilenüberläufen, nach Ermessen des Herausgebers kann aber auf die Angabe von 
-                      bzw.  (und damit auf eine
+                     <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverabove.html" target="_blank">hc:RunOverAbove</a><span class="loddocborder"> ‹</span> bzw. <span class="loddocborder">› </span><a class="loddoc" href="../concepts/runoverbelow.html" target="_blank">hc:RunOverBelow</a><span class="loddocborder"> ‹</span> (und damit auf eine
                      Bewertung als Zeilenüberlauf) verzichtet werden. Das folgende reale
                      Beispiel veranschaulicht einen solchen Fall. Die Stelle befindet sich an der Grenze zweier Kapitel, wobei die Überschrift des 
                      neuen Kapitels neben dem letzten Verspaar des vorangegangenen Kapitels ›mitläuft‹:
                   </p>
                   <img class="illustration" src="../images/tub_rps_54_iii_8r.jpg" alt="Textströme des Verstextes und der Überschrift quer zur Zeilenstruktur jeweils auf Zeilenteile verteilt (Toruń, Universitätsbibliothek, Rps 54/III, fol. 8r)."><p class="bildunterschrift">Abb. 26: Textströme des Verstextes und der Überschrift quer zur Zeilenstruktur jeweils auf Zeilenteile verteilt (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/diglit/tub_rps_54_iii/0020" target="_blank">Toruń, Universitätsbibliothek, Rps 54/III, fol. 8r</a>).</p>
                   <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;div xmlns="http://www.tei-c.org/ns/Examples"&gt;
+&lt;div&gt;
    […]
    &lt;lg ana="hc:Couplet"&gt;
       &lt;l n="899"&gt;
@@ -1242,7 +1280,7 @@
       &lt;/l&gt;
    &lt;/lg&gt;
 &lt;/div&gt;
-&lt;div xmlns="http://www.tei-c.org/ns/Examples" ana="hc:Chapter"&gt;
+&lt;div ana="hc:Chapter"&gt;
    &lt;milestone ana="hc:LineSegmentBeginning" n="2" hei:belongsToLine="3"/&gt;
    &lt;head&gt; 
       &lt;hi hei:color="Red"&gt;                           
@@ -1273,33 +1311,21 @@
 &lt;/div&gt;
                   </code></pre></div>
                   
-                  
-                  
-                  
                </div>
-               
                <div id="FAC-LINES-MULTIPLEBLOCKS">
-                  
                   <h3>Mehrere semantisch-logische Blöcke in einer Zeile</h3>
-                  
                   <p>TODO</p>
-                  
                </div>
-               
-               
             </div>
-            
-            
-
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                   Die entsprechende Zuweisung zu dieser Klasse erfolgt während der Verarbeitung 
                   automatisch, wenn kein <span class="gi">&lt;facsimile&gt;</span> vorhanden ist. Andernfalls wird – ebenfalls 
-                  während der Verarbeitung – der Text der Klasse  
+                  während der Verarbeitung – der Text der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionbasedonexemplar.html" target="_blank">hc:ExpressionBasedOnExemplar</a><span class="loddocborder"> ‹</span> 
                   zugewiesen. 
                </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
                   Mit <span class="gi">&lt;listWit&gt;</span> kann außerdem auch dann gearbeitet werden, wenn der Text des 
-                  TEI-Dokuments kein  ist. Lesartenangaben 
+                  TEI-Dokuments kein <span class="loddocborder">› </span><a class="loddoc" href="../concepts/textbasedonexemplar.html" target="_blank">hc:TextBasedOnExemplar</a><span class="loddocborder"> ‹</span> ist. Lesartenangaben 
                   im textkritischen Apparat sind dann genauso gut möglich, solche Lesarten sind dann 
                   aber nicht dem Text eines im Dokument direkt als Vorlage herangezogenen Textträgers 
                   gegenübergestellt.
@@ -1319,7 +1345,7 @@
                         ein editionseigenes Sigel für den Textzeugen.
                      </div><div class="endnote" id="note_6"><a class="endnote_number" href="#note_reference_6">6</a>
                         Für eine Darstellung der Umwandlung der hier geschilderten TEI-Kodierung 
-                        für Visualisierungszwecke s. .
+                        für Visualisierungszwecke s. <a class="inlink" href="visualization.html#VIS-SOURCE">Quellenansicht</a>.
                      </div><div class="endnote" id="note_7"><a class="endnote_number" href="#note_reference_7">7</a>
                         Wenn die Breitenangabe nur an einigen Kindelementen eines Containers gesetzt wird,
                         füllen die Elemente ohne eine eigene Angabe den restlichen verfügbaren Raum aus.
@@ -1330,7 +1356,7 @@
                         In der Visualisierung der Quellenansicht nimmt jeder Bereich mindestens die 
                         Höhe ein, die zur Einblendung seines gesamten Inhalts benötigt wird.
                      </div><div class="endnote" id="note_9"><a class="endnote_number" href="#note_reference_9">9</a>
-                        Neben Textbereichen kommen Zeilen auch in Tabellenzellen vor (also in Inhaltsbereichen des Typs ).
+                        Neben Textbereichen kommen Zeilen auch in Tabellenzellen vor (also in Inhaltsbereichen des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/tablezone.html" target="_blank">hc:TableZone</a><span class="loddocborder"> ‹</span>).
                         In diesem Abschnitt werden jedoch primär Zeilen in Textbereichen behandelt.                        
                      </div><div class="endnote" id="note_10"><a class="endnote_number" href="#note_reference_10">10</a>
                         Das gilt auch für Seitenanfänge (<span class="gi">&lt;pb&gt;</span>), die mit Spaltenanfängen und Zeilenanfängen zusammenfallen können.
@@ -1364,7 +1390,7 @@
                         Die Verarbeitung geht an <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> von der Nummer <span class="val">2</span> aus,
                         wenn kein <span class="att">@n</span> explizit gesetzt ist.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 22.07.2024
+                        Letzte Aktualisierung: 29.07.2025
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
