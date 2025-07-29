@@ -1,16 +1,12 @@
-<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><title>heiEDITIONS Dokumentation | Semantisch-logische Gliederungseinheiten</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Semantisch-logische Gliederungseinheiten</title><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
                     Semantisch-logische Gliederungseinheiten</nav><main>
          <div id="SEMANTIC-ELEMENTS">
-            
             <h1>Semantisch-logische Gliederungseinheiten</h1>
-            
             <div id="SEMANTIC-ELEMENTS-LISTS">
-               
                <h2>Listen</h2>
-               
                <p>
                   Als Liste darf jede aufzählende Textstruktur gelten, deren einzelne Einträge nicht selbst formal in mehr als zwei Teile 
                   untergliedert sind. Die semantisch-logische Listenstruktur ist prinzipiell unabhängig von einer visuellen Umsetzung:
@@ -28,21 +24,18 @@
                   Listen bestehen aus Listeneinträgen. Diese Grundstruktur wird durch die Elemente <span class="gi">&lt;list&gt;</span> und <span class="gi">&lt;item&gt;</span>
                   abgebildet, z. B.:
                </p>
-               
-                  <div class="egxml" data-example-id="list_item_simple"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="list_item_simple"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;item&gt;Eintrag 1&lt;/item&gt;
                   &lt;item&gt;Eintrag 2&lt;/item&gt;
                   &lt;item&gt;Eintrag 3&lt;/item&gt;
                &lt;/list&gt;
             </code></pre></div>
-               
                <p>
                   Listen können Überschriften tragen, die mit dem Element <span class="gi">&lt;head&gt;</span> als erstes Kindelement von <span class="gi">&lt;list&gt;</span>
                   zu kodieren sind, z. B.:
                </p>
-               
-                  <div class="egxml" data-example-id="list_header"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="list_header"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;head&gt;Überschrift der Beispielliste&lt;/head&gt;
                   &lt;item&gt;Eintrag 1&lt;/item&gt;
@@ -50,7 +43,6 @@
                   &lt;item&gt;Eintrag 3&lt;/item&gt;
                &lt;/list&gt;
             </code></pre></div>
-               
                <p>
                   Listeneinträge können jeweils nicht weiter unterteilte textuelle Einheiten bilden, häufig haben sie aber
                   auch eine binäre Struktur, die aus einer Beschriftung (<em>label</em>) und weiterem Inhalt besteht.
@@ -58,56 +50,51 @@
                   immer als erstes Elementkind eines <span class="gi">&lt;item&gt;</span> zu platzieren ist.<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
                   Eine solche Liste mit Beschriftungen ihrer Einträge hat dann etwa die folgende schematische Struktur:
                </p>
-               
-                  <div class="egxml" data-example-id="list_label"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="list_label"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 1&lt;/label&gt; Eintragstext 1&lt;/item&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 2&lt;/label&gt; Eintragstext 2&lt;/item&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 3&lt;/label&gt; Eintragstext 3&lt;/item&gt;
                &lt;/list&gt;
             </code></pre></div>
-               
                <p>
                   Dass es sich bei einer Liste um eine Liste mit dieser binären Struktur ihrer Einträge handelt,
                   kann entweder implizit aus dem skizzierten Aufbau hervorgehen oder zusätzlich durch eine Typangabe
                   an <span class="att">@ana</span> zum Ausdruck gebracht werden:
                </p>
-               
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/listwithlabeleditems.html"><span class="val">hc:ListWithLabeledItems</span></a> ( ›Liste mit beschrifteten Einträgen‹ ): Liste, deren Einträge eine binäre Struktur in der Form <em>Beschriftung – Inhalt</em> haben.
+               </p>
                <p>
                   Mit dieser Typbezeichnung sähe das obige schematische Codebeispiel also wie folgt aus:
                </p>
-               
-                  <div class="egxml" data-example-id="list_label_explicit"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="list_label_explicit"><pre class="language-xml"><code>
                &lt;list ana="hc:ListWithLabeledItems"&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 1&lt;/label&gt; Eintragstext 1&lt;/item&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 2&lt;/label&gt; Eintragstext 2&lt;/item&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 3&lt;/label&gt; Eintragstext 3&lt;/item&gt;
                &lt;/list&gt;
             </code></pre></div>
-               
                <p>
                   Falls in einer Liste Einträge mit unterschiedlicher innerer Struktur gemischt vorkämen, sodass es sinnvoll sein
                   könnte, diejenigen Einträge, die eine Beschriftung enthalten, jeweils einzeln zu kennzeichnen, kann
                   an <span class="gi">&lt;item&gt;</span> mit <span class="att">@ana</span> die folgende Typangabe gemacht werden:
                </p>
-               
+               <p class="resdef">
+                  <a class="refboxlink" href="../concepts/labeledlistitem.html"><span class="val">hc:LabeledListItem</span></a> ( ›beschrifteter Listeneintrag‹ ): Listeneintrag mit einer binären Struktur in der Form <em>Beschriftung – Inhalt</em>.
+               </p>
                <p>
                   So eine gemischte Liste sähe schematisch z. B. so aus:
                </p>
-               
-                  <div class="egxml" data-example-id="list_label_mixed"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="list_label_mixed"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;item&gt;Eintragstext 1&lt;/item&gt;
                   &lt;item ana="hc:LabeledListItem"&gt;&lt;label&gt;Beschriftung&lt;/label&gt; Eintragstext 2&lt;/item&gt;
                   &lt;item&gt;Eintragstext 3&lt;/item&gt;
                &lt;/list&gt;
             </code></pre></div>
-               
-               
                <div id="SEMANTIC-ELEMENTS-LISTS-VISUAL">
-                  
                   <h3>Visuelle Eigenschaften von Listen</h3>
-                  
                   <p>
                      Wenn es bei der Edition von Listen aus historischen Vorlagen erwünscht ist, bestimmte visuelle Eigenschaften
                      zu dokumentieren, ist es an <span class="gi">&lt;list&gt;</span> bzw. <span class="gi">&lt;item&gt;</span> mit <span class="att">@rendition</span> möglich. So ist 
@@ -123,26 +110,29 @@
                      Für die Erfassung von vorangestellten Symbolen oder Nummern bei Einträgen einer Liste können an <span class="gi">&lt;list&gt;</span>
                      mit <span class="att">@rendition</span> folgende Klassenangaben gemacht werden:<sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup>
                   </p>
-                  
-                  
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/itemmarkerdisc.html"><span class="val">hc:ItemMarkerDisc</span></a> ( ›Eintragsmarker Scheibe‹ ): Visueller Gegenstand (typischerweise eine Liste), der als optischen Marker gefüllte Kreise (Scheiben) verwendet.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/itemmarkerdecimal.html"><span class="val">hc:ItemMarkerDecimal</span></a> ( ›Eintragsmarker arabische Ganzzahl‹ ): Visueller Gegenstand (typischerweise eine Liste), der als optischen Marker arabische Ganzzahlen verwendet.
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/itemmarkerlowerroman.html"><span class="val">hc:ItemMarkerLowerRoman</span></a> ( ›Eintragsmarker römische Zahl klein‹ ): Visueller Gegenstand (typischerweise eine Liste), der als optischen Marker römische Zahlen als Kleinbuchstaben verwendet.
+                  </p>
                   <p>
                      Listen mit zweigeteilter Struktur ihrer Einträge verwenden manchmal sog. Führungspunkte als
                      visuelles Trennmittel und auch als Raumfüller zwischen der Beschriftung und dem sonstigen Inhalt eines Eintrags.
                      Diese visuelle Eigenschaft kann an <span class="gi">&lt;list&gt;</span> ebenfalls mit <span class="att">@rendition</span> angegeben werden:
                   </p>
-                  
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/dotleaders.html"><span class="val">hc:DotLeaders</span></a> ( ›Führungspunkte‹ ): Visueller Gegenstand, der Führungspunkte verwendet, typischerweise eine Liste, deren (zweigeteilte) Einträge Führungspunkte enthalten, oder ein einzelner (zweigeteilter) Listeneintrag mit Führungspunkten, oder der erste Teil eines (zweigeteilten) Listeneintrags, dem Führungspunkte folgen.
+                  </p>
                   <p>
-                     Falls nicht jeder Eintrag in einer Liste mit Führungspunkten versehen ist, kann die Angabe von 
+                     Falls nicht jeder Eintrag in einer Liste mit Führungspunkten versehen ist, kann die Angabe von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/dotleaders.html" target="_blank">hc:DotLeaders</a><span class="loddocborder"> ‹</span>
                      auch an einzelnen <span class="gi">&lt;item&gt;</span>-Elementen erfolgen.
                   </p>
-                  
-                  
                </div>
-               
-               
             </div>
-
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                      Die TEI-Guidelines bevorzugen die Platzierung der Beschriftungen von Listeneinträgen außerhalb des
@@ -159,7 +149,7 @@
                         Weitere Klassen dieser Art können in ›heiEDITIONS‹ in Anlehnung an CSS
                         hinzukommen.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 22.07.2024
+                        Letzte Aktualisierung: 29.07.2025
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
