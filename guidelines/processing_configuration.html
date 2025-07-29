@@ -79,6 +79,7 @@
                   im Verzeichnis <span class="code">configurations</span> liegt – deswegen gibt der Pfad zunächst einen Schritt ›nach oben‹
                   ins Elternverzeichnis an.
                </p>
+               
                <div class="egxml" data-example-id="prefixdeclaration"><pre class="language-xml"><code>
                &lt;listPrefixDef&gt;
                   &lt;prefixDef ident="hc" matchPattern="(.+)" replacementPattern="https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1"&gt;
@@ -87,6 +88,7 @@
                   &lt;/prefixDef&gt;
                &lt;/listPrefixDef&gt;
             </code></pre></div>
+               
                <p>
                   Das zweite Kind des Wurzelelements <span class="gi">&lt;TEI&gt;</span> (es muss immer genau zwei Kindelemente geben)
                   definiert das Element in der Editionsdatei, auf dessen Inhalt die virtuelle Struktur angewandt werden soll.
@@ -119,6 +121,7 @@
                   Betrachten wir als einfaches Beispiel ein <span class="gi">&lt;body&gt;</span>, das in der Editionsdatei eine ›flache‹ Abfolge von 
                   neun Absätzen enthält:
                </p>
+               
                <div class="egxml" data-example-id="body_simple"><pre class="language-xml"><code>
                &lt;body&gt;
                   &lt;p xml:id="p_1"&gt;[Absatz 1]&lt;/p&gt;
@@ -132,10 +135,12 @@
                   &lt;p xml:id="p_9"&gt;[Absatz 9]&lt;/p&gt;
                &lt;/body&gt;
             </code></pre></div>
+               
                <p>
                   Auf dieses <span class="gi">&lt;body&gt;</span> soll eine virtuelle Gliederung angewandt werden, die jeweils drei Absätze in einem
                   <span class="gi">&lt;div&gt;</span> zusammenfasst. Dafür sähe das zweite Kindelement der Strukturkonfigurationsdatei so aus:
                </p>
+               
                <div class="egxml" data-example-id="virtualstructure"><pre class="language-xml"><code>
                &lt;body&gt;
                   &lt;div ana="hc:Section" xml:id="div_1"&gt;
@@ -149,6 +154,7 @@
                   &lt;/div&gt;
                &lt;/body&gt;
             </code></pre></div>
+               
                <p>
                   Die Bereiche der Editionsdatei, die innerhalb des dort befindlichen <span class="gi">&lt;body&gt;</span> mit <span class="gi">&lt;div&gt;</span>-Elementen
                   umschlossen werden sollen, werden in <span class="att">@target</span> der <span class="gi">&lt;ptr&gt;</span>-Elemente als
@@ -186,6 +192,7 @@
                <p>
                   Das obige Beispiel mit den Dreiergruppen von Absätzen könnte also – weiter angereichert – etwa so aussehen:
                </p>
+               
                <div class="egxml" data-example-id="virtualstructure_enrichment"><pre class="language-xml"><code>
                &lt;body&gt;
                   &lt;div ana="hc:Section" xml:id="division_1" n="1"&gt;
@@ -202,6 +209,7 @@
                   &lt;/div&gt;
                &lt;/body&gt;
             </code></pre></div>
+               
                <p>
                   Wenn sinnvoll, kann eine virtuelle Gliederung auch mehrere <span class="gi">&lt;div&gt;</span>-Ebenen umfassen.
                   Das folgende Beispiel zeigt, wie die ursprünglich flache Beispielstruktur mit neun Absätzen
@@ -209,7 +217,8 @@
                   die folgenden sieben Absätze in einem größeren Abschnitt zusammengefasst sind, der seinerseits Unterabschnitte
                   mit den Absätzen 2–3,  4–5 sowie 6–8 enthält und der letzte Absatz 9 wiederum in einem eigenen <span class="gi">&lt;div&gt;</span>
                   auf oberster Ebene steht:
-               </p>
+               </p>   
+               
                <div class="egxml" data-example-id="virtualstructure__hierarchy"><pre class="language-xml"><code>
                &lt;body&gt;
                   &lt;div ana="hc:Section" xml:id="d_1" n="1"&gt;
@@ -237,6 +246,7 @@
                   &lt;/div&gt;
                &lt;/body&gt;
             </code></pre></div>
+               
                <p>
                   Die <span class="gi">&lt;ptr&gt;</span>-Elemente als Stellvertreter für die zu umschließenden Textbereiche dürfen
                   jeweils nur auf der untersten <span class="gi">&lt;div&gt;</span>-Ebene stehen, d. h. eine Gliederungseinheit darf nicht gleichzeitig 
@@ -249,7 +259,8 @@
                   <span class="gi">&lt;text&gt;</span> statt <span class="gi">&lt;body&gt;</span>. Ansonsten bleibt das Prinzip gleich (mit dem Unterschied, dass
                   <span class="gi">&lt;front&gt;</span>, <span class="gi">&lt;body&gt;</span> und <span class="gi">&lt;back&gt;</span> keine Attribute <span class="att">@ana</span> tragen, weil sie als Elemente
                   durch ihre Semantik in ihrer Gliederungsfunktion ausreichend beschrieben sind):
-               </p>
+               </p>              
+               
                <div class="egxml" data-example-id="virtualstructure_hierarchy_complex"><pre class="language-xml"><code>
                &lt;text&gt;
                   &lt;front xml:id="front_1" n="1"&gt;
@@ -277,6 +288,7 @@
                   &lt;/back&gt;
                &lt;/text&gt;
             </code></pre></div>
+               
             </div>
             <div id="PROCESSING_CONFIGURATION-DISPLAY">
                <h2>Konfiguration der Textaufteilung und der Anzeige im Inhaltsverzeichnis</h2>
@@ -316,6 +328,7 @@
                   so nicht in einer Arbeitsdatei stünde, sondern als Ergebnis einer entsprechenden Konfiguration in die Datei 
                   maschinell geschrieben würde):
                </p>
+               
                <div class="egxml" data-example-id="displaydivision"><pre class="language-xml"><code>
                &lt;text&gt;
                   &lt;div xml:id="abschnitt_1"&gt;
@@ -327,6 +340,7 @@
                   &lt;div xml:id="abschnitt_3"&gt;[...]&lt;/div&gt;
                &lt;/text&gt;
             </code></pre></div>
+               
                <p>
                   Im vorangehenden Beispiel ist es in Ordnung, dass das Element <span class="gi">&lt;div&gt;</span> mit dem Identifikator <span class="val">abschnitt_1</span>
                   keine Kennzeichnung als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> erfährt. Zwar wird diese Gliederungseinheit als Ganzes
@@ -358,6 +372,7 @@
                   gleichzeitig als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> zu kennzeichnen. Das folgende Beispiel soll
                   dies verdeutlichen:
                </p>
+               
                <div class="egxml" data-example-id="displaysubdivisions"><pre class="language-xml"><code>
                &lt;text&gt;
                   &lt;div xml:id="di_1" rendition="hc:DisplayDivision"&gt;
@@ -369,6 +384,7 @@
                   &lt;/div&gt;
                &lt;/text&gt;
             </code></pre></div>
+               
                <p>
                   In diesem besonderen Fall sind sowohl das <span class="gi">&lt;div&gt;</span> mit dem Identifikator <span class="val">di_1</span>
                   als auch seine beiden untergeordneten Abschnitte <span class="val">di_1_1</span> und <span class="val">di_1_2</span>
@@ -480,6 +496,7 @@
                <p>
                   Jedes der genannten Konfigurationselemente kann sich beliebig oft wiederholen. Beispiel:
                </p>
+               
                <div class="egxml" data-example-id="configurationelements"><pre class="language-xml"><code>
                &lt;displayDivision&gt;
                   &lt;ID&gt;front_1&lt;/ID&gt;
@@ -488,6 +505,7 @@
                   &lt;XPath&gt;TEI/text/body/div&lt;/XPath&gt;
                &lt;/displayDivision&gt;
             </code></pre></div>
+               
                <p>
                   Diese beispielhafte Belegung von <span class="gi">&lt;displayDivision&gt;</span> würde die Verarbeitung veranlassen,
                   an den beiden über ihre <span class="att">@xml:id</span> addressierten Elementen <span class="gi">&lt;front&gt;</span> und <span class="gi">&lt;back&gt;</span>,
@@ -499,6 +517,7 @@
                   Die Zuweisung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/suppressintoc.html" target="_blank">hc:SuppressInTOC</a><span class="loddocborder"> ‹</span> funktioniert auf gleiche Weise in einem
                   Element <span class="gi">&lt;suppressInTOC&gt;</span>, z. B.:
                </p>
+               
                <div class="egxml" data-example-id="suppressintoc"><pre class="language-xml"><code>
                &lt;suppressInTOC&gt;
                   &lt;ID&gt;div_00_0&lt;/ID&gt;
@@ -507,6 +526,7 @@
                   &lt;XPath&gt;TEI/text/back/div&lt;/XPath&gt;
                &lt;/suppressInTOC&gt;
             </code></pre></div>
+               
             </div>
             <div id="PROCESSING_CONFIGURATION-VISUAL">
                <h2>Konfiguration der Übernahme visueller Informationen</h2>
@@ -558,6 +578,7 @@
                   <span class="gi">&lt;class&gt;</span> vor, in denen jeweils als Textknoten eine ›heiEDITIONS‹-Klasse
                   (ohne das Präfix <span class="code">hc</span>) angegeben wird, z. B.:
                </p>
+               
                <div class="egxml" data-example-id="configuration_include"><pre class="language-xml"><code>
                &lt;include&gt;
                   &lt;class&gt;Superscript&lt;/class&gt;
@@ -565,6 +586,7 @@
                   &lt;class&gt;Centered&lt;/class&gt;
                &lt;/include&gt;
             </code></pre></div>
+               
                <p>
                   Durch diese Konfiguration werden die Klassenangaben <span class="val">hc:Superscript</span>, <span class="val">hc:Subscript</span>
                   und <span class="val">hc:Centered</span>, wenn sie an beliebigen Elementen im Attribut <span class="att">@rendition</span> vorkommen würden,
@@ -574,6 +596,7 @@
                   können – in der sogenannten Clark-Syntax<sup><a href="#note_3" id="note_reference_3" class="note_mark">3)</a></sup> und bei Mehrfachangaben durch Leerzeichen getrennt – Elemente aufgelistet werden, 
                   auf die die Konfiguration eingeschränkt werden soll, z. B.:
                </p>
+               
                <div class="egxml" data-example-id="configuration_includewithattribute"><pre class="language-xml"><code>
                &lt;include&gt;
                   &lt;class onElement="{http://www.tei-c.org/ns/1.0}seg {http://www.tei-c.org/ns/1.0}hi"&gt;Superscript&lt;/class&gt;
@@ -581,6 +604,7 @@
                   &lt;class onElement="{http://www.tei-c.org/ns/1.0}p"&gt;Centered&lt;/class&gt;
                &lt;/include&gt;
             </code></pre></div>
+               
                <p>
                   Durch diese Konfiguration werden nur an den explizit gelisteten Elementen <span class="gi">&lt;seg&gt;</span> und
                   <span class="gi">&lt;hi&gt;</span> bzw. <span class="gi">&lt;p&gt;</span> die Klassen <span class="loddocborder">› </span><a class="loddoc" href="../concepts/superscript.html" target="_blank">hc:Superscript</a><span class="loddocborder"> ‹</span> und <span class="loddocborder">› </span><a class="loddoc" href="../concepts/subscript.html" target="_blank">hc:Subscript</a><span class="loddocborder"> ‹</span>
@@ -593,6 +617,7 @@
                   für die Leseansicht übernommen, außer denen, die in <span class="gi">&lt;exclude&gt;</span> explizit angegeben sind,
                   z. B.:
                </p>
+               
                <div class="egxml" data-example-id="configuration_exclude"><pre class="language-xml"><code>
                &lt;exclude&gt;
                   &lt;class&gt;RubbedOff&lt;/class&gt;
@@ -600,12 +625,14 @@
                   &lt;class&gt;TornOff&lt;/class&gt;
                &lt;/exclude&gt;
             </code></pre></div>
+               
                <p>
                   Durch eine solche Konfiguration werden nur die Klassen <span class="loddocborder">› </span><a class="loddoc" href="../concepts/rubbedoff.html" target="_blank">hc:RubbedOff</a><span class="loddocborder"> ‹</span>, <span class="loddocborder">› </span><a class="loddoc" href="../concepts/cutoff.html" target="_blank">hc:CutOff</a><span class="loddocborder"> ‹</span>
                   sowie <span class="loddocborder">› </span><a class="loddoc" href="../concepts/tornoff.html" target="_blank">hc:TornOff</a><span class="loddocborder"> ‹</span> aus der Kodierung für die Leseansicht entfernt, an allen Elementen,
                   an denen sie in <span class="att">@rendition</span> vorkommen würden. Mit einer Einschränkung auf bestimmte Elemente
                   könnte die Konfiguration so aussehen:
                </p>
+               
                <div class="egxml" data-example-id="configuration_excludewithattribute"><pre class="language-xml"><code>
                &lt;exclude&gt;
                   &lt;class onElement="{http://www.tei-c.org/ns/1.0}del"&gt;RubbedOff&lt;/class&gt;
@@ -613,6 +640,7 @@
                   &lt;class onElement="{http://www.tei-c.org/ns/1.0}del"&gt;TornOff&lt;/class&gt;
                &lt;/exclude&gt;
             </code></pre></div>
+               
                <p>
                   Auf diese Weise würden die angeführten drei Klassen jeweils nur vom Element <span class="gi">&lt;del&gt;</span> entfernt,
                   beispielsweise an <span class="gi">&lt;gap&gt;</span> blieben sie weiterhin erhalten.<sup><a href="#note_4" id="note_reference_4" class="note_mark">4)</a></sup>

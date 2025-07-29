@@ -24,6 +24,7 @@
                   Listen bestehen aus Listeneinträgen. Diese Grundstruktur wird durch die Elemente <span class="gi">&lt;list&gt;</span> und <span class="gi">&lt;item&gt;</span>
                   abgebildet, z. B.:
                </p>
+               
                <div class="egxml" data-example-id="list_item_simple"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;item&gt;Eintrag 1&lt;/item&gt;
@@ -31,10 +32,12 @@
                   &lt;item&gt;Eintrag 3&lt;/item&gt;
                &lt;/list&gt;
             </code></pre></div>
+               
                <p>
                   Listen können Überschriften tragen, die mit dem Element <span class="gi">&lt;head&gt;</span> als erstes Kindelement von <span class="gi">&lt;list&gt;</span>
                   zu kodieren sind, z. B.:
                </p>
+               
                <div class="egxml" data-example-id="list_header"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;head&gt;Überschrift der Beispielliste&lt;/head&gt;
@@ -43,6 +46,7 @@
                   &lt;item&gt;Eintrag 3&lt;/item&gt;
                &lt;/list&gt;
             </code></pre></div>
+               
                <p>
                   Listeneinträge können jeweils nicht weiter unterteilte textuelle Einheiten bilden, häufig haben sie aber
                   auch eine binäre Struktur, die aus einer Beschriftung (<em>label</em>) und weiterem Inhalt besteht.
@@ -50,6 +54,7 @@
                   immer als erstes Elementkind eines <span class="gi">&lt;item&gt;</span> zu platzieren ist.<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
                   Eine solche Liste mit Beschriftungen ihrer Einträge hat dann etwa die folgende schematische Struktur:
                </p>
+               
                <div class="egxml" data-example-id="list_label"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 1&lt;/label&gt; Eintragstext 1&lt;/item&gt;
@@ -57,6 +62,7 @@
                   &lt;item&gt;&lt;label&gt;Beschriftung 3&lt;/label&gt; Eintragstext 3&lt;/item&gt;
                &lt;/list&gt;
             </code></pre></div>
+               
                <p>
                   Dass es sich bei einer Liste um eine Liste mit dieser binären Struktur ihrer Einträge handelt,
                   kann entweder implizit aus dem skizzierten Aufbau hervorgehen oder zusätzlich durch eine Typangabe
@@ -68,6 +74,7 @@
                <p>
                   Mit dieser Typbezeichnung sähe das obige schematische Codebeispiel also wie folgt aus:
                </p>
+               
                <div class="egxml" data-example-id="list_label_explicit"><pre class="language-xml"><code>
                &lt;list ana="hc:ListWithLabeledItems"&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 1&lt;/label&gt; Eintragstext 1&lt;/item&gt;
@@ -75,6 +82,7 @@
                   &lt;item&gt;&lt;label&gt;Beschriftung 3&lt;/label&gt; Eintragstext 3&lt;/item&gt;
                &lt;/list&gt;
             </code></pre></div>
+               
                <p>
                   Falls in einer Liste Einträge mit unterschiedlicher innerer Struktur gemischt vorkämen, sodass es sinnvoll sein
                   könnte, diejenigen Einträge, die eine Beschriftung enthalten, jeweils einzeln zu kennzeichnen, kann
@@ -86,6 +94,7 @@
                <p>
                   So eine gemischte Liste sähe schematisch z. B. so aus:
                </p>
+               
                <div class="egxml" data-example-id="list_label_mixed"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;item&gt;Eintragstext 1&lt;/item&gt;
@@ -93,6 +102,7 @@
                   &lt;item&gt;Eintragstext 3&lt;/item&gt;
                &lt;/list&gt;
             </code></pre></div>
+               
                <div id="SEMANTIC-ELEMENTS-LISTS-VISUAL">
                   <h3>Visuelle Eigenschaften von Listen</h3>
                   <p>

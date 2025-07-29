@@ -77,17 +77,21 @@
                   Eine typische Deklaration eines Präfixes <span class="code">pers</span> als Repräsentation des Pfades zur Registerdatei mit einer
                   Personenliste würde wie folgt aussehen:
                </p>
+               
                <div class="egxml" data-example-id="index_prefix_pers"><pre class="language-xml"><code>
                &lt;prefixDef ident="pers" matchPattern="(.+)" replacementPattern="../indexes/Personenregister.xml#$1"/&gt;
-            </code></pre></div>
+            </code></pre></div>   
+               
                <p>
                   Wenn die namentliche Erwähnung einer Person an einer edierten Textstelle als Registerverknüpfung 
                   ausgezeichnet wird, kommt am Element <span class="gi">&lt;persName&gt;</span> im Attribut <span class="att">@ref</span> dann die abgekürzte
                   Syntax für den URI-Verweis in der Form <span class="code">[Präfix]:[xml:id]</span> zum Einsatz, konkret z. B.: 
                </p>
+               
                <div class="egxml" data-example-id="index_person"><pre class="language-xml"><code>
                &lt;persName ref="pers:gnd-118540238"&gt;Goethe&lt;/persName&gt;
             </code></pre></div>
+               
                <p>
                   Bei einigen Entitätentypen stehen für die Auszeichung eines Textsegments und dessen Verknüpfung mit einem 
                   Registereintrag mehrere Elemente zur Auswahl. Grundsätzlich lässt sich so unterscheiden, ob in einem 
@@ -98,9 +102,11 @@
                   erwünscht ist, kann auch immer nur das Element <span class="gi">&lt;rs&gt;</span> (mit einer Typangabe der betroffenen Entität)
                   verwendet werden, so etwa statt des obigen Beispiels mit <span class="gi">&lt;persName&gt;</span>:
                </p>
+               
                <div class="egxml" data-example-id="rs_named"><pre class="language-xml"><code>
                &lt;rs ana="hc:PersonReference" ref="pers:gnd-118540238"&gt;Goethe&lt;/rs&gt;   
             </code></pre></div>
+               
                <p>
                   Die Typangabe des Verweises an <span class="att">@ana</span> ist bei <span class="gi">&lt;rs&gt;</span> obligatorisch, es sei denn, sie würde gemäß 
                   einer projektspezifischen Regelung anhand des verwendeten Präfixes erst während der Verarbeitung maschinell 
@@ -115,17 +121,21 @@
                   Gerade bei nicht namentlichen Erwähnungen können manchmal an einer Textstelle kollektiv mehr als nur eine Entität
                   referenziert werden. In solchen Fällen können in <span class="att">@ref</span> mehrere URIs angegeben werden, z. B.:
                </p>
+               
                <div class="egxml" data-example-id="rs_multiple_unnamed"><pre class="language-xml"><code>
                &lt;rs ana="hc:PersonReference" ref="pers:pers-1 pers:pers-2"&gt;die Eltern&lt;/rs&gt;
             </code></pre></div>
+               
                <p>
                   Gelegentlich können sich aber auch namentliche Nennungen auf mehrere Individuen beziehen,<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup> 
                   die im Register einzelne Einträge haben. Dann können auch an spezifischen Elementen wie <span class="gi">&lt;persName&gt;</span> mehrere URIs
                   gesetzt werden, z. B.:
                </p>
+               
                <div class="egxml" data-example-id="rs_multiple_named"><pre class="language-xml"><code>
                &lt;persName ref="pers:gnd-118542257 pers:gnd-118542265"&gt;Gebrüder Grimm&lt;/persName&gt;
             </code></pre></div>
+               
                <p>
                   Ob in solchen Fällen Wörter wie ›Gebrüder‹ als Teil des Namens markiert werden oder nicht, obliegt
                   dem Ermessen des Herausgebers. Alternativ ist bei solchen Phrasen immer auch die Verwendung von <span class="gi">&lt;rs&gt;</span>
@@ -229,6 +239,7 @@
                   Die grobe Struktur des XML-Baumes einer Registerdatei innerhalb des TEI-Wurzelelements
                   ist wie folgt:
                </p>
+               
                <div class="egxml" data-example-id="index_teiheader"><pre class="language-xml"><code>
                &lt;TEI&gt;
                   &lt;teiHeader&gt;[…]&lt;/teiHeader&gt;                     
@@ -239,6 +250,7 @@
                   &lt;/text&gt;
                &lt;/TEI&gt;
             </code></pre></div>
+               
                <p>
                   Das Element <span class="gi">&lt;text&gt;</span> trägt am Attribut <span class="att">@ana</span> die Angabe, um welchen Registertyp es sich handelt.
                   Entsprechend der obigen Liste von Registertypen ist genau eine dieser Angaben erforderlich:
@@ -308,6 +320,7 @@
                <p>
                   Beispiel für die grobe Struktur eines Personenregisters ab dem Element <span class="gi">&lt;text&gt;</span>:
                </p>
+               
                <div class="egxml" data-example-id="index_structure_persons_simple"><pre class="language-xml"><code>
               &lt;text ana="hc:IndexOfPersons"&gt;
                  &lt;body&gt;
@@ -320,9 +333,12 @@
                  &lt;/body&gt;
               &lt;/text&gt;
            </code></pre></div>
+               
                <p>
                   Beispiel für die grobe Struktur eines Werkregisters mit einer spezifischen Überschrift:
                </p>
+               
+               
                <div class="egxml" data-example-id="index_structure_head_simple"><pre class="language-xml"><code>
                &lt;text ana="hc:IndexOfWorks"&gt;
                   &lt;body&gt;
@@ -336,6 +352,7 @@
                   &lt;/body&gt;
                &lt;/text&gt; 
             </code></pre></div>
+               
                <div id="INDEXES-LISTS-GENERAL">
                   <h3>Allgemeine Struktur eines Registereintrags</h3>
                   <p>
@@ -371,23 +388,29 @@
                      <p>
                         Identifikator einer Ressource mit GND-Verknüpfung:
                      </p>
+                     
                      <div class="egxml" data-example-id="gndlink_simple"><pre class="language-xml"><code>
                &lt;person xml:id="gnd-118540238"&gt;[…]&lt;/person&gt;
             </code></pre></div>
+                     
                      <p>
                         Identifikator einer Ressource ohne GND-Verknüpfung in einem Personenregister mit dem Präfix <span class="code">pers</span>
                         und laufender Nummer:
                      </p>
+                     
                      <div class="egxml" data-example-id="serialnumber_simple"><pre class="language-xml"><code>
                &lt;person xml:id="pers-1"&gt;[…]&lt;/person&gt; 
             </code></pre></div>
+                     
                      <p>
                         Identifikator einer Ressource ohne GND-Verknüpfung in einem Personenregister mit dem Präfix <span class="code">pers</span>
                         und laufender Nummer, mit vereinheitlichter Ziffernanzahl:
                      </p>
+                     
                      <div class="egxml" data-example-id="unifiedserialnumber_simple"><pre class="language-xml"><code>
                &lt;person xml:id="pers-001"&gt;[…]&lt;/person&gt;
             </code></pre></div>
+                     
                      <p>
                         Vom obligatorischen Identifikator mittels des Attributs <span class="att">@xml:id</span> abgesehen ist es auch möglich, mit dem Element
                         <span class="gi">&lt;idno&gt;</span> einen Fremdidentifikator anzugeben. <span class="gi">&lt;idno&gt;</span> sollte jedoch grundsätzlich nicht für die Angabe
@@ -408,12 +431,15 @@
                      <p>
                         Beispiel für die Angabe einer GND-URI als Fremdidentifikator in einem Eintrag des Personenregisters:
                      </p>
+                     
                      <div class="egxml" data-example-id="idno_simple"><pre class="language-xml"><code>
                &lt;idno ana="hc:GNDURI"&gt;http://d-nb.info/gnd/118540238&lt;/idno&gt;
             </code></pre></div>
+                     
                      <p>
                         Beispiel eines vollständigen Eintrags des Ortsregisters mit der Angabe einer GND-URI und einer Geonames-URI:
                      </p>
+                     
                      <div class="egxml" data-example-id="completeindexentry_place_simple"><pre class="language-xml"><code>
                &lt;place xml:id="gnd-4023996-2"&gt;
                   &lt;placeName ana="hc:PreferredAppellation"&gt;Heidelberg&lt;/placeName&gt;
@@ -435,6 +461,7 @@
                   &lt;/location&gt;
                &lt;/place&gt;
             </code></pre></div>
+                     
                   </div>
                   <div id="INDEXES-LISTS-GENERAL-NAMES">
                      <h4>Namen und Bezeichnungen</h4>
@@ -623,20 +650,24 @@
                      Beispiel für <span class="gi">&lt;birth&gt;</span> mit maschinenlesbaren Datumsangaben in Attributen und verbalen Angaben
                      in <span class="gi">&lt;note&gt;</span>:
                   </p>
+                  
                   <div class="egxml" data-example-id="birthdate_note"><pre class="language-xml"><code>
                &lt;birth when="1749-08-28"&gt;
                   &lt;note&gt;28. August 1749 in Frankfurt am Main&lt;/note&gt;
                &lt;/birth&gt;
             </code></pre></div>
+                  
                   <p>
                      Beispiel für <span class="gi">&lt;death&gt;</span> mit maschinenlesbaren Datumsangaben in Attributen und verbalen Angaben
                      in <span class="gi">&lt;note&gt;</span>:
                   </p>
+                  
                   <div class="egxml" data-example-id="deathdate_note"><pre class="language-xml"><code>
                &lt;death when="1832-03-22"&gt;
                   &lt;note&gt;22. März 1832 in Weimar&lt;/note&gt;
                &lt;/death&gt;
             </code></pre></div>
+                  
                   <p>
                      Mit <span class="gi">&lt;occupation&gt;</span> kann der Beruf oder die Art der Tätigkeit einer Person angegeben werden. 
                      Für jede solcher Angaben sollte ein eigenes Element <span class="gi">&lt;occupation&gt;</span> verwendet werden, 
@@ -651,11 +682,13 @@
                   <p>
                      Beispiel für die einfache Angabe eines Berufs mit einer maschinenlesbaren Angabe des zutreffenden Zeitraums:
                   </p>
+                  
                   <div class="egxml" data-example-id="occupation_note"><pre class="language-xml"><code>
                &lt;occupation from="1532" to="1541"&gt;
                   &lt;note&gt;Drucker&lt;/note&gt;
                &lt;/occupation&gt;
             </code></pre></div>
+                  
                </div>
                <div id="INDEXES-LISTS-PLACES">
                   <h3>Informationen zu Orten</h3>
@@ -725,6 +758,7 @@
                      Beispiel für die Angabe der Lage eines Ortes mithilfe zweier Ebenen geopolitischer Verwaltungseinheiten,
                      jeweils mit GND-Verknüpfung: 
                   </p>
+                  
                   <div class="egxml" data-example-id="locating_complex"><pre class="language-xml"><code>
                &lt;location&gt;
                   &lt;region&gt;
@@ -737,16 +771,19 @@
                   &lt;/region&gt;
                &lt;/location&gt;
             </code></pre></div>
+                  
                   <p>
                      Bei der Verwendung von <span class="gi">&lt;location&gt;</span> zur Angabe geographischer Koordinaten erhält <span class="gi">&lt;location&gt;</span>
                      genau ein Kindelement <span class="gi">&lt;geo&gt;</span>. <span class="gi">&lt;geo&gt;</span> enthält dann zwei Dezimalzahlen (mit Punkt als Dezimaltrennzeichen 
                      und einem Leerzeichen zwischen den beiden Dezimalzahlen) für die geographische Breite und Länge, z. B.:
                   </p>
+                  
                   <div class="egxml" data-example-id="coordinates"><pre class="language-xml"><code>
                &lt;location&gt;
                   &lt;geo&gt;49.41032 8.69707&lt;/geo&gt;
                &lt;/location&gt;
             </code></pre></div>
+                  
                </div>
                <div id="INDEXES-LISTS-ORGANIZATIONS">
                   <h3>Informationen zu Körperschaften</h3>
@@ -855,12 +892,14 @@
                   <p>
                      Beispiel für eine einfache Angabe eines Urhebers mit einer Namensform und einem GND-Identifikator:
                   </p>
+                  
                   <div class="egxml" data-example-id="authoridno"><pre class="language-xml"><code>
                &lt;author&gt;
                   &lt;persName&gt;Franz Huth&lt;/persName&gt;
                   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/118708414&lt;/idno&gt;
                &lt;/author&gt;
             </code></pre></div>
+                  
                   <p>
                      Für die Angabe von Datierungs- bzw. Zeitangaben zu einem Werk kann <span class="gi">&lt;date&gt;</span> verwendet werden. 
                      Es trägt obligatorisch das Attribut <span class="att">@ana</span>, das zur Unterscheidung verschiedener Typen von Zeitangaben 
@@ -874,11 +913,13 @@
                   <p>
                      Beispiel für eine einfache Angabe des Entstehungszeitpunkts eines Werkes:
                   </p>
+                  
                   <div class="egxml" data-example-id="creation_note"><pre class="language-xml"><code>
                &lt;date ana="hc:DateOfCreation" when="1911"&gt;
                   &lt;note&gt;um 1911&lt;/note&gt;
                &lt;/date&gt;
             </code></pre></div>
+                  
                </div>
                <div id="INDEXES-LISTS-SUBJECTS">
                   <h3>Informationen zu Einträgen in Sachregistern</h3>
