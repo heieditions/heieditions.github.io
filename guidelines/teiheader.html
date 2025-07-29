@@ -747,6 +747,18 @@
                         An dieser Stelle sollen keine DOIs der digitalisierten Quelle(n) angegeben werden. 
                      </p>
                         <p>
+                        Das Element <span class="gi">&lt;idno&gt;</span> kann hier an <span class="att">@ana</span> mit den folgenden Klassenangaben versehen werden: 
+                     </p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/editionwebsiteidentifier.html"><span class="val">hc:EditionWebsiteIdentifier</span></a> ( ›Identifikator eines Editionsportals‹ ): Identifikator des Webportals einer digitalen Edition, d. h. des Online-Angebots einer digitalen Edition als Ganzes, das in der Regel aus einem dedizierten Editionsprojekt hervorgegangen ist.
+                        </p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/readingviewidentifier.html"><span class="val">hc:ReadingViewIdentifier</span></a> ( ›Identifikator einer Leseansicht‹ ): Identifikator der ›Leseansicht‹ eines Textes (einer inhaltlich ausgerichteten digitalen Textansicht).
+                        </p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/synopticviewidentifier.html"><span class="val">hc:SynopticViewIdentifier</span></a> ( ›Identifikator einer synoptischen Ansicht‹ ): Identifikator einer ›synoptischen Ansicht‹, d. h. einer digitalen Ansicht, in der mehrere Texte nebeneinander angezeigt und mit ihren semantisch-logischen Einheiten aneinander ausgerichtet werden.
+                        </p>
+                        <p>
                         Beispiele:
                      </p>
                         <div class="egxml" data-example-id="idno_example_one"><pre class="language-xml"><code>
@@ -857,13 +869,27 @@
                      </p>
                         <div class="egxml" data-example-id="recommended_citation_subclasses_1"><pre class="language-xml"><code>
                &lt;listBibl&gt;
-                  &lt;bibl ana="hc:RecommendedBibliographicReferenceForEditionWebsite"&gt;Hartmann von Aue: &lt;emph&gt;Der arme Heinrich. Textgeschichtliche elektronische Ausgabe&lt;/emph&gt;, hrsg. von Gustavo Fernández Riva und Victor Millet, unter Mitarbeit von Jakub Šimek, mit Übersetzungen von Dietmar Peschel. 2. Aufl. Heidelberg: Universitätsbibliothek, 2025. (1. Aufl. 2016) DOI: &lt;ref ana="hc:URLReference" target="https://doi.org/10.11588/edition.ahd"&gt;https://doi.org/10.11588/edition.ahd&lt;/ref&gt; [Datum des Abrufs].
+                  &lt;bibl ana="hc:RecommendedBibliographicReferenceForEditionWebsite"&gt;
+                     Hartmann von Aue: &lt;emph&gt;Der arme Heinrich. Textgeschichtliche elektronische Ausgabe&lt;/emph&gt;, 
+                     hrsg. von Gustavo Fernández Riva und Victor Millet, unter Mitarbeit von Jakub Šimek, 
+                     mit Übersetzungen von Dietmar Peschel. 2. Aufl. Heidelberg: Universitätsbibliothek, 2025. 
+                     (1. Aufl. 2016) DOI: &lt;ref ana="hc:URLReference" target="https://doi.org/10.11588/edition.ahd"&gt;https://doi.org/10.11588/edition.ahd&lt;/ref&gt; [Datum des Abrufs].
                   &lt;/bibl&gt;
                   &lt;bibl ana="hc:RecommendedBibliographicReferenceForExpression"&gt;
-                     Hartmann von Aue: Der arme Heinrich. Digitale Edition der Handschrift A, hrsg. von Gustavo Fernández Riva und Victor Millet. In: Hartmann von Aue: &lt;emph&gt;Der arme Heinrich. Textgeschichtliche elektronische Ausgabe&lt;/emph&gt;, hrsg. von Gustavo Fernández Riva und Victor Millet, unter Mitarbeit von Jakub Šimek, mit Übersetzungen von Dietmar Peschel. 2. Aufl. Heidelberg: Universitätsbibliothek, 2025. (1. Aufl. 2016) [Datum des Abrufs].
+                     Hartmann von Aue: Der arme Heinrich. Digitale Edition der Handschrift A, 
+                     hrsg. von Gustavo Fernández Riva und Victor Millet. In: Hartmann von Aue: 
+                     &lt;emph&gt;Der arme Heinrich. Textgeschichtliche elektronische Ausgabe&lt;/emph&gt;, 
+                     hrsg. von Gustavo Fernández Riva und Victor Millet, unter Mitarbeit von Jakub Šimek, 
+                     mit Übersetzungen von Dietmar Peschel. 2. Aufl. Heidelberg: Universitätsbibliothek, 
+                     2025. (1. Aufl. 2016) [Datum des Abrufs].
                   &lt;/bibl&gt;
                   &lt;bibl ana="hc:RecommendedBibliographicReferenceForReadingView"&gt;
-                     Hartmann von Aue: Der arme Heinrich. Digitale Edition der Handschrift A, hrsg. von Gustavo Fernández Riva und Victor Millet. In: Hartmann von Aue: &lt;emph&gt;Der arme Heinrich. Textgeschichtliche elektronische Ausgabe&lt;/emph&gt;, hrsg. von Gustavo Fernández Riva und Victor Millet, unter Mitarbeit von Jakub Šimek, mit Übersetzungen von Dietmar Peschel. 2. Aufl. Heidelberg: Universitätsbibliothek, 2025. (1. Aufl. 2016) DOI: &lt;ref ana="hc:URLReference" target="https://doi.org/10.11588/edition.ahd.a"&gt;https://doi.org/10.11588/edition.ahd.a&lt;/ref&gt; [Datum des Abrufs].
+                     Hartmann von Aue: Der arme Heinrich. Digitale Edition der Handschrift A, 
+                     hrsg. von Gustavo Fernández Riva und Victor Millet. In: Hartmann von Aue: 
+                     &lt;emph&gt;Der arme Heinrich. Textgeschichtliche elektronische Ausgabe&lt;/emph&gt;, 
+                     hrsg. von Gustavo Fernández Riva und Victor Millet, unter Mitarbeit von Jakub Šimek, 
+                     mit Übersetzungen von Dietmar Peschel. 2. Aufl. Heidelberg: Universitätsbibliothek, 2025. 
+                     (1. Aufl. 2016) DOI: &lt;ref ana="hc:URLReference" target="https://doi.org/10.11588/edition.ahd.a"&gt;https://doi.org/10.11588/edition.ahd.a&lt;/ref&gt; [Datum des Abrufs].
                   &lt;/bibl&gt;
                &lt;/listBibl&gt;
             </code></pre></div>
@@ -1486,7 +1512,7 @@
                            durch nachträgliche Fragmentierung heute aus mehreren, ggf. dislozierten Fragmenten besteht. Eine solche
                            Quelle wird mit einem einzigen <span class="gi">&lt;msDesc&gt;</span> angegeben (s. XXX). 
                         </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 17.07.2025
+                        Letzte Aktualisierung: 29.07.2025
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
