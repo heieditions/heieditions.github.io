@@ -4,9 +4,13 @@
                     ☞ 
                     Semantisch-logische Gliederungseinheiten</nav><main>
          <div id="SEMANTIC-ELEMENTS">
+            
             <h1>Semantisch-logische Gliederungseinheiten</h1>
+            
             <div id="SEMANTIC-ELEMENTS-LISTS">
+               
                <h2>Listen</h2>
+               
                <p>
                   Als Liste darf jede aufzählende Textstruktur gelten, deren einzelne Einträge nicht selbst formal in mehr als zwei Teile 
                   untergliedert sind. Die semantisch-logische Listenstruktur ist prinzipiell unabhängig von einer visuellen Umsetzung:
@@ -25,7 +29,7 @@
                   abgebildet, z. B.:
                </p>
                
-               <div class="egxml" data-example-id="list_item_simple"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="list_item_simple"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;item&gt;Eintrag 1&lt;/item&gt;
                   &lt;item&gt;Eintrag 2&lt;/item&gt;
@@ -38,7 +42,7 @@
                   zu kodieren sind, z. B.:
                </p>
                
-               <div class="egxml" data-example-id="list_header"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="list_header"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;head&gt;Überschrift der Beispielliste&lt;/head&gt;
                   &lt;item&gt;Eintrag 1&lt;/item&gt;
@@ -55,7 +59,7 @@
                   Eine solche Liste mit Beschriftungen ihrer Einträge hat dann etwa die folgende schematische Struktur:
                </p>
                
-               <div class="egxml" data-example-id="list_label"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="list_label"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 1&lt;/label&gt; Eintragstext 1&lt;/item&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 2&lt;/label&gt; Eintragstext 2&lt;/item&gt;
@@ -75,7 +79,7 @@
                   Mit dieser Typbezeichnung sähe das obige schematische Codebeispiel also wie folgt aus:
                </p>
                
-               <div class="egxml" data-example-id="list_label_explicit"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="list_label_explicit"><pre class="language-xml"><code>
                &lt;list ana="hc:ListWithLabeledItems"&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 1&lt;/label&gt; Eintragstext 1&lt;/item&gt;
                   &lt;item&gt;&lt;label&gt;Beschriftung 2&lt;/label&gt; Eintragstext 2&lt;/item&gt;
@@ -95,7 +99,7 @@
                   So eine gemischte Liste sähe schematisch z. B. so aus:
                </p>
                
-               <div class="egxml" data-example-id="list_label_mixed"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="list_label_mixed"><pre class="language-xml"><code>
                &lt;list&gt;
                   &lt;item&gt;Eintragstext 1&lt;/item&gt;
                   &lt;item ana="hc:LabeledListItem"&gt;&lt;label&gt;Beschriftung&lt;/label&gt; Eintragstext 2&lt;/item&gt;
@@ -103,8 +107,11 @@
                &lt;/list&gt;
             </code></pre></div>
                
+               
                <div id="SEMANTIC-ELEMENTS-LISTS-VISUAL">
+                  
                   <h3>Visuelle Eigenschaften von Listen</h3>
+                  
                   <p>
                      Wenn es bei der Edition von Listen aus historischen Vorlagen erwünscht ist, bestimmte visuelle Eigenschaften
                      zu dokumentieren, ist es an <span class="gi">&lt;list&gt;</span> bzw. <span class="gi">&lt;item&gt;</span> mit <span class="att">@rendition</span> möglich. So ist 
@@ -141,8 +148,13 @@
                      Falls nicht jeder Eintrag in einer Liste mit Führungspunkten versehen ist, kann die Angabe von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/dotleaders.html" target="_blank">hc:DotLeaders</a><span class="loddocborder"> ‹</span>
                      auch an einzelnen <span class="gi">&lt;item&gt;</span>-Elementen erfolgen.
                   </p>
+                  
+                  
                </div>
+               
+               
             </div>
+
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                      Die TEI-Guidelines bevorzugen die Platzierung der Beschriftungen von Listeneinträgen außerhalb des
@@ -159,7 +171,7 @@
                         Weitere Klassen dieser Art können in ›heiEDITIONS‹ in Anlehnung an CSS
                         hinzukommen.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 29.07.2025
+                        Letzte Aktualisierung: 21.10.2025
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
