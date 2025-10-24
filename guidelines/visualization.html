@@ -531,8 +531,25 @@
               <div id="">
                 <h3>Editorische Eingriffe</h3>
 		<p>
-                    Ergänzungen (<span class="gi">&lt;supplied&gt;</span>), Tilgungen (<span class="gi">&lt;surplus&gt;</span>), Korrekturen (<span class="gi">&lt;choice&gt;</span> + <span class="gi">&lt;sic&gt;</span>/<span class="gi">&lt;corr&gt;</span>) und Umstellungen (<span class="att">@hc:EditorialTransposition</span>) durch die Herausgeber können unterschiedlich dargestellt werden.
+                    Ergänzungen (<span class="gi">&lt;supplied&gt;</span>), Tilgungen (<span class="gi">&lt;surplus&gt;</span>), Korrekturen (<span class="gi">&lt;choice&gt;</span> + <span class="gi">&lt;sic&gt;</span>/<span class="gi">&lt;corr&gt;</span>) und Umstellungen (<span class="att">@ana=hc:EditorialTransposition</span>) durch die Herausgeber können unterschiedlich dargestellt werden.
                 </p>
+                <p>
+                     Code-Beispiele:
+                </p>
+                
+                   <div class="egxml" data-example-id="supplied_simple" data-visualization-type="ed_interventions"><pre class="language-xml"><code>Hier wird &lt;supplied&gt;etwas&lt;/supplied&gt; ergänzt.</code></pre></div>
+                
+                
+                   <div class="egxml" data-example-id="surplus_simple" data-visualization-type="ed_interventions"><pre class="language-xml"><code>Hier wird &lt;surplus&gt;etwas&lt;/surplus&gt; getilgt.</code></pre></div>
+                
+                
+                   <div class="egxml" data-example-id="choice_sic_corr_simple" data-visualization-type="ed_interventions"><pre class="language-xml"><code>
+               Hier wird &lt;choice&gt;&lt;sic&gt;ewtas&lt;/sic&gt;&lt;corr&gt;etwas&lt;/corr&gt;&lt;/choice&gt; korrigiert.
+            </code></pre></div>
+                
+                
+                   <div class="egxml" data-example-id="ed_transpose_simple" data-visualization-type="ed_interventions"><pre class="language-xml"><code>Hier hat der Herausgeber &lt;seg xml:id="ed_trans1"&gt;umgestellt&lt;/seg&gt; &lt;seg xml:id="ed_trans2"&gt;etwas&lt;/seg&gt;&lt;link ana="hc:EditorialTransposition" target="#ed_trans2 #ed_trans1"/&gt;.</code></pre></div>
+                
                 <p>
                     Mögliche Einstellungen:
                 </p>
