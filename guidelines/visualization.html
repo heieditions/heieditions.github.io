@@ -483,7 +483,7 @@
               <div id="">
                 <h3>Interpunktion</h3>
 		<p>
-                    Diese Option steuert die Anzeige von Interpunktion in den Texten. Je nach Edition ist es möglich, zwischen der Interpunktion im Original und durch die Herausgeber zu unterscheiden.
+                     Diese Option steuert die Anzeige von Interpunktion in den Texten. Je nach Edition ist es möglich, zwischen der Interpunktion im Original und durch die Herausgeber zu unterscheiden (<span class="gi">&lt;reg&gt;</span> mit <span class="att">@ana=hc:PunctuationRegularization</span>).
                 </p>
                 <p>
                      Code-Beispiel:
@@ -558,7 +558,7 @@
                     <span class="item_label"><span class="val">unterdrücken</span> Eingriffe durch die Herausgeber werden nicht angezeigt. Es wird der Quellentext angezeigt.</span>
                   </li>
                   <li>
-                    <span class="item_label"><span class="val">übernehmen</span> Der Text wird so angezeigt, wie er vom Herausgeber überarbeitet wurde.</span>
+                    <span class="item_label"><span class="val">übernehmen</span> Der Text wird so angezeigt, wie er vom Herausgeber überarbeitet wurde (ohne spezielle Kenntlichmachung).</span>
                   </li>
                   <li>
                     <span class="item_label"><span class="val">kenntlich machen</span> Der Text wird so angezeigt, wie er vom Herausgeber überarbeitet wurde. Die Änderungen durch den Herausgeber werden dabei gekennzeichnet.</span>
@@ -570,6 +570,33 @@
               </div>
               <div id="">
                 <h3>Editorische Normalisierungen</h3>
+                <p>
+                     Editorische Normalisierungen werden über die Tagkombination <span class="gi">&lt;reg&gt;</span>/<span class="gi">&lt;orig&gt;</span> codiert. Diese Anzeigeoption greift für nicht näher spezifizierte Kombinationen dieser Tags oder Normalisierungen mit <span class="att">@ana=hc:HyphenRegularization</span>, nicht jedoch für Normalisierungen mit <span class="att">@ana=hc:PunctuationRegularization</span> oder <span class="att">@ana=hc:TokenDelimiterRegularization</span>.
+                </p>
+                <p>
+                     Code-Beispiel:
+                </p>
+                
+                   <div class="egxml" data-example-id="choice_reg_orig_simple" data-visualization-type="ed_norm"><pre class="language-xml"><code>
+               &lt;choice&gt;&lt;reg&gt;u&lt;/reg&gt;&lt;orig&gt;v&lt;/orig&gt;&lt;/choice&gt;nd</code></pre></div>
+                
+                <p>
+                    Mögliche Einstellungen:
+                </p>
+                <ul>
+                  <li>
+                    <span class="item_label"><span class="val">unterdrücken</span> Normalisierungen durch die Herausgeber werden nicht angezeigt. Es wird der Quellentext angezeigt.</span>
+                  </li>
+                  <li>
+                    <span class="item_label"><span class="val">übernehmen</span> Der Text wird so angezeigt, wie er vom Herausgeber überarbeitet wurde (ohne spezielle Kenntlichmachung).</span>
+                  </li>
+                  <li>
+                    <span class="item_label"><span class="val">kenntlich machen</span> Der Text wird so angezeigt, wie er vom Herausgeber überarbeitet wurde. Die Änderungen durch den Herausgeber werden dabei gekennzeichnet.</span>
+                  </li>
+                  <li>
+                    <span class="item_label"><span class="val">Fußnotenapparat</span> Normalisierungen werden im Fußnotenapparat aufgelistet.</span>
+                  </li>
+                </ul>
               </div>
               <div id="">
                 <h3>Anmerkungen/Apparat</h3>
