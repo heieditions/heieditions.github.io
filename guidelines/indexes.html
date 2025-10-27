@@ -4,9 +4,7 @@
                     ☞ 
                     Register</nav><main>
          <div id="INDEXES">
-            
             <h1>Register</h1>
-            
             <p>
                Die Registerfunktionalität in ›heiEDITIONS‹ dient besonders zweierlei Zwecken:
             </p>
@@ -44,11 +42,8 @@
                oder einen besonderen Begriff nennen; beim Letzteren geht es um die Struktur der Referenzeinträge,
                auf die von konkreten Textstellen aus verwiesen werden kann.
             </p>
-            
             <div id="INDEXES-MARKUP">
-               
                <h2>Auszeichnung für Register im Text</h2>
-               
                <p>
                   Die Kennzeichnung relevanter Textsegmente mit Verweisen zu Registereinträgen
                   kann sowohl in Primärtexten als auch in Sekundärtexten (editorische Anmerkungen,
@@ -66,7 +61,8 @@
                   auf derselben strukturellen Ebene stehen. Ein Verweis von einer Textstelle aus auf einen Registereintrag müsste
                   also einen Pfad beschreiben, der natursprachlich etwa wie folgt ausgedrückt werden könnte: 
                   ›Gehe vom Verzeichnis <span class="code">texts</span> eine Ebene höher, dann ins Verzeichnis <span class="code">indexes</span>
-                     und in die Registerdatei <span class="code">AB.xml</span> zum Eintrag mit der <span class="att">@xml:id</span> <span class="code">XY</span>.‹ Technisch würde  eine solche
+                     und in die Registerdatei <span class="code">AB.xml</span> zum Eintrag mit der <span class="att">@xml:id</span>
+                     <span class="code">XY</span>.‹ Technisch würde  eine solche
                   Pfadbeschreibung so aussehen: <span class="code">../indexes/AB.xml#XY</span>.
                </p>
                <p>
@@ -82,7 +78,7 @@
                   Personenliste würde wie folgt aussehen:
                </p>
                
-                  <div class="egxml" data-example-id="index_prefix_pers"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="index_prefix_pers"><pre class="language-xml"><code>
                &lt;prefixDef ident="pers" matchPattern="(.+)" replacementPattern="../indexes/Personenregister.xml#$1"/&gt;
             </code></pre></div>   
                
@@ -92,7 +88,7 @@
                   Syntax für den URI-Verweis in der Form <span class="code">[Präfix]:[xml:id]</span> zum Einsatz, konkret z. B.: 
                </p>
                
-                  <div class="egxml" data-example-id="index_person"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="index_person"><pre class="language-xml"><code>
                &lt;persName ref="pers:gnd-118540238"&gt;Goethe&lt;/persName&gt;
             </code></pre></div>
                
@@ -107,7 +103,7 @@
                   verwendet werden, so etwa statt des obigen Beispiels mit <span class="gi">&lt;persName&gt;</span>:
                </p>
                
-                  <div class="egxml" data-example-id="rs_named"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="rs_named"><pre class="language-xml"><code>
                &lt;rs ana="hc:PersonReference" ref="pers:gnd-118540238"&gt;Goethe&lt;/rs&gt;   
             </code></pre></div>
                
@@ -126,7 +122,7 @@
                   referenziert werden. In solchen Fällen können in <span class="att">@ref</span> mehrere URIs angegeben werden, z. B.:
                </p>
                
-                  <div class="egxml" data-example-id="rs_multiple_unnamed"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="rs_multiple_unnamed"><pre class="language-xml"><code>
                &lt;rs ana="hc:PersonReference" ref="pers:pers-1 pers:pers-2"&gt;die Eltern&lt;/rs&gt;
             </code></pre></div>
                
@@ -136,7 +132,7 @@
                   gesetzt werden, z. B.:
                </p>
                
-                  <div class="egxml" data-example-id="rs_multiple_named"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="rs_multiple_named"><pre class="language-xml"><code>
                &lt;persName ref="pers:gnd-118542257 pers:gnd-118542265"&gt;Gebrüder Grimm&lt;/persName&gt;
             </code></pre></div>
                
@@ -150,12 +146,18 @@
                   zur Verfügung:
                </p>
                <ul>
-                  <li>Auszeichnungen fürs Personenregister: <span class="gi">&lt;persName&gt;</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:PersonReference</span> in <span class="att">@ana</span></li>
-                  <li>Auszeichnungen fürs Ortsregister: <span class="gi">&lt;placeName&gt;</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:PlaceReference</span> in <span class="att">@ana</span></li>
-                  <li>Auszeichnungen fürs Körperschaftsregister: <span class="gi">&lt;orgName&gt;</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:OrganizationReference</span> in <span class="att">@ana</span></li>
-                  <li>Auszeichnungen fürs Ereignisregister: <span class="gi">&lt;name&gt;</span> mit Wert <span class="val">hc:EventName</span> in <span class="att">@ana</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:EventReference</span> in <span class="att">@ana</span></li>
-                  <li>Auszeichnungen fürs Werkregister: <span class="gi">&lt;title&gt;</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:WorkReference</span> in <span class="att">@ana</span></li>
-                  <li>Auszeichnungen fürs Sachregister: <span class="gi">&lt;term&gt;</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:SubjectReference</span> in <span class="att">@ana</span></li>
+                  <li>Auszeichnungen fürs Personenregister: <span class="gi">&lt;persName&gt;</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:PersonReference</span> in <span class="att">@ana</span>
+                  </li>
+                  <li>Auszeichnungen fürs Ortsregister: <span class="gi">&lt;placeName&gt;</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:PlaceReference</span> in <span class="att">@ana</span>
+                  </li>
+                  <li>Auszeichnungen fürs Körperschaftsregister: <span class="gi">&lt;orgName&gt;</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:OrganizationReference</span> in <span class="att">@ana</span>
+                  </li>
+                  <li>Auszeichnungen fürs Ereignisregister: <span class="gi">&lt;name&gt;</span> mit Wert <span class="val">hc:EventName</span> in <span class="att">@ana</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:EventReference</span> in <span class="att">@ana</span>
+                  </li>
+                  <li>Auszeichnungen fürs Werkregister: <span class="gi">&lt;title&gt;</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:WorkReference</span> in <span class="att">@ana</span>
+                  </li>
+                  <li>Auszeichnungen fürs Sachregister: <span class="gi">&lt;term&gt;</span> oder <span class="gi">&lt;rs&gt;</span> mit Wert <span class="val">hc:SubjectReference</span> in <span class="att">@ana</span>
+                  </li>
                </ul>
                <p>
                   Für die Angabe der URI eines Registereintrags (d. h. des Pfades zum Normeintrag einer Entität in einer Registerdatei mittels der <span class="att">@xml:id</span> des Normeintrags)
@@ -185,13 +187,9 @@
                <p class="resdef">
                   <a class="refboxlink" href="../concepts/subjectreference.html"><span class="val">hc:SubjectReference</span></a> ( ›Verweis auf Sache‹ ): Verweis auf eine Sache, typischerweise ein Konzept, ein Thema oder einen Begriff, mit einer möglichen Verwendung für die Aufnahme ins Sachregister.
                </p>
-               
             </div>
-            
             <div id="INDEXES-LISTS">
-               
                <h2>Registerlisten</h2>
-               
                <p>
                   Registerlisten sind das Mittel, um Referenzeinträge für Entitäten eines bestimmten Typs zu verwalten, 
                   auf die aus einem Text heraus verwiesen werden kann. Die Einträge solcher Listen können unterschiedlichen
@@ -242,7 +240,7 @@
                   ist wie folgt:
                </p>
                
-                  <div class="egxml" data-example-id="index_teiheader"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="index_teiheader"><pre class="language-xml"><code>
                &lt;TEI&gt;
                   &lt;teiHeader&gt;[…]&lt;/teiHeader&gt;                     
                   &lt;text ana="[…]"&gt;
@@ -281,11 +279,16 @@
                   vom festgelegten Registertyp eines dieser listenartigen Elemente vor:
                </p>
                <ul>
-                  <li><span class="gi">&lt;listPerson&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofpersons.html" target="_blank">hc:IndexOfPersons</a><span class="loddocborder"> ‹</span>)</li>
-                  <li><span class="gi">&lt;listPlace&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofplaces.html" target="_blank">hc:IndexOfPlaces</a><span class="loddocborder"> ‹</span>)</li>
-                  <li><span class="gi">&lt;listOrg&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexoforganizations.html" target="_blank">hc:IndexOfOrganizations</a><span class="loddocborder"> ‹</span>)</li>
-                  <li><span class="gi">&lt;listEvent&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofevents.html" target="_blank">hc:IndexOfEvents</a><span class="loddocborder"> ‹</span>)</li>
-                  <li><span class="gi">&lt;list&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofworks.html" target="_blank">hc:IndexOfWorks</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofsubjects.html" target="_blank">hc:IndexOfSubjects</a><span class="loddocborder"> ‹</span>)</li>
+                  <li>
+                     <span class="gi">&lt;listPerson&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofpersons.html" target="_blank">hc:IndexOfPersons</a><span class="loddocborder"> ‹</span>)</li>
+                  <li>
+                     <span class="gi">&lt;listPlace&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofplaces.html" target="_blank">hc:IndexOfPlaces</a><span class="loddocborder"> ‹</span>)</li>
+                  <li>
+                     <span class="gi">&lt;listOrg&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexoforganizations.html" target="_blank">hc:IndexOfOrganizations</a><span class="loddocborder"> ‹</span>)</li>
+                  <li>
+                     <span class="gi">&lt;listEvent&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofevents.html" target="_blank">hc:IndexOfEvents</a><span class="loddocborder"> ‹</span>)</li>
+                  <li>
+                     <span class="gi">&lt;list&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofworks.html" target="_blank">hc:IndexOfWorks</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofsubjects.html" target="_blank">hc:IndexOfSubjects</a><span class="loddocborder"> ‹</span>)</li>
                </ul>
                <p>
                   Jedes der genannten Listenelemente kann zunächst mit <span class="gi">&lt;head&gt;</span> eine oder mehrere Überschriften  
@@ -303,17 +306,22 @@
                   Registertyp ab:
                </p>
                <ul>
-                  <li><span class="gi">&lt;person&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofpersons.html" target="_blank">hc:IndexOfPersons</a><span class="loddocborder"> ‹</span>)</li>
-                  <li><span class="gi">&lt;place&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofplaces.html" target="_blank">hc:IndexOfPlaces</a><span class="loddocborder"> ‹</span>)</li>
-                  <li><span class="gi">&lt;org&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexoforganizations.html" target="_blank">hc:IndexOfOrganizations</a><span class="loddocborder"> ‹</span>)</li>
-                  <li><span class="gi">&lt;event&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofevents.html" target="_blank">hc:IndexOfEvents</a><span class="loddocborder"> ‹</span>)</li>
-                  <li><span class="gi">&lt;item&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofworks.html" target="_blank">hc:IndexOfWorks</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofsubjects.html" target="_blank">hc:IndexOfSubjects</a><span class="loddocborder"> ‹</span>)</li>
+                  <li>
+                     <span class="gi">&lt;person&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofpersons.html" target="_blank">hc:IndexOfPersons</a><span class="loddocborder"> ‹</span>)</li>
+                  <li>
+                     <span class="gi">&lt;place&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofplaces.html" target="_blank">hc:IndexOfPlaces</a><span class="loddocborder"> ‹</span>)</li>
+                  <li>
+                     <span class="gi">&lt;org&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexoforganizations.html" target="_blank">hc:IndexOfOrganizations</a><span class="loddocborder"> ‹</span>)</li>
+                  <li>
+                     <span class="gi">&lt;event&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofevents.html" target="_blank">hc:IndexOfEvents</a><span class="loddocborder"> ‹</span>)</li>
+                  <li>
+                     <span class="gi">&lt;item&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofworks.html" target="_blank">hc:IndexOfWorks</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofsubjects.html" target="_blank">hc:IndexOfSubjects</a><span class="loddocborder"> ‹</span>)</li>
                </ul>
                <p>
                   Beispiel für die grobe Struktur eines Personenregisters ab dem Element <span class="gi">&lt;text&gt;</span>:
                </p>
                
-                  <div class="egxml" data-example-id="index_structure_persons_simple"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="index_structure_persons_simple"><pre class="language-xml"><code>
               &lt;text ana="hc:IndexOfPersons"&gt;
                  &lt;body&gt;
                     &lt;listPerson&gt;
@@ -326,13 +334,12 @@
               &lt;/text&gt;
            </code></pre></div>
                
-               
                <p>
                   Beispiel für die grobe Struktur eines Werkregisters mit einer spezifischen Überschrift:
                </p>
                
                
-                  <div class="egxml" data-example-id="index_structure_head_simple"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="index_structure_head_simple"><pre class="language-xml"><code>
                &lt;text ana="hc:IndexOfWorks"&gt;
                   &lt;body&gt;
                      &lt;list&gt;
@@ -346,17 +353,12 @@
                &lt;/text&gt; 
             </code></pre></div>
                
-                             
-               
                <div id="INDEXES-LISTS-GENERAL">
-                  
                   <h3>Allgemeine Struktur eines Registereintrags</h3>
-                  
                   <p>
                      Jeder Registereintrag richtet sich, unabhängig vom Registertyp, in der allgemeinen Struktur seines Inhalts 
                      nach Regeln, die im Folgenden dargelegt sind.
                   </p>
-                  
                   <div id="INDEXES-LISTS-GENERAL-ID">
                      <h4>Identifikatoren</h4>
                      <p>
@@ -379,7 +381,7 @@
                            und statt der GND-Nummer eine innerhalb des Registers (für nicht mit der GND verknüpfte Einträge) laufende Nummer zu verwenden, Letzteres ggf. in einheitlicher 
                            Ziffernanzahl mit vorangestellten Nullen.
                         </li>
-                     </ul>                     
+                     </ul>
                      <p>
                         Beispiele für das Attribut <span class="att">@xml:id</span> an Registereinträgen in einem Personenregister.
                      </p>
@@ -387,7 +389,7 @@
                         Identifikator einer Ressource mit GND-Verknüpfung:
                      </p>
                      
-                        <div class="egxml" data-example-id="gndlink_simple"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="gndlink_simple"><pre class="language-xml"><code>
                &lt;person xml:id="gnd-118540238"&gt;[…]&lt;/person&gt;
             </code></pre></div>
                      
@@ -396,7 +398,7 @@
                         und laufender Nummer:
                      </p>
                      
-                        <div class="egxml" data-example-id="serialnumber_simple"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="serialnumber_simple"><pre class="language-xml"><code>
                &lt;person xml:id="pers-1"&gt;[…]&lt;/person&gt; 
             </code></pre></div>
                      
@@ -405,7 +407,7 @@
                         und laufender Nummer, mit vereinheitlichter Ziffernanzahl:
                      </p>
                      
-                        <div class="egxml" data-example-id="unifiedserialnumber_simple"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="unifiedserialnumber_simple"><pre class="language-xml"><code>
                &lt;person xml:id="pers-001"&gt;[…]&lt;/person&gt;
             </code></pre></div>
                      
@@ -430,7 +432,7 @@
                         Beispiel für die Angabe einer GND-URI als Fremdidentifikator in einem Eintrag des Personenregisters:
                      </p>
                      
-                        <div class="egxml" data-example-id="idno_simple"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="idno_simple"><pre class="language-xml"><code>
                &lt;idno ana="hc:GNDURI"&gt;http://d-nb.info/gnd/118540238&lt;/idno&gt;
             </code></pre></div>
                      
@@ -438,7 +440,7 @@
                         Beispiel eines vollständigen Eintrags des Ortsregisters mit der Angabe einer GND-URI und einer Geonames-URI:
                      </p>
                      
-                        <div class="egxml" data-example-id="completeindexentry_place_simple"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="completeindexentry_place_simple"><pre class="language-xml"><code>
                &lt;place xml:id="gnd-4023996-2"&gt;
                   &lt;placeName ana="hc:PreferredAppellation"&gt;Heidelberg&lt;/placeName&gt;
                   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4023996-2&lt;/idno&gt;
@@ -461,11 +463,8 @@
             </code></pre></div>
                      
                   </div>
-                  
                   <div id="INDEXES-LISTS-GENERAL-NAMES">
-                     
                      <h4>Namen und Bezeichnungen</h4>
-                     
                      <p>
                         Jeder Eintrag in jedem Register trägt eines oder mehrere Elemente, die den Namen, die Bezeichnung oder den Titel<sup><a href="#note_4" id="note_reference_4" class="note_mark">4)</a></sup> 
                         (dies je nach Registerart) der repräsentierten Entität wiedergeben. Dabei muss es mindestens einen Namen, eine Bezeichnung 
@@ -474,11 +473,16 @@
                         als Oberbegriff für den Namen, die Bezeichnung oder den Titel) dar: 
                      </p>
                      <ul>
-                        <li><span class="gi">&lt;persName&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofpersons.html" target="_blank">hc:IndexOfPersons</a><span class="loddocborder"> ‹</span>)</li>
-                        <li><span class="gi">&lt;placeName&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofplaces.html" target="_blank">hc:IndexOfPlaces</a><span class="loddocborder"> ‹</span>)</li>
-                        <li><span class="gi">&lt;orgName&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexoforganizations.html" target="_blank">hc:IndexOfOrganizations</a><span class="loddocborder"> ‹</span>)</li>
-                        <li><span class="gi">&lt;label&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofevents.html" target="_blank">hc:IndexOfEvents</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofsubjects.html" target="_blank">hc:IndexOfSubjects</a><span class="loddocborder"> ‹</span>)</li>
-                        <li><span class="gi">&lt;title&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofworks.html" target="_blank">hc:IndexOfWorks</a><span class="loddocborder"> ‹</span>)</li>
+                        <li>
+                           <span class="gi">&lt;persName&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofpersons.html" target="_blank">hc:IndexOfPersons</a><span class="loddocborder"> ‹</span>)</li>
+                        <li>
+                           <span class="gi">&lt;placeName&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofplaces.html" target="_blank">hc:IndexOfPlaces</a><span class="loddocborder"> ‹</span>)</li>
+                        <li>
+                           <span class="gi">&lt;orgName&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexoforganizations.html" target="_blank">hc:IndexOfOrganizations</a><span class="loddocborder"> ‹</span>)</li>
+                        <li>
+                           <span class="gi">&lt;label&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofevents.html" target="_blank">hc:IndexOfEvents</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofsubjects.html" target="_blank">hc:IndexOfSubjects</a><span class="loddocborder"> ‹</span>)</li>
+                        <li>
+                           <span class="gi">&lt;title&gt;</span> (in einem Register des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/indexofworks.html" target="_blank">hc:IndexOfWorks</a><span class="loddocborder"> ‹</span>)</li>
                      </ul>
                      <p>
                         Jedes dieser Elemente darf mehrfach gesetzt sein, weil jede Entität mehrere verschiedene Namen, Bezeichnungen oder Titel
@@ -506,8 +510,12 @@
                         können, ist es möglich, Benennungen am Attribut <span class="att">@ana</span> wie folgt zu kennzeichnen:
                      </p>
                      <ul>
-                        <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/appellationfordisplayinindex.html" target="_blank">hc:AppellationForDisplayInIndex</a><span class="loddocborder"> ‹</span></li>
-                        <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/appellationfordisplayinedition.html" target="_blank">hc:AppellationForDisplayInEdition</a><span class="loddocborder"> ‹</span></li>                     
+                        <li>
+                           <span class="loddocborder">› </span><a class="loddoc" href="../concepts/appellationfordisplayinindex.html" target="_blank">hc:AppellationForDisplayInIndex</a><span class="loddocborder"> ‹</span>
+                        </li>
+                        <li>
+                           <span class="loddocborder">› </span><a class="loddoc" href="../concepts/appellationfordisplayinedition.html" target="_blank">hc:AppellationForDisplayInEdition</a><span class="loddocborder"> ‹</span>
+                        </li>
                      </ul>
                      <p>
                         Wenn ein Element als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/appellationfordisplayinindex.html" target="_blank">hc:AppellationForDisplayInIndex</a><span class="loddocborder"> ‹</span> oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/appellationfordisplayinedition.html" target="_blank">hc:AppellationForDisplayInEdition</a><span class="loddocborder"> ‹</span>
@@ -531,7 +539,7 @@
                         Alle Benennungen, die weder als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/preferredappellation.html" target="_blank">hc:PreferredAppellation</a><span class="loddocborder"> ‹</span> noch als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/appellationfordisplayinindex.html" target="_blank">hc:AppellationForDisplayInIndex</a><span class="loddocborder"> ‹</span>
                         oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/appellationfordisplayinedition.html" target="_blank">hc:AppellationForDisplayInEdition</a><span class="loddocborder"> ‹</span> gekennzeichnet sind, gelten als alternative 
                         Benennungenen und können als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/alternativeappellation.html" target="_blank">hc:AlternativeAppellation</a><span class="loddocborder"> ‹</span> an <span class="att">@ana</span> markiert werden.
-                        Wenn diese Markierung nicht vorgenommen wird, gilt sie implizit.<sup><a href="#note_5" id="note_reference_5" class="note_mark">5)</a></sup> 
+                        Wenn diese Markierung nicht vorgenommen wird, gilt sie implizit.<sup><a href="#note_5" id="note_reference_5" class="note_mark">5)</a></sup>
                      </p>
                      <p>
                         Das Attribut <span class="att">@ana</span> kann auch genutzt werden, um bestimmte Benennungen nach Bedarf weiter zu klassifizieren,
@@ -577,13 +585,10 @@
                         Die für Benennungen vorgesehenen Elemente <span class="gi">&lt;persName&gt;</span>, <span class="gi">&lt;placeName&gt;</span>, <span class="gi">&lt;orgName&gt;</span>, <span class="gi">&lt;label&gt;</span>
                         und <span class="gi">&lt;title&gt;</span> können als letztes Kindelement das Element <span class="gi">&lt;note&gt;</span> enthalten. Darin sind bei Bedarf weitere
                         unstrukturierte Angaben zu einer Benennung möglich.
-                     </p>                  
+                     </p>
                   </div>
-                  
                   <div id="INDEXES-LISTS-GENERAL-PROSE">
-                     
                      <h4>Verbale Erläuterungen zu Registereinträgen</h4>
-                     
                      <p>
                         Zu jedem beliebigen Registereintrag kann eine verbale Erläuterung oder Beschreibung angegeben werden,
                         die von einer kurzen Notiz bis hin zu einer Quasi-Abhandlung reichen kann. Der gesamte Inhalt dieses Textes
@@ -596,52 +601,44 @@
                         Absätze strukturiert werden. 
                      </p>
                      
-                     
                   </div>
-                  
                   <div id="INDEXES-LISTS-GENERAL-BIBL">
-                     
                      <h4>Literaturangaben</h4>
-                     
                      <p>TODO</p>
-                     
                   </div>
-                  
                   <div id="INDEXES-LISTS-GENERAL-LINKS">
-                     
                      <h4>Angaben von URIs und URLs</h4>
-                     
                      <p>TODO</p>
-                     
                   </div>
-                  
                   <div id="INDEXES-LISTS-GENERAL-FIGURES">
-                     
                      <h4>Abbildungen</h4>
-                     
                      <p>TODO</p>
-                     
                   </div>
-                  
-               </div>              
-               
+               </div>
                <div id="INDEXES-LISTS-PERSONS">
-                  
                   <h3>Informationen zu Personen</h3>
-                  
                   <p>
                      Einträge zu Personen in einem Personenregister haben die folgende Struktur in festgelegter Reihenfolge:
                   </p>
                   <ul>
-                     <li><span class="gi">&lt;persName&gt;</span> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
-                     <li><span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
-                     <li><span class="gi">&lt;birth&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;death&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;occupation&gt;</span> (optional, ggf. mehrfach)</li>
-                     <li><span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
-                     <li><span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;persName&gt;</span> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
+                     <li>
+                        <span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
+                     <li>
+                        <span class="gi">&lt;birth&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;death&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;occupation&gt;</span> (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
+                     <li>
+                        <span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
                   </ul>
                   <p>
                      Die personenspezifischen Elemente <span class="gi">&lt;birth&gt;</span> und <span class="gi">&lt;death&gt;</span> können für strukturierte und maschinenlesbare
@@ -654,7 +651,7 @@
                      in <span class="gi">&lt;note&gt;</span>:
                   </p>
                   
-                     <div class="egxml" data-example-id="birthdate_note"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="birthdate_note"><pre class="language-xml"><code>
                &lt;birth when="1749-08-28"&gt;
                   &lt;note&gt;28. August 1749 in Frankfurt am Main&lt;/note&gt;
                &lt;/birth&gt;
@@ -665,7 +662,7 @@
                      in <span class="gi">&lt;note&gt;</span>:
                   </p>
                   
-                     <div class="egxml" data-example-id="deathdate_note"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="deathdate_note"><pre class="language-xml"><code>
                &lt;death when="1832-03-22"&gt;
                   &lt;note&gt;22. März 1832 in Weimar&lt;/note&gt;
                &lt;/death&gt;
@@ -686,30 +683,33 @@
                      Beispiel für die einfache Angabe eines Berufs mit einer maschinenlesbaren Angabe des zutreffenden Zeitraums:
                   </p>
                   
-                     <div class="egxml" data-example-id="occupation_note"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="occupation_note"><pre class="language-xml"><code>
                &lt;occupation from="1532" to="1541"&gt;
                   &lt;note&gt;Drucker&lt;/note&gt;
                &lt;/occupation&gt;
             </code></pre></div>
                   
-                  
                </div>
-               
                <div id="INDEXES-LISTS-PLACES">
-                  
                   <h3>Informationen zu Orten</h3>
-                  
                   <p>
                      Einträge zu Orten in einem Ortsregister haben die folgende Struktur in festgelegter Reihenfolge:
                   </p>
                   <ul>
-                     <li><span class="gi">&lt;placeName&gt;</span> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
-                     <li><span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
-                     <li><span class="gi">&lt;location&gt;</span> (optional, ggf. mehrfach)</li>
-                     <li><span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
-                     <li><span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;placeName&gt;</span> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
+                     <li>
+                        <span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
+                     <li>
+                        <span class="gi">&lt;location&gt;</span> (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
+                     <li>
+                        <span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
                   </ul>
                   <p>
                      Für eine nähere Verortung der Lage des Ortes ist das Element <span class="gi">&lt;location&gt;</span> vorgesehen. Grundsätzlich kann
@@ -732,12 +732,17 @@
                      zur kleinsten Ebene:
                   </p>
                   <ul>
-                     <li><span class="gi">&lt;bloc&gt;</span> für länderübergreifende geopolitische Einheiten, z. B. die Europäische Union oder
-                        Kontinente</li> 
-                     <li><span class="gi">&lt;country&gt;</span> für Länder und Staaten, ggf. auch für Gliedstaaten in einer Föderation</li>
-                     <li><span class="gi">&lt;region&gt;</span> für Regionen unterhalb der Ebene von Ländern und Staaten, ggf. auch für Gliedstaaten in einer Föderation</li>                    
-                     <li><span class="gi">&lt;settlement&gt;</span> für Kommunen, also Städte, Dörfer und sonstige Gemeindetypen</li>
-                     <li><span class="gi">&lt;district&gt;</span> für Stadtviertel und andere Typen von Teilen innerhalb von Kommunen</li>
+                     <li>
+                        <span class="gi">&lt;bloc&gt;</span> für länderübergreifende geopolitische Einheiten, z. B. die Europäische Union oder
+                        Kontinente</li>
+                     <li>
+                        <span class="gi">&lt;country&gt;</span> für Länder und Staaten, ggf. auch für Gliedstaaten in einer Föderation</li>
+                     <li>
+                        <span class="gi">&lt;region&gt;</span> für Regionen unterhalb der Ebene von Ländern und Staaten, ggf. auch für Gliedstaaten in einer Föderation</li>
+                     <li>
+                        <span class="gi">&lt;settlement&gt;</span> für Kommunen, also Städte, Dörfer und sonstige Gemeindetypen</li>
+                     <li>
+                        <span class="gi">&lt;district&gt;</span> für Stadtviertel und andere Typen von Teilen innerhalb von Kommunen</li>
                   </ul>
                   <p>
                      Die genannten Elemente müssen die angegebene Reihenfolge einhalten, alle sind jedoch optional und 
@@ -748,13 +753,13 @@
                      besteht. Die Angabe mehrerer Namen durch Wiederholung von <span class="gi">&lt;placeName&gt;</span>
                      kann durch alternative, ggf. historische, Namensvarianten bedingt sein, aber auch der
                      Mehrsprachigeit dienen (dann ist jedes <span class="gi">&lt;placeName&gt;</span> mit <span class="att">@xml:lang</span> zu kennzeichnen).
-                  </p>                   
+                  </p>
                   <p>
                      Beispiel für die Angabe der Lage eines Ortes mithilfe zweier Ebenen geopolitischer Verwaltungseinheiten,
                      jeweils mit GND-Verknüpfung: 
                   </p>
                   
-                     <div class="egxml" data-example-id="locating_complex"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="locating_complex"><pre class="language-xml"><code>
                &lt;location&gt;
                   &lt;region&gt;
                      &lt;placeName&gt;Baden-Württemberg&lt;/placeName&gt;
@@ -773,29 +778,33 @@
                      und einem Leerzeichen zwischen den beiden Dezimalzahlen) für die geographische Breite und Länge, z. B.:
                   </p>
                   
-                     <div class="egxml" data-example-id="coordinates"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="coordinates"><pre class="language-xml"><code>
                &lt;location&gt;
                   &lt;geo&gt;49.41032 8.69707&lt;/geo&gt;
                &lt;/location&gt;
             </code></pre></div>
                   
                </div>
-               
                <div id="INDEXES-LISTS-ORGANIZATIONS">
-                  
                   <h3>Informationen zu Körperschaften</h3>
-                  
                   <p>
                      Einträge zu Körperschaften in einem Körperschaftsregister haben die folgende Struktur in festgelegter Reihenfolge:
                   </p>
                   <ul>
-                     <li><span class="gi">&lt;orgName&gt;</span> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
-                     <li><span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
-                     <li><span class="gi">&lt;location&gt;</span> (optional, ggf. mehrfach)</li>
-                     <li><span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
-                     <li><span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;orgName&gt;</span> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
+                     <li>
+                        <span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
+                     <li>
+                        <span class="gi">&lt;location&gt;</span> (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
+                     <li>
+                        <span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
                   </ul>
                   <p>
                      Die Verortung einer Körperschaft mithilfe von <span class="gi">&lt;location&gt;</span> folgt denselben Regeln wie bei Orten, s. oben 
@@ -804,25 +813,30 @@
                      wie etwa ein Gebäude mit <span class="gi">&lt;placeName&gt;</span> (ggf. mehrfach und ggf. mehrsprachig) und ggf. <span class="gi">&lt;idno&gt;</span> (ggf. mehrfach)
                      angegeben werden.
                   </p>
-                  
                </div>
-               
                <div id="INDEXES-LISTS-EVENTS">
-                  
                   <h3>Informationen zu Ereignissen</h3>
-                  
                   <p>
                      Einträge zu Ereignissen in einem Ereignisregister haben die folgende Struktur in festgelegter Reihenfolge:
                   </p>
                   <ul>
-                     <li><span class="gi">&lt;label&gt;</span> oder <span class="gi">&lt;name&gt;</span><sup><a href="#note_8" id="note_reference_8" class="note_mark">8)</a></sup> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
-                     <li><span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
-                     <li><span class="gi">&lt;date&gt;</span> (obligatorisch, nur einmal)</li>
-                     <li><span class="gi">&lt;location&gt;</span> (optional, ggf. mehrfach)</li>
-                     <li><span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
-                     <li><span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;label&gt;</span> oder <span class="gi">&lt;name&gt;</span>
+                        <sup><a href="#note_8" id="note_reference_8" class="note_mark">8)</a></sup> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
+                     <li>
+                        <span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
+                     <li>
+                        <span class="gi">&lt;date&gt;</span> (obligatorisch, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;location&gt;</span> (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
+                     <li>
+                        <span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
                   </ul>
                   <p>
                      Die Ortsangabe eines Ereignisses mithilfe von <span class="gi">&lt;location&gt;</span> folgt denselben Regeln wie bei Orten, s. oben 
@@ -837,31 +851,37 @@
                      präzisiert werden. (Für die Verwendung dieser Attribute gelten die oben unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>
                      beschriebenen Regeln.)
                   </p>
-                  
                </div>
-               
                <div id="INDEXES-LISTS-WORKS">
-                  
                   <h3>Informationen zu Werken</h3>
-                  
                   <p>
                      Einträge zu Werken in einem Werkregister haben die folgende Struktur in festgelegter Reihenfolge:
                   </p>
                   <ul>
-                     <li><span class="gi">&lt;title&gt;</span> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
-                     <li><span class="gi">&lt;author&gt;</span> (optional, ggf. mehrfach)</li>
-                     <li><span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
-                     <li><span class="gi">&lt;date&gt;</span> (optional, nur einmal pro Typ)</li>
-                     <li><span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
-                     <li><span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;title&gt;</span> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
+                     <li>
+                        <span class="gi">&lt;author&gt;</span> (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
+                     <li>
+                        <span class="gi">&lt;date&gt;</span> (optional, nur einmal pro Typ)</li>
+                     <li>
+                        <span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
+                     <li>
+                        <span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
                   </ul>
                   <p>
                      Die Angabe des Werkurhebers im Element <span class="gi">&lt;author&gt;</span> erfolgt alternativ mit <span class="gi">&lt;persName&gt;</span> oder <span class="gi">&lt;orgName&gt;</span>, 
                      je nach dem, ob der Urheber eine Person oder eine Körperschaft ist. <span class="gi">&lt;persName&gt;</span> oder <span class="gi">&lt;orgName&gt;</span> können
                      mehrfach angegeben werden, wenn die Erfassung unterschiedlicher Namensformen erwünscht ist. Es darf jedoch nicht
-                     gleichzeitig <span class="gi">&lt;persName&gt;</span> <em>und</em> <span class="gi">&lt;orgName&gt;</span> vorkommen.
+                     gleichzeitig <span class="gi">&lt;persName&gt;</span>
+                     <em>und</em>
+                     <span class="gi">&lt;orgName&gt;</span> vorkommen.
                      Nach <span class="gi">&lt;persName&gt;</span> oder <span class="gi">&lt;orgName&gt;</span> kann
                      mit <span class="gi">&lt;idno&gt;</span> ein Identifikator angegeben werden. Bei mehreren Urhebern ist <span class="gi">&lt;author&gt;</span> entsprechend zu wiederholen.
                      Falls bei mehreren Urhebern eine Zeitangabe für die jeweilige Urheberschaft notwendig wäre, kann dies an <span class="gi">&lt;author&gt;</span>
@@ -873,7 +893,7 @@
                      Beispiel für eine einfache Angabe eines Urhebers mit einer Namensform und einem GND-Identifikator:
                   </p>
                   
-                     <div class="egxml" data-example-id="authoridno"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="authoridno"><pre class="language-xml"><code>
                &lt;author&gt;
                   &lt;persName&gt;Franz Huth&lt;/persName&gt;
                   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/118708414&lt;/idno&gt;
@@ -894,45 +914,38 @@
                      Beispiel für eine einfache Angabe des Entstehungszeitpunkts eines Werkes:
                   </p>
                   
-                     <div class="egxml" data-example-id="creation_note"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="creation_note"><pre class="language-xml"><code>
                &lt;date ana="hc:DateOfCreation" when="1911"&gt;
                   &lt;note&gt;um 1911&lt;/note&gt;
                &lt;/date&gt;
             </code></pre></div>
                   
                </div>
-               
                <div id="INDEXES-LISTS-SUBJECTS">
-                  
                   <h3>Informationen zu Einträgen in Sachregistern</h3>
-                  
                   <p>
                      Einträge in einem Sachregister haben die folgende Struktur in festgelegter Reihenfolge:
                   </p>
                   <ul>
-                     <li><span class="gi">&lt;label&gt;</span> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
-                     <li><span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
-                     <li><span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
-                     <li><span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
-                     <li><span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;label&gt;</span> (obligatorisch, ggf. mehrfach nach den unter <a class="inlink" href="#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a> dargelegten Regeln)</li>
+                     <li>
+                        <span class="gi">&lt;idno&gt;</span> (optional, nur einmal pro Typ)</li>
+                     <li>
+                        <span class="gi">&lt;note&gt;</span> (optional, nur einmal pro Sprache)</li>
+                     <li>
+                        <span class="gi">&lt;listBibl&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;listRef&gt;</span> (optional, nur einmal)</li>
+                     <li>
+                        <span class="gi">&lt;figure&gt;</span> (optional, ggf. mehrfach)</li>
                   </ul>
-                  
                </div>
                
                
-               
-               
-               
-               
-               
-               
             </div>
-            
             <div id="INDEXES-MOCKUPS">
-               
                <h2>Beispieldateien</h2>
-               
                <ul>
                   <li>
                      <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditions-idmms/-/blob/master/mockups/IndexOfPersonsMockup.xml" target="_blank">Personenregister</a>
@@ -954,10 +967,6 @@
                   </li>
                </ul>
             </div>
-            
-            
-            
-
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                      In besonderen Fällen kann <span class="gi">&lt;rs&gt;</span> auch mit mehr als einer Typangabe in <span class="att">@ana</span> versehen werden,
@@ -992,10 +1001,10 @@
                         Person erforderlich werden, wäre dies u. a. durch Markup innerhalb der verbalen Angabe innerhalb von <span class="gi">&lt;note&gt;</span>
                         vorstellbar.
                      </div><div class="endnote" id="note_8"><a class="endnote_number" href="#note_reference_8">8</a>
-                        <span class="gi">&lt;label&gt;</span> ist zu verwenden, wenn die Benennung des Ereignisses nicht den Charakter eines Eigennamens hat; andernfalls 
+                           <span class="gi">&lt;label&gt;</span> ist zu verwenden, wenn die Benennung des Ereignisses nicht den Charakter eines Eigennamens hat; andernfalls 
                         sollte <span class="gi">&lt;name&gt;</span> genutzt werden. Die Verwendung von <span class="gi">&lt;label&gt;</span> und <span class="gi">&lt;name&gt;</span> gleichzeitig ist nicht erlaubt.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 24.10.2025
+                        Letzte Aktualisierung: 27.10.2025
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·

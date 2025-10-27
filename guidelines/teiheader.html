@@ -4,11 +4,11 @@
                     ☞ 
                     Metadaten</nav><main>
          <div id="TEIHEADER">
-            
             <h1>Metadaten</h1>
-            
             <p>
-               <span class="aside"><span class="gi">&lt;teiHeader&gt;</span></span>
+               <span class="aside">
+                  <span class="gi">&lt;teiHeader&gt;</span>
+               </span>
                Das Element <span class="gi">&lt;teiHeader&gt;</span> ist der obligatorische Metadatenbereich eines jeden TEI-Dokuments 
                und steht als erstes Kindelement innerhalb des Wurzelelements <span class="gi">&lt;TEI&gt;</span>. Es enthält im Wesentlichen drei Kategorien von Daten:
             </p>
@@ -29,7 +29,7 @@
             </ul>
             <p>
                Der <span class="gi">&lt;teiHeader&gt;</span> besteht in ›heiEDITIONS‹ standardmäßig aus vier Kindelementen in dieser Reihenfolge:
-            </p>   
+            </p>
             <ul>
                <li>
                   <span class="gi">&lt;fileDesc&gt;</span> mit der bibliographischen Beschreibung des TEI-Dokuments selbst und des darin enthaltenen Textes
@@ -47,12 +47,12 @@
                   <span class="gi">&lt;revisionDesc&gt;</span> mit Informationen zur Revisionsgeschichte der Datei
                </li>
             </ul>
-            
             <div id="TEIHEADER-LANG">
-
                <h2>Mehrsprachigkeit</h2>
                <p>
-                  <span class="aside"><span class="att">@xml:lang</span></span>
+                  <span class="aside">
+                     <span class="att">@xml:lang</span>
+                  </span>
                   Viele der im folgenden Beschriebenen Metadaten-Tags erlauben eine Wiederholung in verschiedenen Sprachvarianten mit
                   einer expliziten Zuordnung über das Attribut <span class="att">@xml:lang</span>. Diese Auszeichnung wird in den verschiedenen
                   Visualisierungen dazu verwendet, nur die der aktuell gewählten Frontendsprache entsprechenden Sprachvariante
@@ -70,13 +70,12 @@
                   </ul>
                </p>
             </div>
-
             <div id="TEIHEADER-FILEDESC">
-               
                <h2>Bibliographische Metadaten</h2>
-               
                <p>
-                  <span class="aside"><span class="gi">&lt;fileDesc&gt;</span></span>
+                  <span class="aside">
+                     <span class="gi">&lt;fileDesc&gt;</span>
+                  </span>
                   Bei den im Element <span class="gi">&lt;fileDesc&gt;</span> zu erfassenden Informationen handelt es sich um bibliographische Metadaten
                   im breiten Sinne, d. h. um Angaben, die für die bibliothekarische Katalogisierung, korrekte Zitierung
                   und basale Nutzung relevant sind. Editionsdokumente
@@ -89,34 +88,48 @@
                   Für diese Angaben sind in <span class="gi">&lt;fileDesc&gt;</span> die folgenden Kindelemente in der angegebenen Reihenfolge vorgesehen:
                </p>
                <ul>
-                  <li><span class="gi">&lt;titleStmt&gt;</span>: Titel und Verantwortlichkeitsangaben (obligatorisch)</li>
-                  <li><span class="gi">&lt;editionStmt&gt;</span>: Angaben zur Auflage (optional, aber bei vorläufigen Veröffentlichungen, wesentlichen Veränderungen bzw. Neuauflagen dringend empfohlen)</li>
-                  <li><span class="gi">&lt;publicationStmt&gt;</span>: Angaben zur Veröffentlichung (obligatorisch)</li> 
-                  <li><span class="gi">&lt;seriesStmt&gt;</span>: Angaben zur Publikationsreihe (optional)</li>
-                  <li><span class="gi">&lt;notesStmt&gt;</span>: Weitere Vermerke, z. B. mit Inhaltsangabe, Nennung weiterer Beteiligter oder Danksagung (optional)</li>
-                  <li><span class="gi">&lt;sourceDesc&gt;</span>: Angaben zur Quelle (obligatorisch)</li>
+                  <li>
+                     <span class="gi">&lt;titleStmt&gt;</span>: Titel und Verantwortlichkeitsangaben (obligatorisch)</li>
+                  <li>
+                     <span class="gi">&lt;editionStmt&gt;</span>: Angaben zur Auflage (optional, aber bei vorläufigen Veröffentlichungen, wesentlichen Veränderungen bzw. Neuauflagen dringend empfohlen)</li>
+                  <li>
+                     <span class="gi">&lt;publicationStmt&gt;</span>: Angaben zur Veröffentlichung (obligatorisch)</li>
+                  <li>
+                     <span class="gi">&lt;seriesStmt&gt;</span>: Angaben zur Publikationsreihe (optional)</li>
+                  <li>
+                     <span class="gi">&lt;notesStmt&gt;</span>: Weitere Vermerke, z. B. mit Inhaltsangabe, Nennung weiterer Beteiligter oder Danksagung (optional)</li>
+                  <li>
+                     <span class="gi">&lt;sourceDesc&gt;</span>: Angaben zur Quelle (obligatorisch)</li>
                </ul>
-               
                <div id="TEIHEADER-FILEDESC-TITLESTMT">
-                  
                   <h3>Titel und Verantwortlichkeitsangaben</h3>
-                  
                   <p>
-                     <span class="aside"><span class="gi">&lt;titleStmt&gt;</span></span>
+                     <span class="aside">
+                        <span class="gi">&lt;titleStmt&gt;</span>
+                     </span>
                      Das Element <span class="gi">&lt;titleStmt&gt;</span> gibt den Titel des TEI-Dokuments und die Namen der daran Beteiligten an.
                      Dazu dienen die folgenden Kindelemente in dieser Reihenfolge:
-                  </p>   
+                  </p>
                   <ul>
-                     <li><span class="gi">&lt;title&gt;</span>: obligatorisch, ggf. mehrfach (für die Unterscheidung von Haupttitel und Untertitel oder für mehrsprachige Versionen)</li>
-                     <li><span class="gi">&lt;author&gt;</span>: optional, ggf. mehrfach (ein Element pro Autor)</li>
-                     <li><span class="gi">&lt;editor&gt;</span>: optional, ggf. mehrfach (ein Element pro Herausgeber)</li>
-                     <li><span class="gi">&lt;respStmt&gt;</span>: optional, ggf. mehrfach (ein Element pro Beteiligtem)</li>
-                     <li><span class="gi">&lt;principal&gt;</span>: optional, ggf. mehrfach (ein Element pro Projektleiter)</li>
-                     <li><span class="gi">&lt;funder&gt;</span>: optional, ggf. mehrfach (ein Element pro Geldgeber)</li>
-                     <li><span class="gi">&lt;sponsor&gt;</span>: optional, ggf. mehrfach (ein Element pro Schirmherrn)</li>
+                     <li>
+                        <span class="gi">&lt;title&gt;</span>: obligatorisch, ggf. mehrfach (für die Unterscheidung von Haupttitel und Untertitel oder für mehrsprachige Versionen)</li>
+                     <li>
+                        <span class="gi">&lt;author&gt;</span>: optional, ggf. mehrfach (ein Element pro Autor)</li>
+                     <li>
+                        <span class="gi">&lt;editor&gt;</span>: optional, ggf. mehrfach (ein Element pro Herausgeber)</li>
+                     <li>
+                        <span class="gi">&lt;respStmt&gt;</span>: optional, ggf. mehrfach (ein Element pro Beteiligtem)</li>
+                     <li>
+                        <span class="gi">&lt;principal&gt;</span>: optional, ggf. mehrfach (ein Element pro Projektleiter)</li>
+                     <li>
+                        <span class="gi">&lt;funder&gt;</span>: optional, ggf. mehrfach (ein Element pro Geldgeber)</li>
+                     <li>
+                        <span class="gi">&lt;sponsor&gt;</span>: optional, ggf. mehrfach (ein Element pro Schirmherrn)</li>
                   </ul>
                   <p>
-                     <span class="aside"><span class="gi">&lt;title&gt;</span></span>
+                     <span class="aside">
+                        <span class="gi">&lt;title&gt;</span>
+                     </span>
                      Der Titel steht (als Titel des TEI-Dokuments) sowohl für das TEI-Dokument als auch (bei Editionen) für dessen edierten Inhalt. 
                      Die Formulierung des Titels sollte diesem Sachverhalt Rechnung tragen und nicht etwa nur einen Werktitel
                      des Edierten wiedergeben. Freilich sollte ein ediertes Werk im Titel des TEI-Dokuments wiedererkennbar sein.
@@ -138,7 +151,7 @@
                      Code-Beispiele:
                   </p>
                   
-                     <div class="egxml" data-example-id="titlestatement_simple"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="titlestatement_simple"><pre class="language-xml"><code>
                &lt;titleStmt&gt;
                   &lt;title&gt;Wolframs von Eschenbach Parzival nach der Handschrift G – digitale Edition&lt;/title&gt;
                   […]
@@ -146,7 +159,7 @@
             </code></pre></div>
                   
                   
-                     <div class="egxml" data-example-id="titlestatement_multiplelanguages"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="titlestatement_multiplelanguages"><pre class="language-xml"><code>
                &lt;titleStmt&gt;
                   &lt;title xml:lang="de"&gt;Brief von Theodor Mommsen an Marie Reimer, Zürich, 30.05.1854 – digitale Edition nach dem Autograf&lt;/title&gt;
                   &lt;title xml:lang="en"&gt;Letter from Theodor Mommsen to Marie Reimer, Zurich, 30.05.1854 – a digital edition from the autograph&lt;/title&gt;
@@ -155,7 +168,7 @@
             </code></pre></div>
                   
                   
-                     <div class="egxml" data-example-id="titlestatement_subtitle"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="titlestatement_subtitle"><pre class="language-xml"><code>
                &lt;titleStmt&gt;
                   &lt;title ana="hc:MainTitle"&gt;Altjavanische Sprachdenkmäler – rezente Funde&lt;/title&gt;
                   &lt;title ana="hc:Subtitle"&gt;Kommentierte digitale Edition&lt;/title&gt;
@@ -164,7 +177,7 @@
             </code></pre></div>
                   
                   
-                     <div class="egxml" data-example-id="titlestatement_subtitle_multiplelanguages"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="titlestatement_subtitle_multiplelanguages"><pre class="language-xml"><code>
                &lt;titleStmt&gt;
                   &lt;title ana="hc:MainTitle" xml:lang="de"&gt;Das Passauer Osterspiel&lt;/title&gt;
                   &lt;title ana="hc:Subtitle" xml:lang="de"&gt;Digitale Edition nach allen erhaltenen Handschriften&lt;/title&gt;
@@ -189,13 +202,18 @@
                      vorzugsweise zu verwenden sind:
                   </p>
                   <ul>
-                     <li><span class="gi">&lt;author&gt;</span>: Autor, Verfasser (vgl. <em>author</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/aut" target="_blank">http://id.loc.gov/vocabulary/relators/aut</a>) – 
+                     <li>
+                        <span class="gi">&lt;author&gt;</span>: Autor, Verfasser (vgl. <em>author</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/aut" target="_blank">http://id.loc.gov/vocabulary/relators/aut</a>) – 
                         gibt bei Editionen den Urheber des edierten historischen Textes an, bei genuin digital entstandenen
                         Texten den modernen Verfasser</li>
-                     <li><span class="gi">&lt;editor&gt;</span>: Editor, Herausgeber (vgl. <em>editor</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/edt" target="_blank">http://id.loc.gov/vocabulary/relators/edt</a>)</li>
-                     <li><span class="gi">&lt;principal&gt;</span>: <em>principal researcher</em>, <em>principal investigator</em>, Projektleiter (vgl. <em>research team head</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/rth" target="_blank">http://id.loc.gov/vocabulary/relators/rth</a>)</li>
-                     <li><span class="gi">&lt;funder&gt;</span>: Geldgeber (vgl. <em>funder</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/fnd" target="_blank">http://id.loc.gov/vocabulary/relators/fnd</a>)</li>
-                     <li><span class="gi">&lt;sponsor&gt;</span>: Förderer, Schirmherr (vgl. <em>sponsor</em>, 
+                     <li>
+                        <span class="gi">&lt;editor&gt;</span>: Editor, Herausgeber (vgl. <em>editor</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/edt" target="_blank">http://id.loc.gov/vocabulary/relators/edt</a>)</li>
+                     <li>
+                        <span class="gi">&lt;principal&gt;</span>: <em>principal researcher</em>, <em>principal investigator</em>, Projektleiter (vgl. <em>research team head</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/rth" target="_blank">http://id.loc.gov/vocabulary/relators/rth</a>)</li>
+                     <li>
+                        <span class="gi">&lt;funder&gt;</span>: Geldgeber (vgl. <em>funder</em>, <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/fnd" target="_blank">http://id.loc.gov/vocabulary/relators/fnd</a>)</li>
+                     <li>
+                        <span class="gi">&lt;sponsor&gt;</span>: Förderer, Schirmherr (vgl. <em>sponsor</em>, 
                         <span class="outlinkprefix">↪ </span><a class="outlink" href="http://id.loc.gov/vocabulary/relators/spn" target="_blank">http://id.loc.gov/vocabulary/relators/spn</a>) – 
                         die Förderung kann in finanzieller, gesellschaftlicher oder ideeller Unterstützung bestehen; die wesentliche Kernfinanzierung 
                         ist aber der Rolle des <span class="gi">&lt;funder&gt;</span> vorbehalten
@@ -225,7 +243,7 @@
                      werden, z. B.:
                   </p>
                   
-                     <div class="egxml" data-example-id="titlestatement_author_idno"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="titlestatement_author_idno"><pre class="language-xml"><code>
                &lt;titleStmt&gt;
                   […]
                   &lt;author&gt;
@@ -238,7 +256,7 @@
                   
                   <p>oder:</p>
                   
-                     <div class="egxml" data-example-id="titlestatement_editor_multipleidnos"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="titlestatement_editor_multipleidnos"><pre class="language-xml"><code>
                &lt;titleStmt&gt;
                   […]
                   &lt;editor&gt;
@@ -252,7 +270,7 @@
                   
                   <p>oder:</p>
                   
-                     <div class="egxml" data-example-id="titlestatement_funder_idno"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="titlestatement_funder_idno"><pre class="language-xml"><code>
                &lt;funder&gt;
                   &lt;orgName&gt;Deutsche Forschungsgemeinschaft&lt;/orgName&gt;
                   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/2007744-0&lt;/idno&gt;
@@ -285,7 +303,7 @@
                      Beispiel:
                   </p>
                   
-                     <div class="egxml" data-example-id="titlestatement_editor_affiliation"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="titlestatement_editor_affiliation"><pre class="language-xml"><code>
                &lt;editor&gt;
                   &lt;persName&gt;Jakub Šimek&lt;/persName&gt;
                   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/1037976495&lt;/idno&gt;
@@ -309,12 +327,22 @@
                      eine Untergliederung von Personennamen sinnvoll ist, kann sie mit diesen Elementen vorgenommen werden:
                   </p>
                   <ul>
-                     <li><span class="gi">&lt;forname&gt;</span>: Vorname</li>
-                     <li><span class="gi">&lt;surname&gt;</span>: Nachname bzw. Familienname</li>
-                     <li><span class="gi">&lt;nameLink&gt;</span>: Namensverknüpfung bzw. Verbindungswort (Präposition; Artikel; Verschmelzung von Präposition und Artikel u. Ä.), z. B. ›von‹, ›van‹, ›zu‹, ›le‹, ›vom‹</li>
-                     <li><span class="gi">&lt;roleName&gt;</span>: Titel, Rangbezeichnung u. Ä., z. B. ›Dr.‹, ›Graf‹</li>
-                     <li><span class="gi">&lt;addName&gt;</span>: Namenszusatz (Nickname, Beiname u. Ä.), z. B. ›der Große‹, ›Barbarossa‹, ›der Stammler‹</li>
-                     <li><span class="gi">&lt;genName&gt;</span>: Zählung oder Generationsangabe, z. B. ›III.‹, ›jun.‹</li>
+                     <li>
+                        <span class="gi">&lt;forname&gt;</span>: Vorname</li>
+                     <li>
+                        <span class="gi">&lt;surname&gt;</span>: Nachname bzw. Familienname</li>
+                     <li>
+                        <span class="gi">&lt;nameLink&gt;</span>: Namensverknüpfung bzw. Verbindungswort (Präposition; Artikel; Verschmelzung von Präposition und Artikel u. Ä.), z. B. ›von‹, ›van‹, ›zu‹, ›le‹, ›vom‹
+                     </li>
+                     <li>
+                        <span class="gi">&lt;roleName&gt;</span>: Titel, Rangbezeichnung u. Ä., z. B. ›Dr.‹, ›Graf‹
+                     </li>
+                     <li>
+                        <span class="gi">&lt;addName&gt;</span>: Namenszusatz (Nickname, Beiname u. Ä.), z. B. ›der Große‹, ›Barbarossa‹, ›der Stammler‹
+                     </li>
+                     <li>
+                        <span class="gi">&lt;genName&gt;</span>: Zählung oder Generationsangabe, z. B. ›III.‹, ›jun.‹
+                     </li>
                   </ul>
                   <p>
                      Bei historischen Namen kann die genaue Auszeichnung bzw. Klassifizierung der Namensbestandteile problematisch sein;
@@ -335,7 +363,7 @@
                      Beispiele für <span class="gi">&lt;persName&gt;</span> mit Auszeichnungen der Namensbestandteile:
                   </p>
                   
-                     <div class="egxml" data-example-id="persName_nameparts"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="persName_nameparts"><pre class="language-xml"><code>
                &lt;persName&gt;
                   &lt;forename&gt;Karl-Theodor&lt;/forename&gt;
                   &lt;nameLink&gt;zu&lt;/nameLink&gt;
@@ -344,7 +372,7 @@
             </code></pre></div>
                   
                   
-                     <div class="egxml" data-example-id="persName_genName"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="persName_genName"><pre class="language-xml"><code>
                &lt;persName&gt;
                   &lt;forename&gt;Ekkehard&lt;/forename&gt;
                   &lt;genName&gt;IV.&lt;/genName&gt;
@@ -359,7 +387,7 @@
                      gekennzeichnet werden. Beispiele:
                   </p>
                   
-                     <div class="egxml" data-example-id="persName_multiple"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="persName_multiple"><pre class="language-xml"><code>
                &lt;author&gt;
                   &lt;persName&gt;Kate Middleton&lt;/persName&gt;
                   &lt;persName&gt;Catherine, Princess of Wales&lt;/persName&gt;
@@ -368,7 +396,7 @@
             </code></pre></div>
                   
                   
-                     <div class="egxml" data-example-id="orgName_multiplelanguages"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="orgName_multiplelanguages"><pre class="language-xml"><code>
                &lt;funder&gt;
                   &lt;orgName xml:lang="de"&gt;Fritz-Thyssen-Stiftung&lt;/orgName&gt;
                   &lt;orgName xml:lang="en"&gt;Fritz Thyssen Foundation&lt;/orgName&gt;
@@ -376,9 +404,10 @@
                &lt;/funder&gt;
             </code></pre></div>
                   
-                     
                   <p>
-                     <span class="aside"><span class="gi">&lt;respStmt&gt;</span></span>
+                     <span class="aside">
+                        <span class="gi">&lt;respStmt&gt;</span>
+                     </span>
                      Bei der Verwendung des generischen Elements <span class="gi">&lt;respStmt&gt;</span> für die Angabe der Beteiligung
                      einer Person oder Körperschaft am TEI-Dokument gilt bezüglich <span class="gi">&lt;persName&gt;</span> bzw.
                      <span class="gi">&lt;orgName&gt;</span> sowie <span class="gi">&lt;idno&gt;</span> das bereits Gesagte. Zusätzlich muss jedoch die Art der
@@ -397,7 +426,7 @@
                      anzugeben. Beispiele:
                   </p>
                   
-                     <div class="egxml" data-example-id="responsibility_transcription"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="responsibility_transcription"><pre class="language-xml"><code>
                &lt;respStmt ref="http://id.loc.gov/vocabulary/relators/trc"&gt;
                   &lt;resp xml:lang="de"&gt;Transkription&lt;/resp&gt;
                   &lt;resp xml:lang="en"&gt;transcription&lt;/resp&gt;
@@ -407,7 +436,7 @@
             </code></pre></div>
                   
                   
-                     <div class="egxml" data-example-id="responsibility_multiplelanguages"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="responsibility_multiplelanguages"><pre class="language-xml"><code>
                &lt;respStmt ref="http://id.loc.gov/vocabulary/relators/red"&gt;
                   &lt;resp xml:lang="de"&gt;TEI-Kodierung&lt;/resp&gt;
                   &lt;resp xml:lang="en"&gt;TEI encoding&lt;/resp&gt;
@@ -418,7 +447,7 @@
             </code></pre></div>
                   
                   
-                     <div class="egxml" data-example-id="responsibility_multipleresp"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="responsibility_multipleresp"><pre class="language-xml"><code>
                &lt;respStmt ref="http://id.loc.gov/vocabulary/relators/csl http://id.loc.gov/vocabulary/relators/pfr"&gt;
                   &lt;resp xml:lang="de"&gt;Beratung und Korrekturlesen&lt;/resp&gt;
                   &lt;resp xml:lang="en"&gt;consulting and proofreading&lt;/resp&gt;
@@ -430,16 +459,15 @@
                   <p>
                      Die Elemente <span class="gi">&lt;author&gt;</span>, <span class="gi">&lt;editor&gt;</span>, <span class="gi">&lt;principal&gt;</span>, <span class="gi">&lt;funder&gt;</span> und <span class="gi">&lt;sponsor&gt;</span>
                      sowie <span class="gi">&lt;respStmt&gt;</span> können mit einer <span class="att">@xml:id</span> versehen werden. Dadurch sind sie
-                     bei Bedarf von anderen Stellen des TEI-Dokuments referenzierbar.<sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup> 
-                  </p>                                  
+                     bei Bedarf von anderen Stellen des TEI-Dokuments referenzierbar.<sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup>
+                  </p>
                </div>
-               
                <div id="TEIHEADER-FILEDESC-EDITIONSTMT">
-                  
                   <h3>Angaben zur Auflage</h3>
-                  
                   <p>
-                     <span class="aside"><span class="gi">&lt;editionStmt&gt;</span></span>
+                     <span class="aside">
+                        <span class="gi">&lt;editionStmt&gt;</span>
+                     </span>
                      Das Wort <em>edition</em> und das gleichnamige Element <span class="gi">&lt;edition&gt;</span> 
                      beziehen sich in <span class="gi">&lt;editionStmt&gt;</span> nicht auf editionswissenschaftliche (philologisch-editorische)
                      Aspekte der Edition einer historischen Quelle, sondern auf die ›Version‹
@@ -482,14 +510,14 @@
                   </p>
                   <p>Beispiele:</p>
                   
-                     <div class="egxml" data-example-id="editionstatement_simple_working"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="editionstatement_simple_working"><pre class="language-xml"><code>
                &lt;editionStmt&gt;
                   &lt;edition&gt;Vorläufige Arbeitsversion&lt;/edition&gt;
                &lt;/editionStmt&gt;
             </code></pre></div>
                   
                   
-                     <div class="egxml" data-example-id="editionstatement_multiplelanguages"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="editionstatement_multiplelanguages"><pre class="language-xml"><code>
                &lt;editionStmt&gt;
                   &lt;edition xml:lang="de"&gt;Grobe Transkription ohne weitergehende Qualitätssicherung und editorische Aufbereitung&lt;/edition&gt;
                   &lt;edition xml:lang="en"&gt;Raw transcription without further quality control and editorial processing&lt;/edition&gt;
@@ -497,7 +525,7 @@
             </code></pre></div>
                   
                   
-                     <div class="egxml" data-example-id="editionstatement_responsibility"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="editionstatement_responsibility"><pre class="language-xml"><code>
                &lt;editionStmt&gt;
                   &lt;edition xml:lang="de"&gt;3., um Literaturhinweise ergänzte Ausgabe&lt;/edition&gt;
                   &lt;edition xml:lang="en"&gt;3rd edition with additional bibliographic references&lt;/edition&gt;
@@ -511,7 +539,7 @@
             </code></pre></div>
                   
                   
-                     <div class="egxml" data-example-id="editionstatement_multiplelanguages_edition"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="editionstatement_multiplelanguages_edition"><pre class="language-xml"><code>
                &lt;editionStmt&gt;
                   &lt;edition xml:lang="de"&gt;2., wesentlich verbesserte Ausgabe&lt;/edition&gt;
                   &lt;edition xml:lang="en"&gt;2nd edition, substantially revised&lt;/edition&gt;
@@ -519,20 +547,19 @@
             </code></pre></div>
                   
                   
-                     <div class="egxml" data-example-id="editionstatement_simple"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="editionstatement_simple"><pre class="language-xml"><code>
                &lt;editionStmt&gt;
                   &lt;edition&gt;Revidierte Fassung der Ausgabe von 2018&lt;/edition&gt;
                &lt;/editionStmt&gt;
             </code></pre></div>
                   
                </div>
-               
                <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT">
-                  
                   <h3>Angaben zur Veröffentlichung</h3>
-                  
                   <p>
-                     <span class="aside"><span class="gi">&lt;publicationStmt&gt;</span></span>
+                     <span class="aside">
+                        <span class="gi">&lt;publicationStmt&gt;</span>
+                     </span>
                      Das Element <span class="gi">&lt;publicationStmt&gt;</span> enthält Angaben zur Veröffentlichung der Ressource (des Gehalts des TEI-Dokuments),
                      vergleichbar mit Impressumsangaben in Druckpublikationen. Hier handelt es sich im Normalfall
                      um die digitale Veröffentlichung der Ressource im Internet (in der Regel als HTML oder PDF),
@@ -549,7 +576,7 @@
                      mit <span class="att">@xml:lang</span> gekennzeichneten <span class="gi">&lt;p&gt;</span>-Elementen). Beispiel:
                   </p>
                   
-                     <div class="egxml" data-example-id="publicationstatement_simple"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="publicationstatement_simple"><pre class="language-xml"><code>
                &lt;publicationStmt&gt;
                   &lt;p&gt;This document is not yet released for publication.&lt;/p&gt;
                &lt;/publicationStmt&gt;
@@ -560,21 +587,27 @@
                      enthält <span class="gi">&lt;publicationStmt&gt;</span> hingegen die folgenden Elemente in dieser Reihenfolge:
                   </p>
                   <ul>
-                     <li><span class="gi">&lt;publisher&gt;</span>: Verlag oder Verleger (obligatorisch)</li>
-                     <li><span class="gi">&lt;pubPlace&gt;</span>: Veröffentlichungsort (obligatorisch, ggf. mehrfach, wenn der betreffende Verleger von mehreren Orten aus agiert)</li>
-                     <li><span class="gi">&lt;date&gt;</span>: Veröffentlichungsdatum (obligatorisch)</li>
-                     <li><span class="gi">&lt;availability&gt;</span>: Informationen zu Nutzungsmöglichkeiten (obligatorisch)</li>
-                     <li><span class="gi">&lt;idno&gt;</span>: Identifikator der Veröffentlichung (optional, ggf. mehrfach)</li>
-                     <li><span class="gi">&lt;listRef&gt;</span>: Internetlinks (optional)</li>
-                     <li><span class="gi">&lt;listBibl&gt;</span>: Vorgefertigte Zitierempfehlungen und bibliographischer Kontext (optional)</li>
+                     <li>
+                        <span class="gi">&lt;publisher&gt;</span>: Verlag oder Verleger (obligatorisch)</li>
+                     <li>
+                        <span class="gi">&lt;pubPlace&gt;</span>: Veröffentlichungsort (obligatorisch, ggf. mehrfach, wenn der betreffende Verleger von mehreren Orten aus agiert)</li>
+                     <li>
+                        <span class="gi">&lt;date&gt;</span>: Veröffentlichungsdatum (obligatorisch)</li>
+                     <li>
+                        <span class="gi">&lt;availability&gt;</span>: Informationen zu Nutzungsmöglichkeiten (obligatorisch)</li>
+                     <li>
+                        <span class="gi">&lt;idno&gt;</span>: Identifikator der Veröffentlichung (optional, ggf. mehrfach)</li>
+                     <li>
+                        <span class="gi">&lt;listRef&gt;</span>: Internetlinks (optional)</li>
+                     <li>
+                        <span class="gi">&lt;listBibl&gt;</span>: Vorgefertigte Zitierempfehlungen und bibliographischer Kontext (optional)</li>
                   </ul>
-                  
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBLISHER">
-                     
                      <h4>Verlag oder Verleger</h4>
-                     
                      <p>
-                        <span class="aside"><span class="gi">&lt;publisher&gt;</span></span>
+                        <span class="aside">
+                           <span class="gi">&lt;publisher&gt;</span>
+                        </span>
                         Der Verlag oder Verleger ist ein Akteur, der die Veröffentlichung als solche tätigt, der also
                         nicht primär den Inhalt der veröffentlichten Ressource verantwortet, sondern den Akt der
                         Veröffentlichung. Bei digitalen Publikationen bezieht sich diese Verantwortung auf die 
@@ -597,16 +630,19 @@
                         Somit ergeben sich für <span class="gi">&lt;publisher&gt;</span> die folgenden Kindelemente:
                      </p>
                      <ul>
-                        <li><span class="gi">&lt;orgName&gt;</span> oder <span class="gi">&lt;persName&gt;</span> (ggf. mehrfach, aber nicht <span class="gi">&lt;orgName&gt;</span> und <span class="gi">&lt;persName&gt;</span> gleichzeitig)</li>
-                        <li><span class="gi">&lt;idno&gt;</span> (optional, aber nur einmal pro Typ)</li>
-                        <li><span class="gi">&lt;listRef&gt;</span> mit beliebig vielen Elementen <span class="gi">&lt;ptr&gt;</span> oder <span class="gi">&lt;ref&gt;</span> für Internetlinks</li>
+                        <li>
+                           <span class="gi">&lt;orgName&gt;</span> oder <span class="gi">&lt;persName&gt;</span> (ggf. mehrfach, aber nicht <span class="gi">&lt;orgName&gt;</span> und <span class="gi">&lt;persName&gt;</span> gleichzeitig)</li>
+                        <li>
+                           <span class="gi">&lt;idno&gt;</span> (optional, aber nur einmal pro Typ)</li>
+                        <li>
+                           <span class="gi">&lt;listRef&gt;</span> mit beliebig vielen Elementen <span class="gi">&lt;ptr&gt;</span> oder <span class="gi">&lt;ref&gt;</span> für Internetlinks</li>
                      </ul>
                      <p>
                         Die entsprechende Standardangabe für Publikationen, die durch die Universitätsbibliothek Heidelberg 
                         veröffentlicht werden, ist wie folgt:
                      </p>
                      
-                        <div class="egxml" data-example-id="publisher_UB"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="publisher_UB"><pre class="language-xml"><code>
                &lt;publisher&gt;
                   &lt;orgName&gt;Universitätsbibliothek Heidelberg&lt;/orgName&gt;
                   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/2002498-8&lt;/idno&gt;
@@ -620,7 +656,7 @@
                         Für eine beim FID Propylaeum erschienene Publikation kann die folgende Angabe verwendet werden:
                      </p>
                      
-                        <div class="egxml" data-example-id="publisher_propylaeum"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="publisher_propylaeum"><pre class="language-xml"><code>
                &lt;publisher&gt;
                   &lt;orgName&gt;Propylaeum&lt;/orgName&gt;
                   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/1257896830&lt;/idno&gt;
@@ -631,13 +667,12 @@
             </code></pre></div>
                      
                   </div>
-                  
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-PUBPLACE">
-                     
                      <h4>Veröffentlichungsort</h4>
-                     
                      <p>
-                        <span class="aside"><span class="gi">&lt;pubPlace&gt;</span></span>
+                        <span class="aside">
+                           <span class="gi">&lt;pubPlace&gt;</span>
+                        </span>
                         Der Veröffentlichungsort bezieht sich auf den Sitz des Verlags oder des Verlegers und
                         wird mit <span class="gi">&lt;pubPlace&gt;</span> angegeben. Der Ortsname selbst muss innerhalb von 
                         <span class="gi">&lt;placeName&gt;</span> stehen, optional können mit <span class="gi">&lt;idno&gt;</span> auch Normdaten 
@@ -650,7 +685,7 @@
                         sieht <span class="gi">&lt;pubPlace&gt;</span> wie folgt aus:
                      </p>
                      
-                        <div class="egxml" data-example-id="publicationplace"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="publicationplace"><pre class="language-xml"><code>
                &lt;pubPlace&gt;
                   &lt;placeName&gt;Heidelberg&lt;/placeName&gt;
                   &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/4023996-2&lt;/idno&gt;
@@ -658,13 +693,12 @@
             </code></pre></div>
                      
                   </div>
-                  
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-DATE">
-                     
                      <h4>Veröffentlichungsdatum</h4>
-                     
                      <p>
-                        <span class="aside"><span class="gi">&lt;date&gt;</span></span>
+                        <span class="aside">
+                           <span class="gi">&lt;date&gt;</span>
+                        </span>
                         Es handelt sich um das Datum der Veröffentlichung der durch das TEI-Dokument repräsentierten Ressource
                         in ihrer Eigenschaft als moderne Publikation (nicht etwa um das Enstehungs- oder Publikationsdatum 
                         eines darin edierten historischen Textes). Das Datum wird mit <span class="gi">&lt;date&gt;</span> angegeben, mit dem Attribut <span class="att">@when</span> soll
@@ -672,7 +706,7 @@
                         bereitgestellt werden, z. B.:
                      </p>
                      
-                        <div class="egxml" data-example-id="publicationdate"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="publicationdate"><pre class="language-xml"><code>
                &lt;date when="2022"&gt;2022&lt;/date&gt;
             </code></pre></div>
                      
@@ -680,15 +714,14 @@
                         Wenn es sich bei der veröffentlichten Ressource um eine spezifische Auflage, Ausgabe oder Version 
                         (von mehreren vorliegenden oder zu erwartenden) handelt (s. <a class="inlink" href="#TEIHEADER-FILEDESC-EDITIONSTMT">Angaben zur Auflage</a>), 
                         entspricht das hier angegebene Datum dem Veröffentlichungsdatum der spezifischen Version.
-                     </p>                    
+                     </p>
                   </div>
-                  
                   <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-AVAILABILITY">
-                     
                      <h4>Informationen zu Nutzungsmöglichkeiten</h4>
-                     
                      <p>
-                        <span class="aside"><span class="gi">&lt;availability&gt;</span></span>
+                        <span class="aside">
+                           <span class="gi">&lt;availability&gt;</span>
+                        </span>
                         Dass ein TEI-Dokument über das Internet einsehbar ist, bedeutet nicht, dass dessen Inhalte 
                         uneingeschränkt von anderen genutzt werden können, insbesondere was die weitere Verbreitung und
                         Nutzung in anderen Publikationen angeht. Angaben zu Nutzungsmöglichkeiten und zu den Verantwortlichen
@@ -706,7 +739,7 @@
                         Definition der gewählten Lizenz kann an <span class="gi">&lt;licence&gt;</span> mit <span class="att">@target</span> vorgenommen werden.<sup><a href="#note_3" id="note_reference_3" class="note_mark">3)</a></sup> Beispiel:
                      </p>
                      
-                        <div class="egxml" data-example-id="avaliabilityfull"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="avaliabilityfull"><pre class="language-xml"><code>
                &lt;availability&gt;
                   &lt;p xml:lang="de"&gt;
                      Die Herausgeber erlauben ausdrücklich die Verbreitung und Nutzung 
@@ -735,7 +768,7 @@
                         Oder deutlich kürzer, aber praktisch mit derselben Aussage:
                      </p>
                      
-                        <div class="egxml" data-example-id="availabilityshort"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="availabilityshort"><pre class="language-xml"><code>
                &lt;availability&gt;
                   &lt;licence target="https://creativecommons.org/licenses/by-sa/4.0"&gt;
                      &lt;p&gt;Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)&lt;/p&gt;
@@ -745,7 +778,7 @@
                      
                      <p>Ein Beispiel für eine restriktive Bestimmung:</p>
                      
-                        <div class="egxml" data-example-id="availabilityrestricted"><pre class="language-xml"><code>
+                     <div class="egxml" data-example-id="availabilityrestricted"><pre class="language-xml"><code>
                &lt;availability&gt;
                   &lt;p xml:lang="de"&gt;
                      Freier Zugang, alle Rechte vorbehalten. Die Herausgeber bitten bei Nutzungswünschen
@@ -757,35 +790,34 @@
                &lt;/availability&gt;
             </code></pre></div>
                      
-                  
-                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-IDNO">
-                     
-                     <h5>Identifikator der Veröffentlichung</h5>
-                     
-                     <p>
-                        <span class="aside"><span class="gi">&lt;idno&gt;</span></span>
+                     <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-IDNO">
+                        <h5>Identifikator der Veröffentlichung</h5>
+                        <p>
+                           <span class="aside">
+                              <span class="gi">&lt;idno&gt;</span>
+                           </span>
                         Mit dem Element <span class="gi">&lt;idno&gt;</span> können Identifikatoren des veröffentlichten TEI-Dokuments sowie der daraus erzeugten
                         Publikationsformen (typischerweise HTML-Seiten oder PDF-Dokumente) angegeben werden, in der Regel als DOI, URN oder ISBN. 
                         Die DOI-Angabe kann sich auf das in ›heiDATA‹ abgelegte Dataset beziehen, in dem das 
                         TEI-Dokument enthalten ist, ggf. auch auf das Webportal der digitalen Edition als Ganzes. 
                         An dieser Stelle sollen keine DOIs der digitalisierten Quelle(n) angegeben werden. 
                      </p>
-                     <p>
+                        <p>
                         Das Element <span class="gi">&lt;idno&gt;</span> kann hier an <span class="att">@ana</span> mit den folgenden Klassenangaben versehen werden: 
                      </p>
-                     <p class="resdef">
-                        <a class="refboxlink" href="../concepts/doi.html"><span class="val">hc:DOI</span></a> ( ›DOI‹ ): 
-                     </p>
-                     <p class="resdef">
-                        <a class="refboxlink" href="../concepts/editionwebsiteidentifier.html"><span class="val">hc:EditionWebsiteIdentifier</span></a> ( ›Identifikator eines Editionsportals‹ ): Identifikator des Webportals einer digitalen Edition, d. h. des Online-Angebots einer digitalen Edition als Ganzes, das in der Regel aus einem dedizierten Editionsprojekt hervorgegangen ist.
-                     </p>
-                     <p class="resdef">
-                        <a class="refboxlink" href="../concepts/readingviewidentifier.html"><span class="val">hc:ReadingViewIdentifier</span></a> ( ›Identifikator einer Leseansicht‹ ): Identifikator der ›Leseansicht‹ eines Textes (einer inhaltlich ausgerichteten digitalen Textansicht).
-                     </p>
-                     <p class="resdef">
-                        <a class="refboxlink" href="../concepts/synopticviewidentifier.html"><span class="val">hc:SynopticViewIdentifier</span></a> ( ›Identifikator einer synoptischen Ansicht‹ ): Identifikator einer ›synoptischen Ansicht‹, d. h. einer digitalen Ansicht, in der mehrere Texte nebeneinander angezeigt und mit ihren semantisch-logischen Einheiten (›synoptischen Einheiten‹) aneinander ausgerichtet werden.
-                     </p>
-                     <p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/doi.html"><span class="val">hc:DOI</span></a> ( ›DOI‹ ): 
+                        </p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/editionwebsiteidentifier.html"><span class="val">hc:EditionWebsiteIdentifier</span></a> ( ›Identifikator eines Editionsportals‹ ): Identifikator des Webportals einer digitalen Edition, d. h. des Online-Angebots einer digitalen Edition als Ganzes, das in der Regel aus einem dedizierten Editionsprojekt hervorgegangen ist.
+                        </p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/readingviewidentifier.html"><span class="val">hc:ReadingViewIdentifier</span></a> ( ›Identifikator einer Leseansicht‹ ): Identifikator der ›Leseansicht‹ eines Textes (einer inhaltlich ausgerichteten digitalen Textansicht).
+                        </p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/synopticviewidentifier.html"><span class="val">hc:SynopticViewIdentifier</span></a> ( ›Identifikator einer synoptischen Ansicht‹ ): Identifikator einer ›synoptischen Ansicht‹, d. h. einer digitalen Ansicht, in der mehrere Texte nebeneinander angezeigt und mit ihren semantisch-logischen Einheiten (›synoptischen Einheiten‹) aneinander ausgerichtet werden.
+                        </p>
+                        <p>
                         Das folgende Beispiel zeigt die Angabe von zwei DOI-Identifikatoren für zwei mit dem Dokument verbundene Publikationsformen: Das Editionsportal, innerhalb dessen die Edition des spezifischen Textes angesiedelt ist, sowie die sog. ›Leseansicht‹ des konkreten Textes:                      
                      </p>
                      
@@ -794,16 +826,14 @@
                &lt;idno ana="hc:DOI hc:ReadingViewIdentifier"&gt;https://doi.org/10.11588/edition.ahd.ba&lt;/idno&gt;
             </code></pre></div>
                      
-                     
-                     
-                  </div>
-                  
-                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-LISTREF">
-                     
-                     <h5>Internetlinks</h5>
-                     
-                     <p>
-                        <span class="aside"><span class="gi">&lt;listRef&gt;</span></span>
+                        
+                     </div>
+                     <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-LISTREF">
+                        <h5>Internetlinks</h5>
+                        <p>
+                           <span class="aside">
+                              <span class="gi">&lt;listRef&gt;</span>
+                           </span>
                         Persistente Internetadressen (URLs) von Webseiten, die aus dem TEI-Dokument erzeugt wurden
                         und zu dessen Veröffentlichung gehören, oder von Katalogseiten mit Metadaten, welche die Ressource 
                         oder eine entsprechende Ressourcen- oder Datensammlung oder eine Edition repräsentieren, können innerhalb von <span class="gi">&lt;listRef&gt;</span>
@@ -812,7 +842,7 @@
                         wird im Attribut <span class="att">@target</span> angegeben, und zwar vollständig einschließlich der
                         Protokollangabe <span class="code">http://</span> oder <span class="code">https://</span>.
                      </p>
-                     <p>
+                        <p>
                         Der Unterschied zwischen der Verwendung von <span class="gi">&lt;ptr&gt;</span> und <span class="gi">&lt;ref&gt;</span> besteht darin,
                         dass in <span class="gi">&lt;ref&gt;</span> zusätzlich zum URL auch noch ein beliebiger Text angegeben werden kann,
                         unter dem in einer Visualisierung der URL-Link angezeigt werden kann und der als 
@@ -821,12 +851,12 @@
                         möglich, aber unnötig – in derselben Funktion kann <span class="gi">&lt;ptr&gt;</span> verwendet werden, das keinen
                         Textinhalt hat.
                      </p>
-                     <p>
+                        <p>
                         DOI-URLs sollten hier nicht angegeben werden, weil sie besser als Identifikatoren in <span class="gi">&lt;idno&gt;</span> 
                         untergebracht werden können. Auch Webseiten von Digitalisaten historischer Quellen, die im TEI-Dokument
                         ediert sind, sollten hier nicht angegeben werden.
                      </p>
-                     <p>Beispiele:</p>
+                        <p>Beispiele:</p>
                      
                         <div class="egxml" data-example-id="linklist_ref"><pre class="language-xml"><code>
                &lt;listRef&gt;
@@ -842,23 +872,22 @@
                   &lt;ptr ana="hc:URLReference" target="http://www.ub.uni-heidelberg.de/archiv/20180"/&gt;
                &lt;/listRef&gt;
             </code></pre></div>
-                                         
-                  </div>    
-                  
-                  <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-LISTBIBL">
                      
-                     <h5>Zitierempfehlungen und bibliographischer Kontext</h5>
-                     
-                     <p>
-                        <span class="aside"><span class="gi">&lt;listBibl&gt;</span></span>
-                        ›heiEDITIONS‹ stellt mit <span class="gi">&lt;listBibl&gt;</span> innerhalb von <span class="gi">&lt;publicationStmt&gt;</span>
+                     </div>
+                     <div id="TEIHEADER-FILEDESC-PUBLICATIONSTMT-LISTBIBL">
+                        <h5>Zitierempfehlungen und bibliographischer Kontext</h5>
+                        <p>
+                           <span class="aside">
+                              <span class="gi">&lt;listBibl&gt;</span>
+                           </span>
+                           ›heiEDITIONS‹ stellt mit <span class="gi">&lt;listBibl&gt;</span> innerhalb von <span class="gi">&lt;publicationStmt&gt;</span>
                         eine Möglichkeit zur Verfügung, vorgefertigte bibliographische Angaben für die vorliegende Publikation
                         abzulegen, die etwa als empfohlene Zitatangabe genutzt werden können. Ebenfalls können hier 
                         für bestimmte Publikationstypen Informationen zum bibliographischen Kontext erfasst werden, die
                         sonst standardmäßig keinen Platz im <span class="gi">&lt;teiHeader&gt;</span> hätten, z. B. bei einem Zeitschriftenartikel 
                         die Angaben zum übergeordneten Zeitschriftenheft, dessen Teil der Artikel ist.
                      </p>
-                     <p>
+                        <p>
                         Vorgefertigte bibliographische Angaben, die etwa als Zitierempfehlung erfasst werden können,
                         sind jeweils mit einem <span class="gi">&lt;bibl&gt;</span> umzusetzen. Als Inhalt des <span class="gi">&lt;bibl&gt;</span> wird eine im Wesentlichen
                         für menschliche Leser fertig zusammengestellte bibliographische Angabe erwartet, die sich z. B.
@@ -866,7 +895,7 @@
                         in mehreren Sprachen bereitgestellt werden, jeweils mit einem eigenen <span class="gi">&lt;bibl&gt;</span>
                         und mit <span class="att">@xml:lang</span> versehen.
                      </p>
-                     <p>
+                        <p>
                         Im einfachsten Fall ist das <span class="gi">&lt;bibl&gt;</span>-Element einer solchen bibliographische Angabe an <span class="att">@ana</span> der Klasse
                         <span class="loddocborder">› </span><a class="loddoc" href="../concepts/recommendedbibliographicreference.html" target="_blank">hc:RecommendedBibliographicReference</a><span class="loddocborder"> ‹</span> zuzuweisen. Beispiel:
                      </p>
@@ -878,27 +907,27 @@
                &lt;/listBibl&gt;
             </code></pre></div>
                      
-                     <p>
+                        <p>
                         Abhängig von Anforderungen einer konkreten Edition ist jedoch auch die differenzierte Angabe
                         mehrerer Zitierempfehlungen je nach Bezugsebene möglich. Für diese Unterscheidung dienen an
                         <span class="att">@ana</span> die folgenden Klassen:
                      </p>
-                     <p class="resdef">
-                        <a class="refboxlink" href="../concepts/recommendedbibliographicreferenceforeditionwebsite.html"><span class="val">hc:RecommendedBibliographicReferenceForEditionWebsite</span></a> ( ›empfohlene bibliographische Angabe für Editionsportal‹ ): Vollständige bibliographische Angabe, die für Verweise auf das Webportal einer digitalen Edition empfohlen wird, d. h. das Online-Angebot einer digitalen Edition als Ganzes, in der Regel aus einem dedizierten Editionsprojekt hervorgegangen.
-                     </p>
-                     <p class="resdef">
-                        <a class="refboxlink" href="../concepts/recommendedbibliographicreferenceforexpression.html"><span class="val">hc:RecommendedBibliographicReferenceForExpression</span></a> ( ›empfohlene bibliographische Angabe für Expression‹ ): Vollständige bibliographische Angabe, die für Verweise auf eine bibliographische Ressource auf der Ebene der Expression im Sinne von FRBR (Functional Requirements for Bibliographic Records) empfohlen wird.
-                     </p>
-                     <p class="resdef">
-                        <a class="refboxlink" href="../concepts/recommendedbibliographicreferenceforsourceview.html"><span class="val">hc:RecommendedBibliographicReferenceForSourceView</span></a> ( ›empfohlene bibliographische Angabe für Quellenansicht‹ ): Vollständige bibliographische Angabe, die für Verweise auf die ›Quellenansicht‹ (eine neben dem Faksimile der historischen Quelle präsentierte und daran ausgerichtete digitale Textansicht) eines Textes empfohlen wird.
-                     </p>
-                     <p class="resdef">
-                        <a class="refboxlink" href="../concepts/recommendedbibliographicreferenceforreadingview.html"><span class="val">hc:RecommendedBibliographicReferenceForReadingView</span></a> ( ›empfohlene bibliographische Angabe für Leseansicht‹ ): Vollständige bibliographische Angabe, die für Verweise auf die ›Leseansicht‹ (eine inhaltlich ausgerichtete digitale Textansicht) eines Textes empfohlen wird.
-                     </p>
-                     <p class="resdef">
-                        <a class="refboxlink" href="../concepts/recommendedbibliographicreferenceforsynopticview.html"><span class="val">hc:RecommendedBibliographicReferenceForSynopticView</span></a> ( ›empfohlene bibliographische Angabe für synoptische‹ ): Vollständige bibliographische Angabe, die für Verweise auf eine ›synoptische Ansicht‹ (parallele digitale Ansicht mehrerer aneinander ausgerichteter Texte) empfohlen wird.
-                     </p>
-                     <p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/recommendedbibliographicreferenceforeditionwebsite.html"><span class="val">hc:RecommendedBibliographicReferenceForEditionWebsite</span></a> ( ›empfohlene bibliographische Angabe für Editionsportal‹ ): Vollständige bibliographische Angabe, die für Verweise auf das Webportal einer digitalen Edition empfohlen wird, d. h. das Online-Angebot einer digitalen Edition als Ganzes, in der Regel aus einem dedizierten Editionsprojekt hervorgegangen.
+                        </p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/recommendedbibliographicreferenceforexpression.html"><span class="val">hc:RecommendedBibliographicReferenceForExpression</span></a> ( ›empfohlene bibliographische Angabe für Expression‹ ): Vollständige bibliographische Angabe, die für Verweise auf eine bibliographische Ressource auf der Ebene der Expression im Sinne von FRBR (Functional Requirements for Bibliographic Records) empfohlen wird.
+                        </p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/recommendedbibliographicreferenceforsourceview.html"><span class="val">hc:RecommendedBibliographicReferenceForSourceView</span></a> ( ›empfohlene bibliographische Angabe für Quellenansicht‹ ): Vollständige bibliographische Angabe, die für Verweise auf die ›Quellenansicht‹ (eine neben dem Faksimile der historischen Quelle präsentierte und daran ausgerichtete digitale Textansicht) eines Textes empfohlen wird.
+                        </p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/recommendedbibliographicreferenceforreadingview.html"><span class="val">hc:RecommendedBibliographicReferenceForReadingView</span></a> ( ›empfohlene bibliographische Angabe für Leseansicht‹ ): Vollständige bibliographische Angabe, die für Verweise auf die ›Leseansicht‹ (eine inhaltlich ausgerichtete digitale Textansicht) eines Textes empfohlen wird.
+                        </p>
+                        <p class="resdef">
+                           <a class="refboxlink" href="../concepts/recommendedbibliographicreferenceforsynopticview.html"><span class="val">hc:RecommendedBibliographicReferenceForSynopticView</span></a> ( ›empfohlene bibliographische Angabe für synoptische‹ ): Vollständige bibliographische Angabe, die für Verweise auf eine ›synoptische Ansicht‹ (parallele digitale Ansicht mehrerer aneinander ausgerichteter Texte) empfohlen wird.
+                        </p>
+                        <p>
                         Das folgende Beispiel veranschaulicht die Angabe dreier Zitierempfehlungen,
                         die je nach dem zu unterscheiden sind, ob die gesamte Webseite einer digitalen Edition,
                          ein konkreter Text innerhalb der Edition oder eine spezifische Ansicht eines Textes innerhalb
@@ -932,42 +961,35 @@
                &lt;/listBibl&gt;
             </code></pre></div>
                      
-                     
-                     
+                        
+                     </div>
                   </div>
-                  
-               </div>
-               
-               <div id="TEIHEADER-FILEDESC-SERIESSTMT">
-                  
-                  <h4>Angaben zur Publikationsreihe</h4>
-                  
-                  <p>
+                  <div id="TEIHEADER-FILEDESC-SERIESSTMT">
+                     <h4>Angaben zur Publikationsreihe</h4>
+                     <p>
                      [Noch nicht ausgearbeitet, da nicht klar ist, ob in Heidelberg Reihen-Angaben für TEI-Dokumente relevant sind. 
                      Kann eine Edition, die aus mehreren edierten Texten besteht, als übergeordnete ›Reihe‹
                      für diese einzelnen Texte verstanden werden?]
                   </p>
-                  
-               </div>   
-               
-               <div id="TEIHEADER-FILEDESC-NOTESSTMT">
-                  
-                  <h4>Weitere Vermerke</h4>
-                  
-                  <p>
-                     <span class="aside"><span class="gi">&lt;notesStmt&gt;</span></span>
+                  </div>
+                  <div id="TEIHEADER-FILEDESC-NOTESSTMT">
+                     <h4>Weitere Vermerke</h4>
+                     <p>
+                        <span class="aside">
+                           <span class="gi">&lt;notesStmt&gt;</span>
+                        </span>
                      Im Element <span class="gi">&lt;notesStmt&gt;</span> können jeweils mit <span class="gi">&lt;note&gt;</span> weitere Informationen 
                      vermerkt werden, wobei für jede signifikante Information ein eigenes <span class="gi">&lt;note&gt;</span> verwendet
                      werden kann. Für weiter untergliederte Texte kann <span class="gi">&lt;note&gt;</span> Absätze (<span class="gi">&lt;p&gt;</span>) oder
                      gar Listen (<span class="gi">&lt;list&gt;</span>) oder Tabellen (<span class="gi">&lt;table&gt;</span>) enthalten. Einfache Texte können aber
                      auch ohne Untergliederung direkt in <span class="gi">&lt;note&gt;</span> eingegeben werden.
                   </p>
-                  <p>
+                     <p>
                      Mehrsprachige Informationen können erfasst werden, indem <span class="gi">&lt;note&gt;</span> mit <span class="att">@xml:lang</span>
                      versehen und wiederholt wird.
                   </p>
-                  <p>
-                     <span class="gi">&lt;notesStmt&gt;</span> eignet sich beispielsweise, um die Beteiligung von Personen oder Institutionen
+                     <p>
+                        <span class="gi">&lt;notesStmt&gt;</span> eignet sich beispielsweise, um die Beteiligung von Personen oder Institutionen
                      am vorliegenden Dokument zu erwähnen, die nicht strukturiert und einzeln in <span class="gi">&lt;titleStmt&gt;</span> aufgelistet
                      sind. So kann etwa die Beteiligung studentischer Hilfskräfte zum Ausdruck gebracht werden, wenn
                      ihre Rolle nicht substanziell genug ist, um in <span class="gi">&lt;titleStmt&gt;</span> genannt zu werden. Auch  
@@ -975,7 +997,7 @@
                      oder technische Unterstützung bei der Entstehung des TEI-Dokuments 
                      oder für die Unterstützung bei der Besorgung von Quellenmaterial können hier eingetragen werden.
                   </p>
-                  <p>
+                     <p>
                      Beispiele:
                   </p>
                   
@@ -1004,19 +1026,18 @@
                &lt;/notesStmt&gt;               
             </code></pre></div>
                   
-               </div>
-               
-               <div id="TEIHEADER-FILEDESC-SOURCEDESC">
-                  
-                  <h4>Angaben zur Quelle</h4>
-                  
-                  <p>
-                     <span class="aside"><span class="gi">&lt;sourceDesc&gt;</span></span>
+                  </div>
+                  <div id="TEIHEADER-FILEDESC-SOURCEDESC">
+                     <h4>Angaben zur Quelle</h4>
+                     <p>
+                        <span class="aside">
+                           <span class="gi">&lt;sourceDesc&gt;</span>
+                        </span>
                      Das Element <span class="gi">&lt;sourceDesc&gt;</span> gibt an, woher der Inhalt des TEI-Dokuments bzw. genauer der Inhalt
                      von <span class="gi">&lt;text&gt;</span> stammt. Es gibt grundsätzlich zwei Möglichkeiten:
                   </p>
-                  <ul>
-                     <li>
+                     <ul>
+                        <li>
                         Der Inhalt von <span class="gi">&lt;text&gt;</span> ist die Edition oder Transkription eines früher bereits vorliegenden Textes im breitesten Sinne,
                         unabhängig davon, ob das TEI-Dokument eine genuine digitale Edition darstellt oder einen digitalisierten Text
                         einer bereits zuvor ausgearbeiteten oder gedruckten Ausgabe eines historischen Textes wiedergibt. Entscheidend ist,
@@ -1032,7 +1053,7 @@
                         innerhalb von <span class="gi">&lt;witness&gt;</span> angegeben werden (hier wieder mithilfe von <span class="gi">&lt;msDesc&gt;</span>, <span class="gi">&lt;bibl&gt;</span> oder 
                         <span class="gi">&lt;biblStruct&gt;</span>).
                      </li>
-                     <li>
+                        <li>
                         Den Inhalt von <span class="gi">&lt;text&gt;</span> gab es vor dem Anlegen des TEI-Dokuments gar nicht, weil das TEI-Dokument einen
                         neuen, hierfür überhaupt erst geschaffenen Inhalt beherbergt oder eine etwaige Arbeitsvorlage für den Inhalt 
                         (z. B. handgeschriebene Zettel oder digitale Arbeitsdateien in einem anderen Format) außer Acht gelassen werden
@@ -1041,70 +1062,68 @@
                         Eine entsprechende Angabe ist in <span class="gi">&lt;sourceDesc&gt;</span> als Freitext in einem oder (mehrsprachig) in 
                         mehreren mit <span class="att">@xml:lang</span> gekennzeichneten <span class="gi">&lt;p&gt;</span>-Elementen zu machen.                        
                      </li>
-                  </ul>
-                  <p>
-                     <span class="gi">&lt;sourceDesc&gt;</span> enthält also alternativ eines dieser Kindelemente:
+                     </ul>
+                     <p>
+                        <span class="gi">&lt;sourceDesc&gt;</span> enthält also alternativ eines dieser Kindelemente:
                   </p>
-                  <ul>
-                     <li>
-                        <span class="gi">&lt;msDesc&gt;</span>, wenn die Quelle eine Handschrift ist (oder ggf. ein alter Druck oder ein anderes 
+                     <ul>
+                        <li>
+                           <span class="gi">&lt;msDesc&gt;</span>, wenn die Quelle eine Handschrift ist (oder ggf. ein alter Druck oder ein anderes 
                         historisches texttragendes Artefakt, das nicht mit normalen Mitteln bibliothekarischer Katalogisierung für rezente Publikationen
                         beschrieben werden kann), oder 
                      </li>
-                     <li>
-                        <span class="gi">&lt;bibl&gt;</span>, wenn die Quelle ein Druck ist (oder ein anderes Dokument, das mit normalen 
+                        <li>
+                           <span class="gi">&lt;bibl&gt;</span>, wenn die Quelle ein Druck ist (oder ein anderes Dokument, das mit normalen 
                         Mitteln bibliothekarischer Katalogisierung für rezente Publikationen 
                         beschrieben werden kann) und wenn die Beschreibung als zusammenhängender
                         Text erfolgen soll, oder
                      </li>
-                     <li>
-                        <span class="gi">&lt;biblStruct&gt;</span>, wenn die Quelle ein Druck ist (oder ein anderes Dokument, das mit normalen 
+                        <li>
+                           <span class="gi">&lt;biblStruct&gt;</span>, wenn die Quelle ein Druck ist (oder ein anderes Dokument, das mit normalen 
                         Mitteln bibliothekarischer Katalogisierung für rezente Publikationen beschrieben werden kann) und wenn die Beschreibung in
                         strukturierten Feldern erfolgen soll, oder
                      </li>
-                     <li>
-                        <span class="gi">&lt;listWit&gt;</span>, wenn der Text mithilfe eines Variantenapparats (u. a. <span class="gi">&lt;app&gt;</span>) aus mehreren
+                        <li>
+                           <span class="gi">&lt;listWit&gt;</span>, wenn der Text mithilfe eines Variantenapparats (u. a. <span class="gi">&lt;app&gt;</span>) aus mehreren
                         Textzeugen konstituiert wird oder zumindest in einem Variantenapparat abweichende Lesarten verzeichnet werden 
                         – darin dann für jeden Textzeugen jeweils <span class="gi">&lt;witness&gt;</span>, oder
                      </li>
-                     <li>
-                        <span class="gi">&lt;p&gt;</span> (ggf. mehrfach), wenn verbal zum Ausdruck gebracht werden soll, dass keine Quelle vorliegt
+                        <li>
+                           <span class="gi">&lt;p&gt;</span> (ggf. mehrfach), wenn verbal zum Ausdruck gebracht werden soll, dass keine Quelle vorliegt
                         und der Inhalt genuin digital entstanden ist.
                      </li>
-                  </ul>
-                  
-                  <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC">
-                     
-                     <h5>Angaben zu einer Handschrift (o. Ä.) als Quelle</h5>
-                     
-                     <p>
-                        <span class="aside"><span class="gi">&lt;msDesc&gt;</span></span>
+                     </ul>
+                     <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC">
+                        <h5>Angaben zu einer Handschrift (o. Ä.) als Quelle</h5>
+                        <p>
+                           <span class="aside">
+                              <span class="gi">&lt;msDesc&gt;</span>
+                           </span>
                         Das Element <span class="gi">&lt;msDesc&gt;</span> kann eine komplette wissenschaftliche Beschreibung einer Handschrift
                         (oder eines anderen historischen texttragenden Artefakts) enthalten, die hier in ihrer Komplexität nicht beschrieben
                         werden soll. Für die Verwendung in Editionsdateien reicht eine rudimentäre Struktur mit den wichtigsten
                         Metadaten einer Handschrift. Dabei ist im einfachsten Fall eine Identifizierung der Handschrift ausreichend,
                         die mit dem Element <span class="gi">&lt;msIdentifier&gt;</span> vorgenommen wird.
                      </p>
-                     
-                     <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-MSIDENTIFIER">
-                        
-                        
-                        
-                        <p>
-                           <span class="aside"><span class="gi">&lt;msIdentifier&gt;</span></span>
+                        <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-MSIDENTIFIER">
+                           
+                           <p>
+                              <span class="aside">
+                                 <span class="gi">&lt;msIdentifier&gt;</span>
+                              </span>
                            Das Element <span class="gi">&lt;msIdentifier&gt;</span> enthält in strukturierter Weise Angaben, die für eine Identifizierung der Handschrift
                            notwendig sind, in der Regel mindestens Informationen über den Aufbewahrungsort (<span class="gi">&lt;repository&gt;</span>) und die 
                            aktuell gültige Signatur (<span class="gi">&lt;idno&gt;</span> mit der Typangabe <span class="loddocborder">› </span><a class="loddoc" href="../concepts/shelfmark.html" target="_blank">hc:Shelfmark</a><span class="loddocborder"> ‹</span> in <span class="att">@ana</span>).
                            Typisch und empfehlenswert ist die Angabenreihe Ort, Aufbewahrungsort, Signatur, 
                            repräsentiert durch die Elemente <span class="gi">&lt;settlement&gt;</span>, <span class="gi">&lt;repository&gt;</span> und <span class="gi">&lt;idno&gt;</span>.
                         </p>
-                        <p>
+                           <p>
                            Die Elemente <span class="gi">&lt;settlement&gt;</span> und <span class="gi">&lt;repository&gt;</span> sowie eine Reihe weiterer optionaler Elemente
                            tragen in ›heiEDITIONS‹ keinen direkten Textinhalt, sondern bestehen immer
                            mindestens aus einem gesondert ausgezeichneten Namen, ggf. auch aus mehreren alternativen Namensangaben,
                            und optional aus Verknüpfungen zu Normdaten, die mit <span class="gi">&lt;idno&gt;</span> realisiert werden.       
                         </p>
-                        <p>
+                           <p>
                            So sieht die Angabe eines Aufbewahrungsortes, der entweder als Institution oder als Ort (z.B. eine Kirche)
                            beschrieben werden kann, beispielsweise so aus:
                         </p>
@@ -1116,7 +1135,7 @@
                &lt;/repository&gt;
             </code></pre></div>
                         
-                        <p>
+                           <p>
                            Eine typische komplette Identifizierung einer Handschrift mit Verknüpfungen zu Normdaten sieht etwa so aus:
                         </p>
                         
@@ -1134,7 +1153,7 @@
                &lt;/msIdentifier&gt;
             </code></pre></div>
                         
-                        <p>
+                           <p>
                            Wie auch sonst fast immer, ist auch hier die Angabe der Normdaten (vorzugsweise der
                            Identifikatoren der Gemeinsamen Normdatei (GND) optional, sie sollte aber 
                            innerhalb eines Projekts möglichst einheitlich erfolgen. Bei Orten könnten außer
@@ -1142,31 +1161,31 @@
                            sinnvoll sein, wenn für eine bestimmte Anwendung etwa die Standorte der Handschriften anhand
                            der bei GeoNames vorhandenen Koordinaten auf eine geographische Karte projiziert werden sollten.
                         </p>
-                        <p>
+                           <p>
                            Für die Angabe des Ortes stehen außer <span class="gi">&lt;settlement&gt;</span> (das möglichst immer 
                            zum Einsatz kommen sollte) noch andere Elemente zur Verfügung, die
                            – wenn verwendet – in dieser logischen Reihenfolge (von der größten zur kleinsten
                            Einheit) angeordnet werden müssen:
                         </p>
-                        <ul>
-                           <li>
-                              <span class="gi">&lt;bloc&gt;</span> für länderübergreifende geopolitische Einheiten, z. B. die Europäische Union oder
+                           <ul>
+                              <li>
+                                 <span class="gi">&lt;bloc&gt;</span> für länderübergreifende geopolitische Einheiten, z. B. die Europäische Union oder
                               Kontinente
                            </li>
-                           <li>
-                              <span class="gi">&lt;country&gt;</span> für Länder und Staaten, ggf. auch für Gliedstaaten in einer Föderation
+                              <li>
+                                 <span class="gi">&lt;country&gt;</span> für Länder und Staaten, ggf. auch für Gliedstaaten in einer Föderation
                            </li>
-                           <li>
-                              <span class="gi">&lt;region&gt;</span> für Regionen unterhalb der Ebene von Ländern und Staaten, ggf. auch für Gliedstaaten in einer Föderation
+                              <li>
+                                 <span class="gi">&lt;region&gt;</span> für Regionen unterhalb der Ebene von Ländern und Staaten, ggf. auch für Gliedstaaten in einer Föderation
                            </li>
-                           <li>
-                              <span class="gi">&lt;settlement&gt;</span> für Kommunen, also Städte, Dörfer und sonstige Gemeindetypen
+                              <li>
+                                 <span class="gi">&lt;settlement&gt;</span> für Kommunen, also Städte, Dörfer und sonstige Gemeindetypen
                            </li>
-                           <li>
-                              <span class="gi">&lt;district&gt;</span> für Stadtviertel und andere Typen von Teilen innerhalb von Kommunen
-                           </li> 
-                        </ul>
-                        <p>
+                              <li>
+                                 <span class="gi">&lt;district&gt;</span> für Stadtviertel und andere Typen von Teilen innerhalb von Kommunen
+                           </li>
+                           </ul>
+                           <p>
                            Für all die genannten Elemente ist in ›heiEDITIONS‹ jeweils ein
                            strukturierter Inhalt vorgesehen, der ein oder mehrere <span class="gi">&lt;placeName&gt;</span> sowie
                            optional ein oder mehrere <span class="gi">&lt;idno&gt;</span> umfassen kann. Um also ggf. alternative
@@ -1180,26 +1199,26 @@
                            zuerst ein Bundesstaat und dann ein Gliedstaat angegeben werden oder ein doppeltes
                            <span class="gi">&lt;region&gt;</span> zuerst eine größere Region und dann eine darin enthaltene kleinere Einheit
                         </p>
-                        <p>
+                           <p>
                            Nach den genannten Elementen für geographische bzw. geopolitische Einheiten 
                            kann in <span class="gi">&lt;msIdentifier&gt;</span> direkt das ebenfalls schon vorgestellte <span class="gi">&lt;repository&gt;</span> 
                            verwendet werden, zur Verfügung stehen bei Bedarf aber insgesamt drei verwandte Elemente
                            in dieser Reihenfolge:
                         </p>
-                        <ul>
-                           <li>
-                              <span class="gi">&lt;institution&gt;</span> für Körperschaften bzw. Institutionen, zu denen die Handschrift bzw. der Aufbewahrungsort gehört
+                           <ul>
+                              <li>
+                                 <span class="gi">&lt;institution&gt;</span> für Körperschaften bzw. Institutionen, zu denen die Handschrift bzw. der Aufbewahrungsort gehört
                            </li>
-                           <li>
-                              <span class="gi">&lt;repository&gt;</span> für Aufbewahrungsorte bzw. aufbewahrende Institutionen, die die Handschrift
+                              <li>
+                                 <span class="gi">&lt;repository&gt;</span> für Aufbewahrungsorte bzw. aufbewahrende Institutionen, die die Handschrift
                               besitzen bzw. in denen sie sich tatsächlich befindet
                            </li>
-                           <li>
-                              <span class="gi">&lt;collection&gt;</span> für Sammlungen, deren Teil die Handschrift ist (selbst wenn sich die Sammlung
+                              <li>
+                                 <span class="gi">&lt;collection&gt;</span> für Sammlungen, deren Teil die Handschrift ist (selbst wenn sich die Sammlung
                               ggf. nicht komplett an einem Aufbewahrungsort befindet)
                            </li>
-                        </ul>
-                        <p>
+                           </ul>
+                           <p>
                            Wie am letzten Beispiel ersichtlich, kann auf die Angabe von <span class="gi">&lt;institution&gt;</span> häufig verzichtet 
                            werden, etwa wenn der Aufbewahrungsort mit der Institution identisch ist oder wenn eine übergeordnete
                            Institution keine praktische Relevanz für die Identifizierung der Handschrift hat 
@@ -1207,7 +1226,7 @@
                            Angabe von <span class="gi">&lt;collection&gt;</span> mag nur für bestimmte Projekte oder aus besonderen Gründen
                            sinnvoll sein.
                         </p>
-                        <p>
+                           <p>
                            Ähnlich wie bei den Elementen für geographische bzw. geopolitische Einheiten ist auch
                            für die drei Elemente <span class="gi">&lt;institution&gt;</span>, <span class="gi">&lt;repository&gt;</span> und <span class="gi">&lt;collection&gt;</span>
                            in ›heiEDITIONS‹ ein strukturierter Inhalt vorgesehen, der mindestens
@@ -1218,7 +1237,7 @@
                            <span class="att">@xml:lang</span> gekennzeichnet, durch Wiederholung der jeweils vorgesehenen Namenselemente 
                            <span class="gi">&lt;orgName&gt;</span>, <span class="gi">&lt;placeName&gt;</span> oder <span class="gi">&lt;name&gt;</span> angegeben werden.
                         </p>
-                        <p>
+                           <p>
                            Das folgende Beispiel zeigt einen <span class="gi">&lt;msIdentifier&gt;</span>, in dem (für die meisten Zwecke übertriebenerweise)
                            alle bisher genannten Elemente verwendet werden:
                         </p>
@@ -1265,8 +1284,8 @@
                &lt;/msIdentifier&gt;
             </code></pre></div>
                         
-                        <p>
-                           <span class="aside">zeitlich eingeschränkte Lokalisierung</span>
+                           <p>
+                              <span class="aside">zeitlich eingeschränkte Lokalisierung</span>
                            An den fünf Elementen für geographische bzw. geopolitische Einheiten 
                            (<span class="gi">&lt;bloc&gt;</span>, <span class="gi">&lt;country&gt;</span>, <span class="gi">&lt;region&gt;</span>, <span class="gi">&lt;settlement&gt;</span>, <span class="gi">&lt;district&gt;</span>)
                            sind die Datierungsattribute <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>,
@@ -1286,8 +1305,8 @@
                            Einheiten für die Identifizierung einer Handschrift überhaupt überflüssig. Die Möglichkeit dazu
                            wird jedoch für besondere Fälle gegeben.
                         </p>
-                        <p>
-                           <span class="aside">mehrsprachige Namensangaben</span>
+                           <p>
+                              <span class="aside">mehrsprachige Namensangaben</span>
                            Die Namensangaben in den fünf Elementen für geographische bzw. geopolitische Einheiten sowie
                            in <span class="gi">&lt;institution&gt;</span>, <span class="gi">&lt;repository&gt;</span> und <span class="gi">&lt;collection&gt;</span> können mehrsprachig angegeben werden.
                            Dafür wird das jeweilige Namenselement (<span class="gi">&lt;placeName&gt;</span>, <span class="gi">&lt;orgName&gt;</span> oder <span class="gi">&lt;name&gt;</span>) wiederholt
@@ -1302,8 +1321,8 @@
                &lt;/repository&gt;
             </code></pre></div>
                         
-                        <p>
-                           <span class="aside">GeoNames</span>
+                           <p>
+                              <span class="aside">GeoNames</span>
                            Beispiel für die Angabe eines GeoNames-Identifikators zusätzlich zum GND-URI: 
                         </p>
                         
@@ -1315,8 +1334,8 @@
             &lt;/settlement&gt;
          </code></pre></div>
                         
-                        <p>
-                           <span class="aside">Identifikatoren der Handschrift</span>
+                           <p>
+                              <span class="aside">Identifikatoren der Handschrift</span>
                            Als Identifikator der Handschrift selbst wird in einem <span class="gi">&lt;idno&gt;</span> mit dem Wert
                            <span class="loddocborder">› </span><a class="loddoc" href="../concepts/shelfmark.html" target="_blank">hc:Shelfmark</a><span class="loddocborder"> ‹</span> am Attribut <span class="att">@ana</span> die aktuell gültige Signatur
                            der Handschrift an ihrem aktuellen Aufbewahrungsort angegeben. (Gibt es keine Signatur,
@@ -1326,27 +1345,27 @@
                            können ggf. auch noch weitere Identifikatoren für die Handschrift jeweils mit einem
                            <span class="gi">&lt;idno&gt;</span> vermerkt werden:
                         </p>
-                        <ul>
-                           <li>
+                           <ul>
+                              <li>
                               editorisches Sigel (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/editorialsiglum.html" target="_blank">hc:EditorialSiglum</a><span class="loddocborder"> ‹</span>: Kürzel für einen Textzeugen, in kritischen Editionen von Texten 
                               mit Mehrfachüberlieferung üblich und nur im Kontext einer solchen Edition sinnvoll
                            </li>
-                           <li>
+                              <li>
                               GND-URI (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/gnduri.html" target="_blank">hc:GNDURI</a><span class="loddocborder"> ‹</span>): In Fällen, wenn die Handschrift in der GND als
                               Schriftdenkmal 
                               (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://d-nb.info/standards/elementset/gnd#Manuscript" target="_blank">https://d-nb.info/standards/elementset/gnd#Manuscript</a>)
                               verzeichnet ist (oder der GND-Eintrag im Rahmen des Editionsprojekts vorgenommen wurde).
                            </li>
-                        </ul>
-                        <p>
-                           <span class="aside">Namen der Handschrift</span>
+                           </ul>
+                           <p>
+                              <span class="aside">Namen der Handschrift</span>
                            Manche Handschriften tragen mehr oder weniger eingebürgerte konventionelle Bezeichnungen
                            bzw. Namen. Solche Namen können für Handschriften im Element <span class="gi">&lt;msName&gt;</span> angegeben werden,
                            bei sonstigen texttragenden Artefakten steht das neutralere Element <span class="gi">&lt;objectName&gt;</span>
                            zur Verfügung. Wenn solche Namen mehrsprachig verzeichnet werden sollen, können <span class="gi">&lt;msName&gt;</span> 
                            bzw. <span class="gi">&lt;objectName&gt;</span> wiederholt und mit <span class="att">@xml:lang</span> versehen werden.
                         </p>
-                        <p>
+                           <p>
                            Beispiele für Identifikatoren und Namen:
                         </p>
                         
@@ -1382,23 +1401,23 @@
                &lt;/msIdentifier&gt;
             </code></pre></div>
                         
-                        <p>
-                           <span class="aside">Alternative Signaturen</span>
+                           <p>
+                              <span class="aside">Alternative Signaturen</span>
                            Das Element <span class="gi">&lt;altIdentifier&gt;</span> ist für die Angabe weiterer, insbesondere historischer
                            Signaturen vorgesehen, die sich von der aktuell gültigen Signatur unterscheiden. Wenn mehrere
                            alternative Signaturen angegeben werden sollen, erhält jede ein eigenes Element
                            <span class="gi">&lt;altIdentifier&gt;</span>. Die Signatur steht dann in einem <span class="gi">&lt;idno&gt;</span>, das am Attribut <span class="att">@ana</span>
                            mit <span class="loddocborder">› </span><a class="loddoc" href="../concepts/shelfmark.html" target="_blank">hc:Shelfmark</a><span class="loddocborder"> ‹</span> gekennzeichnet ist.
                         </p>
-                        <p>
+                           <p>
                            Der eigentlichen Signaturangabe mit <span class="gi">&lt;idno&gt;</span> können in <span class="gi">&lt;altIdentifier&gt;</span> dieselben Elemente
                            vorangehen wie eine Ebene höher in <span class="gi">&lt;msIdentifier&gt;</span>, also z. B. <span class="gi">&lt;settlement&gt;</span> und
                            <span class="gi">&lt;repository&gt;</span>, in derselben Reihenfolge. Zusätzlich nach <span class="gi">&lt;idno&gt;</span>
                            ein <span class="gi">&lt;note&gt;</span> folgen (ggf. mehrfach und ggf. mit <span class="att">@xml:lang</span> für die Sprachkennzeichnung),
                            um die Umstände der alternativen Signatur zu erläutern. 
                         </p>
-                        <p>
-                           <span class="gi">&lt;altIdentifier&gt;</span> eignet sich sowohl für die Angabe älterer Signaturen einer Handschrift,
+                           <p>
+                              <span class="gi">&lt;altIdentifier&gt;</span> eignet sich sowohl für die Angabe älterer Signaturen einer Handschrift,
                            die sie am selben Ort wie dem aktuellen trug, als auch für die Angabe von Signaturen an einem
                            anderen Aufbewahrungsort in der Geschichte der Handschrift. Im letzteren Fall sollte die 
                            frühere Lokalisierung der Handschrift anhand der geographischen bzw. geopolitischen Elemente
@@ -1439,52 +1458,52 @@
                &lt;/msDesc&gt;
             </code></pre></div>
                         
-                        <p>
+                           <p>
                            Mit den Datierungsattributen <span class="att">@when</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>,
                            <span class="att">@from</span> und <span class="att">@to</span> ist an <span class="gi">&lt;altIdentifier&gt;</span> in der Form 
                            <span class="val">JJJJ-MM-TT</span>, <span class="val">JJJJ-MM</span> oder <span class="val">JJJJ</span> 
                            die Angabe der zeitlichen Gültigkeit der früheren Signatur möglich
                            (zu diesen Attributen vgl. sonst <a class="inlink" href="indexes.html#INDEXES-LISTS-GENERAL-NAMES">Namen und Bezeichnungen</a>).
                         </p>
-                        <p>
-                           <span class="gi">&lt;altIdentifier&gt;</span> ist nicht dazu vorgesehen, die Provenienz oder gar Entstehungsgeschichte eines
+                           <p>
+                              <span class="gi">&lt;altIdentifier&gt;</span> ist nicht dazu vorgesehen, die Provenienz oder gar Entstehungsgeschichte eines
                            Artefakts zu beschreiben, sondern nur frühere Signaturen im Kontext ihrer historischen Aufbewahrungsorte 
                            anzugeben und allenfals knapp zu erläutern. Darüber hinausgehende Ausführungen zur Geschichte
                            einer Quelle sind mit <span class="gi">&lt;history&gt;</span> umzusetzen.
                         </p>
-                     </div>
-                     
-                     <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-PHYSDESC">
-                        
-                     </div>
-                     
-                     <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-HISTORY">
-                        
-                     </div>
-                     
-                     <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-MSCONTENTS">
-                        
-                     </div>
-                     
-                     <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-ADDITIONAL">
-                        
-                        
-                        
-                        <p>
+                        </div>
+                        <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-PHYSDESC">
+                           
+                        </div>
+                        <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-HISTORY">
+                           
+                        </div>
+                        <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-MSCONTENTS">
+                           
+                        </div>
+                        <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-ADDITIONAL">
+                           
+                           <p>
                            Das Element <span class="gi">&lt;additional&gt;</span> innerhalb eines <span class="gi">&lt;msDesc&gt;</span> ist für praktische und 
                            ergänzende Informationen zur Aufbewahrung und Zugänglichkeit
                            des Artefakts, für Angaben zu gedruckten und digitalen Surrogaten (Faksimiles im breiten Sinn) 
                            des Artefakts sowie für Literaturangaben vorgesehen. Diesen Zwecken dienen die folgenden drei optionalen Kindelemente von 
                            <span class="gi">&lt;additional&gt;</span>:
                         </p>
-                        <ul>
-                           <li><span class="gi">&lt;adminInfo&gt;</span></li>
-                           <li><span class="gi">&lt;surrogates&gt;</span></li>
-                           <li><span class="gi">&lt;listBibl&gt;</span></li>
-                        </ul>
-                        <p>### TODO <span class="gi">&lt;adminInfo&gt;</span> ###</p>
-                        <p>
-                           <span class="aside">Faksimiles</span>
+                           <ul>
+                              <li>
+                                 <span class="gi">&lt;adminInfo&gt;</span>
+                              </li>
+                              <li>
+                                 <span class="gi">&lt;surrogates&gt;</span>
+                              </li>
+                              <li>
+                                 <span class="gi">&lt;listBibl&gt;</span>
+                              </li>
+                           </ul>
+                           <p>### TODO <span class="gi">&lt;adminInfo&gt;</span> ###</p>
+                           <p>
+                              <span class="aside">Faksimiles</span>
                            Das Element <span class="gi">&lt;surrogates&gt;</span> verzeichnet gedruckte und digitale Faksimiles des edierten 
                            texttragenden Artefakts. Es enthält immer mindestens ein Kindelement <span class="gi">&lt;listBibl&gt;</span>,
                            in dem mittels <span class="gi">&lt;bibl&gt;</span> sowohl für gedruckte als auch für digitale Faksimiles jeweils
@@ -1496,7 +1515,7 @@
                            mit einer Überschrift (<span class="gi">&lt;head&gt;</span>, mit <span class="att">@xml:lang</span> ggf. wiederholt und mehrsprachig)
                            zu versehen.
                         </p>
-                        <p>
+                           <p>
                            Die bibliographische Angabe eines Faksimiles in <span class="gi">&lt;bibl&gt;</span> – sofern sie nicht durch einen Verweis 
                            auf einen Eintrag in einer separaten Bibliographiedatei erfolgt – ist so zu erfassen, dass
                            bis auf die TEI-übliche Normalisierung von Leerräumen (Leerzeichen, Zeilenumbrüche u. Ä.)
@@ -1505,22 +1524,28 @@
                            durch bestimmtes Markup (z. B. <span class="gi">&lt;emph&gt;</span>, <span class="gi">&lt;title&gt;</span>, <span class="gi">&lt;surname&gt;</span>, <span class="gi">&lt;idno&gt;</span>,
                            sowie <span class="gi">&lt;ptr&gt;</span> und <span class="gi">&lt;ref&gt;</span>) ausgezeichnet werden.
                         </p>
-                        <p>
+                           <p>
                            Neben der Möglichkeit, gedruckte und digitale Faksimiles durch die Verwendung getrennter 
                            <span class="gi">&lt;listBibl&gt;</span>-Elemente voneinander zu trennen, ist es auch möglich, die Art der beschriebenen
                            Ressource bei <span class="gi">&lt;bibl&gt;</span> durch die Verwendung von ›heiEDITIONS‹-Klassen an 
                            <span class="att">@ana</span> zu unterscheiden. Dafür stehen in diesem Kontext folgende Klassen zur Verfügung:
                         </p>
-                        <ul>
-                           <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/bibliographicreferenceforprintedfacsimile.html" target="_blank">hc:BibliographicReferenceForPrintedFacsimile</a><span class="loddocborder"> ‹</span></li>
-                           <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/bibliographicreferenceforcdromfacsimile.html" target="_blank">hc:BibliographicReferenceForCDROMFacsimile</a><span class="loddocborder"> ‹</span></li>
-                           <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/bibliographicreferenceforonlinefacsimile.html" target="_blank">hc:BibliographicReferenceForOnlineFacsimile</a><span class="loddocborder"> ‹</span></li>
-                        </ul>
-                        <p>
+                           <ul>
+                              <li>
+                                 <span class="loddocborder">› </span><a class="loddoc" href="../concepts/bibliographicreferenceforprintedfacsimile.html" target="_blank">hc:BibliographicReferenceForPrintedFacsimile</a><span class="loddocborder"> ‹</span>
+                              </li>
+                              <li>
+                                 <span class="loddocborder">› </span><a class="loddoc" href="../concepts/bibliographicreferenceforcdromfacsimile.html" target="_blank">hc:BibliographicReferenceForCDROMFacsimile</a><span class="loddocborder"> ‹</span>
+                              </li>
+                              <li>
+                                 <span class="loddocborder">› </span><a class="loddoc" href="../concepts/bibliographicreferenceforonlinefacsimile.html" target="_blank">hc:BibliographicReferenceForOnlineFacsimile</a><span class="loddocborder"> ‹</span>
+                              </li>
+                           </ul>
+                           <p>
                            Für die konkrete Form der bibliographischen Angabe, also den Zitationsstil und dessen Einheitlichkeit,
                            ist allein der Herausgeber verantwortlich.
                         </p>
-                        <p>
+                           <p>
                            Beispiele:
                         </p>                        
                         
@@ -1534,46 +1559,27 @@
                &lt;/surrogates&gt;
             </code></pre></div>
                         
-                                                
-                        
+                        </div>
+                        <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-MSPART">
+                           
+                        </div>
+                        <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-MSFRAG">
+                           
+                        </div>
                      </div>
-                     
-                     <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-MSPART">
-                        
-                     </div>
-                     
-                     <div id="TEIHEADER-FILEDESC-SOURCEDESC-MSDESC-MSFRAG">
-                        
-                     </div>
-                     
                   </div>
-                  
+               </div>
+               <div id="TEIHEADER-ENCODINGDESC">
+                  <h3>Beschreibung der Kodierung</h3>
+               </div>
+               <div id="TEIHEADER-PROFILEDESC">
+                  <h3>Informationen über den Hintergrund des Textes</h3>
                   
                </div>
-               
+               <div id="TEIHEADER-REVISIONDESC">
+                  <h3>Revisionsgeschichte</h3>
+               </div>
             </div>
-            
-            <div id="TEIHEADER-ENCODINGDESC">
-               
-               <h3>Beschreibung der Kodierung</h3>
-               
-            </div>
-            
-            <div id="TEIHEADER-PROFILEDESC">
-               
-               <h3>Informationen über den Hintergrund des Textes</h3>
-               
-               
-               
-            </div>
-            
-            <div id="TEIHEADER-REVISIONDESC">
-               
-               <h3>Revisionsgeschichte</h3>
-               
-            </div>
-
-         </div>
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                         S. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry" target="_blank">Sprachcodes der Internet Assigned Numbers Authority (IANA)</a>.
@@ -1598,7 +1604,7 @@
                            durch nachträgliche Fragmentierung heute aus mehreren, ggf. dislozierten Fragmenten besteht. Eine solche
                            Quelle wird mit einem einzigen <span class="gi">&lt;msDesc&gt;</span> angegeben (s. XXX). 
                         </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 24.10.2025
+                        Letzte Aktualisierung: 27.10.2025
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
