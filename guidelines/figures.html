@@ -3,9 +3,7 @@
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
                     Bilder und Tabellen</nav><main>
-         
          <div id="FIGURESTABLES">
-            
             <h1>Bilder und Tabellen</h1>
             <p>
                Bilder und Tabellen, die durch die TEI-Elemente <span class="gi">&lt;figure&gt;</span> bzw. <span class="gi">&lt;table&gt;</span> repräsentiert werden,
@@ -49,18 +47,16 @@
                Unterschriften in der Regel nicht Bestandteil des Bildes oder der Tabelle im Sinne der visuellen Struktur sind, 
                sondern entweder zu einem benachbarten Textbereich gehören oder einen eigenen Textbereich bilden.
             </p>
-            
             <div id="FIGURESTABLES-FIGURES">
-               
                <h2>Bilder</h2>
-               
                <p>
                   Zur Erfassung eines Bildes, zugehöriger 
                   Informationen, seiner Über- bzw. Unterschriften und darin enthaltener Texte 
                   wird das Element <span class="gi">&lt;figure&gt;</span> verwendet.
-               </p> 
+               </p>
                <p>
-                  <span class="aside">Inhaltsmodell von <span class="gi">&lt;figure&gt;</span></span>
+                  <span class="aside">Inhaltsmodell von <span class="gi">&lt;figure&gt;</span>
+                  </span>
                   Das Element <span class="gi">&lt;figure&gt;</span> hat in ›heiEDITIONS‹ folgenden Inhalt:
                </p>
                <ul>
@@ -97,7 +93,8 @@
                   </li>
                </ul>
                <p>
-                  <span class="aside">Attribute von <span class="gi">&lt;figure&gt;</span></span>
+                  <span class="aside">Attribute von <span class="gi">&lt;figure&gt;</span>
+                  </span>
                   Am Element <span class="gi">&lt;figure&gt;</span> können in ›heiEDITIONS‹ optional die folgenden Attribute
                   verwendet werden:
                </p>
@@ -136,10 +133,12 @@
                      <span class="att">@hei:placeRef</span>: Verweis auf die Art der Bildplatzierung (eine von <span class="gi">&lt;heiEDITIONS&gt;</span>
                      dafür definierten Klassen), ergänzend oder parallel zu ähnlichen Angaben an <span class="gi">&lt;zone&gt;</span> (wenn auch eine
                      Layoutdeklaration erarbeitet wird).
-                  </li>                  
+                  </li>
                </ul>
                <p>
-                  <span class="aside"><span class="gi">&lt;figDesc&gt;</span></span>
+                  <span class="aside">
+                     <span class="gi">&lt;figDesc&gt;</span>
+                  </span>
                   Das Element <span class="gi">&lt;figDesc&gt;</span> ist als einziges ein Pflichtelement. Da es in ›heiEDITIONS‹
                   nicht notwendig und unter Umständen nicht immer sinnvoll ist, ein mit <span class="gi">&lt;figure&gt;</span> erfasstes Bild 
                   mit einem Verweis auf eine digitale Bilddatei zu versehen oder eine angegebene Bilddatei
@@ -156,7 +155,7 @@
                   Layouterfassung) so kodiert werden:
                </p>
                
-                  <div class="egxml" data-example-id="figure_figDesc_simple"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="figure_figDesc_simple"><pre class="language-xml"><code>
                &lt;figure&gt;
                   &lt;figDesc&gt;Hier steht die Beschreibung des Bildes in der Vorlage.&lt;/figDesc&gt;
                &lt;/figure&gt;
@@ -167,7 +166,7 @@
                   aussehen:
                </p>
                
-                  <div class="egxml" data-example-id="figurewithattributes"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="figurewithattributes"><pre class="language-xml"><code>
                &lt;figure n="3" xml:id="fig_3"&gt;
                   &lt;figDesc&gt;Schwarzweißfotografie von zwei spielenden Knaben&lt;/figDesc&gt;
                &lt;/figure&gt; 
@@ -186,15 +185,9 @@
                   Editorisch vergebene Überschriften (bei Bildern in Editionstexten) müssen an <span class="att">@ana</span> als <span class="val">hc:EditorialContent</span>
                   gekennzeichnet werden.
                </p>
-               
-                  
-   
-
             </div>
-            
             <div id="FIGURESTABLES-TABLES">
                <h2>Tabellen</h2>
-               
                <p>
                   Tabellen sind Strukturen, die ihrem Wesen nach aus Zeilen und Spalten bestehen. Dadurch unterscheiden sie sich
                   layoutmäßig von einer normalen Textstruktur, die nur aus Zeilen besteht. Um keine Verwechslung mit Zeilen
@@ -229,7 +222,6 @@
                   oder <span class="loddocborder">› </span><a class="loddoc" href="../concepts/zoneshift.html" target="_blank">hc:ZoneShift</a><span class="loddocborder"> ‹</span>), um ggf. Seiten- bzw. Spaltengrenzen bei Tabellen festzuhalten, die sich über mehrere Seiten,
                   Spalten oder sonstige Layoutbereiche erstrecken.
                </p>
-               
                <p>
                   <span class="aside">Rahmen</span>
                   Auf der Ebene ganzer Tabellen, Tabellenzeilen oder Zellen (<span class="gi">&lt;table&gt;</span>, <span class="gi">&lt;row&gt;</span>, <span class="gi">&lt;cell&gt;</span>)
@@ -242,7 +234,6 @@
                <p class="resdef">
                   <a class="refboxlink" href="../concepts/noborder.html"><span class="val">hc:NoBorder</span></a> ( ›ohne Rahmen‹ ): Visueller Gegenstand, der mit keinem Rahmen versehen ist.
                </p>
-               
                <p>
                   <span class="aside">Spaltenbreite</span>
                   In ›heiEDITIONS‹ besteht die Möglichkeit, für Tabellen die relative Breite ihrer
@@ -257,7 +248,7 @@
                   Zahl sowie das Prozentzeichen ist. Beispiel:
                </p>
                
-                  <div class="egxml" data-example-id="tablewithwidth"><pre class="language-xml"><code>
+               <div class="egxml" data-example-id="tablewithwidth"><pre class="language-xml"><code>
                &lt;table&gt;
                   &lt;row&gt;
                      &lt;cell hei:width="20%"&gt;...&lt;/cell&gt;
@@ -272,16 +263,11 @@
                   dass sich die verbleibende prozentuelle Breite (nach Abzug der explizit angegebenen Breitenanteile) gleichmäßig
                   auf die Spalten verteilt, die keine Breitenangabe tragen.
                </p>
-               
-                  
-                  
-          
-               
             </div>
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>Somit entspricht in TEI das Element <span class="gi">&lt;figDesc&gt;</span> dem Attribut <span class="att">@alt</span> an <span class="gi">&lt;img&gt;</span>
                   in HTML.</div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 27.10.2025
+                        Letzte Aktualisierung: 28.10.2025
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
