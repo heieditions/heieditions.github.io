@@ -4,11 +4,14 @@
                     ☞ 
                     Visuelle Auszeichnungen und Verzierungen</nav><main>
          <div id="HIGHLIGHTINGS">
+            
             <h1>Visuelle Auszeichnungen und Verzierungen</h1>
+            
             <p>
                Visuelle Auszeichnungen der Vorlage werden mit dem Element <span class="gi">&lt;hi&gt;</span> markiert:  
                <ul><li><span class="item_label"><span class="gi">&lt;hi&gt;</span></span> ( ›hervorgehoben‹ )  »markiert ein Wort oder eine Textpassage, das/die sich grafisch vom umgebenden Text abhebt, ohne dass ein inhaltlicher Grund dafür angegeben wird.« (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-hi.html" target="_blank">TEI</a>)<ul><li><span class="item_label"><span class="att">@rendition</span></span>( ›Wiedergabe‹ ) gibt die Art der Auszeichnung mit einem Verweis auf eine Ressource von ›heiEDITIONS Concepts‹ an </li><li><span class="item_label"><span class="att">@hei:color</span></span></li></ul></li></ul>
             </p>
+            
             <p>
                Es können mehrere <span class="gi">&lt;hi&gt;</span>-Elemente ineinander geschachtelt sein, wenn ein größeres 
                visuell hervorgehobenes Textsegment ein kleineres Textsegment enthält, 
@@ -18,23 +21,39 @@
                können mehrere Angaben im Attribut <span class="att">@rendition</span> an einem einzigen 
                <span class="gi">&lt;hi&gt;</span> kombiniert werden.              
             </p>
+            
             <div id="HIGHLIGHTINGS-REDSTROKE">
+               
                <h2>Rote Strichelung</h2>
+               
                <p class="resdef">
                   <a class="refboxlink" href="../concepts/redstroke.html"><span class="val">hc:RedStroke</span></a> ( ›rote Strichelung‹ ): Visueller Gegenstand (typischerweise ein Buchstabe), der durch rote Strichelung verziert wurde. Mit roter Strichelung ist dabei eine vertikale Durchstreichung eines zuvor geschriebenen Zeichens mit roter Farbe oder roter Tinte gemeint.
                </p>
+               
             </div>
+            
+            
+            
             <div id="HIGHLIGHTINGS-VERSAL">
+               
                <h2>Versal</h2>
+               
                <p class="resdef">
                   <a class="refboxlink" href="../concepts/versal.html"><span class="val">hc:Versal</span></a> ( ›Versal‹ ): 
                </p>
+               
             </div>
+            
+            
+            
             <div id="HIGHLIGHTINGS-CADEL">
+               
                <h2>Kadelle</h2>
+               
                <p class="resdef">
                   <a class="refboxlink" href="../concepts/cadel.html"><span class="val">hc:Cadel</span></a> ( ›Kadelle; Cadelle‹ ): »Großbuchstaben des 14. und 15. Jh., deren Schäfte und Bögen aus parallel laufenden, sich zum Teil durchkreuzenden breiten Strichen in Schrifttinte mit der Schreibfeder gebildet sind« (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 60). Allgemeiner auch eine sonstige vergrößerte <em>littera notabilior</em>, eine Satzmajuskel bzw. ein Versal, wenn der Buchstabe mit Schrifttinte ausgeführt (und ggf. rot gestrichelt) und ebenfalls in Schrifttinte verziert ist, ggf. mit Fleuronnée oder figuralen Motiven. Eine Kadelle kann als Initiale eine strukturell-gliedernde Funktion übernehmen, dient aber häufig auch ›nur‹ als visuelle Marke jeweils in der ersten Zeile einer Seite oder Spalte.
                </p>
+               
                <img class="illustration" src="../images/wlb_hb_v_95_0019_Kadelle.jpg" alt="Kadelle als Versal ohne sonstige strukturell-gliedernde Funktion in der ersten Zeile einer Spalte"><p class="bildunterschrift">Abb. 1: 
                      Kadelle als Versal ohne sonstige strukturell-gliedernde Funktion in der ersten Zeile einer Spalte
                      (Stuttgart, Württembergische Landesbibliotek, HB V 95, fol. 8r, <a class="inlink" href="https://digi.ub.uni-heidelberg.de/diglit/wlb_hb_v_95/0019">https://digi.ub.uni-heidelberg.de/diglit/wlb_hb_v_95/0019</a> 
@@ -42,16 +61,22 @@
                   </p>
                
                
-               <div class="bootstrap-scope egxml" data-example-id="cadel_simple" data-visualization-type="visual_findings"><pre class="language-xml"><code>
+                 <div class="bootstrap-scope egxml" data-example-id="cadel_simple" data-visualization-type="visual_findings"><pre class="language-xml"><code>
                &lt;l&gt;
                   &lt;lb n="1"/&gt;
                   &lt;hi rendition="hc:Cadel"&gt;D&lt;/hi&gt;ı wıle er wılt d&amp;zig; meıſtírſchaft 
                &lt;/l&gt;  
             </code></pre></div>  
                
+               
+               
             </div>
+            
+            
             <div id="HIGHLIGHTINGS-COLOR">
+               
                <h2>Farbe</h2>
+               
                <p>
                   Textsegmente, die sich durch ihre Farbe abheben, können am Element <span class="gi">&lt;hi&gt;</span>
                   mit dem Attribut <span class="att">@hei:color</span> markiert werden. Mögliche Attributwerte sind dabei bislang 
@@ -59,13 +84,14 @@
                   Bei diesen Werten handelt es sich um keine Konzepte von ›heiEDITIONS‹,
                   den Attributwerten wird also kein <span class="val">hc:</span> vorangestelt.
                </p>
+               
                <img class="illustration" src="../images/hab_mss37-19-aug-2f_0044_red.jpg" alt="Mit roter Farbe geschriebener Text"><p class="bildunterschrift">Abb. 3: 
                      Mit roter Farbe geschriebener Text
                      (Wolfenbüttel, Herzog August Bibliothek, Cod. Guelf. 37.19 Aug. 2°, fol. 21v, <span class="outlinkprefix">↪ </span><a class="outlink" href="https://doi.org/10.11588/diglit.24512#0044" target="_blank">https://doi.org/10.11588/diglit.24512#0044</a>).
                   </p>
                
                
-               <div class="bootstrap-scope egxml" data-example-id="color_simple" data-visualization-type="visual_findings"><pre class="language-xml"><code>
+                  <div class="bootstrap-scope egxml" data-example-id="color_simple" data-visualization-type="visual_findings"><pre class="language-xml"><code>
                &lt;lg ana="hc:Couplet"&gt;
                   &lt;l&gt;
                      &lt;lb/&gt;
@@ -78,10 +104,13 @@
                &lt;/lg&gt;
             </code></pre></div>
                
+               
+               
             </div>
+
          </div>
       <br><br><hr><div class="bibliography"><h3>Zitierte Literatur</h3><dl class="inline"><dt id="jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</dt><dd>Jakobi-Mirwald, Christine: <em>Buchmalerei : Terminologie in der Kunstgeschichte</em>. 4., überarb. Aufl. unter Mitarbeit von Martin Roland. Berlin : Reimer, 2015. – ISBN 978-3-496-01499-7
-            </dd></dl></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+           </dd></dl></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
                         Letzte Aktualisierung: 28.10.2025
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>

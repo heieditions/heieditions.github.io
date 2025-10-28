@@ -4,7 +4,9 @@
                     ☞ 
                     Konfigurationen für Verarbeitung und Visualisierung</nav><main>
          <div id="PROCESSING_CONFIGURATION">
+            
             <h1>Konfigurationen für Verarbeitung und Visualisierung</h1>
+            
             <p>
                Um editorische Arbeitsdateien für die verschiedenen Arten der Visualisierung aufzubereiten,
                werden sie in ›heiEDITIONS‹ durch XProc-Verarbeitungspipelines geleitet. Solche Pipelines
@@ -16,8 +18,11 @@
                Konfigurationsdateien sollen in ›heiEDITIONS‹ innerhalb des GitLab-Repositoriums eines
                Editionsprojekts im Verzeichnis <span class="code">configurations</span> vorgehalten werden.
             </p>
+            
             <div id="PROCESSING_CONFIGURATION-STRUCTURE">
+               
                <h2>Konfiguration einer virtuellen Textgliederung</h2>
+               
                <p>
                   Editionstexte können in einem TEI-Dokument innerhalb des Elements <span class="gi">&lt;text&gt;</span>
                   mithilfe von <span class="gi">&lt;front&gt;</span>, <span class="gi">&lt;body&gt;</span> und <span class="gi">&lt;back&gt;</span> sowie weiter mit einer beliebig
@@ -25,8 +30,7 @@
                   kann sich auf visuelle Signale einer historischen Quelle stützen oder rein editorisch sein. 
                </p>
                <p>
-                  <span class="aside">Gliederung <em>stand-off</em>
-                  </span>
+                  <span class="aside">Gliederung <em>stand-off</em></span>
                   Es mag mindestens zwei Gründe geben, die Gliederung eines Editionstextes der eigentlichen
                   Arbeitsdatei mit dem Text fernzuhalten und sie separat (<em>stand-off</em>)
                   zu beschreiben:
@@ -80,7 +84,7 @@
                   ins Elternverzeichnis an.
                </p>
                
-               <div class="egxml" data-example-id="prefixdeclaration"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="prefixdeclaration"><pre class="language-xml"><code>
                &lt;listPrefixDef&gt;
                   &lt;prefixDef ident="hc" matchPattern="(.+)" replacementPattern="https://lod.ub.uni-heidelberg.de/ontologies/heieditions/hc/current/$1"&gt;
                   &lt;/prefixDef&gt;
@@ -106,10 +110,8 @@
                   Der Inhalt von <span class="gi">&lt;text&gt;</span> oder <span class="gi">&lt;body&gt;</span> in der Konfigurationsdatei bildet dann den gewünschten Gliederungsbaum ab,
                   dessen wesentliche Struktur entweder aus <span class="gi">&lt;front&gt;</span>, <span class="gi">&lt;body&gt;</span>,<span class="gi">&lt;back&gt;</span> und darin 
                   befindlichen <span class="gi">&lt;div&gt;</span>-Strukturen besteht (wenn in der Konfigurationsdatei 
-                  das zweite Kindelement von <span class="gi">&lt;TEI&gt;</span>
-                  <span class="gi">&lt;text&gt;</span>
-                  ist) oder aus <span class="gi">&lt;div&gt;</span>-Strukturen (wenn in der Konfigurationsdatei das zweite Kindelement von <span class="gi">&lt;TEI&gt;</span>
-                  <span class="gi">&lt;body&gt;</span>
+                  das zweite Kindelement von <span class="gi">&lt;TEI&gt;</span> <span class="gi">&lt;text&gt;</span>
+                  ist) oder aus <span class="gi">&lt;div&gt;</span>-Strukturen (wenn in der Konfigurationsdatei das zweite Kindelement von <span class="gi">&lt;TEI&gt;</span> <span class="gi">&lt;body&gt;</span>
                   ist).
                </p>
                <p>
@@ -122,7 +124,7 @@
                   neun Absätzen enthält:
                </p>
                
-               <div class="egxml" data-example-id="body_simple"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="body_simple"><pre class="language-xml"><code>
                &lt;body&gt;
                   &lt;p xml:id="p_1"&gt;[Absatz 1]&lt;/p&gt;
                   &lt;p xml:id="p_2"&gt;[Absatz 2]&lt;/p&gt;
@@ -141,7 +143,7 @@
                   <span class="gi">&lt;div&gt;</span> zusammenfasst. Dafür sähe das zweite Kindelement der Strukturkonfigurationsdatei so aus:
                </p>
                
-               <div class="egxml" data-example-id="virtualstructure"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="virtualstructure"><pre class="language-xml"><code>
                &lt;body&gt;
                   &lt;div ana="hc:Section" xml:id="div_1"&gt;
                      &lt;ptr target="wit:range(p_1,p_3)"/&gt;
@@ -193,7 +195,7 @@
                   Das obige Beispiel mit den Dreiergruppen von Absätzen könnte also – weiter angereichert – etwa so aussehen:
                </p>
                
-               <div class="egxml" data-example-id="virtualstructure_enrichment"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="virtualstructure_enrichment"><pre class="language-xml"><code>
                &lt;body&gt;
                   &lt;div ana="hc:Section" xml:id="division_1" n="1"&gt;
                      &lt;head ana="hc:EditorialContent"&gt;Vorbemerkungen&lt;/head&gt;
@@ -219,7 +221,7 @@
                   auf oberster Ebene steht:
                </p>   
                
-               <div class="egxml" data-example-id="virtualstructure__hierarchy"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="virtualstructure__hierarchy"><pre class="language-xml"><code>
                &lt;body&gt;
                   &lt;div ana="hc:Section" xml:id="d_1" n="1"&gt;
                      &lt;head ana="hc:EditorialContent"&gt;Vorbemerkungen&lt;/head&gt;
@@ -261,7 +263,7 @@
                   durch ihre Semantik in ihrer Gliederungsfunktion ausreichend beschrieben sind):
                </p>              
                
-               <div class="egxml" data-example-id="virtualstructure_hierarchy_complex"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="virtualstructure_hierarchy_complex"><pre class="language-xml"><code>
                &lt;text&gt;
                   &lt;front xml:id="front_1" n="1"&gt;
                      &lt;head ana="hc:EditorialContent"&gt;Vorbemerkungen&lt;/head&gt;
@@ -289,9 +291,13 @@
                &lt;/text&gt;
             </code></pre></div>
                
+                              
             </div>
+            
             <div id="PROCESSING_CONFIGURATION-DISPLAY">
+               
                <h2>Konfiguration der Textaufteilung und der Anzeige im Inhaltsverzeichnis</h2>
+               
                <p>
                   Aus den innerhalb von <span class="gi">&lt;text&gt;</span> verwendeten Gliederungseinheiten (besonders <span class="gi">&lt;div&gt;</span>,
                   aber auch <span class="gi">&lt;front&gt;</span>, <span class="gi">&lt;body&gt;</span> und <span class="gi">&lt;back&gt;</span>) wird für die Leseansicht
@@ -329,7 +335,7 @@
                   maschinell geschrieben würde):
                </p>
                
-               <div class="egxml" data-example-id="displaydivision"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="displaydivision"><pre class="language-xml"><code>
                &lt;text&gt;
                   &lt;div xml:id="abschnitt_1"&gt;
                      &lt;head&gt;[...]&lt;/head&gt;
@@ -356,8 +362,7 @@
                   nur ein Gliederungselement in einer Datei als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> gekennzeichnet ist,
                   wird im ›heiVIEWER‹ davon ausgegangen, dass keine Anzeige des gesamten Dokuments in der Leseansicht erwartet wird.
                   Gliederungselemente, die weder selbst als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> gekennzeichnet sind noch solche Elemente
-                  als <em>ancestor</em>
-                  ›über sich‹ haben, können mit ihrem textuellen Inhalt in der Leseansicht nicht angezeigt werden (das gilt
+                  als <em>ancestor</em> ›über sich‹ haben, können mit ihrem textuellen Inhalt in der Leseansicht nicht angezeigt werden (das gilt
                   natürlich nur, wenn die Auswertung von <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span> für einen
                   Editionstext grundsätzlich aktiviert wurde, also wenn für einen Editionstext von einer Teilanzeige
                   ausgegangen wird). Allerdings verhindert das Fehlen der Kennzeichnung als <span class="loddocborder">› </span><a class="loddoc" href="../concepts/displaydivision.html" target="_blank">hc:DisplayDivision</a><span class="loddocborder"> ‹</span>
@@ -373,7 +378,7 @@
                   dies verdeutlichen:
                </p>
                
-               <div class="egxml" data-example-id="displaysubdivisions"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="displaysubdivisions"><pre class="language-xml"><code>
                &lt;text&gt;
                   &lt;div xml:id="di_1" rendition="hc:DisplayDivision"&gt;
                      &lt;head&gt;[...]&lt;/head&gt;
@@ -484,20 +489,17 @@
                   Die Elemente und erwarteten Elementinhalte für die gennanten drei Konfigurationsmöglichkeiten sind:
                </p>
                <ul>
-                  <li>
-                     <span class="gi">&lt;ID&gt;</span>: enthält als Textknoten die <span class="att">@xml:id</span> eines einzelnen Elements</li>
-                  <li>
-                     <span class="gi">&lt;class&gt;</span>: enthält als Textknoten die an <span class="att">@ana</span> angegebene ›heiEDITIONS‹-Klasse eines Elements
+                  <li><span class="gi">&lt;ID&gt;</span>: enthält als Textknoten die <span class="att">@xml:id</span> eines einzelnen Elements</li>
+                  <li><span class="gi">&lt;class&gt;</span>: enthält als Textknoten die an <span class="att">@ana</span> angegebene ›heiEDITIONS‹-Klasse eines Elements
                   oder einer Elementgruppe (ohne das Präfix <span class="code">hc</span>)</li>
-                  <li>
-                     <span class="gi">&lt;XPath&gt;</span>: enthält als Textknoten einen XPath-Ausdruck, bezogen auf das Wurzelelement <span class="gi">&lt;TEI&gt;</span> und
+                  <li><span class="gi">&lt;XPath&gt;</span>: enthält als Textknoten einen XPath-Ausdruck, bezogen auf das Wurzelelement <span class="gi">&lt;TEI&gt;</span> und
                   unter impliziter Annahme des TEI-Namensraums</li>
                </ul>
                <p>
                   Jedes der genannten Konfigurationselemente kann sich beliebig oft wiederholen. Beispiel:
                </p>
                
-               <div class="egxml" data-example-id="configurationelements"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="configurationelements"><pre class="language-xml"><code>
                &lt;displayDivision&gt;
                   &lt;ID&gt;front_1&lt;/ID&gt;
                   &lt;ID&gt;back_1&lt;/ID&gt;
@@ -518,7 +520,7 @@
                   Element <span class="gi">&lt;suppressInTOC&gt;</span>, z. B.:
                </p>
                
-               <div class="egxml" data-example-id="suppressintoc"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="suppressintoc"><pre class="language-xml"><code>
                &lt;suppressInTOC&gt;
                   &lt;ID&gt;div_00_0&lt;/ID&gt;
                   &lt;class&gt;Section&lt;/class&gt;
@@ -526,10 +528,13 @@
                   &lt;XPath&gt;TEI/text/back/div&lt;/XPath&gt;
                &lt;/suppressInTOC&gt;
             </code></pre></div>
-               
+                            
             </div>
+            
             <div id="PROCESSING_CONFIGURATION-VISUAL">
+               
                <h2>Konfiguration der Übernahme visueller Informationen</h2>
+               
                <p>
                   Editionsdateien, die den Text einer historischen Quelle (z. B. einer Handschrift oder
                   eines alten Drucks) dokumentieren und wiedergeben, enthalten in ›heiEDITIONS‹
@@ -562,11 +567,9 @@
                   die aber nicht beide gleichzeitig vorhanden sein dürfen:
                </p>
                <ul>
-                  <li>
-                     <span class="gi">&lt;include&gt;</span>: gibt in positiver Weise ›heiEDITIONS‹-Klassen an, 
+                  <li><span class="gi">&lt;include&gt;</span>: gibt in positiver Weise ›heiEDITIONS‹-Klassen an, 
                      die für die Leseansicht bewahrt werden sollen, ggf. auch nur an einem spezifischen Element</li>
-                  <li>
-                     <span class="gi">&lt;exclude&gt;</span>: gibt in negativer Weise ›heiEDITIONS‹-Klassen an, 
+                  <li><span class="gi">&lt;exclude&gt;</span>: gibt in negativer Weise ›heiEDITIONS‹-Klassen an, 
                      die für die Leseansicht ausgeschlossen werden sollen, ggf. auch nur an einem spezifischen Element</li>
                </ul>
                <p>
@@ -579,7 +582,7 @@
                   (ohne das Präfix <span class="code">hc</span>) angegeben wird, z. B.:
                </p>
                
-               <div class="egxml" data-example-id="configuration_include"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="configuration_include"><pre class="language-xml"><code>
                &lt;include&gt;
                   &lt;class&gt;Superscript&lt;/class&gt;
                   &lt;class&gt;Subscript&lt;/class&gt;
@@ -597,7 +600,7 @@
                   auf die die Konfiguration eingeschränkt werden soll, z. B.:
                </p>
                
-               <div class="egxml" data-example-id="configuration_includewithattribute"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="configuration_includewithattribute"><pre class="language-xml"><code>
                &lt;include&gt;
                   &lt;class onElement="{http://www.tei-c.org/ns/1.0}seg {http://www.tei-c.org/ns/1.0}hi"&gt;Superscript&lt;/class&gt;
                   &lt;class onElement="{http://www.tei-c.org/ns/1.0}seg {http://www.tei-c.org/ns/1.0}hi"&gt;Subscript&lt;/class&gt;
@@ -618,7 +621,7 @@
                   z. B.:
                </p>
                
-               <div class="egxml" data-example-id="configuration_exclude"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="configuration_exclude"><pre class="language-xml"><code>
                &lt;exclude&gt;
                   &lt;class&gt;RubbedOff&lt;/class&gt;
                   &lt;class&gt;CutOff&lt;/class&gt;
@@ -633,7 +636,7 @@
                   könnte die Konfiguration so aussehen:
                </p>
                
-               <div class="egxml" data-example-id="configuration_excludewithattribute"><pre class="language-xml"><code>
+                  <div class="egxml" data-example-id="configuration_excludewithattribute"><pre class="language-xml"><code>
                &lt;exclude&gt;
                   &lt;class onElement="{http://www.tei-c.org/ns/1.0}del"&gt;RubbedOff&lt;/class&gt;
                   &lt;class onElement="{http://www.tei-c.org/ns/1.0}del"&gt;CutOff&lt;/class&gt;
@@ -650,7 +653,9 @@
                   differenzierte Konfigurationsmöglichkeit für einzelne Farben, in einer Verarbeitungspipeline kann aber festgelegt werden,
                   ob dieses Attribut als solches für die Leseansicht übernommen oder entfernt wird.
                </p>
+               
             </div>
+            
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>S. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SATSRN" target="_blank">https://tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SATSRN</a>.</div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
                      Von dieser Regel gibt es einige Ausnahmen bzw. eine Negativliste von ›heiEDITIONS‹-Klassen,

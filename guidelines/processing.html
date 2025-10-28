@@ -4,31 +4,34 @@
                     ☞ 
                     Verarbeitung</nav><main>
          <div id="PROCESSING">
+            
             <h1>Verarbeitung</h1>
+            
             <p>
                Die TEI-Arbeitsdaten der von der UB Heidelberg betreuten Editionsprojekte
                werden für die Publikation und Archivierung durch eine sog. Pipeline aufbereitet,
                die in der Regel aus einer Verkettung von diversen Skripten besteht (vorzugsweise XSLT).
                Diese Skripte werden im GitLab-Projekt 
-               <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline" target="_blank">heiEDITIONS Pipeline</a> im Ordner <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/tree/master/transformations" target="_blank">
-                  <span class="code">transformations</span>
-               </a>
+               <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline" target="_blank">heiEDITIONS Pipeline</a> im Ordner <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/tree/master/transformations" target="_blank"><span class="code">transformations</span></a>
                gepflegt. Aus diesen Bausteinen kann mit der XProc-Technologie für jedes Projekt eine individuelle Pipeline 
                konfiguriert werden.                
             </p>
             <p>
                Häufig verwendete XSLT-Skripte deklarieren wir als sog. XProc-Schritte 
-               in einer XProc-Bibliothek (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank">
-                  <span class="code">transformations/steplibrary.xpl</span>
-               </a>).
+               in einer XProc-Bibliothek (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank"><span class="code">transformations/steplibrary.xpl</span></a>).
                Diese Schritte unterstützen einen Debugging-Modus, der für Zwecke der Fehlersuche
                beim Pipeline-Aufruf aktiviert werden kann und dafür sorgt, dass der Stand der Verarbeitung nach 
                dem Durchlaufen eines Schritts zu einer Datei serialisiert wird.
             </p>
+            
             <div id="PROCESSING-JOBS">
+               
                <h2>Erläuterung einzelner Verarbeitungsaufgaben</h2>
+               
                <div id="PROCESSING-JOBS-COPYOF">
+                  
                   <h3>Auflösung der Kopieranweisung (Attribut <span class="att">@copyOf</span>)</h3>
+                  
                   <p>
                      Das Attribut <span class="att">@copyOf</span>, das an einem Element auf eine <span class="att">@xml:id</span> eines anderen Elements
                      verweist, wird so interpretiert, dass in das Element, das <span class="att">@copyOf</span> trägt, alle Kindknoten und Attribute
@@ -38,16 +41,16 @@
                   </p>
                   <p>
                      Die Verarbeitungsaufgabe ist implementiert im XSLT-Skript 
-                     <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_resolveCopyOf.xsl" target="_blank">
-                        <span class="code">text_resolveCopyOf.xsl</span>
-                     </a> 
-                     sowie gekapselt im XProc-Schritt <span class="code">text_resolveCopyOf</span> in <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank">
-                        <span class="code">transformations/steplibrary.xpl</span>
-                     </a>.
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_resolveCopyOf.xsl" target="_blank"><span class="code">text_resolveCopyOf.xsl</span></a> 
+                     sowie gekapselt im XProc-Schritt <span class="code">text_resolveCopyOf</span> in <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank"><span class="code">transformations/steplibrary.xpl</span></a>.
                   </p>
+                  
                </div>
+               
                <div id="PROCESSING-JOBS-WRAPWORDSATPHYSICALBEGINNINGS">
+                  
                   <h3>Kennzeichnung von Wortteilen an physischen Umbrüchen</h3>
+                  
                   <p>
                      Um eine einheitliche Darstellung von ggf. automatisch erzeugten Trennstrichen am Zeilenende 
                      und ggf. auch eine sinnvolle Indexierung zu gewährleisten, werden in nicht tokenisierten Texten
@@ -55,36 +58,24 @@
                      mit <span class="gi">&lt;w&gt;</span>-Elementen umschlossen, die das Attribut <span class="att">@part</span> tragen.
                   </p>
                   <p>
-                     Die Verarbeitung ist implementiert im XProc-Schritt <span class="code">text_wrapWordPartsAtLineBreaks</span> in <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank">
-                        <span class="code">transformations/steplibrary.xpl</span>
-                     </a>,
+                     Die Verarbeitung ist implementiert im XProc-Schritt <span class="code">text_wrapWordPartsAtLineBreaks</span> in <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank"><span class="code">transformations/steplibrary.xpl</span></a>,
                      der die folgenden XSLT-Skripte nacheinander ausführt:
                   </p>
                   <ul>
                      <li>
-                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_1wrapElements.xsl" target="_blank">
-                           <span class="code">text_wrapWordPartsAtLineBreaks_1wrapElements.xsl</span>
-                        </a>
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_1wrapElements.xsl" target="_blank"><span class="code">text_wrapWordPartsAtLineBreaks_1wrapElements.xsl</span></a>
                      </li>
                      <li>
-                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_2resolveSegments.xsl" target="_blank">
-                           <span class="code">text_wrapWordPartsAtLineBreaks_2resolveSegments.xsl</span>
-                        </a>
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_2resolveSegments.xsl" target="_blank"><span class="code">text_wrapWordPartsAtLineBreaks_2resolveSegments.xsl</span></a>
                      </li>
                      <li>
-                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_3splitTextNodes.xsl" target="_blank">
-                           <span class="code">text_wrapWordPartsAtLineBreaks_3splitTextNodes.xsl</span>
-                        </a>
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_3splitTextNodes.xsl" target="_blank"><span class="code">text_wrapWordPartsAtLineBreaks_3splitTextNodes.xsl</span></a>
                      </li>
                      <li>
-                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_4mergeWordParts.xsl" target="_blank">
-                           <span class="code">text_wrapWordPartsAtLineBreaks_4mergeWordParts.xsl</span>
-                        </a>
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_wrapWordPartsAtLineBreaks_4mergeWordParts.xsl" target="_blank"><span class="code">text_wrapWordPartsAtLineBreaks_4mergeWordParts.xsl</span></a>
                      </li>
                      <li>
-                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_splitWordAtPhysicalBeginnings.xsl" target="_blank">
-                           <span class="code">text_splitWordAtPhysicalBeginnings.xsl</span>
-                        </a>
+                        <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/text_splitWordAtPhysicalBeginnings.xsl" target="_blank"><span class="code">text_splitWordAtPhysicalBeginnings.xsl</span></a>
                      </li>
                   </ul>
                   <p>
@@ -92,8 +83,11 @@
                      Umbrüche dokumentieren, entfernt worden ist (mit dem XProc-Schritt <span class="code">text_trimWhitespaceAdjacentToPhysicalBeginnings</span>).
                   </p>
                </div>
+               
                <div id="PROCESSING-JOBS-EXTRAPOLATEEDITORIALCONTENT">
+                  
                   <h3>Extraktion editorischer Inhalte aus Zeilen</h3>
+                  
                   <p>
                      In bestimmten Fällen ist es erforderlich, Elemente mit editorischem Inhalt (wie Überschriften oder Anmerkungen)
                      für die Quellenansicht aus <span class="gi">&lt;line&gt;</span>-Elementen, in denen sie während der Erzeugung der sourceDoc-Kodierung
@@ -110,15 +104,16 @@
                   </p>
                   <p>
                      Die Verarbeitungsaufgabe ist implementiert im XSLT-Skript 
-                     <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/sourceDoc_extrapolateEditorialContent.xsl" target="_blank">
-                        <span class="code">sourceDoc_extrapolateEditorialContent.xsl</span>
-                     </a> 
-                     sowie gekapselt im XProc-Schritt <span class="code">sourceDoc_extrapolateEditorialContent</span> in <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank">
-                        <span class="code">transformations/steplibrary.xpl</span>
-                     </a>.
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/sourceDoc_extrapolateEditorialContent.xsl" target="_blank"><span class="code">sourceDoc_extrapolateEditorialContent.xsl</span></a> 
+                     sowie gekapselt im XProc-Schritt <span class="code">sourceDoc_extrapolateEditorialContent</span> in <span class="outlinkprefix">↪ </span><a class="outlink" href="https://gitlab.ub.uni-heidelberg.de/editions/heieditionspipeline/-/blob/master/transformations/steplibrary.xpl" target="_blank"><span class="code">transformations/steplibrary.xpl</span></a>.
                   </p>
+                  
+                  
                </div>
+               
             </div>
+            
+
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                         Diese Sonderbehandlung des Attributs <span class="att">@xml:id</span> ist allerdings bis auf Weiteres 
