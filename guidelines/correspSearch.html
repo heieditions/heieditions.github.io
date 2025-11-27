@@ -1,0 +1,41 @@
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Hinweise zur Anbindung an correspSearch für Korrespondenz-Editionen</title><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Hinweise zur Anbindung an correspSearch für Korrespondenz-Editionen</nav><main>
+         <div id="CORRESPSEARCH-INTRO">
+            <h1>Hinweise zur Anbindung an correspSearch für Korrespondenz-Editionen</h1>
+               <div id="CORRESPSEARCH-GENERAL">
+                  <h2>Allgemeine Informationen zu correspSearch und CMIF</h2>
+                  <p>
+                     Das Portal <span class="outlinkprefix">↪ </span><a class="outlink" href="https://correspsearch.net/de/start.html" target="_blank">correspSearch</a> aggregiert Metadaten zu Korrespondenzen aus diversen Editionsprojekten und 
+                     erlaubt so eine projekt- und institutionsübergreifende Recherche dieser Daten. Der Zugriff kann dabei sowohl über die Suchmaske der correspSearch-Weboberfläche mit diversen Filtermöglichkeiten 
+                     als auch über eine technische Schnittstelle erfolgen. 
+                  </p>
+                  <p>
+                     Für die Aufnahme in correspSearch müssen die Korrespondenz-Metadaten im <span class="outlinkprefix">↪ </span><a class="outlink" href="https://correspsearch.net/de/dokumentation.html" target="_blank">›Correspondence Metadata Interchange–Format (CMIF)‹</a>, einer restriktiven Regeln unterliegenden TEI-Datei, gesammelt werden. 
+                     Diese Datei wird im Web bereitgestellt und nach der Registrierung bei correspSearch in regelmäßigen Abständen ausgelesen. So ist sichergestellt, dass etwaige Änderungen in den Briefmetadaten auch in correspSearch gespiegelt werden.
+                     Die edierten Korrespondenzen selbst verbleiben bei der jeweiligen Institution. 
+                  </p>
+               </div>
+               <div id="CORRESPSEARCH-IMPLEMENTATION">
+                  <h2>Anbindung mittels der heiEDITIONS-Infrastruktur</h2>
+                  <p>
+                     Die CMIF-Datei kann automatisch aus den Metadaten generiert werden, die gemäß ›heiEDITIONS‹-Schema im TEI-Header für Korrespondenzen vorgesehen sind. 
+                     Zur Einbindung dieses CMIF-Exports wird für das Editionsprojekt lediglich eine weitere Verarbeitungspipeline angelegt, die das im ›heipy‹-Modul enthaltene CMIF-Transformationsskript ausführt.
+                  </p>
+                  <p>
+                     Die auf diesem Weg generierte CMIF-Datei der <span class="outlinkprefix">↪ </span><a class="outlink" href="https://doi.org/10.11588/edition.mwm" target="_blank">Edition Wilamowitz-Moellendorff</a> kann beispielhaft hier eingesehen werden: <span class="outlinkprefix">↪ </span><a class="outlink" href="https://digi.ub.uni-heidelberg.de/editionService/cmif/WilamowitzMoellendorff" target="_blank">https://digi.ub.uni-heidelberg.de/editionService/cmif/WilamowitzMoellendorff</a>.
+                  </p>
+                  <p>
+                     Mit Fragen, Hinweisen oder sonstigen Anliegen zur CMIF-Transformation in ›heiEDITIONS‹ können Sie sich gerne wenden an:  
+                     <span class="outlinkprefix">↪ </span><a class="outlink" href="mailto:katharina.brueckmann@ub.uni-heidelberg.de" target="_blank">Katharina Brückmann</a>, Universitätsbibliothek Heidelberg. 
+                  </p>
+               </div>
+         </div>
+      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 27.11.2025
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script></body></html>
