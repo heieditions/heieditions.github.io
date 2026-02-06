@@ -472,3 +472,60 @@ aside,
        url('fonts/ubuntu-mono-v15-latin-ext_latin_greek-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
        url('fonts/ubuntu-mono-v15-latin-ext_latin_greek-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
 }
+
+/* Table of Contents */
+.toc-container {
+  border: 1px dotted #F5F2F0;
+  border-radius: 5px;
+  padding: 1em;
+  margin-top: 2em;
+  margin-bottom: 2em;
+  background-color: #F5F2F0;
+}
+
+.toc-heading {
+  font-family: 'Open Sans', sans-serif;
+  color: #9F0001; /* Heidelberg Red */
+  margin-top: 0;
+}
+
+.toc-list {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+  font-size: 97%;
+}
+
+.toc-sublist {
+  list-style-type: none;
+  padding-left: 1.5em;
+  margin: 0.5em 0;
+}
+
+.toc-item {
+  margin: 0.3em 0;
+
+}
+
+.toc-link {
+  text-decoration: none;
+  color: #9F0001; /* Heidelberg Red */
+  transition: color 0.2s;
+}
+
+.toc-link:hover {
+  color: #990000;
+  text-decoration: underline;
+}
+
+.heading-anchor {
+  margin-left: 0.5em;
+  font-size: 0.8em;
+  opacity: 0.3;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+
+.heading-anchor:hover {
+  opacity: 1;
+}
