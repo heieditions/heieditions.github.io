@@ -8,23 +8,195 @@
             <h1>Initialen</h1>
             
             
+            <p>Initialen, vom lateinischen initialis, "am Anfang stehend", bezeichnet jeden am Textanfang stehenden Buchstaben, der in größe und Form gegenüber der Textschrift oder den Satzmajuskeln herausgehoben ist<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 22.</p>
+            
+            
+            
+            <p>
+               Initialen sind hybride Phänomene. Einerseits können sie, als Zierinitialen, eine Illustration und Dekoration des Texts darstellen.
+               Andererseits stellen sie auch ein wichtiges Gliederungselement der Handschriften dar.
+            </p>
+            
+            <p>
+               Innerhalb einer Handschrift sind Initialen in der Regel hierarchisch gestaffelt.
+               Primäre Initialen dienen dabei nicht nur als Gliederungs-, sondern insbesondere auch als ästhetische Gestaltungselemente.
+               Sekundäre Initialen sind schlichter gehalten und werden nach ihrer Position im Text unterschiedlich bezeichnet.
+               
+            </p>
+            
+           
+            
+            
+            <p>
+               In ›heiEDITIONS‹ werden zwei Möglichkeiten für die Kodierung von Initialen unterstützt:</p>
+             <p>
+                Einerseits die explizite Markierung als Initiale, welche eine strukturell-gliedernde Funktion übernimmt und Textteile markiert oder anderweitig mit dem Text verbundene Aufgaben wahrnimmt.
+                Dies kann über das Element <span class="gi">&lt;initial&gt;</span> geschehen, dessen Attribut <span class="att">@rendition</span> mit den spezifischen, von heiEDITIONS verwendeten Werten der verschiedenen Formen von Initialen genauer definiert werden können.
+            </p>
+            <p>
+               Andererseits gibt es auch, insbesondere bei Lombarden und Kadellen, die Möglichkeit, dass diese lediglich als visuelle Markierungen eines Satz- oder Absatzbeginns wirken. Hier kann die Initiale als reine visuelle Auszeichnung oder Verzierung mit <span class="gi">&lt;hi&gt;</span> wiedergegeben werden . Auch hier ist eine Spezifizierung mithilfe von <span class="att">@rendition</span> möglich.
+            </p>
             
             <div id="INITIALS-CADEL">
                
                <h2>Kadelle</h2>
                
                <p class="resdef">
-                  <a class="refboxlink" href="../concepts/cadel.html"><span class="val">hc:Cadel</span></a> ( ›Kadelle; Cadelle‹ ): »Großbuchstaben des 14. und 15. Jh., deren Schäfte und Bögen aus parallel laufenden, sich zum Teil durchkreuzenden breiten Strichen in Schrifttinte mit der Schreibfeder gebildet sind« (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 60). Allgemeiner auch eine sonstige vergrößerte <em>littera notabilior</em>, eine Satzmajuskel bzw. ein Versal, wenn der Buchstabe mit Schrifttinte ausgeführt (und ggf. rot gestrichelt) und ebenfalls in Schrifttinte verziert ist, ggf. mit Fleuronnée oder figuralen Motiven. Eine Kadelle kann als Initiale eine strukturell-gliedernde Funktion übernehmen, dient aber häufig auch ›nur‹ als visuelle Marke jeweils in der ersten Zeile einer Seite oder Spalte.
+                  <a class="refboxlink" href="../concepts/cadel.html"><span class="val">hc:Cadel</span></a> ( ›Kadelle; Cadelle‹ ): 
+                     »Großbuchstaben des 14. und 15. Jh., deren Schäfte und Bögen aus parallel
+                        laufenden, sich zum Teil durchkreuzenden breiten Strichen in Schrifttinte
+                        mit der Schreibfeder gebildet sind«
+                     (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 60)
+                  . Allgemeiner auch eine sonstige vergrößerte <em>littera
+                     notabilior</em>, eine Satzmajuskel bzw. ein Versal, wenn der Buchstabe mit
+                  Schrifttinte ausgeführt (und ggf. rot gestrichelt) und ebenfalls in Schrifttinte
+                  verziert ist, ggf. mit Fleuronnée oder figuralen Motiven. Eine Kadelle kann als
+                  Initiale eine strukturell-gliedernde Funktion übernehmen, dient aber häufig auch
+                     ›nur‹ als visuelle Marke jeweils in der ersten Zeile einer Seite oder
+                  Spalte.
                </p>
                
+            </div>
+            
+            <div id="INITIALS-VERSAL">
+               <h2>Versal</h2>
+               <p class="resdef">
+                 <a class="refboxlink" href="../concepts/versal.html"><span class="val">hc:Versal</span></a> ( ›Versal‹ ): 
+                     »Der Begriff leitet sich von den Anfangsbuchstaben von abgesetzt
+                        geschriebenen Verszeilen ab, die leicht vergrößert links aus der Spalte
+                        gerückt sind. Danach allgemein für links ausgerückte, meist nur einzeilige,
+                        farblich abgehobene, ggf. leicht verzierte Anfangsbuchstaben«
+                     (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 50)
+                  . Im engeren Sinn wird der Begriff Versal auch nur für ausgerückte
+                  Anfangsbuchstaben von Psalmversen verwendet.
+                 
+               </p>
+            </div>
+            
+           <div id="INITIALS-LOMBARD">
+              <h2>Lombarde</h2>
+              <p class="resdef">
+                 <a class="refboxlink" href="../concepts/lombard.html"><span class="val">hc:Lombard</span></a> ( ›Lombarde‹ ): »Einfache, bauchig gerundete, der Unzialschrift ähnliche
+                  Initialform […], meist einfarbig […], gelegentlich mit ausgespartem Ornament […]«
+                  (Jacobi-Mirwald 2008, 63; vgl. ferner http://d-nb.info/gnd/1025475976), für
+                  Initialmajuskeln in gotischen Handschriften gebräuchlich. Auch verwendet als
+                  Auszeichungsmittel für Gliederungsmarken und Orientierungshilfen.
+              </p>
+           </div>
+            
+           
+
+            <p>Insbesondere Versal und Lombarde haben neben ihren dekorativen Eigenschaften auch die Aufgabe, die Texte zu strukturieren. Während die Lombarde im klassischen Sinne der Initiale untergeordnet fungiert und einzelne Textanschnitte markiert, zeigt das Versal einen abgesetzten Versteil an.</p>
+            
+            <div id="">
+            <h2>Gestaltungsmöglichkeiten</h2>
+               
+               <p>
+                  Initialen als dekorative Elemente von Handschriften können verschiedene
+               </p>
+             
+             <div id="INITIALS-FIGUREINITIAL">
+                <h3>Figureninitiale</h3>
+                <p class="resdef">
+                   <a class="refboxlink" href="../concepts/figureinitial.html"><span class="val">hc:FigureInitial</span></a> ( ›Figureninitiale‹ ): Eine Initiale, die Menschen- und Tierdarstellungen
+                  umfasst.
+                </p>
+             </div>
+               
+               <p>
+                  Die figurative Darstellung einer Initiale kann bei Bedarf weiter unterteilt werden in anthropomorphe Initialen, deren Körper ganz oder zum Teil aus Menschen bestehen, und zoomorphe Initialen, deren Körper ganz oder zum Teil aus Tieren bestehen. Da jedoch Mischformen häufig vorkommen, ist der weiter gefasste Begriff der Figureninitiale in heiEDITIONS aufgeführt.
+               </p>
+               
+               <div id="INITIALS-ANTHROPOMORPHIC">
+                  <h3>anthropomorphe Initiale</h3>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/anthropomorphicinitial.html"><span class="val">hc:AnthropomorphicInitial</span></a> ( ›anthropomorphe Initiale‹ ): Eine Initiale, deren Körper ganz oder zum Teil aus Menschen
+                  besteht.
+                  </p>
+               </div>
+               
+               <div id="INITIALS-ZOOMORPHIC">
+                  <h3>zoomorphe Initiale</h3>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/zoomorphicinitial.html"><span class="val">hc:ZoomorphicInitial</span></a> ( ›Tierinitiale‹ ): Eine Initiale, deren Körper ganz oder zum Teil aus Tieren
+                  besteht.
+                  </p>
+               </div>
+               
+               <p>
+                  Eine weitere Form der Initiale, die ebenfalls figürliche Darstellungen enthält, ist die historisierte Initiale. Hier hat die Darstellung in der Regel einen Bezug zum Text:
+               </p>
+               
+               <div id="INITIALS-HISTORIATED">
+                  <h3>historisierte Initiale</h3>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/historiatedinitial.html"><span class="val">hc:HistoriatedInitial</span></a> ( ›historisierte Initiale‹ ): 
+                     »Bezeichnung fr alle Initialen mit textbezogener figürlicher Darstellung.
+                        [...] Wie bei Miniaturen kann außer dem Wortsinn auch eine allegorische,
+                        typologische oder moralisierende Auslegung den Zusammenhang zwischen Text
+                        und Bild herstellen.«
+                     (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 56/57)
+                  .
+                  </p>
+               </div>
+               
+               <p>
+                  Neben diesen figurativen Darstellungen gibt es weitere schmückende Formen der Initialen, deren Verwendung auch Hinweise auf Zeit und Ort der Herstellung des Manuskripts sein können.
+               </p>
+               
+               
+               <div id="INITIALS-CHAMPIEINITIAL">
+                  <h3>Feldinitiale</h3>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/champieinitial.html"><span class="val">hc:ChampieInitial</span></a> ( ›Feldinitiale‹ ): Lehnübersetzung aus dem Französischen ("lettre champie"). 
+                     »Gemalter Buchstabe auf einem Feld, oft im Farbdreiklang Violett, Blau
+                        und Gold, typische Form sekundärer Initialen«
+                     (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 62)
+                  . Der Begriff "Feld" bezeichnet dabei eine Hintergrundform mit fester
+                  äußerer Begrenzung.
+                  </p>
+               </div>
+               
+               <div id="INITIALS-SCROLLWORK">
+                  <h3>Rankeninitiale</h3>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/scrollworkinitial.html"><span class="val">hc:ScrollworkInitial</span></a> ( ›Rankeninitiale‹ ): Initiale mit Rankenschmuck
+                  </p>
+               </div>
+               
+               <div id="INITIALS-SPALTLEISTENINITIAL">
+                  <h3>Spaltleisteninitiale</h3>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/spaltleisteninitial.html"><span class="val">hc:SpaltleistenInitial</span></a> ( ›Spaltleisteninitiale‹ ): 
+                     »"Der charakteristische romanische Initialtyp mit partiell gespaltenem
+                        Leistenstamm. Der Stamm oder auch Rankenzweige können mit Schnallen
+                        zusammengehalten werden und mit Blattappliken verziert sein, das Binnenfeld
+                        enthält üblicherweise Rankendekor. [...] Ausführung üblicherweise in
+                        Federzeichnung, gg. mit farbigem Polstergrund«
+                     (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 65)
+                  .
+                  </p>
+               </div>
+               
+               <div id="INITIALS-SILHOUETTEINITIAL">
+                  <h3>Feldinitiale</h3>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/silhouetteinitial.html"><span class="val">hc:SilhouetteInitial</span></a> ( ›Silhouetten-Initiale‹ ): 
+                     »Meist ein- oder zweifarbige sekundäre Initiale mit kompaktem Stamm und
+                        schlichten, nur in der Farbsilhoutte gegebenen Blättchen oder kurzen Ranken
+                        als Füllung oder Besatz (12. u. 13. Jh.).«
+                     (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 64)
+                  
+                  </p>
+               </div>
                
                
             </div>
 
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 29.10.2025
+                        Letzte Aktualisierung: 06.02.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
-                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script></body></html>
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script><script src="../toc-generator.js"></script></body></html>

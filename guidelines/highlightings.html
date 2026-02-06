@@ -22,24 +22,101 @@
                <span class="gi">&lt;hi&gt;</span> kombiniert werden.              
             </p>
             
+            
+            <div id="HIGHLIGHTINGS-LETTERS">
+               <h2>Visuelle Auszeichnungen der Schrift</h2>
+               <p>
+                  Visuelle Auffälligkeiten der Schrift können nach diesem Prinzip in heiEDITIONS als solche ausgezeichnet werden. Dies erlaubt eine präzise Darstellung der paläographischen und typographischen Befunde der Texte. Dies betrifft einerseits die Schrift selbst, welche in ihrer Form erfasst werden kann. Hierzu stehen in attribut <span class="att">@rendition</span> zahlreiche Attributwerte zur Verfügung:
+                  
+                  <ul>
+                     <li><span class="item_label"><span class="val">hc:Bold</span></span> fette Schrift</li>
+                     <li><span class="item_label"><span class="val">hc:Italic</span></span> sogenannte "echte" Kursive</li>
+                     <li><span class="item_label"><span class="val">hc:Lowercase</span></span> Kleinbuchstaben bzw. Minuskeln</li>
+                     <li><span class="item_label"><span class="val">hc:Regular</span></span> gerade Schrift</li>
+                     <li><span class="item_label"><span class="val">hc:Roman</span></span> gerade Schrift</li>
+                     <li><span class="item_label"><span class="val">hc:SansSerif</span></span> serifenlose Schrift</li>
+                     <li><span class="item_label"><span class="val">hc:Serif</span></span> Serifenschrift</li>
+                     <li><span class="item_label"><span class="val">hc:SmallCaps</span></span> Kapitälchen</li>
+                     <li><span class="item_label"><span class="val">hc:Spaced</span></span> Sperrung</li>
+                     <li><span class="item_label"><span class="val">hc:Uppercase</span></span> Großbuchstaben bzw. Majuskeln</li>
+                  </ul>
+               </p>
+               <p>
+                  Andererseits können neben den umfangreicheren Schriftbefunden auch einzelne Buchstaben oder einzelne Schriftsegmente Besonderheiten aufweisen. Besonders von heiEDITIONS unterstützt werden dabei Vergrößerungen gegenüber dem umgebenden Text.
+                  
+                  <ul>
+                     <li><span class="item_label"><span class="val">hc:Enlarged</span></span>Visueller Gegenstand, der
+                        gegenüber der Normalgröße im umgebenden visuellen Kontext größer angelegt
+                        wurde.</li>
+                     <li><span class="item_label"><span class="val">hc:EnlargedLowerPart</span></span>vergrößerter unterer Teil</li>
+                     <li><span class="item_label"><span class="val">hc:EnlargedUpperPart</span></span>vergrößerter oberer Teil</li>
+                  </ul>
+               </p>
+               
+               <p>
+                  Weitere Befunde, die mithilfe der Vorgaben von heiEDITIONS kodiert werden können, sind hoch- und tiefgestellte Zahlen oder Buchstaben, Wörter bzw. auch ganze Sätze. Als rein grafischer Bestimmung können die Attributwerte <span class="val">hc:Subscript</span> (Tiefstellung) und <span class="val">hc:Superscript</span> (Hochstellung) sowohl für spätere Einfügungen (beispielsweise als Korrekturen) als auch für beabsichtigt hoch- bzw. tiefgestellte Zeichen verwendet werden.
+                  
+                  
+               </p>
+               
+            </div>
+            
+            <div id="">
+            <h2>Grafische Auszeichnungen</h2>
+            <p>
+              Neben den direkt die Schrift betreffenden Beurteilungen können mithilfe von heiEDITIONS auch andere, die Schrift umgebende Hervorhebungen kodiert werden. So ist es möglich, die im Dokument vorhandenen Auszeichnungen zur Analyse und digitalen Darstellung verfügbar zu machen. Die Auszeichnungen nach heiEDITIONS halten dabei lediglich die visuellen Befunde fest, ohne ihnen im Voraus eine bestimmte Bedeutung zuzumessen. Der Gehalt der grafischen Auszeichnungen kann durch die Kombination des Hervorhebungs-Elements <span class="gi">&lt;hi&gt;</span> mit anderen Elementen  kodiert werden.
+            </p>
+               <p>
+                 Grundsätzliche grafische Befunde, die dargestellt werden können, umfassen:
+                 
+                 <ul>
+                    <li><span class="item_label"><span class="val">hc:Framed</span></span> umrandeter visueller Gegenstand</li>
+                    <li><span class="item_label"><span class="val">hc:Overlined</span></span> überstrichener visueller Gegenstand</li>
+                    <li><span class="item_label"><span class="val">hc:Underlined</span></span> unterstrichener visueller Gegenstand</li>
+                    <li><span class="item_label"><span class="val">hc:DoubleUnderlined</span>doppelt unterstrichener visueller Gegenstand</span></li>
+                 </ul>
+               </p>
+               <p>
+                  Insbesondere in mittelalterlichen Handschriften werden Verzierungen und Auszeichnungen auch mit roter Tinte vorgenommen. Mit den Attributwerten <span class="val">hc:RedStroke</span>, <span class="val">hc:RedUnderlined</span> und <span class="val">RedStroke</span> trägt heiEDITIONS dem Rechnung.
+               </p>
+            </div>
+            
             <div id="HIGHLIGHTINGS-REDSTROKE">
                
                <h2>Rote Strichelung</h2>
                
                <p class="resdef">
-                  <a class="refboxlink" href="../concepts/redstroke.html"><span class="val">hc:RedStroke</span></a> ( ›rote Strichelung‹ ): Visueller Gegenstand (typischerweise ein Buchstabe), der durch rote Strichelung verziert wurde. Mit roter Strichelung ist dabei eine vertikale Durchstreichung eines zuvor geschriebenen Zeichens mit roter Farbe oder roter Tinte gemeint.
+                  <a class="refboxlink" href="../concepts/redstroke.html"><span class="val">hc:RedStroke</span></a> ( ›rote Strichelung‹ ): Visueller Gegenstand (typischerweise ein Buchstabe), der durch
+                  rote Strichelung verziert wurde. Mit roter Strichelung ist dabei eine vertikale
+                  Durchstreichung eines zuvor geschriebenen Zeichens mit roter Farbe oder roter
+                  Tinte gemeint.
                </p>
                
             </div>
             
             
+            <div id="HIGHLIGHTINGS-REDOVERLINED">
+               <h2>Rote Überstreichung</h2>
+               
+            </div>
             
+            <p>
+               Neben diesen Möglichkeiten, die Details der Schrift selbst sowie die Schrift umgebende Befunde auszuzeichnenen, können bestimmte Hervorhebungen auch in anderer Form in heiEDITIONS dargestellt werden. Dies betrifft insbesondere Initialen bzw. Majuskeln, die nicht nur als textunterteilende Objekte wirken, sondern auch Hervorhebungen darstellen. Hierfür können die Hervorhebungen am Element <span class="gi">&lt;hi&gt;</span> bzw. dem Attribut <span class="att">@rendition</span> als Kadelle (<span class="val">hc:Cadel</span>), Versale (<span class="val">hc:Versal</span>), Littera Notabilior (<span class="val">hc:LitteraNotabilior</span>), oder Lombarde (<span class="val">hc:Lombard</span>) spezifiziert werden. 
+               
+            </p>
             <div id="HIGHLIGHTINGS-VERSAL">
                
                <h2>Versal</h2>
                
                <p class="resdef">
                   <a class="refboxlink" href="../concepts/versal.html"><span class="val">hc:Versal</span></a> ( ›Versal‹ ): 
+                     »Der Begriff leitet sich von den Anfangsbuchstaben von abgesetzt
+                        geschriebenen Verszeilen ab, die leicht vergrößert links aus der Spalte
+                        gerückt sind. Danach allgemein für links ausgerückte, meist nur einzeilige,
+                        farblich abgehobene, ggf. leicht verzierte Anfangsbuchstaben«
+                     (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 50)
+                  . Im engeren Sinn wird der Begriff Versal auch nur für ausgerückte
+                  Anfangsbuchstaben von Psalmversen verwendet.
                </p>
                
             </div>
@@ -51,7 +128,18 @@
                <h2>Kadelle</h2>
                
                <p class="resdef">
-                  <a class="refboxlink" href="../concepts/cadel.html"><span class="val">hc:Cadel</span></a> ( ›Kadelle; Cadelle‹ ): »Großbuchstaben des 14. und 15. Jh., deren Schäfte und Bögen aus parallel laufenden, sich zum Teil durchkreuzenden breiten Strichen in Schrifttinte mit der Schreibfeder gebildet sind« (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 60). Allgemeiner auch eine sonstige vergrößerte <em>littera notabilior</em>, eine Satzmajuskel bzw. ein Versal, wenn der Buchstabe mit Schrifttinte ausgeführt (und ggf. rot gestrichelt) und ebenfalls in Schrifttinte verziert ist, ggf. mit Fleuronnée oder figuralen Motiven. Eine Kadelle kann als Initiale eine strukturell-gliedernde Funktion übernehmen, dient aber häufig auch ›nur‹ als visuelle Marke jeweils in der ersten Zeile einer Seite oder Spalte.
+                  <a class="refboxlink" href="../concepts/cadel.html"><span class="val">hc:Cadel</span></a> ( ›Kadelle; Cadelle‹ ): 
+                     »Großbuchstaben des 14. und 15. Jh., deren Schäfte und Bögen aus parallel
+                        laufenden, sich zum Teil durchkreuzenden breiten Strichen in Schrifttinte
+                        mit der Schreibfeder gebildet sind«
+                     (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 60)
+                  . Allgemeiner auch eine sonstige vergrößerte <em>littera
+                     notabilior</em>, eine Satzmajuskel bzw. ein Versal, wenn der Buchstabe mit
+                  Schrifttinte ausgeführt (und ggf. rot gestrichelt) und ebenfalls in Schrifttinte
+                  verziert ist, ggf. mit Fleuronnée oder figuralen Motiven. Eine Kadelle kann als
+                  Initiale eine strukturell-gliedernde Funktion übernehmen, dient aber häufig auch
+                     ›nur‹ als visuelle Marke jeweils in der ersten Zeile einer Seite oder
+                  Spalte.
                </p>
                
                <img class="illustration" src="../images/wlb_hb_v_95_0019_Kadelle.jpg" alt="Kadelle als Versal ohne sonstige strukturell-gliedernde Funktion in der ersten Zeile einer Spalte"><p class="bildunterschrift">Abb. 1: 
@@ -107,12 +195,13 @@
                
                
             </div>
-
+           
          </div>
+         
       <br><br><hr><div class="bibliography"><h3>Zitierte Literatur</h3><dl class="inline"><dt id="jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</dt><dd>Jakobi-Mirwald, Christine: <em>Buchmalerei : Terminologie in der Kunstgeschichte</em>. 4., überarb. Aufl. unter Mitarbeit von Martin Roland. Berlin : Reimer, 2015. – ISBN 978-3-496-01499-7
            </dd></dl></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 29.10.2025
+                        Letzte Aktualisierung: 06.02.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
-                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script></body></html>
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script><script src="../toc-generator.js"></script></body></html>
