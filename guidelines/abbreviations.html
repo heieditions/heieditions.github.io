@@ -2,7 +2,7 @@
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
-                    Abkürzungen und ihre Auflösung Kodierungsmethoden: Markierung von Abkürzung und Auflösung ohne Verknüpfung. abbr und expan Kodierungsmethoden: Verknüpfung von Abkürzung und Auflösung. Das choice-Element Einfache Auflösung mit am und ex Segmentierte Kodierung</nav><main>
+                    Abkürzungen und ihre Auflösung</nav><main>
          <div id="ABBR">
             <div class="wip-banner"><span class="wip-banner__icon">🔧</span><span>Dieser Abschnitt ist aktuell in Bearbeitung.</span></div>
             <h1>Abkürzungen und ihre Auflösung</h1>
@@ -45,10 +45,10 @@
                <li>Abkürzungen werden in Originalform transkribiert und gleichzeitig aufgelöst. Da sich der Text 
                   an der betroffenen Stelle graphartig in Parallelpfade teilt, ist entsprechendes Markup schon rein technisch unerlässlich.</li>
             </ul>
-         </div>
+         
          
          <div id="ABBR-METHODS-ABBR">
-            <h1>Kodierungsmethoden: Markierung von Abkürzung und Auflösung ohne Verknüpfung. <span class="gi">&lt;abbr&gt;</span> und <span class="gi">&lt;expan&gt;</span></h1>
+            <h2>Kodierungsmethoden: Markierung von Abkürzung und Auflösung ohne Verknüpfung. <span class="gi">&lt;abbr&gt;</span> und <span class="gi">&lt;expan&gt;</span></h2>
            <p>
               Die einfachste Methode zur Kodierung von Abkürzungen stellt ihre Markierung mit <span class="gi">&lt;abbr&gt;</span> („abbreviation“) dar. Durch diese Kodierung wird deutlich, dass es sich bei dem markierten Textgegenstand um eine Abkürzung handelt, ohne, dass dieser Anzeige eine konkrete Auflösung oder anderweitige Anweisung folgen muss.
               Gleichzeitig bietet diese Markierung den Ausgangspunkt für die Erweiterung bzw. Vervollständigung der Abkürzung. Dies kann mithilfe des Elements <span class="gi">&lt;expan&gt;</span> („expansion“) geschehen.
@@ -58,16 +58,20 @@
          </div>
          <div id="ABBR-METHODS-CHOICE">
          
-         <h1>Kodierungsmethoden: Verknüpfung von Abkürzung und Auflösung. Das <span class="gi">&lt;choice&gt;</span>-Element</h1>
+         <h2>Kodierungsmethoden: Verknüpfung von Abkürzung und Auflösung. Das <span class="gi">&lt;choice&gt;</span>-Element</h2>
          
          <p>
             Neben der Markierung ohne Verknüpfung stellt ›heiEDITIONS‹ zwei weitere Methoden zur Kodierung von 
             Abkürzungen bereit, die je nach Komplexität und Form der Abbreviatur gewählt werden.
             Beide Formen der Abkürzungen werden mit einem <span class="gi">&lt;choice&gt;</span>-Element als Ausgangselement gebildet.
             Dieses <span class="gi">&lt;choice&gt;</span>-Element funktioniert als Markierung der beiden Parallelpfade von Abkürzung und Vervollständigung,
-            indem es neben der Darstellung des Originaltexts auch die alternative Kodierung stellt.
-         </p>
-         
+            indem es neben der Darstellung des Originaltexts auch die alternative Kodierung stellt.</p>
+            <p>
+               Das Element <span class="gi">&lt;choice&gt;</span> umklammert die originale Abkürzung und die editorische Auflösung. sodass die Zusammengehörigkeit der beiden Teile in der Kodierung eindeutig erkennbar ist.
+               Die durch die Benennung gegebene „Auswahl“ besteht zwischen diesen beiden Pfaden, die es erlauben, sowohl den Befund der Handschrift als auch den editorischen Eingriff der Auflösung darzustellen.
+            </p>
+            
+
             
          
          </div>
@@ -75,7 +79,7 @@
          <div id="ABBR-METHODS-SIMPLE">
             
             
-            <h1>Einfache Auflösung mit <span class="gi">&lt;am&gt;</span> und <span class="gi">&lt;ex&gt;</span></h1>
+            <h2>Einfache Auflösung mit <span class="gi">&lt;am&gt;</span> und <span class="gi">&lt;ex&gt;</span></h2>
             
             <p>
                Die erste Methode verwendet das Element <span class="gi">&lt;choice&gt;</span> 
@@ -95,6 +99,7 @@
                
                Beispielhaft für diese Form der Abkürzung kann die Umsetzung des Nasalstrichs in ›heiEDITIONS‹ stehen.
                </p>
+            <span class="aside">Nasalstrich/Tilde</span>
                <p>
                   Der Nasalstrich (auch: Tilde) ist eines der häufigsten Abkürzungszeichen in 
                   mittelalterlichen Handschriften. Er wird typischerweise als horizontaler 
@@ -103,7 +108,7 @@
                   In dieser Form wird er in heiEDITIONS mit einer einfachen Bezeichnung als Strich über dem betreffenden Buchstaben kodiert:
                </p>
                
-               
+            
                
                <p>
                   Die Auszeichnung mit einem durch ›‹ im <span class="gi">&lt;am&gt;</span>-Element ist hierbei die Auszeichnung des Originalzustands. Die direkte Folge des <span class="gi">&lt;ex&gt;</span> löst
@@ -125,7 +130,7 @@
          </div>
             <div id="ABBR-METHODS-COMPLEX">
                
-               <h1>Segmentierte Kodierung</h1>
+               <h2>Segmentierte Kodierung</h2>
                
                <p>
                   Für komplexe Abkürzungen, bei denen die oben umrissene Methode nicht ausreicht, 
@@ -135,11 +140,11 @@
                
                <ul>
                   <li>
-                     Die Abkürzung mehrere Komponenten hat, die unterschiedlich behandelt 
+                     die Abkürzung mehrere Komponenten hat, die unterschiedlich behandelt 
                      werden müssen
                   </li>
                   <li>
-                     Die Auflösung nicht linear erfolgt (z. B. bei Superskript-Abkürzungen 
+                     die Auflösung nicht linear erfolgt (z. B. bei Superskript-Abkürzungen 
                      mit zusätzlichen Zeichen)
                   </li>
 
@@ -147,7 +152,7 @@
                
                <div id="ABBR-METHODS-COMPLEX-STRUCTURE">
                   
-                  <h2>Struktur der segmentierten Kodierung</h2>
+                  <h3>Struktur der segmentierten Kodierung</h3>
                   
                   <p>
                      Die segmentierte Kodierung verwendet, ebenso wie die „einfachere“ Methode, das <span class="gi">&lt;choice&gt;</span>-Element. Dieses umschließt aber zunächst zwei <span class="gi">&lt;seg&gt;</span>-Elemente:
@@ -155,10 +160,10 @@
                   
                   <ul>
                      <li>
-                        <span class="gi">&lt;seg&gt;</span> mit dem Attribut und Attributwert <span class="code">ana="hc:AbbreviatedTokenSegment"</span> enthält die gesamte abgekürzte Form mit allen visuellen Eigenschaften.
+                        <span class="gi">&lt;seg&gt;</span> mit dem Attribut und Attributwert <span class="val">ana="hc:AbbreviatedTokenSegment"</span> enthält die gesamte abgekürzte Form mit allen visuellen Eigenschaften.
                      </li>
                      <li>
-                        <span class="gi">&lt;seg&gt;</span> mit dem Attribut und Attributwert <span class="code">ana="hc:ExpandedTokenSegment"</span> enthält die aufgelöste Form.
+                        <span class="gi">&lt;seg&gt;</span> mit dem Attribut und Attributwert <span class="val">ana="hc:ExpandedTokenSegment"</span> enthält die aufgelöste Form.
                      </li>
                   </ul>
                   <p>
@@ -175,8 +180,9 @@
                   </p>
          </div>
             </div>
+         </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 18.02.2026
+                        Letzte Aktualisierung: 03.03.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
