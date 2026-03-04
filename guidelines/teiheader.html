@@ -4,9 +4,7 @@
                     ☞ 
                     Metadaten</nav><main>
          <div id="TEIHEADER">
-            
             <h1>Metadaten</h1>
-            
             <p>
                <span class="aside"><span class="gi">&lt;teiHeader&gt;</span></span>
                Das Element <span class="gi">&lt;teiHeader&gt;</span> ist der obligatorische Metadatenbereich eines jeden TEI-Dokuments 
@@ -49,7 +47,6 @@
             </ul>
             
             <div id="TEIHEADER-LANG">
-
                <h2>Mehrsprachigkeit</h2>
                <p>
                   <span class="aside"><span class="att">@xml:lang</span></span>
@@ -73,7 +70,7 @@
 
             <div id="TEIHEADER-FILEDESC">
                
-               <h2>Bibliographische Metadaten</h2>
+               <h2>Bibliographische Metadaten im Element <span class="gi">&lt;fileDesc&gt;</span></h2>
                
                <p>
                   <span class="aside"><span class="gi">&lt;fileDesc&gt;</span></span>
@@ -1040,7 +1037,7 @@
                      <span class="aside"><span class="gi">&lt;sourceDesc&gt;</span></span>
                      Das Element <span class="gi">&lt;sourceDesc&gt;</span> gibt an, woher der Inhalt des TEI-Dokuments bzw. genauer der Inhalt
                      von <span class="gi">&lt;text&gt;</span> stammt. Es gibt grundsätzlich zwei Möglichkeiten:
-                  </p>
+                  </p> 
                   <ul>
                      <li>
                         Der Inhalt von <span class="gi">&lt;text&gt;</span> ist die Edition oder Transkription eines früher bereits vorliegenden Textes im breitesten Sinne,
@@ -1579,27 +1576,101 @@
                
             </div>
             
+            
+         </div>
             <div id="TEIHEADER-ENCODINGDESC">
-               
-               <h3>Beschreibung der Kodierung</h3>
+               <h2>Beschreibung der Kodierung in <span class="gi">&lt;encodingDesc&gt;</span></h2>
                
             </div>
             
+            
             <div id="TEIHEADER-PROFILEDESC">
+               <h2>Informationen über das Textprofil in <span class="gi">&lt;profileDesc&gt;</span></h2>
+               <div class="wip-banner"><span class="wip-banner__icon">🔧</span><span>Dieser Abschnitt ist aktuell in Bearbeitung.</span></div>
+               <div id="TEIHEADER-PROFILEDESC-OVERVIEW">
+                  <h3>Übersicht zu Inhalt und Struktur von <span class="gi">&lt;profileDesc&gt;</span></h3>
+                  <p>Das optionale Element <span class="gi">&lt;profileDesc&gt;</span> versammelt Metadaten zum Inhalt und Entstehungskontext eines Textes, d.h. nicht-bibliografische Metadaten, die dazu dienen, ein Textprofil zu bilden.
+                     Dazu gehören zum Beispiel:
+                     <ul>
+                        <li>eine Zusammenfassung des Textes in <span class="gi">&lt;abstract&gt;</span>,</li>
+                        <li>die Angabe von Entstehungsdatum und -ort in <span class="gi">&lt;creation&gt;</span>,</li>
+                        <li>Informationen zu im Text enthaltenen Sprachen, Registern und Dialekten in <span class="gi">&lt;langUsage&gt;</span>,</li>
+                        <li>die Klassifikation von Textart und -thematik in <span class="gi">&lt;textClass&gt;</span>,</li>
+                        <li>oder konkret für Korrespondenzen eine strukturierte Beschreibung der mit ihnen in Zusammenhang stehenden Aktionen durch <span class="gi">&lt;correspDesc&gt;</span>.</li>
+                     </ul>
+                     Das Entstehungsdatum bezeichnet hierbei den Zeitpunkt oder den Zeitraum, in welchem der Text verfasst wurde. Somit ist es vom Veröffentlichungsdatum zu unterscheiden, 
+                     welches in den <a class="inlink" href="#TEIHEADER-FILEDESC-PUBLICATIONSTMT">Angaben zur Veröffentlichung</a> vermerkt wird. Gleiches gilt für den Entstehungsort. 
+                  </p>
+               </div>
                
-               <h3>Informationen über den Hintergrund des Textes</h3>
+               <div id="TEIHEADER-PROFILEDESC-CORRESPDESC">
+                  <h3>Speziell für Korrespondenzbeschreibungen: <span class="gi">&lt;correspDesc&gt;</span></h3>
+                  <p>Das Element <span class="gi">&lt;correspDesc&gt;</span> ermöglicht die detaillierte Erfassung aller Aktionen, 
+                     die im Zusammenhang mit einer Korrespondenz (z.B. Brief, Postkarte, Telegramm etc.) stehen. 
+                     Jede Korrespondenzhandlung – zum Beispiel das Verfassen, Empfangen oder Senden – wird dabei durch ein <span class="gi">&lt;correspAction&gt;</span>-Element repräsentiert, 
+                     welches in strukturierter Form Informationen über beteiligte Personen oder Organisationen, Orts- und Datumsangaben enthält.  
+                  </p>
+                  
+                  <span class="aside"><span class="gi">&lt;correspAction&gt;</span></span>
+                  <p>Zur Beschreibung, um welche Art von Korrespondenzhandlung es sich handelt, schlägt die TEI u.a. die beiden Attributwerte <span class="val">sent</span> und <span class="val">received</span> vor. 
+                     In heiEDITIONS werden diese Werte genauer aufgesplittet, um beispielsweise zwischen intendiertem und tatsächlichem Empfänger einer Korrespondenz unterscheiden zu können. 
+                     Das Attribut <span class="att">@ana</span> einer <span class="gi">&lt;correspAction&gt;</span> darf und muss folglich genau einen der folgenden Werte haben:</p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/correspondenceauthoring.html"><span class="val">hc:CorrespondenceAuthoring</span></a> ( ›Verfassen der
+                  Korrespondenz‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/designationascorrespondenceaddressee.html"><span class="val">hc:DesignationAsCorrespondenceAddressee</span></a> ( ›Nennung als adressierte
+                  Korrespondenzpartei‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/correspondencesending.html"><span class="val">hc:CorrespondenceSending</span></a> ( ›Versenden der
+                  Korrespondenz‹ ): 
+                  </p>
+                  <p class="resdef">
+                     <a class="refboxlink" href="../concepts/correspondencereceiving.html"><span class="val">hc:CorrespondenceReceiving</span></a> ( ›Empfangen der
+                  Korrespondenz‹ ): 
+                  </p>
+                     
+                  
+   
+                   <p>Die in heiEDITIONS zulässigen Kind-Elemente von <span class="gi">&lt;correspAction&gt;</span> folgen dieser Sequenz:
+                     <ul>
+                        <li><span class="gi">&lt;author&gt;</span> oder <span class="gi">&lt;respStmt&gt;</span> (optional, aber nur einmal pro Handlung)</li>
+                        <li><span class="gi">&lt;location&gt;</span> (optional, ggf. mehrfach)</li>
+                        <li><span class="gi">&lt;date&gt;</span> (optional, aber nur einmal pro Handlung; mit Datierungsattributen <span class="att">@when</span>, <span class="att">@from</span>, <span class="att">@to</span>, <span class="att">@notBefore</span>, <span class="att">@notAfter</span>)</li>
+                     </ul>
+                     Handelt es sich bei einer Korrespondenzhandlung um das Verfassen, d.h. <span class="val">hc:CorrespondenceAuthoring</span>, muss bei bekannter Autorschaft <span class="gi">&lt;author&gt;</span> verwendet werden.
+                     Für andere Handlungen und Rollen wird hingegen <span class="gi">&lt;respStmt&gt;</span> genutzt. Ist der Agens einer Korrespondenzhandlung unbekannt, können auch nur die Informationen zu Ort und/oder Datum der Handlung erfasst werden.
+                     Die Ausgestaltung der genannten Elemente folgt dabei denselben Regeln, die bereits bei ihrer Verwendung in <a class="inlink" href="#TEIHEADER-FILEDESC-PUBLICATIONSTMT">Angaben zur Veröffentlichung</a> besprochen wurden.  
+                  </p>
+                     <p>Dass in heiEDITIONS genau ein Agens pro Handlung zulässig ist, ergibt sich aus der bisherigen Datenbasis: Bei den bisher betreuten Briefeditionen haben wir festgestellt, 
+                     dass Briefe mit mehr als einem Autor häufig zunächst von einer Person verfasst wurden und eine zweite beispielsweise einen Tag später Kommentare auf der Rückseite ergänzt hat, bevor der Brief versandt wurde. 
+                     Hier obliegt es den Editionsherausgebenden, zu entscheiden, ob dies als dieselbe Korrespondenzhandlung einzustufen wäre, und ggf. Änderungen am zugrundeliegenden Schema vorzuschlagen.</p>
+                     
+                     
+                     
+                     <span class="aside">Informationsdopplung durch <span class="gi">&lt;correspDesc&gt;</span></span>
+                     <p>Bei genauer Betrachtung des <span class="gi">&lt;correspDesc&gt;</span>-Elementes im Kontext des gesamten TEI-Headers wird deutlich, dass sich bei Editionen von Korrespondenzen durch dessen Verwendung an mehreren Stellen Informationsdopplungen ergeben.
+                        Zunächst wiederholen sich Orts- und Datumsangaben aus <span class="gi">&lt;creation&gt;</span> in den <span class="gi">&lt;correspAction&gt;</span>-Kindelementen <span class="gi">&lt;location&gt;</span> und <span class="gi">&lt;date&gt;</span>. 
+                        Zudem sind die Angaben zu verfassenden und empfangenden Personen bereits im <span class="gi">&lt;titleStmt&gt;</span> erfasst.
+                        Der große Vorteil der Verwendung von <span class="gi">&lt;correspDesc&gt;</span> in Korrespondenzeditionen ist jedoch die semantisch präzisere Differenzierung der Metadaten und ihre Versammlung an einem Ort, 
+                        wodurch die automatische Verknüpfung mit anderen Korrespondenzdaten und die projektübergreifende Recherche deutlich erleichtert werden.
+                        Beispielsweise basiert der für die Anbindung an das Portal <a class="tocref" href="https://correspsearch.html">correspSearch</a> nötige Export in das ›Correspondence Metadata Interchange Format‹ an der UB HD 
+                        maßgeblich auf den <span class="gi">&lt;correspDesc&gt;</span>-Elementen der jeweiligen Korrespondenzen.
+                     </p>
+                  
+            
                
+
                
+               </div>
                
             </div>
             
             <div id="TEIHEADER-REVISIONDESC">
-               
-               <h3>Revisionsgeschichte</h3>
-               
+               <h2>Angaben zur Revisionsgeschichte in <span class="gi">&lt;revisionDesc&gt;</span></h2>
             </div>
-
-         </div>
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
                         S. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iana.org/assignments/language-subtag-registry/language-subtag-registry" target="_blank">Sprachcodes der Internet Assigned Numbers Authority (IANA)</a>.
@@ -1624,7 +1695,7 @@
                            durch nachträgliche Fragmentierung heute aus mehreren, ggf. dislozierten Fragmenten besteht. Eine solche
                            Quelle wird mit einem einzigen <span class="gi">&lt;msDesc&gt;</span> angegeben (s. XXX). 
                         </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 06.02.2026
+                        Letzte Aktualisierung: 04.03.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
