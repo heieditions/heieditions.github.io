@@ -1,0 +1,34 @@
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Editorische Eingriffe</title><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Editorische Eingriffe</nav><main>
+         <div id="EDITORIALCHANGES">
+            
+            <h1>Editorische Eingriffe</h1>
+           <p>
+           </p>
+           
+         
+         <div id="EDITORIALREVISIONS-TRANSPOSITIONS">
+            <h2>Editorische Umstellungen</h2>
+            <p>
+               Umstellungen, die nicht von den Schreibern selbst, sondern im Rahmen der Edition vorgenommen werden, können in heiEDITIONS ebenfalls markiert und dargestellt werden (vgl. <a class="inlink" href="visualization.html#VIS-OPT-EDT-INTERVENT">Editorische Eingriffe</a>).
+               Hierzu müssen zunächst mindestens die umzustellenden Zeichenfolgen jeweils einzeln und eindeutig Tokenisiert werden.  
+               Mithilfe des Elements <span class="gi">&lt;link&gt;</span> wird zunächst einen nicht tiefer definierten Zusammenhang zwischen den so markierten Zeichenfolgen hergestellt.</p>
+               
+             <p>Diese so umfasste Zeichenfolge wird als eine editorische Umstellung markiert, indem an dem Attribut <span class="att">@ana</span> der heiEDITION-eigene Wert <span class="val">hc:EditorialTransposition</span> ergänzt wird.
+               Um die exakten Zeichenfolgen, die editorisch umgestellt werden sollen, zu definieren, werden ihre Token-Bezeichnungen innerhalb von <span class="gi">&lt;link&gt;</span> mit <span class="att">@target</span> in der neuen, umgestellten Reihenfolge angegeben.
+               In heiEDITIONS ist es zudem möglich, dass sich mit <span class="att">@target</span> definierten Token-Bezeichnungen auch über mehrere Tokens erstrecken. In diesem Fall müssen die Werte innerhalb des <span class="att">@target</span>-Attributs mit <span class="val">#range</span> angegeben werden.
+               
+               Analog zu  kann auch ein "Sammelcontainer" für editorische Umstellungen angelegt werden.
+               Innerhalb von <span class="gi">&lt;linkGrp&gt;</span> können, wie es bei Umstellungen von Schreiberhand mit <span class="gi">&lt;listTranspose&gt;</span> der Fall ist, mehrere Fälle von editorischen Umstellungen zusammengefasst werden.
+            </p>
+         </div>
+         </div>
+      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 24.03.2026
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script><script src="../toc-generator.js"></script></body></html>
