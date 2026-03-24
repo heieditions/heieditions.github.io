@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Initialen</title><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Initialen</title><script src="https://www.ub.uni-heidelberg.de/cdn/jquery/3.7.1/jquery.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/bootstrap/4.6.1-own-scope/css/bootstrap.min.css" rel="stylesheet"><script src="https://www.ub.uni-heidelberg.de/cdn/popper/latest/popper.min.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/bootstrap/4.6.1-own-scope/js/bootstrap.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://digi.ub.uni-heidelberg.de/diglit_pub/css/tei.min.css" type="text/css"><script type="text/javascript" src="../visualize_examples.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/handlebars/latest/handlebars.min.js"></script><script src="https://digi.ub.uni-heidelberg.de/diglit_pub/bundle.min.js"></script><script>DigiLayout.init('ger')</script><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
@@ -7,9 +7,8 @@
             
             <h1>Initialen</h1>
             
-            
+
             <p>Initialen, vom lateinischen initialis, „am Anfang stehend“, bezeichnet jeden am Textanfang stehenden Buchstaben, der in Größe und Form gegenüber der Textschrift oder den Satzmajuskeln herausgehoben ist (<span class="biblrefprefix">→ </span><a class="biblref" href="#jakobi-mirwald_2015">Jakobi-Mirwald <sup>4</sup>2015</a>, S. 22).</p>
-            
             
             
             <p>
@@ -33,11 +32,22 @@
                 Zum einen die explizite Markierung als Initiale, welche eine strukturell-gliedernde Funktion übernimmt und Textteile markiert oder anderweitig mit dem Text verbundene Aufgaben wahrnimmt.
                 Dies kann über das Element <span class="gi">&lt;initial&gt;</span> geschehen, dessen Attribut <span class="att">@rendition</span> mit den spezifischen, von heiEDITIONS verwendeten Werten (s.u.) der verschiedenen Formen von Initialen genauer definiert werden können.
             </p>
+            
+               <div class="bootstrap-scope egxml" data-example-id="initial_simple" data-visualization-type="visual_findings"><pre class="language-xml"><code>
+               &lt;hei:initial&gt;H&lt;/hei:initial&gt;ier steht eine Initiale.
+            </code></pre></div>
+            
+            
+            
+            <img class="illustration" src="../images/duerer_formschneider_1527_e_initiale.png" alt="Initiale als Zierelement in einem Dürer-Druck aus dem Jahr 1527"><p class="bildunterschrift">Abb. 1: 
+                  Initiale als Zierelement in einem Dürer-Druck aus dem Jahr 1527.
+               </p>
+         
             <p>
                Zum anderen gibt es auch, insbesondere bei Lombarden und Kadellen, die Möglichkeit, dass diese lediglich als visuelle Markierungen eines Satz- oder Absatzbeginns wirken. Hier kann die Initiale als reine visuelle Auszeichnung oder Verzierung mit <span class="gi">&lt;hi&gt;</span> wiedergegeben werden . Auch in diesem Fall ist eine Spezifizierung mithilfe von <span class="att">@rendition</span> möglich.
             </p>
             
-            <div id="INITIALS-CADEL">
+            <div id="HIGHLIGHTINGS-CADEL">
                
                <h2>Kadelle</h2>
                
@@ -56,10 +66,25 @@
                   Spalte.
                </p>
                
-            </div>
+               
+               <img class="illustration" src="../images/wlb_hb_v_95_0019_Kadelle.jpg" alt="Kadelle als Versal ohne sonstige strukturell-gliedernde Funktion in der ersten Zeile einer Spalte"><p class="bildunterschrift">Abb. 1: 
+                     Kadelle als Versal ohne sonstige strukturell-gliedernde Funktion in der ersten Zeile einer Spalte
+                     (Stuttgart, Württembergische Landesbibliotek, HB V 95, fol. 8r, <a class="inlink" href="https://digi.ub.uni-heidelberg.de/diglit/wlb_hb_v_95/0019">https://digi.ub.uni-heidelberg.de/diglit/wlb_hb_v_95/0019</a> 
+                     bzw. <span class="outlinkprefix">↪ </span><a class="outlink" href="http://digital.wlb-stuttgart.de/purl/bsz343181304/page/19" target="_blank">http://digital.wlb-stuttgart.de/purl/bsz343181304/page/19</a>, Abbildung gemeinfrei).
+                  </p>
+               
+               
+                  <div class="bootstrap-scope egxml" data-example-id="cadel_simple" data-visualization-type="visual_findings"><pre class="language-xml"><code>
+               &lt;l&gt;
+                  &lt;lb n="1"/&gt;
+                  &lt;hi rendition="hc:Cadel"&gt;D&lt;/hi&gt;ı wıle er wılt d&amp;zig; meıſtírſchaft 
+               &lt;/l&gt;  
+            </code></pre></div>  
+               
+               
             
             <div id="INITIALS-VERSAL">
-               <h2>Versal</h2>
+               <h3>Versal</h3>
                <p class="resdef">
                  <a class="refboxlink" href="../concepts/versal.html"><span class="val">hc:Versal</span></a> ( ›Versal‹ ): 
                      »Der Begriff leitet sich von den Anfangsbuchstaben von abgesetzt
@@ -74,7 +99,7 @@
             </div>
             
            <div id="INITIALS-LOMBARD">
-              <h2>Lombarde</h2>
+              <h3>Lombarde</h3>
               <p class="resdef">
                  <a class="refboxlink" href="../concepts/lombard.html"><span class="val">hc:Lombard</span></a> ( ›Lombarde‹ ): »Einfache, bauchig gerundete, der Unzialschrift ähnliche
                   Initialform […], meist einfarbig […], gelegentlich mit ausgespartem Ornament […]«
@@ -89,14 +114,14 @@
             <p>Insbesondere Versal und Lombarde haben neben ihren dekorativen Eigenschaften auch die Aufgabe, die Texte zu strukturieren. Während die Lombarde im klassischen Sinne der Initiale untergeordnet fungiert und einzelne Textanschnitte markiert, zeigt das Versal einen abgesetzten Versteil an.</p>
             
             <div id="INITIALS-DESIGNOPTIONS">
-            <h2>Gestaltungsmöglichkeiten</h2>
+            <h3>Gestaltungsmöglichkeiten</h3>
                
                <p>
                   Initialen als dekorative Elemente von Handschriften können verschiedene Formen annehmen, die sich mehr oder weniger stark auf den begleitenden bzw. umgebenden Text beziehen.
                </p>
              
              <div id="INITIALS-FIGUREINITIAL">
-                <h3>Figureninitiale</h3>
+                <h4>Figureninitiale</h4>
                 <p class="resdef">
                    <a class="refboxlink" href="../concepts/figureinitial.html"><span class="val">hc:FigureInitial</span></a> ( ›Figureninitiale‹ ): Eine Initiale, die Menschen- und Tierdarstellungen
                   umfasst.
@@ -108,7 +133,7 @@
                </p>
                
                <div id="INITIALS-ANTHROPOMORPHIC">
-                  <h3>anthropomorphe Initiale</h3>
+                  <h4>anthropomorphe Initiale</h4>
                   <p class="resdef">
                      <a class="refboxlink" href="../concepts/anthropomorphicinitial.html"><span class="val">hc:AnthropomorphicInitial</span></a> ( ›anthropomorphe Initiale‹ ): Eine Initiale, deren Körper ganz oder zum Teil aus Menschen
                   besteht.
@@ -116,7 +141,7 @@
                </div>
                
                <div id="INITIALS-ZOOMORPHIC">
-                  <h3>zoomorphe Initiale</h3>
+                  <h4>zoomorphe Initiale</h4>
                   <p class="resdef">
                      <a class="refboxlink" href="../concepts/zoomorphicinitial.html"><span class="val">hc:ZoomorphicInitial</span></a> ( ›Tierinitiale‹ ): Eine Initiale, deren Körper ganz oder zum Teil aus Tieren
                   besteht.
@@ -128,7 +153,7 @@
                </p>
                
                <div id="INITIALS-HISTORIATED">
-                  <h3>historisierte Initiale</h3>
+                  <h4>historisierte Initiale</h4>
                   <p class="resdef">
                      <a class="refboxlink" href="../concepts/historiatedinitial.html"><span class="val">hc:HistoriatedInitial</span></a> ( ›historisierte Initiale‹ ): 
                      »Bezeichnung für alle Initialen mit textbezogener figürlicher Darstellung.
@@ -147,7 +172,7 @@
                
                
                <div id="INITIALS-CHAMPIEINITIAL">
-                  <h3>Feldinitiale</h3>
+                  <h4>Feldinitiale</h4>
                   <p class="resdef">
                      <a class="refboxlink" href="../concepts/champieinitial.html"><span class="val">hc:ChampieInitial</span></a> ( ›Feldinitiale‹ ): Lehnübersetzung aus dem Französischen („lettre champie“). 
                      »Gemalter Buchstabe auf einem Feld, oft im Farbdreiklang Violett, Blau
@@ -159,14 +184,14 @@
                </div>
                
                <div id="INITIALS-SCROLLWORK">
-                  <h3>Rankeninitiale</h3>
+                  <h4>Rankeninitiale</h4>
                   <p class="resdef">
                      <a class="refboxlink" href="../concepts/scrollworkinitial.html"><span class="val">hc:ScrollworkInitial</span></a> ( ›Rankeninitiale‹ ): Initiale mit Rankenschmuck
                   </p>
                </div>
                
                <div id="INITIALS-SPALTLEISTENINITIAL">
-                  <h3>Spaltleisteninitiale</h3>
+                  <h4>Spaltleisteninitiale</h4>
                   <p class="resdef">
                      <a class="refboxlink" href="../concepts/spaltleisteninitial.html"><span class="val">hc:SpaltleistenInitial</span></a> ( ›Spaltleisteninitiale‹ ): 
                      »Der charakteristische romanische Initialtyp mit partiell gespaltenem
@@ -179,8 +204,10 @@
                   </p>
                </div>
                
+               
+               
                <div id="INITIALS-SILHOUETTEINITIAL">
-                  <h3>Silhouetten-Initiale</h3>
+                  <h4>Silhouetten-Initiale</h4>
                   <p class="resdef">
                      <a class="refboxlink" href="../concepts/silhouetteinitial.html"><span class="val">hc:SilhouetteInitial</span></a> ( ›Silhouetten-Initiale‹ ): 
                      »Meist ein- oder zweifarbige sekundäre Initiale mit kompaktem Stamm und
@@ -191,7 +218,7 @@
                   </p>
                </div>
                <div id="INITIALS-COLORS">
-                  <h3>Farbbefunde in Initialen</h3>
+                  <h4>Farbbefunde in Initialen</h4>
                   <p>
                      Neben der detaillierten Darstellung der verschiedenen Formen kann auch die farbliche Komponente der Initialen und auch ihrer Hintergründe kodiert werden (vgl. hierzu die Angaben unter: <a class="inlink" href="highlightings.html#HIGHLIGHTINGS-COLOR">Farbe</a>).
                      Hierbei ist es neben der Kodierung mit einer Farbe auch möglich, mehrfarbige Befunde festzuhalten. Dabei wird in der Visualisierung allerdings nur die erste angegebene Farbe festgehalten.
@@ -202,8 +229,9 @@
             </div>
 
          </div>
+         </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 03.03.2026
+                        Letzte Aktualisierung: 24.03.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
