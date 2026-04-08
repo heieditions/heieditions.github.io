@@ -1,0 +1,63 @@
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Zeichenkodierung</title><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Zeichenkodierung</nav><main>
+         
+         <div id="CHARACTER-ENCODING-INTRO">
+            <h1>Zeichenkodierung</h1>
+            <div id="CHARACTER-ENCODING-TERMS">
+               <h2>Begriffliche Differenzierung von Zeichen und Glyphe</h2>
+               <p>Ein Zeichen im technischen Sinne des Unicode-Standards ist nicht imer eindeutig
+                  und indiskutabel ein ›Zeichen‹ (›character‹), das in
+                  Abgrenzung zum Begriff der ›Glyphe‹ einer theoretisch
+                  fundierten begrifflichen Definition entspricht. Angesichts zahlreicher ambiger
+                  Fälle müssen Zeichendefinitionen von Unicode pragmatisch ausgelegt werden und sind
+                  gewissermaßen zirkulär: Ein Zeichen im Sinne von Unicode ist das, was der
+                  Unicode-Standard als Zeichen definiert. In der editorischen und paläographischen
+                  Praxis gestaltet sich die Trennlinie zwischen Zeichen und Glyphe gelegentlich als
+                  weniger klar; sie kann sogar je nach konkreter Schriftbeschaffenheit und Schreib-
+                  bzw. Druckusus beweglich sein. Sie verläuft ungefähr dort, wo aus linguistischer
+                  Perspektive die Grenze zwischen einem Graphem und seinen Allographen gezogen wird;
+                  auch diese Grenze ist nicht starr und kann editorisch für optisch ähnlich
+                  aussehende Graphe je nach deren Verwendung unterschiedlich bewertet werden. Nicht
+                  jedem Unicode-Zeichen kann in jedem konkreten Schriftsystem eines Textträgers
+                  graphemischer Charakter als funktional eigenständiges Schriftzeichen zugestanden
+                  werden; andererseits können Graphe, die bewusst nicht in Unicode aufgenommen
+                  wurden und in der typographischen Praxis unterhalb der Unicode-Zeichen-Ebene in
+                  digitalen Fonts als Glyphen etwa auf Codepoints der Private Use Area behandelt
+                  werden, in einem konkreten Schriftsystem echten graphemischen Zeichencharakter
+                  haben.</p>
+               <p>Solche Grenzziehungen können Auswirkungen auf editorische Operationen wie
+                  Normalisierung und Aufbereitung für maschinelle Suche haben. Wenn ein Herausgeber
+                  in der Transkription verschiedene Allographe unterscheidet, sollte klar sein,
+                  welchem Graphem und Zeichen diese Allographe zugeordnet werden können, damit (ggf.
+                  automatisiert) eine Normalisierungsschicht über der Ebene der transkribierten
+                  Allographe angelegt werden kann.</p>
+            </div>
+
+            <div class="wip-banner"><span class="wip-banner__icon">🔧</span><span>Dieser Abschnitt ist aktuell in Bearbeitung.</span></div>
+            <div id="CHARACTER-ENCODING-COMB">
+               <h2>Auszeichnung von kombinierenden Zeichen</h2>
+               <p>Im Unicode-Standard gibt es für viele Zeichen, die sich aus einem Basisbuchstaben
+                  und einem oder mehreren diakritischen Zeichen zusammensetzen, eigene Codepunkte.
+                  Ein Beispiel hierfür ist ›á‹, der lateinische Kleinbuchstabe ›a‹ mit Akut, welcher
+                  durch U+00E1 kodiert ist. In Ermangelung dieser Option lassen sich weitere Zeichen
+                  durch den Codepunkt des Basisbuchstaben zuzüglich dem eines kombinierenden
+                  Diakritikas wiedergeben. Im Beispiel von ›á‹ entspräche dies ›a‹ (U+0061) und ›◌́‹
+                  (U+0301) für den kombinierenden Akut. Sofern es keine Möglichkeit gibt, eine aus
+                  kombinierenden Zeichen bestehende Glyphe über einen oder mehrere
+                  Unicode-Codepunkte wiederzugeben, können folgende heiEDITIONS-Konzepte zur
+                  Auszeichnung und Visualisierung der Glyphe verwendet werden: <ul>
+                     <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/combinedabove.html" target="_blank">hc:CombinedAbove</a><span class="loddocborder"> ‹</span></li>
+                     <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/combinedbelow.html" target="_blank">hc:CombinedBelow</a><span class="loddocborder"> ‹</span></li>
+                  </ul>
+               </p>
+            </div>
+         </div>
+      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 08.04.2026
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script><script src="../toc-generator.js"></script></body></html>
