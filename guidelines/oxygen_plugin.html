@@ -1,0 +1,87 @@
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | heiEDITIONS Plugin für Oxygen XML Editor</title><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    heiEDITIONS Plugin für Oxygen XML Editor</nav><main>
+      <div id="OXYGEN_PLUGIN">
+
+        <h1>heiEDITIONS Plugin für Oxygen XML Editor</h1>
+
+        <p>Das heiEditions-Plugin erweitert den Oxygen XML Editor um Werkzeuge für die wissenschaftliche Edition von TEI/XML-Dokumenten. Alle Funktionen sind über eine eigene Werkzeugleiste am oberen Fensterrand verfügbar.</p>
+
+        <div id="WERKZEUGE">
+
+          <div id="RESTORE_ENTITIES">
+            <h3>Restore Entities and Prologue / Entitäten und Prolog wiederherstellen</h3>
+            <p>Stellt XML-Entitäten (z. B. Sonderzeichen) und den TEI-Prolog im Dokument wieder her. Dies ist besonders nützlich, nachdem eine XSLT-Transformation die Entitäten aufgelöst hat. Das Plugin durchsucht das Dokument und ersetzt alle aufgelösten Zeichen durch die passenden Entitätsreferenzen (z. B. &amp;uuml; statt `ü`). Falls der XML-Prolog fehlt (XML-Deklaration und Schema-Referenzen), wird dieser automatisch eingefügt. Die Entitätsdefinitionen werden von der heiEditions-Serveradresse geladen. Stellen Sie sicher, dass eine Internetverbindung besteht.</p>
+          </div>
+          
+          <div id="ZEILENUMBRÜCHE">
+            <h3>Zeilenumbrüche (<span class="gi">&lt;lb&gt;</span>)</h3>
+            <p><span class="aside">Tastenkürzel: `Ctrl + Shift + B`</span>Fügt an jeder Zeilenumbruchstelle im Text ein <span class="gi">&lt;lb&gt;</span> ein. Optional können die Zeilenumbrüche automatisch nummeriert werden.</p>
+            <ul>
+              <li>Markieren Sie den Textabschnitt, in dem Zeilenumbrüche eingefügt werden sollen.</li>
+              <li>Klicken Sie auf den ›lb-Button‹ in der Werkzeugleiste oder drücken Sie `Ctrl + Shift + B`.</li>
+              <li>Falls die Option „Ask for initial line number" aktiviert ist (Standardeinstellung), erscheint ein Eingabefenster für die Startnummer.</li>
+              <li>Geben Sie die gewünschte Startnummer ein und bestätigen Sie mit OK.</li>
+            </ul>
+            <div id="">
+              <h4>Nummerierungsoptionen</h4>
+              <div style="overflow-x:auto;"><table>
+                <tr>
+                  <th>Eingabe</th>
+                  <th>Option „On partial numbers increment"</th>
+                  <th>Ergebnis</th>
+                </tr>
+                <tr>
+                  <td>1</td>
+                  <td>–</td>
+                  <td><span class="code">&lt;lb n="1"&gt;</span>, <span class="code">&lt;lb n="2"&gt;</span>, <span class="code">&lt;lb n="3"&gt;</span></td>
+                </tr>
+                <tr>
+                  <td>1.0</td>
+                  <td>Decimals</td>
+                  <td><span class="code">&lt;lb n="1.0"&gt;</span>, <span class="code">&lt;lb n="1.1"&gt;</span>, <span class="code">&lt;lb n="1.2"&gt;</span></td>
+                </tr>
+                <tr>
+                  <td>1.0</td>
+                  <td>Units</td>
+                  <td><span class="code">&lt;lb n="1.0"&gt;</span>, <span class="code">&lt;lb n="2.0"&gt;</span>, <span class="code">&lt;lb n="3.0"&gt;</span></td>
+                </tr>
+              </table></div>
+            </div>
+            <div id="">
+              <h4>Einstellungen anpassen</h4>
+              <p>Klicken Sie auf den kleinen Pfeil neben dem lb-Button und wählen Sie **Options and help for this action**. Dort können Sie einstellen</p>
+              <ul>
+                <li><span class="item_label">Ask for initial line number</span>: Ob nach einer Startnummer gefragt wird (Häkchen = ja).</li>
+                <li><span class="item_label">On partial numbers increment</span>: Ob bei Dezimalzahlen die Nachkommastelle („Decimals") oder die Ganzzahl („Units") hochgezählt wird.</li>
+              </ul>
+            </div>
+            
+    
+          </div>
+
+
+        </div>
+        
+        <div id="VALIDIERUNG">
+
+          <h2>Validierungs-Szenarios</h2>
+
+          <p>Das heiEDITIONS-Plugin kommt mit zwei vorgefertigsten Validierungsszenarien: <em>heiEDITIONS Validierung</em> und <em>heiEDITIONS – Target</em>.</p>
+          <p><em>heiEDITIONS Validierung</em>: Das ist die Standard Validierungs nach dem heiEDITIONS-Schema plus ein Skript zur Überprüfung der Tokenisierung.</p>
+          <p><em>heiEDITIONS – Target</em>: Überprüft die Referenzen im Text bei pointer–Attributen (<span class="att">@facs</span>, <span class="att">@target</span>, usw.). Da die Überprüfung lange dauert wird es empfohlen, nicht während der Textbearbeitung zu verwendet, sondern in der Korrekturphase.</p>
+          
+          <p>Um die anzuwenden kann man im Toolbar das Dropdown-Menü neben <em>Validieren</em> aufmachen und <em>Validierungs-Szenarios konfigurieren</em>. Auf mehere Datein kann man im Projekt-Tab mehrere Dateien oder Verzeichnisse auswählen und dann mit rechtem Click auf <em>Validieren</em> -&gt; <em>Validierungs-Szenarios konfigurieren</em>. Dann <em>HeiEditions Validierung</em> und <em>HeiEditions – Target</em> aussuchen und "Zugeordnet anwenden".</p> 
+            
+          <p>Wenn diese Validierung für die tägliche Arbeit mit den einzelnen Dateien zu langsam wird, dann "target" ausschalten, aber regelmäßig für alle Texte laufen lassen.</p>
+
+        </div>
+      </div>
+    </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 08.04.2026
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script><script src="../toc-generator.js"></script></body></html>

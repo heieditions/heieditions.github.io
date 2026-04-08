@@ -1,0 +1,80 @@
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | XML-Entitäten</title><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    XML-Entitäten</nav><main>
+         <div id="ENTITIES">
+            
+            <h1>XML-Entitäten</h1>
+            
+            <p>Bei sog. XML-Entities handelt es sich um Codes, mit denen in XML Zeichen eingegeben werden können, die in XML-Dokumenten eine besondere Funktion haben, weil sie Teil der XML-Syntax sind. Wenn diese Zeichen im Text benötigt werden (also eben nicht als spezielle Operatoren der XML-Syntax), müssen sie über die sog. Entities eingegeben werden. Entities sind also stellvertretende Codes für bestimmte Zeichen, die im Text nicht direkt eingegeben werden können. Stattdessen werden sie bei der Texteingabe durch die entsprechenden Entitäten ›maskiert‹.</p>
+            <p>In der Sprachdefinition von XML sind diese fünf Entities vordefiniert:</p>
+            <div style="overflow-x:auto;"><table>
+               <tr>
+                  <th>&lt;</th>
+                  <th><span class="code">&amp;lt;</span></th>
+                  <th>Kleiner-als-Zeichen (mathematisches Symbol)</th>
+               </tr>
+               <tr>
+                  <td>&gt;</td>
+                  <td><span class="code">&gt;</span></td>
+                  <td>Größer-als-Zeichen (mathematisches Symbol)</td>
+               </tr>
+               <tr>
+                  <td>&amp;</td>
+                  <td><span class="code">&amp;</span></td>
+                  <td>Et-Zeichen bzw. kaufmännisches Und-Zeichen</td>
+               </tr>
+               <tr>
+                  <td>"</td>
+                  <td><span class="code">"</span></td>
+                  <td>gerade Anführungszeichen (im Text nicht typographisch korrekt)</td>
+               </tr>
+               <tr>
+                  <td>'</td>
+                  <td><span class="code">'</span></td>
+                  <td>Apostroph (im Text nicht typographisch korrekt)</td>
+               </tr>
+            </table></div>
+            <p>Falls also etwa in der Transkription eines Drucks das ›kaufmännische Und-Zeichen‹ eingegeben werden müsste, sähe der TEI-Code so aus:</p>
+            
+            
+               <div class="egxml" data-example-id="entities_ampersand"><pre class="language-xml"><code>
+               &lt;p&gt;
+                  ...
+                  terra &amp;amp; aqua
+               &lt;/p&gt;
+            </code></pre></div>
+            
+            
+            <p>Über diese fünf XML-Entities hinaus definiert heiEDITIONS in Anlehnung an HTML-Konventionen und die mediävistischen Zeichenkodierungsinitiativen von Menota und MUFI eine Reihe weiterer Entities. Sie dienen zum Einen der sicheren und transparenten Eingabe von Zeichen, die zwar in Unicode definiert sind, aber nicht einfach über die deutsche Tastatur eingegeben werden können, und zum Anderen als stellvertretende Platzhalter für Zeichen, die in Unicode fehlen, in heiEDITIONS mit den standardkonformen TEI-Mitteln eigens definiert sind, die aber mithilfe einer Entity leichter eingegeben (und gelesen) werden können als der vollständig ausgeschriebene TEI-Code.</p>
+            
+            <div id="ENTITIES-NORMAL-PUNCTUATION">
+               <h2>Entitäten für moderne Interpunktion</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>»</th>
+                     <th><span class="code">»</span></th>
+                     <th>öffnende Guillemets (nach deutscher Typographie)</th>
+                     <th><span class="code">»</span>, danach <span class="code">»</span></th>
+                     <th></th>
+                  </tr>
+                  <tr>
+                     <td>«</td>
+                     <td><span class="code">«</span></td>
+                     <td>schließende Guillemets (nach deutscher Typographie)</td>
+                     <td><span class="code">«</span>, danach <span class="code">«</span></td>
+                     <td></td>
+                  </tr>
+               </table></div>
+               
+            </div>
+            
+            
+         </div>
+      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 08.04.2026
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script><script src="../toc-generator.js"></script></body></html>
