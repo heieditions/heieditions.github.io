@@ -68,9 +68,18 @@
                   Eine Referenz auf diese Datei wird in den TEI-Arbeitsversionen nach den Processing Instructions mit der Schemaangabe eingefügt:
                </p>
                
-                  <p><span class="code">&lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;&lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;</span></p>
-                  <p><span class="code">&lt;!DOCTYPE TEI SYSTEM "https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/heieditions-entities.txt"&gt;</span></p>
+                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
+                     &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;&amp;lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&amp;gt;&amp;lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
+                     &amp;lt;p&amp;gt;&amp;lt;code&amp;gt;&amp;lt;!DOCTYPE TEI SYSTEM "https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/heieditions-entities.txt"&amp;gt;&amp;lt;/code&amp;gt;&amp;lt;/p&amp;gt;
+                  </code></pre></div>
                
+               <p>Die heiEDITIONS-Entitäten werden nur in den Arbeitscodierungen verwendet. Im Rahmen der Generierung der TEI-Dateien für die verschiedenen Visualisierungen durch die pipeline-gestützte Verarbeitung werden diese anhand der angegebenen Entitätendatei ersetzt.</p>
+               <p>Fälle, in denen heiEDITIONS-Entitäten in den Arbeitscodierungen eingesetzt werden sind:</p>
+               <ul>
+                     <li>Eindeutig lesbare (und eingebbare) Kodierung von Unicode-Zeichen, die an sich auch direkt eingegeben werden könnten.</li>
+                     <li>Kodierung von Zeichen, für die es in heiEDITIONS eine eigene Definition gibt, die aber für bei der Anzeige mit einem Standard-Unicode-Zeichen darstellt werden. In solchen Fällen wird die Entität aufgelöst zu einem <span class="gi">&lt;g&gt;</span>-Element, das auf die Definition des Zeichens verweist und gleichzeitig ein Standard- oder PUA-Unicode-Zeichen (bzw. die nummerische Entität dafür) für die (ersatzweise) Anzeige als Inhalt hat, z.B. <span class="code">̄</span>.</li>
+                     <li>Kodierung von Zeichen, die in heiEDITIONS mit einem PUA-Zeichen anzeigt werden sollen und deren Definition von MUFI übernommen wurde.</li>
+               </ul>
             </div>
             
             <div id="ENTITIES-NORMAL-PUNCTUATION">
