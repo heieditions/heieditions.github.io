@@ -64,6 +64,12 @@
                   Über diese fünf XML-Entities hinaus definiert heiEDITIONS in Anlehnung an HTML-Konventionen und die mediävistischen Zeichenkodierungsinitiativen von Menota und MUFI eine Reihe weiterer Entities. Sie dienen zum Einen der sicheren und transparenten Eingabe von Zeichen, die zwar in Unicode definiert sind, aber nicht einfach über die deutsche Tastatur eingegeben werden können, und zum Anderen als stellvertretende Platzhalter für Zeichen, die in Unicode fehlen, in heiEDITIONS mit den standardkonformen TEI-Mitteln eigens definiert sind, die aber mithilfe einer Entity leichter eingegeben (und gelesen) werden können als der vollständig ausgeschriebene TEI-Code.
                </p>
                <p>Die jeweils aktuelle Definition der Entitäten für heiEDITIONS ist über die Adresse <a class="inlink" href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/heieditions-entities.txt">https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/heieditions-entities.txt</a> verfügbar.</p>
+               <p>
+                  Eine Referenz auf diese Datei wird in den TEI-Arbeitsversionen nach den Processing Instructions mit der Schemaangabe
+                  <span class="code">&lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;&lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;</span>
+                  eingefügt:
+                  <span class="code">&lt;!DOCTYPE TEI SYSTEM "https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/heieditions-entities.txt"&gt;</span>
+               </p>
             </div>
             
             <div id="ENTITIES-NORMAL-PUNCTUATION">
