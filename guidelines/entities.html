@@ -8,51 +8,62 @@
             <h1>XML-Entitäten</h1>
             
             <p>Bei sog. XML-Entities handelt es sich um Codes, mit denen in XML Zeichen eingegeben werden können, die in XML-Dokumenten eine besondere Funktion haben, weil sie Teil der XML-Syntax sind. Wenn diese Zeichen im Text benötigt werden (also eben nicht als spezielle Operatoren der XML-Syntax), müssen sie über die sog. Entities eingegeben werden. Entities sind also stellvertretende Codes für bestimmte Zeichen, die im Text nicht direkt eingegeben werden können. Stattdessen werden sie bei der Texteingabe durch die entsprechenden Entitäten ›maskiert‹.</p>
-            <p>In der Sprachdefinition von XML sind diese fünf Entities vordefiniert:</p>
-            <div style="overflow-x:auto;"><table>
-               <tr>
-                  <th>Zeichen</th>
-                  <th>Entität</th>
-                  <th>Bedeutung</th>
-               </tr>
-               <tr>
-                  <td>&lt;</td>
-                  <td><span class="code">&amp;lt;</span></td>
-                  <td>Kleiner-als-Zeichen (mathematisches Symbol)</td>
-               </tr>
-               <tr>
-                  <td>&gt;</td>
-                  <td><span class="code">&amp;gt;</span></td>
-                  <td>Größer-als-Zeichen (mathematisches Symbol)</td>
-               </tr>
-               <tr>
-                  <td>&amp;</td>
-                  <td><span class="code">&amp;amp;</span></td>
-                  <td>Et-Zeichen bzw. kaufmännisches Und-Zeichen</td>
-               </tr>
-               <tr>
-                  <td>"</td>
-                  <td><span class="code">&amp;quot;</span></td>
-                  <td>gerade Anführungszeichen (im Text nicht typographisch korrekt)</td>
-               </tr>
-               <tr>
-                  <td>'</td>
-                  <td><span class="code">&amp;apos;</span></td>
-                  <td>Apostroph (im Text nicht typographisch korrekt)</td>
-               </tr>
-            </table></div>
-            <p>Falls also etwa in der Transkription eines Drucks das ›kaufmännische Und-Zeichen‹ eingegeben werden müsste, sähe der TEI-Code so aus:</p>
-            
-            
-               <div class="egxml" data-example-id="entities_ampersand"><pre class="language-xml"><code>
+
+            <div id="ENTITIES-BASIC">
+               <h2>Vordefinierte XML-Entitäten</h2>
+               <p>In der Sprachdefinition von XML sind diese fünf Entititäten vordefiniert:</p>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Zeichen</th>
+                     <th>Entität</th>
+                     <th>Bedeutung</th>
+                  </tr>
+                  <tr>
+                     <td>&lt;</td>
+                     <td><span class="code">&amp;lt;</span></td>
+                     <td>Kleiner-als-Zeichen (mathematisches Symbol)</td>
+                  </tr>
+                  <tr>
+                     <td>&gt;</td>
+                     <td><span class="code">&amp;gt;</span></td>
+                     <td>Größer-als-Zeichen (mathematisches Symbol)</td>
+                  </tr>
+                  <tr>
+                     <td>&amp;</td>
+                     <td><span class="code">&amp;amp;</span></td>
+                     <td>Et-Zeichen bzw. kaufmännisches Und-Zeichen</td>
+                  </tr>
+                  <tr>
+                     <td>"</td>
+                     <td><span class="code">&amp;quot;</span></td>
+                     <td>gerade Anführungszeichen (im Text nicht typographisch korrekt)</td>
+                  </tr>
+                  <tr>
+                     <td>'</td>
+                     <td><span class="code">&amp;apos;</span></td>
+                     <td>Apostroph (im Text nicht typographisch korrekt)</td>
+                  </tr>
+               </table></div>
+               <p>Falls also etwa in der Transkription eines Drucks das ›kaufmännische Und-Zeichen‹ eingegeben werden müsste, sähe der TEI-Code so aus:</p>
+               
+               
+                  <div class="egxml" data-example-id="entities_ampersand"><pre class="language-xml"><code>
                &lt;p&gt;
                   ...
                   terra &amp;amp; aqua
                &lt;/p&gt;
             </code></pre></div>
+               
+            </div>
+
+            <div id="ENTITES-HEIEDITIONS">
+               <h2>Weitere Entitäten in heiEDITIONS</h2>
             
-            
-            <p>Über diese fünf XML-Entities hinaus definiert heiEDITIONS in Anlehnung an HTML-Konventionen und die mediävistischen Zeichenkodierungsinitiativen von Menota und MUFI eine Reihe weiterer Entities. Sie dienen zum Einen der sicheren und transparenten Eingabe von Zeichen, die zwar in Unicode definiert sind, aber nicht einfach über die deutsche Tastatur eingegeben werden können, und zum Anderen als stellvertretende Platzhalter für Zeichen, die in Unicode fehlen, in heiEDITIONS mit den standardkonformen TEI-Mitteln eigens definiert sind, die aber mithilfe einer Entity leichter eingegeben (und gelesen) werden können als der vollständig ausgeschriebene TEI-Code.</p>
+               <p>
+                  <span class="aside">Menota und MUFI</span>
+                  Über diese fünf XML-Entities hinaus definiert heiEDITIONS in Anlehnung an HTML-Konventionen und die mediävistischen Zeichenkodierungsinitiativen von Menota und MUFI eine Reihe weiterer Entities. Sie dienen zum Einen der sicheren und transparenten Eingabe von Zeichen, die zwar in Unicode definiert sind, aber nicht einfach über die deutsche Tastatur eingegeben werden können, und zum Anderen als stellvertretende Platzhalter für Zeichen, die in Unicode fehlen, in heiEDITIONS mit den standardkonformen TEI-Mitteln eigens definiert sind, die aber mithilfe einer Entity leichter eingegeben (und gelesen) werden können als der vollständig ausgeschriebene TEI-Code.
+               </p>
+            </div>
             
             <div id="ENTITIES-NORMAL-PUNCTUATION">
                <h2>Entitäten für moderne Interpunktion</h2>
