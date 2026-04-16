@@ -67,8 +67,11 @@
                <p>
                   Eine Referenz auf diese Datei wird in den TEI-Arbeitsversionen nach den Processing Instructions mit der Schemaangabe eingefügt:
                </p>
-               <p><span class="code">&lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;&lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;</span></p>
-               <p><span class="code">&lt;!DOCTYPE TEI SYSTEM "https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/heieditions-entities.txt"&gt;</span></p>
+               <div class="egxml" data-example-id="doctype_linked_entities"><pre class="language-xml"><code>
+               &lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;
+               &lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;
+               &lt;!DOCTYPE TEI SYSTEM "https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/heieditions-entities.txt"&gt;
+            </code></pre></div>
                <p>Die heiEDITIONS-Entitäten werden nur in den Arbeitscodierungen verwendet. Im Rahmen der Generierung der TEI-Dateien für die verschiedenen Visualisierungen durch die Verarbeitungspipeline werden diese anhand der angegebenen Entitätendatei ersetzt.</p>
                <p>Fälle, in denen heiEDITIONS-Entitäten in den Arbeitscodierungen eingesetzt werden, sind:</p>
                <ul>
@@ -106,7 +109,7 @@
             
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 15.04.2026
+                        Letzte Aktualisierung: 16.04.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
