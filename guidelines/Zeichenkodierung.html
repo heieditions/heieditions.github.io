@@ -44,10 +44,12 @@
                   durch U+00E1 kodiert ist. In Ermangelung dieser Option lassen sich weitere Zeichen
                   durch den Codepunkt des Basisbuchstaben zuzüglich dem eines kombinierenden
                   Diakritikas wiedergeben. Im Beispiel von ›á‹ entspräche dies ›a‹ (U+0061) und ›◌́‹
-                  (U+0301) für den kombinierenden Akut. Sofern es keine Möglichkeit gibt, eine aus
-                  kombinierenden Zeichen bestehende Glyphe über einen oder mehrere
-                  Unicode-Codepunkte wiederzugeben, können folgende heiEDITIONS-Konzepte zur
-                  Auszeichnung und Visualisierung der Glyphe verwendet werden: <ul>
+                  (U+0301) für den kombinierenden Akut.
+               </p>
+               <p>
+                  Sofern es keine Möglichkeit gibt, eine aus
+                  kombinierenden Zeichen bestehende Glyphe über einen oder mehrere Unicode-Codepunkte wiederzugeben, können folgende heiEDITIONS-Konzepte zur Auszeichnung und Visualisierung der Glyphe verwendet werden:
+                  <ul>
                      <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/combinedabove.html" target="_blank">hc:CombinedAbove</a><span class="loddocborder"> ‹</span></li>
                      <li><span class="loddocborder">› </span><a class="loddoc" href="../concepts/combinedbelow.html" target="_blank">hc:CombinedBelow</a><span class="loddocborder"> ‹</span></li>
                   </ul>
@@ -58,9 +60,22 @@
                 <h2>Zeichenangabe über <span class="gi">&lt;g&gt;</span>/<span class="gi">&lt;glyph&gt;</span></h2>
                 <div class="wip-banner"><span class="wip-banner__icon">🔧</span><span>Dieser Abschnitt ist aktuell in Bearbeitung.</span></div>
             </div>
+
+            <div id="CHARACTER-ENCODING-EX-UMLAUT">
+                <h2>Beispiel: Codierung von Umlauten</h2>
+                <p>
+                   Für die Eingabe des Umlauts ›ö‹ in den TEI-Arbeitsdateien gibt es (mindestens) drei Möglichkeiten:
+                   <ul>
+                      <li>Direkt in Verbindung mit dem Grundbuchstaben (als vorkombiniertes Zeichen, wie es über die deutsche Tastatur erzeugt wird: <span class="code">ö</span> – U+00F6</li>
+                      <li>Als separates kombinierendes Zeichen nach dem Grundbuchstaben: <span class="code">ö</span> – man sieht den Unterschied zum Vorherigen nur mit speziellen Werkzeugen – U+006F U+0308</li>
+                      <li>Anhand der heiEDITIONS-Entity nach dem Grundbuchstaben: <span class="code">o&amp;combuml;</span> (siehe auch <a class="inlink" href="entities.html#ENTITIES">XML-Entitäten</a>)</li>
+                   </ul>
+                   Technisch ist es egal, welche der drei Möglichkeiten verwendet wird. In normalen deutschen Paratexten (also z.B. in Anmerkungen) gibt es keinen Grund, etwas anderes als die erste Variante zu verwenden. In Editionstexten könnte die letzte Variante wegen einer größeren Transparenz (welches Zeichen ist hier genau kodiert?) oder in <span class="gi">&lt;choice&gt;</span>-Konstrukten sinnvoll sein, etwa bei der Normalisierung, wenn nur das Diakritikum normalisiert wird (z.B. <span class="code">u&lt;choice&gt;&lt;orig&gt;&amp;iuml;&lt;/orig&gt;&lt;reg&gt;&amp;combuml;&lt;/reg&gt;&lt;/choice&gt;</span>). Falls auf diese Weise normalisiert wird, könnte man wegen Einheitlichkeit auch sonst im Editionstext <span class="code">&amp;combuml;</span> verwenden, notwendig ist das jedoch nicht.
+                </p>
+             </div>
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 15.04.2026
+                        Letzte Aktualisierung: 16.04.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
