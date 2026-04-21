@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Editorische Eingriffe</title><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Editorische Eingriffe</title><script src="https://www.ub.uni-heidelberg.de/cdn/jquery/3.7.1/jquery.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/bootstrap/4.6.1-own-scope/css/bootstrap.min.css" rel="stylesheet"><script src="https://www.ub.uni-heidelberg.de/cdn/popper/latest/popper.min.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/bootstrap/4.6.1-own-scope/js/bootstrap.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://digi.ub.uni-heidelberg.de/diglit_pub/css/tei.min.css" type="text/css"><script type="text/javascript" src="../visualize_examples.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/handlebars/latest/handlebars.min.js"></script><script src="https://digi.ub.uni-heidelberg.de/diglit_pub/bundle.min.js"></script><script>DigiLayout.init('ger')</script><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
@@ -14,21 +14,46 @@
          <div id="EDITORIALREVISIONS-TRANSPOSITIONS">
             <h2>Editorische Umstellungen</h2>
             <p>
-               Umstellungen, die nicht von den Schreibern selbst, sondern im Rahmen der Edition vorgenommen werden, können in heiEDITIONS ebenfalls markiert und dargestellt werden (vgl. <a class="inlink" href="visualization.html#VIS-OPT-EDT-INTERVENT">Editorische Eingriffe</a>).
-               Hierzu müssen zunächst mindestens die umzustellenden Zeichenfolgen jeweils einzeln und eindeutig Tokenisiert werden.  
+               Textumstellungen, die nicht von den Schreibern selbst, sondern im Rahmen der Edition vorgenommen werden, können in heiEDITIONS ebenfalls markiert und dargestellt werden (vgl. <a class="inlink" href="visualization.html#VIS-OPT-EDT-INTERVENT">Editorische Eingriffe</a>).
+               Hierzu müssen, nach der zeichengenauen Transkription, mindestens die umzustellenden Zeichenfolgen jeweils einzeln und eindeutig Tokenisiert werden.  
                Mithilfe des Elements <span class="gi">&lt;link&gt;</span> wird zunächst einen nicht tiefer definierten Zusammenhang zwischen den so markierten Zeichenfolgen hergestellt.</p>
                
              <p>Diese so umfasste Zeichenfolge wird als eine editorische Umstellung markiert, indem an dem Attribut <span class="att">@ana</span> der heiEDITION-eigene Wert <span class="val">hc:EditorialTransposition</span> ergänzt wird.
                Um die exakten Zeichenfolgen, die editorisch umgestellt werden sollen, zu definieren, werden ihre Token-Bezeichnungen innerhalb von <span class="gi">&lt;link&gt;</span> mit <span class="att">@target</span> in der neuen, umgestellten Reihenfolge angegeben.
-               In heiEDITIONS ist es zudem möglich, dass sich mit <span class="att">@target</span> definierten Token-Bezeichnungen auch über mehrere Tokens erstrecken. In diesem Fall müssen die Werte innerhalb des <span class="att">@target</span>-Attributs mit <span class="val">#range</span> angegeben werden.
+                
+                
+               In heiEDITIONS ist es zudem möglich, dass sich mit <span class="att">@target</span> definierten Token-Bezeichnungen auch über mehrere Tokens erstrecken. In diesem Fall müssen die Tokenwerte, über welche sich die Umstellungen erstrecken sollen, innerhalb des <span class="att">@target</span>-Attributs mit <span class="val">#range</span> angegeben werden.</p>
+                
+                   <div class="bootstrap-scope egxml" data-example-id="editorial_transposition_simple" data-visualization-type="ed_interventions"><pre class="language-xml"><code>
+               &lt;lg ana="hc:Couplet"&gt;
+                  &lt;l n="2993" xml:id="l_2993" hei:altN="2837"&gt;
+                    [...]
+                     &lt;w xml:id="w_2993_6"&gt;daz&lt;/w&gt;
+                     &lt;w xml:id="w_2993_7" norm="wîp"&gt;weib&lt;/w&gt;
+                  &lt;/l&gt;
+                  &lt;l n="2994" xml:id="l_2994" hei:altN="2838"&gt;
+                     [...]
+                     &lt;w xml:id="w_2994_7"&gt;ſein&lt;/w&gt;
+                     &lt;w xml:id="w_2994_8" norm="lîp"&gt;leib&lt;/w&gt;
+                  &lt;/l&gt;
+                  &lt;link ana="hc:EditorialTransposition" target="#range(w_2994_7,w_2994_8) #range(w_2993_6,w_2993_7)"/&gt;
+                  &lt;note ana="hc:TextConstitutionNote" target="#l_2994"&gt;Die Reime sind in der Handschrift: V. 2993 &lt;quote&gt;daz weip&lt;/quote&gt;, V. 2994 &lt;quote&gt;ſein leip&lt;/quote&gt;. Dasselbe geschieht in Handschrift c; alle anderen Handschriften haben &lt;quote&gt;lîp&lt;/quote&gt; : &lt;quote&gt;wîp&lt;/quote&gt;. Die vorliegende Reihenfolge der Reimwörter ergibt keinen erkennbaren Sinn und muss deshalb als irrtümlich vertauscht gelten; deshalb stellen wir die Reimwörter um.&lt;/note&gt;
+               &lt;/lg&gt;
+            </code></pre></div>
+                
+
+               <p>Analog zu 
                
-               Analog zu  kann auch ein "Sammelcontainer" für editorische Umstellungen angelegt werden.
+               den Umstellungen, welche bereits zeitgenössisch vorgenommen wurden, und die einzeln mit <span class="gi">&lt;transpose&gt;</span> bzw. zusammengenommen mit dem Element <span class="gi">&lt;listTranspose&gt;</span> markiert werden,
+                
+                 kann auch ein "Sammelcontainer" für editorische Umstellungen angelegt werden:
                Innerhalb von <span class="gi">&lt;linkGrp&gt;</span> können, wie es bei Umstellungen von Schreiberhand mit <span class="gi">&lt;listTranspose&gt;</span> der Fall ist, mehrere Fälle von editorischen Umstellungen zusammengefasst werden.
+               Die editorisch umzustellenden Begriffe müssen nicht direkt neben einander stehen, um so verschoben werden zu können. Die finale editorische Umstellung ist im <span class="att">@target</span> festgehalten und kann in der Darstellungsoption "editorische Eingriffe" ein- oder ausgeschaltet sowie für die Leserschaft markiert werden.
             </p>
          </div>
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 10.04.2026
+                        Letzte Aktualisierung: 21.04.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
