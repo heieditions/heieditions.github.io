@@ -293,12 +293,18 @@ table {
 
 th {
   text-align: left;
-  
+  border: 0.5px dotted gray;
+  background-color: #f0ebe6;
 }
 
 td {
   text-align: left;
   border: 0.5px dotted gray;
+}
+
+div[id^="ENTITIES-"]:not(#ENTITIES-BASIC) td:nth-child(2) {
+  font-family: 'Junicode', serif;
+  font-size: 120%;
 }
 
 .egxml {
@@ -412,6 +418,20 @@ aside,
   top: 8px;
   right: 8px;
   opacity: 0.5;
+}
+
+/* Junicode Variable Font - for display of medieval characters */
+@font-face {
+  font-family: 'Junicode';
+  font-style: normal;
+  font-weight: 100 900;
+  src: url('fonts/JunicodeVF-Roman.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Junicode';
+  font-style: italic;
+  font-weight: 100 900;
+  src: url('fonts/JunicodeVF-Italic.woff2') format('woff2');
 }
 
 /* font files and CSS for font embedding generated using https://google-webfonts-helper.herokuapp.com/fonts */
@@ -528,16 +548,4 @@ aside,
 
 .heading-anchor:hover {
   opacity: 1;
-}
-
-.wip-banner {
-  display: flex;
-  gap: 0.5rem;
-  background: #F5F2F0;
-  padding: 0.5rem 0.75rem;
-  margin-bottom: 1rem;
-}
-
-.wip-banner__icon {
-  font-size: 1rem;
 }
