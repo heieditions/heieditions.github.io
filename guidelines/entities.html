@@ -4,7 +4,7 @@
                     ☞ 
                     XML-Entitäten</nav><main>
          <div id="ENTITIES">
-
+            <div class="wip-banner"><span class="wip-banner__icon">🔧</span><span>Dieser Abschnitt ist aktuell in Bearbeitung.</span></div>
             <h1>XML-Entitäten</h1>
 
             <p>Bei sog. XML-Entities handelt es sich um Codes, mit denen in XML Zeichen eingegeben werden können, die in XML-Dokumenten eine besondere Funktion haben, weil sie Teil der XML-Syntax sind. Wenn diese Zeichen im Text benötigt werden (also eben nicht als spezielle Operatoren der XML-Syntax), müssen sie über die sog. Entities eingegeben werden. Entities sind also stellvertretende Codes für bestimmte Zeichen, die im Text nicht direkt eingegeben werden können. Stattdessen werden sie bei der Texteingabe durch die entsprechenden Entitäten ›maskiert‹.</p>
@@ -77,7 +77,7 @@
                <ul>
                      <li>Eindeutig lesbare (und eingebbare) Kodierung von Unicode-Zeichen, die an sich auch direkt eingegeben werden könnten.</li>
                      <li>Kodierung von Zeichen, für die es in heiEDITIONS eine eigene Definition gibt, die aber für bei der Anzeige mit einem Standard-Unicode-Zeichen darstellt werden. In solchen Fällen wird die Entität bei der Verarbeitung für die Visualisierung aufgelöst zu einem <span class="gi">&lt;g&gt;</span>-Element, das auf die Definition des Zeichens verweist und gleichzeitig ein Standard- oder PUA-Unicode-Zeichen (bzw. die nummerische Entität dafür) für die (ersatzweise) Anzeige als Inhalt hat, z.B. <span class="code">&lt;g ref='char:bar'&gt;&amp;#x0304;&lt;/g&gt;</span> (siehe auch <a class="inlink" href="Zeichenkodierung.html#CHARACTER-ENCODING-GLYPH">Zeichenangabe über g/glyph</a>).</li>
-                     <li>Kodierung von Zeichen, die in heiEDITIONS mit einem <span class="outlinkprefix">↪ </span><a class="outlink" href="https://en.wikipedia.org/wiki/Private_Use_Areas" target="_blank">PUA</a>-Zeichen anzeigt werden sollen und deren Definition von MUFI übernommen wurde. Auch hier werden die Entitäten zu einem <span class="gi">&lt;g&gt;</span>-Element aufgelöst. Die Empfehlung des TEI-Standards sieht vor, PUA-Zeichen stets so aufzulösen und mit einer Definition zu verknüpfen. Ein Beispiel hierfür wäre die Entität <span class="code">&amp;inodotsup;</span> ("COMBINING LATIN SMALL LETTER DOTLESS I"). Diese wird aufgelöst zu <span class="code">&lt;g ref='char:inodotsup'&gt;&amp;#xF02F;&lt;/g&gt;</span> (siehe auch <a class="inlink" href="Zeichenkodierung.html#CHARACTER-ENCODING-GLYPH">Zeichenangabe über g/glyph</a>).</li>
+                     <li>Kodierung von Zeichen, die in heiEDITIONS mit einem <span class="outlinkprefix">↪ </span><a class="outlink" href="https://en.wikipedia.org/wiki/Private_Use_Areas" target="_blank">PUA</a>-Zeichen angezeigt werden sollen und deren Definition von MUFI übernommen wurde. Auch hier werden die Entitäten zu einem <span class="gi">&lt;g&gt;</span>-Element aufgelöst. Die Empfehlung des TEI-Standards sieht vor, PUA-Zeichen stets so aufzulösen und mit einer Definition zu verknüpfen. Ein Beispiel hierfür wäre die Entität <span class="code">&amp;inodotsup;</span> ("COMBINING LATIN SMALL LETTER DOTLESS I"). Diese wird aufgelöst zu <span class="code">&lt;g ref='char:inodotsup'&gt;&amp;#xF02F;&lt;/g&gt;</span> (siehe auch <a class="inlink" href="Zeichenkodierung.html#CHARACTER-ENCODING-GLYPH">Zeichenangabe über g/glyph</a>).</li>
                </ul>
             </div>
 
