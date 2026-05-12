@@ -4,9 +4,9 @@
                     ☞ 
                     XML-Entitäten</nav><main>
          <div id="ENTITIES">
-            
+
             <h1>XML-Entitäten</h1>
-            
+
             <p>Bei sog. XML-Entities handelt es sich um Codes, mit denen in XML Zeichen eingegeben werden können, die in XML-Dokumenten eine besondere Funktion haben, weil sie Teil der XML-Syntax sind. Wenn diese Zeichen im Text benötigt werden (also eben nicht als spezielle Operatoren der XML-Syntax), müssen sie über die sog. Entities eingegeben werden. Entities sind also stellvertretende Codes für bestimmte Zeichen, die im Text nicht direkt eingegeben werden können. Stattdessen werden sie bei der Texteingabe durch die entsprechenden Entitäten ›maskiert‹.</p>
 
             <div id="ENTITIES-BASIC">
@@ -45,7 +45,7 @@
                   </tr>
                </table></div>
                <p>Falls also etwa in der Transkription eines Drucks das ›kaufmännische Und-Zeichen‹ eingegeben werden müsste, sähe der TEI-Code so aus:</p>
-               
+
                
                   <div class="egxml" data-example-id="entities_ampersand"><pre class="language-xml"><code>
                &lt;p&gt;
@@ -58,12 +58,12 @@
 
             <div id="ENTITES-HEIEDITIONS">
                <h2>Weitere Entitäten in heiEDITIONS</h2>
-            
+
                <p>
                   <span class="aside">Menota und MUFI</span>
                   Über diese fünf XML-Entities hinaus definiert heiEDITIONS in Anlehnung an HTML-Konventionen und die mediävistischen Zeichenkodierungsinitiativen von Menota und <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.mufi.info" target="_blank">MUFI</a> eine Reihe weiterer Entities. Sie dienen zum Einen der sicheren und transparenten Eingabe von Zeichen, die zwar in Unicode definiert sind, aber nicht einfach über die deutsche Tastatur eingegeben werden können, und zum Anderen als stellvertretende Platzhalter für Zeichen, die in Unicode fehlen, in heiEDITIONS mit den standardkonformen TEI-Mitteln eigens definiert sind, die aber mithilfe einer Entity leichter eingegeben (und gelesen) werden können als der vollständig ausgeschriebene TEI-Code.
                </p>
-               <p>Die jeweils aktuelle Definition der Entitäten für heiEDITIONS ist über die Adresse <a class="inlink" href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/heieditions-entities.txt">https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/heieditions-entities.txt</a> verfügbar.</p>
+               <p>Die jeweils aktuelle Definition der Entitäten für heiEDITIONS ist unter der URL <a class="inlink" href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/heieditions-entities.txt">https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/declarations/heieditions-entities.txt</a> verfügbar.</p>
                <p>
                   Eine Referenz auf diese Datei wird in den TEI-Arbeitsversionen nach den Processing Instructions mit der Schemaangabe eingefügt:
                </p>
@@ -80,36 +80,850 @@
                      <li>Kodierung von Zeichen, die in heiEDITIONS mit einem <span class="outlinkprefix">↪ </span><a class="outlink" href="https://en.wikipedia.org/wiki/Private_Use_Areas" target="_blank">PUA</a>-Zeichen anzeigt werden sollen und deren Definition von MUFI übernommen wurde. Auch hier werden die Entitäten zu einem <span class="gi">&lt;g&gt;</span>-Element aufgelöst. Die Empfehlung des TEI-Standards sieht vor, PUA-Zeichen stets so aufzulösen und mit einer Definition zu verknüpfen. Ein Beispiel hierfür wäre die Entität <span class="code">&amp;inodotsup;</span> ("COMBINING LATIN SMALL LETTER DOTLESS I"). Diese wird aufgelöst zu <span class="code">&lt;g ref='char:inodotsup'&gt;&amp;#xF02F;&lt;/g&gt;</span> (siehe auch <a class="inlink" href="Zeichenkodierung.html#CHARACTER-ENCODING-GLYPH">Zeichenangabe über g/glyph</a>).</li>
                </ul>
             </div>
-            
-            <div id="ENTITIES-NORMAL-PUNCTUATION">
-               <h2>Entitäten für moderne Interpunktion</h2>
+
+            <div id="ENTITIES-SPECIAL-LETTER-FORMS">
+               <h2>Sonderbuchstabenformen</h2>
                <div style="overflow-x:auto;"><table>
                   <tr>
-                     <th>Zeichen</th>
                      <th>Entität</th>
-                     <th>Bedeutung</th>
-                     <th>Umsetzung in Verarbeitungspipeline</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
                   </tr>
                   <tr>
-                     <td>»</td>
-                     <td><span class="code">&amp;raquo;</span></td>
-                     <td>öffnende Guillemets (nach deutscher Typographie)</td>
-                     <td><span class="code">&amp;#x00BB;</span>, danach <span class="code">»</span></td>
+                     <td><span class="code">Rrot</span></td>
+                     <td>Ꝛ</td>
+                     <td>LATIN CAPITAL LETTER R ROTUNDA</td>
+                     <td>Großbuchstabe R in Rotunda-Form</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA75A;</span></td>
                   </tr>
                   <tr>
-                     <td>«</td>
-                     <td><span class="code">&amp;laquo;</span></td>
-                     <td>schließende Guillemets (nach deutscher Typographie)</td>
-                     <td><span class="code">&amp;#x00AB;</span>, danach <span class="code">«</span></td>
+                     <td><span class="code">rrot</span></td>
+                     <td>ꝛ</td>
+                     <td>LATIN SMALL LETTER R ROTUNDA</td>
+                     <td>Kleinbuchstabe r in Rotunda-Form</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA75B;</span></td>
                   </tr>
                </table></div>
-               
             </div>
-            
-            
+
+            <div id="ENTITIES-COMB-ABBREV">
+               <h2>Kombinierende diakritische Abkürzungszeichen</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Entität</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
+                  </tr>
+                  <tr>
+                     <td><span class="code">bar</span></td>
+                     <td>◌̄</td>
+                     <td>COMBINING ABBREVIATION MARK BAR ABOVE</td>
+                     <td>Kürzungszeichen in Form eines horizontalen Strichs, ggf. mit verzierendem Anstrich, Abstrich oder Wellung, mit typischen Funktionen als Nasalersatz oder Suspensionszeichen.</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:bar'&gt;&amp;#x0304;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combdblac</span></td>
+                     <td>◌̋</td>
+                     <td>COMBINING DOUBLE ACUTE ACCENT</td>
+                     <td>Kombinierendes doppeltes Akut-Zeichen</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x030B;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combdblgr</span></td>
+                     <td>◌̏</td>
+                     <td>COMBINING DOUBLE GRAVE ACCENT</td>
+                     <td>Kombinierendes doppeltes Gravis-Zeichen</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x030F;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">curlbl</span></td>
+                     <td>◌̧</td>
+                     <td>COMBINING ABBREVIATION MARK CURL BELOW</td>
+                     <td>Kombinierendes Kürzungszeichen in Form einer Schlaufe unterhalb des Basiszeichens</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:curlbl'&gt;&amp;#x0327;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">doublebar</span></td>
+                     <td>◌̿</td>
+                     <td>COMBINING ABBREVIATION MARK DOUBLE BAR ABOVE</td>
+                     <td>Kürzungszeichen in Form eines doppelten horizontalen Strichs, meist als Suspensionszeichen eingesetzt.</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:doublebar'&gt;&amp;#x033F;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">er</span></td>
+                     <td>◌͛</td>
+                     <td>COMBINING ABBREVIATION MARK ER ABOVE</td>
+                     <td>Kombinierendes Kürzungszeichen für er oberhalb des Basiszeichens</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:er'&gt;&amp;#x035B;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">re</span></td>
+                     <td>◌̔</td>
+                     <td>COMBINING ABBREVIATION MARK RE ABOVE</td>
+                     <td>Kombinierendes Kürzungszeichen für re oberhalb des Basiszeichens</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:re'&gt;&amp;#x0314;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">zig</span></td>
+                     <td>◌͛</td>
+                     <td>COMBINING ABBREVIATION MARK ZIGZAG ABOVE</td>
+                     <td>Kombinierendes Kürzungszeichen in Form eines Zickzacks oberhalb des Basiszeichens</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:zig'&gt;&amp;#x035B;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">curl</span></td>
+                     <td>◌̓</td>
+                     <td>COMBINING ABBREVIATION MARK CURL ABOVE</td>
+                     <td>Kombinierendes Kürzungszeichen in Form einer Schlaufe oberhalb des Basiszeichens</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:curl'&gt;&amp;#x0313;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">ra</span></td>
+                     <td>◌ᷓ</td>
+                     <td>COMBINING LATIN SMALL LETTER FLATTENED OPEN A ABOVE</td>
+                     <td>Kombinierendes supraskriptisches Kleinbuchstabe a (abgeflachte offene Form)</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x1DD3;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">rabar</span></td>
+                     <td>◌</td>
+                     <td>COMBINING ABBREVIATION MARK SUPERSCRIPT RA OPEN A FORM WITH BAR ABOVE</td>
+                     <td>Kombinierendes Kürzungszeichen für supraskriptisches ra in offener a-Form mit Strich darüber</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:rabar'&gt;&amp;#xF1C1;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">urrot</span></td>
+                     <td>◌ᷣ</td>
+                     <td>COMBINING LATIN SMALL LETTER R ROTUNDA</td>
+                     <td>Kombinierendes supraskriptisches Kleinbuchstabe r in Rotunda-Form</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x1DE3;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">urlemn</span></td>
+                     <td>◌</td>
+                     <td>COMBINING ABBREVIATION MARK SUPERSCRIPT UR LEMNISKATE FORM</td>
+                     <td>Kombinierendes Kürzungszeichen für supraskriptisches ur in Lemniskaten-Form</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:urlemn'&gt;&amp;#xF1C2;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">us</span></td>
+                     <td>◌᷒</td>
+                     <td>COMBINING US ABOVE</td>
+                     <td>Kombinierendes Kürzungszeichen für us oberhalb des Basiszeichens</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x1DD2;</span></td>
+                  </tr>
+               </table></div>
+            </div>
+
+            <div id="ENTITIES-COMB-OTHER">
+               <h2>Weitere kombinierende diakritische Zeichen</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Entität</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combgrave</span></td>
+                     <td>◌̀</td>
+                     <td>COMBINING GRAVE ACCENT</td>
+                     <td>Kombinierendes Gravis-Zeichen</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0300;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combacute</span></td>
+                     <td>◌́</td>
+                     <td>COMBINING ACUTE ACCENT</td>
+                     <td>Kombinierendes Akut-Zeichen</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0301;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combmacr</span></td>
+                     <td>◌̄</td>
+                     <td>COMBINING MACRON</td>
+                     <td>Kombinierendes Makron</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0304;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combcar</span></td>
+                     <td>◌̌</td>
+                     <td>COMBINING CARON</td>
+                     <td>Kombinierendes Caron (Háček)</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x030C;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combcirc</span></td>
+                     <td>◌̂</td>
+                     <td>COMBINING CIRCUMFLEX ACCENT</td>
+                     <td>Kombinierendes Zirkumflex-Zeichen</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0302;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combbreve</span></td>
+                     <td>◌̆</td>
+                     <td>COMBINING BREVE</td>
+                     <td>Kombinierendes Brevis-Zeichen</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0306;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combdot</span></td>
+                     <td>◌̇</td>
+                     <td>COMBINING DOT ABOVE</td>
+                     <td>Kombinierender Punkt oberhalb</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0307;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combuml</span></td>
+                     <td>◌̈</td>
+                     <td>COMBINING DIAERESIS</td>
+                     <td>Kombinierendes Trema (Umlautpunkte)</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0308;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combcomma</span></td>
+                     <td>◌̓</td>
+                     <td>COMBINING COMMA ABOVE</td>
+                     <td>Kombinierendes Komma oberhalb</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0313;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">iuml</span></td>
+                     <td>◌̓</td>
+                     <td>COMBINING APOSTROPHE-LIKE MARK I-UMLAUT ABOVE</td>
+                     <td>Apostrophähnliches kombinierendes Zeichen, das überwiegend in der Funktion des i-Umlauts oder eines Diphthongs über u, v, w und gelegentlich anderen Grundbuchstaben verwendet wird.</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:iuml'&gt;&amp;#x0313;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">asup</span></td>
+                     <td>◌ͣ</td>
+                     <td>COMBINING LATIN SMALL LETTER A</td>
+                     <td>Kombinierendes supraskriptisches Kleinbuchstabe a</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0363;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">esup</span></td>
+                     <td>◌ͤ</td>
+                     <td>COMBINING LATIN SMALL LETTER E</td>
+                     <td>Kombinierendes supraskriptisches Kleinbuchstabe e</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0364;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">isup</span></td>
+                     <td>◌ͥ</td>
+                     <td>COMBINING LATIN SMALL LETTER I</td>
+                     <td>Kombinierendes supraskriptisches Kleinbuchstabe i</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0365;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">inodotsup</span></td>
+                     <td>◌</td>
+                     <td>COMBINING LATIN SMALL LETTER DOTLESS I</td>
+                     <td>Kombinierendes supraskriptisches Kleinbuchstabe i ohne Punkt</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:inodotsup'&gt;&amp;#xF02F;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">osup</span></td>
+                     <td>◌ͦ</td>
+                     <td>COMBINING LATIN SMALL LETTER O</td>
+                     <td>Kombinierendes supraskriptisches Kleinbuchstabe o</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0366;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">usup</span></td>
+                     <td>◌ͧ</td>
+                     <td>COMBINING LATIN SMALL LETTER U</td>
+                     <td>Kombinierendes supraskriptisches Kleinbuchstabe u</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0367;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">vsup</span></td>
+                     <td>◌ͮ</td>
+                     <td>COMBINING LATIN SMALL LETTER V</td>
+                     <td>Kombinierendes supraskriptisches Kleinbuchstabe v</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x036E;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">wsup</span></td>
+                     <td>◌</td>
+                     <td>COMBINING LATIN SMALL LETTER W</td>
+                     <td>Kombinierendes supraskriptisches Kleinbuchstabe w</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:wsup'&gt;&amp;#xF03C;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combtilde</span></td>
+                     <td>◌̃</td>
+                     <td>COMBINING TILDE</td>
+                     <td>Kombinierendes Tilde-Zeichen</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0303;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">diagdots</span></td>
+                     <td>◌̈</td>
+                     <td>COMBINING TWO DIAGONAL DOTS ABOVE</td>
+                     <td>Kombinierendes Zeichen in Form von zwei diagonal aufsteigenden Punkten, das in der Regel über Vokalen als Umlaut- oder Diphthong-Marker verwendet wird.</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:diagdots'&gt;&amp;#x0308;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">cauda</span></td>
+                     <td>◌̨</td>
+                     <td>COMBINING CAUDA</td>
+                     <td>Kombinierender Schwanz (Cauda) unterhalb des Basiszeichens</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:cauda'&gt;&amp;#x0328;&lt;/g&gt;</span></td>
+                  </tr>
+               </table></div>
+            </div>
+
+            <div id="ENTITIES-COMB-GREEK">
+               <h2>Griechische kombinierende diakritische Zeichen</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Entität</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
+                  </tr>
+                  <tr>
+                     <td><span class="code">combperispomeni</span></td>
+                     <td>◌͂</td>
+                     <td>COMBINING GREEK PERISPOMENI</td>
+                     <td>Kombinierendes griechisches Perispomeni</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0342;</span></td>
+                  </tr>
+               </table></div>
+            </div>
+
+            <div id="ENTITIES-ABBREV">
+               <h2>Weitere Abkürzungszeichen</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Entität</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
+                  </tr>
+                  <tr>
+                     <td><span class="code">dstrok</span></td>
+                     <td>đ</td>
+                     <td>LATIN SMALL LETTER D WITH STROKE</td>
+                     <td>Lateinischer Kleinbuchstabe d mit Strich</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x0111;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">de</span></td>
+                     <td></td>
+                     <td>LATIN ABBREVIATION SIGN SMALL DE</td>
+                     <td>Lateinisches Abkürzungszeichen für de</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:de'&gt;&amp;#xF159;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">Kstrleg</span></td>
+                     <td>Ꝃ</td>
+                     <td>LATIN CAPITAL LETTER K WITH DIAGONAL STROKE</td>
+                     <td>Lateinischer Großbuchstabe K mit diagonalem Strich</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA742;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">kstrleg</span></td>
+                     <td>ꝃ</td>
+                     <td>LATIN SMALL LETTER K WITH DIAGONAL STROKE</td>
+                     <td>Lateinischer Kleinbuchstabe k mit diagonalem Strich</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA743;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">condes</span></td>
+                     <td>ꝯ</td>
+                     <td>LATIN SMALL LETTER CON</td>
+                     <td>Lateinischer Kleinbuchstabe con (Abkürzungszeichen)</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA76F;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">per</span></td>
+                     <td>ꝑ</td>
+                     <td>LATIN SMALL LETTER P WITH STROKE THROUGH DESCENDER</td>
+                     <td>Lateinischer Kleinbuchstabe p mit Strich durch den Abstrich</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA751;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">pro</span></td>
+                     <td>ꝓ</td>
+                     <td>LATIN SMALL LETTER P WITH FLOURISH</td>
+                     <td>Lateinischer Kleinbuchstabe p mit Schwung</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA753;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">qbardes</span></td>
+                     <td>ꝗ</td>
+                     <td>LATIN SMALL LETTER Q WITH STROKE THROUGH DESCENDER</td>
+                     <td>Lateinischer Kleinbuchstabe q mit Strich durch den Abstrich</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA757;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">qds</span></td>
+                     <td>ꝙ</td>
+                     <td>LATIN SMALL LETTER Q WITH DIAGONAL STROKE</td>
+                     <td>Lateinischer Kleinbuchstabe q mit diagonalem Strich</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA759;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">RUM</span></td>
+                     <td>Ꝝ</td>
+                     <td>LATIN CAPITAL LETTER RUM ROTUNDA</td>
+                     <td>Lateinischer Großbuchstabe rum in Rotunda-Form</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA75C;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">rum</span></td>
+                     <td>ꝝ</td>
+                     <td>LATIN SMALL LETTER RUM ROTUNDA</td>
+                     <td>Lateinischer Kleinbuchstabe rum in Rotunda-Form</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA75D;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">tcurl</span></td>
+                     <td></td>
+                     <td>LATIN SMALL LETTER T WITH CURL</td>
+                     <td>Lateinischer Kleinbuchstabe t mit Schlaufe (tur-Abbreviatur)</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:tcurl'&gt;&amp;#xF199;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">is</span></td>
+                     <td>ꝭ</td>
+                     <td>LATIN SMALL LETTER IS</td>
+                     <td>Lateinischer Kleinbuchstabe is (Abkürzungszeichen)</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA76D;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">etfin</span></td>
+                     <td>ꝫ</td>
+                     <td>LATIN SMALL LETTER ET</td>
+                     <td>Lateinischer Kleinbuchstabe et (Abkürzungszeichen)</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#xA76B;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">et</span></td>
+                     <td>⁊</td>
+                     <td>TIRONIAN SIGN ET</td>
+                     <td>Tironisches Zeichen et</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x204A;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">etslash</span></td>
+                     <td></td>
+                     <td>LATIN ABBREVIATION SIGN SMALL ET WITH STROKE</td>
+                     <td>Lateinisches Abkürzungszeichen kleines et mit Strich</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:etslash'&gt;&amp;#xF158;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">lhighstrok</span></td>
+                     <td>ꝉ</td>
+                     <td>LATIN ABBREVIATION SIGN SMALL LETTER L WITH HIGH STROKE</td>
+                     <td>Lateinisches Abkürzungszeichen: Kleinbuchstabe l mit hochgesetztem Strich</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:lhighstrok'&gt;&amp;#xA749;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">slongflour</span></td>
+                     <td></td>
+                     <td>LATIN SMALL LETTER LONG S WITH FLOURISH</td>
+                     <td>Lateinisches langes s mit Schwung</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:slongflour'&gt;&amp;#xE8B7;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">usbase</span></td>
+                     <td></td>
+                     <td>LATIN ABBREVIATION SIGN SPACING BASE-LINE SMALL US</td>
+                     <td>Kürzungszeichen in Form einer Schlaufe oder eines Spiralenansatzes, das auf der Grundlinie erscheint.</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:usbase'&gt;&amp;#xF1A6;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">nlrlegab</span></td>
+                     <td>ƞ</td>
+                     <td>LATIN ABBREVIATION SIGN SMALL LETTER N WITH LONG RIGHT LEG</td>
+                     <td>Lateinisches Abkürzungszeichen: Kleinbuchstabe n mit langem rechten Bein (Abkürzung für en)</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:nlrlegab'&gt;&amp;#x019E;&lt;/g&gt;</span></td>
+                  </tr>
+               </table></div>
+            </div>
+
+            <div id="ENTITIES-LIGATURES">
+               <h2>Ligaturen</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Entität</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
+                  </tr>
+                  <tr>
+                     <td><span class="code">ctlig</span></td>
+                     <td></td>
+                     <td>LATIN SMALL LIGATURE CT</td>
+                     <td>Lateinische Ligatur ct</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:ctlig'&gt;&amp;#xEEC5;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">ftlig</span></td>
+                     <td></td>
+                     <td>LATIN SMALL LIGATURE FT</td>
+                     <td>Lateinische Ligatur ft</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:ftlig'&gt;&amp;#xEECB;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">qet</span></td>
+                     <td></td>
+                     <td>LATIN SMALL LETTER Q LIGATED WITH FINAL ET</td>
+                     <td>Lateinischer Kleinbuchstabe q ligiert mit finalem et</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:qet'&gt;&amp;#xE8BF;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">etcem</span></td>
+                     <td>⁊c</td>
+                     <td>LATIN EARLY MODERN ET CETERA LIGATURE</td>
+                     <td>Frühneuzeitliche Ligatur für et cetera</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:etcem'&gt;&amp;#x204A;c&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">etcemra</span></td>
+                     <td>⁊cᷓ</td>
+                     <td>LATIN EARLY MODERN ET CETERA LIGATURE WITH FLATTENED OPEN A</td>
+                     <td>Frühneuzeitliche Ligatur für et cetera mit abgeflachtem offenem a</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:etcemra'&gt;&amp;#x204A;c&amp;#x1DD3;&lt;/g&gt;</span></td>
+                  </tr>
+               </table></div>
+            </div>
+
+            <div id="ENTITIES-DOUBLE-GLYPHS">
+               <h2>Doppelzeichen</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Entität</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
+                  </tr>
+                  <tr>
+                     <td><span class="code">dblf4F</span></td>
+                     <td>F</td>
+                     <td>DOUBLE LATIN SMALL LETTER F REPRESENTING THE CORRESPONDING SIMPLE CAPITAL LETTER</td>
+                     <td>Doppeltes Minuskel-F, das funktional die entsprechende einfache Majuskel oder eine littera notabilior repräsentiert.</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:dblf4F'&gt;F&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">dbll4L</span></td>
+                     <td>L</td>
+                     <td>DOUBLE LATIN SMALL LETTER L REPRESENTING THE CORRESPONDING SIMPLE CAPITAL LETTER</td>
+                     <td>Doppeltes Minuskel-L, das funktional die entsprechende einfache Majuskel oder eine littera notabilior repräsentiert.</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:dbll4L'&gt;L&lt;/g&gt;</span></td>
+                  </tr>
+               </table></div>
+            </div>
+
+            <div id="ENTITIES-MODERN-TYPOGRAPHY">
+               <h2>Zeichen der modernen Typographie</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Entität</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
+                  </tr>
+                  <tr>
+                     <td><span class="code">laquo</span></td>
+                     <td>«</td>
+                     <td>LEFT-POINTING DOUBLE ANGLE QUOTATION MARK</td>
+                     <td>Links-weisendes doppeltes Winkelzeichen; in der deutschen Typographie als schließendes Anführungszeichen verwendet</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x00AB;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">raquo</span></td>
+                     <td>»</td>
+                     <td>RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK</td>
+                     <td>Rechts-weisendes doppeltes Winkelzeichen; in der deutschen Typographie als öffnendes Anführungszeichen verwendet</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x00BB;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">lsaquo</span></td>
+                     <td>‹</td>
+                     <td>SINGLE LEFT-POINTING ANGLE QUOTATION MARK</td>
+                     <td>Links-weisendes einfaches Winkelzeichen; in der deutschen Typographie als schließendes einfaches Anführungszeichen verwendet</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x2039;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">rsaquo</span></td>
+                     <td>›</td>
+                     <td>SINGLE RIGHT-POINTING ANGLE QUOTATION MARK</td>
+                     <td>Rechts-weisendes einfaches Winkelzeichen; in der deutschen Typographie als öffnendes einfaches Anführungszeichen verwendet</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x203A;</span></td>
+                  </tr>
+               </table></div>
+            </div>
+
+            <div id="ENTITIES-MEDIEVAL-PUNCTUATION">
+               <h2>Mittelalterliche Interpunktionszeichen</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Entität</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
+                  </tr>
+                  <tr>
+                     <td><span class="code">posit</span></td>
+                     <td></td>
+                     <td>COMMA POSITURA</td>
+                     <td>Mittelalterliches Interpunktionszeichen: Comma Positura</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:posit'&gt;&amp;#xF1E2;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">punctelev</span></td>
+                     <td></td>
+                     <td>PUNCTUS ELEVATUS</td>
+                     <td>Mittelalterliches Interpunktionszeichen: Punctus elevatus</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:punctelev'&gt;&amp;#xF161;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">punctelevdiag</span></td>
+                     <td></td>
+                     <td>PUNCTUS ELEVATUS DIAGONAL STROKE</td>
+                     <td>Mittelalterliches Interpunktionszeichen: Punctus elevatus mit diagonalem Strich</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:punctelevdiag'&gt;&amp;#xF1F0;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">bidotscomposit</span></td>
+                     <td></td>
+                     <td>TWO DOTS OVER COMMA POSITURA</td>
+                     <td>Mittelalterliches Interpunktionszeichen: Zwei Punkte über Comma Positura</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:bidotscomposit'&gt;&amp;#xF1F2;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">virgsusp</span></td>
+                     <td></td>
+                     <td>VIRGULA SUSPENSIVA</td>
+                     <td>Mittelalterliches Interpunktionszeichen: Virgula suspensiva</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:virgsusp'&gt;&amp;#xF1F4;&lt;/g&gt;</span></td>
+                  </tr>
+               </table></div>
+            </div>
+
+            <div id="ENTITIES-CURRENCY">
+               <h2>Währungszeichen</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Entität</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
+                  </tr>
+                  <tr>
+                     <td><span class="code">curren</span></td>
+                     <td>¤</td>
+                     <td>CURRENCY SIGN</td>
+                     <td>Allgemeines Währungszeichen; zu verwenden, wenn ein Währungszeichen keinem spezifischen Währungssymbol zugeordnet werden kann.</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x00A4;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">pennygerm</span></td>
+                     <td>₰</td>
+                     <td>GERMAN PENNY SIGN</td>
+                     <td>Deutsches Pfennigzeichen</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x20B0;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">florloop</span></td>
+                     <td></td>
+                     <td>FLOREN SIGN WITH LOOP</td>
+                     <td>Währungszeichen für Florin bzw. Gulden mit Schlaufe</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:florloop'&gt;&amp;#xF2E8;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">libradut</span></td>
+                     <td></td>
+                     <td>DUTCH LIBRA SIGN</td>
+                     <td>Niederländisches Pfundzeichen</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:libradut'&gt;&amp;#xF2EA;&lt;/g&gt;</span></td>
+                  </tr>
+               </table></div>
+            </div>
+
+            <div id="ENTITIES-SYMBOLS">
+               <h2>Sonstige Symbole</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Entität</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
+                  </tr>
+                  <tr>
+                     <td><span class="code">para</span></td>
+                     <td>¶</td>
+                     <td>PILCROW SIGN</td>
+                     <td>Absatzzeichen (Pilcrow, Paragraphzeichen)</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x00B6;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">insup</span></td>
+                     <td>⌃</td>
+                     <td>INSERTION SYMBOL UP ARROWHEAD</td>
+                     <td>Einweisungszeichen in Form eines aufwärts zeigenden Pfeils</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:insup'&gt;&amp;#x2303;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">insdown</span></td>
+                     <td>⌄</td>
+                     <td>INSERTION SYMBOL DOWN ARROWHEAD</td>
+                     <td>Einweisungszeichen in Form eines abwärts zeigenden Pfeils</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:insdown'&gt;&amp;#x2304;&lt;/g&gt;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">adm</span></td>
+                     <td>AD</td>
+                     <td>ALBRECHT DÜRER MONOGRAM</td>
+                     <td>Albrecht-Dürer-Monogramm</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&lt;g ref='char:adm'&gt;AD&lt;/g&gt;</span></td>
+                  </tr>
+               </table></div>
+            </div>
+
+            <div id="ENTITIES-SPACES">
+               <h2>Leerzeichen</h2>
+               <div style="overflow-x:auto;"><table>
+                  <tr>
+                     <th>Entität</th>
+                     <th>Zeichen für Anzeige</th>
+                     <th>Definition</th>
+                     <th>Beschreibung</th>
+                     <th>Beispiel</th>
+                     <th>Unicode / TEI-Auflösung</th>
+                  </tr>
+                  <tr>
+                     <td><span class="code">emsp</span></td>
+                     <td> </td>
+                     <td>EM SPACE</td>
+                     <td>Leerzeichen in Em-Breite</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x2003;</span></td>
+                  </tr>
+                  <tr>
+                     <td><span class="code">nnbsp</span></td>
+                     <td> </td>
+                     <td>NARROW NO-BREAK SPACE</td>
+                     <td>Schmales geschütztes Leerzeichen</td>
+                     <td><span class="code">[Bsp.]</span></td>
+                     <td><span class="code">&amp;#x202F;</span></td>
+                  </tr>
+               </table></div>
+            </div>
+
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 16.04.2026
+                        Letzte Aktualisierung: 12.05.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
