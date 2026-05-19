@@ -1,0 +1,92 @@
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | </title><script src="https://www.ub.uni-heidelberg.de/cdn/jquery/3.7.1/jquery.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/bootstrap/4.6.1-own-scope/css/bootstrap.min.css" rel="stylesheet"><script src="https://www.ub.uni-heidelberg.de/cdn/popper/latest/popper.min.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/bootstrap/4.6.1-own-scope/js/bootstrap.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://digi.ub.uni-heidelberg.de/diglit_pub/css/tei.min.css" type="text/css"><script type="text/javascript" src="../visualize_examples.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/handlebars/latest/handlebars.min.js"></script><script src="https://digi.ub.uni-heidelberg.de/diglit_pub/bundle.min.js"></script><script>DigiLayout.init('ger')</script><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    </nav><main>
+         <div id="FRAG">
+            
+            <div id="FRAG-GAP">
+            <h2><span class="gi">&lt;gap&gt;</span></h2>
+            <p>
+              Das Element <span class="gi">&lt;gap&gt;</span> weist in einer Transkription auf eine Stelle mit einer Textauslassung in der Vorlage in. Dies kann editorische Gründe haben, aber auch im Zustand des Originaltextes begründet liegen, zum Beispiel bei Materialverlust oder Unleserlichkeit.
+               Das Element <span class="gi">&lt;gap&gt;</span> markiert diesen Befund und kann zudem ergänzt werden, um eine beispielsweise aus anderer Überlieferung bekannte Länge des fehlenden Begriffs auszuzeichnen.
+               
+               
+               Solch eine Nutzung von <span class="gi">&lt;gap&gt;</span> kann beispielsweise so aussehen:
+            </p>
+            
+            
+               <div class="bootstrap-scope egxml" data-example-id="gap_atLeast_atMost_simple" data-visualization-type="visual_findings"><pre class="language-xml"><code>
+               Hier ist et&lt;gap unit="character" atLeast="2" atMost="3"/&gt; lückenhaft.
+            </code></pre></div>
+            
+            <p>
+              Der Grund für die Lücke oder Textauslassung kann, soweit bekannt, vom Editor genauer benannt werden. Dies geschieht über das <span class="att">@rendition</span>-Attribut direkt am <span class="gi">&lt;gap&gt;</span>-Element.
+               heiEDITIONS stellt hierzu eine Vielzahl von Optionen zur Verfügung, um eine möglichst detailgetreue Befundbeschreibung zu ermöglichen und die digitale Edition somit möglichst nah am materiellen Textzeugen zu gestalten.
+               Die möglichen Bezeichnungen von visuellen Gegenständen, die einer Textauslassung entsprechen, umfassen:
+               <ul>
+                  <li><span class="item_label"><span class="val">hc:Blurred</span></span>: verwischt</li>
+                  <li><span class="item_label"><span class="val">hc:Burnt</span></span>: verbrannt</li>
+                  <li><span class="item_label"><span class="val">hc:CutOff</span></span>: abgeschnitten</li>
+                  <li><span class="item_label"><span class="val">hc:Erased</span></span>: radiert (Beachten Sie: hierbei handelt es sich um eine beabsichtigte Textentfernung! Sollte der Text unbeabsichtigt entfernt worden sein, nutzen Sie bitte andere Attributwerte wie beispielsweise <span class="val">hc:RubbedOff</span>.)</li>
+                  <li><span class="item_label"><span class="val">hc:Faded</span></span>: verblasst</li>
+                  <li><span class="item_label"><span class="val">hc:HiddenInFold</span></span>: im Falz verdeckt</li>
+                  <li><span class="item_label"><span class="val">hc:Illegible</span></span>: unleserlich</li>
+                  <li><span class="item_label"><span class="val">hc:ImpairedByChemicalReagent</span></span>: durch chemisches Reagens beschädigt</li>
+                  <li><span class="item_label"><span class="val">hc:Lost</span></span>: verloren</li>
+                  <li><span class="item_label"><span class="val">hc:Mould</span></span>: verschimmelt</li>
+                  <li><span class="item_label"><span class="val">hc:Overpainted</span></span>: übermalt</li>
+                  <li><span class="item_label"><span class="val">hc:PastedOver</span></span>: überklebt</li>
+                  <li><span class="item_label"><span class="val">hc:PeeledOff</span></span>: abgeblättert</li>
+                  <li><span class="item_label"><span class="val">hc:Perforated</span></span>: durchlöchert</li>
+                  <li><span class="item_label"><span class="val">hc:PhysicallyAffected</span></span>: materiell beeinträchtigt. Diese Bezeichnung wirkt als Sammelbegriff und sollte im Idealfall nicht alleine stehen.</li>
+                  <li><span class="item_label"><span class="val">hc:Polluted</span></span>: verschmutzt durch überwiegend trockenen Schmutz</li>
+                  <li><span class="item_label"><span class="val">hc:RubbedOff</span></span>: abgerieben (Beachten Sie: hierbei handelt es sich um eine unbeabsichtigte Tilgung! Sollte die Textentfernung beabsichtigt gewesen sein, nutzen Sie bitte andere Attributwerte wie beispielsweise <span class="val">hc:Erased</span>.)</li>
+                  <li><span class="item_label"><span class="val">hc:Stained</span></span>: verschmutzt beziehungsweise befleckt mit einer Flüssigkeit</li>
+                  <li><span class="item_label"><span class="val">hc:TornOff</span></span>: abgerissen</li>
+               </ul>
+            </p>
+               <p>
+                  Kann der Umfang der Textauslassung erahnt werden (beispielsweise weil die grobe Form von Buchstaben trotz Verwischen noch erkannt werden kann), so besteht die Möglichkeit, Umfang und Art der Lücke am <span class="gi">&lt;gap&gt;</span>-Element anzugeben.
+                  Die Einheit der Textauslassung kann am Attribut <span class="att">@unit</span> angegeben werden. Häufig wird es sich hierbei um Buchstaben handeln, was mit <span class="val">character</span> angegeben wird.
+                  Zur Angabe des Länge der Textauslassung verwendet heiEDITIONS das Attribut <span class="att">@quantity</span>, an welchem der genaue Umfang mittels eines Zahlenwerts angegeben werden kann:
+                  
+                  <div class="bootstrap-scope egxml" data-example-id="gap_quantity_simple" data-visualization-type="visual_findings"><pre class="language-xml"><code>
+               Hier ist e&lt;gap unit="character" quantity="3"/&gt;s lückenhaft.
+            </code></pre></div>
+               </p>
+               <p>
+                  Ist der Umfang unbekannt und soll dieser Befund festgehalten werden, so kann dies mittels der Angabe <span class="att">@extent</span> mit dem Wert <span class="val">"unknown"</span> geschehen.
+                  
+                  <div class="bootstrap-scope egxml" data-example-id="gap_extent_simple" data-visualization-type="visual_findings"><pre class="language-xml"><code>
+               Hier ist &lt;gap unit="character" extent="unknown"/&gt; lückenhaft.
+            </code></pre></div>  
+               </p>
+         </div>
+        <div id="FRAG-SPACE">
+           <h2><span class="gi">&lt;space&gt;</span></h2>
+           <p>
+              Im Gegensatz zu <span class="gi">&lt;gap&gt;</span> bezeichnet <span class="gi">&lt;space&gt;</span> einen leeren Bereich im Textzeugen, der im Original aus einem bestimmten Grund freigelassen wurde.
+              Dies kann sich beispielsweise auf Freiräume beziehen, in die später Initialen eingetragen werden sollten, wobei dies aus bekannten oder unbekannten Gründen nicht durchgeführt wurde.
+           </p>
+           <p>
+              Um die Art des freigelassenen Raums im Original anzugeben, bietet heiEDITIONS mehrere Werte, die im Element <span class="gi">&lt;space&gt;</span> am Attribut <span class="att">@rendition</span> stehen:
+              <ul>
+                 <li><span class="item_label"><span class="val">hc:BlankAreaLeftForIllustration</span></span>: Freiraum für Illustration</li>
+                 <li><span class="item_label"><span class="val">hc:BlankAreaLeftForInitial</span></span>: Freiraum für Initiale</li>
+                 <li><span class="item_label"><span class="val">hc:BlankAreaLeftForText</span></span>: Freiraum für Text</li>
+              </ul>
+           </p>
+        </div>  
+            
+            
+            
+            
+
+         </div>
+      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 19.05.2026
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script><script src="../toc-generator.js"></script></body></html>
