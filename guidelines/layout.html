@@ -506,9 +506,33 @@
                
                <h2>Verknüpfung zwischen Text und Faksimiledeklaration</h2>
                
-               <p>
-                  TODO
                   
+                  
+               
+               
+               <p>
+                  heiEDITIONS verfolgt das Ziel, das Faksimile und die digitale Darstellung möglichst nah an einander zu gestalten.
+                  Hierzu kann nicht nur die Gesamtseite, sondern auch die genaue Gestaltung auf jeder einzigen Faksimileseite aufgenommen werden.
+               </p>
+               <p>
+                  <span class="aside"><span class="att">@cb</span></span>Die Spalten auf einer Textseite werden in der Regel mit dem Element <span class="gi">&lt;cb&gt;</span> angegeben.
+                  Spalten werden grundsätzlich mit kleingeschriebenen Buchstaben, beginnend bei "a", durchgezählt. Diese Zählung beginnt auf jeder Seite erneut bei "a".
+                  Wenn der Text auf einer Seite aus zwei Spalten besteht, so wird also die erste Spalte mit dem Buchstaben "a" bezeichnet, die zweite Spalte mit dem Buchstaben "b".
+                  Durch diese Benennung kann auch eine höhere Zahl von Spalten auf einer Seite, beispielsweise bei einem mehrspaltigen Wörterbuch, unkompliziert angegeben werden.
+                  
+               </p>
+               <p>
+                 Bei komplexeren Faksimile-Layouts, vor allem bei der Nutzung von Randbereichen zur Weiterführung von Texten oder für Abbildungen, wird dieser Textbereich gesondert angegeben.
+                 Da in diesem Fall die Textstücke bzw. Bilder keine eigene Spalte bilden, sondern inhaltlich in die jeweiligen Haupttextbereiche gehörig sind, wird dies mit dem Element <span class="gi">&lt;milestone&gt;</span> markiert.
+                 An diesem Element kann über die Angabe <span class="val">hc:ZoneBeginning</span> am Attribut <span class="att">@ana</span> markiert werden, dass der in diesem Element befindliche Sonderbereich außerhalb der Spalte steht.
+                 Durch diese Markierung wird deutlich, dass es sich bei dem Text oder Bild, welche in einer Leseansicht linear dargestellt werden würden, um Randtexte, Hinzufügungen, Postskripte, Skizzen oder anderweitig außerhalb des Haupttextbereichs stehende Inhalte handelt.
+               </p>
+               <p>
+                 Das Ende dieser Textbereiche wird analog zu <span class="val">hc:ZoneBeginning</span> mit dem Attributwert <span class="val">hc:ZoneShift</span> angegeben.
+               </p>
+               
+               <p>
+                 Analog zu <span class="gi">&lt;cb&gt;</span>, wird auch am <span class="gi">&lt;milestone&gt;</span> ein Buchstabe zur Zählung der Textbereiche vergeben. So können diese sowohl in der Lesereihenfolge als auch in der Anordnung auf dem Faksimile korrekt zugeordnet werden. Die einzelnen Zonen werden in der Faksimile-Deklaration angegeben.
                </p>
                
             </div>
@@ -1492,6 +1516,42 @@
                   
                </div>
                
+               
+               <div id="FAC-FORMEWORK">
+                  <p>
+                     Einige Bereiche von Texten haben eine doppelte Funktion. Sie stellen den Übergang zwischen semantisch-logischen Gliederungseinheiten und inhaltlichen Untersuchungen dar. Beispielhaft hierfür stehen unter anderem Seitennummerierungen, Lagensignaturen und ähnliche, sich oft am Seitenende befindende Sortierungszeichen, die Texte sortieren und Lesereihenfolgen festlegen.
+                     Solche Bereiche werden in heiEDITIONS mit dem Element <span class="gi">&lt;fw&gt;</span> (forme work) angegeben. Diese Angabe ermöglicht es, die so markierten Angaben in ihrer doppelten Funktion zu identifizieren.
+                     Dies ist besonders relevant, wenn es sich um Markierungen handelt, die zunächst wie Fehler wirken können, so unter anderem Kustoden . Diese haben eine ordnende Funktion, können aber ohne Markierung als <span class="gi">&lt;fw&gt;</span> als rein inhaltlich-textuelle Bezeichnung gesehen werden.
+                     Grundsätzlich sollte das <span class="gi">&lt;fw&gt;</span> an das Ende der Seite gestellt werden, zu der sie gehören - also vor dem <span class="gi">&lt;pb&gt;</span> der folgenden Seite.
+                     
+                     Innerhalb des Elements <span class="gi">&lt;fw&gt;</span> werden am Attribut <span class="att">@ana</span> Werte vergeben, um die systematisch-ordnende Rolle des Elements zu spezifizieren:
+                     
+                     <ul>
+                       <li><span class="val">hc:Catchwork</span>: Kustode</li>
+                        <li><span class="val">hc:QuireSignature</span>: Lagensignatur</li>
+                        <li><span class="val">hc:PageHeader</span>: Seitentitel (im Seitenkopf!)</li>
+                        <li><span class="val">hc:ColumnHeader</span>: Spaltentitel (im Spaltenkopf!)</li>
+                        <li><span class="val">hc:PageFooter</span>: Seitentitel (im Seitenfuß!)</li>
+                        <li><span class="val">hc:ColumnFooter</span>: Spaltentitel (im Spaltenfuß!)</li>
+                       <li><span class="val">hc:PageNumber</span>: Seitennummer</li>
+                        <li><span class="val">hc:ColumnNumber</span>: Spaltennummer</li>
+                        <li><span class="val">hc:SignatureMark</span>: Bogensignatur</li>
+                        <li><span class="val">hc:SignatureTitle</span>: Bogennorm</li>
+                     </ul>
+                     
+                  </p>
+                  <p>
+                     Neben diesen Zuweisungen kann auch spezifiziert werden, an welcher Stelle auf der Seite die forme work gefunden werden können. Dies geschieht über das Attribut <span class="att">@rendition</span> anhand der Werte:
+                     
+                     <ul>
+                        <li><span class="val">hc:Centered</span>: zentriert</li>
+                        <li><span class="val">hc:FlushLeft</span>: linksbündig</li>
+                        <li><span class="val">hc:FlushRight</span>: rechtsbündig</li>
+                        <li><span class="val">hc:Justified</span>: beidseitig bündig (Blocksatz)</li>
+                     </ul>
+                  </p>
+               </div>
+               
                <div id="FAC-LINES-MULTIPLEBLOCKS">
                   
                   <h3>Mehrere semantisch-logische Blöcke in einer Zeile</h3>
@@ -1578,7 +1638,7 @@
                         Die Verarbeitung geht an <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> von der Nummer <span class="val">2</span> aus,
                         wenn kein <span class="att">@n</span> explizit gesetzt ist.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 15.05.2026
+                        Letzte Aktualisierung: 12.07.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
