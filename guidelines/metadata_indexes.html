@@ -9,7 +9,7 @@
             <div id="METAINDEX-ALLG">
                <h2>Einführung</h2>
                <p>
-                  Um insbesondere bei Editionen mit vielen Textzeugen die wiederholte Eingabe ausführlicher Metadaten zu Werken, Textzeugen, Autoren, sonstige Beteiligte, Textquellen etc. zu vermeiden und gleichezeitig eine Datengrundlage für such- oder browsingbasierte Zugänge zu den Texten zu legen, können für Editionen die im folgenden beschriebenen Indexdateien angelegt werden und an den entsprechenden Stellen der TEI-Arbeitscodierungen darauf verwiesen ewrden.
+                  Um insbesondere bei Editionen mit vielen Textzeugen die wiederholte Eingabe ausführlicher Metadaten zu Werken, Textzeugen, Autoren, sonstige Beteiligte, Textquellen etc. zu vermeiden und gleichezeitig eine Datengrundlage für such- oder browsingbasierte Zugänge zu den Texten zu legen, können für Editionen die im folgenden beschriebenen Indexdateien angelegt werden und an den entsprechenden Stellen der TEI-Arbeitscodierungen darauf verwiesen werden. Sämtliche Indexe sind dabei (analog zu den Textregistern, s. <a class="inlink" href="indexes.html#INDEXES">Register</a>) als TEI-Dateien umgesetzt.
                </p>
             </div>
 
@@ -18,6 +18,89 @@
 
                <div id="METAINDEX-WORK">
                   <h3>Werke, Textzeugen (FRBR)</h3>
+                  <p>
+                     Über ein Werkindex werden sowohl die edierten Werke als auch die Textzeugen erfasst. Da eine Edition verschiedene Werke umfassen kann, wird für den Werkindex das Tag <span class="gi">&lt;teiCorpus&gt;</span> verwendet. Darunter wird jedes Werk in einem eigenen <span class="gi">&lt;TEI&gt;</span>-Element beschrieben. Die Textzeugen sind als <span class="gi">&lt;witness&gt;</span> in <span class="gi">&lt;teiHeader&gt;</span>/<span class="gi">&lt;fileDesc&gt;</span>/<span class="gi">&lt;sourceDesc&gt;</span>/<span class="gi">&lt;listWit&gt;</span> aufgelistet.
+                  </p>
+                  <p>
+                     Code-Beispiele:
+                  </p>
+                  
+                     <div class="egxml" data-example-id="work_index"><pre class="language-xml"><code>
+              &lt;?xml-model href="http://www.tei-c.org/Vault/P5/4.9.0/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;
+              &lt;?xml-model href="http://www.tei-c.org/Vault/P5/4.9.0/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;
+              &lt;teiCorpus&gt;
+                &lt;teiHeader&gt;
+                  &lt;fileDesc&gt;
+                    &lt;titleStmt&gt;
+                     &lt;title ana="hc:MainTitle"&gt;Repertorium der deutschen Minnereden&lt;/title&gt;
+                    &lt;/titleStmt&gt;
+                    ...
+                  &lt;/fileDesc&gt;
+                  &lt;encodingDesc&gt;
+                    &lt;listPrefixDef&gt;
+                      &lt;!-- Prefix-Definitionen für Verweise auf andere Metadaten-Indexe --&gt;
+                    &lt;/listPrefixDef&gt;
+                  &lt;/encodingDesc&gt;
+                &lt;/teiHeader&gt;
+
+                &lt;TEI xml:id="B223"&gt;
+                  &lt;teiHeader&gt;
+                    &lt;fileDesc&gt;
+                      &lt;titleStmt&gt;
+                        &lt;title ana="hc:ShortTitle"&gt;B223&lt;/title&gt;
+                        &lt;title ana="hc:MainTitle"&gt;Der Spiegel&lt;/title&gt;
+                        &lt;author&gt;
+                          &lt;ptr target="author:meister_altswert"/&gt;
+                        &lt;/author&gt;
+                      &lt;/titleStmt&gt;
+                      ...
+                      &lt;sourceDesc&gt;
+                        &lt;listWit&gt;
+                          &lt;witness xml:id="B223_He3"&gt;
+                            &lt;msDesc&gt;
+                              &lt;ptr target="source:He3"/&gt;
+                              &lt;locus from="216v" to="222v"&gt;216ⱽ–222ⱽ&lt;/locus&gt;
+                            &lt;/msDesc&gt;
+                            &lt;measure unit="verse" quantity="366"&gt;366 V.&lt;/measure&gt;
+                          &lt;/witness&gt;
+                          &lt;witness xml:id="B223_He9"&gt;
+                            &lt;msDesc&gt;
+                              &lt;ptr target="source:He9"/&gt;
+                              &lt;locus from="106v" to="114r"&gt;106ⱽ–114ʳ&lt;/locus&gt;
+                            &lt;/msDesc&gt;
+                            &lt;measure unit="verse" quantity="366"&gt;366 V.&lt;/measure&gt;
+                          &lt;/witness&gt;
+                          ...
+                        &lt;/listWit&gt;
+                        &lt;listBibl&gt;
+                          ...
+                        &lt;/listBibl&gt;
+                      &lt;/sourceDesc&gt;
+                    &lt;/fileDesc&gt;
+                    &lt;profileDesc&gt;
+                      ...
+                    &lt;/profileDesc&gt;
+                  &lt;/teiHeader&gt;
+                  &lt;text ana="hc:ScholarlyExpression"&gt;
+                    &lt;body&gt;
+                      &lt;div ana="hc:Bibliography"&gt;
+                        &lt;listBibl&gt;
+                          &lt;bibl&gt;
+                            &lt;ptr target="bib:Meyer_K._1899"/&gt;
+                          &lt;/bibl&gt;
+                          ...         
+                        &lt;/listBibl&gt;
+                      &lt;/div&gt;
+                      &lt;div ana="hc:Abstract"&gt;
+                        ...
+                      &lt;/div&gt;
+                    &lt;/body&gt;
+                  &lt;/text&gt;
+                &lt;/TEI&gt;
+                ...
+              &lt;/teiCorpus&gt;
+            </code></pre></div>
+                  
                </div>
    
                <div id="METAINDEX-SOURCE">
@@ -37,8 +120,8 @@
                </div>
             </div>
          </div>         
-      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 12.07.2026
+      <br><br><hr><div class="bibliography"><h3>Zitierte Literatur</h3><dl class="inline"><dt id=""></dt><dd></dd></dl></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 13.07.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
