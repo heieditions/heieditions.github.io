@@ -22,6 +22,9 @@
                      Über ein Werkindex werden sowohl die edierten Werke als auch die Textzeugen erfasst. Da eine Edition verschiedene Werke umfassen kann, wird für den Werkindex das Tag <span class="gi">&lt;teiCorpus&gt;</span> verwendet. Darunter wird jedes Werk in einem eigenen <span class="gi">&lt;TEI&gt;</span>-Element beschrieben. Die Textzeugen sind als <span class="gi">&lt;witness&gt;</span> in <span class="gi">&lt;teiHeader&gt;</span>/<span class="gi">&lt;fileDesc&gt;</span>/<span class="gi">&lt;sourceDesc&gt;</span>/<span class="gi">&lt;listWit&gt;</span> aufgelistet.
                   </p>
                   <p>
+                     Innerhalb von <span class="gi">&lt;witness&gt;&gt;</span>/<span class="gi">&lt;msDesc&gt;</span> kann mittels <span class="gi">&lt;ptr&gt;</span> auf das Register der Quellen/Handschriften (s. <a class="inlink" href="#METAINDEX-SOURCE">Quellen, Handschriften</a>) verwiesen werden.
+                  </p>
+                  <p>
                      Code-Beispiele:
                   </p>
                   
@@ -101,6 +104,9 @@
               &lt;/teiCorpus&gt;
             </code></pre></div>
                   
+                  <p>
+                     Im Sinne des <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iflastandards.info/fr" target="_blank">FRBR-Standards</a> wird im Werkindex also zunächst die Werk-Ebene der Edition beschrieben. Die Angaben in <span class="gi">&lt;witness&gt;</span> bilden die Expressionen eines Werks ab. Ob diese zugleich für die Manifestationen und Exemplare stehen, hängt stark vom edierten Material ab. Gerade bei Handschriften muss im Einzelfall die Frage gestellt werden, ob mehrere Handschriften dieselbe Expression tragen. Dies hängt davon ab, wie schwer die Unterschiede zwischen den handschriftlichen Texten wiegen. FRBRoo schreibt dazu "Minor changes, such as corrections of spelling and punctuation, etc., are normally considered variations within the same F2 Expression." Bei mitteralterlichen Handschriften sind die Unterschiede allerdings praktisch immer größer, daher bilden die Texte eher jeweils eigenständige Expressionen.<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup> Bei unikalen Textträgern fallen zudem die Ebenen Manifestation und Exemplar zusammen. FRBRoo (s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iflastandards.info/fr/frbr/frbroo?language=en" target="_blank">FRBRoo F4</a>) hat hier für die Klasse "F4 Manifestation Singleton" (s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iflastandards.info/fr/frbr/frbroo#F4" target="_blank">FRBRoo F4</a>) geschaffen.
+                 </p>
                </div>
    
                <div id="METAINDEX-SOURCE">
@@ -120,7 +126,7 @@
                </div>
             </div>
          </div>         
-      <br><br><hr><div class="bibliography"><h3>Zitierte Literatur</h3><dl class="inline"><dt id=""></dt><dd></dd></dl></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+      <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>"Ff a text is revised or modified, the resulting F2 Expression is considered to be a new F2 Expression"</div></div><br><br><hr><div class="bibliography"><h3>Zitierte Literatur</h3><dl class="inline"><dt id=""></dt><dd></dd></dl></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
                         Letzte Aktualisierung: 13.07.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
