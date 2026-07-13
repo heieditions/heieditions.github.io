@@ -106,8 +106,7 @@
             </code></pre></div>
                   
                   <p>
-                     Im Sinne des <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iflastandards.info/fr" target="_blank">FRBR-Standards</a> wird im Werkindex also zunächst die Werk-Ebene der Edition beschrieben. Die Angaben in <span class="gi">&lt;witness&gt;</span> bilden die Expressionen eines Werks ab. Ob diese zugleich für die Manifestationen und Exemplare stehen, hängt stark vom edierten Material ab. Gerade bei Handschriften muss im Einzelfall die Frage gestellt werden, ob mehrere Handschriften dieselbe Expression tragen. Dies hängt davon ab, wie schwer die Unterschiede zwischen den handschriftlichen Texten wiegen. FRBRoo schreibt dazu "Minor changes, such as corrections of spelling and punctuation, etc., are normally considered variations within the same F2 Expression." Bei mitteralterlichen Handschriften sind die Unterschiede allerdings praktisch immer größer, daher bilden die Texte eher jeweils eigenständige Expressionen.
-                     <sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup> Bei unikalen Textträgern fallen zudem die Ebenen Manifestation und Exemplar zusammen. FRBRoo (s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iflastandards.info/fr/frbr/frbroo?language=en" target="_blank">FRBRoo F4</a>) hat hier für die Klasse "F4 Manifestation Singleton" (s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iflastandards.info/fr/frbr/frbroo#F4" target="_blank">FRBRoo F4</a>) geschaffen.
+                     Im Sinne des <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iflastandards.info/fr" target="_blank">FRBR-Standards</a> wird im Werkindex also zunächst die Werk-Ebene der Edition beschrieben. Die Angaben in <span class="gi">&lt;witness&gt;</span> bilden die Expressionen eines Werks ab. Ob diese zugleich für die Manifestationen und Exemplare stehen, hängt stark vom edierten Material ab. Gerade bei Handschriften muss im Einzelfall die Frage gestellt werden, ob mehrere Handschriften dieselbe Expression tragen. Dies hängt davon ab, wie schwer die Unterschiede zwischen den handschriftlichen Texten wiegen. FRBRoo schreibt dazu »Minor changes, such as corrections of spelling and punctuation, etc., are normally considered variations within the same F2 Expression.« Bei mitteralterlichen Handschriften sind die Unterschiede allerdings praktisch immer größer, daher bilden die Texte eher jeweils eigenständige Expressionen.<sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup> Bei unikalen Textträgern fallen zudem die Ebenen Manifestation und Exemplar zusammen. FRBRoo (s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iflastandards.info/fr/frbr/frbroo?language=en" target="_blank">FRBRoo F4</a>) hat hier für die Klasse "F4 Manifestation Singleton" (s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iflastandards.info/fr/frbr/frbroo#F4" target="_blank">FRBRoo F4</a>) geschaffen.
                  </p>
                  <p>Die verschiedenen, im Rahmen von heiEDITIONS generierten Sichten (Leseansicht, Quellenansicht, synoptische Ansicht) stellen zugleich eigene Manifestationen des Werks dar.</p>
                  <p>
@@ -133,6 +132,89 @@
    
                <div id="METAINDEX-SOURCE">
                   <h3>Quellen, Handschriften</h3>
+
+                  <p>
+                     Code-Beispiele:
+                  </p>
+                  
+                     <div class="egxml" data-example-id="source_index"><pre class="language-xml"><code>
+              &lt;?xml-model href="http://www.tei-c.org/Vault/P5/4.9.0/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;
+              &lt;?xml-model href="http://www.tei-c.org/Vault/P5/4.9.0/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;
+              &lt;TEI&gt;
+                &lt;teiHeader&gt;
+                  &lt;fileDesc&gt;
+                    &lt;titleStmt&gt;
+                      &lt;title ana="hc:MainTitle"&gt;Handschriftenbeschreibung Minnereden&lt;/title&gt;
+                    &lt;/titleStmt&gt;
+                    &lt;publicationStmt/&gt;
+                    &lt;sourceDesc&gt;
+                      ...
+                    &lt;/sourceDesc&gt;
+                  &lt;/fileDesc&gt;
+                  &lt;encodingDesc&gt;
+                    &lt;listPrefixDef&gt;
+                      &lt;!-- Prefix-Definitionen für Verweise auf andere Metadaten-Indexe --&gt;
+                    &lt;/listPrefixDef&gt;
+                  &lt;/encodingDesc&gt;
+                &lt;/teiHeader&gt;
+                &lt;text ana="hc:Bibliography"&gt;
+                  &lt;body&gt;
+                    &lt;listBibl&gt;
+                      &lt;msDesc xml:id="He3"&gt;
+                        &lt;msIdentifier&gt;
+                          &lt;settlement&gt;
+                            &lt;placeName&gt;Heidelberg&lt;/placeName&gt;
+                          &lt;/settlement&gt;
+                          &lt;institution&gt;
+                            &lt;orgName&gt;Universitätsbibliothek&lt;/orgName&gt;
+                          &lt;/institution&gt;
+                          &lt;idno ana="hc:Shelfmark"&gt;Cpg 313&lt;/idno&gt;
+                          &lt;idno ana="hc:EditorialSiglum"&gt;He3&lt;/idno&gt;
+                          &lt;idno ana="hc:DigitalPublicationIdentifier"&gt;https://digi.ub.uni-heidelberg.de/diglit/cpg313&lt;/idno&gt;
+                        &lt;/msIdentifier&gt;
+                        &lt;physDesc&gt;
+                          &lt;objectDesc form="codex"&gt;
+                            &lt;supportDesc&gt;
+                              &lt;support&gt;
+                                &lt;material function="support"&gt;Papier&lt;/material&gt;
+                                &lt;dimensions&gt;
+                                  &lt;dim&gt; in 4°&lt;/dim&gt;
+                                &lt;/dimensions&gt;
+                                &lt;measure quantity="502" unit="leaf"&gt;502 Bl.&lt;/measure&gt;
+                                &lt;dimensions&gt;
+                                  &lt;height quantity="272" unit="mm"&gt;27,2 cm&lt;/height&gt;
+                                  &lt;width quantity="194" unit="mm"&gt;19,4 cm&lt;/width&gt;
+                                &lt;/dimensions&gt;
+                              &lt;/support&gt;
+                            &lt;/supportDesc&gt;
+                          &lt;/objectDesc&gt;
+                        &lt;/physDesc&gt;
+                        &lt;history&gt;
+                          &lt;origin&gt;
+                            &lt;origPlace&gt;
+                              &lt;placeName&gt;Oberrheingebiet&lt;/placeName&gt;
+                            &lt;/origPlace&gt;
+                            &lt;origDate&gt;
+                              &lt;date from="1478" to="1478"&gt;1478&lt;/date&gt;
+                            &lt;/origDate&gt;
+                          &lt;/origin&gt;
+                        &lt;/history&gt;
+                        &lt;additional&gt;
+                          &lt;listBibl&gt;
+                            &lt;bibl&gt;...&lt;/bibl&gt;
+                          &lt;/listBibl&gt;
+                        &lt;/additional&gt;
+                      &lt;/msDesc&gt;
+             
+                      &lt;msDesc xml:id="He9"&gt;
+                        ...
+                      &lt;/msDesc&gt;
+                    &lt;/listBibl&gt;
+                  &lt;/body&gt;
+                &lt;/text&gt;
+              &lt;/TEI&gt;
+            </code></pre></div>
+                  
                </div>
    
                <div id="METAINDEX-AUTHORS">
@@ -154,7 +236,7 @@
                </p>
             </div>
          </div>         
-      <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>»If a text is revised or modified, the resulting F2 Expression is considered to be a new F2 Expression.« (<span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.iflastandards.info/fr/frbr/frbroo#F2" target="_blank">FRBRoo F2</a>)</div></div><br><br><hr><div class="bibliography"><h3>Zitierte Literatur</h3><dl class="inline"><dt id=""></dt><dd></dd></dl></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+      <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>»If a text is revised or modified, the resulting F2 Expression is considered to be a new F2 Expression« (<a class="tocref" href="https://www.html">FRBRoo F2</a>)</div></div><br><br><hr><div class="bibliography"><h3>Zitierte Literatur</h3><dl class="inline"><dt id=""></dt><dd></dd></dl><dl class="inline"><dt id=""></dt><dd></dd></dl></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
                         Letzte Aktualisierung: 13.07.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
