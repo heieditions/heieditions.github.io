@@ -230,17 +230,51 @@
    
                <div id="METAINDEX-BIBLIO">
                   <h3>Bibliographie</h3>
+                  <p>
+                     Die innerhalb von <span class="gi">&lt;teiHeader&gt;</span> sowie in anderen Metadatenindexe verwendeten Literaturangaben können über diesen Index zentral verwaltet werden.
+                  </p>
+                  <p>
+                     Code-Beispiele:
+                  </p>
+                  
+                     <div class="egxml" data-example-id="bibl_index"><pre class="language-xml"><code>
+              &lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes_index.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;
+              &lt;?xml-model href="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS/tei_hes_index.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;
+              &lt;?xml-stylesheet type="text/css" href="Literaturverzeichnis.css"?&gt;
+              &lt;TEI&gt;
+                &lt;teiHeader&gt;
+                  &lt;fileDesc&gt;
+                    &lt;titleStmt&gt;
+                      &lt;title&gt;Gesamtbibliographie zur digitalen Edition Minnerden Digital&lt;/title&gt;
+                    &lt;/titleStmt&gt;
+                    ...
+                  &lt;/fileDesc&gt;
+                &lt;/teiHeader&gt;
+                &lt;text ana="hc:Bibliography"&gt;
+                  &lt;body&gt;
+                    &lt;listBibl&gt;
+                      &lt;item xml:id="Achnitz_1997"&gt;
+                        &lt;bibl ana="hc:ShortBibliographicReference"&gt;Achnitz 1997&lt;/bibl&gt;
+                        &lt;bibl ana="hc:FullBibliographicReference"&gt;Der Ritter mit dem Bock. Konrads von Stoffeln ›Gauriel von Muntabel‹. Neu herausgegeben, eingeleitet und kommentiert von Wolfgang Achnitz. (Texte und Textgeschichte&nbsp;46) Tübingen 1997.&lt;/bibl&gt;
+                     &lt;/item&gt;
+                     ...
+                   &lt;/listBibl&gt;
+                 &lt;/body&gt;
+               &lt;/text&gt;
+             &lt;/TEI&gt;
+            </code></pre></div>
+                  
                </div>
             </div>
             <div id="METAINDEX-PROCESSING">
                <h2>Verarbeitung</h2>
                <p>
-                 Bei der Erzeugung der TEI-Codierungen für die verschiedenen Sichten eines Texts (Leseansicht, Quellenansicht, synoptische Ansicht) werden die Verweisungen auf die Metadatenindexe aufgelöst und die entsprechenden Angaben direkt in die Zielcodierung kopiert.
+                 Bei der Erzeugung der TEI-Codierungen für die verschiedenen Sichten eines Texts (Leseansicht, Quellenansicht, synoptische Ansicht) werden die Verweisungen auf die Metadatenindexe aufgelöst und die entsprechenden Angaben - soweit dies das TEI-Schema an der entsprechenden Stelle zulässt - direkt in die Zielcodierung kopiert.
                </p>
             </div>
          </div>         
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>»If a text is revised or modified, the resulting F2 Expression is considered to be a new F2 Expression« (<a class="tocref" href="https://www.html">FRBRoo F2</a>)</div></div><br><br><hr><div class="bibliography"><h3>Zitierte Literatur</h3><dl class="inline"><dt id=""></dt><dd></dd></dl><dl class="inline"><dt id=""></dt><dd></dd></dl></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 13.07.2026
+                        Letzte Aktualisierung: 14.07.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
