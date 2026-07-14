@@ -1,0 +1,62 @@
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Tokenisierung</title><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Tokenisierung</nav><main>
+            <div id="TOKENS">
+                <div class="wip-banner"><span class="wip-banner__icon">🔧</span><span>Dieser Abschnitt ist aktuell in Bearbeitung.</span></div>
+                <h1>Tokenisierung</h1>
+                
+                <div id="TOKENS-WORD">
+                    <h2>Wort und Tokenisierung</h2>
+                    <p>
+                        heiEDITIONS unterstützt die spezifische Markierung von linguistischen Einheiten, hier insbesondere Wörtern, ausdrücklich. Die Segmentierung eines Texts in Einheiten der Wortebene ist Voraussetzung für bestimmte Formen der Weiterverarbeitung (bspw. Analyse durch Parser, Information Retrieval).
+                        Wörter werden mit dem Element <span class="gi">&lt;w&gt;</span> getaggt. Diese Form des markierten Wortes wird als Token bezeichnet.
+                        Die Kriterien, nach denen tokenisiert wird, sind den Projekten überlassen. Sie sollten sich hierzu insbesondere Fragen von Zeitaufwand, Forschungsfragen und Nachnutzbarkeit orientieren, um eine nachvollziehbare Regelung der Tokenisierung zu erreichen.
+                        Die Erfassung innerhalb von <span class="gi">&lt;w&gt;</span> erlaubt es unter anderem, die Zusammen- und Getrenntschreibung von Wörtern anhand von linguistischen Kriterien anstatt lediglich der rein visuellen Darstellung wiederzugeben. Insbesondere bei älteren Handschriften kann dies von großem Interesse sein.
+                        <span class="aside">Worttrennungen am Zeilenende</span>Bei Worttrennungen am Zeilenende wird an der entsprechenden Stelle im Wort der Zeilenumbruch mit der Nummer der neuen Zeile gesetzt und um das Attribut <span class="att">@break</span> mit dem Wert <span class="val">no</span> gesetzt. Somit wird einerseits dem Zeilenumbruch Rechnung getragen, andererseits auch die Einheit des Wortes erhalten.
+                        Trennungszeichen können, falls vorhanden, erfasst werdern (vgl. <a class="inlink" href="layout.html#FAC-LINES-BREAKS">Worttrennung</a>).
+                    </p>
+                    <p>
+                        <span class="aside">@xml:id</span>Einzelne Tokens können mittels einer <span class="att">@xml:id</span> eindeutig identifiziert und zugeordnet werden. Mittels dieser Markierung kann an anderer Stelle durch das Attribut <span class="att">@target</span> auf diese Textstücke verwiesen werden. Die <span class="att">@xml:id</span> muss als Wert eine im Dokument einzigartike Zeichenkette zugewiesen werden, die idealerweise innerhalb eines Projekts einheitlich geregelt sind.
+                        Die so markierten Wörter (<span class="gi">&lt;w&gt;</span>) können damit später beispielsweise einfacher annotiert werden.
+                    </p>
+                    <p>
+                    </p>
+                    
+                </div>
+                <div id="TOKENS-CORR">
+                    
+                    <h2>Token und Korrekturen</h2>
+                    <p>
+                        Zum Teil können bei Korrekturen in Texten, insbesondere in Handschriften, neue Worte entstehen. In der Regel sollen hierbei nur die Ergebnisse der Korrektur tokenisiert werden.
+                        In seltenen Fällen kann es aber von Interesse sein, auch das falsche Original festzuhalten. Dies kann zum Beispiel bei Versschreibungen der Fall sein, oder wenn die fehlerhafte Schreibung offensichtlich erst bei einer Überarbeitung korrigiert wird.
+                        Diese Fehler und Korrekturen können beliebig komplex sein. Innerhalb eines <span class="gi">&lt;choice&gt;</span>-Konstrukts ist es möglich, beide Tokens festzuhalten.
+                        Zudem kann die Art der Korrektur festgehalten werden .</p>
+                    
+                    
+                </div>
+                <div id="TOKENS-ABBREV">
+                    <h2>Tokens und Abkürzungen</h2>
+                    <p>
+                        Teilweise kann eine korrekte Tokenisierung eines Begriffs erst nach der Auflösung stattfinden. Dies betrifft insbesondere einige Formen der <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.germanistik.uni-mainz.de/files/2015/03/Nuebling_1993.pdf" target="_blank">Klitika</a>.
+                        Dies kann, ähnlich der Korrekturen, mit einem <span class="gi">&lt;choice&gt;</span>-Konstrukt gelöst werden.
+                        Im einfachsten Fall kann die Auflösung innerhalb der <span class="gi">&lt;choice&gt;</span>-Konstruktion in einem eigenen <span class="gi">&lt;w&gt;</span>-Element stehen:
+                        
+                        
+                    </p>
+                    <p>
+                        Im komplexeren Fall kann sich die Auflösung über zwei Tokens erstrecken und beide betreffen.
+                        Hier wird eine <span class="gi">&lt;choice&gt;</span>-Konstruktion vollständig außerhalb von Abkürzung und Auflösung gesetzt. Diese <span class="gi">&lt;choice&gt;</span>-Konstruktion enthält die Kindelemente <span class="gi">&lt;abbr&gt;</span>, in welchem die abgekürzte Form untokenisiert steht!, und <span class="gi">&lt;expan&gt;</span>, welches die beiden Tokens mit der Auflösung umfasst:
+                        
+                        
+                    </p>
+                </div>
+                
+            </div>
+        </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 14.07.2026
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script><script src="../toc-generator.js"></script></body></html>
