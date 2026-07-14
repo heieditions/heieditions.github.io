@@ -222,10 +222,53 @@
    
                <div id="METAINDEX-AUTHORS">
                   <h3>Autoren</h3>
+                  <p>
+                     Die innerhalb von <span class="gi">&lt;teiHeader&gt;</span> verwendeten Autorenangaben können über diesen Index zentral verwaltet werden. 
+                  </p>
+                  <p>
+                     Code-Beispiele:
+                  </p>
+                  
+                     <div class="egxml" data-example-id="author_index"><pre class="language-xml"><code>
+              &lt;?xml-model href="http://www.tei-c.org/Vault/P5/4.9.0/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?&gt;
+              &lt;?xml-model href="http://www.tei-c.org/Vault/P5/4.9.0/xml/tei/custom/schema/relaxng/tei_all.rng" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?&gt;
+              &lt;TEI&gt;
+                &lt;teiHeader&gt;
+                  &lt;fileDesc&gt;
+                    &lt;titleStmt&gt;
+                      &lt;title&gt;Autorenliste&lt;/title&gt;
+                    &lt;/titleStmt&gt;
+                    ...
+                  &lt;/fileDesc&gt;
+                  &lt;encodingDesc&gt;
+                    &lt;listPrefixDef&gt;
+                      &lt;!-- Prefix-Definitionen für Verweise auf andere Metadaten-Indexe --&gt;
+                    &lt;/listPrefixDef&gt;
+                  &lt;/encodingDesc&gt;
+                &lt;/teiHeader&gt;
+                &lt;text ana="hc:IndexOfPersons" xml:id="index_of_persons"&gt;
+                  &lt;body&gt;
+                    &lt;listPerson&gt;
+                      &lt;person xml:id="meister_altswert"&gt;
+                        &lt;persName&gt;Meister Altswert&lt;/persName&gt;
+                      &lt;/person&gt;
+                      ...
+                    &lt;/listPerson&gt;
+                  &lt;/body&gt;
+                &lt;/text&gt;
+              &lt;/TEI&gt;
+            </code></pre></div>
+                  
+                  <p>
+                     Weitere Beteiligte Personen werden in einem separaten Index erfasst (s. <a class="inlink" href="#METAINDEX-CONTRIB">Weitere Beteiligte</a>).
+                  </p>
                </div>
    
                <div id="METAINDEX-CONTRIB">
                   <h3>Weitere Beteiligte</h3>
+                  <p>
+                     Alle weiteren an einem Editionstext Beteiligten - neben den Autoren die hier abgebildet werden: <a class="inlink" href="#METAINDEX-AUTHROS"></a> - (z.B. Herausgeber, Transkriptoren, Illustratoren) können in einem weiteren Index erfasst werden. Die Struktur entspricht dem des Autorenindex.
+                  </p>
                </div>
    
                <div id="METAINDEX-BIBLIO">
@@ -249,6 +292,11 @@
                     &lt;/titleStmt&gt;
                     ...
                   &lt;/fileDesc&gt;
+                  &lt;encodingDesc&gt;
+                    &lt;listPrefixDef&gt;
+                      &lt;!-- Prefix-Definitionen für Verweise auf andere Metadaten-Indexe --&gt;
+                    &lt;/listPrefixDef&gt;
+                  &lt;/encodingDesc&gt;
                 &lt;/teiHeader&gt;
                 &lt;text ana="hc:Bibliography"&gt;
                   &lt;body&gt;
