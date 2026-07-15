@@ -319,10 +319,55 @@
                <p>
                  Bei der Erzeugung der TEI-Codierungen für die verschiedenen Sichten eines Texts (Leseansicht, Quellenansicht, synoptische Ansicht) werden die Verweisungen auf die Metadatenindexe aufgelöst und die entsprechenden Angaben - soweit dies das TEI-Schema an der entsprechenden Stelle zulässt - direkt in die Zielcodierung kopiert.
                </p>
+               <p>
+                 Beispiel:
+               </p>
+               <p>
+                 Eintrag einer Person im Autorenindex:
+               </p>
+               
+                 <div class="egxml" data-example-id="person_in_author_index"><pre class="language-xml"><code>
+              &lt;person xml:id="gnd-117135321"&gt;
+                &lt;persName ana="hc:AppellationForDisplayInEdition"&gt;Marie von Wilamowitz-Moellendorff, geb. Mommsen&lt;/persName&gt;
+                &lt;persName ana="hc:AppellationForDisplayInIndex"&gt;Wilamowitz-Moellendorff, Marie von geb. Mommmsen&lt;/persName&gt;
+                &lt;persName ana="hc:AppellationForDoublePosting"&gt;Mariechen&lt;/persName&gt;
+                &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/117135321&lt;/idno&gt;
+                &lt;birth when="1855-06-28"&gt;
+                  &lt;note&gt;28.6.1855 in Breslau&lt;/note&gt;
+                &lt;/birth&gt;
+                &lt;death when="1936-09-15"&gt;
+                  &lt;note&gt;15.9.1936&lt;/note&gt;
+                &lt;/death&gt;
+                &lt;note&gt;Ältestes Kind von Marie und Theodor Mommsen; Ausbildung zur Lehrerin, 1877 Lehrerin an der Berliner Louisenschule, heiratete am 20.9.1878 den Altphilologen Ulrich von Wilamowitz-Moellendorff.&lt;/note&gt;
+              &lt;/person&gt;
+            </code></pre></div> 
+               
+               <p>
+                 Referenz auf den Personeneintrag im Autorenindex in der Arbeitscodierung einer Transkription/Edition:
+               </p>
+               
+                 <div class="egxml" data-example-id="author_reference_in_transcription"><pre class="language-xml"><code>
+              &lt;author&gt;
+                &lt;ptr target="author:gnd-117135321"/&gt;
+              &lt;/author&gt;
+            </code></pre></div>
+               
+               <p>
+                 Auflösung der Referenz im Rahmen der Verarbeitungspipeline zur Erzeugung der TEI-Zielcodierungen (Leseansicht, Quellenansicht oder synoptische Ansicht). Dabei werden nur die an dieser Stelle notwendigen bzw. erlaubten Tags/Informationen übernommen:
+               </p>
+               
+                 <div class="egxml" data-example-id="author_resolved_in_transcription"><pre class="language-xml"><code>
+              &lt;author source="author:gnd-117135321"&gt;
+                &lt;persName&gt;Marie von Wilamowitz-Moellendorff, geb. Mommsen&lt;/persName&gt;
+                &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/117135321&lt;/idno&gt;
+              &lt;/author&gt;
+            </code></pre></div>
+               
+
             </div>
          </div>         
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>»If a text is revised or modified, the resulting F2 Expression is considered to be a new F2 Expression« (<a class="tocref" href="https://www.html">FRBRoo F2</a>)</div></div><br><br><hr><div class="bibliography"><h3>Zitierte Literatur</h3><dl class="inline"><dt id=""></dt><dd></dd></dl><dl class="inline"><dt id=""></dt><dd></dd></dl></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 14.07.2026
+                        Letzte Aktualisierung: 15.07.2026
                         ·
                         <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
                         ·
