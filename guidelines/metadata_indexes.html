@@ -321,7 +321,7 @@
                  Bei der Erzeugung der TEI-Codierungen für die verschiedenen Sichten eines Texts (Leseansicht, Quellenansicht, synoptische Ansicht) werden die Verweisungen auf die Metadatenindexe aufgelöst und die entsprechenden Angaben - soweit dies das TEI-Schema an der entsprechenden Stelle zulässt - direkt in die Zielcodierung kopiert.
                </p>
                <p>
-                 Beispiel:
+                 Beispiel Autorenindex:
                </p>
                <p>
                  Eintrag einer Person im Autorenindex:
@@ -365,6 +365,95 @@
             </code></pre></div>
                
 
+               <p>
+                 Beispiel Werkindex:
+               </p>
+               <p>
+                 Hier erfolgt die Verknüpfung in der Arbeitscodierung einer Transkription zum <span class="gi">&lt;witness&gt;</span>-Tag des entsprechenden Werkindex-Eintrags: 
+               </p>
+               
+                 <div class="egxml" data-example-id="witness_reference_in_transcription"><pre class="language-xml"><code>
+              &lt;sourceDesc&gt;
+                &lt;msDesc&gt;
+                  &lt;ptr target="work:B429_He3"/&gt;
+                &lt;/msDesc&gt;
+              &lt;/sourceDesc&gt;
+            </code></pre></div>
+               
+               <p>
+                 Im Rahmen der automatischen Erstellung der TEI-Zielcodierungen werden nicht nur Informationen aus dem Werkindex sondern auch aus dem innerhalb von <span class="gi">&lt;witness&gt;</span> dort referenzierten Quellenindex ergänzt. Auch hier werden nur die an dieser Stelle notwendigen bzw. erlaubten Tags/Informationen übernommen. Beispiele Einträge im Werk- und Quellenindex finden sich oben. Die Verknüpfung zum Quellenindex über source ist dabei identisch. Die Verknüpfung zum Werkindex erfolgt jedoch für die Leseansicht direkt an <span class="gi">&lt;TEI&gt;</span>, während sie bei der Quellenansicht am Beginn des jeweiligen Textes erfolgt, der dort durch ein <span class="gi">&lt;milestone&gt;</span> gekennzeichnet ist. Dies ist darin begründet, dass für die Leseansicht zu jedem Werk genau eine TEI-Datei erzeugt wird, während sich die TEI-Datei der Quellenansicht an der Quelle/der Handschrift orientiert und viele Werke enthalten kann.
+               </p>
+               
+                 <div class="egxml" data-example-id="witness_resolved_in_transcription_semantic"><pre class="language-xml"><code>
+              &lt;TEI source="work:B429_He3"&gt;
+                &lt;teiHeader&gt;
+                  &lt;fileDesc&gt;
+                    &lt;sourceDesc&gt;
+                      &lt;msDesc source="source:He3"&gt;
+                        &lt;msIdentifier&gt;
+                          &lt;settlement&gt;
+                            &lt;placeName&gt;Heidelberg&lt;/placeName&gt;
+                          &lt;/settlement&gt;
+                          &lt;institution&gt;
+                            &lt;orgName&gt;Universitätsbibliothek&lt;/orgName&gt;
+                          &lt;/institution&gt;
+                          &lt;idno ana="hc:Shelfmark"&gt;Cpg 313&lt;/idno&gt;
+                          &lt;idno ana="hc:EditorialSiglum"&gt;He3&lt;/idno&gt;
+                        &lt;/msIdentifier&gt;
+                        &lt;additional&gt;
+                          &lt;surrogates&gt;
+                            &lt;listBibl&gt;
+                              &lt;bibl ana="hc:BibliographicReferenceForOnlineFacsimile"&gt;Heidelberg, Universitätsbibliothek, Cod. Pal. germ. 313. Online-Ausgabe. Heidelberg: Universitätsbibliothek 2009 (Bibliotheca Palatina – digital) (Permalink: &lt;ref ana="hc:URLReference" target="https://digi.ub.uni-heidelberg.de/diglit/cpg313"&gt;https://digi.ub.uni-heidelberg.de/diglit/cpg313&lt;/ref&gt;; DOI: &lt;idno ana="hc:DOI"&gt;https://doi.org/10.11588/diglit.128&lt;/idno&gt;; IIIF-Manifest [v3.0]: &lt;ref ana="hc:IIIFManifestURL" target="https://digi.ub.uni-heidelberg.de/diglit/iiif3/cpg313/manifest"&gt;https://digi.ub.uni-heidelberg.de/diglit/iiif3/cpg313/manifest&lt;/ref&gt;)&lt;/bibl&gt;
+                            &lt;/listBibl&gt;
+                          &lt;/surrogates&gt;
+                        &lt;/additional&gt;
+                      &lt;/msDesc&gt;
+                    &lt;/sourceDesc&gt;
+                  &lt;/fileDesc&gt;
+                &lt;/teiHeader&gt;
+                ...
+              &lt;/TEI&gt;
+            </code></pre></div>
+               
+               
+                 <div class="egxml" data-example-id="witness_resolved_in_transcription_sourcedoc"><pre class="language-xml"><code>
+              &lt;TEI&gt;
+                &lt;teiHeader&gt;
+                  &lt;fileDesc&gt;
+                    &lt;sourceDesc&gt;
+                      &lt;msDesc source="source:He3"&gt;
+                        &lt;msIdentifier&gt;
+                          &lt;settlement&gt;
+                            &lt;placeName&gt;Heidelberg&lt;/placeName&gt;
+                          &lt;/settlement&gt;
+                          &lt;institution&gt;
+                            &lt;orgName&gt;Universitätsbibliothek&lt;/orgName&gt;
+                          &lt;/institution&gt;
+                          &lt;idno ana="hc:Shelfmark"&gt;Cpg 313&lt;/idno&gt;
+                          &lt;idno ana="hc:EditorialSiglum"&gt;He3&lt;/idno&gt;
+                        &lt;/msIdentifier&gt;
+                        &lt;additional&gt;
+                          &lt;surrogates&gt;
+                            &lt;listBibl&gt;
+                              &lt;bibl ana="hc:BibliographicReferenceForOnlineFacsimile"&gt;Heidelberg, Universitätsbibliothek, Cod. Pal. germ. 313. Online-Ausgabe. Heidelberg: Universitätsbibliothek 2009 (Bibliotheca Palatina – digital) (Permalink: &lt;ref ana="hc:URLReference" target="https://digi.ub.uni-heidelberg.de/diglit/cpg313"&gt;https://digi.ub.uni-heidelberg.de/diglit/cpg313&lt;/ref&gt;; DOI: &lt;idno ana="hc:DOI"&gt;https://doi.org/10.11588/diglit.128&lt;/idno&gt;; IIIF-Manifest [v3.0]: &lt;ref ana="hc:IIIFManifestURL" target="https://digi.ub.uni-heidelberg.de/diglit/iiif3/cpg313/manifest"&gt;https://digi.ub.uni-heidelberg.de/diglit/iiif3/cpg313/manifest&lt;/ref&gt;)&lt;/bibl&gt;
+                            &lt;/listBibl&gt;
+                          &lt;/surrogates&gt;
+                        &lt;/additional&gt;
+                      &lt;/msDesc&gt;
+                    &lt;/sourceDesc&gt;
+                  &lt;/fileDesc&gt;
+                &lt;/teiHeader&gt;
+                &lt;sourceDoc&gt;
+                  &lt;surface ana="hc:Page" xml:id="_155v" n="155v"&gt;
+                    ...
+                    &lt;line xml:space="preserve" n="1"&gt;&lt;milestone ana="hc:TextualExpression hc:CompleteExpression" source="work:B429_He3"/&gt;&lt;milestone ana="hc:ExpressionBody"/&gt;...&lt;/line&gt;
+                    ...
+                  &lt;/surface&gt;
+                &lt;/sourceDoc&gt;
+              &lt;/TEI&gt;
+
+            </code></pre></div>
+               
             </div>
          </div>         
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>»If a text is revised or modified, the resulting F2 Expression is considered to be a new F2 Expression« (<a class="tocref" href="https://www.html">FRBRoo F2</a>)</div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
