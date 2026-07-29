@@ -1,0 +1,1 @@
+{"stem":"xml-deklar","instances":[{"docUri":"guidelines\/oxygen_plugin.html","score":1,"contexts":[{"form":"XML-Deklaration","weight":"1","pos":100,"context":"…statt `ü`). Falls der XML-Prolog fehlt (<mark>XML-Deklaration<\/mark> und Schema-Referenzen), wird dieser automatisch eingefügt…","fid":"RESTORE_ENTITIES"}]}]}
