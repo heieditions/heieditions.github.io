@@ -1,0 +1,68 @@
+name: Build staticSearch index
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'search/config.xml'
+      - 'concepts/*.html'
+      - 'guidelines/*.html'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  build-search:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo into working environment
+        uses: actions/checkout@v7
+
+      - name: Install HTML Tidy
+        run: sudo apt-get install -y tidy
+
+      - name: Assemble temporary working directory
+        run: |
+          mkdir -p tmp
+          cp search/search.html tmp/
+          cp search/config.xml tmp/
+          cp concepts/*.html tmp/concepts
+          cp guidelines/*.html tmp/guidelines
+
+      - name: Run Tidy on temporary html files
+        run: |
+          find tmp/guidelines/ tmp/concepts/ -name "*.html" | while read -r file; do
+            tidy -asxhtml -utf8 -numeric yes -indent -wrap 0 -m "$file" \
+              || echo "::warning file=$file::Tidy reported warnings"
+          done
+
+      - name: Install Java
+        uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: '17'
+
+      - name: Install Apache Ant
+        run: sudo apt-get install -y ant
+
+      - name: Clone staticSearch
+        run: git clone --depth 1 https://github.com/projectEndings/staticSearch.git staticSearch-src
+
+      - name: Run staticSearch build
+        run: |
+          ant -f staticSearch-src/build.xml \
+              -DssConfigFile="${{ github.workspace }}/tmp/config.xml"
+
+      - name: Copy generated index + search page back
+        run: |
+          rsync -a --delete tmp/staticSearch/ search/staticSearch/
+          rsync -a tmp/search.html search/search.html
+
+      - name: Commit and push updated index
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add search/staticSearch search/search.html
+          git diff --cached --quiet || git commit -m "Rebuild staticSearch index [skip ci]"
+          git push
