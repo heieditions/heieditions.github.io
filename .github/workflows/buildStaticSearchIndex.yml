@@ -24,7 +24,7 @@ jobs:
 
       - name: Assemble temporary working directory
         run: |
-          mkdir -p tmp
+          mkdir -p tmp/concepts tmp/guidelines
           cp search/search.html tmp/
           cp search/config.xml tmp/
           cp concepts/*.html tmp/concepts
