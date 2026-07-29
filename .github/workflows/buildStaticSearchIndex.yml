@@ -24,11 +24,12 @@ jobs:
 
       - name: Assemble temporary working directory
         run: |
-          mkdir -p tmp/concepts tmp/guidelines
+          mkdir -p tmp/concepts tmp/guidelines tmp/stopwords
           cp search/search.html tmp/
           cp search/config.xml tmp/
           cp concepts/*.html tmp/concepts
           cp guidelines/*.html tmp/guidelines
+          cp search/stopwords/*.txt tmp/stopwords
 
       - name: Run Tidy on temporary html files
         run: |
