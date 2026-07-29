@@ -1,0 +1,12 @@
+<config xmlns="http://hcmc.uvic.ca/ns/staticSearch" version="2">
+  <params>
+    <searchPage file="search.html"/>
+    <index recurse="true"/>
+    <createContexts create="true" wildcardSearch="true" phrasalSearch="true"/>
+    <results resultsPerPage="50"/>
+    <output dir="staticSearch"/>
+  </params>
+  <rules>
+    <rule weight="0" match="script | style | footer | header | code"/>
+  </rules>
+</config>
