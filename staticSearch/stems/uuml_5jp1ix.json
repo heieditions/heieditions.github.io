@@ -1,0 +1,1 @@
+{"stem":"uuml","instances":[{"docUri":"guidelines\/oxygen_plugin.html","score":1,"contexts":[{"form":"uuml","weight":"1","pos":60,"context":"…aufgelösten Zeichen durch die passenden Entitätsreferenzen (z. B. &amp;<mark>uuml<\/mark>; statt `ü`). Falls der XML-Prolog fehlt…","fid":"RESTORE_ENTITIES"}]}]}

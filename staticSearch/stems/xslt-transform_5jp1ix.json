@@ -1,0 +1,1 @@
+{"stem":"xslt-transform","instances":[{"docUri":"guidelines\/oxygen_plugin.html","score":1,"contexts":[{"form":"XSLT-Transformation","weight":"1","pos":47,"context":"…wieder her. Dies ist besonders nützlich, nachdem eine <mark>XSLT-Transformation<\/mark> die Entitäten aufgelöst hat. Das Plugin durchsucht das Dokument…","fid":"RESTORE_ENTITIES"}]}]}

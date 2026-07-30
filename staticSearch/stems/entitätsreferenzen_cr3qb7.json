@@ -1,1 +1,0 @@
-{"stem":"entitätsreferenzen","instances":[{"docUri":"guidelines\/oxygen_plugin.html","score":1,"contexts":[{"form":"Entitätsreferenzen","weight":"1","pos":91,"context":"…Dokument und ersetzt alle aufgelösten Zeichen durch die passenden <mark>Entitätsreferenzen<\/mark> (z. B. &amp;uuml; statt `ü`). Falls der…","fid":"RESTORE_ENTITIES"}]}]}
