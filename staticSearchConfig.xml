@@ -5,6 +5,7 @@
     <createContexts create="true" wildcardSearch="true" phrasalSearch="true"/>
     <results resultsPerPage="50"/>
     <output dir="staticSearch"/>
+    <stopwords file="stopwords.txt"/>
   </params>
   <rules>
     <rule weight="0" match="script | style | footer | header | code"/>

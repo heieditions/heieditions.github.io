@@ -29,6 +29,7 @@ jobs:
           cp staticSearchConfig.xml tmp/
           cp concepts/*.html tmp/concepts
           cp guidelines/*.html tmp/guidelines
+          cp stopwords.txt tmp/
 
       - name: Run Tidy on temporary html files
         run: |
@@ -48,9 +49,6 @@ jobs:
 
       - name: Clone staticSearch
         run: git clone --depth 1 https://github.com/projectEndings/staticSearch.git staticSearch-src
-        
-      - name: Add stopwords to tmp dir (bug in staticSearch)
-        run: mkdir -p tmp/stopwords && cp staticSearch-src/stopwords/*.txt tmp/stopwords
 
       - name: Run staticSearch build
         run: |
