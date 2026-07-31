@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Register</title><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Register</title><script src="../staticSearch/ssHighlight.js"></script><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
@@ -381,7 +381,7 @@
                         Die genannten Elemente <span class="gi">&lt;person&gt;</span>, <span class="gi">&lt;place&gt;</span>, <span class="gi">&lt;org&gt;</span>, <span class="gi">&lt;event&gt;</span> und <span class="gi">&lt;item&gt;</span>,
                         die jeweils einen Registereintrag und damit eine Entität repräsentieren,
                         müssen immer mit dem Attribut <span class="att">@xml:id</span> versehen werden,
-                        dessen Wert als eindeutiger Identifikator innerhalb des Registers dient. Für den Aufbau des Identifikatorwertes 
+                        dessen Wert als eindeutiger Identifikator innerhalb des Registers dient (sie müssen aber nur innerhalb einer Registerdatei eindeutig sein). Für den Aufbau des Identifikatorwertes 
                         gelten diese Regeln:
                      </p>
                      <ul>
@@ -629,7 +629,30 @@
                      
                      <h4>Angaben von URIs und URLs</h4>
                      
-                     <p>TODO</p>
+                     
+                     <p>
+                     Im Register können URIs, URLs und Querverweise mittels <span class="gi">&lt;listRef&gt;</span> angegeben werden, welches als Kindelement in jedem Registereintrag genau einmal erlaubt ist.
+                        Als Kindelemente von <span class="gi">&lt;listRef&gt;</span> können <span class="gi">&lt;ref&gt;</span> und <span class="gi">&lt;ptr&gt;</span> gesetzt werden (vgl. hierzu analog: <a class="inlink" href="teiheader.xml#TEIHEADER-FILEDESC-PUBLICATIONSTMT-LISTREF">Internetlinks</a>). 
+                     </p>
+                     <p>
+                        heiEDITIONS bietet zudem an, dass die Art des Verweises spezifiziert werden kann. Diese können mit dem Attribut <span class="att">@ana</span> angegeben werden.
+                        heiEDITIONS Concepts hält hierfür folgende Optopnen bereit:
+                        
+                        <ul>
+                           <li><span class="val">URLReference</span></li>
+                           <li><span class="val">ExternalLink</span></li>
+                           <li><span class="val">InternalLink</span></li>
+                           <li><span class="val">URN</span></li>
+                           <li><span class="val">DOI</span></li>
+                           <li><span class="val">GNDURI</span></li>
+                           <li><span class="val">ORCIDURI</span></li>
+                           <li><span class="val">WikipediaReference</span></li>
+                           <li><span class="val">GermanWikipediaReference</span></li>
+                           <li><span class="val">EnglishWikipediaReference</span></li>
+                           <li><span class="val">SimilarResourceReference</span></li>
+
+                        </ul>
+                     </p>
                      
                   </div>
                   
@@ -1013,8 +1036,10 @@
                         <span class="gi">&lt;label&gt;</span> ist zu verwenden, wenn die Benennung des Ereignisses nicht den Charakter eines Eigennamens hat; andernfalls 
                         sollte <span class="gi">&lt;name&gt;</span> genutzt werden. Die Verwendung von <span class="gi">&lt;label&gt;</span> und <span class="gi">&lt;name&gt;</span> gleichzeitig ist nicht erlaubt.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 21.07.2026
+                        Letzte Aktualisierung: 31.07.2026
                         ·
-                        <a href="https://www.ub.uni-heidelberg.de/wir/impressum.html" target="_blank" class="navref">Impressum</a>
+                        <a href="https://heieditions.github.io/search" target="_blank" class="navref">Suche</a>
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/de/impressum" target="_blank" class="navref">Impressum</a>
                         ·
                         <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script><script src="../toc-generator.js"></script></body></html>
