@@ -35,15 +35,14 @@
       
       
       <main>
-         
-         
+         <div id="SEARCH">
+            
          <div id="staticSearch"><script xmlns="http://www.w3.org/1999/xhtml" src="staticSearch/ssSearch.js"></script>
             <!--
               Note that if you want to debug a problem with the JavaScript, you can
               change "ssSearch.js" to "ssSearch-debug.js" to link the uncompressed, 
               unminified code instead.
             --><script xmlns="http://www.w3.org/1999/xhtml" src="staticSearch/ssInitialize.js"></script><noscript xmlns="http://www.w3.org/1999/xhtml">This page requires JavaScript.</noscript><form xmlns="http://www.w3.org/1999/xhtml" accept-charset="UTF-8" id="ssForm" data-allowphrasal="yes" data-allowwildcards="yes" data-minwordlength="2" data-maxkwicstoshow="25" data-scoringalgorithm="raw" data-resultsperpage="50" onsubmit="return false;" data-versionstring="_5jp1ix" data-ssfolder="staticSearch" data-kwictruncatestring="…" data-resultslimit="2000"><span class="ssQueryAndButton"><input type="text" id="ssQuery" aria-label="Search"/><button id="ssDoSearch">Search</button></span></form>
-            <div xmlns="http://www.w3.org/1999/xhtml" id="ssSearching">Searching...</div>
             <div xmlns="http://www.w3.org/1999/xhtml" id="ssResults"></div>
             <div xmlns="http://www.w3.org/1999/xhtml" id="ssPoweredBy">
                <p>Powered by</p><a href="https://github.com/projectEndings/staticSearch" aria-label="Powered by staticSearch"><svg xmlns="http://www.w3.org/2000/svg" id="svg8" version="1.1" viewBox="0 0 266.77068 209.61487" height="30" width="39">
@@ -87,6 +86,19 @@
                         </g>
                      </svg></a></div>
          </div>
+            <div id="SEARCH-FUNC">
+               <p>Die Suche in der heiEDITIONS-Dokumentation unterstützt folgende Funktionen:</p>
+               <ul>
+                  <li>Boolesche Operatoren: Suchbegriffe können mit vorangestelltem „+“ (Pflichttreffer) oder „-“ (Ausschluss) versehen werden, um Ergebnisse gezielt einzugrenzen.</li>
+                  <li>Wildcard-Suche mit „*“: Der *-Platzhalter kann in Suchbegriffen genutzt werden, um weitere Wortformen zu finden. Beispiel: „edit*“ findet „editiert“, „edits“, „edition“ usw. Andere Platzhalter („.“, „?“, „[]“ etc.) werden nicht unterstützt.</li>
+                  <li>Phrasensuche: Exakte Wortfolgen können in Anführungszeichen gesucht werden. Dieses Feature ist noch in Arbeit.</li>
+               </ul>
+               
+               <p>Hochfrequente, funktionale Begriffe (z.B. Artikel, Präpositionen, Konnektoren, Hilfsverben) werden durch eine Stoppwortliste von der Indizierung ausgeschlossen, um die Suchschnelligkeit zu verbessern. 
+                  Falls dadurch ein Suchvorhaben behindert wird, wenden Sie sich bitte an: <span class="outlinkprefix">↪ </span><a class="outlink" href="mailto:katharina.brueckmann@ub.uni-heidelberg.de" target="_blank">Katharina Brückmann</a>, Universitätsbibliothek Heidelberg.</p>
+               
+            </div>
+         </div>
          </main>
       
       
@@ -95,8 +107,6 @@
          
          
          <p id="impressum">
-            Letzte Aktualisierung: 21.07.2026
-            ·
             <a href="https://www.ub.uni-heidelberg.de/de/impressum" target="_blank" class="navref">Impressum</a>
             ·
             <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a>
