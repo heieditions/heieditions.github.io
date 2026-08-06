@@ -1,0 +1,1 @@
+{"stem":"doi-url","instances":[{"docUri":"guidelines\/teiheader.html","score":1,"contexts":[{"form":"DOI-URLs","weight":"1","pos":1531,"context":"<mark>DOI-URLs<\/mark> sollten hier nicht angegeben werden, weil sie besser als…","fid":"TEIHEADER-FILEDESC-PUBLICATIONSTMT-LISTREF"}]}]}
