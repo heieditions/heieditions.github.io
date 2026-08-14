@@ -9,12 +9,13 @@ window.onload = function() {
     queryConfigEnabled: false,
     presets: [
       SwaggerUIBundle.presets.apis,
-      SwaggerUIStandalonePreset
+      // SwaggerUIStandalonePreset
     ],
     plugins: [
       SwaggerUIBundle.plugins.DownloadUrl
     ],
-    layout: "StandaloneLayout"
+    //layout: "StandaloneLayout"
+    layout: "BaseLayout"
   });
 
   //</editor-fold>
