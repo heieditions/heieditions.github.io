@@ -1,0 +1,39 @@
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Interne Tags</title><script defer src="../staticSearch/ssHighlight.js"></script><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+                    ☞ 
+                    <a href="toc.html" class="navref">Richtlinien</a> 
+                    ☞ 
+                    Interne Tags</nav><main>
+         <div id="INTERNALTAGS">
+            
+            <h1>Interne Tags</h1>
+            
+            <p>
+               Im folgenden werden Tags dokumentiert, die nicht in den TEI-Arbeitscodierungen vorkommen, aber im Laufe der Verarbeitungspipeline für Zwecke der Visualisierung in Leseansicht, Quellenansicht oder Synopse generiert werden.
+            </p>
+            
+            <div id="Übergreifend">
+               
+               <h2>Tags für verschiedene Sichten</h2>
+               
+               <div id="INTERNALTAGS-TRANSPOSITIONRANGE">
+                  
+                  <h3>hei:transpositionRange</h3>
+                  
+                  <p>
+                      Werden bei Umstellungen durch den Schreiber oder den Herausgeber die zu vertauschenden Textteile (Wörter, Verse, Abschnitte etc.) über die XPointer-Funktion `range()` adressiert, so werden die entsprechenden Bereiche in der Zielcodierung in ein Tag <span class="gi">&lt;hei:transpositionRange&gt;</span> gekapselt und die bei der Vertauschung angegebene `range` durch eine für dieses Tag generierte <span class="att">@xml:id</span> ersetzt. Mit der `range()`-Syntax dürfen grundsätzlich nur Bereiche angegeben werden, bei denen das erste und letzte Element »siblings« im Sinne von XPath sind. Es wurde ein neues Element erschaffen, das im Schema an verschiedenen Stellen (z.B. auch innerhalb von <span class="gi">&lt;lg&gt;</span>) erlaubt werden kann.
+                  </p>
+                  
+               </div>
+               
+            </div>
+            
+
+         </div>
+      </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
+                        Letzte Aktualisierung: 14.08.2026
+                        ·
+                        <a href="https://heieditions.github.io/search" target="_blank" class="navref">Suche</a>
+                        ·
+                        <a href="https://www.ub.uni-heidelberg.de/de/impressum" target="_blank" class="navref">Impressum</a>
+                        ·
+                        <a href="https://www.uni-heidelberg.de/de/datenschutzerklaerung" target="_blank" class="navref">Datenschutz</a></p></footer><img src="../images/fx_cut.svg" id="deco" alt="decoration"><script src="../prism.js"></script><script src="../toc-generator.js"></script></body></html>
