@@ -6,6 +6,7 @@ window.onload = function() {
     url: "../dts.yaml",
     dom_id: '#DTS',
     deepLinking: true,
+    queryConfigEnabled: false,
     presets: [
       SwaggerUIBundle.presets.apis,
       SwaggerUIStandalonePreset
