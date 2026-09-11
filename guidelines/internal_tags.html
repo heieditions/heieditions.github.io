@@ -6,6 +6,8 @@
          <div id="INTERNALTAGS">
             
             <h1>Internes Tagging</h1>
+
+            <div class="wip-banner"><span class="wip-banner__icon">🔧</span><span>Dieser Abschnitt ist aktuell in Bearbeitung.</span></div>
             
             <p>
                Im folgenden werden Tags und Attribute dokumentiert, die nicht in den TEI-Arbeitscodierungen vorkommen, aber im Laufe der Verarbeitungspipeline für Zwecke der Visualisierung in Leseansicht, Quellenansicht oder Synopse generiert werden.
@@ -22,6 +24,12 @@
                   <p>
                       Werden bei Umstellungen durch den Schreiber oder den Herausgeber die zu vertauschenden Textteile (Wörter, Verse, Abschnitte etc.) über die XPointer-Funktion <span class="att">@range()</span> adressiert, so werden die entsprechenden Bereiche in der Zielcodierung in ein Tag <span class="gi">&lt;hei:transpositionRange&gt;</span> gekapselt und die bei der Vertauschung angegebene <span class="att">@range</span> durch eine für dieses Tag generierte <span class="att">@xml:id</span> ersetzt. Mit der `range()`-Syntax dürfen grundsätzlich nur Bereiche angegeben werden, bei denen das erste und letzte Element »siblings« im Sinne von XPath sind. Es wurde ein neues Element erschaffen, das im Schema an verschiedenen Stellen (z.B. auch innerhalb von <span class="gi">&lt;lg&gt;</span>) erlaubt werden kann.
                   </p>
+
+                  <h3>hei:belongsToLine</h3>
+                 
+                  <p>
+                    <div class="wip-banner"><span class="wip-banner__icon">🔧</span><span>Dieser Abschnitt ist aktuell in Bearbeitung.</span></div>
+                  </p>
                   
                </div>
                
@@ -30,7 +38,7 @@
 
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 17.08.2026
+                        Letzte Aktualisierung: 11.09.2026
                         ·
                         <a href="https://heieditions.github.io/search" target="_blank" class="navref">Suche</a>
                         ·
