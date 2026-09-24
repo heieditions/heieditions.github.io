@@ -6,39 +6,47 @@
          <div id="INTERNALTAGS">
             
             <h1>Internes Tagging</h1>
-
-            <div class="wip-banner"><span class="wip-banner__icon">🔧</span><span>Dieser Abschnitt ist aktuell in Bearbeitung.</span></div>
             
             <p>
                Im folgenden werden Tags und Attribute dokumentiert, die nicht in den TEI-Arbeitscodierungen vorkommen, aber im Laufe der Verarbeitungspipeline für Zwecke der Visualisierung in Leseansicht, Quellenansicht oder Synopse generiert werden.
             </p>
             
-            <div id="Übergreifend">
+            <div id="INTERNALTAGS-UEBERGREIFEND">
                
-               <h2>Tags für verschiedene Sichten</h2>
-               
+               <h2>Tags/Attributwerte für verschiedene Sichten</h2>
+
+               <div id="INTERNALTAGS-ADDITIVEREG">
+                  <h3>Tag hei:additiveRegularizationlevel</h3>
+                  <p>Um die Kindelemente von <span class="gi">&lt;choice&gt;</span> für die Visualisierung mit generischeren Klassen zu versehen, die mit CSS besser angesprochen bzw. gefiltert werden können. Hierzu wurde das Attribut <span class="att">@hei:additiveRegularizationLevel</span> (Wert: Ganzzahl) eingeführt. Hier sind auch Mehrfachwerte zugelassen.</p>
+               </div>               
+
+               <div id="INTERNALTAGS-INEDITORIALADDITIONSPAN">
+                  <h3>@ana=hc:InEditorialAdditionSpan</h3> 
+                  <p>
+                      Sämtliche Elemente zwischen <span class="gi">&lt;milestone ana="hc:EditorialAdditionSpan&gt;</span> und dem zugehörigen <span class="gi">&lt;anchor&gt;</span> erhalten im Attribut ana den Wert <span class="att">@hc:InEditorialAdditionSpan</span>. Textknoten werden hierfür in ein <span class="gi">&lt;seg&gt;</span>-Element verpackt. Dies dient dazu, dass im Frontend die verschiedenen Textanzeigeoptionen zu den Editorischen Eingriffen leicht über CSS gesteuert werden können.
+                  </p>
+               </div>
+
                <div id="INTERNALTAGS-TRANSPOSITIONRANGE">
-                  
                   <h3>hei:transpositionRange</h3>
-                  
                   <p>
                       Werden bei Umstellungen durch den Schreiber oder den Herausgeber die zu vertauschenden Textteile (Wörter, Verse, Abschnitte etc.) über die XPointer-Funktion <span class="att">@range()</span> adressiert, so werden die entsprechenden Bereiche in der Zielcodierung in ein Tag <span class="gi">&lt;hei:transpositionRange&gt;</span> gekapselt und die bei der Vertauschung angegebene <span class="att">@range</span> durch eine für dieses Tag generierte <span class="att">@xml:id</span> ersetzt. Mit der `range()`-Syntax dürfen grundsätzlich nur Bereiche angegeben werden, bei denen das erste und letzte Element »siblings« im Sinne von XPath sind. Es wurde ein neues Element erschaffen, das im Schema an verschiedenen Stellen (z.B. auch innerhalb von <span class="gi">&lt;lg&gt;</span>) erlaubt werden kann.
                   </p>
+               </div>
+            </div>
 
-                  <h3>hei:belongsToLine</h3>
-                 
+            <div id="INTERNALTAGS-PIPELINE">
+               <h2>Pipeline-interne Tags/Attribute</h2>
+               <div id="INTERNALTAGS-BELONGSTOLINE">
+                  <h3><span class="att">@hei:belongsToLine</span></h3>
                   <p>
                     <div class="wip-banner"><span class="wip-banner__icon">🔧</span><span>Dieser Abschnitt ist aktuell in Bearbeitung.</span></div>
                   </p>
-                  
                </div>
-               
-            </div>
-            
-
+           </div>
          </div>
       </main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 11.09.2026
+                        Letzte Aktualisierung: 24.09.2026
                         ·
                         <a href="https://heieditions.github.io/search" target="_blank" class="navref">Suche</a>
                         ·
