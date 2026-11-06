@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Erfassung visueller Strukturen des Textträgers</title><script src="https://www.ub.uni-heidelberg.de/cdn/jquery/3.7.1/jquery.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/bootstrap/4.6.1-own-scope/css/bootstrap.min.css" rel="stylesheet"><script src="https://www.ub.uni-heidelberg.de/cdn/popper/latest/popper.min.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/bootstrap/4.6.1-own-scope/js/bootstrap.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://digi.ub.uni-heidelberg.de/diglit_pub/css/tei.min.css" type="text/css"><script type="text/javascript" src="../visualize_examples.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/handlebars/latest/handlebars.min.js"></script><script src="https://digi.ub.uni-heidelberg.de/diglit_pub/bundle.min.js"></script><script>DigiLayout.init('ger')</script><script defer src="../staticSearch/ssHighlight.js"></script><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta charset="UTF-8"><title>heiEDITIONS Dokumentation | Erfassung visueller Strukturen des Textträgers</title><script src="https://www.ub.uni-heidelberg.de/cdn/jquery/3.7.1/jquery.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/bootstrap/4.6.1-own-scope/css/bootstrap.min.css" rel="stylesheet"><script src="https://www.ub.uni-heidelberg.de/cdn/popper/latest/popper.min.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/bootstrap/4.6.1-own-scope/js/bootstrap.min.js"></script><link href="https://www.ub.uni-heidelberg.de/cdn/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" type="text/css"><link rel="stylesheet" href="https://digi.ub.uni-heidelberg.de/diglit_pub/css/tei.min.css" type="text/css"><script type="text/javascript" src="../visualize_examples.js"></script><script src="https://www.ub.uni-heidelberg.de/cdn/handlebars/latest/handlebars.min.js"></script><script src="https://digi.ub.uni-heidelberg.de/diglit_pub/bundle.min.js"></script><script>DigiLayout.init('ger')</script><script defer src="../staticSearch/ssHighlight.js"></script><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
@@ -8,7 +8,7 @@
             <h1>Erfassung visueller Strukturen des Textträgers</h1>
             
             <p>
-               Die ›Quellenansicht‹ (<em>source view</em>) ist
+               Die wundervolle ›Quellenansicht‹ (<em>source view</em>) ist
                ein Visualisierungsmodus von ›heiEDITIONS‹, der strukturierte
                Erschließungsinformationen der Edition über die visuelle Beschaffenheit und Anordnung 
                des materiell realisierten Inhalts einer Expression in einem physischen Träger
@@ -33,7 +33,6 @@
                Ist kein Element <span class="gi">&lt;facsimile&gt;</span> vorhanden, wird davon ausgegangen, dass das TEI-Dokument 
                keinen physischen Textträger dokumentiert; der Inhalt von <span class="gi">&lt;text&gt;</span> wird dann als 
                eine Instanz der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionwithoutexemplar.html" target="_blank">hc:ExpressionWithoutExemplar</a><span class="loddocborder"> ‹</span> betrachtet.
-               <sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup>
             </p>
             <p class="resdef">
                <a class="refboxlink" href="../concepts/expressionwithoutexemplar.html"><span class="val">hc:ExpressionWithoutExemplar</span></a> ( ›Expression ohne (physische)
@@ -87,11 +86,11 @@
                oder mit <span class="gi">&lt;listWit&gt;</span> eine Textzeugenliste beinhalten. Letzteres ist nur dann zu wählen, 
                wenn die Edition einen textkritischen Apparat vorsieht, der Lesarten aus anderen Textzeugen 
                als der <em>einen</em> physischen Vorlage angibt.
-               <sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup> 
+               <sup><a href="#note_1" id="note_reference_1" class="note_mark">1)</a></sup> 
                Einer der als <span class="gi">&lt;witness&gt;</span> in <span class="gi">&lt;listWit&gt;</span> angegebenen Textzeugen muss dann als 
                die physische Vorlage des Textes gekennzeichnet werden. Dies erfolgt mit der Angabe 
                <span class="val">hc:ExemplarDescription</span> an <span class="att">@ana</span>.
-               <sup><a href="#note_3" id="note_reference_3" class="note_mark">3)</a></sup>
+               <sup><a href="#note_2" id="note_reference_2" class="note_mark">2)</a></sup>
             </p>
             
             <div id="FAC-DEC">
@@ -140,103 +139,12 @@
                </p>
                
                
-               <div id="FAC-DEC-SURFACE">
+               <div id="Surface">
                   
-                  <h3>Angaben zu Inhaltsflächen</h3>
-                  
-                  <p>
-                     <span class="aside"><span class="gi">&lt;surface&gt;</span>/<span class="att">@ana</span></span>
-                     Die Art der von <span class="gi">&lt;surface&gt;</span> repräsentierten Inhaltsfläche wird an <span class="att">@ana</span> angegeben, 
-                     in der Regel handelt es sich dabei um eine Seite (<span class="val">hc:Page</span>).</p>
-                  
-                  <p class="resdef">
-                     <a class="refboxlink" href="../concepts/page.html"><span class="val">hc:Page</span></a> ( ›Seite‹ ): Eine der beiden Seiten eines Blattes.
-                  </p>
+                  <h3>Angaben zu Oberflächen</h3>
                   
                   <p>
-                     Andere vorgesehenen Typen von Inhaltsflächen sind:
-                  </p>
-                  
-                  <p class="resdef">
-                     <a class="refboxlink" href="../concepts/frontcover.html"><span class="val">hc:FrontCover</span></a> ( ›Vorderdeckel‹ ): 
-                  </p>
-                  
-                  <p class="resdef">
-                     <a class="refboxlink" href="../concepts/backcover.html"><span class="val">hc:BackCover</span></a> ( ›Hinterdeckel‹ ): 
-                  </p>
-                  
-                  <p class="resdef">
-                     <a class="refboxlink" href="../concepts/frontpastedown.html"><span class="val">hc:FrontPasteDown</span></a> ( ›Vorderspiegel; Rückseite des
-                  Vorderdeckels; Innenseite des
-                  Vorderdeckels‹ ): 
-                  </p>
-                  
-                  <p class="resdef">
-                     <a class="refboxlink" href="../concepts/backpastedown.html"><span class="val">hc:BackPasteDown</span></a> ( ›Hinterspiegel; Rückseite des
-                  Hinterdeckels; Innenseite des
-                  Hinterdeckels‹ ): 
-                  </p>
-                  
-                  <p class="resdef">
-                     <a class="refboxlink" href="../concepts/bookback.html"><span class="val">hc:BookBack</span></a> ( ›Buchrücken‹ ): 
-                  </p>
-                  
-                  <p class="resdef">
-                     <a class="refboxlink" href="../concepts/foreedge.html"><span class="val">hc:ForeEdge</span></a> ( ›Vorderschnitt‹ ): 
-                  </p>
-                  
-                  <p class="resdef">
-                     <a class="refboxlink" href="../concepts/topedge.html"><span class="val">hc:TopEdge</span></a> ( ›Kopfschnitt; Oberschnitt; Oberkante‹ ): 
-                  </p>
-                  
-                  <p class="resdef">
-                     <a class="refboxlink" href="../concepts/bottomedge.html"><span class="val">hc:BottomEdge</span></a> ( ›Fußschnitt; Unterschnitt; unterer Buchschnitt‹ ): 
-                  </p>
-                  
-                  <p>
-                     <span class="aside"><span class="gi">&lt;surface&gt;</span>/<span class="att">@n</span></span>
-                     Der Wert des Attributs <span class="att">@n</span> wird als Seitenbezeichner in der Visualisierung angezeigt. 
-                     Er enthält meist eine Nummer, bei mittelalterlichen Handschriften häufig zusätzlich mit ›r‹ oder ›v‹
-                     (für <em>recto</em> bzw. <em>verso</em>). Möglich sind aber auch
-                     verbale Bezeichner wie <span class="val">Vorderdeckel</span> oder Nummern mit Zusätzen wie Buchstaben oder Sternchen, 
-                     z. B. <span class="val">4a</span> oder <span class="val">1*</span>, oder auch Kombinationen solcher Muster.<sup><a href="#note_4" id="note_reference_4" class="note_mark">4)</a></sup>
-                  </p>
-                  <p>
-                     <span class="aside"><span class="gi">&lt;surface&gt;</span>/<span class="att">@xml:id</span></span>
-                     Der Wert des Attributs <span class="att">@xml:id</span> ist vom Herausgeber grundsätzlich frei wählbar. 
-                     Wir empfehlen eine Syntax, die dem für <span class="att">@n</span> gewählten Seitenbezeichner einen 
-                     Identifier für den Inhaltsträger bzw. Textzeugen voranstellt, getrennt durch einen Unterstrich,
-                     z. B. <span class="val">cpg389_4r</span> oder <span class="val">A_4r</span>.<sup><a href="#note_5" id="note_reference_5" class="note_mark">5)</a></sup>
-                  </p>
-                  <p>
-                     Eine typische Abfolge der <span class="gi">&lt;surface&gt;</span>-Elemente mit ihren Attributen wäre z.
-                      B.:                  
-                  </p>
-                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;facsimile&gt;
-   &lt;surface ana="hc:Page" xml:id="G_1r" n="1r"&gt;[…]&lt;/surface&gt;
-   &lt;surface ana="hc:Page" xml:id="G_1v" n="1v"&gt;[…]&lt;/surface&gt;
-   &lt;surface ana="hc:Page" xml:id="G_2r" n="2r"&gt;[…]&lt;/surface&gt;
-&lt;/facsimile&gt;
-                  </code></pre></div>
-                  <p>
-                     <span class="aside">Verknüpfung zum Digitalisat</span>
-                     Das Element <span class="gi">&lt;surface&gt;</span> trägt als erstes Kindelement das Element <span class="gi">&lt;graphic&gt;</span>,
-                     das die Verknüpfung zu einer digitalen Abbildung der Inhaltsfläche herstellt:
-                     <ul><li><span class="item_label"><span class="gi">&lt;graphic&gt;</span></span> ( ›Abbildung‹ )  Strukturierte Angabe der Verknüpfung zu einer digitalen Abbildung des visuellen Objekts, dessen Inhalt durch das Elternelement repräsentiert, dokumentiert und erschlossen wird. (Für die Definition der TEI s. <span class="outlinkprefix">↪ </span><a class="outlink" href="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-graphic.html" target="_blank">TEI</a>.)<ul><li><span class="item_label"><span class="att">@url</span></span>( ›URL‹ ) gibt die URL einer digitalen Abbildung an.</li><li><span class="item_label"><span class="att">@mimeType</span></span>gibt den Medientyp des verknüpften Bildes als <em>MIME media type</em> an.</li></ul></li></ul>
-                     Bei Angaben von Bildressourcen, die Seiten im Heidelberger Digitalisierungssystem 
-                     ›DWork‹ entsprechen, wird für <span class="att">@url</span> der in der HTML-Präsentation der Seite
-                     empfohlene Zitierlink verwendet. <span class="att">@mimeType</span> trägt dabei den Wert <span class="val">image/*</span>, 
-                     z. B.:                 
-                  </p>
-                  <div class="egxml" data-example-id=""><pre class="language-xml"><code>
-&lt;facsimile&gt;
-   &lt;surface ana="hc:Page" xml:id="wm001_1" n="1"&gt;
-      &lt;graphic url="https://digi.ub.uni-heidelberg.de/diglit/wm001/0001" mimeType="image/*"/&gt;
-      […]
-   &lt;/surface&gt;
-&lt;/facsimile&gt;
-                  </code></pre></div>
+                     Dies ist eine Beispieldatei der Oberflächen.</p>
                   
                </div>
                
@@ -330,7 +238,7 @@
                      Container grob zu beschreiben. Dazu dienen <span class="gi">&lt;zone&gt;</span>-Elemente innerhalb von <span class="gi">&lt;surface&gt;</span>, die 
                      als übergeordnete Container einzelne Inhaltsbereiche gruppieren.
                      Eine solche Deklaration des Layouts kann
-                     direkt für die Visualisierung in der Quellenansicht nachgenutzt werden.<sup><a href="#note_6" id="note_reference_6" class="note_mark">6)</a></sup>
+                     direkt für die Visualisierung in der Quellenansicht nachgenutzt werden.<sup><a href="#note_3" id="note_reference_3" class="note_mark">3)</a></sup>
                   </p>
                   <p>
                      Ohne eine Deklaration des Layouts mithilfe übergeordneter <span class="gi">&lt;zone&gt;</span>-Elemente
@@ -387,7 +295,7 @@
                      mit Prozentangaben die relative Breite eines Bereichs in Bezug zur Breite seines übergeordneten
                      Containers anzugeben. Die Summer aller Breitenangaben an Kindelementen eines 
                      horizontalen Containers darf nicht 100 überschreiten (bei einem vertikalen Container ist das denkbar,
-                     da sich die Breitenangabe dann auf die Ausdehnung entlang der Querachse bezieht).<sup><a href="#note_7" id="note_reference_7" class="note_mark">7)</a></sup>
+                     da sich die Breitenangabe dann auf die Ausdehnung entlang der Querachse bezieht).<sup><a href="#note_4" id="note_reference_4" class="note_mark">4)</a></sup>
                      
                   </p>
                   <img class="smaller_graphic" src="../images/2_text_zones_width.svg" alt="Eine Seite mit zwei unterschiedlich breiten Textbereichen nebeneinander."><p class="bildunterschrift">Abb. 4: Eine Seite mit zwei unterschiedlich breiten Textbereichen nebeneinander.</p>
@@ -401,7 +309,7 @@
 &lt;/surface&gt;                    
                   </code></pre></div>
                   <p>
-                     Eine explizite Angabe der relativen Höhe eines Bereichs ist nicht vorgesehen.<sup><a href="#note_8" id="note_reference_8" class="note_mark">8)</a></sup>                     
+                     Eine explizite Angabe der relativen Höhe eines Bereichs ist nicht vorgesehen.<sup><a href="#note_5" id="note_reference_5" class="note_mark">5)</a></sup>                     
                   </p>
                   <p>
                      Durch die Kombination eines horizontalen Containers mit einem nachfolgenden direkten
@@ -527,7 +435,7 @@
                   </p>
                   <p>
                      Zeilen sind die konstituierenden Komponenten von Textbereichen (<span class="loddocborder">› </span><a class="loddoc" href="../concepts/textzone.html" target="_blank">hc:TextZone</a><span class="loddocborder"> ‹</span>), die in der Regel
-                     als unmittelbare Container für jeweils eine geordnete Sequenz von Zeilen fungieren.<sup><a href="#note_9" id="note_reference_9" class="note_mark">9)</a></sup>
+                     als unmittelbare Container für jeweils eine geordnete Sequenz von Zeilen fungieren.<sup><a href="#note_6" id="note_reference_6" class="note_mark">6)</a></sup>
                   </p>                  
                   <p>
                      Wenn das Digitalisat der Quelle (das inhaltstragende Artefakt) einer Expression nicht mithilfe von Koordinatenangaben
@@ -569,7 +477,7 @@
                      und der Anfänge von Sinneinheiten  das eine oder andere zuerst gesetzt wird. Im vorliegenden Beispiel wird zunächst <span class="gi">&lt;p&gt;</span>
                      als Sinneinheit geöffnet und innerhalb des <span class="gi">&lt;p&gt;</span> werden der Spaltenanfang under Zeilenanfang gesetzt. Genauso könnte 
                      aber auch das <span class="gi">&lt;cb&gt;</span> direkt vor dem <span class="gi">&lt;p&gt;</span> stehen; das <span class="gi">&lt;lb&gt;</span> für Zeile 1 könnte dann entweder am Anfang des <span class="gi">&lt;p&gt;</span>
-                     bleiben oder ebenfalls dem <span class="gi">&lt;p&gt;</span> vorangehen.<sup><a href="#note_10" id="note_reference_10" class="note_mark">10)</a></sup>
+                     bleiben oder ebenfalls dem <span class="gi">&lt;p&gt;</span> vorangehen.<sup><a href="#note_7" id="note_reference_7" class="note_mark">7)</a></sup>
                   </p>
                   <p>
                      In einer Gedichtstrophe (<span class="gi">&lt;lg&gt;</span>) könnten – bei einer regelmäßigen Absetzung jedes Verses in der Quelle – die Zeilenanfänge einzelner Verse (<span class="gi">&lt;l&gt;</span>) so
@@ -627,7 +535,7 @@
                      die zumindest technisch voneinander unabhänig sind. Da auf die Frage, ob zuerst ein Vers anfängt oder die Zeile, in der der Vers
                      steht, keine eindeutige Antwort möglich ist, ist die Position der entsprechenden Elemente in ›heiEDITIONS‹
                      irrelevant. Von der Sache her verhält es sich am ehesten so, dass beides gleichzeitig anfängt, dies lässt jedoch mit XML/TEI nicht
-                     unmittelbar abbilden, da zwei XML-Elemente nicht dieselbe Position in einem XML-Dokument einnehmen können.<sup><a href="#note_11" id="note_reference_11" class="note_mark">11)</a></sup> 
+                     unmittelbar abbilden, da zwei XML-Elemente nicht dieselbe Position in einem XML-Dokument einnehmen können.<sup><a href="#note_8" id="note_reference_8" class="note_mark">8)</a></sup> 
                      Auch wenn die technische Abfolge der beiden Typen von Anfängen in einem TEI-Dokument also letztlich
                      beliebig ist, empfiehlt sich jeweils projektspezifisch eine einheitliche Regelung.                    
                   </p>                 
@@ -656,7 +564,7 @@
                      geltenden Zeilen zu arbeiten. In solchen Fällen können Dezimalzahlen mit Punkt als Dezimaltrennzeichen verwendet werden.
                      Eine Zeile mit der Nummer <span class="val">1.1</span> würde sich zwischen den Zeilen 1 und 2 befinden. 
                      Der relative Abstand einer Dezimalzahl von benachbarten Ganzzahlen (1,1 ist nummerisch näher an 1 als an 2) spielt dabei keine Rolle –
-                     allein die Position in der Zeilensequenz ist von Bedeutung.<sup><a href="#note_12" id="note_reference_12" class="note_mark">12)</a></sup>
+                     allein die Position in der Zeilensequenz ist von Bedeutung.<sup><a href="#note_9" id="note_reference_9" class="note_mark">9)</a></sup>
                   </p>
                   <p>
                      Ein grundlegendes Prinzip ist, dass die Abfolge der <span class="gi">&lt;lb&gt;</span>-Elemente mit ihren den Quellenbefund wiedergebenden Zeilennummern
@@ -784,7 +692,7 @@
                   
                   <p>
                      Zwischen den visuellen Gliederungsebenen der Zeilen und der Zeichen bzw. Glyphen kann bei Bedarf zusätzlich
-                     die Ebene der Zeilensegmente angesetzt werden.<sup><a href="#note_13" id="note_reference_13" class="note_mark">13)</a></sup>                  
+                     die Ebene der Zeilensegmente angesetzt werden.<sup><a href="#note_10" id="note_reference_10" class="note_mark">10)</a></sup>                  
                   </p>
                   <p class="resdef">
                      <a class="refboxlink" href="../concepts/linesegment.html"><span class="val">hc:LineSegment</span></a> ( ›Zeilensegment‹ ): Eine geordnete, gerichtete und visuell kohärente Sequenz von
@@ -848,7 +756,7 @@
                      das Zeilensegment einer anderen Zeile als derjenigen angehört, deren Anfang mit dem nächsten vorausgehenden <span class="gi">&lt;lb&gt;</span>
                      markiert ist. Diese Aufgabe übernimmt das Attribut <span class="att">@hei:belongsToLine</span>. Dieses Attribut mit dem Datentyp
                      <span class="code">teidata.text</span> erwartet Werte, die mit der Zeilennummerangabe in <span class="att">@n</span> am zugehörigen <span class="gi">&lt;lb&gt;</span>
-                     übereinstimmen müssen, normalerweise also einfach die Nummer der zugehörigen Zeile.<sup><a href="#note_14" id="note_reference_14" class="note_mark">14)</a></sup> Näheres und Beispiele sind den folgenden Abschnitten zu entnehmen.
+                     übereinstimmen müssen, normalerweise also einfach die Nummer der zugehörigen Zeile.<sup><a href="#note_11" id="note_reference_11" class="note_mark">11)</a></sup> Näheres und Beispiele sind den folgenden Abschnitten zu entnehmen.
                   </p>
                   
                </div>
@@ -879,7 +787,7 @@
                   </p>
                   <p>
                      <span class="aside">Einrückungen &amp; Ausrückungen</span> Häufig zu erfassende Phänomene bei der visuellen Erscheinung von Zeilen sind auf horizontaler Achse
-                     Einrückungen und Ausrückungen sowie auf vertikaler Achse Abstände nach oben und unten.<sup><a href="#note_15" id="note_reference_15" class="note_mark">15)</a></sup> Zur einfachen Dokumentation
+                     Einrückungen und Ausrückungen sowie auf vertikaler Achse Abstände nach oben und unten.<sup><a href="#note_12" id="note_reference_12" class="note_mark">12)</a></sup> Zur einfachen Dokumentation
                      von Einrückungen und Ausrückungen können an <span class="gi">&lt;lb&gt;</span> bzw. <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> jeweils 
                      mit dem Attribut <span class="att">@rendition</span> diese Angaben gemacht werden:
                   </p>
@@ -1155,7 +1063,7 @@
                      Das Attribut <span class="att">@n</span> an <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> gibt die Nummer
                      des Zeilensegments in der Zeile an, die den Zeilenüberlauf aufnimmt. Implizit versteht es sich, dass davor 
                      in der betroffenen Zeile ein Zeilensegment mit der Nummer 1 steht, dessen Anfang nicht explizit deklariert werden
-                     muss bzw. bereits durch das <span class="gi">&lt;lb&gt;</span> hinreichend markiert ist.<sup><a href="#note_16" id="note_reference_16" class="note_mark">16)</a></sup>
+                     muss bzw. bereits durch das <span class="gi">&lt;lb&gt;</span> hinreichend markiert ist.<sup><a href="#note_13" id="note_reference_13" class="note_mark">13)</a></sup>
                   </p>
                   <p>
                      In der folgenden Abbildung sind die beiden Segmente von Zeile 2 des letzten Beispiels zur Verdeutlichung 
@@ -1460,62 +1368,47 @@
 
          </div>
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>
-                  Die entsprechende Zuweisung zu dieser Klasse erfolgt während der Verarbeitung 
-                  automatisch, wenn kein <span class="gi">&lt;facsimile&gt;</span> vorhanden ist. Andernfalls wird – ebenfalls 
-                  während der Verarbeitung – der Text der Klasse <span class="loddocborder">› </span><a class="loddoc" href="../concepts/expressionbasedonexemplar.html" target="_blank">hc:ExpressionBasedOnExemplar</a><span class="loddocborder"> ‹</span> 
-                  zugewiesen. 
-               </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
                   Mit <span class="gi">&lt;listWit&gt;</span> kann außerdem auch dann gearbeitet werden, wenn der Text des 
                   TEI-Dokuments kein <span class="loddocborder">› </span><a class="loddoc" href="../concepts/textbasedonexemplar.html" target="_blank">hc:TextBasedOnExemplar</a><span class="loddocborder"> ‹</span> ist. Lesartenangaben 
                   im textkritischen Apparat sind dann genauso gut möglich, solche Lesarten sind dann 
                   aber nicht dem Text eines im Dokument direkt als Vorlage herangezogenen Textträgers 
                   gegenübergestellt.
-               </div><div class="endnote" id="note_3"><a class="endnote_number" href="#note_reference_3">3</a>
+               </div><div class="endnote" id="note_2"><a class="endnote_number" href="#note_reference_2">2</a>
                   Die Angabe <span class="val">hc:ExemplarDescription</span> an <span class="att">@ana</span> versteht sich auch implizit 
                   für ein <span class="gi">&lt;msDesc&gt;</span> oder <span class="gi">&lt;bibl&gt;</span>, wenn es als einziges Kindelement von 
                   <span class="gi">&lt;sourceDesc&gt;</span> stünde; die Angabe wird dann automatisch während der Verarbeitung ergänzt.
-               </div><div class="endnote" id="note_4"><a class="endnote_number" href="#note_reference_4">4</a>
-                        Bei Projekten, die in ›heiEDITIONS‹ mithilfe von DWork präsentiert werden, 
-                        muss <span class="att">@n</span> mit dem Seitennamen in DWork übereinstimmen (z.B. <span class="val">40r</span>). 
-                        Die Zuordnung zum Digitalisat erfolgt dort bei der Visualisierung allein anhand des Attributs <span class="att">@n</span>.
-                        Es ist also zu beachten, dass <span class="att">@n</span> an <span class="gi">&lt;surface&gt;</span> im Rahmen eines Inhaltsträgers
-                        (entspricht in DWork einem sog. ›Projekt‹) eindeutig sein muss, er fungiert also
-                        für DWork als Identifier.
-                     </div><div class="endnote" id="note_5"><a class="endnote_number" href="#note_reference_5">5</a>
-                        In den beiden Beispielen fungiert als Identifier wahlweise die sog. DWork-Projektnummer oder 
-                        ein editionseigenes Sigel für den Textzeugen.
-                     </div><div class="endnote" id="note_6"><a class="endnote_number" href="#note_reference_6">6</a>
+               </div><div class="endnote" id="note_3"><a class="endnote_number" href="#note_reference_3">3</a>
                         Für eine Darstellung der Umwandlung der hier geschilderten TEI-Kodierung 
                         für Visualisierungszwecke s. <a class="inlink" href="visualization.html#VIS-SOURCE">Quellenansicht</a>.
-                     </div><div class="endnote" id="note_7"><a class="endnote_number" href="#note_reference_7">7</a>
+                     </div><div class="endnote" id="note_4"><a class="endnote_number" href="#note_reference_4">4</a>
                         Wenn die Breitenangabe nur an einigen Kindelementen eines Containers gesetzt wird,
                         füllen die Elemente ohne eine eigene Angabe den restlichen verfügbaren Raum aus.
                         Wenn alle Kindelemente eines horizontalen Containers eine Breitenangabe erhalten
                         und die Summe ihrer Breitenangaben weniger als 100 ist, bleibt in der Visualisierung
                         der restliche Raum frei.
-                     </div><div class="endnote" id="note_8"><a class="endnote_number" href="#note_reference_8">8</a>
+                     </div><div class="endnote" id="note_5"><a class="endnote_number" href="#note_reference_5">5</a>
                         In der Visualisierung der Quellenansicht nimmt jeder Bereich mindestens die 
                         Höhe ein, die zur Einblendung seines gesamten Inhalts benötigt wird.
-                     </div><div class="endnote" id="note_9"><a class="endnote_number" href="#note_reference_9">9</a>
+                     </div><div class="endnote" id="note_6"><a class="endnote_number" href="#note_reference_6">6</a>
                         Neben Textbereichen kommen Zeilen auch in Tabellenzellen vor (also in Inhaltsbereichen des Typs <span class="loddocborder">› </span><a class="loddoc" href="../concepts/tablezone.html" target="_blank">hc:TableZone</a><span class="loddocborder"> ‹</span>).
                         In diesem Abschnitt werden jedoch primär Zeilen in Textbereichen behandelt.                        
-                     </div><div class="endnote" id="note_10"><a class="endnote_number" href="#note_reference_10">10</a>
+                     </div><div class="endnote" id="note_7"><a class="endnote_number" href="#note_reference_7">7</a>
                         Das gilt auch für Seitenanfänge (<span class="gi">&lt;pb&gt;</span>), die mit Spaltenanfängen und Zeilenanfängen zusammenfallen können.
                         Relevant ist jedoch die Reihenfolge, in der die Anfänge visueller Einheiten gesetzt werden. Diese Reihenfolge muss immer sein: 
                         Seitenanfang, Spaltenanfang (oder der Anfang eines sonstigen Inhaltsbereichs), Zeilenanfang, typischerweise also etwa: <span class="gi">&lt;pb&gt;</span>, 
                         <span class="gi">&lt;cb&gt;</span>, <span class="gi">&lt;lb&gt;</span>.
-                     </div><div class="endnote" id="note_11"><a class="endnote_number" href="#note_reference_11">11</a>
+                     </div><div class="endnote" id="note_8"><a class="endnote_number" href="#note_reference_8">8</a>
                         Technisch wird die Position der Marker visueller Anfänge beim Zusammentreffen mit Anfängen von Sinneinheiten
                         in ›heiEDITIONS‹ während der Verarbeitung in die eine oder andere Richtung automatisiert vereinheitlicht.
-                     </div><div class="endnote" id="note_12"><a class="endnote_number" href="#note_reference_12">12</a>
+                     </div><div class="endnote" id="note_9"><a class="endnote_number" href="#note_reference_9">9</a>
                         Rein technisch ist es auch irrelevant, wenn in einer Zeilensequenz einzelne Ganzzahlen übersprungen würden. Dies würde aber auch 
                         keine Lücke in der Quelle ausdrücken. Es empfiehlt sich daher eine lückenlose laufende Nummerierung 
                         der tatsächlich in der Quelle vorhandenen Zeilen. Zum Umgang mit Lücken in Fragmenten und mit bewusst ausgesparten Zeilen 
                         vgl. TODO.                         
-                     </div><div class="endnote" id="note_13"><a class="endnote_number" href="#note_reference_13">13</a>
+                     </div><div class="endnote" id="note_10"><a class="endnote_number" href="#note_reference_10">10</a>
                         Die uns bekannten OCR/HTR-Systeme verfügen (noch) über keine Unterstützung von Zeilensegmenten. Deshalb bleibt 
                         die Verwendung von Zeilensegmenten in ›heiEDITIONS‹ auf TEI-Daten beschränkt.
-                     </div><div class="endnote" id="note_14"><a class="endnote_number" href="#note_reference_14">14</a>
+                     </div><div class="endnote" id="note_11"><a class="endnote_number" href="#note_reference_11">11</a>
                         Das Attribut <span class="att">@hei:belongsToLine</span> ist technisch also kein ›Pointer‹, der auf die <span class="att">@xml:id</span>
                         einer Zeile verweisen würde, sondern die Verknüpfung mit dem zugehörigen <span class="gi">&lt;lb&gt;</span> wird über die bloße Angabe
                         der Zeilennummer hergestellt. Dies erleichert die händische Eingabe, zumal in der Arbeitskodierung die <span class="gi">&lt;lb&gt;</span>-Elemente häufig
@@ -1523,15 +1416,15 @@
                         spezieller Phänomene bei Zeilensegmenten immer mit <span class="gi">&lt;cb&gt;</span>, <span class="code">&lt;milestone ana="hc:ZoneBeginning"&gt;</span> 
                         oder <span class="code">&lt;milestone ana="hc:ZoneShift"&gt;</span> markiert werden müssen, ist jederzeit klar, welchem Textbereich eine
                         Zeile angehört, deren Nummer an einem Zeilensegmentanfang mittels <span class="att">@hei:belongsToLine</span> angegeben worden ist.
-                     </div><div class="endnote" id="note_15"><a class="endnote_number" href="#note_reference_15">15</a>
+                     </div><div class="endnote" id="note_12"><a class="endnote_number" href="#note_reference_12">12</a>
                         Die hier beschriebenen einfachen Angaben zur Erfassung von Einrückung, Ausrückung und vertikalem Abstand von Zeilen
                         sind mit Hinblick auf rechtsläufige oder linksläufige Schriftsysteme konzipiert, bei denen die Schriftrichtung als die Horizontale verstanden wird.
-                     </div><div class="endnote" id="note_16"><a class="endnote_number" href="#note_reference_16">16</a>
+                     </div><div class="endnote" id="note_13"><a class="endnote_number" href="#note_reference_13">13</a>
                         Auf das Attribut <span class="att">@n</span> mit dem Wert <span class="val">2</span> kann in der Arbeitskodierung in solchen Fällen auch verzichtet werden.
                         Die Verarbeitung geht an <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> von der Nummer <span class="val">2</span> aus,
                         wenn kein <span class="att">@n</span> explizit gesetzt ist.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 31.07.2026
+                        Letzte Aktualisierung: 06.11.2026
                         ·
                         <a href="https://heieditions.github.io/search" target="_blank" class="navref">Suche</a>
                         ·
