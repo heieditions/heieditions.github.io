@@ -9,7 +9,7 @@
             <div id="METAINDEX-ALLG">
                <h2>Einführung</h2>
                <p>
-                  Um insbesondere bei Editionen mit vielen Textzeugen die wiederholte Eingabe ausführlicher Metadaten zu Werken, Textzeugen, Autoren, sonstige Beteiligte, Textquellen etc. zu vermeiden und gleichezeitig eine Datengrundlage für such- oder browsingbasierte Zugänge zu den Texten zu legen, können für Editionen die im folgenden beschriebenen Indexdateien angelegt werden. Innerhalb der TEI-Arbeitscodierung wird an den entsprechenden Stelle lediglich ein <span class="gi">&lt;ptr&gt;</span> mit einem Verweis auf den Index gesetzt. In den Indexdaten können sämtliche Informationen zu den jeweiligen Entitäten abgelegt werden, auch solche, die beim direkten Tagging in den Headern der Transkriptions-/Editionsdateien an der entsprechenden Stelle aufgrund von Einschränkungen durch das Schema nicht möglich wären. Alle Indexe sind dabei (analog zu den Textregistern, s. <a class="inlink" href="indexes.html#INDEXES">Register</a>) als TEI-Dateien umgesetzt.
+                  Um insbesondere bei Editionen mit vielen Textzeugen die wiederholte Eingabe ausführlicher Metadaten zu Werken, Textzeugen, Beteiligte (Autoren, Herausgeber, ...), Textquellen etc. zu vermeiden und gleichezeitig eine Datengrundlage für such- oder browsingbasierte Zugänge zu den Texten zu legen, können für Editionen die im folgenden beschriebenen Indexdateien angelegt werden. Innerhalb der TEI-Arbeitscodierung wird an den entsprechenden Stelle lediglich ein <span class="gi">&lt;ptr&gt;</span> mit einem Verweis auf den Index gesetzt. In den Indexdaten können sämtliche Informationen zu den jeweiligen Entitäten abgelegt werden, auch solche, die beim direkten Tagging in den Headern der Transkriptions-/Editionsdateien an der entsprechenden Stelle aufgrund von Einschränkungen durch das Schema nicht möglich wären. Alle Indexe sind dabei (analog zu den Textregistern, s. <a class="inlink" href="indexes.html#INDEXES">Register</a>) als TEI-Dateien umgesetzt.
                </p>
             </div>
 
@@ -54,7 +54,7 @@
                         &lt;title ana="hc:ShortTitle"&gt;B223&lt;/title&gt;
                         &lt;title ana="hc:MainTitle"&gt;Der Spiegel&lt;/title&gt;
                         &lt;author&gt;
-                          &lt;ptr target="author:meister_altswert"/&gt;
+                          &lt;ptr target="meta-person:meister_altswert"/&gt;
                         &lt;/author&gt;
                       &lt;/titleStmt&gt;
                       ...
@@ -62,14 +62,14 @@
                         &lt;listWit&gt;
                           &lt;witness xml:id="B223_He3"&gt;
                             &lt;msDesc&gt;
-                              &lt;ptr target="source:He3"/&gt;
+                              &lt;ptr target="meta-source:He3"/&gt;
                               &lt;locus from="216v" to="222v"&gt;216ⱽ–222ⱽ&lt;/locus&gt;
                             &lt;/msDesc&gt;
                             &lt;measure unit="verse" quantity="366"&gt;366 V.&lt;/measure&gt;
                           &lt;/witness&gt;
                           &lt;witness xml:id="B223_He9"&gt;
                             &lt;msDesc&gt;
-                              &lt;ptr target="source:He9"/&gt;
+                              &lt;ptr target="meta-source:He9"/&gt;
                               &lt;locus from="106v" to="114r"&gt;106ⱽ–114ʳ&lt;/locus&gt;
                             &lt;/msDesc&gt;
                             &lt;measure unit="verse" quantity="366"&gt;366 V.&lt;/measure&gt;
@@ -219,10 +219,10 @@
                   
                </div>
    
-               <div id="METAINDEX-AUTHORS">
-                  <h3>Autoren</h3>
+               <div id="METAINDEX-CONTRIB">
+                  <h3>Beteiligte Personen</h3>
                   <p>
-                     Die innerhalb von <span class="gi">&lt;teiHeader&gt;</span> verwendeten Autorenangaben können über diesen Index zentral verwaltet werden. 
+                     Die innerhalb von <span class="gi">&lt;teiHeader&gt;</span> verwendeten Angaben zu den beteiligten Personen (Autoren, Herausgeber, Transkriptoren, Übersetzer, Illustratoren, ...) können über diesen Index zentral verwaltet werden. 
                   </p>
                   <p>
                      Code-Beispiele:
@@ -235,7 +235,7 @@
                 &lt;teiHeader&gt;
                   &lt;fileDesc&gt;
                     &lt;titleStmt&gt;
-                      &lt;title&gt;Autorenliste&lt;/title&gt;
+                      &lt;title&gt;Liste der beteiligten Personen&lt;/title&gt;
                     &lt;/titleStmt&gt;
                     ...
                   &lt;/fileDesc&gt;
@@ -258,16 +258,6 @@
               &lt;/TEI&gt;
             </code></pre></div>
                   
-                  <p>
-                     Weitere Beteiligte Personen werden in einem separaten Index erfasst (s. <a class="inlink" href="#METAINDEX-CONTRIB">Weitere Beteiligte</a>).
-                  </p>
-               </div>
-   
-               <div id="METAINDEX-CONTRIB">
-                  <h3>Weitere Beteiligte</h3>
-                  <p>
-                     Alle weiteren an einem Editionstext Beteiligten - neben den Autoren die hier abgebildet werden: <a class="inlink" href="#METAINDEX-AUTHORS">Autoren</a> - (z.B. Herausgeber, Transkriptoren, Illustratoren) können in einem weiteren Index erfasst werden. Die Struktur entspricht dem des Autorenindex.
-                  </p>
                </div>
    
                <div id="METAINDEX-BIBLIO">
@@ -319,10 +309,10 @@
                  Bei der Erzeugung der TEI-Codierungen für die verschiedenen Sichten eines Texts (Leseansicht, Quellenansicht, synoptische Ansicht) werden die Verweisungen auf die Metadatenindexe aufgelöst und die entsprechenden Angaben - soweit dies das TEI-Schema an der entsprechenden Stelle zulässt - direkt in die Zielcodierung kopiert.
                </p>
                <p>
-                 Beispiel Autorenindex:
+                 Beispiel Personenindex:
                </p>
                <p>
-                 Eintrag einer Person im Autorenindex:
+                 Eintrag einer Person im Personenindex:
                </p>
                
                  <div class="egxml" data-example-id="person_in_author_index"><pre class="language-xml"><code>
@@ -342,12 +332,12 @@
             </code></pre></div> 
                
                <p>
-                 Referenz auf den Personeneintrag im Autorenindex in der Arbeitscodierung einer Transkription/Edition:
+                 Referenz auf den Eintrag im Personenindex in der Arbeitscodierung einer Transkription/Edition:
                </p>
                
                  <div class="egxml" data-example-id="author_reference_in_transcription"><pre class="language-xml"><code>
               &lt;author&gt;
-                &lt;ptr target="author:gnd-117135321"/&gt;
+                &lt;ptr target="meta-person:gnd-117135321"/&gt;
               &lt;/author&gt;
             </code></pre></div>
                
@@ -356,7 +346,7 @@
                </p>
                
                  <div class="egxml" data-example-id="author_resolved_in_transcription"><pre class="language-xml"><code>
-              &lt;author source="author:gnd-117135321"&gt;
+              &lt;author source="meta-person:gnd-117135321"&gt;
                 &lt;persName&gt;Marie von Wilamowitz-Moellendorff, geb. Mommsen&lt;/persName&gt;
                 &lt;idno ana="hc:GNDURI"&gt;https://d-nb.info/gnd/117135321&lt;/idno&gt;
               &lt;/author&gt;
@@ -373,7 +363,7 @@
                  <div class="egxml" data-example-id="witness_reference_in_transcription"><pre class="language-xml"><code>
               &lt;sourceDesc&gt;
                 &lt;msDesc&gt;
-                  &lt;ptr target="work:B429_He3"/&gt;
+                  &lt;ptr target="meta-work:B429_He3"/&gt;
                 &lt;/msDesc&gt;
               &lt;/sourceDesc&gt;
             </code></pre></div>
@@ -383,11 +373,11 @@
                </p>
                
                  <div class="egxml" data-example-id="witness_resolved_in_transcription_semantic"><pre class="language-xml"><code>
-              &lt;TEI source="work:B429_He3"&gt;
+              &lt;TEI source="meta-work:B429_He3"&gt;
                 &lt;teiHeader&gt;
                   &lt;fileDesc&gt;
                     &lt;sourceDesc&gt;
-                      &lt;msDesc source="source:He3"&gt;
+                      &lt;msDesc source="meta-source:He3"&gt;
                         &lt;msIdentifier&gt;
                           &lt;settlement&gt;
                             &lt;placeName&gt;Heidelberg&lt;/placeName&gt;
@@ -419,7 +409,7 @@
                 &lt;teiHeader&gt;
                   &lt;fileDesc&gt;
                     &lt;sourceDesc&gt;
-                      &lt;msDesc source="source:He3"&gt;
+                      &lt;msDesc source="meta-source:He3"&gt;
                         &lt;msIdentifier&gt;
                           &lt;settlement&gt;
                             &lt;placeName&gt;Heidelberg&lt;/placeName&gt;
@@ -444,7 +434,7 @@
                 &lt;sourceDoc&gt;
                   &lt;surface ana="hc:Page" xml:id="_155v" n="155v"&gt;
                     ...
-                    &lt;line xml:space="preserve" n="1"&gt;&lt;milestone ana="hc:TextualExpression hc:CompleteExpression" source="work:B429_He3"/&gt;&lt;milestone ana="hc:ExpressionBody"/&gt;...&lt;/line&gt;
+                    &lt;line xml:space="preserve" n="1"&gt;&lt;milestone ana="hc:TextualExpression hc:CompleteExpression" source="meta-work:B429_He3"/&gt;&lt;milestone ana="hc:ExpressionBody"/&gt;...&lt;/line&gt;
                     ...
                   &lt;/surface&gt;
                 &lt;/sourceDoc&gt;
@@ -455,7 +445,7 @@
             </div>
          </div>         
       <br><br><hr><div class="endnotes"><h3>Anmerkungen</h3><div class="endnote" id="note_1"><a class="endnote_number" href="#note_reference_1">1</a>»If a text is revised or modified, the resulting F2 Expression is considered to be a new F2 Expression« (<a class="tocref" href="https://www.html">FRBRoo F2</a>)</div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 31.07.2026
+                        Letzte Aktualisierung: 13.11.2026
                         ·
                         <a href="https://heieditions.github.io/search" target="_blank" class="navref">Suche</a>
                         ·
