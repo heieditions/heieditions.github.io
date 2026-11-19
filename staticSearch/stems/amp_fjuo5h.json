@@ -1,0 +1,1 @@
+{"stem":"amp","instances":[{"docUri":"guidelines\/entities.html","score":2,"contexts":[{"form":"amp","weight":"1","pos":67,"context":"&amp;<mark>amp<\/mark>;","fid":"ENTITIES-BASIC"},{"form":"amp","weight":"1","pos":95,"context":" &lt;p&gt; ... terra &amp;<mark>amp<\/mark>; aqua &lt;\/p&gt; ","fid":"ENTITIES-BASIC"}]}]}
