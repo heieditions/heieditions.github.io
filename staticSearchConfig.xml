@@ -8,6 +8,6 @@
     <stopwords file="stopwords.txt"/>
   </params>
   <rules>
-    <rule weight="0" match="script | style | footer | header | code"/>
+    <rule weight="0" match="script | style | footer | header"/>
   </rules>
 </config>
