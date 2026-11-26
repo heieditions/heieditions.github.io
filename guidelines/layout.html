@@ -1,4 +1,4 @@
-<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>heiEDITIONS Dokumentation | Erfassung visueller Strukturen des Textträgers</title><script defer src="../staticSearch/ssHighlight.js"></script><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
+<!DOCTYPE HTML><html xmlns:hei="https://digi.ub.uni-heidelberg.de/schema/tei/heiEDITIONS" xmlns:tei="http://www.tei-c.org/ns/1.0"><head><meta charset="UTF-8"><title>heiEDITIONS Dokumentation | Erfassung visueller Strukturen des Textträgers</title><script defer src="../staticSearch/ssHighlight.js"></script><link rel="shortcut icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="icon" href="https://www.ub.uni-heidelberg.de/favicon.ico"><link rel="stylesheet" href="../docu.css"><link rel="stylesheet" href="../prism.css"></head><body><header><a href="https://www.ub.uni-heidelberg.de/publikationsdienste/digitale_editionen.html" target="_blank"><img src="../images/heiEDITIONS_Logo_Doku.svg" alt="Logo heiEDITIONS" id="logo_heieditions"></a></header><nav><a href="../index.html" class="navref">Dokumentation</a> 
                     ☞ 
                     <a href="toc.html" class="navref">Richtlinien</a> 
                     ☞ 
@@ -484,6 +484,21 @@
                   </p>
                   
                   
+                  <p><span class="aside">Ausrichtung von Marginalien</span>Um Marginalien korrekt auszurichten, wird am <span class="gi">&lt;zone&gt;</span>-Element mit dem Attribut <span class="att">@ana</span> der Attributwert <span class="val">hc:VerticalFloatContainer</span> angegeben. Dies kann zusätzlich zur Markierung als Marginalspalte geschehen, oder aber auch losgelöst hiervon (zur Nutzung von Spalten siehe:  ).
+                  Mit einer <span class="att">@rendition</span>-Angabe kann neben der Ausrichtung auch die genaue Platzierung angegeben werden. Diese Platzierung verknüpft die markierte Marginalie mit der Zeile im Haupttextteil, zu der sie gehört. Hierzu gibt es drei Optionen:
+                     <ul>
+                        <li>
+                           <span class="item_label"><span class="val">hei:alignedWith</span></span>: verweist auf eine Zeile, mit welcher die Floating Zone auf der vertikalen Achse aligniert ist.
+                        </li>
+                        <li>
+                           <span class="item_label"><span class="val">hei:alignedByFirstLineWith</span></span>: verweist auf eine Zeile, mit welcher die erste Zeile der Floating Zone auf der vertikalen Achse aligniert ist.
+                        </li>
+                        <li>
+                           <span class="item_label"><span class="val">hei:alignedByLastLineWith</span></span>: verweist auf eine Zeile, mit welcher die letzte Zeile der Floating Zone auf der vertikalen Achse aligniert ist.
+                        </li>
+                     </ul>
+                     Die beiden Optionen <span class="val">hei:alignedWith</span> und <span class="val">hei:alignedByFirstLineWith</span> sehen dabei in der Visualisierung gleich aus, geben aber unterschiedlich exakte Angaben zur Position der codierten Marginalie. Die offenere Option <span class="val">hei:alignedWith</span> steht Projekten dabei jederzeit zur Verfügung, wenn die genaue Verortung des Marginalienbeginns aus zeitlichen oder inhaltlichen Gründen nicht genau angegeben werden kann oder soll.
+                  </p>
                </div>
                
                <div id="FAC-DEC-PLACEMENT">
@@ -1410,11 +1425,11 @@
                   &lt;/l&gt;
                   &lt;l n="912"&gt;
                      &lt;lb n="22" rendition="hc:LeftIndent"/&gt;der leip ſıch wandelt nach dem
-                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RetracedInRed"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
+                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RedRetraced"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
                      &lt;lb n="23" ana="hc:RunOverBelow" rendition="hc:FlushRight"/&gt;
-                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RetracedInRed"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
+                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RedRetraced"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
                      mute
-                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RetracedInRed"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
+                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RedRetraced"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
                   &lt;/l&gt;
                &lt;/lg&gt;
             </code></pre></div>
@@ -1435,11 +1450,11 @@
                   &lt;/l&gt;
                   &lt;l n="906"&gt;
                      &lt;lb n="16" rendition="hc:LeftIndent"/&gt;man wirt es inne vor maniger
-                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RetracedInRed"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
+                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RedRetraced"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
                      &lt;milestone ana="hc:LineSegmentBeginning hc:RunOverAbove" n="2" hei:belongsToLine="15" rendition="hc:SelfAlignmentRight"/&gt;
-                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RetracedInRed"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
+                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RedRetraced"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
                      czeit
-                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RetracedInRed"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
+                     &lt;metamark ana="hc:RunOverMark"&gt;&lt;hi rendition="hc:RedRetraced"&gt;⸗&lt;/hi&gt;&lt;/metamark&gt;
                   &lt;/l&gt;
                &lt;/lg&gt;                     
             </code></pre></div>
@@ -1638,7 +1653,7 @@
                         Die Verarbeitung geht an <span class="code">&lt;milestone ana="hc:LineSegmentBeginning"&gt;</span> von der Nummer <span class="val">2</span> aus,
                         wenn kein <span class="att">@n</span> explizit gesetzt ist.
                      </div></div></main><footer><img src="../images/logo-zeile_uni-ub.svg" alt="Logo Universitätsbibliothek Heidelberg und Ruprecht-Karls-Universität Heidelberg" id="logoverbund"><p id="impressum">
-                        Letzte Aktualisierung: 31.07.2026
+                        Letzte Aktualisierung: 26.11.2026
                         ·
                         <a href="https://heieditions.github.io/search" target="_blank" class="navref">Suche</a>
                         ·
